@@ -444,7 +444,7 @@ You enter a special kind of chess tournament, in which you play one game with ea
 
 A **partition** of the sample space $\Omega$ is a collection of disjoint events $S_1,\ldots,S_n$ such that $\Omega = \cup_{i=1}^{n} S_i$.
 
-> <span style="color:#1e8449;">**[mathtip]** </span> 设三位对手胜率 $p_1<p_2<p_3$。连赢两次需"第 2 场赢"，故先把最弱者放第 2 场；前后两场胜率乘同一常数，故顺序无关。列不同排列的总胜率随即验证。
+> <span style="color:#1e8449;">**[mathtip]** </span> 设三位对手胜率 $p_1\lt p_2\lt p_3$。连赢两次需"第 2 场赢"，故先把最弱者放第 2 场；前后两场胜率乘同一常数，故顺序无关。列不同排列的总胜率随即验证。
 
 ---
 
@@ -1759,7 +1759,7 @@ p_X(k)=\begin{cases} 1/6, & \text{若 } k=1,\,2,\,3,\,4,\,5,\,6,\\
 
 其结果为 $\operatorname{var}(X)=35/12$。
 
-更一般地，设想一个均匀地（`uniformly`）取值于某段连续整数 $\{a,a+1,\ldots,b\}$ 之一的随机变量，其中 $a<b$ 是两个整数；其 PMF（见图 2.8（`Fig. 2.8`），即均匀分布于 $a$ 与 $b$ 之间整数的离散随机变量的 PMF）为
+更一般地，设想一个均匀地（`uniformly`）取值于某段连续整数 $\{a,a+1,\ldots,b\}$ 之一的随机变量，其中 $a\lt b$ 是两个整数；其 PMF（见图 2.8（`Fig. 2.8`），即均匀分布于 $a$ 与 $b$ 之间整数的离散随机变量的 PMF）为
 
 ```math
 p_X(k)=\begin{cases}\displaystyle\frac{1}{b-a+1}, & \text{若 } k=a,\,a+1,\ldots,b,\\

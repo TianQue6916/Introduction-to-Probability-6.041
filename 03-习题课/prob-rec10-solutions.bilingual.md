@@ -36,7 +36,7 @@
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Question 2（第 2 题）**</span>
 
-Heather（希瑟）与 Taylor（泰勒）用一枚不均匀硬币（unfair coin）的独立投掷来玩一个游戏：每次投掷出现正面（head）的概率为 $p$，其中 $0<p<1$。硬币被反复投掷，直到第二次出现正面——此时 Heather 获胜；或者第二次出现反面（tail）——此时 Taylor 获胜。注意：一局完整的游戏包含 2 或 3 次投掷。
+Heather（希瑟）与 Taylor（泰勒）用一枚不均匀硬币（unfair coin）的独立投掷来玩一个游戏：每次投掷出现正面（head）的概率为 $p$，其中 $0\lt p<1$。硬币被反复投掷，直到第二次出现正面——此时 Heather 获胜；或者第二次出现反面（tail）——此时 Taylor 获胜。注意：一局完整的游戏包含 2 或 3 次投掷。
 
 <span style="color:#00838f;">**2.1**　考虑该游戏的一个概率模型，其样本结果（outcome）为一局完整游戏中正面与反面构成的序列。请列出全部结果及其发生的概率。</span>
 

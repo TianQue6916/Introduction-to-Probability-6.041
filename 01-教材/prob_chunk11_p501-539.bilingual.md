@@ -2566,8 +2566,8 @@ A surveillance camera periodically checks a certain area and records a signal $X
 
 | 分布（Distribution） | 概率质量 $p_X(k)$ | 均值 $E[X]$ | 方差 $\text{var}(X)$ | 变换 $M_X(s)$ |
 |--------|--------|--------|--------|--------|
-| 离散均匀于 $[a,b]$（Discrete Uniform over $[a,b]$） | $p_X(k) = \begin{cases} \dfrac{1}{b-a+1}, & k = a, a+1, \ldots, b \\[4pt] 0, & \text{otherwise} \end{cases}$ | $\dfrac{a+b}{2}$ | $\dfrac{(b-a)(b-a+2)}{12}$ | $M_X(s) = \dfrac{e^{as}\bigl(e^{s(b-a+1)} - 1\bigr)}{(b-a+1)(e^s - 1)}$ |
-| 参数为 $p$ 的伯努利（Bernoulli with Parameter $p$，描述单次试验的成功或失败） | $p_X(k) = \begin{cases} p, & k = 1 \\[2pt] 1-p, & k = 0 \end{cases}$ | $p$ | $p(1-p)$ | $M_X(s) = 1 - p + p e^s$ |
+| 离散均匀于 $[a,b]$（Discrete Uniform over $[a,b]$） | $p_X(k) = \begin{cases} \dfrac{1}{b-a+1}, & k = a, a+1, \ldots, b \\ 0, & \text{otherwise} \end{cases}$ | $\dfrac{a+b}{2}$ | $\dfrac{(b-a)(b-a+2)}{12}$ | $M_X(s) = \dfrac{e^{as}\bigl(e^{s(b-a+1)} - 1\bigr)}{(b-a+1)(e^s - 1)}$ |
+| 参数为 $p$ 的伯努利（Bernoulli with Parameter $p$，描述单次试验的成功或失败） | $p_X(k) = \begin{cases} p, & k = 1 \\ 1-p, & k = 0 \end{cases}$ | $p$ | $p(1-p)$ | $M_X(s) = 1 - p + p e^s$ |
 | 参数为 $p$、$n$ 的二项（Binomial with Parameters $p$ and $n$，描述 $n$ 次独立伯努利试验中的成功次数） | $p_X(k) = \dbinom{n}{k} p^k (1-p)^{n-k}, \quad k=0,1,\ldots,n$ | $np$ | $np(1-p)$ | —（源末印出） |
 | 参数为 $p$ 的几何（Geometric with Parameter $p$，描述一列独立伯努利试验中到首次成功所需试验次数） | $p_X(k) = (1-p)^{k-1} p, \quad k=1,2,\ldots$ | $\dfrac{1}{p}$ | $\dfrac{1-p}{p^{2}}$ | $M_X(s) = \dfrac{p e^s}{1 - (1-p)e^s}$ |
 | 参数为 $\lambda$ 的泊松（Poisson with Parameter $\lambda$，当 $n$ 很大、$p$ 很小且 $\lambda = np$ 时近似二项概率质量） | $p_X(k) = \dfrac{e^{-\lambda} \lambda^{k}}{k!}, \quad k=0,1,\ldots$ | $\lambda$ | $\lambda$ | —（源末印出） |
@@ -2586,8 +2586,8 @@ A surveillance camera periodically checks a certain area and records a signal $X
 
 | 分布（Distribution） | 密度 $f_X(x)$ | 均值 $E[X]$ | 方差 $\text{var}(X)$ | 变换 $M_X(s)$ |
 |--------|--------|--------|--------|--------|
-| 连续均匀于 $[a,b]$（Continuous Uniform over $[a,b]$） | $f_X(x) = \begin{cases} \dfrac{1}{b-a}, & a \le x \le b \\[4pt] 0, & \text{otherwise} \end{cases}$ | $\dfrac{a+b}{2}$ | $\dfrac{(b-a)^{2}}{12}$ | $M_X(s) = \dfrac{e^{sb} - e^{sa}}{s(b-a)}$ |
-| 参数为 $\lambda$ 的指数（Exponential with Parameter $\lambda$） | $f_X(x) = \begin{cases} \lambda e^{-\lambda x}, & x > 0 \\[4pt] 0, & \text{otherwise} \end{cases}$ | $\dfrac{1}{\lambda}$ | $\dfrac{1}{\lambda^{2}}$ | $M_X(s) = \dfrac{\lambda}{\lambda - s}, \quad (s < \lambda)$ |
+| 连续均匀于 $[a,b]$（Continuous Uniform over $[a,b]$） | $f_X(x) = \begin{cases} \dfrac{1}{b-a}, & a \le x \le b \\ 0, & \text{otherwise} \end{cases}$ | $\dfrac{a+b}{2}$ | $\dfrac{(b-a)^{2}}{12}$ | $M_X(s) = \dfrac{e^{sb} - e^{sa}}{s(b-a)}$ |
+| 参数为 $\lambda$ 的指数（Exponential with Parameter $\lambda$） | $f_X(x) = \begin{cases} \lambda e^{-\lambda x}, & x > 0 \\ 0, & \text{otherwise} \end{cases}$ | $\dfrac{1}{\lambda}$ | $\dfrac{1}{\lambda^{2}}$ | $M_X(s) = \dfrac{\lambda}{\lambda - s}, \quad (s < \lambda)$ |
 | 参数为 $\mu$ 与 $\sigma^{2} > 0$ 的正态（Normal with Parameters $\mu$ and $\sigma^{2} > 0$） | $f_X(x) = \dfrac{1}{\sqrt{2\pi}\,\sigma} e^{-(x-\mu)^{2}/2\sigma^{2}}$ | $\mu$ | $\sigma^{2}$ | —（源末印出） |
 
 > <span style="color:#7f8c8d;">[原页 OCR 碎裂] 源在 Exponential 一行内嵌了累积分布 $F_X(x) = \begin{cases} 1 - e^{-\lambda x}, & x > 0 \\ 0, & \text{otherwise} \end{cases}$（OCR 中为 "Fx (x)" 与 "if x > "、"otherw Ise" 碎裂形），故第 4 行补充说明如下。Normal 变换 $M_X(s)$ 源未印出，占位"—"不臆造。`Alx (s}`、`fx} (s)` 均为 $M_X(s)$ 之 OCR 形。</span>

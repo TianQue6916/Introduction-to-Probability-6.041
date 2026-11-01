@@ -765,7 +765,7 @@ E[Y_n] = P(X < 1/n)\, E[Y_n \mid X < 1/n] = \tfrac{1}{n}\cdot n = 1,
 
 for all $n$.
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 35 末尾那个「$Y_n\to0$ 逐点成立而 $E[Y_n]\equiv1$」的例子，是全书对「期望收敛」与「依概率收敛」之鸿沟的当头一棒。第一性原理：$Y_n=n$（当 $X<1/n$）、否则为 $0$，对几乎所有样本 $Y_n$ 最终恒为 0（因为 $X>0$），但期望 $E[Y_n]=(1/n)\cdot n=1$ 恒定不变——逐点极限与期望极限可以完全不同，二者根本是两个叠加次序。命名模板：把这种「逐点收敛到 0、期望却永远等于 1」的序列称作「爱心小尖峰（spike）」，它本质是个可积性不足的「移动高原」；由此而生的教训是：不能拿「$E[V_n]/n\to\pi_s$」当作「$V_n/n\to\pi_s$」的论据。跨课程（实分析 / 测度论）：这正是 Fatou 引理和 Lebesgue 控制收敛定理存在的理由——「$\lim\int\ne\int\lim$」除非有控制或单调性；而 (a)(b) 问本身能成立，靠的是逐条轨迹上的模进（$Y_k\le n<Y_{k+1}$）与强数定律，压根没碰期望。反例：若试图用「期望收敛＋马尔可夫性质」去硬推，只会被这个反例打脸——正确的通路是逐轨迹的收敛论证。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 35 末尾那个「$Y_n\to0$ 逐点成立而 $E[Y_n]\equiv1$」的例子，是全书对「期望收敛」与「依概率收敛」之鸿沟的当头一棒。第一性原理：$Y_n=n$（当 $X<1/n$）、否则为 $0$，对几乎所有样本 $Y_n$ 最终恒为 0（因为 $X>0$），但期望 $E[Y_n]=(1/n)\cdot n=1$ 恒定不变——逐点极限与期望极限可以完全不同，二者根本是两个叠加次序。命名模板：把这种「逐点收敛到 0、期望却永远等于 1」的序列称作「爱心小尖峰（spike）」，它本质是个可积性不足的「移动高原」；由此而生的教训是：不能拿「$E[V_n]/n\to\pi_s$」当作「$V_n/n\to\pi_s$」的论据。跨课程（实分析 / 测度论）：这正是 Fatou 引理和 Lebesgue 控制收敛定理存在的理由——「$\lim\int\ne\int\lim$」除非有控制或单调性；而 (a)(b) 问本身能成立，靠的是逐条轨迹上的模进（$Y_k\le n\lt Y_{k+1}$）与强数定律，压根没碰期望。反例：若试图用「期望收敛＋马尔可夫性质」去硬推，只会被这个反例打脸——正确的通路是逐轨迹的收敛论证。
 
 ---
 
@@ -812,7 +812,7 @@ There are $m$ users who share a computer system. Each user alternates between "t
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 39（转移速率等值情形）**</span>
 
-$\*$ Consider a continuous-time Markov chain in which the transition rates $v_i$ are the same for all $i$. Assume that the process has a single recurrent class.
+$\ast$ Consider a continuous-time Markov chain in which the transition rates $v_i$ are the same for all $i$. Assume that the process has a single recurrent class.
 (a) Explain why the sequence $Y_n$ of transition times form a Poisson process.
 (b) Show that the steady-state probabilities of the Markov chain $X(t)$ are the same as the steady-state probabilities of the embedded Markov chain $X_n$.
 
@@ -1146,7 +1146,7 @@ f_{\Theta}(\theta)\, f_{X|\Theta}(x \mid \theta)
 
 且当 $\theta < x$ 或 $\theta > 1$ 时，$f_{\Theta|X}(\theta \mid x) = 0$。
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 后验「当 $\theta < x$ 或 $\theta > 1$ 时为零」这一行，常常比整页的密度公式更值钱——它说的是：一次迟到 $x$ 就足以把 $\theta$ 的一切小于 $x$ 的候选直接排除。第一性原理：参数 $\theta$ 是 $[0,X]$ 的上界，而观测 $X \le \theta$，所以「$\theta \ge X$」是这个模型里刻进模型的硬约束（structural constraint），与概率无关，反映的是支撑（support）结构本身携带的信息。命名模板：把「观测把参数可能域切掉一块」称作支撑截断（support truncation），是贝叶斯里先验与似然支撑不交叠时的必然结果。跨课程（实分析 / 测度论）：后验在 $\theta<x$ 处为 $0$，本质是「先验 $[0,1]$ 与似然支撑 $[x,\theta]$ 交叠后剩 $[x,1]$」这一交集在起作用；这也是为什么 Rényi/实变里要强调 density 的支撑——支撑不同会影响积分区域而不只影响函数值。反例：不要被「一次观测排除掉所有 $\theta<x$」误导成「观测越极端知识越多」——被排除的只是 $\theta$ 的上界方向，正确结论是 $\max$ 观测（订单统计）成了这条链的天然充分统计量，多看几次到的仍是同一个下缘截断，只是截得更紧。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 后验「当 $\theta < x$ 或 $\theta > 1$ 时为零」这一行，常常比整页的密度公式更值钱——它说的是：一次迟到 $x$ 就足以把 $\theta$ 的一切小于 $x$ 的候选直接排除。第一性原理：参数 $\theta$ 是 $[0,X]$ 的上界，而观测 $X \le \theta$，所以「$\theta \ge X$」是这个模型里刻进模型的硬约束（structural constraint），与概率无关，反映的是支撑（support）结构本身携带的信息。命名模板：把「观测把参数可能域切掉一块」称作支撑截断（support truncation），是贝叶斯里先验与似然支撑不交叠时的必然结果。跨课程（实分析 / 测度论）：后验在 $\theta\lt x$ 处为 $0$，本质是「先验 $[0,1]$ 与似然支撑 $[x,\theta]$ 交叠后剩 $[x,1]$」这一交集在起作用；这也是为什么 Rényi/实变里要强调 density 的支撑——支撑不同会影响积分区域而不只影响函数值。反例：不要被「一次观测排除掉所有 $\theta\lt x$」误导成「观测越极端知识越多」——被排除的只是 $\theta$ 的上界方向，正确结论是 $\max$ 观测（订单统计）成了这条链的天然充分统计量，多看几次到的仍是同一个下缘截断，只是截得更紧。
 
 现在考虑一个涉及前 $n$ 次约会的变体。假设朱丽叶每次都迟到一段随机的时长 $X_1, \ldots, X_n$，这些时长在给定 $\Theta = \theta$ 的条件下，都在区间 $[0, \theta]$ 上均匀分布，并且条件相互独立（conditionally independent）。记 $X = (X_1, \ldots, X_n)$，$x = (x_1, \ldots, x_n)$。与 $n = 1$ 的情形类似，我们得到
 

@@ -1267,7 +1267,7 @@ f_{X\mid C}(x) = \int_{-\infty}^{\infty} f_{X,Y\mid C}(x,y)\, dy .
 
 我们最后指出，还有一版涉及条件 PDF 的全概率定理（total probability theorem）：若事件 $A_1, A_2, \dots, A_n$ 构成样本空间的一个划分（form a partition of the sample space），则 [原页此处续至下一页] ……
 
-> <span style="color:#7f8c8d;">[原页此处若干独立碎片（如 "$& A$ $\,'\,\cup\ldots$"、".I" 等）无法解码为完整句子，已在正文以「OCR 损坏」占位标记；本页为教材 p.166，右上无独立节标题，属于第 3.5 节（条件作用）内文并承接上一页 Example 3.13 的延续。]</span>
+> <span style="color:#7f8c8d;">[原页此处若干独立碎片（如 "\$& A\$ \$\,'\,\cup\ldots\$"、".I" 等）无法解码为完整句子，已在正文以「OCR 损坏」占位标记；本页为教材 p.166，右上无独立节标题，属于第 3.5 节（条件作用）内文并承接上一页 Example 3.13 的延续。]</span>
 
 <!-- ===== PDF p177 ===== -->
 <!-- ===== PDF p177 ===== -->
@@ -1431,7 +1431,7 @@ p_{X\mid Y}(x\mid y) = \frac{p_{X,Y}(x,\,y)}{p_Y(y)} .
 - 形如 **= $\frac{1}{\ldots}$** 的分式，其前的条件 **if $|Y|$ is …**（若 $|Y|$ 处于…）——应是在刻画"在区间之内取 $\displaystyle\frac{1}{2\sqrt{r^{2}-x^{2}}}$、在区间之外取 $0$"的条件概率密度；
 - 末端运算符 **+**、**<**（分段/不等式判别）。
 
-由本例的标准推导，对固定的 $x$ 且 $|x|<r$，条件于 $X=x$ 时，$Y$ 在弦长区间 $\left[-\sqrt{r^{2}-x^{2}},\,\sqrt{r^{2}-x^{2}}\right]$ 上均匀分布，即
+由本例的标准推导，对固定的 $x$ 且 $|x|\lt r$，条件于 $X=x$ 时，$Y$ 在弦长区间 $\left[-\sqrt{r^{2}-x^{2}},\,\sqrt{r^{2}-x^{2}}\right]$ 上均匀分布，即
 
 ```math
 f_{Y\mid X}(y\mid x) = \frac{1}{2\sqrt{r^{2}-x^{2}}}, \qquad \text{当 } |y|\le\sqrt{r^{2}-x^{2}}.

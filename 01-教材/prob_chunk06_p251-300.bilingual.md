@@ -665,7 +665,7 @@ Pat and Nat are dating, and all of their dates are scheduled to start at 9 p.m. 
 
 A retired professor comes to the office at a time which is uniformly distributed between 9 a.m. and 1 p.m., performs a single task, and leaves when the task is completed. The duration of the task is exponentially distributed with parameter $\lambda(y) = \dfrac{1}{5 - y}$, where $y$ is the length of the time interval between 9 a.m. and the time of his arrival.
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 参数 $\lambda(y) = 1/(5 - y)$ 在 OCR 中被拆成孤立分行的 "$,X(y) = ( 5 - y)" 与 "1/"；本式已按语义还原为 $\lambda(y) = \dfrac{1}{5 - y}$，最终式请以原书为准。</span>
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 参数 $\lambda(y) = 1/(5 - y)$ 在 OCR 中被拆成孤立分行的 "\$,X(y) = ( 5 - y)" 与 "1/"；本式已按语义还原为 $\lambda(y) = \dfrac{1}{5 - y}$，最终式请以原书为准。</span>
 <!-- ===== PDF p262 ===== -->
 > <span style="color:#7f8c8d;">第 4 章 Further Topics on Random Variables（随机变量的进一步专题）——习题区（Problems）中段，承接 p261。本页先续接 Problem 24 的 (a)(b)(c) 小问，随后是带 * 的 Problem 25 与 Problem 26 及其英文 Solution（Solutions 按规范保持英文原文）。</span>
 
