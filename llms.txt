@@ -1,0 +1,17 @@
+# Introduction to Probability · MIT 6.041
+
+> Bilingual (EN/中文) study pack for MIT 6.041 Probabilistic Systems Analysis: Bertsekas textbook chunks, lecture notes, recitation solutions, problem sets, exams and review material.
+
+## Lectures & textbook
+- [01-教材](01-教材): Bertsekas & Tsitsiklis Introduction to Probability, bilingual chunks covering p1-539
+- [02-讲义](02-讲义): lecture notes Lec01-Lec25 as .bilingual.md
+
+## Practice
+- [03-习题课](03-习题课): recitation solutions rec01-rec22
+- [04-习题集](04-习题集): problem sets
+- [05-考试](05-考试): midterm and final exams with solutions
+- [06-复习资料](06-复习资料): review material
+- [07-Tutorials](07-Tutorials): tutorial handouts
+
+## 备注
+- Chinese notes are interleaved with English originals; textbook copyright belongs to Athena Scientific / the authors.
