@@ -10,7 +10,7 @@
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 1**</span>
 
-> <span style="color:#2471a3;">**[solution]**</span> **(a)** 设 $X_i$ 为指示第 $i$ 个灯泡（bulb）质量的随机变量（「1」表示好灯泡，「0」表示坏灯泡）。各 $X_i$ 为相互独立的 Bernoulli（伯努利）随机变量。令
+> <span style="color:#2471a3;">**[solution]**</span> **(a)** 设 $X_i$ 为指示第 $i$ 个灯泡（bulb）是否为好灯泡的 indicator random variable（指示随机变量），取「1」表示好灯泡、「0」表示坏灯泡。各 $X_i$ 为相互独立的 Bernoulli（伯努利）随机变量。令
 >
 > ```math
 > Z_n=\frac{X_1+X_2+\cdots+X_n}{n}
@@ -36,7 +36,7 @@
 > P\bigl(|Z_{50}-p|\ge 0.1\bigr)\le\frac{\sigma^2}{50(0.1)^2}
 > ```
 >
-> 由于 $X_i$ 是 Bernoulli random variable（伯努利随机变量），其方差 $\sigma^2=p(1-p)\le \dfrac{1}{4}$。于是
+> 由于 $X_i$ 是 Bernoulli 随机变量，其方差 $\sigma^2=p(1-p)\le \dfrac{1}{4}$。于是
 >
 > ```math
 > P\bigl(|Z_{50}-p|\ge 0.1\bigr)\le\frac{1/4}{50(0.1)^2}=0.5
@@ -54,7 +54,7 @@
 > \frac{1/4}{n(0.1)^2}<0.05
 > ```
 >
-> 由此得 $n\ge 500$。注意，即使对最高的方差（即 $1/4$），$n\ge 500$ 也能保证精度指标（accuracy specification）；方差更小时，保证所需精度所需的 $n$ 也更小。例如，若 $\sigma^2=1/16$，则 $n\ge 125$ 就足够了。
+> 由此得 $n\ge 500$。注意，即使对最高的方差（即 $1/4$），$n\ge 500$ 也能保证 accuracy specification（精度指标）；方差更小时，保证所需精度所需的 $n$ 也更小。例如，若 $\sigma^2=1/16$，则 $n\ge 125$ 就足够了。
 
 ---
 
@@ -96,7 +96,7 @@
 > \lim_{n\to\infty}P\bigl(|Y_n-1|\ge\epsilon\bigr)\le\lim_{n\to\infty}\frac{n-1}{\epsilon^2}=\infty
 > ```
 >
-> 因此，我们无法通过切比雪夫不等式对 $Y_n$ 的收敛性（convergence）得出任何结论。
+> 因此，我们无法通过切比雪夫不等式对 $Y_n$ 的 convergence（收敛性）得出任何结论。
 >
 > **(c)** 对每个 $\epsilon>0$，
 >
@@ -106,9 +106,9 @@
 >
 > 因此 $Y_n$ 依概率收敛到 $0$。
 >
-> **(d)** 该命题不成立。一个反例（counterexample）就是 $Y_n$：它依概率收敛到 $0$，但其期望对一切 $n$ 都等于 $1$。
+> **(d)** 该命题不成立。一个 counterexample（反例）就是 $Y_n$：它依概率收敛到 $0$，但其期望对一切 $n$ 都等于 $1$。
 >
-> **(e)** 利用 Markov bound（马尔可夫界），
+> **(e)** <span style="color:#1e8449;">**[note]** 本小题的命题是「若 $E[(X_n-c)^2]\to 0$，则 $X_n$ 依概率收敛到 $c$」——即均方收敛蕴含依概率收敛；下文 (f) 将用反例说明其逆命题（依概率收敛蕴含均方收敛）不成立。</span> 利用 Markov bound（马尔可夫界），
 >
 > ```math
 > P\bigl(|X_n-c|\ge\epsilon\bigr)=P\bigl(|X_n-c|^2\ge\epsilon^2\bigr)\le\frac{E\bigl[(X_n-c)^2\bigr]}{\epsilon^2}
@@ -120,7 +120,7 @@
 > \lim_{n\to\infty}P\bigl(|X_n-c|\ge\epsilon\bigr)=0
 > ```
 >
-> 这就确立了依概率收敛（convergence in probability）。
+> 这就确立了依概率收敛。
 >
 > **(f)** 一个反例是 $Y_n$：$Y_n$ 依概率收敛到 $0$，但是
 >
@@ -134,7 +134,7 @@
 > \lim_{n\to\infty}E\bigl[(Y_n-0)^2\bigr]=\infty
 > ```
 >
-> 即 $Y_n$ 并不 in the mean square（依均方）收敛到 $0$。
+> 即 $Y_n$ 并不 converge in mean square（均方收敛）到 $0$。
 
 ---
 
@@ -148,6 +148,8 @@
 > \lim_{i\to\infty}P\bigl(|Y_i-0|>\epsilon\bigr)=\lim_{i\to\infty}P\Bigl(\Bigl|\frac{X_i}{i}-0\Bigr|>\epsilon\Bigr)=\lim_{i\to\infty}\bigl[P(X_i>i\epsilon)+P(X_i<-i\epsilon)\bigr]=0
 > ```
 >
+> 最后一个等号成立的原因是：$X_i$ 在 $[-1,1]$ 上均匀分布，一旦 $i$ 大到使 $i\epsilon>1$，事件 $\{X_i>i\epsilon\}$ 与 $\{X_i<-i\epsilon\}$ 就都落在区间 $[-1,1]$ 之外、不可能发生，故两项概率均为 $0$。
+>
 > **(c)** 收敛，且极限为 $0$。因为对 $\epsilon>0$，
 >
 > ```math
@@ -155,8 +157,10 @@
 > ```
 >
 > ```math
-> =\lim_{i\to\infty}\Bigl[P\bigl(X_i>\epsilon^{1/i}\bigr)+P\bigl(X_i<-(\epsilon)^{1/i}\bigr)\Bigr]=\lim_{i\to\infty}\Bigl[\frac{1-\epsilon^{1/i}}{2}+\frac{1-\epsilon^{1/i}}{2}\Bigr]=\lim_{i\to\infty}\bigl(1-\sqrt[i]{\epsilon}\bigr)=0
+> =\lim_{i\to\infty}\Bigl[P\bigl(X_i>\epsilon^{1/i}\bigr)+P\bigl(X_i<-\epsilon^{1/i}\bigr)\Bigr]=\lim_{i\to\infty}\Bigl[\frac{1-\epsilon^{1/i}}{2}+\frac{1-\epsilon^{1/i}}{2}\Bigr]=\lim_{i\to\infty}\bigl(1-\epsilon^{1/i}\bigr)=0
 > ```
+>
+> 其中第三个等号用到 $|X_i|\le 1$ 且函数 $x\mapsto x^i$ 单调：$|X_i|^i>\epsilon$ 等价于 $|X_i|>\epsilon^{1/i}$；第四个等号用到均匀分布的概率计算——对 $0<a<1$，有 $P(X_i>a)=\frac{1-a}{2}$、$P(X_i<-a)=\frac{1-a}{2}$（区间 $[-1,1]$ 总长为 $2$）；最后一步用到 $\epsilon^{1/i}\to 1$（当 $i\to\infty$）。
 
 <!-- ===== PDF p3 ===== -->
 

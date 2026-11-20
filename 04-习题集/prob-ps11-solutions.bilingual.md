@@ -18,7 +18,7 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> **(a)** 为求 MAP 估计（MAP estimate），需要找出使条件密度（conditional density）$f_{X|Y}(x\mid y)$ 最大的 $x$ 值：对其求导并令导数为零。
+> **(a)** 为求 MAP 估计（MAP estimate，即最大后验估计，maximum a posteriori estimate），需要找出使条件密度（conditional density）$f_{X|Y}(x\mid y)$ 最大的 $x$ 值：对其求导并令导数为零。
 >
 > ```math
 > f_{X|Y}(x\mid y)=\frac{p_{Y|X}(y\mid x)\cdot f_X(x)}{p_Y(y)}
@@ -73,7 +73,7 @@
 > =\frac{y+1}{1+\mu}\,f_{X|Y}(x\mid y+1).
 > ```
 >
-> 于是可求条件期望估计器（conditional expectation estimator）：
+> 于是可求条件期望估计器（conditional expectation estimator，条件期望估计器）：
 >
 > ```math
 > \hat{x}_{\mathrm{CE}}(y)=E[X\mid Y=y]=\int_0^{\infty}x\,f_{X|Y}(x\mid y)\,dx
@@ -108,7 +108,7 @@
 >
 > 由此解得 $\hat{Q}_b=\dfrac{k}{\sum_{i=1}^{k}t_i}$。这与之前求得的 MAP 估计并无不同。由于 MAP 估计是在均匀先验（uniform prior）下计算的，似然函数是后验概率的一个“缩放（scaled）”版本，二者会在相同的 $q$ 值处取得最大。
 >
-> **(b)** 由于 $\dfrac{1}{\hat{Q}_b}=\dfrac{1}{k}\sum_{i=1}^{k}T_i$，且各 $T_i$ 独立同分布，可知 $\dfrac{1}{\hat{Q}_b}$ 实际上就是一个样本均值估计器（sample mean estimator）。弱大数定律（weak law of large numbers）指出：当样本数增至无穷时，样本均值估计器收敛到真实均值，在本题中即 $1/q^{*}$。于是可将该概率的极限写为
+> **(b)** 由于 $\dfrac{1}{\hat{Q}_b}=\dfrac{1}{k}\sum_{i=1}^{k}T_i$，且各 $T_i$ 独立同分布，可知 $\dfrac{1}{\hat{Q}_b}$ 实际上就是一个样本均值估计器（sample mean estimator）。弱大数定律（weak law of large numbers，弱大数定律）指出：当样本数增至无穷时，样本均值估计器收敛到真实均值，在本题中即 $1/q^{*}$。于是可将该概率的极限写为
 >
 > ```math
 > \lim_{k\to\infty}P\left(\left|\frac{1}{\hat{Q}_b}-\frac{1}{q^{*}}\right|>\epsilon\right)
@@ -153,7 +153,7 @@
 > k\geq 4000.
 > ```
 >
-> <span style="color:#7f8c8d;">**[note]** 译者注：几何分布方差 $(1-q)/q^{2}$ 关于 $q$ 单调递减，“$q=1/2$ 时方差最大”应在题目允许的参数范围（$q\ge 1/2$）内理解。</span>
+> <span style="color:#7f8c8d;">**[note]** 译者注：几何分布（geometric distribution）方差 $(1-q)/q^{2}$ 关于 $q$ 单调递减，“$q=1/2$ 时方差最大”应在题目允许的参数范围（$q\ge 1/2$）内理解。</span>
 
 ---
 
@@ -212,7 +212,7 @@
 > =\frac{1}{\theta^{2}}\sum_{i=1}^{n}k_i-n\cdot\frac{e^{-1/\theta}}{\theta^{2}\left(1-e^{-1/\theta}\right)}=0,
 > ```
 >
-> 或者等价地，记 $\sum_{i=1}^{n}k_i=s_n$，则 $\dfrac{s_n}{n}=\dfrac{1}{e^{1/\theta}-1}$。当 $e^{1/\theta}-1\approx 1/\theta$ 时即得 $\dfrac{s_n}{n}\approx\theta$。对热体（hot body）而言，$\theta\gg 1$ 且 $e^{1/\theta}\approx 1+1/\theta$。因此，温度的极大似然估计器（maximum likelihood estimator）$\hat{\Theta}_n$ 在此极限下由光子数的样本均值给出：
+> 或者等价地，记 $\sum_{i=1}^{n}k_i=s_n$，则 $\dfrac{s_n}{n}=\dfrac{1}{e^{1/\theta}-1}$。当 $e^{1/\theta}-1\approx 1/\theta$ 时即得 $\dfrac{s_n}{n}\approx\theta$。对热体（hot body）而言，$\theta\gg 1$ 且 $e^{1/\theta}\approx 1+1/\theta$。因此，温度的极大似然估计器（maximum likelihood estimator，极大似然估计器）$\hat{\Theta}_n$ 在此极限下由光子数的样本均值给出：
 >
 > ```math
 > \hat{\Theta}_n=\frac{1}{n}\sum_{i=1}^{n}K_i.

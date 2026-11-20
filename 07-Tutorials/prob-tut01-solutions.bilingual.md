@@ -12,7 +12,7 @@
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 1**</span>
 
-> <span style="color:#2471a3;">**[solution]**</span> 若 $A\subset B$，则 $P(B\cap A)=P(A)$。但我们知道，要使 $A$ 与 $B$ 独立（independence，独立性），必须有 $P(B\cap A)=P(A)P(B)$。因此，$A$ 与 $B$ 独立当且仅当（if and only if）$P(B)=1$ 或 $P(A)=0$。例如，当 $B$ 为全集（universe，即整个样本空间）或 $A$ 为空集时，就会出现这种情况。
+> <span style="color:#2471a3;">**[solution]**</span> 若 $A\subset B$（即 $A$ 是 $B$ 的子集，$A$ 中的每个结果都落在 $B$ 里），则交集 $B\cap A$ 就是 $A$ 本身，故 $P(B\cap A)=P(A)$。但我们知道，要使 $A$ 与 $B$ independent（独立），必须有 $P(B\cap A)=P(A)P(B)$。因此，$A$ 与 $B$ independent（独立）当且仅当（if and only if）$P(B)=1$ 或 $P(A)=0$。例如，当 $B$ 为 universe（全集，即整个样本空间）或 $A$ 为空集时，就会出现这种情况。
 
 ---
 
@@ -21,7 +21,7 @@
 > <span style="color:#2471a3;">**[solution]**</span> 本题与教材（textbook）例 1.24（Example 1.24，第 40 页）性质类似。为了计算各 sub-system（子系统）的成功概率，我们利用该例中推导出的下面两条性质：
 >
 > - 若一个 serial（串联）子系统包含 $m$ 个成功概率分别为 $p_1,p_2,\ldots,p_m$ 的 component（部件），则整个子系统成功的概率为 $P(\text{whole system succeeds})=p_1p_2p_3\cdots p_m$；
-> - 若一个 parallel（并联）子系统包含 $m$ 个成功概率分别为 $p_1,p_2,\ldots,p_m$ 的部件，则整个子系统成功的概率为 $P(\text{whole system succeeds})=1-(1-p_1)(1-p_2)(1-p_3)\cdots(1-p_m)$。
+> - 若一个 parallel（并联）子系统包含 $m$ 个成功概率分别为 $p_1,p_2,\ldots,p_m$ 的 component（部件），则整个子系统成功的概率为 $P(\text{whole system succeeds})=1-(1-p_1)(1-p_2)(1-p_3)\cdots(1-p_m)$。
 >
 > 设 $P(X\to Y)$ 表示 node（节点）$X$ 与 $Y$ 之间 successful connection（成功接通）的概率。由于 $A\to C$、$C\to E$、$E\to B$ 三段为串联（in series），故
 >
@@ -46,7 +46,7 @@
 > P(A\to B)=p\Bigl(1-(1-p)\Bigl(1-\bigl(1-(1-p)^3\bigr)p\Bigr)\Bigr)\Bigl(1-(1-p)^2\Bigr).
 > ```
 >
-> <span style="color:#1e8449;">**[mathtip]**</span> 串联系统要成功，须每个部件都成功，故成功概率为各部件成功概率之积（用到独立性）；并联系统失败当且仅当所有支路同时失败，故成功概率为 $1-\prod_i(1-p_i)$。对整个网络自内向外逐层套用这两条性质即可。
+> <span style="color:#1e8449;">**[mathtip]**</span> 一个 serial（串联）系统要成功，须其中每个 component（部件）都成功，故成功概率为各 component（部件）成功概率之积（用到 independence（独立性））；一个 parallel（并联）系统失败当且仅当所有 branch（支路）同时失败，故成功概率为 $1-\prod_i(1-p_i)$。对整个网络自内向外逐层套用这两条性质即可。
 
 ---
 
@@ -55,6 +55,8 @@
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 3. The Chess Problem（国际象棋问题）**</span>
 
 <span style="color:#1e8449;">**[note]**</span> 原文件此题仅含解答、未附题面；事件记号沿用原文缩写：2nd Rnd Req（需要进行第二轮）、Challenger（挑战者）、Champ（夺冠）、One Game（仅赛一局）。
+
+<span style="color:#1e8449;">**[note]**</span> 本解答的题面未随文件给出，为理解下列概率中为何出现平方项（如 $(0.6)^2$、$(0.5)^2$），据数字反推赛制如下：Al 为现任冠军，Bo 与 Ci 先进行资格赛（first round）争夺挑战者（Challenger）资格，Bo 对 Ci 的单局胜率为 $0.6$；资格赛与随后的冠军赛均按「连胜两局者胜」进行，故 Bo 连胜两局成为挑战者的概率为 $(0.6)^2=0.36$、Ci 为 $(0.4)^2=0.16$。挑战者再与 Al 打冠军赛，Bo 对 Al 的单局胜率为 $0.5$、Ci 对 Al 为 $0.3$，挑战者连胜两局才夺冠，故 Bo 夺冠（Champ）概率为 $(0.6)^2(0.5)^2$、Ci 夺冠为 $(0.4)^2(0.3)^2$；事件「2nd Rnd Req」（需要进行第二轮）即资格赛以 $2:0$ 分出胜负、从而进入冠军赛，概率为 $(0.6)^2+(0.4)^2=0.52$。〔待核：资格赛打成 $1:1$（概率 $2\times0.6\times0.4=0.48$）时如何产生挑战者，以及「One Game（仅赛一局）」在冠军赛中的确切规则，题面缺失无法确定〕
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >

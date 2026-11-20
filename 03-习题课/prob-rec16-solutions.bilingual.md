@@ -12,9 +12,9 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> **（a）（i）** $X$ 的 PDF 图形见图 1。PDF 必须积分为 1，所以 $f_X(x)$ 之下的面积 $2c+c$ 必须等于 1，因此 $c=1/3$。
+> **（a）（i）** $X$ 的 PDF（概率密度函数，probability density function）图形见图 1。该 PDF 必须积分为 1，所以 $f_X(x)$ 之下的面积 $2c+c$ 必须等于 1，因此 $c=1/3$。
 >
-> PDF 的积分（integration of the PDF）：
+> 对 PDF 求积分（integration of the PDF）：
 >
 > ```math
 > \int_2^4 f_X(x)\,dx = 1
@@ -58,11 +58,11 @@
 
 > **（iv）** 令 $Y = 2X+1$。$Y$ 的取值范围不再是 2 到 4，而是 $5\le y\le 9$。$Y$ 的 PDF 形状应与 $X$ 的 PDF 相同，但要按某一比例缩放使其归一化（normalize）到 1。$Y$ 的范围是 $X$ 的两倍，所以密度减半。图形见下方图 2。
 >
-> 由于 $Y=g(X)$ 是 $X$ 的线性函数（linear function），可以使用线性函数的导出分布（derived distribution）公式：$Y = 2X+1$，故当 $5\le y\le 9$ 时 $f_Y(y) = \frac{1}{2}f_X\!\left(\frac{y-1}{2}\right)$。图 2 与该分布吻合。
+> 由于 $Y=g(X)$ 是 $X$ 的线性函数（linear function），可以使用线性函数的导出分布（derived distribution）公式：$Y = 2X+1$，故当 $5\le y\le 9$ 时 $f_Y(y) = \frac{1}{2}f_X\!\left(\frac{y-1}{2}\right)$。这里的系数 $\frac{1}{2}$ 来自线性变换斜率 $2$ 的倒数：$Y$ 被“拉开”成两倍宽，为保证总面积仍为 1，密度必须按 $\frac{1}{2}$ 缩放。图 2 与该分布吻合。
 >
 > <span style="color:#7f8c8d;">【图】原页此处为 Figure 2：$Y=2X+1$ 的 PDF（PDF of $Y=2X+1$）——分段均匀密度，在 $5\le y\le 7$ 上高度为 $c$、在 $7\le y\le 9$ 上高度为 $c/2$，横轴为 $y$。原图由后处理统一插入。</span>
 >
-> **（b）** 首先计算联合 PDF（joint PDF）。它应在区域 $2\le x\le 4$、$2\le w\le 4$ 上有非零的联合密度；但它并不在整个正方形上都均匀——这种情况课上已多次见到。由于 $X$ 的密度分段均匀，该正方形被划分成两个各自具有均匀联合密度的矩形。$X$ 与 $W$ 相互独立（independent），所以联合密度就是两个边缘密度（marginal）的乘积：
+> **（b）** 首先计算联合 PDF（joint PDF）。它应在区域 $2\le x\le 4$、$2\le w\le 4$ 上有非零的联合密度；但它并不在整个正方形上都均匀——这种情况课上已多次见到。由于 $X$ 的密度分段均匀，该正方形被划分成两个各自具有均匀联合密度的矩形。$X$ 与 $W$ 相互独立（independent），所以联合密度就是两个边缘密度（marginal）的乘积。这里 $W$ 是在 $[2,4]$ 上均匀分布的另一个随机变量，故其边缘密度 $f_W(w)=1/2$（$2\le w\le 4$）：
 >
 > ```math
 > f_{X,W}(x,w) = f_X(x)\,f_W(w) = f_X(x)\cdot 1/2 =
@@ -93,7 +93,7 @@
 > = \frac{1}{3}\int_2^3(4-x)\,dx + \frac{1}{6}\int_3^4(4-x)\,dx = 7/12
 > ```
 >
-> **（c）** 这里要小心：$T$ 是秒表测得的比赛时间，而不只是被高估的那段（多计的）时间；还要记住 $T$ 与 $W$ 相互独立。
+> **（c）** 这里要小心：$T$ 是秒表测得的比赛时间，而不只是被高估的那段（多计的）时间；还要记住 $T$ 与 $W$ 相互独立。下面用条件密度（conditional PDF）的定义求 $W$ 在 $T=3$ 之下的分布：
 >
 > ```math
 > f_{W|T}(w\mid 3) = \frac{f_{W,T}(w,3)}{f_T(3)}
@@ -110,8 +110,8 @@
 > ```math
 > f_{W|T}(w\mid 3) =
 > \begin{cases}
-> 10, & \text{若 } (3-1/10)\le w\le 3 \text{ 且 } t=3,\\[2pt]
-> 0, & \text{其他情形.}
+> 10, & \text{if } (3-1/10)\le w\le 3 \text{ and } t=3,\\[2pt]
+> 0, & \text{otherwise.}
 > \end{cases}
 > ```
 >
@@ -129,9 +129,9 @@
 > P\!\left(N>\frac{5}{60}\right) = 1 - P\!\left(N<\frac{5}{60}\right) = 1 - P\!\left(\frac{N-1/60}{2/60} < \frac{5/60-1/60}{2/60}\right) = 1 - \Phi(2).
 > ```
 >
-> 查表得 $\Phi(2) = 0.9772$。所以 $P\!\left(N>\frac{5}{60}\right) = 1 - 0.9772 = 0.0028$。
+> 其中 $\Phi$ 是标准正态分布的累积分布函数（CDF），即 $\Phi(z)=P(Z\le z)$，$Z$ 为标准正态随机变量。查表得 $\Phi(2) = 0.9772$。所以 $P\!\left(N>\frac{5}{60}\right) = 1 - 0.9772 = 0.0028$。
 >
-> **（e）** 用导出分布（derived distributions）求出 $S$ 的 CDF，再对 $s$ 求导，得到 $S$ 的 PDF。$S$ 的范围由 $W$ 的范围决定：由于 $W$ 的 PDF 仅在 $2\le w\le 4$ 上非零，故 $S$ 的 PDF 仅在 $24/4\le s\le 24/2$ 上非零。
+> **（e）** 用导出分布（derived distributions）求出 $S$ 的 CDF，再对 $s$ 求导，得到 $S$ 的 PDF。这里 $S = 24/W$ 是题面给出的 $S$ 与 $W$ 的反比关系〔待核：常数 $24$ 的物理含义（如某段固定距离）〕。$S$ 的范围由 $W$ 的范围决定：由于 $W$ 的 PDF 仅在 $2\le w\le 4$ 上非零，故 $S$ 的 PDF 仅在 $24/4\le s\le 24/2$ 上非零。
 >
 > ```math
 > P(S\le s) = P(24/W\le s) = P(W\ge 24/s) = 1 - F_W(24/s) = 1 - \int_2^{24/s} f_W(w)\,dw = 1 - (12/s - 1) = 2 - 12/s
@@ -142,8 +142,8 @@
 > ```math
 > f_S(s) = \frac{d}{ds}\left(2 - \frac{12}{s}\right) =
 > \begin{cases}
-> 12/s^2, & \text{若 } 6\le s\le 12,\\[2pt]
-> 0, & \text{其他情形.}
+> 12/s^2, & \text{if } 6\le s\le 12,\\[2pt]
+> 0, & \text{otherwise.}
 > \end{cases}
 > ```
 
@@ -155,7 +155,7 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> **（a）（i）** 这是一个随机和（random sums）问题，所以 $A$ 的均值与方差要用重期望定律（law of iterated expectations）与全方差定律（law of total variance）来求。
+> **（a）（i）** 这是一个随机和（random sums）问题——$A$ 是 $N$ 个独立同分布的 $A_i$ 之和，即 $A=A_1+\cdots+A_N$，而加项个数 $N$ 本身也是随机变量——所以 $A$ 的均值与方差要用重期望定律（law of iterated expectations）与全方差定律（law of total variance）来求。
 >
 > ```math
 > \mu_a = E[A] = E\big[E[A\mid N]\big] = E\big[N\,E[A_i]\big] = E[A_i]\,E[N] = 1/p.
@@ -203,7 +203,7 @@
 > P(N=1\mid A=a) = \frac{P(A=a,\,N=1)\,\delta}{P(A=a)\,\delta},
 > ```
 >
-> 其中 $P(A=a)\,\delta = f_A(a)$ 已在 (a) 部分求出，而联合项为 $P(A=a)\,P(N=1)\,\delta = f_A(a)\,P_N(1)$。
+> 其中 $\delta$ 是一个无穷小宽度——对连续随机变量 $A$，$f_A(a)\,\delta$ 近似等于 $A$ 落在窄区间 $[a,\,a+\delta]$ 内的概率，分子分母同乘 $\delta$ 后再同时约去，就转成了密度之比。$P(A=a)\,\delta = f_A(a)$ 已在 (a) 部分求出，而联合项为 $P(A=a)\,P(N=1)\,\delta = f_A(a)\,P_N(1)$。
 >
 > 于是
 >
@@ -211,7 +211,7 @@
 > P(N=1\mid A=a) = \frac{\dfrac{1}{3\sqrt{2\pi}}\,e^{-(a-1)^2/2}}{\dfrac{1}{3\sqrt{2\pi}}\,e^{-(a-1)^2/2} + \dfrac{2}{3\sqrt{4\pi}}\,e^{-(a-2)^2/4}}.
 > ```
 >
-> **（c）** 相等。首先可以验证：它们都是随机变量。$A$ 与 $B$ 彼此并不独立，因为二者的随机和都依赖于随机变量 $N$；但若以 $N$ 为条件，则 $A$ 与 $B$ 独立（也就是说，它们条件独立（conditionally independent））。这正是等式右边所陈述的含义吗？只要 $A\mid N$ 与 $A\mid(B,N)$ 的 PDF 相等，这两个期望就相等。一旦 $N$ 已知，
+> **（c）** 相等——本小题要判定的是 $E[A\mid N]$ 与 $E[A\mid B,N]$ 这两个条件期望是否相等。首先可以验证：它们都是随机变量。$A$ 与 $B$ 彼此并不独立，因为二者的随机和都依赖于随机变量 $N$；但若以 $N$ 为条件，则 $A$ 与 $B$ 独立（也就是说，它们条件独立（conditionally independent））。这正是等式右边所陈述的含义吗？只要 $A\mid N$ 与 $A\mid(B,N)$ 的 PDF 相等，这两个期望就相等。一旦 $N$ 已知，
 
 <!-- ===== PDF p6 ===== -->
 

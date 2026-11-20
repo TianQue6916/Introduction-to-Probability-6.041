@@ -110,7 +110,7 @@ f_X(x) = \begin{cases} \lambda e^{-\lambda x}, & \text{if } x \ge 0 \\[2pt] 0, &
 E[X] = \frac{1}{\lambda}, \qquad \mathrm{Var}(X) = \frac{1}{\lambda^2}
 ```
 
-- Memoryless Property（无记忆性）：在给定 $X > t$ 的条件下，$X - t$ 仍是参数为 $\lambda$ 的指数随机变量（exponential RV）。
+- Memoryless Property（无记忆性）：在给定 $X > t$ 的条件下，$X - t$ 仍是参数为 $\lambda$ 的指数随机变量（exponential RV，指数随机变量）。
 
 ---
 
@@ -177,7 +177,7 @@ Joint CDF（联合 CDF）：$F_{X,Y}(x, y) = P(X \le x,\, Y \le y)$。
 
 ---
 
-<span style="color:#2471a3;">**[section]**</span>　<span style="color:#c0392b;">**Independence（独立性）**</span>
+<span style="color:#2471a3;">**[section]**</span>　<span style="color:#1e8449;">**Independence（独立性）**</span>
 
 By definition（按定义）：$X$ 与 $Y$ 相互独立（independent）$\iff f_{X,Y}(x, y) = f_X(x)\, f_Y(y)$，对一切 $(x, y)$ 成立。
 
@@ -333,7 +333,7 @@ f_W(w) = \int_{-\infty}^{\infty} f_X(x)\, f_Y(w - x)\,dx
 
 （计算卷积的图解步骤）
 
-- 把两个 PMF（或 PDF）上下叠放在一起（put the PMFs or PDFs on top of each other）；
+- 把两个 PMF（probability mass function，概率质量函数；离散随机变量的概率分布，对应连续情形的 PDF）（或 PDF）上下叠放在一起（put the PMFs or PDFs on top of each other）；
 - 翻转（flip）$Y$ 的 PMF（或 PDF）；
 - 把翻转后的 $Y$ 的 PMF（或 PDF）平移（shift）$w$；
 - 逐点相乘再相加（cross-multiply and add），或等价地计算积分（evaluate the integral）。

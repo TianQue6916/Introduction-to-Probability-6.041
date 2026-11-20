@@ -12,7 +12,7 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> **1.**（10 分）设 $R_i$ 为 Stephen 在第 $i$ 个红灯处花费的时间。$R_i$ 是参数 $p=\dfrac{1}{3}$ 的 Bernoulli random variable（伯努利随机变量），其 PMF（概率质量函数）为：
+> **1.**（10 分）设 $R_i$ 为 Stephen 在第 $i$ 个红灯处花费的时间。$R_i$ 是参数 $p=\dfrac{1}{3}$ 的 Bernoulli random variable（伯努利随机变量），其 PMF（概率质量函数，probability mass function）为：
 >
 > ```math
 > P_{R_i}(r)=
@@ -35,7 +35,7 @@
 > T_S=18+\sum_{i=1}^{5}R_i.
 > ```
 >
-> $T_S$ 是一个 shifted binomial（平移二项分布），试验次数 $n=5$、参数 $p=1/3$。于是 $T_S$ 的 PMF 为：
+> $T_S$ 是一个 shifted binomial（平移二项分布），试验次数 $n=5$、参数 $p=1/3$。于是 $T_S$ 的 PMF（概率质量函数）为：
 >
 > ```math
 > P_{T_S}(k)=
@@ -58,7 +58,7 @@
 
 > **Problem 1（续）**
 >
-> **2.（续）** 为求条件期望，先计算如下 conditional PMF（条件概率质量函数）：
+> **2.（续）** 为求条件期望，先计算如下 conditional PMF（条件概率质量函数，conditional probability mass function）：
 >
 > ```math
 > P_{N\mid T_S\le 19}(n\mid T_S\le 19)=
@@ -97,7 +97,7 @@
 > =\frac{\dbinom{3}{2}\dbinom{2}{1}}{\dbinom{5}{3}}=\frac{3}{5}.
 > ```
 >
-> **5.**（5 分）设 $T_J$ 为 Jon 通勤时间的总时长（单位：分钟）。Jon 通勤时间的 PMF 为：
+> **5.**（5 分）设 $T_J$ 为 Jon 通勤时间的总时长（单位：分钟）。Jon 通勤时间的 PMF（概率质量函数）为：
 >
 > ```math
 > P_{T_J}(\ell)=
@@ -141,7 +141,7 @@
 > {\dfrac{1}{4}\left[1-\dbinom{5}{2}\left(\dfrac{1}{3}\right)^{2}\left(\dfrac{2}{3}\right)^{3}\right]+\dfrac{1}{4}\,\dbinom{5}{2}\left(\dfrac{1}{3}\right)^{2}\left(\dfrac{2}{3}\right)^{3}}.
 > ```
 >
-> **7.**（10 分）所求概率为 $P(T_S\le T_J)$。可以用 total probability theorem（全概率定律），以 Jon 的通勤时长（即 Jon 在车站的等待时间）为条件来计算：若 Jon 的通勤为 20 分钟（即 $X=0$），则 Stephen 最多遇到 2 个红灯就能满足 $T_S\le T_J$；类似地，若 Jon 的通勤为 21 分钟（即 $X=1$），Stephen 最多可遇到 3 个红灯，依此类推。
+> **7.**（10 分）所求概率为 $P(T_S\le T_J)$。可以用 total probability theorem（全概率定律）来计算，以 Jon 的通勤时长（即 Jon 在车站的等待时间）为条件：若 Jon 的通勤为 20 分钟（即 $X=0$），则 Stephen 最多遇到 2 个红灯就能满足 $T_S\le T_J$；类似地，若 Jon 的通勤为 21 分钟（即 $X=1$），Stephen 最多可遇到 3 个红灯，依此类推。
 >
 > ```math
 > \begin{aligned}
@@ -151,7 +151,7 @@
 > \end{aligned}
 > ```
 >
-> 下面给出另一种做法。我们先计算 Stephen 与 Jon 通勤时间的 joint PMF（联合概率质量函数）$P_{T_S,T_J}(k,\ell)$。由独立性，$P_{T_S,T_J}(k,\ell)=P_{T_S}(k)P_{T_J}(\ell)$。因此
+> 下面给出另一种做法。我们先计算 Stephen 与 Jon 通勤时间的 joint PMF（联合概率质量函数，joint probability mass function）$P_{T_S,T_J}(k,\ell)$。由独立性，$P_{T_S,T_J}(k,\ell)=P_{T_S}(k)P_{T_J}(\ell)$。因此
 >
 > ```math
 > \begin{aligned}
@@ -207,7 +207,7 @@
 >
 > 这就说明 $A$ 与 $B^c$ 相互独立。
 >
-> **2.**（10 分）**Not Always True（不恒成立）。** 利用下图，令 $C=A\cap B$，并设 $P(A)>P(C)$、$P(B)>P(C)$。则 conditional probability（条件概率）$P(A\cap B\mid C)=1$；同时 $P(A\mid C)=1$、$P(B\mid C)=1$。由于 $P(A\cap B\mid C)=P(A\mid C)P(B\mid C)$，所以 $A$ 与 $B$ 在给定第三个事件 $C$ 的条件下是 conditionally independent（条件独立的）。而在给定 $C^c$ 时，$A$ 与 $B$ 互斥（disjoint），也就是说 $A$ 与 $B$ 不独立。
+> **2.**（10 分）**Not Always True（不恒成立）。** 利用下图，令 $C=A\cap B$，并设 $P(A)>P(C)$、$P(B)>P(C)$。则 conditional probability（条件概率）$P(A\cap B\mid C)=1$；同时 $P(A\mid C)=1$、$P(B\mid C)=1$。由于 $P(A\cap B\mid C)=P(A\mid C)P(B\mid C)$，所以 $A$ 与 $B$ 在给定第三个事件 $C$ 的条件下是 conditionally independent（条件独立的）。而在给定 $C^c$ 时，$A$ 与 $B$ 互斥（disjoint，即 $A\cap B\cap C^c=\varnothing$），也就是说 $A$ 与 $B$ 在给定 $C^c$ 的条件下不独立。
 >
 > <span style="color:#7f8c8d;">【图】原页此处为 Venn 图/示意图（三个事件 $A$、$B$、$C$ 的关系图，其中 $C=A\cap B$，且 $A$、$B$ 在 $C^c$ 内互斥）。原图由后处理统一插入。</span>
 >
@@ -221,7 +221,7 @@
 
 > **Problem 2（续）**
 >
-> **2.（续）** 在给定 $C^c$ 的条件下，$A$ 与 $B$ 不独立，因为我们手里可能是 $p=\frac{1}{3}$ 的硬币，也可能是 $p=\frac{2}{3}$ 的硬币；知道 $A$ 的结果会改变我们对第二次抛掷结果的判断（beliefs）。
+> **2.（续）** 在给定 $C^c$ 的条件下，$A$ 与 $B$ 不独立，因为我们手里可能是 $p=\frac{1}{3}$ 的硬币，也可能是 $p=\frac{2}{3}$ 的硬币；知道 $A$ 的结果会改变我们对第二次抛掷结果的判断（beliefs，即信念/后验判断）。
 >
 > ```math
 > P(B\mid A\cap C^c)=\frac{P(B\cap A\cap C^c)}{P(A\cap C^c)}

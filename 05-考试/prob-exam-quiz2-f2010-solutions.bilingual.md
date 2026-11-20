@@ -20,9 +20,13 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
+> 用期望（expectation）的线性性质逐项拆开，再代入指数随机变量（exponential random variable）的均值公式 $E[Y] = 1/\lambda = 1/2$：
+>
 > ```math
 > E[X - 3Y] = E[X] - 3\,E[Y] = 2 - 3\cdot\frac{1}{2} = \frac{1}{2},
 > ```
+>
+> 由于 $X$ 与 $Y$ 独立，协方差（covariance）项为 0，方差（variance）可拆开相加；其中均匀随机变量（uniform random variable）$X$ 的方差为 $\dfrac{(4-0)^2}{12}$，指数随机变量（exponential random variable）$Y$ 的方差为 $\dfrac{1}{\lambda^2} = \dfrac{1}{2^2}$：
 >
 > ```math
 > \mathrm{var}(X - 3Y) = \mathrm{var}(X) + 9\,\mathrm{var}(Y) = \frac{(4-0)^2}{12} + 9\cdot\frac{1}{2^2} = \frac{43}{12}.
@@ -32,13 +36,13 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> $X$ 与 $Y$ 的 PDF 分别为：
+> $X$ 与 $Y$ 的概率密度函数（probability density function，PDF）分别为：
 >
 > ```math
 > f_X(x) = \begin{cases} 1/4, & \text{若 } 0 \le x \le 4, \\[4pt] 0, & \text{其他情形}, \end{cases} \qquad\qquad f_Y(y) = \begin{cases} 2e^{-2y}, & \text{若 } y \ge 0, \\[4pt] 0, & \text{其他情形}. \end{cases}
 > ```
 >
-> 利用全概率定理（total probability theorem），
+> 利用全概率定理（total probability theorem）对 $X$ 取条件，再借助 $Y$ 的累积分布函数（cumulative distribution function，CDF）$F_Y$ 写出 $P(Y \ge x) = 1 - F_Y(x) = e^{-2x}$：
 >
 > ```math
 > P(Y \ge X) = \int f_X(x)\,P(Y \ge X \mid X = x)\,dx = \int_0^4 \frac{1}{4}\bigl(1 - F_Y(x)\bigr)\,dx = \int_0^4 \frac{1}{4}\,e^{-2x}\,dx = \frac{1}{8}\int_0^4 2e^{-2x}\,dx = \frac{1}{8}\bigl(1 - e^{-8}\bigr).
@@ -50,7 +54,7 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 设 $A$ 为事件 $Y \ge X$。由于 $X$ 与 $Y$ 独立，
+> 设 $A$ 为事件 $Y \ge X$。由于 $X$ 与 $Y$ 独立，两者的联合 PDF（joint PDF）就是各自 PDF 的乘积，再除以事件 $A$ 的概率 $P(A) = c$ 归一化：
 >
 > ```math
 > f_{X,Y\mid A}(x,y) = \frac{f_X(x)\,f_Y(y)}{P(A)} = \frac{f_X(x)\,f_Y(y)}{c} = \begin{cases} \dfrac{4e^{-2y}}{1 - e^{-8}}, & \text{若 } (x,y)\in A \text{，即 } 0 \le x \le 4,\ y \ge x, \\[8pt] 0, & \text{其他情形}. \end{cases}
@@ -60,7 +64,7 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 由于 $X$ 与 $Y$ 独立，可以用卷积积分（convolution integral）来求 $f_Z(z)$：
+> 由于 $X$ 与 $Y$ 独立，可以用卷积积分（convolution integral）来求 $f_Z(z)$。两个独立随机变量之和的 PDF 就是两者 PDF 的卷积：$f_Z(z) = \int f_X(z - t)\,f_Y(t)\,dt$。这里 $f_X(z-t)$ 非零要求 $0 \le z - t \le 4$，即 $t \in [z-4,\, z]$；又 $f_Y(t) = 2e^{-2t}$ 只在 $t \ge 0$ 非零，故积分下限取 $\max(0,\, z-4)$：
 >
 > ```math
 > f_Z(z) = \int_{\max(0,\,z-4)}^{z} \frac{1}{4}\cdot 2e^{-2t}\,dt = \begin{cases} \dfrac{1}{4}\left(1 - e^{-2z}\right), & \text{若 } 0 \le z \le 4, \\[8pt] \dfrac{1}{4}\left(e^{8} - 1\right)e^{-2z}, & \text{若 } z > 4, \\[8pt] 0, & \text{其他情形}. \end{cases}
@@ -72,7 +76,7 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 给定 $Y = 3$ 时，$Z = X + 3$，因此 $Z$ 的条件 PDF 就是 $X$ 的 PDF 平移后的版本。$Z$ 的条件 PDF 及其草图为：
+> 给定 $Y = 3$ 时，$Z = X + 3$，因此 $Z$ 的条件 PDF 就是 $X$ 的 PDF 向右平移 3 个单位后的版本。$Z$ 的条件 PDF 及其草图为：
 >
 > ```math
 > f_{Z\mid\{Y=3\}}(z) = \begin{cases} \dfrac{1}{4}, & \text{若 } 3 \le z \le 7, \\[8pt] 0, & \text{其他情形}. \end{cases}
@@ -84,13 +88,13 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 条件 PDF $f_{Z\mid Y=y}(z)$ 是 $y$ 与 $y+4$ 之间的均匀分布。因此
+> 在给定 $Y = y$ 时 $Z = X + y$，而 $X$ 在 $[0,4]$ 上均匀，故 $Z$ 的条件 PDF $f_{Z\mid Y=y}(z)$ 是 $y$ 与 $y+4$ 之间的均匀分布（uniform distribution），其均值是区间中点 $y + 2$。因此
 >
 > ```math
 > E[Z \mid Y = y] = y + 2.
 > ```
 >
-> 上式对所有可能的 $y$ 值都成立，所以
+> 上式对所有可能的 $y$ 值都成立，所以把 $y$ 换成随机变量 $Y$ 本身即得：
 >
 > ```math
 > E[Z \mid Y] = Y + 2.
@@ -100,7 +104,7 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> $Z$ 与 $Y$ 的联合 PDF 可表示为：
+> 由乘法法则，$Z$ 与 $Y$ 的联合 PDF 可表示为：
 >
 > ```math
 > f_{Z,Y}(z,y) = f_Y(y)\,f_{Z\mid Y}(z \mid y) = \begin{cases} \dfrac{1}{2}\cdot e^{-2y}, & \text{若 } y \ge 0,\ y \le z \le y + 4, \\[8pt] 0, & \text{其他情形}. \end{cases}
@@ -118,7 +122,7 @@
 > f_{W\mid X=1}(w) = f_Y(w), \qquad\qquad f_{W\mid X=0}(w) = f_Y(w - 2).
 > ```
 >
-> 利用贝叶斯法则（Bayes' Rule）的相应变形：
+> 利用贝叶斯法则（Bayes' Rule）在混合（离散先验 + 连续观测）情形下的相应变形，把 $X$ 视为先验、$W$ 视为观测：
 >
 > ```math
 > P(X = 1 \mid W = 3) = \frac{P(X = 1)\,f_{W\mid X=1}(3)}{P(X = 1)\,f_{W\mid X=1}(3) + P(X = 0)\,f_{W\mid X=0}(3)} = \frac{P(X = 1)\,f_Y(3)}{P(X = 1)\,f_Y(3) + P(X = 0)\,f_Y(1)} = \frac{e^{-6}}{e^{-6} + e^{-2}}.
@@ -128,17 +132,19 @@
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 2（30 分）**</span>
 
-设 $X, X_1, X_2, \ldots$ 为独立的正态随机变量（normal random variables），均值为 0、方差为 9。设 $N$ 为取正整数值的随机变量，满足 $E[N] = 2$、$E[N^2] = 5$。假设随机变量 $N, X, X_1, X_2, \ldots$ 相互独立。令 $S = \sum_{i=1}^{N} X_i$。
+设 $X, X_1, X_2, \ldots$ 为独立的正态随机变量（normal random variables），均值为 0、方差为 9。设 $N$ 为取正整数值的随机变量，满足 $E[N] = 2$、$E[N^2] = 5$。假设随机变量 $N, X, X_1, X_2, \ldots$ 相互独立。令 $S = \sum_{i=1}^{N} X_i$，即随机个数的独立正态随机变量之和（随机求和，random sum）。
 
 **1.（10 分）** 若 $\delta$ 是一个小的正数，则有 $P(1 \le |X| \le 1 + \delta) \approx \alpha\,\delta$，其中 $\alpha$ 为某常数。求 $\alpha$ 的值。
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
+> 由 $|X|$ 的对称性，$P(1 \le |X| \le 1+\delta) = 2\,P(1 \le X \le 1+\delta)$，再对小区间用 PDF 近似：
+>
 > ```math
 > P(1 \le |X| \le 1 + \delta) = 2\,P(1 \le X \le 1 + \delta) \approx 2\,f_X(1)\,\delta.
 > ```
 >
-> 因此，
+> 因此，$\alpha = 2\,f_X(1)$。把均值 0、方差 9 的正态 PDF（normal PDF）在 $x=1$ 处取值：
 >
 > ```math
 > \alpha = 2\,f_X(1) = 2\cdot\frac{1}{\sqrt{9\cdot 2\pi}}\;e^{-\frac{(1-0)^2}{2\cdot 9}} = \frac{2}{3\sqrt{2\pi}}\;e^{-\frac{1}{18}}.
@@ -150,11 +156,13 @@
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 利用全方差定律（Law of Total Variance），
+> 利用全方差定律（Law of Total Variance）：
 >
 > ```math
 > \mathrm{var}(S) = E[\mathrm{var}(S \mid N)] + \mathrm{var}(E[S \mid N]) = E[9N] + \mathrm{var}(0\cdot N) = 9\,E[N] = 18.
 > ```
+>
+> 其中：给定 $N = n$ 时 $S$ 是 $n$ 个独立正态随机变量之和，方差为 $9n$；而 $E[S \mid N] = E\bigl[\sum_{i=1}^{N} X_i \mid N\bigr] = N \cdot E[X_1] = N \cdot 0 = 0$，故 $\mathrm{var}(E[S \mid N]) = \mathrm{var}(0) = 0$。
 
 <!-- ===== PDF p4 ===== -->
 
@@ -167,6 +175,8 @@
 > ```math
 > \mathrm{cov}(S, N) = E[SN] - E[S]\,E[N] = E\bigl[E[SN \mid N]\bigr] - E\bigl[E[S \mid N]\bigr]\,E[N]
 > ```
+>
+> 展开内层条件期望，并把 $S = \sum_{i=1}^{N} X_i$ 代入：
 >
 > ```math
 > = E\Bigl[E\Bigl[\textstyle\sum_{i=1}^{N} X_i\,N \,\Big|\, N\Bigr]\Bigr] - E\Bigl[E\Bigl[\textstyle\sum_{i=1}^{N} X_i \,\Big|\, N\Bigr]\Bigr]E[N] = E[X_1]\,E[N^2] - E[X_1]\,\bigl(E[N]\bigr)^2 = 0,

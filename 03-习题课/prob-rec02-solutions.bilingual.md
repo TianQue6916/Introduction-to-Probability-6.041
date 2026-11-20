@@ -10,6 +10,8 @@
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 1**</span>
 
+> <span style="color:#7f8c8d;">〔题干概述：一枚硬币抛掷两次。Alice 断言：与「已知至少有一次是正面」相比，「已知第一次是正面」这一信息至少同样支持「两次都是正面」这一事件。她说的对吗？硬币公平与否会有差别吗？如何推广 Alice 的推理？〕</span>
+>
 > <span style="color:#2471a3;">**[solution]**</span> 设 $A$ 为“第一次抛掷是正面”这一事件，$B$ 为“第二次抛掷是正面”这一事件。我们必须比较条件概率（conditional probabilities）$P(A\cap B\mid A)$ 与 $P(A\cap B\mid A\cup B)$。我们有
 >
 > ```math
@@ -30,12 +32,21 @@
 > \frac{P(A\cap B)}{P(A\cup B)}=\frac{1/4}{3/4}=\frac{1}{3}.
 > ```
 >
-> Alice 推理的一个推广是：若 $A$、$B$、$C$ 是满足 $B\subset C$ 且 $A\cap B=A\cap C$ 的事件（例如 $A\subset B\subset C$），那么在已知 $B$ 发生的条件下，事件 $A$ 的可能性不小于在已知 $C$ 发生的条件下的可能性。Alice 的推理正对应 $C=A\cup B$ 的特例。
+> Alice 推理的一个推广是：若 $A$、$B$、$C$ 是满足 $B\subset C$ 且 $A\cap B=A\cap C$ 的事件（例如 $A\subset B\subset C$），那么在已知 $B$ 发生的条件下，事件 $A$ 的可能性不小于在已知 $C$ 发生的条件下的可能性。这是因为由 $B\subset C$ 得 $P(B)\le P(C)$，再结合 $A\cap B=A\cap C$ 有
+>
+> ```math
+> P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{P(A\cap C)}{P(C)}\cdot\frac{P(C)}{P(B)}
+> \ge \frac{P(A\cap C)}{P(C)}=P(A\mid C).
+> ```
+>
+> Alice 的推理正对应这一推广中取 $C=A\cup B$、$B=A$、且（推广里的）事件 $A$ 取为原问题的 $A\cap B$ 的特例：此时 $B=A\subset A\cup B=C$，并且 $(A\cap B)\cap A=A\cap B=(A\cap B)\cap(A\cup B)$，故得到 $P(A\cap B\mid A)\ge P(A\cap B\mid A\cup B)$。
 
 ---
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 2**</span>
 
+> <span style="color:#7f8c8d;">〔题干概述：掷两枚公平的六面骰子，假定 36 个可能结果等可能。〕</span>
+>
 > <span style="color:#2471a3;">**[solution]**</span>
 >
 > **(a)** 每个可能结果的概率为 $1/36$。是“对子”（doubles，两骰点数相同）的可能结果有 6 种，所以掷出对子的概率为 $6/36=1/6$。
@@ -51,11 +62,23 @@
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 3**</span>
 
+> <span style="color:#7f8c8d;">〔题干概述：你参加一场国际象棋锦标赛（chess tournament）。对一半的选手（称其为第 1 类）你获胜的概率是 0.3，对四分之一的选手（第 2 类）是 0.4，对剩下的四分之一选手（第 3 类）是 0.5。你与一名随机选出的对手下一盘棋。(a) 你获胜的概率是多少？(b) 假定你获胜了，你的对手是第 1 类的概率是多少？〕</span>
+>
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> **(a)** 见教材（textbook）例 1.13（Example 1.13），第 29 页。
+> **(a)** 见教材（textbook）例 1.13（Example 1.13），第 29 页。该例用全概率公式（total probability theorem）计算总胜率：设 $A_i$ 为“对手是第 $i$ 类”的事件，$P(A_1)=0.5,\ P(A_2)=0.25,\ P(A_3)=0.25$；$B$ 为“获胜”事件，且 $P(B\mid A_1)=0.3,\ P(B\mid A_2)=0.4,\ P(B\mid A_3)=0.5$。则总胜率为
 >
-> **(b)** 见教材例 1.17（Example 1.17），第 33 页。
+> ```math
+> P(B)=P(A_1)P(B\mid A_1)+P(A_2)P(B\mid A_2)+P(A_3)P(B\mid A_3)
+> =0.5\cdot0.3+0.25\cdot0.4+0.25\cdot0.5=0.375.
+> ```
+>
+> **(b)** 见教材例 1.17（Example 1.17），第 33 页。该例沿用例 1.13 的设定，用贝叶斯规则（Bayes' rule）反推：已知你赢了，求对手是第 1 类的概率
+>
+> ```math
+> P(A_1\mid B)=\frac{P(A_1)P(B\mid A_1)}{P(B)}
+> =\frac{0.5\cdot0.3}{0.5\cdot0.3+0.25\cdot0.4+0.25\cdot0.5}=0.4.
+> ```
 
 ---
 
@@ -100,6 +123,8 @@
 > \end{aligned}
 > ```
 >
+> 其中第一行到第二行：给定你初选 $C_j$ 且奖品在 $P_i$（$i\ne j$）时，朋友只能打开三扇门中既非 $C_j$ 又非 $P_i$ 的那唯一一扇门，因此对应的 $O_k$ 在该条件下必然发生，即 $P(P_i\cap C_j\cap O_k)=P(P_i\cap C_j)P(O_k\mid P_i\cap C_j)=P(P_i\cap C_j)$；第二行到第三行：奖品所在门 $P_i$ 与你初选的门 $C_j$ 相互独立，故 $P(P_i\cap C_j)=P(P_i)P(C_j)$。
+>
 > **(c)** 给定 $C_1$（你第一次选门 1），采用“仅当门 3 被打开时才换门”的新策略，则当奖品在门 1 后且门 2 被打开，或奖品在门 2 后且门 3 被打开时，你获胜。
 >
 > ```math
@@ -112,6 +137,8 @@
 > &=\frac{1}{3}\cdot\big(P(O_2\mid P_1\cap C_1)+1\big)
 > \end{aligned}
 > ```
+>
+> 其中第三行到第四行用了奖品所在门 $P_i$ 与你初选的门 $C_1$ 相互独立（故 $P(P_i\mid C_1)=P(P_i)=1/3$），以及 $P(O_3\mid P_2\cap C_1)=1$：当奖品在门 2、你已选门 1 时，门 1 被你占据、门 2 藏有奖品，朋友只能打开门 3。
 >
 > 在初选为门 1 的条件下，此新策略下的获胜概率取决于：当奖品也位于门 1 后面时，你的朋友如何在门 2 与门 3 之间决定开哪一扇。若他总开门 2，则 $P(O_2\mid P_1\cap C_1)=1$，且 $P(\text{Win with new strategy}\mid C_1)=2/3$。若他以相等概率在门 2 与门 3 之间选择，则 $P(O_2\mid P_1\cap C_1)=1/2$，且 $P(\text{Win with new strategy}\mid C_1)=1/2$。
 

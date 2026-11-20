@@ -16,7 +16,7 @@
 > > E[Z \mid X = x, Y = y] = \sum_z z\, p_{Z\mid X,Y}(z \mid x, y)
 > > ```
 >
-> 由于 $E[Z \mid X, Y]$ 是随机变量 $X$ 与 $Y$ 的函数，并且在 $X = x$、$Y = y$ 发生时（该情况以概率 $p_{X,Y}(x, y)$ 发生）等于 $E[Z \mid X = x, Y = y]$，于是由 expected value rule（期望值法则），
+> 由于 $E[Z \mid X, Y]$ 是随机变量 $X$ 与 $Y$ 的函数，并且在 $X = x$、$Y = y$ 发生时（该情况以概率 $p_{X,Y}(x, y)$ 发生）等于 $E[Z \mid X = x, Y = y]$，于是由 expected value rule（期望值法则，即：若 $W = g(X, Y)$ 是 $X, Y$ 的函数，则 $E[W] = \sum_x \sum_y g(x, y)\, p_{X,Y}(x, y)$），
 >
 > > ```math
 > > \begin{aligned}
@@ -27,6 +27,8 @@
 > > &= E[Z].
 > > \end{aligned}
 > > ```
+>
+> 〔上面第三行用到乘法法则（multiplication rule）$p_{Z\mid X,Y}(z\mid x,y)\,p_{X,Y}(x,y) = p_{X,Y,Z}(x,y,z)$；第四行用到边际化（marginalization）$\sum_x\sum_y p_{X,Y,Z}(x,y,z) = p_Z(z)$，故 $\sum_z z\, p_Z(z) = E[Z]$。〕
 >
 > **(b)** 我们从 $E[Z \mid X, Y]$ 的定义出发——它是随机变量 $X$ 与 $Y$ 的函数，并且在 $X = x$、$Y = y$ 时等于 $E[Z \mid X = x, Y = y]$，因此
 >
@@ -46,7 +48,9 @@
 > > \end{aligned}
 > > ```
 >
-> 由于上式对 $x$ 的一切可能取值都成立，故有 $E\big[E[Z \mid Y, X] \mid X\big] = E[Z \mid X]$。
+> 〔第三行用到条件形式的乘法法则 $p_{Z\mid X,Y}(z\mid x,y)\,p_{Y\mid X}(y\mid x) = p_{Y,Z\mid X}(y,z\mid x)$；第四行用到边际化 $\sum_y p_{Y,Z\mid X}(y,z\mid x) = p_{Z\mid X}(z\mid x)$。〕
+>
+> 由于上式对 $x$ 的一切可能取值都成立，故有 $E\big[E[Z \mid Y, X] \mid X\big] = E[Z \mid X]$。（$E[Z \mid Y, X]$ 与 $E[Z \mid X, Y]$ 是同一个随机变量，只是书写次序不同。）
 >
 > **(c)** 对 (b) 中公式的两边取期望，得
 >
@@ -54,13 +58,15 @@
 > > E\big[E[Z \mid X]\big] = E\big[E\big[E[Z \mid X, Y] \,\big|\, X\big]\big].
 > > ```
 >
-> 由 law of iterated expectations（期望迭代法则），上式左边即为 $E[Z]$，从而证得所要的结果。
+> 由 law of iterated expectations（期望迭代法则，又称 tower property（塔性质），即 $E[Z] = E\big[E[Z \mid X]\big]$），上式左边即为 $E[Z]$，从而证得所要的结果。
 
 ---
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 2**</span>
 
 > <span style="color:#2471a3;">**[solution]**</span> 设 $Y$ 为第一次折断后所得一段的长度，$X$ 为第二次折断后所得一段的长度。
+>
+> 〔模型补充：这里考虑的是一根长度为 $\ell$ 的木棍。先在 $[0, \ell]$ 上均匀随机取一点折断，取其中一段，其长度记为 $Y$，故 $Y$ 在 $[0, \ell]$ 上均匀分布；再对这段长为 $Y$ 的木棍在 $[0, Y]$ 上均匀随机取一点折断，取其中一段，其长度记为 $X$，故给定 $Y$ 时 $X$ 在 $[0, Y]$ 上均匀分布。下文 $E[X \mid Y] = Y/2$、$E[Y] = \ell/2$ 均由此模型而来。〕
 
 <!-- ===== PDF p2 ===== -->
 
@@ -72,13 +78,13 @@
 > > E[X] = E\big[E[X \mid Y]\big]
 > > ```
 >
-> 我们有 $E[X \mid Y] = Y/2$，以及 $E[Y] = \ell/2$。于是：
+> 我们有 $E[X \mid Y] = Y/2$（因为给定 $Y$，$X$ 在 $[0, Y]$ 上均匀分布，均值为 $Y/2$），以及 $E[Y] = \ell/2$（因为 $Y$ 在 $[0, \ell]$ 上均匀分布，均值为 $\ell/2$）。于是：
 >
 > > ```math
 > > E[X] = E\big[E[X \mid Y]\big] = E[Y/2] = \frac{1}{2}\, E[Y] = \frac{1}{2}\cdot\frac{\ell}{2} = \frac{\ell}{4}.
 > > ```
 >
-> **(b)** 我们用 law of total variance（全方差定律）来求 $\mathrm{var}(X)$：
+> **(b)** 我们用 law of total variance（全方差定律：$\mathrm{var}(X) = E\big[\mathrm{var}(X \mid Y)\big] + \mathrm{var}\big(E[X \mid Y]\big)$）来求 $\mathrm{var}(X)$：
 >
 > > ```math
 > > \mathrm{var}(X) = E\big[\mathrm{var}(X \mid Y)\big] + \mathrm{var}\big(E[X \mid Y]\big).
@@ -108,6 +114,8 @@
 > > \end{aligned}
 > > ```
 >
+> 〔上式中 $f_Y(y) = 1/\ell$（$0 \le y \le \ell$）是 $Y$ 在 $[0, \ell]$ 上均匀分布的密度。〕
+>
 > 综合以上结果，得
 >
 > > ```math
@@ -120,6 +128,8 @@
 
 > <span style="color:#2471a3;">**[solution]**</span> 设 $X_i$ 表示第 $i$ 个箱子中 widgets（小部件）的数目，则 $T = \sum_{i=1}^{N} X_i$。
 >
+> 〔模型补充：这里 $N$ 是箱子的总数（一个随机变量），每个箱子里小部件的数目 $X_i$ 是独立同分布（i.i.d.，independently and identically distributed）的随机变量，且都独立于 $N$。记共同分布为 $E[X_i] = E[X]$、$\mathrm{var}(X_i) = \mathrm{var}(X)$。题目给定 $E[X] = 10$、$\mathrm{var}(X) = 16$、$E[N] = 10$、$\mathrm{var}(N) = 16$（这四个数值可由最终结果 $E[T] = 100$、$\mathrm{var}(T) = 1760$ 唯一反推得出）。〕
+>
 > > ```math
 > > \begin{aligned}
 > > E[T] &= E\!\left[E\!\left[\sum_{i=1}^{N} X_i \,\middle|\, N\right]\right] \\
@@ -128,6 +138,8 @@
 > > &= E[X] \cdot E[N] = 100.
 > > \end{aligned}
 > > ```
+>
+> 〔第二、三行用到 $X_i$ 与 $N$ 独立，故 $E[X_i \mid N] = E[X_i] = E[X]$；第四行 $E\big[\sum_{i=1}^{N} E[X]\big] = E[X]\, E[N]$，因为 $E[X]$ 是常数。〕
 
 <!-- ===== PDF p3 ===== -->
 
@@ -142,6 +154,8 @@
 > > &= 16 \cdot 10 + 100 \cdot 16 = 1760.
 > > \end{aligned}
 > > ```
+>
+> 〔第三行用到 $X_i$ 独立同分布且独立于 $N$：$\mathrm{var}\big(\sum_{i=1}^{N} X_i \mid N\big) = N\,\mathrm{var}(X)$，$E\big[\sum_{i=1}^{N} X_i \mid N\big] = N\,E[X]$；第四行用到 $E[N\,\mathrm{var}(X)] = \mathrm{var}(X)\,E[N]$（$\mathrm{var}(X)$ 是常数）以及 $\mathrm{var}(N\,E[X]) = (E[X])^2\,\mathrm{var}(N)$（$\mathrm{var}(aN) = a^2\,\mathrm{var}(N)$）。〕
 
 <!-- ===== PDF p4 ===== -->
 

@@ -29,7 +29,7 @@ f_Z(z) = \begin{cases} \gamma\,(1+z^2), & -2 < z < 1, \\ 0, & \text{其余情形
 > \int_{-\infty}^{\infty} f_Z(z)\,dz = \int_{-2}^{1} \gamma\,(1+z^2)\,dz = \gamma\left(z + \frac{z^3}{3}\right)\Bigg|_{-2}^{1} = 6\gamma.
 > ```
 >
-> 由此我们得出 $\gamma = 1/6$。
+> 最后一个等号的代入过程为：$\gamma\Bigl[\bigl(1+\tfrac{1}{3}\bigr)-\bigl(-2-\tfrac{8}{3}\bigr)\Bigr]=\gamma\cdot 6=6\gamma$。由此我们得出 $\gamma = 1/6$。
 
 **（b）**
 
@@ -53,6 +53,8 @@ f_Z(z) = \begin{cases} \gamma\,(1+z^2), & -2 < z < 1, \\ 0, & \text{其余情形
 > 1, & z > 1.
 > \end{cases}
 > ```
+>
+> 第二段中 $\dfrac{14}{3}$ 的来历：把下限 $-2$ 代入 $t+\dfrac{t^3}{3}$ 得 $-2-\dfrac{8}{3}=-\dfrac{14}{3}$，减去它等于加上 $\dfrac{14}{3}$。
 
 ---
 
@@ -62,7 +64,42 @@ f_Z(z) = \begin{cases} \gamma\,(1+z^2), & -2 < z < 1, \\ 0, & \text{其余情形
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 见教材（textbook）习题 3.9（Problem 3.9），第 187 页。
+> <span style="color:#1e8449;">**[note]** 原解答仅写「见教材习题 3.9」，此处按教材第 187 页的解法补全，便于读者直接阅读。</span>
+>
+> 设 $Y$ 为 Al 的等待时间（waiting time）。分两种情况：
+>
+> - 以概率 $\dfrac{2}{3}$，已有出租车在等候，Al 立即上车，故 $Y=0$；
+> - 以概率 $\dfrac{1}{3}$，无出租车在候，此时 $Y=\min\{T,5\}$，其中 $T$ 是下一辆出租车到达所需时间，$T$ 在区间 $[0,10]$ 上均匀分布，即 $T\sim\text{Uniform}(0,10)$（$T$ 的 PDF 为 $f_T(t)=1/10,\ 0\le t\le 10$）。
+>
+> **求 CDF。** 对 $0\le y<5$，事件 $\{Y\le y\}$ 由「出租车已在候」（概率 $2/3$）与「无车在候且 $T\le y$」两个互斥情形构成，故
+>
+> ```math
+> F_Y(y)=P(Y\le y)=\frac{2}{3}+\frac{1}{3}\,P(T\le y)=\frac{2}{3}+\frac{1}{3}\cdot\frac{y}{10}=\frac{2}{3}+\frac{y}{30}.
+> ```
+>
+> 对 $y\ge 5$，公交车 5 分钟后必到，Al 至多等 5 分钟，故 $F_Y(y)=1$；对 $y<0$，$F_Y(y)=0$。于是
+>
+> ```math
+> F_Y(y)=\begin{cases} 0, & y<0, \\[4pt] \dfrac{2}{3}+\dfrac{y}{30}, & 0\le y<5, \\[4pt] 1, & y\ge 5. \end{cases}
+> ```
+>
+> **求期望。** 由于有 $\dfrac{2}{3}$ 的概率 $Y=0$，故
+>
+> ```math
+> E[Y]=\frac{1}{3}\,E\!\left[\min\{T,5\}\right].
+> ```
+>
+> 对非负随机变量 $\min\{T,5\}$，其期望可用尾部概率公式（tail-sum formula）$E[X]=\int_0^{\infty}P(X>x)\,dx$ 计算：
+>
+> ```math
+> E\!\left[\min\{T,5\}\right]=\int_{0}^{\infty}P\bigl(\min\{T,5\}>y\bigr)\,dy=\int_{0}^{5}P(T>y)\,dy=\int_{0}^{5}\left(1-\frac{y}{10}\right)dy=\left[y-\frac{y^2}{20}\right]_{0}^{5}=5-\frac{25}{20}=\frac{15}{4}.
+> ```
+>
+> 因此
+>
+> ```math
+> E[Y]=\frac{1}{3}\cdot\frac{15}{4}=\frac{5}{4}\ \text{分钟}.
+> ```
 
 ---
 
@@ -102,7 +139,7 @@ f_X(x) = \begin{cases} \lambda e^{-\lambda x}, & x \ge 0, \\ 0, & \text{其余�
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 下列计算的关键步骤用到分部积分（integration by parts），即以 $u = x$、$v = -e^{-\lambda x}$ 应用公式
+> 下列计算的关键步骤用到分部积分（integration by parts），即以 $u = x$、$dv = \lambda e^{-\lambda x}\,dx$（从而 $du = dx$、$v = -e^{-\lambda x}$）应用公式
 >
 > ```math
 > \int_{0}^{\infty} u\,dv = \Bigl.uv\Bigr|_{0}^{\infty} - \int_{0}^{\infty} v\,du
@@ -113,16 +150,20 @@ f_X(x) = \begin{cases} \lambda e^{-\lambda x}, & x \ge 0, \\ 0, & \text{其余�
 > ```math
 > E[X] = \int_{-\infty}^{\infty} x f_X(x)\,dx = \int_{0}^{\infty} x\lambda e^{-\lambda x}\,dx = \Bigl[-x e^{-\lambda x}\Bigr]_{0}^{\infty} + \int_{0}^{\infty} e^{-\lambda x}\,dx = \frac{1}{\lambda}.
 > ```
+>
+> 其中边界项 $\Bigl[-x e^{-\lambda x}\Bigr]_{0}^{\infty}=0$（因为当 $x\to\infty$ 时 $xe^{-\lambda x}\to 0$，且 $x=0$ 时该项为 0），余下 $\int_{0}^{\infty}e^{-\lambda x}\,dx=\dfrac{1}{\lambda}$。
 
 **（c）**
 
 > <span style="color:#2471a3;">**[solution]**</span>
 >
-> 在下式第二行中以 $u = x^2$、$v = -e^{-\lambda x}$ 作分部积分，得
+> 在下式第二行中以 $u = x^2$、$dv = \lambda e^{-\lambda x}\,dx$（从而 $du = 2x\,dx$、$v = -e^{-\lambda x}$）作分部积分，得
 >
 > ```math
 > E[X^2] = \int_{-\infty}^{\infty} x^2 f_X(x)\,dx = \int_{0}^{\infty} x^2 \lambda e^{-\lambda x}\,dx = \Bigl[-x^2 e^{-\lambda x}\Bigr]_{0}^{\infty} + 2\int_{0}^{\infty} x e^{-\lambda x}\,dx = \frac{2}{\lambda}E[X] = \frac{2}{\lambda^2}.
 > ```
+>
+> 其中边界项 $\Bigl[-x^2 e^{-\lambda x}\Bigr]_{0}^{\infty}=0$；且由 $\int_{0}^{\infty}x e^{-\lambda x}\,dx=\dfrac{1}{\lambda}E[X]$（因为 $E[X]=\int_{0}^{\infty}x\lambda e^{-\lambda x}\,dx$），故 $2\int_{0}^{\infty}x e^{-\lambda x}\,dx=\dfrac{2}{\lambda}E[X]$。
 >
 > 结合前一小问的计算，我们得到
 >

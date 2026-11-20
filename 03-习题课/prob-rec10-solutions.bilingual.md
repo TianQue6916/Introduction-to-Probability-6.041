@@ -18,9 +18,11 @@
 - (d) 若 $A^c\cap B^c=\emptyset$，则 $P(A\cap B)=P(A)P(B)$。
 - (e) 若 $P(A)>1/2$ 且 $P(B)>1/2$，则 $P(A\cup B)=1$。
 
-> <span style="color:#2471a3;">[solution]</span> 答案：**(c)** 正确，因为 $A\cup B=(A^c\cap B^c)^c=\emptyset^c=\Omega$（样本空间）。
+> <span style="color:#2471a3;">[solution]</span> 答案：**(c)** 正确，因为 $A\cup B=(A^c\cap B^c)^c=\emptyset^c=\Omega$（sample space，样本空间）。
 
 <span style="color:#00838f;">**1.2**　下列各陈述中，哪一个是正确的？</span>
+
+> <span style="color:#1e8449;">[mathtip]</span> 记号 $P(A\mid B)$ 读作“在事件 $B$ 已发生的条件下，事件 $A$ 的条件概率（conditional probability）”，定义为 $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$（要求 $P(B)>0$）。上标 $c$ 表示补集（complement），$B^c$ 即“$B$ 不发生”这一事件。
 
 - (a) 若 $E[X]=0$，则 $P(X>0)=P(X<0)$。
 - (b) $P(A)=P(A\mid B)+P(A\mid B^c)$
@@ -78,7 +80,7 @@ Heather（希瑟）与 Taylor（泰勒）用一枚不均匀硬币（unfair coin�
 
 <span style="color:#00838f;">**2.4**　已知 Heather 获胜，求第一次投掷出现正面的条件概率。</span>
 
-> <span style="color:#2471a3;">[solution]</span> 同理，
+> <span style="color:#2471a3;">[solution]</span> 由条件概率的定义，
 >
 > ```math
 > P(\{\text{first toss H}\}\mid\{\text{Heather wins}\})
@@ -98,7 +100,7 @@ Heather（希瑟）与 Taylor（泰勒）用一枚不均匀硬币（unfair coin�
 
 设 $X$ 为一局基础游戏的收益（payoff，单位为美元）。
 
-<span style="color:#00838f;">**3.1**　求 $X$ 的概率质量函数（PMF）$p_X(x)$。</span>
+<span style="color:#00838f;">**3.1**　求 $X$ 的 PMF（probability mass function，概率质量函数）$p_X(x)$。</span>
 
 > <span style="color:#2471a3;">[solution]</span> 定义一个概率模型：其样本结果为一局完整游戏中掷骰结果的序列。各结果、其概率以及对应的 $X$ 值如下：
 >
@@ -188,4 +190,3 @@ Heather（希瑟）与 Taylor（泰勒）用一枚不均匀硬币（unfair coin�
 <span style="color:#7f8c8d;">MIT OpenCourseWare（MIT 开放课件）　http://ocw.mit.edu</span>
 
 <span style="color:#7f8c8d;">6.041 / 6.431 Probabilistic Systems Analysis and Applied Probability（概率系统分析与应用概率），Fall 2010（2010 秋季学期）。有关引用这些材料或使用条款（Terms of Use）的信息，请访问：http://ocw.mit.edu/terms。</span>
-

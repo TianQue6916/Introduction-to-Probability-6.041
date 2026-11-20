@@ -10,26 +10,26 @@
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 1（第 1 题）**</span>
 
-<span style="color:#7f8c8d;">[note] 本解答 PDF 未附原题面。由解答过程可还原题设：$X$ 是取值于 $\{0,1\}$ 的离散随机变量，$P(X=1)=p$；观测 $Z=X+Y$，其中噪声 $Y$ 服从参数为 $\lambda$ 的对称双侧指数分布（拉普拉斯分布，Laplace distribution），即在 $X=x$ 的条件下 $Z$ 的条件 PDF 为 $f_{Z|X}(z\mid x)=\frac{\lambda}{2}e^{-\lambda|z-x|}$。</span>
+<span style="color:#7f8c8d;">[note] 本解答 PDF 未附原题面。由解答过程可还原题设：$X$ 是取值于 $\{-1,1\}$ 的离散随机变量，$P(X=1)=p$，故 $P(X=-1)=1-p$；观测 $Z=X+Y$，其中噪声 $Y$ 服从参数为 $\lambda$ 的对称双侧指数分布（拉普拉斯分布，Laplace distribution），即在 $X=x$ 的条件下 $Z$ 的条件 PDF 为 $f_{Z|X}(z\mid x)=\frac{\lambda}{2}e^{-\lambda|z-x|}$。（这里 $X$ 取 $-1$ 而非 $0$，与解答分母中的 $|z+1|$ 以及最后 $z>0$ 的判据保持一致：若 $X$ 取 $0$，则对应项会变成 $|z|$、判据也会变成 $z>\tfrac12$，与解答不符。）</span>
 
 > <span style="color:#2471a3;">[solution]</span> 我们需要使用“离散随机变量以连续随机变量为条件”版本的贝叶斯法则（Bayes' rule）：
 >
 > ```math
 > p_{X|Z}(x\mid z)=\frac{p_X(x)\,f_{Z|X}(z\mid x)}{f_Z(z)}
-> =\frac{p_X(x)\,f_{Z|X}(z\mid x)}{\sum_{k=0}^{1}p_X(k)\,f_{Z|X}(z\mid k)}.
+> =\frac{p_X(x)\,f_{Z|X}(z\mid x)}{\sum_{k\in\{-1,1\}}p_X(k)\,f_{Z|X}(z\mid k)}.
 > ```
 >
 > 具体地，
 >
 > ```math
 > p_{X|Z}(1\mid z)=P(X=1\mid Z=z)
-> =\frac{p_X(1)\,f_{Z|X}(z\mid 1)}{\sum_{k=0}^{1}p_X(k)\,f_{Z|X}(z\mid k)}
+> =\frac{p_X(1)\,f_{Z|X}(z\mid 1)}{\sum_{k\in\{-1,1\}}p_X(k)\,f_{Z|X}(z\mid k)}
 > =\frac{p\cdot\frac{1}{2}\lambda e^{-\lambda|z-1|}}{(1-p)\cdot\frac{1}{2}\lambda e^{-\lambda|z+1|}+p\cdot\frac{1}{2}\lambda e^{-\lambda|z-1|}}
 > =\frac{pe^{-\lambda|z-1|}}{(1-p)e^{-\lambda|z+1|}+pe^{-\lambda|z-1|}}
 > =\frac{p}{(1-p)e^{-\lambda(|z+1|-|z-1|)}+p}.
 > ```
 >
-> 上述最后的变形是为了便于解读 $p\to 0^+$、$p\to 1^-$、$\lambda\to 0^+$ 与 $\lambda\to\infty$ 各种极限下的含义。容易得到
+> 上述最后的变形是为了便于解读 $p\to 0^+$、$p\to 1^-$、$\lambda\to 0^+$ 与 $\lambda\to\infty$ 各种极限下的含义。当 $p\to 0^+$ 时分子 $p\to 0$，而指数项 $e^{-\lambda(|z+1|-|z-1|)}$ 在 $\lambda$ 固定时为有限正数，分母趋于该有限正数，故极限为 $0$；当 $p\to 1^-$ 时分母中的 $(1-p)e^{-\lambda(|z+1|-|z-1|)}\to 0$、只剩 $p\to 1$，故极限为 $1$：
 >
 > ```math
 > \lim_{p\to 0^+}P(X=1\mid Z=z)=0
@@ -37,13 +37,13 @@
 > \lim_{p\to 1^-}P(X=1\mid Z=z)=1;
 > ```
 >
-> 这很合理：当不借助观测就能确定 $X$ 的取值时，观测值 $z$ 就变得无关紧要了。接下来，
+> 这很合理：当不借助观测就能确定 $X$ 的取值时，观测值 $z$ 就变得无关紧要了。接下来，当 $\lambda\to 0^+$ 时 $e^{-\lambda(|z+1|-|z-1|)}\to 1$，故
 >
 > ```math
-> \lim_{\lambda\to 0^+}P(X=1\mid Z=z)=p,
+> \lim_{\lambda\to 0^+}P(X=1\mid Z=z)=\frac{p}{(1-p)\cdot 1+p}=p,
 > ```
 >
-> 这也合理：当 $\lambda\to 0^+$ 时 $Y$ 的分布变得非常平坦，观测不再提供信息（uninformative）。最后，
+> 这也合理：当 $\lambda\to 0^+$ 时 $Y$ 的分布变得非常平坦，观测不再提供信息（uninformative）。最后，当 $\lambda\to\infty$ 时，若 $|z+1|>|z-1|$ 则指数项 $e^{-\lambda(|z+1|-|z-1|)}\to 0$，若 $|z+1|<|z-1|$ 则指数项 $\to\infty$；而 $|z+1|>|z-1|$ 表示 $z$ 到 $-1$ 的距离大于到 $1$ 的距离，等价于 $z>0$。因此
 >
 > ```math
 > \lim_{\lambda\to\infty}P(X=1\mid Z=z)=
@@ -80,6 +80,8 @@
 > =\frac{6q(1-q)\cdot(1-q)}{\int_0^1 6q(1-q)\cdot(1-q)\,dq}
 > =\frac{6q(1-q)\cdot(1-q)}{1/2}=12q(1-q)^2.
 > ```
+>
+> （其中分母积分 $\int_0^1 6q(1-q)^2\,dq=6\int_0^1(q-2q^2+q^3)\,dq=6\left(\frac12-\frac23+\frac14\right)=6\cdot\frac{1}{12}=\frac12$。）
 
 <!-- ===== PDF p2 ===== -->
 
@@ -93,7 +95,9 @@
 > =\frac{6q(1-q)\cdot q}{1/2}=12q^2(1-q).
 > ```
 >
-> $f_Q(q)$、$f_{Q|X}(q\mid 0)$ 与 $f_{Q|X}(q\mid 1)$ 都属于贝塔分布（beta distribution）家族，该分布族在教材第 8 章中还会再次出现。
+> （其中分母积分 $\int_0^1 6q^2(1-q)\,dq=6\int_0^1(q^2-q^3)\,dq=6\left(\frac13-\frac14\right)=6\cdot\frac{1}{12}=\frac12$。）
+>
+> $f_Q(q)$、$f_{Q|X}(q\mid 0)$ 与 $f_{Q|X}(q\mid 1)$ 都属于贝塔分布（beta distribution）家族：贝塔分布指在区间 $(0,1)$ 上、PDF 形如 $f(x)=\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}$（$\alpha,\beta>0$，$B(\alpha,\beta)$ 为归一化常数）的分布族。具体地，$f_Q(q)=6q(1-q)$ 是 $\text{Beta}(2,2)$，$f_{Q|X}(q\mid 0)=12q(1-q)^2$ 是 $\text{Beta}(2,3)$，$f_{Q|X}(q\mid 1)=12q^2(1-q)$ 是 $\text{Beta}(3,2)$。该分布族在教材第 8 章中还会再次出现。
 
 ---
 
@@ -109,7 +113,7 @@
 > =F_X(y^2)-F_X(-y).
 > ```
 >
-> 对 $F_Y(y)$ 求导（并使用链式法则，chain rule），得
+> 对 $F_Y(y)$ 求导（并使用链式法则，chain rule）：$\frac{d}{dy}F_X(y^2)=2y\,f_X(y^2)$，$\frac{d}{dy}[-F_X(-y)]=-f_X(-y)\cdot(-1)=f_X(-y)$（内层 $-y$ 对 $y$ 求导得 $-1$，与前方的负号相乘得 $+1$），得
 >
 > ```math
 > f_Y(y)=2y\,f_X(y^2)+f_X(-y)

@@ -1,5 +1,3 @@
-<!-- ===== PDF p1 ===== -->
-
 <span style="color:#c0392b;">**6.041 / 6.431　概率系统分析（Probabilistic Systems Analysis）**</span>
 
 <span style="color:#c0392b;">**Problem Set 3 解答（Problem Set 3: Solutions）**</span> <span style="color:#7f8c8d;">（Fall 2010，2010 秋季学期；Due September 29, 2010，截止日期：2010 年 9 月 29 日）</span>
@@ -8,7 +6,7 @@
 
 ---
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 1**</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#7f8c8d;">**（译者注）** 本题约定：有 $n$ 个人、$n$ 顶帽子，每顶帽子各属于其中一人、互不相同；帽子回收时的分配是一种一一置换（permutation）。</span> <span style="color:#c0392b;">**Problem 1**</span>
 
 $n$ 个人的帽子被扔进一个箱子里。然后这些人随机地取回帽子（即帽子在人们之间的每一种分配（assignment）都是等可能的）。求下列事件的概率：
 
@@ -30,7 +28,7 @@ $n$ 个人的帽子被扔进一个箱子里。然后这些人随机地取回帽�
 >
 > (c) **答案**：$\dfrac{m!(n-m)!}{n!} = \dfrac{1}{\binom{n}{m}} = \dfrac{1}{\binom{n}{n-m}}$。
 >
-> **解答**：把这 $m$ 顶帽子分给最先取帽子的 $m$ 个人共有 $m!$ 种方式，把其余 $n-m$ 顶帽子分掉共有 $(n-m)!$ 种方式。具有 $m!(n-m)!$ 个元素的事件的概率为 $m!(n-m)!/n!$。
+> **解答**：事件是指「最先取帽子的 $m$ 个人，每人拿到的帽子都属于最后取帽子的 $m$ 个人」。把这个事件分两步计数。第一步，把「最后取帽子的 $m$ 个人」的 $m$ 顶帽子分给「最先取帽子的 $m$ 个人」：这 $m$ 顶帽子恰好也是 $m$ 顶，故是一一配对，共有 $m!$ 种方式。第二步，把其余 $n-m$ 顶帽子分给中间的 $n-m$ 个人：共有 $(n-m)!$ 种方式。两步独立，相乘得有利分配数为 $m!(n-m)!$。由于帽子之间一一置换、总数仍为 $n!$，所求概率为 $m!(n-m)!/n!$，约分即 $\dfrac{1}{\binom{n}{m}}$（$\binom{n}{m} = \dfrac{n!}{m!(n-m)!}$，故 $\dfrac{m!(n-m)!}{n!} = \dfrac{1}{\binom{n}{m}}$；又 $\binom{n}{m}=\binom{n}{n-m}$，故与 $\dfrac{1}{\binom{n}{n-m}}$ 相等）。
 
 现在再假设：此外，每顶被扔进箱子的帽子都有概率 $p$ 变脏（与其他帽子的遭遇、以及是谁扔下或捡起它均无关）。求下列事件的概率：
 
@@ -52,7 +50,7 @@ $n$ 个人的帽子被扔进一个箱子里。然后这些人随机地取回帽�
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 2**</span>
 
-<span style="color:#7f8c8d;">（原解答未重述题干；由解答可知：Alice 已确定 4 张牌，Bob 从 52 张牌中选 8 张，求 Bob 的 8 张牌包含 Alice 这 4 张牌的概率。）</span>
+<span style="color:#7f8c8d;">（原解答未重述题干；由解答可知：Alice 已确定 4 张牌，Bob 从 52 张牌中选 8 张，求 Bob 的 8 张牌包含 Alice 这 4 张牌的概率。牌的总数为 52，即标准扑克牌去掉大小王。）</span>
 
 > <span style="color:#2471a3;">[solution]</span> 由于 4 张牌是固定的，Bob 只能从余下的 48 张牌中再选 4 张，因此「Bob 的手牌包含 Alice 这些牌」的总方式数为 $\dbinom{4}{4}\dbinom{48}{4}$。Bob 任选 8 张牌的总方式数为 $\dbinom{52}{8}$。所以概率为
 >
@@ -74,7 +72,7 @@ $n$ 个人的帽子被扔进一个箱子里。然后这些人随机地取回帽�
 
 > **（续）**
 >
-> <span style="color:#7f8c8d;">【图】原页此处为双重求和示意图：平面格点上以「X」标出求和区域，横轴为 $i$（延伸至 infinity），纵轴为 $k$（$k=1$ 至 $i=k$），即区域 $\{(i,k):\ 1 \le k \le i\}$。原图由后处理统一插入。</span>
+> <span style="color:#7f8c8d;">【图】原页此处为双重求和示意图：平面格点上以「X」标出求和区域，横轴为 $i$（延伸至 infinity，无穷），纵轴为 $k$（$k=1$ 至 $i=k$），即区域 $\{(i,k):\ 1 \le k \le i\}$。原图由后处理统一插入。</span>
 >
 > 我们首先注意到
 >
@@ -106,7 +104,7 @@ $n$ 个人的帽子被扔进一个箱子里。然后这些人随机地取回帽�
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 4**</span>
 
-<span style="color:#7f8c8d;">（原解答未重述题干；由 PMF 形状可知：$X$ 为两次等可能试验（各 3 种结果，如两枚 3 点骰子）取值之差，取值 $\{-2,-1,0,1,2\}$；(a) 求 $E[X]$ 与 $\mathrm{var}(X)$，(b) 令 $Z = X^2$，求 $Z$ 的 PMF。）</span>
+<span style="color:#7f8c8d;">（原解答未重述题干；由 PMF 形状可知：$X$ 为两次等可能试验（各 3 种结果，如两枚 3 点骰子）取值之差，取值 $\{-2,-1,0,1,2\}$；(a) 求 $E[X]$ 与 $\mathrm{var}(X)$，(b) 令 $Z = X^2$，求 $Z$ 的 PMF。$p_X(x)$ 的分母 9 即两次 3 种结果的搭配总数 $3 \times 3$。）</span>
 
 > <span style="color:#2471a3;">[solution]</span>
 >
@@ -185,6 +183,8 @@ $n$ 个人的帽子被扔进一个箱子里。然后这些人随机地取回帽�
 > ```math
 > x = (x_1, x_2, x_3, x_4) \;\mapsto\; N = (x_1, x_1, x_2, x_2, x_3, x_3 + 1, x_4, x_4 + 3)
 > ```
+>
+> <span style="color:#7f8c8d;">（此处「98」的来历：把四个相等关系代进总数方程得 $2N_1 + 2N_3 + (2N_5 + 1) + (2N_7 + 3) = 200$，即 $2(x_1 + x_2 + x_3 + x_4) + 4 = 200$，故 $x_1 + x_2 + x_3 + x_4 = 98$。映射 $x \mapsto N$ 把 $x$ 的四个独立分量一一还原为八个数；反之由 $N$ 反解 $x_1=N_1, x_2=N_3, x_3=N_5, x_4=N_7$，故为一对一。）</span>
 >
 > 可能的解 $x$ 的个数，按照下面给出的更一般问题的解答，为 $\dbinom{101}{3}$：
 >

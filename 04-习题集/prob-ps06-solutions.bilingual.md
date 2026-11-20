@@ -2,13 +2,13 @@
 
 <span style="color:#c0392b;">**6.041 / 6.431　概率系统分析（Probabilistic Systems Analysis）**</span>
 
-<span style="color:#c0392b;">**Problem Set 6 解答（Problem Set 6: Solutions）**</span> <span style="color:#7f8c8d;">（Fall 2010，2010 秋季学期）</span>
+<span style="color:#c0392b;">**习题集 6 解答（Problem Set 6: Solutions）**</span> <span style="color:#7f8c8d;">（2010 秋季学期，Fall 2010）</span>
 
 <span style="color:#7f8c8d;">麻省理工学院（Massachusetts Institute of Technology）· 电气工程与计算机科学系（Department of Electrical Engineering &amp; Computer Science）</span>
 
 ---
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 1**</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#2471a3;">**第 1 题（Problem 1）**</span>
 
 > <span style="color:#2471a3;">[solution]</span>
 >
@@ -16,7 +16,7 @@
 >
 > <span style="color:#7f8c8d;">【图】原页此处为区域 $R$ 的示意图：由直线 $y = x$、$x = 2$ 与 $x$ 轴围成的三角形区域（$1 \le x \le 2$，$0 \le y \le x$），图中还画出了直线 $y - x = z$。原图由后处理统一插入。</span>
 >
-> **(a)** 联合 PDF 必须积分为 1。由
+> **(a)** 联合 PDF（joint PDF，joint probability density function，联合概率密度函数）必须积分为 1。由
 >
 > ```math
 > \int_{x=1}^{2}\int_{y=0}^{x} ax\,\mathrm{d}y\,\mathrm{d}x = \frac{7}{3}\,a = 1,
@@ -53,7 +53,7 @@
 > E\!\left[\frac{1}{X} \,\middle|\, Y = 3/2\right] = \int_{3/2}^{2} \frac{1}{x}\cdot\frac{8}{7}\,x\,\mathrm{d}x = \frac{4}{7}.
 > ```
 >
-> **(d)** 我们采用“先求 CDF、再对其求导得到 PDF”的技巧。
+> **(d)** 我们采用“先求 CDF（CDF，cumulative distribution function，累积分布函数）、再对其求导得到 PDF”的技巧。
 >
 > ```math
 > F_Z(z) = P(Z \le z) = P(Y - X \le z)
@@ -81,13 +81,13 @@
 
 <!-- ===== PDF p2 ===== -->
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 2**</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#2471a3;">**第 2 题（Problem 2）**</span>
 
 > <span style="color:#1e8449;">[note] 译者注：原题设定（由解答中的卷积式与各段积分限反推，并已完整验算）：$X$ 与 $Y$ 相互独立，其中一个随机变量的 PDF 为 $f(x) = \frac{3}{4}(1 - x^2)$（$-1 \le x \le 1$，其余为 0），另一个为分段均匀密度：$f(y) = \frac{1}{3}$（$0 \le y \le 1$）、$f(y) = \frac{2}{3}$（$2 \le y \le 3$），其余为 0；$Z = X + Y$。</span>
 >
 > <span style="color:#2471a3;">[solution]</span>
 >
-> 利用卷积积分（convolution integral）可以直接算出 $Z$ 的 PDF $f_Z(z)$：
+> 利用卷积积分（convolution integral，两个独立随机变量之和的 PDF 等于二者 PDF 的卷积：把其中一个翻转平移后与另一个逐点相乘再积分）可以直接算出 $Z$ 的 PDF $f_Z(z)$：
 >
 > ```math
 > f_Z(z) = \int_{-\infty}^{\infty} f_X(t)\,f_Y(z - t)\,\mathrm{d}t.
@@ -129,7 +129,7 @@
 
 ---
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 3**</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#2471a3;">**第 3 题（Problem 3）**</span>
 
 > <span style="color:#1e8449;">[note] 译者注：原题设定（由解答反推）：共进行 $n$ 次独立投掷，每次投掷以概率 $1/k$ 等可能地得到 $1, \dots, k$ 之一；$X_1$、$X_2$ 分别为结果等于 1 和等于 2 的次数。</span>
 >
@@ -151,7 +151,7 @@
 
 <!-- ===== PDF p3 ===== -->
 
-<span style="color:#c0392b;">**Problem 3（续）**</span>
+<span style="color:#c0392b;">**第 3 题（续，Problem 3 continued）**</span>
 
 > 且
 >
@@ -163,7 +163,7 @@
 
 ---
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 4**</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#2471a3;">**第 4 题（Problem 4）**</span>
 
 > <span style="color:#2471a3;">[solution]</span>
 >
@@ -205,7 +205,7 @@
 > \end{cases}
 > ```
 >
-> 利用全方差公式（law of total variance），我们得到
+> 利用全方差公式（law of total variance，它把 $Y$ 的总方差拆成“条件均值的方差”与“条件方差的均值”两部分：$\mathrm{var}(Y) = \mathrm{var}(E[Y \mid X]) + E[\mathrm{var}(Y \mid X)]$；此处 $E[Y \mid X] = 0$ 恒成立，故第一项为 0，只剩第二项），我们得到
 >
 > ```math
 > \mathrm{var}(Y) = E[\mathrm{var}(Y \mid X)] = \frac{4}{5}\cdot\frac{4}{3} + \frac{1}{5}\cdot\frac{1}{3} = 17/15.
@@ -213,7 +213,7 @@
 
 ---
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 5**</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#2471a3;">**第 5 题（Problem 5）**</span>
 
 > <span style="color:#2471a3;">[solution]</span>
 >
@@ -231,7 +231,7 @@
 > E[B] = q, \qquad \mathrm{var}(B) = q(1 - q).
 > ```
 >
-> **(a)** 由于 $K = B_1 + B_2 + \cdots + B_N$，
+> **(a)** 由于 $K = B_1 + B_2 + \cdots + B_N$，这里 $N$ 是会员总数（一个几何（geometric）随机变量），$B_1,\dots,B_N$ 是各位会员是否出席的伯努利变量，求和项的个数 $N$ 本身也是随机的，即所谓“随机个随机变量之和”（random sum）。
 >
 > ```math
 > E[K] = E[N]\cdot E[B] = \frac{q}{1-p},
@@ -243,7 +243,7 @@
 
 <!-- ===== PDF p4 ===== -->
 
-<span style="color:#c0392b;">**Problem 5（续）**</span>
+<span style="color:#c0392b;">**第 5 题（续，Problem 5 continued）**</span>
 
 > **(b)** 设 $G$ 为带到会议的总金额。则 $G = M_1 + M_2 + \cdots + M_K$。
 >
@@ -257,7 +257,7 @@
 
 ---
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**G1†**</span> <span style="color:#7f8c8d;">（† 6.431 必做；6.041 选做）</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#2471a3;">**第 6 题（Problem G1）**</span> <span style="color:#7f8c8d;">（† 6.431 必做；6.041 选做）</span>
 
 > <span style="color:#2471a3;">[solution]</span>
 >
@@ -328,4 +328,4 @@
 
 <!-- ===== PDF p5 ===== -->
 
-<span style="color:#7f8c8d;">MIT OpenCourseWare　http://ocw.mit.edu —— 6.041 / 6.431 Probabilistic Systems Analysis and Applied Probability（概率系统分析与应用概率），Fall 2010。有关引用这些材料或使用条款的信息，请访问：http://ocw.mit.edu/terms。</span>
+<span style="color:#7f8c8d;">MIT OpenCourseWare　http://ocw.mit.edu —— 6.041 / 6.431 概率系统分析与应用概率（Probabilistic Systems Analysis and Applied Probability），2010 秋季学期（Fall 2010）。有关引用这些材料或使用条款的信息，请访问：http://ocw.mit.edu/terms。</span>

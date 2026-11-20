@@ -6,6 +6,8 @@
 
 <span style="color:#7f8c8d;">麻省理工学院电气工程与计算机科学系（Massachusetts Institute of Technology, Department of Electrical Engineering & Computer Science）</span>
 
+<span style="color:#7f8c8d;">**背景**：本题描述一名 MIT 学生在几个专业之间反复纠结，用一条马尔可夫链刻画她每天如何改变选择。这里的 course 6、course 9、course 15 是 MIT 的系别编号：course 6 即电气工程与计算机科学系（EECS），course 9 即脑与认知科学系，course 15 即斯隆管理学院；而 $6\text{-}1$、$6\text{-}2$、$6\text{-}3$ 表示「仍在 course 6 系内、但具体方向不同」的三个子状态。</span>
+
 ---
 
 <span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 1**</span>
@@ -99,7 +101,7 @@
 >
 > ```math
 > \begin{aligned}
-> E[N]&=(0)\,v_{6\text{-}1}(0)+(1)\,v_{6\text{-}1}(0)+(2)\bigl(1-v_{6\text{-}1}(0)-v_{6\text{-}1}(1)\bigr)\\
+> E[N]&=(0)\,v_{6\text{-}1}(0)+(1)\,v_{6\text{-}1}(1)+(2)\bigl(1-v_{6\text{-}1}(0)-v_{6\text{-}1}(1)\bigr)\\
 > &=\frac{690}{3721}+2\Bigl(\frac{225}{3721}\Bigr)\\
 > &=\frac{1140}{3721}\approx 0.306
 > \end{aligned}
@@ -119,6 +121,8 @@
 > ```
 >
 > 其中 $a_k$ 即 (b) 中求出的「处于状态 $k$ 的条件下最终到达状态 15」的吸收概率。于是我们可以用这组新的条件概率修改原链，并在新链上计算期望吸收时间。注意，状态 9 此时消失了。
+>
+> <span style="color:#1e8449;">**[mathtip]** 上式第一行到第二行用了条件概率的乘法规则 $P(A\mid B)=P(A\mid B,C)\,P(C\mid B)$ 的反向形式（贝叶斯型恒等式）；第二行到第三行则利用马尔可夫性：给定当前状态 $X_n=i$ 与下一步 $X_{n+1}=j$，事件 $A$（最终到达 15）只依赖于从 $j$ 开始的未来路径，与更早的 $X_n=i$ 无关，故 $P(A\mid X_{n+1}=j,\,X_n=i)=P(A\mid X_{n+1}=j)$。最后一行把分子里的 $P(A\mid X_{n+1}=j)$ 记为 $a_j$、分母里的 $P(A\mid X_n=i)$ 记为 $a_i$。</span>
 >
 > <span style="color:#1e8449;">**[mathtip]** 这是因为条件化后转移到 9 的概率变为 $(a_9/a_i)\,P_{i,j}=0$；而转移到 15（吸收态）的项对剩余时间贡献为 $0$。</span>
 >

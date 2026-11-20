@@ -16,7 +16,7 @@
 - 极大似然估计（Maximum likelihood estimation）：
   - 模型带未知参数：$X \sim p_X(x;\theta)$；
   - 挑选"让数据最可能出现"的 $\theta$：$\max_\theta p_X(x;\theta)$；
-  - 与贝叶斯 MAP 估计对比：$\max_\theta p_{\Theta|X}(\theta \mid x)$，或 $\max_\theta \dfrac{p_{X|\Theta}(x \mid \theta)\, p_\Theta(\theta)}{p_X(x)}$。
+  - 与贝叶斯 MAP（maximum a posteriori，最大后验概率）估计对比：$\max_\theta p_{\Theta|X}(\theta \mid x)$，或 $\max_\theta \dfrac{p_{X|\Theta}(x \mid \theta)\, p_\Theta(\theta)}{p_X(x)}$。
 - 样本均值估计 $\theta = \mathrm{E}[X]$：$\hat\Theta_n = (X_1 + \cdots + X_n)/n$。
 - $1 - \alpha$ 置信区间：$P(\hat\Theta_n^- \le \theta \le \hat\Theta_n^+) \ge 1 - \alpha$，$\forall\, \theta$。
 - 样本均值的置信区间：设 $z$ 满足 $\Phi(z) = 1 - \alpha/2$，则 $P\bigl(\hat\Theta_n - \frac{z\sigma}{\sqrt n} \le \theta \le \hat\Theta_n + \frac{z\sigma}{\sqrt n}\bigr) \approx 1 - \alpha$。
@@ -40,7 +40,7 @@
 ```math
 \min_{\theta_0, \theta_1}\ \sum_{i=1}^{n} \bigl(y_i - \theta_0 - \theta_1 x_i\bigr)^2 .
 ```
-- 一种解读：$Y_i = \theta_0 + \theta_1 x_i + W_i$，$W_i \sim \mathrm{N}(0, \sigma^2)$ i.i.d.：
+- 一种解读：$Y_i = \theta_0 + \theta_1 x_i + W_i$，$W_i \sim \mathrm{N}(0, \sigma^2)$，i.i.d.（independent and identically distributed，独立同分布）：
   - 似然函数 $f_{X,Y \mid \theta}(x, y; \theta)$ 为 $c \cdot \exp\bigl\{-\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y_i - \theta_0 - \theta_1 x_i)^2\bigr\}$；
   - 取对数，与上式相同（$\ast$）；
   - 最小二乘 $\iff$ 假装 $W_i$ 是 i.i.d. 正态。
@@ -73,7 +73,7 @@
 
 > <span style="color:#7f8c8d;">Bertsekas §9.2, p.475–484</span>
 
-> <span style="color:#1e8449;">**[note] Note（译者注，验证 + 卡点诊断）:**</span> 验证斜率的概率公式：由 $Y = \theta_0 + \theta_1 X + W$ 且 $W$ 与 $X$ 独立、均值为零，$\mathrm{E}[(X - \mathrm{E}[X])(Y - \mathrm{E}[Y])] = \theta_1\,\mathrm{E}[(X - \mathrm{E}[X])^2] + \mathrm{E}[(X - \mathrm{E}[X])\,W] = \theta_1\,\mathrm{var}(X) + 0 = \theta_1\,\mathrm{var}(X)$ ✓——协方差里只装得下斜率，截距 $\theta_0$ 被中心化自动吸收。卡点诊断：所谓 natural estimates（自然估计）就是把总体矩换成样本矩——$\mathrm{cov}$ 换成 $\frac{1}{n}\sum_i (x_i - \bar x)(y_i - \bar y)$、$\mathrm{var}(X)$ 换成 $\frac{1}{n}\sum_i (x_i - \bar x)^2$，比值恰是 $\hat\theta_1$ 的最小二乘公式 ✓；换言之，回归斜率是"理论关系 $\theta_1 = \mathrm{cov}/\mathrm{var}$ 的矩估计"。跨课程连接：把本式与 Lec 22 的线性 LMS 斜率 $a = \mathrm{cov}(\Theta, X)/\mathrm{var}(X)$ 并排放看——完全同款！那边是"用 $X$ 线性估计 $\Theta$"，这边是"用 $X$ 线性解释 $Y$"，最小均方与最小二乘在斜率层面本是同一个公式。顺带一提，下一页"选对变量"里 $y \approx \theta_0 + \theta_1 h(x)$ 的想法，正是 Lec 22 "Choosing $X_i$"（喂 $X, X^2, X^3$）的回归版：换基不换法。
+> <span style="color:#1e8449;">**[note] Note（译者注，验证 + 卡点诊断）:**</span> 验证斜率的概率公式：由 $Y = \theta_0 + \theta_1 X + W$ 且 $W$ 与 $X$ 独立、均值为零，$\mathrm{E}[(X - \mathrm{E}[X])(Y - \mathrm{E}[Y])] = \theta_1\,\mathrm{E}[(X - \mathrm{E}[X])^2] + \mathrm{E}[(X - \mathrm{E}[X])\,W] = \theta_1\,\mathrm{var}(X) + 0 = \theta_1\,\mathrm{var}(X)$ ✓——协方差里只装得下斜率，截距 $\theta_0$ 被中心化自动吸收。卡点诊断：所谓 natural estimates（自然估计）就是把总体矩换成样本矩——$\mathrm{cov}$ 换成 $\frac{1}{n}\sum_i (x_i - \bar x)(y_i - \bar y)$、$\mathrm{var}(X)$ 换成 $\frac{1}{n}\sum_i (x_i - \bar x)^2$，比值恰是 $\hat\theta_1$ 的最小二乘公式 ✓；换言之，回归斜率是"理论关系 $\theta_1 = \mathrm{cov}/\mathrm{var}$ 的矩估计"。跨课程连接：把本式与 Lec 22 的线性 LMS（least mean squares，最小均方）斜率 $a = \mathrm{cov}(\Theta, X)/\mathrm{var}(X)$ 并排放看——完全同款！那边是"用 $X$ 线性估计 $\Theta$"，这边是"用 $X$ 线性解释 $Y$"，最小均方与最小二乘在斜率层面本是同一个公式。顺带一提，下一页"选对变量"里 $y \approx \theta_0 + \theta_1 h(x)$ 的想法，正是 Lec 22 "Choosing $X_i$"（喂 $X, X^2, X^3$）的回归版：换基不换法。
 
 ---
 
@@ -91,7 +91,7 @@
   - 改用数据点 $(y_i, h(x_i))$；
   - 形式化：
 ```math
-\min_{\theta}\ \sum_{i=1}^{n} \bigl(y_i - \theta_0 - \theta_1 h_1(x_i)\bigr)^2 .
+\min_{\theta_0, \theta_1}\ \sum_{i=1}^{n} \bigl(y_i - \theta_0 - \theta_1 h(x_i)\bigr)^2 .
 ```
 
 > <span style="color:#7f8c8d;">Bertsekas §9.2, p.475–484</span>

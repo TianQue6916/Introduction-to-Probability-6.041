@@ -1,6 +1,6 @@
 <!-- ===== PDF p1 ===== -->
 
-<span style="color:#c0392b;">**6.041 / 6.431　概率系统分析（Probabilistic Systems Analysis）**</span>
+<span style="color:#c0392b;">**6.041 / 6.431　概率系统分析（Probabilistic Systems Analysis and Applied Probability）**</span>
 
 <span style="color:#c0392b;">**Problem Set 1 解答（Problem Set 1: Solutions）**</span> <span style="color:#7f8c8d;">（Fall 2010，2010 秋季学期；Due: September 15, 2010，截止日期：2010 年 9 月 15 日）</span>
 
@@ -10,7 +10,7 @@
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 1**</span>
 
-<span style="color:#7f8c8d;">（原解答未重述题干：由答案与配图可知，本题要求用集合运算表示各 Venn 图中的阴影区域，下列 (a)–(g) 即为对应答案。）</span>
+<span style="color:#7f8c8d;">（原解答未重述题干：由答案与配图可知，本题要求用集合运算表示各 Venn 图（Venn diagram，维恩图）中的阴影区域，下列 (a)–(g) 即为对应答案。）</span>
 
 > <span style="color:#2471a3;">[solution]</span>
 >
@@ -30,13 +30,15 @@
 
 <span style="color:#7f8c8d;">【图】原页此处为 7 幅 Venn 图，分别对应 (a)–(g) 各小问的阴影区域（全集为 $\Omega$，涉及集合 $A$、$B$、$C$）。原图由后处理统一插入。</span>
 
+<span style="color:#1e8449;">[note]</span> 上标 $c$ 表示 complement（补集）：$A^c$ 就是「不在集合 $A$ 里的那些样本点」。例如 (c) 用到的 de Morgan 律（德摩根律）$(A \cup B \cup C)^c = A^c \cap B^c \cap C^c$，意思是「不属于 $A$、$B$、$C$ 中的任何一个」等价于「既不属于 $A$、又不属于 $B$、也不属于 $C$」。
+
 ---
 
-<span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 2**</span>
+<span style="color:#2471a3;">[problem]</span> <span style="color:#2471a3;">**Problem 2**</span>
 
 <span style="color:#7f8c8d;">（原解答未重述题干：由解答可知，本题考察将一枚硬币抛掷 3 次的古典概型，样本点为 H/T 序列。）</span>
 
-> <span style="color:#2471a3;">[solution]</span> 由于所有结果都是等可能的，我们应用离散均匀概率律（discrete uniform probability law）来求解：对任一事件，只需数出该事件中元素的个数，再除以样本空间（sample space）中元素的总数。
+> <span style="color:#2471a3;">[solution]</span> 由于所有结果都是等可能的，我们应用 discrete uniform probability law（离散均匀概率律）来求解：对任一事件，只需数出该事件中元素的个数，再除以 sample space（样本空间）中元素的总数。
 >
 > 每次抛掷有 2 种可能结果，共抛 3 次，因此样本空间中共有 $2^3 = 8$ 个元素（即序列）。
 >
@@ -47,6 +49,8 @@
 > (c) 所考察的事件包含 3 个不同的序列，故 $P(\{HHT, HTH, THH\}) = 3/8$。
 >
 > (d) 正面多于反面的序列构成 $A : \{HHH, HHT, HTH, THH\}$；由 4 个不同序列得 $P(A) = 1/2$。
+
+<span style="color:#1e8449;">[note]</span> 离散均匀概率律（discrete uniform probability law）是古典概型的正式表述：当 sample space（样本空间）是有限集、且其中每个结果等可能时，任一事件 $A$ 的概率就是 $P(A) = \dfrac{|A|}{|\Omega|}$，其中 $|\cdot|$ 表示集合中元素的个数。这里 H 表示正面（Head），T 表示反面（Tail），一个序列记下每次抛掷的结果，例如 HHT 表示「第 1、2 次正面，第 3 次反面」。
 
 ---
 
@@ -96,6 +100,8 @@
 > P(\text{Rolling a 2 and a 3}) = P(2, 3) + P(3, 2) = 5p + 5p = 10p = 1/8
 > ```
 
+<span style="color:#1e8449;">[note]</span> 表中最右列 $P(\text{Sum})$ 的含义是：两枚骰子点数之和为某个值时的概率，等于「该和的值」乘以常数 $p$。例如掷出 $(1,2)$ 与 $(2,1)$ 都得到和 3，各贡献 $3p$。表格 16 行（两枚 4 面骰各有 4 种结果，共 $4 \times 4 = 16$ 种组合）的概率之和 $2p+3p+\cdots+8p = 80p$ 必须等于 1，故 $p = 1/80$。(a) 中偶数和就是把和等于 2、4、6、8 的那几行的 $P(\text{Sum})$ 全部加起来；注意这里 16 种组合里有一半（8 种）和是偶数。(b) 中「一个 2 和一个 3」有两种排列 $(2,3)$ 与 $(3,2)$，二者都对应和 5，故概率是 $5p + 5p = 10p$。
+
 ---
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 4**</span>
@@ -138,6 +144,8 @@
 > P(A \cap D) = \frac{\text{double shaded area}}{\text{total sample area}} = \frac{(5/3)(5/3)(1/2) + (4/3)(4/3)(1/2)}{4} = \frac{25/18 + 16/18}{4} = \frac{41}{72}
 > ```
 
+<span style="color:#1e8449;">[note]</span> 这是连续型（continuous）均匀抽样的几何概率：样本点是 $[0,2]\times[0,2]$ 这个面积为 4 的正方形里的点，事件概率等于「事件区域面积」除以「总样本面积 4」。(a) 小问里「两个数都小于 $1/3$」是边长为 $1/3$ 的小正方形，面积 $(1/3)(1/3) = 1/9$，故 $P(B) = 1 - (1/9)/4 = 1 - 1/36$。$P(C)$ 中「两数相等」对应正方形的主对角线，而一条线的面积是 0，所以概率为 0——这正是连续型概率中「概率为 0 的事件仍可能发生」的典型例子。(d) 小问里 $A \cap D$ 是两个等腰直角三角形的并，这两个三角形的底和高分别是 $5/3$ 与 $4/3$（即从 $[0,2]$ 区间两端到 $1/3$、$2$ 等刻度的距离），每个三角形面积用「底 $\times$ 高 $\div 2$」算得 $(5/3)(5/3)(1/2)$ 与 $(4/3)(4/3)(1/2)$，相加后除以总面积 4 得 $41/72$。
+
 ---
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 5**</span>
@@ -170,13 +178,15 @@
 >
 > 这些数字表明 John 与 Mike 的水平相当，两人赢得比赛的可能性相同。Mike 对投掷方向的控制更好（或者更差，取决于你怎么看），却并不能提高他获胜的概率；其原因在于：两名选手对「距原点距离」的控制是完全相同的。
 
-<span style="color:#1e8449;">[note]</span> 原文 "or worst" 疑为 "or worse"（更差）之笔误。
+<span style="color:#1e8449;">[note]</span> 原文 "or worst" 疑为 "or worse"（更差）之笔误。另外请注意：(a) 小问中 $R$ 代表内圆盘半径（$R=1$），而 (c) 小问里 $R$ 又代表整个盘的半径（$R=10$），且 (c) 里的常数 $\alpha$、$\beta$ 与 (a) 里的 $\alpha$ 是**不同的数值**——(a) 中 $\alpha = 1/(100\pi)$，(c) 中 $\alpha = 1/(75\pi)$、$\beta = 1/(150\pi)$，原文共用同一符号 $\alpha$ 容易混淆。(c) 小问说 John「左、右两半边的概率密度不同」，即他落在右半边的总概率是 $2/3$、落在左半边是 $1/3$，据此反解出 $\alpha$ 与 $\beta$；最后两半边得 50 分的概率分别是 $\alpha\pi/2 = 1/150$ 与 $\beta\pi/2 = 1/300$，相加仍得 $0.01$，与 Mike 相同。
 
 ---
 
 <span style="color:#2471a3;">[problem]</span> <span style="color:#c0392b;">**Problem 6**</span>
 
 > <span style="color:#2471a3;">[solution]</span> 见教材（textbook）习题 1.11（Problem 1.11），第 55 页，该题证明了一般形式的 Bonferroni 不等式（Bonferroni's inequality）。
+
+<span style="color:#1e8449;">[note]</span> Bonferroni 不等式（Bonferroni's inequality）是并集概率的一个上界：对任意事件 $A_1, A_2, \ldots, A_n$，有 $P\!\left(\bigcup_{i=1}^{n} A_i\right) \le \sum_{i=1}^{n} P(A_i)$，即「并的概率不超过各概率之和」（当各事件互不相交时取等号）。一般形式（union bound 的推广，教材习题 1.11 所证的含交集的更紧上界）正是本题要借助的结论。
 
 ---
 
@@ -203,6 +213,8 @@
 > (b) 不成立（No）。考虑如下例子：令 $a_n = a + \dfrac{1}{n}$，$b_n = b - \dfrac{1}{n}$。则 $\{a_n\}$ 是收敛到 $a$ 的递减数列，$\{b_n\}$ 是收敛到 $b$ 的递增数列。如果定义一个只在点 $a$ 与 $b$ 上具有非零概率的概率律（probability law），那么 $\lim_{n\to\infty} P([a_n, b_n]) = 0$，但 $P([a, b]) = 1$。
 >
 > 这个例子与概率的连续性密切相关。此时若定义 $A_n = [a_n, b_n]$，则序列 $A_1, A_2, \ldots$ 是「单调递增的（monotonically increasing）」，即 $A_n \subset A_{n+1}$，但 $A = \Bigl(\bigcup_{n=1}^{\infty} A_n\Bigr) = (a, b)$ 是一个开区间，在上述概率律下其概率为 0。
+
+<span style="color:#1e8449;">[note]</span> 这里要分清单调递减与单调递增两种情形，以及区间「端点是否被取到」的细微差别。在 (a) 中，若 $a_n$ 递减收敛到 $a$、$b_n$ 递增收敛到 $b$，且每个 $A_n = [a_n, b_n]$ 都是闭区间，那么区间逐层变小、最终「缩」到闭区间 $[a,b]$，两个端点都被保留，故 $\bigcap A_n = [a,b]$，概率连续性给出 $\lim P([a_n,b_n]) = P([a,b])$。(b) 中取 $a_n = a + 1/n$、$b_n = b - 1/n$：这时 $a_n$ 从上方逼近 $a$、$b_n$ 从下方逼近 $b$，于是区间 $[a_n, b_n]$ 随着 $n$ 增大反而越来越大（左端向左移、右端向右移），所以 $A_n$ 是单调递增的；它们的并集 $A = \bigcup A_n$ 是开区间 $(a,b)$，因为端点 $a$、$b$ 永远不在任何一个 $A_n$ 里（$a_n$ 恒大于 $a$，$b_n$ 恒小于 $b$）。若概率律把全部质量放在两个单点 $a$、$b$ 上（即 $P(\{a\}) + P(\{b\}) = 1$），那么每个 $[a_n, b_n]$（不含 $a$、$b$）的概率都是 0，而 $[a,b]$（含 $a$、$b$）的概率是 1，于是 $\lim P([a_n,b_n]) = 0 \ne P([a,b]) = 1$，说明「单调递增序列」并不满足与 (a) 中「单调递减序列」对称的那个连续性结论——这正是 (b) 要说明的不成立之处。
 
 <!-- ===== PDF p6 ===== -->
 
