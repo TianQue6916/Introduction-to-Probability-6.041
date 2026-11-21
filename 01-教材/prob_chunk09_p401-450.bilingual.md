@@ -343,7 +343,7 @@ Therefore, by an argument similar to the one in part (a), the steady-state proba
 >
 > (b) 由单调性直接读出结构：$m$ 是 absorbing state（吸收态，$P(m\to m)=1$），其余 $m-1$ 个状态全是 transient（暂态）。每个暂态每步都有 $(m-i)/m>0$ 的概率严格上升，而状态数有限，故落到 $m$ 的时间 almost surely（几乎必然）有限，$m$ 是唯一的 recurrent class（常返类）。这一步不需要解方程，只需要「有限个正概率台阶」这个论证。
 >
-> (c) 的关键洞察是绕开整个链：状态 $m$ 只有在某一年恰好抽到排名 $m$ 时才能到达，而到达之后就永远停住。所以吸收时间就是首次抽到 $m$ 的等待时间，与起始名次 $i$ 无关：只要 $i<m$，$T=\min\{n:R_n=m\}$，而 $R_n$ iid（独立同分布）、每次命中概率 $1/m$，故 $T$ 服从参数 $1/m$ 的 geometric distribution（几何分布，按「首次成功」计数），期望为 $m$。用 first-step analysis（首步分析）验证一遍：$E_m=0$，对 $i<m$ 有 $E_i=1+\frac{i}{m}E_i+\frac{1}{m}\sum_{j=i+1}^{m}E_j$，把 $E_j=m$（$j<m$）代入，右端 $=1+i+\frac{(m-i)}{m}\cdot m=m$，方程成立，故 $E_i=m$ 是解、且由 $(I-P_T)$ 可逆知是唯一解。两个途径给出同一个数，说明结论不是巧合。
+> (c) 的关键洞察是绕开整个链：状态 $m$ 只有在某一年恰好抽到排名 $m$ 时才能到达，而到达之后就永远停住。所以吸收时间就是首次抽到 $m$ 的等待时间，与起始名次 $i$ 无关：只要 $i<m$，$T=\min\{n:R_n=m\}$，而 $R_n$ iid（独立同分布）、每次命中概率 $1/m$，故 $T$ 服从参数 $1/m$ 的 geometric distribution（几何分布，按「首次成功」计数），期望为 $m$。用 first-step analysis（首步分析）验证一遍：$E_m=0$，对 $i<m$ 有 $E_i=1+\frac{i}{m}E_i+\frac{1}{m}\sum_{j=i+1}^{m}E_j$，把 $E_j=m$（$j<m$）与 $E_m=0$ 代入，右端 $=1+i+\frac{(m-1-i)}{m}\cdot m=m$，方程成立，故 $E_i=m$ 是解、且由 $(I-P_T)$ 可逆知是唯一解。两个途径给出同一个数，说明结论不是巧合。
 >
 > 整条分布也有闭式，但必须分段，这里是最容易写错的地方。因为 $X_n\le i$ 等价于前 $n$ 年的排名全部不超过 $i$，所以对 $i>i_0$ 有 $P(X_n=i)=(i/m)^n-((i-1)/m)^n$——两个「历史最大值不超过 $i$」的事件相减。而起点情形不同：$X_n=i_0$ 只要求前 $n$ 年全部不超过 $i_0$，于是 $P(X_n=i_0)=(i_0/m)^n$，不能套上面的差式（差式会减掉 $((i_0-1)/m)^n$，凭空丢了一块概率）。数值检验：$m=3$、$i_0=2$、$n=2$ 时，$(2/3)^2=4/9\approx0.4444$，与直接枚举 $9$ 条等可能路径中「两年都不超过 $2$」的 $4$ 条一致；若误用差式会得到 $4/9-1/9=1/3$。整条链的分布都有闭式，根本不必迭代。
 >
@@ -586,7 +586,7 @@ a_i(k) = \bar{p}_{ik} + \sum_{j:\ \text{transient}} \bar{p}_{ij}\, a_j(k), \qqua
 >
 > 用矩阵写，极限 $H=\lim_n P^{n}$ 存在，且 $H_{ij}=a_i(\kappa(j))\,\pi^{(\kappa(j))}_j$，其中 $\kappa(j)$ 表示 $j$ 所属的常返类；$j$ 暂态时整列为零。等价地 $H=\sum_k r^{(k)}(\pi^{(k)})^{T}$，其中 $r^{(k)}$ 是列向量、第 $i$ 个分量等于 $a_i(k)$（类内取 $1$）。这个 $H$ 是 idempotent（幂等）的，$H^2=H$。
 >
-> 三个量容易混，必须分开记，其中第一个是本条最需要纠正的。$H$ 的 rank（秩）等于常返类的个数，不是常返状态的个数：理由是上面那个分解，若 $\sum_k c_k r^{(k)}=0$，把等式限制在 $C_k$ 上，只有 $r^{(k)}$ 在 $C_k$ 上非零，于是 $c_k=0$，各列线性无关。举个能一眼看出差别的例子：两个常返类、每类两个状态、外加暂态，$P^{4000}$ 的数值秩是 $2$，而常返状态有 $4$ 个，相等的是前者与类数。第二个量：$P$ 在 $\lambda=1$ 处的 geometric multiplicity（几何重数）与 algebraic multiplicity（代数重数）都等于常返类数，因为 $\dim\ker(I-P)$ 恰好数出「有几个互不相通、一旦进入就不再离开的封闭类」。第三个量：$P_{TT}^{n}\to0$ 的衰减速度由 $\rho(P_{TT})<1$ 决定，是指数级的。三者的共同点是「都等于类数」或「都由 $P_{TT}$ 的谱决定」，但把「秩」写成「常返状态数」会让 $H$ 看起来比实际大得多。
+> 三个量容易混，必须分开记，其中第一个是本条最需要纠正的。$H$ 的 rank（秩）等于常返类的个数，不是常返状态的个数：理由是上面那个分解，若 $\sum_k c_k r^{(k)}=0$，把等式限制在 $C_k$ 上，只有 $r^{(k)}$ 在 $C_k$ 上非零，于是 $c_k=0$，各列线性无关。举个能一眼看出差别的例子：两个常返类、每类两个状态（设各类非周期；否则 $P^n$ 不收敛，$H$ 根本不存在）、外加暂态，$P^{4000}$ 的数值秩是 $2$，而常返状态有 $4$ 个，相等的是前者与类数。第二个量：$P$ 在 $\lambda=1$ 处的 geometric multiplicity（几何重数）与 algebraic multiplicity（代数重数）都等于常返类数，因为 $\dim\ker(I-P)$ 恰好数出「有几个互不相通、一旦进入就不再离开的封闭类」。第三个量：$P_{TT}^{n}\to0$ 的衰减速度由 $\rho(P_{TT})<1$ 决定，是指数级的。三者的共同点是「都等于类数」或「都由 $P_{TT}$ 的谱决定」，但把「秩」写成「常返状态数」会让 $H$ 看起来比实际大得多。
 >
 > 术语上还有一处要更正：非负矩阵理论里与本题对应的标准名字是 Frobenius normal form（Frobenius 标准型）：存在一个 permutation matrix（置换矩阵）使 $P$ 化成 block lower triangular（块下三角），对角块 irreducible（不可约），每一块对应一个 communicating class（互通类）。「Levinson 分解」不是这个领域的术语——Levinson–Durbin recursion（Levinson–Durbin 递推）是 Norman Levinson 于 1947 年、James Durbin 于 1960 年先后给出的，用途是以 $O(n^2)$ 解 Toeplitz 线性方程组，与马尔可夫链的分类无关。两者都姓「分解」，但一个拆状态空间、一个拆 Toeplitz 结构，混用会让检索失效。至于 Perron–Frobenius：Oskar Perron 在 1907 年证明正矩阵情形，Ferdinand Georg Frobenius 在 1912 年推广到不可约非负矩阵，这正是本题「一个类对应一个主特征向量」的来源。
 >
@@ -621,7 +621,7 @@ satisfied by the mean first passage times, has a unique solution. **Hint:** If t
 >
 > 一个两行的具体例子把这句断言钉死：取 $T=\{1,2\}$、$P_T=\begin{pmatrix}1&0\\1&0\end{pmatrix}$（状态 $1$ 是留在 $T$ 里的常返类，状态 $2$ 必跳进 $1$），则 $I-P_T=\begin{pmatrix}0&0\\-1&1\end{pmatrix}$，秩为 $1$，而增广矩阵 $[\,I-P_T\mid\mathbf{1}\,]$ 的秩是 $2$，rank（秩）不相等意味着无解——直观上就是两个方程要求同一个未知组合同时等于 $0$ 和 $1$。若把右端换成落在列空间里的向量（例如只对某一个起点设 $1$ 而其余设 $0$，恰好与 $y$ 正交），才会有解，而且此时解是无限多个：齐次方程 $\delta=P_T\delta$ 的非零解就是「常数取在常返类上、别处取零」。所以正确的因果链是：$s$ 暂态 ⇒ 矩阵奇异且右端一般不在值域内 ⇒ 无解；只有在右端碰巧相容的边上，才退化为不唯一。
 >
-> 算之前先确认目标态常返，等于先确认 $P_T$ 的谱半径严格小于 $1$——这是判断「方程有没有解」的唯一实用准则。顺带把两组「首达」与「首返」区分开：本题的 $t_i$ 是从 $i$ 出发首次到达 $s$ 的期望（$i$ 任意、$s$ 固定）；$t_s$ 被规定为 $0$，是「已经在那里」，不计数。而 mean recurrence time（平均循环时间）是从 $s$ 出发首次回到 $s$ 的期望，恒正，且等于 $1/\pi_s$（Kac 1947，见下一题的注）。课本把 $s$ 那一行直接钉成 $0$，等于把「首达」定义成「不含出发时刻」，这个约定一旦写错，$N$ 的行和与 $1/\pi_s$ 就对不上。
+> 算之前先确认 $s$ 常返、且从每个状态都能到达 $s$（等价于 $P_T$ 没有封闭类，也等价于 $\rho(P_T)<1$）——这是判断「方程有没有唯一解」的实用准则。顺带把两组「首达」与「首返」区分开：本题的 $t_i$ 是从 $i$ 出发首次到达 $s$ 的期望（$i$ 任意、$s$ 固定）；$t_s$ 被规定为 $0$，是「已经在那里」，不计数。而 mean recurrence time（平均循环时间）是从 $s$ 出发首次回到 $s$ 的期望，恒正，且等于 $1/\pi_s$（Kac 1947，见下一题的注）。课本把 $s$ 那一行直接钉成 $0$，等于把「首达」定义成「不含出发时刻」，这个约定一旦写错，$N$ 的行和与 $1/\pi_s$ 就对不上。
 
 <!-- ===== PDF p408 ===== -->
 
@@ -729,7 +729,7 @@ sum to 1 and satisfy the balance equations (平衡方程), where $t_s$ is the me
 >
 > 长期频率的解释：$p_i/t_s$ 等于轨迹长期停留在 $i$ 的时间比例。这条断言不能一笔带过，它需要 strong law of large numbers（强大数定律）作用在循环长度这个 i.i.d.（独立同分布）序列上——相继两次回到 $s$ 之间的块，其长度与内容由强马尔可夫性保证是独立同分布的，于是每块的指示量求平均即收敛到期望，这正是 Problem 35 用模进夹逼证明的那件事。把「时间比例」与「空间平均」连起来的一般定理叫 ergodic theorem（遍历定理），Birkhoff 在 1931 年证明的 pointwise（逐点）遍历定理是它的源头；马尔可夫链只是它最易验证的特例。工程上这套记账叫 renewal reward theorem（更新报酬定理）：把「回到 $s$」看作 renewal（更新）点，把「访问 $i$ 的次数」看作每个周期领到的报酬，长期平均报酬率等于单周期期望报酬除以单周期期望长度，形式完全一样。
 >
-> 必须标出一处与正文对不上的地方。(c) 问印出的结论是：若 $i$ 常返则 $\pi_i=1/t_s$，若 $i$ 暂态则 $\pi_i=0$。前一半在数学上只在 $p_i=1$ 时成立，一般应为 $\pi_i=p_i/t_s$。理由两条：第一，与 (b) 直接冲突——(b) 说的是 $\pi_i=p_i/t_s$，两者相等要求所有常返态的 $p_i$ 都等于 $1$；三状态环 $1\to2\to3\to1$ 里每个 $p_i$ 都等于 $1$ 只是巧合，一旦有自环或不等权转移，$p_i$ 立刻偏离 $1$（例如状态 $i$ 有两个自环的平均逗留，$p_i$ 就等于 $2$）。第二，与归一化冲突：若所有常返 $i$ 都取 $1/t_s$，和就是「常返状态数除以 $t_s$」，只有单状态链才等于 $1$。因此正确形式应是 $\pi_i=p_i/t_s$（$i$ 常返），暂态为零——也就是 (b) 的结论在 (d) 的假设下重复一遍。此处源码很可能在 OCR 中丢掉了 $p_i$ 这个因子（本页页首的碎裂说明已指出该页符号严重残缺），建议以书页 p400–p401（PDF p408–p409）的印刷式为准；无论如何，按现印的 $1/t_s$ 读不通，这一点以数学为准而不以 OCR 为准。
+> 必须标出一处与正文对不上的地方。(c) 问印出的结论是：若 $i$ 常返则 $\pi_i=1/t_s$，若 $i$ 暂态则 $\pi_i=0$。前一半在数学上只在 $p_i=1$ 时成立，一般应为 $\pi_i=p_i/t_s$。理由两条：第一，与 (b) 直接冲突——(b) 说的是 $\pi_i=p_i/t_s$，两者相等要求所有常返态的 $p_i$ 都等于 $1$；三状态环 $1\to2\to3\to1$ 里每个 $p_i$ 都等于 $1$ 只是巧合，一旦有自环或不等权转移，$p_i$ 立刻偏离 $1$（例如状态 $i$ 有两个自环的平均逗留，$p_i$ 就等于 $2$）。第二，与归一化冲突：若所有常返 $i$ 都取 $1/t_s$，和就是「常返状态数除以 $t_s$」，只有单状态链才等于 $1$。因此正确形式应是 $\pi_i=p_i/t_s$（$i$ 常返），暂态为零——也就是 (b) 的结论在 (d) 的假设下重复一遍。此处疑为 OCR 丢掉了 $p_i$ 这个因子（待回查纸本 p400 印刷页确认）（本页页首的碎裂说明已指出该页符号严重残缺），建议以书页 p400–p401（PDF p408–p409）的印刷式为准；无论如何，按现印的 $1/t_s$ 读不通，这一点以数学为准而不以 OCR 为准。
 >
 > 暂态为什么会拿到零权重，理由比「比值被压到零」更硬。单一常返类加上 $s$ 常返，就排除了「从 $s$ 可达的暂态」：若某个暂态 $i$ 从 $s$ 可达，那么从 $s$ 出发就有一条正概率的路径走进 $i$ 且永不返回，$s$ 立刻不再是常返态，矛盾。所以暂态从 $s$ 根本不可达，$p_i=0$，$\pi_i=0$ 是 $p_i$ 本身为零，而不是 $t_s$ 取到无穷大尺度的结果。做题时若把暂态也配非零稳态权重，平衡方程仍可能被满足（只要流入等于流出），归一化却会与 (b) 的解错位——这是最常见的失分点。
 
@@ -1080,7 +1080,7 @@ which are precisely the balance and normalization equations of the embedded Mark
 >
 > **方向不能互换。** 左边 $\pi_j\sum_{k\ne j}q_{jk}$ 是离开 $j$ 的 outflow（出流），右边 $\sum_{k\ne j}\pi_k q_{kj}$ 是进入 $j$ 的 inflow（入流）；若把右边写成 $\sum_{k\ne j}\pi_j q_{jk}$，两边就是同一个式子，等式恒成立而丧失全部内容（写成「$0=0$」正是这种恒等式的症状）。口诀：$j$ 在第一个下标位（$q_{jk}$）表示「出」，在第二个下标位（$q_{kj}$）表示「入」；$j$ 是被守衡的那个状态，固定在 $\pi$ 的下标上，不参与求和。
 >
-> **行和与列和。** $\sum_{k\ne j}p_{jk}$ 是转移矩阵 $P$ 第 $j$ 行删去对角元后的和，由行和 $\sum_k p_{jk}=1$ 得 $1-p_{jj}$；$\sum_{k\ne j}\pi_k p_{kj}$ 则是第 $j$ 列按 $\pi_k$ 加权。正文 p414 的 $\sum_{k\ne j}\pi_k p_{kj}=\pi_j(1-p_{jj})$ 正做了这一替换，下标方向无误，没有把行和当列和。该替换只在 $P$ 为 row-stochastic（行随机）时成立；换成列随机约定，等式两边要整体换位。
+> **行和与列和。** $\sum_{k\ne j}p_{jk}$ 是转移矩阵 $P$ 第 $j$ 行删去对角元后的和，由行和 $\sum_k p_{jk}=1$ 得 $1-p_{jj}$；$\sum_{k\ne j}\pi_k p_{kj}$ 则是第 $j$ 列按 $\pi_k$ 加权。正文 PDF p414（书页 p406）的 $\sum_{k\ne j}\pi_k p_{kj}=\pi_j(1-p_{jj})$ 正做了这一替换，下标方向无误，没有把行和当列和。该替换只在 $P$ 为 row-stochastic（行随机）时成立；换成列随机约定，等式两边要整体换位。
 >
 > **唯一性与「当且仅当」。** 「单一常返类 + aperiodic（非周期）」保证稳态唯一，但 aperiodic（非周期）是对离散时间的嵌入链说的：连续时间链在任意时刻都可能跳，本身没有周期概念，这个限定只能挂在嵌入链上。另需收紧一处：不能写成「当且仅当各状态速率相等」，教材只证了「若」方向。逆命题不成立——两状态链取 $q_{12}=a$、$q_{21}=b$，嵌入链稳态恒为 $(1/2,1/2)$，连续时间稳态满足 $\pi_1a=\pi_2b$ 即正比于 $(b,a)$，$a\ne b$ 时二者不同，尽管稳态都存在。
 >
@@ -1610,7 +1610,7 @@ c(x) = \frac{1}{
 
 <span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.3．正态随机变量公共均值的推断（Inference of a Common Mean of Normal Random Variables）**</span>
 
-我们观测到一族随机变量 $X = (X_1, \ldots, X_n)$，它们具有一个未知的公共均值（common mean），我们希望推断出该均值之值。我们假定：在公共均值取值给定的条件下，这些 $X_i$ 服从正态分布（normal）且相互independent（独立），其方差（variances）$\sigma_1^2, \ldots, \sigma_n^2$ 已知。在这种问题的贝叶斯做法中，我们把公共均值建模为一个随机变量 $\Theta$，并给定一个先验分布（prior）。为具体起见，我们假设该先验为正态先验（normal prior），其均值 $X_0$ 与方差 $\sigma_0^2$ 均已知。
+我们观测到一族随机变量 $X = (X_1, \ldots, X_n)$，它们具有一个未知的公共均值（common mean），我们希望推断出该均值之值。我们假定：在公共均值取值给定的条件下，这些 $X_i$ 服从正态分布（normal）且相互 independent（独立），其方差（variances）$\sigma_1^2, \ldots, \sigma_n^2$ 已知。在这种问题的贝叶斯做法中，我们把公共均值建模为一个随机变量 $\Theta$，并给定一个先验分布（prior）。为具体起见，我们假设该先验为正态先验（normal prior），其均值 $X_0$ 与方差 $\sigma_0^2$ 均已知。
 
 为了以后引用方便，让我们指出：我们的模型等价于如下形式
 
@@ -2065,7 +2065,7 @@ p_\Theta(\theta)\,p_{X\mid\Theta}(x\mid\theta);
 
 <span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.3（续）——正态先验、正态观测**</span>
 
-在本例中，$\Theta$ 是一个正态随机变量（normal random variable），均值为 $\theta_0$，方差为 $\sigma_0^2$。我们观测一组随机变量 $X = (X_1, \ldots, X_n)$——在给定 $\Theta$ 取值为 $\theta$ 的条件下，这些随机变量是相互independent（独立）的正态随机变量，均值均为 $\theta$，方差分别为 $\sigma_1^2, \ldots, \sigma_n^2$。我们已经知道，后验概率密度函数（posterior PDF）是正态的。
+在本例中，$\Theta$ 是一个正态随机变量（normal random variable），均值为 $\theta_0$，方差为 $\sigma_0^2$。我们观测一组随机变量 $X = (X_1, \ldots, X_n)$——在给定 $\Theta$ 取值为 $\theta$ 的条件下，这些随机变量是相互 independent（独立）的正态随机变量，均值均为 $\theta$，方差分别为 $\sigma_1^2, \ldots, \sigma_n^2$。我们已经知道，后验概率密度函数（posterior PDF）是正态的。
 
 > <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上方「后验 PDF 是正态的」之后，本应紧接该后验正态密度的具体表达式（其均值与方差的代数形式），但源 OCR 在此处断裂，只剩 `We found that the posterior PDF is normal`（"…后验概率密度函数是正态的"）一句，正态后验的均值/方差公式无法逐字复原。此处留空占位，未臆造任何数值。</span>
 
@@ -2514,7 +2514,7 @@ P_1 = [\;], \qquad P_2 = 0.52, \qquad \text{阈值 } k = [\;] .
 Y_i = [\;] F_i + W_i, \qquad i = 1, \ldots, n,
 ```
 
-其中 $W_i$ 是相互independent（独立）、且与[所发送信号]independent（独立）的标准正态随机变量（standard normal random variables）。
+其中 $W_i$ 是相互 independent（独立）、且与[所发送信号]independent（独立）的标准正态随机变量（standard normal random variables）。
 
 > <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上文含 $\mathbf{a}$、$\mathbf{b}$、能量 $A$、$B$、接收机观测 $Y_i$、发射信号项 $F_i$（或给定信号项）以及 $W_i$ 的标准正态假设等结构在上页与本源中均能辨认（「energy,!l, ai + … + b²」「Wi are standard normal random variables, independent of …」「transmitted …」等），但具体符号与数值（$F_i$ 的写法、能量 $A$/$B$ 之值、观测模型 ``Y_i`` 的精确形式）在 OCR 中残碎到无法逐字复原。该校验点将在后续页给出 MAP 判决（选距离更近的信号）及阈值规则，届时可据以锚定核对。本页仅还原骨架，未臆造公式细节。</span>
 
@@ -2744,7 +2744,7 @@ f_{\Theta,X}(\theta,x) \;=\; f_\Theta(\theta)\; f_{X\mid\Theta}(x\mid\theta),
 
 由于联合概率密度函数只在使 $f_{\Theta,X}$ 非零（nonzero）的 $(\theta,x)$ 取值集合上取值——而该集合恰好是右侧图形（Figure 8.8）所示的一个平行四边形（parallelogram）——因此联合密度在该平行四边形上是均匀（uniform）的。
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 例 8.10 里的平行四边形不是画着好看的，而是「均匀噪声叠加到均匀参数上」的支撑几何的全部信息。原文说得很明确：联合密度只在使 $f_{\Theta,X}$ 非零的 $(\theta,x)$ 集合上取值，而这个集合恰好是右侧图 8.8 所示的一个 parallelogram（平行四边形）（平行四边形），因此联合密度在该平行四边形上是 uniform（均匀）的。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 例 8.10 里的平行四边形不是画着好看的，而是「均匀噪声叠加到均匀参数上」的支撑几何的全部信息。原文说得很明确：联合密度只在使 $f_{\Theta,X}$ 非零的 $(\theta,x)$ 集合上取值，而这个集合恰好是右侧图 8.8 所示的一个 parallelogram（平行四边形），因此联合密度在该平行四边形上是 uniform（均匀）的。
 >
 > 第一性原理：$\Theta$ 均匀于 $[4,10]$、$W$ 均匀于 $[-1,1]$，于是 $(\Theta,X)=(\theta,\theta+w)$ 落在把 $[\theta-1,\theta+1]$ 沿 $\theta$ 轴平移扫出的那条带子里，$4\le\theta\le10$、$\theta-1\le x\le\theta+1$。把两个不等式改写成 $4\le\theta\le10$ 与 $x-1\le\theta\le x+1$，立刻看出它在 $(\theta,x)$ 平面上由四条直线围成：两条竖线 $\theta=4$、$\theta=10$，两条斜线 $x=\theta-1$、$x=\theta+1$。四条边两两平行，这正是平行四边形，不是 diamond（菱形）——菱形要求四边等长，这里斜边长度是 $\sqrt2$ 乘参数区间的长度，一般并不等于竖边长度 $6$。之所以看着像菱形，是因为教材作图时把两个轴的尺度画得不等。
 >
@@ -3009,7 +3009,7 @@ E[\tilde\Theta] = 0.
 \operatorname{var}(\Theta) = \operatorname{var}(\hat\Theta) + \operatorname{var}(\tilde\Theta).
 ```
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 无偏（$E[\tilde\Theta]=0$）、不相关 $(\mathrm{cov}(\hat\Theta,\tilde\Theta)=0)$、方差可加 $(\mathrm{var}(\Theta)=\mathrm{var}(\hat\Theta)+\mathrm{var}(\tilde\Theta))$——这三条合在一起，正是在内积空间里"正交分解"的随机变量版。第一性原理：把 $\hat\Theta$ 与 $\tilde\Theta=\Theta-\hat\Theta$ 视为两个"向量"，"不相关"即内积为零（正交），方差平方可加则恰是勾股定理 $\|\Theta\|^2=\|\hat\Theta\|^2+\|\tilde\Theta\|^2$ 的概率写照；三条性质其实由"最小均方最优性"一步到位推出。命名模板：orthogonal（正交）在这里指"不相关"，是比independent（独立）弱得多却够用的几何条件。跨课程（线性代数 / 18.065）：这意味着条件期望 $E[\Theta\mid X]$ 就是把 $\Theta$ 向「由 $X$ 的可测函数构成的子空间」做正交投影，$E[(\hat\Theta)^2]$ 是投影长度、$E[(\tilde\Theta)^2]$ 是余长——维纳滤波、卡尔曼与岭回归共享同一勾股骨架。反例：方差可加是"不相关"的推论而非"独立"的推论——独立必不相关，反之不然；若只凭 $\hat\Theta$ 与 $\tilde\Theta$ 不相关就断言独立，就滑进了贝叶斯里最常见的误读。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 无偏（$E[\tilde\Theta]=0$）、不相关 $(\mathrm{cov}(\hat\Theta,\tilde\Theta)=0)$、方差可加 $(\mathrm{var}(\Theta)=\mathrm{var}(\hat\Theta)+\mathrm{var}(\tilde\Theta))$——这三条合在一起，正是在内积空间里"正交分解"的随机变量版。第一性原理：把 $\hat\Theta$ 与 $\tilde\Theta=\Theta-\hat\Theta$ 视为两个"向量"，"不相关"即内积为零（正交），方差平方可加则恰是勾股定理 $\|\Theta\|^2=\|\hat\Theta\|^2+\|\tilde\Theta\|^2$ 的概率写照；三条性质其实由"最小均方最优性"一步到位推出。命名模板：orthogonal（正交）在这里指"不相关"，是比 independent（独立）弱得多却够用的几何条件。跨课程（线性代数 / 18.065）：这意味着条件期望 $E[\Theta\mid X]$ 就是把 $\Theta$ 向「由 $X$ 的可测函数构成的子空间」做正交投影，$E[(\hat\Theta)^2]$ 是投影长度、$E[(\tilde\Theta)^2]$ 是余长——维纳滤波、卡尔曼与岭回归共享同一勾股骨架。反例：方差可加是"不相关"的推论而非"独立"的推论——独立必不相关，反之不然；若只凭 $\hat\Theta$ 与 $\tilde\Theta$ 不相关就断言独立，就滑进了贝叶斯里最常见的误读。
 
 > <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页顶部三条性质中的记号在 OCR 中被读成 `8`/`e` 的混排（如 `E[e I X = x] = 0`、`coV(8, e)`、`var(8) = var(8) + var(e)`，且 `for all x`、`=`、`0` 各符号被拆散在相邻若干行），无法逐字还原其原书写。上文统一按 §8.3 的标准记号 $\hat\Theta = E[\Theta\mid X]$（估计量）与 $\tilde\Theta = \Theta - \hat\Theta$（估计误差）复原为 $E[\tilde\Theta\mid X=x]=0$、$E[\tilde\Theta]=0$、$\mathrm{cov}(\hat\Theta,\tilde\Theta)=0$、$\mathrm{var}(\Theta)=\mathrm{var}(\hat\Theta)+\mathrm{var}(\tilde\Theta)$；三者与下页 Example 8.14 的推证交叉吻合，非臆造。</span>
 
@@ -3064,9 +3064,9 @@ E\big[ \big( \Theta - g(X_1, \ldots, X_n) \big)^2 \big],
 \sum_{i=1}^{m} E\Big[\big(\hat{\Theta}_i - \Theta_i\big)^2\Big],
 ```
 
-并在所有估计量 $\hat{\Theta}_1, \ldots, \hat{\Theta}_m$ 上将其最小化。但这等价于：对每一个 $i$，都去求一个使 $E\big[(\hat{\Theta}_i - \Theta_i)^2\big]$ 最小的估计量 $\hat{\Theta}_i$；于是我们实质上是在处理 $m$ 个两两decoupled（解耦）的估计问题，每个对应一个未知参数 $\Theta_i$，最后得出 $\hat{\Theta}_i = E[\Theta_i \mid X_1, \ldots, X_n]$（对一切 $i$ 成立）。
+并在所有估计量 $\hat{\Theta}_1, \ldots, \hat{\Theta}_m$ 上将其最小化。但这等价于：对每一个 $i$，都去求一个使 $E\big[(\hat{\Theta}_i - \Theta_i)^2\big]$ 最小的估计量 $\hat{\Theta}_i$；于是我们实质上是在处理 $m$ 个两两 decoupled（解耦）的估计问题，每个对应一个未知参数 $\Theta_i$，最后得出 $\hat{\Theta}_i = E[\Theta_i \mid X_1, \ldots, X_n]$（对一切 $i$ 成立）。
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「多参数的最小均方 = 各参数各自最小均方」读来顺理成章，实则点破了平方准则与范数的优雅耦合。第一性原理：对每个 $\Theta_i$ 单独最小化 $E[(\hat\Theta_i-\Theta_i)^2]$，再看总目标 $\sum_i E[(\hat\Theta_i-\Theta_i)^2]$——因为平方和的每一项只含自己的 $\Theta_i$、不含交叉项，各参数彼此decoupled（解耦），全局最小化退化为 $m$ 个独立的单参数问题。命名模板：decoupled（解耦）指"目标函数是各项之和、无交叉项"；一旦出现交叉项（如 $E[\hat\Theta_1\hat\Theta_2]$），解耦即告破碎。跨课程（线性代数 / 18.05）：这正像二次型 $f(x_1,\dots,x_m)=\sum_i a_ix_i^2$（对角矩阵）的最优在各自坐标处各取极小——把分母换成协方差矩阵的投资组合里，各分量才真正两两耦合；所谓"各参数独立求解"成立的条件，正是目标函数separable（可分离）。反例：解耦依赖"逐分量平方损失"这一准则选择；若改目标为 $\sum_i(\hat\Theta_i-\Theta_i)^2$ 之上加权重或耦合交叉项（如联合协方差惩罚），解耦即失效、必须联合求解——Lasso/ridge 的组稀疏正是在这一步扔掉分量解耦、换取结构信息。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「多参数的最小均方 = 各参数各自最小均方」读来顺理成章，实则点破了平方准则与范数的优雅耦合。第一性原理：对每个 $\Theta_i$ 单独最小化 $E[(\hat\Theta_i-\Theta_i)^2]$，再看总目标 $\sum_i E[(\hat\Theta_i-\Theta_i)^2]$——因为平方和的每一项只含自己的 $\Theta_i$、不含交叉项，各参数彼此 decoupled（解耦），全局最小化退化为 $m$ 个独立的单参数问题。命名模板：decoupled（解耦）指"目标函数是各项之和、无交叉项"；一旦出现交叉项（如 $E[\hat\Theta_1\hat\Theta_2]$），解耦即告破碎。跨课程（线性代数 / 18.05）：这正像二次型 $f(x_1,\dots,x_m)=\sum_i a_ix_i^2$（对角矩阵）的最优在各自坐标处各取极小——把分母换成协方差矩阵的投资组合里，各分量才真正两两耦合；所谓"各参数独立求解"成立的条件，正是目标函数 separable（可分离）。反例：解耦依赖"逐分量平方损失"这一准则选择；若改目标为 $\sum_i(\hat\Theta_i-\Theta_i)^2$ 之上加权重或耦合交叉项（如联合协方差惩罚），解耦即失效、必须联合求解——Lasso/ridge 的组稀疏正是在这一步扔掉分量解耦、换取结构信息。
 
 > <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 多参数准则的公式在 OCR 中丢失：页行「consider the criterion」与「and minimize it」之间是一个空白（源 OCR 该处缺失公式，仅余空行）。此处按书 §8.3 多参数标准 L MS 准则还原为 $\sum_{i=1}^{m} E\big[(\hat{\Theta}_i - \Theta_i)^2\big]$，且与后文「对每个 i 独立最小化 $E[(\hat{\Theta}_i - \Theta_i)^2]$」的叙述恰好一致；所还原内容未含任何原文未出现的数值。</span>
 
@@ -3090,7 +3090,7 @@ E\Big[\big(\Theta - a_1 X_1 - \cdots - a_n X_n - b\big)^2\Big].
 
 线性 LMS 估计量（linear LMS estimator）选择 $a_1, \ldots, a_n, b$ 以使上式最小。我们首先针对 $n = 1$ 的情形给出解，然后再加以推广。
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 把最优估计从"任意函数"缩到"线性组合"，是用一个小小的 b 换回巨大的可算性。第一性原理：完整 LMS 需要联合分布 $f_{\Theta,X}$ 和无约束的最优函数 $g(X)=E[\Theta\mid X]$；线性 LMS 只在affine（仿射）函数 $a_1X_1+\cdots+b$ 里找最好，只需一阶、二阶矩（均值/方差/协方差）即可定解——牺牲的是全局最优，换来的是只要矩、不要分布就能落地的工程友好性。命名模板：linear（线性）指"估计器是观测的线性组合（加常数）"，由之把问题从函数空间压缩到 $n+1$ 维参数空间。跨课程（信号处理 / 18.065 维纳滤波）：受限线性类是维纳滤波与自适应 LMS 算法的一切前提——在线估计只根据梯度更新系数、无需联合密度，靠的正是"一阶二阶矩"这丁点信息。反例：当后验均值恰好是 $X$ 的线性函数时（如高斯共轭或 Beta 例），线性 LMS 与全局 LMS 重合、零损失；而当后验均值强烈非线性（如例 8.11 的对数函数），压进直线后偏差骤增——"线性"是省了计算却不保最优的折价。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 把最优估计从"任意函数"缩到"线性组合"，是用一个小小的 b 换回巨大的可算性。第一性原理：完整 LMS 需要联合分布 $f_{\Theta,X}$ 和无约束的最优函数 $g(X)=E[\Theta\mid X]$；线性 LMS 只在 affine（仿射）函数 $a_1X_1+\cdots+b$ 里找最好，只需一阶、二阶矩（均值/方差/协方差）即可定解——牺牲的是全局最优，换来的是只要矩、不要分布就能落地的工程友好性。命名模板：linear（线性）指"估计器是观测的线性组合（加常数）"，由之把问题从函数空间压缩到 $n+1$ 维参数空间。跨课程（信号处理 / 18.065 维纳滤波）：受限线性类是维纳滤波与自适应 LMS 算法的一切前提——在线估计只根据梯度更新系数、无需联合密度，靠的正是"一阶二阶矩"这丁点信息。反例：当后验均值恰好是 $X$ 的线性函数时（如高斯共轭或 Beta 例），线性 LMS 与全局 LMS 重合、零损失；而当后验均值强烈非线性（如例 8.11 的对数函数），压进直线后偏差骤增——"线性"是省了计算却不保最优的折价。
 
 <span style="color:#2471a3;">**[§]**</span> <span style="color:#00838f;">**基于单个观测的线性最小均方估计（Linear Least Mean Squares Estimation Based on a Single Observation）**</span>
 
@@ -3113,7 +3113,7 @@ E\Big[\big(\Theta - a_1 X_1 - \cdots - a_n X_n - b\big)^2\Big].
 b = E[\Theta - aX] = E[\Theta] - a E[X].
 ```
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 第一步先给最优 $b$、第二步再来优化 $a$，这不是偷懒，而是利用了"可分离"的结构把二维问题切成两步。第一性原理：对固定的 $a$，关于 $b$ 的最小化是"无条件常数估计"的直接应用——最佳 $b$ 必取 $b=E[\Theta-aX]$ 使偏差归零、恰把误差化到 $\operatorname{var}(\Theta-aX)$；由此剩下的只是关于 $a$ 的一维最小化，把两参数一步求导改写成了"先中心化、再定斜率"的两段式。命名模板：把这种"先定截距、再定斜率"的次序称作intercept–slope decoupling（截距-斜率分离），是仿射拟合的惯用套路。跨课程（优化 / 18.065）：这等价于把均方误差看成 $(a,b)$ 的二次型、先对齐其无偏平移、再最小化剩下关于 $a$ 的二次——与梯度下降先归一化、再迭代的常见流程同构。反例：分离成立的前提是损失在 $b$ 上是二次且无约束、且目标关于 $(a,b)$ 可分；若给 $b$ 加约束（如 $b\ge0$）或目标含 $a,b$ 交叉的正则项，"先修 $b$ 再解 $a$"就会不再最优，须改为联合求解。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 第一步先给最优 $b$、第二步再来优化 $a$，这不是偷懒，而是利用了"可分离"的结构把二维问题切成两步。第一性原理：对固定的 $a$，关于 $b$ 的最小化是"无条件常数估计"的直接应用——最佳 $b$ 必取 $b=E[\Theta-aX]$ 使偏差归零、恰把误差化到 $\operatorname{var}(\Theta-aX)$；由此剩下的只是关于 $a$ 的一维最小化，把两参数一步求导改写成了"先中心化、再定斜率"的两段式。命名模板：把这种"先定截距、再定斜率"的次序称作 intercept–slope decoupling（截距-斜率分离），是仿射拟合的惯用套路。跨课程（优化 / 18.065）：这等价于把均方误差看成 $(a,b)$ 的二次型、先对齐其无偏平移、再最小化剩下关于 $a$ 的二次——与梯度下降先归一化、再迭代的常见流程同构。反例：分离成立的前提是损失在 $b$ 上是二次且无约束、且目标关于 $(a,b)$ 可分；若给 $b$ 加约束（如 $b\ge0$）或目标含 $a,b$ 交叉的正则项，"先修 $b$ 再解 $a$"就会不再最优，须改为联合求解。
 
 在这一 $b$ 的选择下，剩下的任务就是关于 $a$ 最小化表达式
 
@@ -3212,13 +3212,13 @@ a = \frac{\mathrm{cov}(\Theta, X)}{\sigma_X^2} = \rho\,\frac{\sigma_\Theta}{\sig
 E[X] = E\big[\,E[X \mid \Theta]\,\big] = E[\Theta/2] = E[\Theta]/2 = \frac{1}{2}\cdot\frac{1}{2} = \frac{1}{4}\;.
 ```
 
-此外，利用law of total variance（全方差定律）（这与第 4 章中示例 4.17 的计算相同），我们有
+此外，利用 law of total variance（全方差定律）（这与第 4 章中示例 4.17 的计算相同），我们有
 
 ```math
 \operatorname{var}(X) = \frac{7}{144}\;.
 ```
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「$\operatorname{var}(X)=\frac{7}{144}$」这一格数字，是law of iterated expectations（迭代期望）与law of total variance（全方差定律）经手运算一次的具体果实。第一性原理：$E[X]=E[E[X\mid\Theta]]$ 先剥掉 $\Theta$ 得 $\frac12\cdot\frac12=\frac14$；全方差 $\operatorname{var}(X)=E[\operatorname{var}(X\mid\Theta)]+\operatorname{var}(E[X\mid\Theta])$ 把总方差拆成"组内噪声"与"组间（随 $\Theta$）波动"两块，本例恰好凑出 $\frac{7}{144}$——这是把"未知参数混合造成的额外散布"量化的标准脚本。命名模板：$\operatorname{var}(X)=E[\cdot]+\operatorname{var}(\cdot)$ 双项合计，是"条件方差的期望 + 条件期望的方差"两个各自独立的来源相加。跨课程（随机信号 / 18.065 ANOVA）：这正是"组间方差 + 组内方差 = 总方差"的 ANOVA 分解——把 $X$ 的变异性归因到参数的随机性而非纯噪声，是信噪比与方差分量分析的基础。反例：不少读者把 $\frac{7}{144}$ 当常数背，其实它完全依赖模型设定——换 $\Theta$ 的方差或 $W$ 的分布，这个数立刻变；若误用全方差定律而把 $\Theta$ 当非随机、只算 $E[\operatorname{var}(X\mid\Theta)]$，就会丢掉"参数不确定"这一大项贡献，严重低估 $\operatorname{var}(X)$。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「$\operatorname{var}(X)=\frac{7}{144}$」这一格数字，是 law of iterated expectations（迭代期望）与 law of total variance（全方差定律）经手运算一次的具体果实。第一性原理：$E[X]=E[E[X\mid\Theta]]$ 先剥掉 $\Theta$ 得 $\frac12\cdot\frac12=\frac14$；全方差 $\operatorname{var}(X)=E[\operatorname{var}(X\mid\Theta)]+\operatorname{var}(E[X\mid\Theta])$ 把总方差拆成"组内噪声"与"组间（随 $\Theta$）波动"两块，本例恰好凑出 $\frac{7}{144}$——这是把"未知参数混合造成的额外散布"量化的标准脚本。命名模板：$\operatorname{var}(X)=E[\cdot]+\operatorname{var}(\cdot)$ 双项合计，是"条件方差的期望 + 条件期望的方差"两个各自独立的来源相加。跨课程（随机信号 / 18.065 ANOVA）：这正是"组间方差 + 组内方差 = 总方差"的 ANOVA 分解——把 $X$ 的变异性归因到参数的随机性而非纯噪声，是信噪比与方差分量分析的基础。反例：不少读者把 $\frac{7}{144}$ 当常数背，其实它完全依赖模型设定——换 $\Theta$ 的方差或 $W$ 的分布，这个数立刻变；若误用全方差定律而把 $\Theta$ 当非随机、只算 $E[\operatorname{var}(X\mid\Theta)]$，就会丢掉"参数不确定"这一大项贡献，严重低估 $\operatorname{var}(X)$。
 
 现在我们用公式
 
@@ -3356,7 +3356,7 @@ E[\Theta X] = \frac{n}{3},
 
 > <span style="color:#1e8449;">[note] Note（译者注）:</span> 「线性 LMS 与（不受限）LMS 一致」不是巧合，而是"后验均值恰好是观测的线性函数"时两条路线的殊途同归。第一性原理：全局 LMS 的最优解是 $g(X)=E[\Theta\mid X]$；若这个函数本身就是 $X$ 的仿射函数（本例 $E[\Theta\mid X]=\frac{X+1}{n+2}$ 确为线性），那么把候选类收窄到所有仿射函数并不会丢掉最优解——受限最优恰好落在非受限最优上。命名模板：把这种"窄类的解恰为全局最优"性质，对应到 constrained/unconstrained 两个优化问题的解重合；是"窄化可行集不损失最优"的特例。跨课程（高斯分布 / 18.05，Bickel）：对高斯共轭模型，后验均值恒为观测的仿射函数，所以线性 LMS 与全局 LMS 在此类下永远重合——这正是"线性 + 高斯 ＝ 最优"成立的关键所在。反例：后验均值为线性是"强到有点奢求"的性质——只要先验与观测稍有非共轭（如例 8.11 的对数后验），受限最优立刻劣于全局最优；教材因此用多个反例（$\frac{1-x}{-\log x}$ 型）反复提醒：线性相等靠的是模型结构，而非任何"线性的自然优越"。
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 线性 LMS 只须知道一阶与二阶矩（均值、方差、协方差）即可写出答案，这正是它作为工程主力被追捧的根源。第一性原理：若把估计限制为 $a_1X_1+\cdots+a_nX_n+b$，优化目标仍是一元/多元二次式，最优系数由normal equations（法方程）给出——即把 $\Theta$ 正交投影到由常量 $1$ 与各 $X_i$ 张成的线性子空间（函数空间）上。命名模板：linear（线性）限定"估计器必须是观测的线性组合"，宁可牺牲一点均方最优也要保住可算性。跨课程（信号与系统 / 18.065 维纳滤波）：这正是离散Wiener filter（维纳滤波）与自适应 LMS 算法推导的入口——只依赖二阶矩、不要求完整联合分布，因而能在线稳定更新。反例：Example 8.16 里线性 LMS 与（非受限）LMS 恰一致，是因为该模型的后验均值恰好是观测的线性函数；而像 Example 8.11 那种 $E[\Theta\mid X]=\frac{1-x}{-\log x}$ 的非线性情形，强行套线性逼近就会给出偏离最优的解——"线性"是一桩划算的折扣，并不是免费的。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 线性 LMS 只须知道一阶与二阶矩（均值、方差、协方差）即可写出答案，这正是它作为工程主力被追捧的根源。第一性原理：若把估计限制为 $a_1X_1+\cdots+a_nX_n+b$，优化目标仍是一元/多元二次式，最优系数由 normal equations（法方程）给出——即把 $\Theta$ 正交投影到由常量 $1$ 与各 $X_i$ 张成的线性子空间（函数空间）上。命名模板：linear（线性）限定"估计器必须是观测的线性组合"，宁可牺牲一点均方最优也要保住可算性。跨课程（信号与系统 / 18.065 维纳滤波）：这正是离散 Wiener filter（维纳滤波）与自适应 LMS 算法推导的入口——只依赖二阶矩、不要求完整联合分布，因而能在线稳定更新。反例：Example 8.16 里线性 LMS 与（非受限）LMS 恰一致，是因为该模型的后验均值恰好是观测的线性函数；而像 Example 8.11 那种 $E[\Theta\mid X]=\frac{1-x}{-\log x}$ 的非线性情形，强行套线性逼近就会给出偏离最优的解——"线性"是一桩划算的折扣，并不是免费的。
 <!-- ===== PDF p450 ===== -->
 
 <span style="color:#7f8c8d;">§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）中部续页。书页 p442（页眉 "Bayesian Statistical Inference / Chap. 8"）。本页承上页（书页 p441 的 Example 8.16 收尾）继续 §8.4 的论述，但页首出现新的小节标题 **The Case of Multiple Observations and Multiple Parameters（多观测与多参数的情形）**，故本页起为一个新的小节（不另起 Example 编号）。本页为**本单元（单元 9）的最后一页**——单元止于书页 p442；紧接其后的书页（§8.4 后续与小节外部内容）属单元 10。</span>
@@ -3375,7 +3375,7 @@ E\Big[(\hat\Theta_1 - \Theta_1)^2 + \cdots + (\hat\Theta_m - \Theta_m)^2\Big],
 
 > <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上述多参数准则公式所在的一行（源 OCR 中位于「we may consider the criterion」与「and minimize it over all estimators $\hat\Theta_1,\ldots,\hat\Theta_m$」之间的空行）在源 OCR 中为空白，公式本体未捕获。这里按随后的「对每个 $i$ 寻找最小化 $E[(\hat\Theta_i-\Theta_i)^2]$ 的线性估计量」的原文提示，重建为标准的多参数均方误差和 $E[(\hat\Theta_1-\Theta_1)^2+\cdots+(\hat\Theta_m-\Theta_m)^2]$；未臆造任何原文未暗示的系数或数值。</span>
 
-这等价于对每个 $i$，寻找一个使 $E[(\hat\Theta_i - \Theta_i)^2]$ 最小的线性估计量（linear estimator）$\hat\Theta_i$，从而我们实质上是在处理 $m$ 个相互decoupled（解耦）的线性估计问题，每个对应一个未知参数。
+这等价于对每个 $i$，寻找一个使 $E[(\hat\Theta_i - \Theta_i)^2]$ 最小的线性估计量（linear estimator）$\hat\Theta_i$，从而我们实质上是在处理 $m$ 个相互 decoupled（解耦）的线性估计问题，每个对应一个未知参数。
 
 在存在多重观测且满足某种独立性性质的情形下，线性 LMS 估计量（linear LMS estimator）的公式得以简化，我们现在就来描述这一点。设 $\Theta$ 是均值为 $\mu$、方差为 $\sigma_0^2$ 的随机变量，并设 $X_1,\ldots,X_n$ 是如下形式的观测
 
