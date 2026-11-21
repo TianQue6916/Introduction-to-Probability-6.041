@@ -98,6 +98,14 @@ Note also that the sequence of events $A_k$ is monotonically increasing, in the 
 \;\ge\; P(C) = 1 ,
 ```
 
+
+where the first equality uses the continuity property of probabilities (Problem 13 in Chapter 1). It follows that
+
+```math
+\lim_{k \to \infty} p\bigl(|Y_k - \theta| \ge \varepsilon\bigr) = 0 ,
+```
+
+which establishes convergence in probability.
 > <span style="color:#1e8449;">[note] Note（译者注）:</span> 把这条证明抽成模板，叫它「ε-剥离法」，三步：① 剥离——把「序列收敛到 $\theta$」这个含 $\forall \varepsilon>0$ 的断言先固定到一个具体的 $\varepsilon>0$ 上，得到只依赖 $\varepsilon$ 的尾部语句；② 单调化——把语句里的「存在 $k$」换成 event（事件）的并，令 $A_k$ 为「对每个 $n \ge k$ 都有 $|Y_n-\theta|<\varepsilon$」的 event（事件），则 $\bigcup_k A_k$ 就是「存在这样的 $k$」，而 $A_k$ 随 $k$ 递增；③ 取极限——用 probability（概率）的 continuity from below（从下方连续）性质把 $\lim_k P(A_k)$ 换成 $P(\bigcup_k A_k)$，再与 $P(C)=1$ 比较。
 >
 > 为什么 $A_k$ 一定递增，不是巧合而是结构。$A_k$ 要求「从第 $k$ 项起全部合格」，$A_{k+1}$ 比它少了一条约束（第 $k$ 项），于是 $A_k \subset A_{k+1}$。递增的 event（事件）列才能用从下方连续取极限，而这条技术条件被「尾部」这个词自动满足——这正是 tail event（尾部事件）在概率论里好用的原因。顺带纠一个容易发生的联想：Borel–Cantelli 第一引理走的是次可加性，即 $P(\limsup_n A_n) \le \sum_n P(A_n)$，完全不需要这里的递增结构；递增性在本文里只负责让 continuity from below 可用，两件事没有因果关系。
@@ -113,14 +121,6 @@ Note also that the sequence of events $A_k$ is monotonically increasing, in the 
 > 数值检查。想验证一条实现是否依概率收敛，固定 $\varepsilon$ 画 $P(|Y_k-\theta| \ge \varepsilon)$ 随 $k$ 的曲线，看它是否压向零——这是可计算、可观测的量。a.s. 收敛对应的是「对几乎所有 seed，path（路径）最终进入并留在 $\varepsilon$ 带内」，它需要看整条 path（路径），而且「最终」这个时刻没有可计算的界。把这两层分清，是 Monte Carlo 实验设计与纯数学证明之间的接口所在。
 >
 > 一条推广：同一套剥离动作在 SLLN 的证明里反复出现。凡是要从「a.s. 类型的强度」退到某种更弱模式，都先固定 $\varepsilon$、把事件列单调化、再取极限；模板固定下来以后，剩下的只是算每一层 event（事件）的 probability（概率）。
-
-where the first equality uses the continuity property of probabilities (Problem 13 in Chapter 1). It follows that
-
-```math
-\lim_{k \to \infty} p\bigl(|Y_k - \theta| \ge \varepsilon\bigr) = 0 ,
-```
-
-which establishes convergence in probability.
 
 ---
 
@@ -260,7 +260,7 @@ For the more general case where the mean of the random variables $X_i$ is nonzer
 - <span style="color:#c0392b;">**6.3　小结与讨论（Summary and Discussion）**</span> —— p.324
 - <span style="color:#c0392b;">**习题（Problems）**</span> —— p.326
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 拿到目录先看骨架：第 6 章是严格的「离散—连续」平行结构，整章就是一张表被逐项证明。Bernoulli process（伯努利过程）对应 Poisson process（泊松过程）；binomial distribution（二项分布）对应 Poisson distribution（泊松分布）；geometric distribution（几何分布）对应 exponential distribution（指数分布）；第 $k$ 次到达时刻的 Pascal distribution（帕斯卡分布）对应 Erlang（伽马）分布；splitting（分裂）对应 thinning（稀疏化）；merging（合并）对应 superposition（叠加）；fresh-start（新开始）对应 independent increments（独立增量）加 memorylessness（无记忆性）。先把这张表抄在本子上，学一节勾一节。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 拿到目录先看骨架：第 6 章是严格的「离散—连续」平行结构，整章就是一张表被逐项证明。Bernoulli process（伯努利过程）对应 Poisson process（泊松过程）；binomial distribution（二项分布）对应 Poisson distribution（泊松分布）；geometric distribution（几何分布）对应 exponential distribution（指数分布）；第 $k$ 次到达时刻的 Pascal distribution（帕斯卡分布）对应 Erlang distribution（爱尔朗分布，即形状参数为正整数的伽马分布）；splitting（分裂）对应 thinning（稀疏化）；merging（合并）对应 superposition（叠加）；fresh-start（新开始）对应 independent increments（独立增量）加 memorylessness（无记忆性）。先把这张表抄在本子上，学一节勾一节。
 >
 > 过渡的机制只有一个：时间单位取极限。伯努利过程里 $p$ 是无量纲的 probability（概率），泊松过程里 $\lambda$ 是带量纲的 rate（强度，单位 $1/$时间）。连接方式是令时隙长度 $\delta → 0$、$p = \lambda\delta + o(\delta)$，并保持 $np = \lambda t$ 不变——也就是「单位时间内期望到达数」不变。$p$ 与 $\lambda$ 差一个量纲，凡是把 $np$ 与 $\lambda t$ 混用的推导，代回单位就能立刻发现错误。
 >
@@ -509,7 +509,7 @@ P(T - n = t \mid T > n) = (1 - p)^{t-1}\, p = P(T = t), \qquad t = 1, 2, \ldots 
 > <span style="color:#7f8c8d;">**[figure] Figure 6.2.** 在图顶部的样本路径中，有 $T = 4$、$B = 3$、$I = 2$，且 $Z = \cdots$；在图底部的样本路径中，则有 $T = 5$、$B = 4$，且 $Z = 4$。</span>
 
 其中，忙碌（busy）周期的示意以 $\tt B$ 标注，空闲（idle）周期以 $\tt I$ 标注，符号 $Z$ 记更新时刻/重新开始的时刻（renewal time），$T$ 记所考察的总（时间）区间。顺着时间推进：第一个忙碌期、接着第一个空闲期、再第二个忙碌期……依次交替，形成所谓的更新结构（renewal structure）——每个忙碌期之后，过程在更新时刻 $Z$ 处与过去的经历无关地「重新开始（start fresh）」（沿用上一页 fresh-start 性质的语言）。
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 先把符号对齐，因为这一页的 OCR 数字彼此冲突，读之前必须先把矛盾摆明。图注给的是：上路径 $T=4$、$B=3$、$I=2$、$Z=\cdots$（被截断）；下路径 $T=5$、$B=4$、$Z=4$。若把 $T$ 读作「所考察的总区间」，上路径立刻自相矛盾：一个忙碌期加一个空闲期已经 $B+I=3+2=5$，超过 $T=4$，而循环长度按定义不可能超过所考察的区间。所以那个读法站不住，真正需要回查的是原书 Figure 6.2 的图注本身，此处只标出不一致，不臆造数字。$Z$ 也有麻烦：本页把它记作 renewal time（更新时刻），而同一节的承接说明又把 $Z$ 记作 interarrival time（首次到达间隔），同一个字母承担了两个量。⚠ 需回查原书 Figure 6.2。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 先把符号对齐，因为这一页的 OCR 数字彼此冲突，读之前必须先把矛盾摆明。图注给的是：上路径 $T=4$、$B=3$、$I=2$、$Z=\cdots$（被截断）；下路径 $T=5$、$B=4$、$Z=4$。若把 $T$ 读作「所考察的总区间」，上路径立刻自相矛盾：一个忙碌期加一个空闲期已经 $B+I=3+2=5$，超过 $T=4$，而循环长度按定义不可能超过所考察的区间。所以那个读法站不住，真正需要回查的是原书 Figure 6.2 的图注本身，此处只标出不一致，不臆造数字。$Z$ 也有麻烦：本页把它记作 renewal time（更新时刻），而同一节的承接说明又把 $Z$ 记作 interarrival time（到达间隔），同一个字母承担了两个量。⚠ 需回查原书 Figure 6.2。
 >
 > 图的结构本身是清楚的：把时间轴切开，得到交替出现的两种游程。busy period（忙碌期）是成功的极大游程，长度 $B$ 满足 $P(B=k)=p^{k-1}(1-p)$，均值 $E[B]=1/(1-p)$；idle period（空闲期）是失败的极大游程，长度 $I$ 满足 $P(I=k)=(1-p)^{k-1}p$，均值 $E[I]=1/p$。两个式子的底数与收尾因子正好互换，方向千万别记反：忙碌期要求「先成功若干次、再用一次失败收尾」，所以成功在指数里、失败在因子外；空闲期相反。量纲检验也简单：$p\to1$ 时 $E[B]\to\infty$、$E[I]\to1$，即几乎全是成功、空闲只剩一格；$p\to0$ 时反过来。顺带指出本页那行公式的标签错乱：它写作 $P_T(k)=(1-p)^{k-1}p$，可 $T$ 在同页被定义为「首个成功的时刻」，这个式子的形状确实是 $T$ 的 PMF，却又被说成「首个忙碌期的规律」；按忙碌期的定义应当是 $P_B(k)=p^{k-1}(1-p)$，两个式子只差指数与因子互换一位。
 >
@@ -542,7 +542,7 @@ P(T - n = t \mid T > n) = (1 - p)^{t-1}\, p = P(T = t), \qquad t = 1, 2, \ldots 
 
 <span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）**</span> <span style="color:#7f8c8d;">（Sec. 6.1，PDF 页码 301；本页续接上一页 §6.1 关于忙/闲周期（busy/idle period）的讨论，随后给出「新开始性质」（fresh-start property）并以 Example 6.3 作正式论证。）</span>
 
-> <span style="color:#7f8c8d;">承接上一页：设 $T$ 为首个成功的时刻，$B$ 为首个忙时段（busy period，连续成功的时段）长度，$I$ 为首个闲时段（idle period，连续失败的时段）长度，$Z$ 为首次到达间隔（interarrival time）。上一页已针对其中的部分量导出相应概率规律，本页先收尾忙/闲时段 PMF 的推导，再转入关于「随机时刻重新开始」的更一般讨论。</span>
+> <span style="color:#7f8c8d;">承接上一页：设 $T$ 为首个成功的时刻，$B$ 为首个忙时段（busy period，连续成功的时段）长度，$I$ 为首个闲时段（idle period，连续失败的时段）长度，$Z$ 为到达间隔（interarrival time）。上一页已针对其中的部分量导出相应概率规律，本页先收尾忙/闲时段 PMF 的推导，再转入关于「随机时刻重新开始」的更一般讨论。</span>
 
 对首个忙时段（first busy slot）的规律有（so that）
 
@@ -760,7 +760,7 @@ p_{Y_k}(t) = P(Y_k = t) = P(A \cap B) = P(A)\,P(B) = \binom{t-1}{k-1}\, p^{k}\, 
 >
 > 同一套分解在截断后仍然有效。Example 6.5 的 $Z=\min\{Y_6,30\}$：$z<30$ 直接取 Pascal 值，$z=30$ 把尾部全体压成一个原子。这是离散变量做 min 变换的标准手法——先算未被截断的部分，再用 $1$ 减求和补尾。手法本身与这个证明无关，但依赖同一个事实：$\{Y_k=t\}$ 对 $t\ge k$ 是一组互斥且穷尽的事件。
 >
-> 最后补一句这个证明隐含的前提：$\{Y_k=t\}$ 要构成划分，必须 $Y_k<\infty$ 几乎必然成立。教材在这里没有单独证，理由在前一条关于 stopping time（停时）的注里已经给过，用的是成块法：把时隙按 $(X_{2k-1},X_{2k})$ 成对分组，每块全成功的概率是 $p^2$，块与块独立，于是前 $m$ 块里至少一块全成功的概率 $1-(1-p^2)^m$ 趋于 $1$，成功因此无限次出现。若换一个 $p$ 依赖于时间的模型，这个前提会失效，那时 Pascal PMF 也不再归一化。
+> 最后补一句这个证明隐含的前提：$\{Y_k=t\}$ 要构成划分，必须 $Y_k<\infty$ 几乎必然成立。教材在这里没有单独证，理由在注 10 那条（关于 stopping time（停时））里已经给过，用的是成块法：把时隙按 $(X_{2k-1},X_{2k})$ 成对分组，每块全成功的概率是 $p^2$，块与块独立，于是前 $m$ 块里至少一块全成功的概率 $1-(1-p^2)^m$ 趋于 $1$，成功因此无限次出现。若换一个 $p$ 依赖于时间的模型，这个前提会失效，那时 Pascal PMF 也不再归一化。
 
 <span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.5（Alicia 的犯规与上场时间）**</span>
 
@@ -778,23 +778,6 @@ p_{Y_6}(t) = \binom{t - 1}{5}\, p^{6} (1 - p)^{t - 6}, \qquad t = 6, 7, \ldots
 p_Z(z) = p_{Y_6}(z) = \binom{z - 1}{5}\, p^{6} (1 - p)^{z - 6}, \qquad z = 6, 7, \ldots, 29 .
 ```
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> Poisson approximation（泊松近似）这个说法容易被当成魔术，其实它只有一个来源：$(1-x/n)^{n}\to e^{-x}$ 这条极限。把符号对上——单个符号传输出错的概率是 $p$，数据包有 $n$ 个符号，于是「一个符号都不错」的概率是 $(1-p)^{n}$，而 Poisson approximation（泊松近似）把它换成 $e^{-\lambda}$，其中 $\lambda = np$。这一步的合法性只要求 $p$ 随 $n$ 一起变小、$\lambda$ 保持固定，除此之外不需要任何东西。
->
-> 两条路线为什么差一个零头，可以逐字算出来。精确路线：$1-(1-p)^{n}<0.001$ 等价于 $(1-p)^{n}>0.999$，取对数后因为 $\ln(1-p)<0$，不等号要翻转，得 $n<\frac{\ln0.999}{\ln0.9999}=10.0045$。近似路线：$1-e^{-\lambda}<0.001$ 等价于 $\lambda<-\ln0.999=1.0005\times10^{-3}$，除以 $\lambda=np$ 得 $n<10.0050$。两条路差 $0.0005$，取整之后同为 $n\le10$，所以答案不受影响，但这个零头本身有信息。
->
-> 方向不是巧合，一行就能证明。对 $u\in(0,1)$ 有 $\ln(1-u)<-u$，于是 $(1-p)^{n}=(1-\lambda/n)^{n}<e^{-\lambda}$ 对每个 $n$ 严格成立。左边更小意味着「零错误」更稀罕，「至少一次错误」的概率更大，所以真实的传输失败概率高于 Poisson approximation（泊松近似）给出的值。用它当判据就是 conservative（保守）方向：它要求更小的 $n$，实际执行起来一定达标。这条严格不等式不依赖 $p$ 小，可以直接当定理用。
->
-> 差值的量级同样可以算。换成 effective rate（有效速率）$\nu=-n\ln(1-p)$ 来看，$\nu-\lambda$ 的主项是 $n p^{2}/2$，代入 $n\approx10$、$p=10^{-4}$ 得 $\Delta\lambda=5\times10^{-8}$。这个量相对 $\lambda\approx10^{-3}$ 只有 $5\times10^{-5}$，但换算成对阈值 $n$ 的影响要乘 $1/p=n/\lambda\approx10^{4}$，因为 $\lambda=np$ 意味着 $n=\lambda/p$：$5\times10^{-8}\times10^{4}=5\times10^{-4}$，恰好就是前面那条阈值差。一个 $10^{-8}$ 量级的率误差被放大成 $10^{-4}$ 量级的阈值差，这是「小误差在条件数大的地方被放大」的标准样本，比任何抽象说法都具体。
->
-> 复利视角能把这条极限挂到熟悉的东西上：$(1+r/n)^{n}\to e^{r}$ 是离散复利的连续化，这里只是把利率 $r$ 换成 $-\lambda$，读成「负利率」或「每秒存活率」即可，$e^{-\lambda}$ 就是连续复利下的存活折扣。同一个极限在 18.06 里会以矩阵形式回归：matrix exponential（矩阵指数）$e^{At}$ 的定义正是 $(I+At/n)^{n}$ 的极限，标量换成 matrix（矩阵）之后不需要额外技巧，因为只涉及 $A$ 一个矩阵、幂次之间可交换；唯一的差别是收敛要在 operator norm（算子范数）意义下说，而不是逐点的。
->
-> 工程上什么时候可以直接把 $(1-p)^{n}$ 换成 $e^{-\lambda}$，有一个可操作的门槛：两者的相对差约等于 $\lambda p/2$。本题 $p=10^{-4}$、$\lambda\approx10^{-3}$ 时这个差是 $5\times10^{-8}$，可以放心替换；反过来，若取 $p=0.05$、$\lambda=2$，此时 $n=40$，相对差约 $5\%$，再用 $e^{-\lambda}$ 就会在第三位小数上出错。判据一句话：先算 $\lambda p$，小于 $0.01$ 直接换，大于 $0.01$ 就老老实实用 $\nu=-n\ln(1-p)$。
->
-> 还有一处容易滑过去的细节：两条路线给出的阈值都是实数，而真正能取的是整数 $n\le10$。这一步整数化把连续比较变成离散决策，误差最大可达一整个单位，所以判据不是「两条路线差多少」，而是「阈值离下一个整数有多远」。$10.0045$ 距离 $11$ 还有将近一个整单位，取 $10$ 是稳的；假如算出的是 $10.9$，同样量级的近似就足以把答案从 $10$ 翻成 $11$，那时必须回到精确式。作业与考试里「近似导致答案翻转」的事故，几乎都发生在阈值贴着整数的时候。
->
-> 跨课程连接两处。CSAPP 第 3 章的 floating point（浮点）一节讲相对误差，这里的 $\lambda p/2$ 正是「被丢掉的高阶项有多大」的量化答案，与 ulp（单位舍入误差）是同一类记账方式。6.042J 里把 $e$ 当作「$n$ 步、每步 $1/n$ 的极端情形」引入，做题时只关心阶；这里是它的定量版本，关心系数。
->
-> 收束回正文：这条注的重点不是「记住 $e$ 的定义」，而是把「近似」变成一个带方向、带误差量的断言——写成不等式，才知道自己在安全的一侧还是危险的一侧。
 
 > <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式为原书「for $z$ in this range, we have」一句后本该出现的 PMF 算式，OCR 在此处仅残存「$z = 6, 7, \ldots, 29$」而吞掉了显式公式；按 $z$ 在该区间内 $Z = Y_6 = z$ 的意义（$Z = \min\{Y_6, 30\}$）重建为 $p_Z(z) = p_{Y_6}(z) = \binom{z-1}{5}p^{6}(1-p)^{z-6}$，数值未作臆造。</span>
 
@@ -842,7 +825,7 @@ p_Z(30) = 1 - \sum_{z = 6}^{29} p_Z(z) .
 
 <span style="color:#7f8c8d;">**[图] Fig. 6.3**</span> <span style="color:#00838f;">**图 6.3　伯努利过程的分裂（Splitting of a Bernoulli Process）**</span>
 
-> <span style="color:#7f8c8d;">图 6.3 展示：一个到达概率为 $p$ 的伯努利过程，其每次到达独立地以概率 $q$ 被保留进「保留」流、以概率 $1-q$ 被丢弃，从而分裂成两个独立的伯努利过程（参数分别为 $pq$ 与 $p(1-q)$）。</span>
+> <span style="color:#7f8c8d;">图 6.3 展示：一个到达概率为 $p$ 的伯努利过程，其每次到达独立地以概率 $q$ 被保留进「保留」流、以概率 $1-q$ 被丢弃，从而分裂成两个伯努利过程（参数分别为 $pq$ 与 $p(1-q)$），它们在不相交的时隙集合上独立。</span>
 
 我们再考虑一个相反的过程（a reverse procedure）：把两个独立的伯努利过程合并。设其中一个以参数 $p$、（另一个）以参数 $q$ 分别运行（with parameters $p, q$，respectively）。我们如下合并之（combine them as follows）：在合并过程（merged process）中，每个时隙内至少有一个到达的概率为 $p + q - pq$ [即 $1-(1-p)(1-q)$：一减去 $1-p$ 与 $1-q$ 之积，而后者正是任一过程中都没有到达的概率 $(1-p)(1-q)$]。由于合并过程中各不相同的时隙彼此独立，该合并过程是伯努利过程，成功概率（success probability）为 $p + q - pq$。
 
@@ -875,7 +858,7 @@ E[Z] = \lambda .
 >
 > 方差不必硬算 $E[Z^{2}]$，用 factorial moment（阶乘矩）更省。$E[Z(Z-1)]=\lambda^{2}\sum_{k\ge2}\lambda^{k-2}/(k-2)!=\lambda^{2}$，于是 $\mathrm{var}(Z)=E[Z^{2}]-(E Z)^{2}=\lambda^{2}+\lambda-\lambda^{2}=\lambda$。这条技巧对所有幂级数型分布都好用，因为它把「$k^{2}$ 的求和」换成了「指标平移两次」，避免了对发散级数做分部求和。
 >
-> 更一般的陈述是：$E[(Z)_r]=\lambda^{r}$，其中 $(Z)_r=Z(Z-1)\cdots(Z-r+1)$ 是 falling factorial（下降阶乘）。也就是说，泊松分布的全部阶乘矩都等于 $\lambda^{r}$。这条性质是它的 signature（签名），probability generating function（概率母函数）$G(z)=E[z^{Z}]=e^{\lambda(z-1)}$ 的展开系数直接给出这些矩；对 $z$ 求导两次再取 $z=1$，得到的也正是上面两个式子。
+> 更一般的陈述是：$E[(Z)_r]=\lambda^{r}$，其中 $(Z)_r=Z(Z-1)\cdots(Z-r+1)$ 是 falling factorial（下降阶乘）。也就是说，泊松分布的全部阶乘矩都等于 $\lambda^{r}$。这条性质是它的 signature（签名），probability generating function（概率生成函数）$G(z)=E[z^{Z}]=e^{\lambda(z-1)}$ 的展开系数直接给出这些矩；对 $z$ 求导两次再取 $z=1$，得到的也正是上面两个式子。
 >
 > 均值等于方差不是巧合，而是 equidispersion（等散布）。对照二项分布：均值 $np$，方差 $np(1-p)$，方差严格小于均值，这叫 underdispersion（欠离散）。而当 $p\to0$ 且 $np\to\lambda$ 时，$np(1-p)\to\lambda$，方差追上均值——泊松正是稀有事件处的极限形态。旧注说「$p$ 大时方差远小于均值」，话本身没错，$p=1$ 时方差为 $0$，但重点该放在稀有事件那一头，否则读者会误以为等散布是「$p$ 取中间值」的性质。
 >
@@ -1091,6 +1074,23 @@ n < -\,\frac{\ln 0.999}{0.0001} = 10.005 .
 > <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式中分母 $0.0001$、负号及结果 $10.005$ 在 OCR 中被拆散，此处按条件 $1-e^{-\lambda}<0.001$ 的标准算法重建，数值一律未改动。</span>
 
 由于 $n$ 必须是整数（n must be an integer），两种方法都归结到同一结论：$n$ 至多只能取 $10$。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Poisson approximation（泊松近似）这个说法容易被当成魔术，其实它只有一个来源：$(1-x/n)^{n}\to e^{-x}$ 这条极限。把符号对上——单个符号传输出错的概率是 $p$，数据包有 $n$ 个符号，于是「一个符号都不错」的概率是 $(1-p)^{n}$，而 Poisson approximation（泊松近似）把它换成 $e^{-\lambda}$，其中 $\lambda = np$。这一步的合法性只要求 $p$ 随 $n$ 一起变小、$\lambda$ 保持固定，除此之外不需要任何东西。
+>
+> 两条路线为什么差一个零头，可以逐字算出来。精确路线：$1-(1-p)^{n}<0.001$ 等价于 $(1-p)^{n}>0.999$，取对数后因为 $\ln(1-p)<0$，不等号要翻转，得 $n<\frac{\ln0.999}{\ln0.9999}=10.0045$。近似路线：$1-e^{-\lambda}<0.001$ 等价于 $\lambda<-\ln0.999=1.0005\times10^{-3}$，除以 $\lambda=np$ 得 $n<10.0050$。两条路差 $0.0005$，取整之后同为 $n\le10$，所以答案不受影响，但这个零头本身有信息。
+>
+> 方向不是巧合，一行就能证明。对 $u\in(0,1)$ 有 $\ln(1-u)<-u$，于是 $(1-p)^{n}=(1-\lambda/n)^{n}<e^{-\lambda}$ 对每个 $n$ 严格成立。左边更小意味着「零错误」更稀罕，「至少一次错误」的概率更大，所以真实的传输失败概率高于 Poisson approximation（泊松近似）给出的值。用它当判据就是 conservative（保守）方向：它要求更小的 $n$，实际执行起来一定达标。这条严格不等式不依赖 $p$ 小，可以直接当定理用。
+>
+> 差值的量级同样可以算。换成 effective rate（有效速率）$\nu=-n\ln(1-p)$ 来看，$\nu-\lambda$ 的主项是 $n p^{2}/2$，代入 $n\approx10$、$p=10^{-4}$ 得 $\Delta\lambda=5\times10^{-8}$。这个量相对 $\lambda\approx10^{-3}$ 只有 $5\times10^{-5}$，但换算成对阈值 $n$ 的影响要乘 $1/p=n/\lambda\approx10^{4}$，因为 $\lambda=np$ 意味着 $n=\lambda/p$：$5\times10^{-8}\times10^{4}=5\times10^{-4}$，恰好就是前面那条阈值差。一个 $10^{-8}$ 量级的率误差被放大成 $10^{-4}$ 量级的阈值差，这是「小误差在条件数大的地方被放大」的标准样本，比任何抽象说法都具体。
+>
+> 复利视角能把这条极限挂到熟悉的东西上：$(1+r/n)^{n}\to e^{r}$ 是离散复利的连续化，这里只是把利率 $r$ 换成 $-\lambda$，读成「负利率」或「每秒存活率」即可，$e^{-\lambda}$ 就是连续复利下的存活折扣。同一个极限在 18.06 里会以矩阵形式回归：matrix exponential（矩阵指数）$e^{At}$ 的定义正是 $(I+At/n)^{n}$ 的极限，标量换成 matrix（矩阵）之后不需要额外技巧，因为只涉及 $A$ 一个矩阵、幂次之间可交换；唯一的差别是收敛要在 operator norm（算子范数）意义下说，而不是逐点的。
+>
+> 工程上什么时候可以直接把 $(1-p)^{n}$ 换成 $e^{-\lambda}$，有一个可操作的门槛：两者的相对差约等于 $\lambda p/2$。本题 $p=10^{-4}$、$\lambda\approx10^{-3}$ 时这个差是 $5\times10^{-8}$，可以放心替换；反过来，若取 $p=0.05$、$\lambda=2$，此时 $n=40$，相对差约 $5\%$，再用 $e^{-\lambda}$ 就会在第三位小数上出错。判据一句话：先算 $\lambda p$，小于 $0.01$ 直接换，大于 $0.01$ 就老老实实用 $\nu=-n\ln(1-p)$。
+>
+> 还有一处容易滑过去的细节：两条路线给出的阈值都是实数，而真正能取的是整数 $n\le10$。这一步整数化把连续比较变成离散决策，误差最大可达一整个单位，所以判据不是「两条路线差多少」，而是「阈值离下一个整数有多远」。$10.0045$ 距离 $11$ 还有将近一个整单位，取 $10$ 是稳的；假如算出的是 $10.9$，同样量级的近似就足以把答案从 $10$ 翻成 $11$，那时必须回到精确式。作业与考试里「近似导致答案翻转」的事故，几乎都发生在阈值贴着整数的时候。
+>
+> 跨课程连接两处。CSAPP 第 3 章的 floating point（浮点）一节讲相对误差，这里的 $\lambda p/2$ 正是「被丢掉的高阶项有多大」的量化答案，与 ulp（单位舍入误差）是同一类记账方式。6.042J 里把 $e$ 当作「$n$ 步、每步 $1/n$ 的极端情形」引入，做题时只关心阶；这里是它的定量版本，关心系数。
+>
+> 收束回正文：这条注的重点不是「记住 $e$ 的定义」，而是把「近似」变成一个带方向、带误差量的断言——写成不等式，才知道自己在安全的一侧还是危险的一侧。
 
 ---
 
@@ -1712,7 +1712,7 @@ P(Y \ge 30) = \int_{30}^{\infty} \frac{\lambda^{56}}{55!} \, y^{55}\, e^{-\lambd
 >
 > 代进具体数字看量级。寄信者按 $\lambda_1=2$ 人每分钟到达，寄包裹者按 $\lambda_2=0.5$ 人每分钟到达，两者独立。合并后速率 $2.5$ 人每分钟，平均间隔 $0.4$ 分钟，即 $24$ 秒。下一位恰好是寄信者的概率是 $2/2.5=0.8$。$10$ 分钟内合并到达数服从 $\mathrm{Pois}(25)$，均值与方差都是 $25$——这里方差能相加全靠两个流独立；若二者相关，方差就不等于均值，泊松假设会给出偏小的队列长度估计。顺便算一个中点：恰好 $20$ 位的概率是 $e^{-25}25^{20}/20!\approx0.0519$，量级约百分之五。更细的一步是把方差拆开核对：$10$ 分钟内寄信数服从 $\mathrm{Pois}(20)$、寄包裹数服从 $\mathrm{Pois}(5)$，两者独立所以方差相加得 $25$，与合并流的 $\mathrm{Pois}(25)$ 一致；若有人只验均值就下结论，这一步会漏掉「相关性会污染方差」这个唯一能出问题的环节。
 >
-> 换到变换域看，为什么「泊松之和还是泊松」是一件必然的事。probability generating function（概率母函数）把合并后的分布写成两个母函数相乘，而泊松的母函数是 $e^{\lambda(z-1)}$ 这种形状，两个相乘恰好等于参数相加：$e^{\lambda_1(z-1)}e^{\lambda_2(z-1)}=e^{(\lambda_1+\lambda_2)(z-1)}$。连续情形用 Laplace transform（拉普拉斯变换）得到同样结论。这与 Strang 18.06 里 circulant matrix（循环矩阵）被 Fourier basis（傅里叶基）对角化是同一件事：变换把卷积变成逐点乘法，于是「分布族的卷积封闭」退化成「参数的加法」。你在第 4 章见过这条路的另一种走法：直接用 transforms（生成函数）算，本节只是把它翻译成过程语言。
+> 换到变换域看，为什么「泊松之和还是泊松」是一件必然的事。probability generating function（概率生成函数）把合并后的分布写成两个母函数相乘，而泊松的母函数是 $e^{\lambda(z-1)}$ 这种形状，两个相乘恰好等于参数相加：$e^{\lambda_1(z-1)}e^{\lambda_2(z-1)}=e^{(\lambda_1+\lambda_2)(z-1)}$。连续情形用 Laplace transform（拉普拉斯变换）得到同样结论。这与 Strang 18.06 里 circulant matrix（循环矩阵）被 Fourier basis（傅里叶基）对角化是同一件事：变换把卷积变成逐点乘法，于是「分布族的卷积封闭」退化成「参数的加法」。你在第 4 章见过这条路的另一种走法：直接用 transforms（生成函数）算，本节只是把它翻译成过程语言。
 >
 > 最后接一处工程与一处边界。CSAPP 的并发服务器里，多个客户端连接（各自近似泊松）汇入同一个 accept queue（接入队列），服务速率固定，利用率 $\rho=\lambda/\mu$ 决定排队长度，而这里的 $\lambda$ 正是各源速率之和——排队论的门就在这儿。边界在反方向：合并之后你只看得见「有到达」，看不出它来自哪个源，把合并流拆回各自分量叫 deconvolution（反卷积），统计上只能靠标签比例与二阶矩去反推，且需要额外假设；这也解释了为什么分裂（知道标签）容易、合并后还原（丢掉标签）很难。
 
@@ -1892,7 +1892,7 @@ E[T_1 + T_2 + T_3] = \frac{1}{3\lambda} + \frac{1}{2\lambda} + \frac{1}{\lambda}
 >
 > 这里必须更正一条旧注。旧注说「无记忆在复合下保值」是表里四个结论的公共根，这句话过宽，等于把一个只对行 3、4 成立的机制推广到全表。反例就在表内：binomial distribution（二项分布）不无记忆。无记忆的定义是对所有 $s,t$ 有 $P(X>s+t\mid X>s)=P(X>t)$，而二项分布的支撑是有限集 $\{0,1,\ldots,m\}$，取 $s+t>m$ 时左端为 $0$、右端为正，立刻破功。所以行 1、2 与无记忆毫无关系；照「四条同根」去记，遇到「泊松与泊松的复合」或「正态与二项的复合」这种表外情形就会无据可依——那里没有无记忆，但 Wald 公式与卷积封闭照样能用。正确的说法是：两条根，外加一个共同工具，即全期望与全方差公式。
 >
-> 想把四行一次算完，用 probability generating function（概率母函数）的复合：$G_Y(z)=G_N(G_X(z))$。以行 3 为例，$G_X(z)=pz/[1-(1-p)z]$、$G_N(z)=qz/[1-(1-q)z]$，代进去化简，分子分母同时约掉 $1-(1-p)z$，得 $pqz/[1-(1-pq)z]$，正是参数 $pq$ 的几何母函数。这条复合公式在 branching process（分支过程）里就是 $G_{n+1}=G_n\circ G$ 的递推，也是复合分布这个名字的出处。
+> 想把四行一次算完，用 probability generating function（概率生成函数）的复合：$G_Y(z)=G_N(G_X(z))$。以行 3 为例，$G_X(z)=pz/[1-(1-p)z]$、$G_N(z)=qz/[1-(1-q)z]$，代进去化简，分子分母同时约掉 $1-(1-p)z$，得 $pqz/[1-(1-pq)z]$，正是参数 $pq$ 的几何母函数。这条复合公式在 branching process（分支过程）里就是 $G_{n+1}=G_n\circ G$ 的递推，也是复合分布这个名字的出处。
 >
 > 再补一组数字，让行 3、4 也落地。取 $p=0.2$、$q=0.1$：行 3 说 $Y$ 服从参数 $0.02$ 的几何分布，于是 $E[Y]=50$；用 Wald 公式算，$E[N]=10$、$E[X]=5$，乘积 $50$，一致。方差这一边，Wald 给出 $10\times20+90\times25=2450$，而参数 $0.02$ 的几何方差是 $0.98/0.0004=2450$，两边又对上。行 4 取 $\lambda=2$、$q=0.1$：$Y$ 服从参数 $0.2$ 的指数分布，$E[Y]=5$，Wald 给出 $10\times0.5=5$；方差 Wald 给出 $10\times0.25+90\times0.25=25$，指数方差是 $1/0.04=25$，同样相等。两组核对合起来说明：这张表是同一台机器换四种输入，只要模板成立，均值与方差就都被两条公式钉住。
 >
