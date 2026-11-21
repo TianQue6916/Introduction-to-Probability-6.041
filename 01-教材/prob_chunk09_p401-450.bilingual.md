@@ -1,3311 +1,3067 @@
-<!-- ===== PDF p401 ===== -->
+<!-- ===== PDF p301 ===== -->
 
-<span style="color:#7f8c8d;">书页 p392 · 第 7 章（Chap. 7）习题区。本页页首承接单元 8 遗留的一张 Problem 解答的收尾（稳态归一化与平衡方程部分），其后才另起 **Problem 23**。</span>
+<span style="color:#c0392b;">**第 5 章　极限定理（Limit Theorems）**</span> — §5.5（续）
 
-<span style="color:#7f8c8d;">**[problem]**（续，解答收尾）</span>
+<span style="color:#c0392b;">**§5.5　大数强定律（The Strong Law of Large Numbers）**</span> <span style="color:#7f8c8d;">（正文收尾 + 第 5 章习题区）</span>
 
-<span style="color:#1e8449;">[note] 本页页首为上一 Problem（单元 8 遗留，§7.3 稳态求解题）解答的结尾，主题为「各 $\pi_i$ 之和为 $1$ 由此解得 $\pi_i=1/m$，并据此验证平衡方程与归一化方程」。编号与题面在前一页，此处以「（续）」续接，不另起新题。</span>
+> <span style="color:#7f8c8d;">承接上一页：本页以 §5.5 正文末尾的取极限步骤开头 —— 令 $n \to \infty$，利用恒等式 $\lim_{n\to\infty}\left(1+\frac{c}{n}\right)^{n} = e^{c}$ 得到相应结果；随后转入第 5 章习题区，承接单元 6 已到 Problem 12 停下的进度，本页呈现 **Problem 13\*、14\*、15\***。</span>
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页首对上一 Problem 解答的收尾在 OCR 中被打成碎片（如 "…an d…i s t he s ame for all i ."、"S i n c e the 1Ti add to L we obtai n 1Tl = 1 1m"、"…shows the b al ance and normalizat ion eq uation s ." 等仅余零散字样）。此解答给出的稳态分布为各项均匀的 $\pi_i = 1/m$，可按原书语义连同上下文忠实转写，下文未补充任何原文未有的具体数值。</span>
+现在我们令 $n \to \infty$，并利用恒等式（identity）
 
-…对所有的状态 $i$ 而言都相同（the same for all i）。由于各 $\pi_i$ 之和为 $1$，我们便得到 $\pi_i = 1/m$（对所有 $i$）。据此可直接验证平衡方程（balance equations）与归一化方程（normalization equations）均得到满足。
+```math
+\lim_{n \to \infty} \left(1 + \frac{c}{n}\right)^{n} = e^{c},
+```
+
+以得到（to obtain）……
+
+> <span style="color:#7f8c8d;">[原页此处内容跨页断裂] 原页「以得到」（to obtain）之后的具体结果被分页折入下一页，本页残存至此即被本页的运行页眉（running head）截断；取极限这一步是上一页 §5.5 正文对概率为 1 收敛（convergence with probability 1）讨论的收尾，所导出的结果延续到后续页。</span>
 
 ---
 
-<br>
+<span style="color:#c0392b;">**第 5 章　习题（Problems）**</span> <span style="color:#7f8c8d;">（题干与解答均保留英文原题；带 `*` 题自本单元起承接 Problem 13。）</span>
 
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 23\***</span>
+> <span style="color:#7f8c8d;">[OCR 情况说明] 下面 Problems 13–15 的英文题干与解答由本页 OCR 清理重建：原文含多处噪声，如 `a l b`（即 $a/b$）、`I Yn l < €`（即 $\left|Y_n - \theta\right| < \varepsilon$）、`P ( CC )`（即 $P(C^c)$）、`E[XJjE[Y]`（即 $E[X]/E[Y]$），以及 Problem 15 中极限值被识别为 `c`（实为 $\theta$）。数值与符号均已按大数强定律的标准表述还原，未改动数学含义。</span>
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] Problem 23 题面在 OCR 中严重碎裂（如 "Consider the q ueueing Exam ple…"、"p robabi l i ties of a packet arr ival and a packet transm ission depend on the state of the node…"、"h, > 0 for i < m . and bm = O."、"d i > 0 if i  1" 等，仅余零散短语与符号），并缺失「某一新分组到达（(i)/one new packet arrives）」「某一分组完成传输（(ii)/one packet is transmitted）」等事件的完整措辞。下文按原书 §7.3 关于有限容量分组传输结点的生灭链（birth–death chain）语义做忠实重建，所涉参数均为符号（$b_i,d_i,m$），未臆造任何原文未给出的具体数字。</span>
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#00838f;">**Problem 13.**\*</span>
 
-<span style="color:#7f8c8d;">**Problem 23（英文原题）**  Consider the queueing Example, but assume that the following occurs: the probabilities of a packet arrival and a packet transmission depend on the state of the node. Specifically, let $b_i > 0$ for $i < m$ and $b_m = 0$, and let $d_i > 0$ for $i \ge 1$. Then:
-(i) one new packet arrives and no packet is transmitted with probability $b_i$, for $i < m$;
-(ii) one packet is transmitted and no new packet arrives with probability $d_i$, for $i \ge 1$;
-(iii) no new packet arrives and no packet is transmitted with probability $1 - b_i - d_i$ if $i \ge 1$, and with probability $1 - b_i$ if $i = 0$.
-Calculate the steady-state probabilities of the chain.</span>
+Consider two sequences of random variables $X_1, X_2, \ldots$ and $Y_1, Y_2, \ldots$. Suppose that $X_n$ converges to $a$ and $Y_n$ converges to $b$, with probability 1. Show that $X_n + Y_n$ converges to $a+b$, with probability 1. Also, assuming that the random variables $Y_n$ cannot be equal to zero, show that $X_n / Y_n$ converges to $a/b$, with probability 1.
 
-<span style="color:#2471a3;">**[solution]**</span> <span style="color:#2471a3;">**Solution（解答）**</span>
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 先把定义拆成三段：说「$X_n \to a$ with probability 1」，指的是存在一个 event（事件）$N$，$P(N)=0$，且对每个 $\omega \notin N$ 都有数列 $X_n(\omega) \to a$。量词顺序是「存在 $N$、对所有 $\omega \notin N$」，一旦固定就必须一次性对所有不落在其中的样本点负责；若写成「对每个 $\omega$ 存在各自的 $N$」，那就退化成逐点收敛的废话，而逐点收敛恰恰推不出 almost surely（几乎必然）。判定标准仍然是实分析里那套 $\varepsilon$–$N$：对每个 $\varepsilon>0$ 存在 $k$，使所有 $n \ge k$ 满足 $|X_n(\omega)-a|<\varepsilon$。
+>
+> 为什么这是合法 event（事件）而不是口语。把 $\varepsilon$ 只取 $1/m$（可数多个），就有 $\{X_n \to a\} = \bigcap_{m \ge 1} \bigcup_{k \ge 1} \bigcap_{n \ge k} \{|X_n-a|<1/m\}$。可数个 measurable set（可测集）做交与并仍然 measurable（可测），所以右边落在 σ-field（σ 代数）里；若直接对实数 $\varepsilon>0$ 取不可数并，可测性没有任何保证。这条恒等式是把 almost surely（几乎必然）从直觉变成 measure theory（测度论）对象的第一步，值得亲手写一遍，也只有写一遍才知道可数的位置在哪一层。
+>
+> Problem 13 关于和的机制只有一句话：坏集可以并起来。设 $A$ 是 $X_n$ 不收敛到 $a$ 的 event（事件），$B$ 是 $Y_n$ 不收敛到 $b$ 的 event（事件），题设给出 $P(A)=P(B)=0$。关键观察是：若 $\omega \notin A \cup B$，则两个极限都存在，由实分析里的极限运算法则，$X_n(\omega)+Y_n(\omega) \to a+b$。于是「和序列发散」这个坏集 $C$ 被包含在 $A \cup B$ 里——是包含，不是相等，因为 $A \cup B$ 中可能还有些点，和序列照样收敛。
+>
+> 于是 $P(C) \le P(A \cup B) \le P(A)+P(B) = 0$，即 $P(C^c)=1$。第二个不等号是 subadditivity（次可加性）。对可数无穷多个 event（事件）而言，同样的结论由 countable additivity（可数可加性）给出：可数个 null set（零测集）之并仍是 null set（零测集）。这两件事在实分析里是同一条公理的两面，不要当成两个定理分开记。
+>
+> 与实分析的接口：almost everywhere（几乎处处）永远是相对于某个 measure（测度）而言的。Lebesgue null set（勒贝格零测集）在 Dirac measure（狄拉克测度）下可以是满测度，所以「几乎处处成立」这句话脱离测度就没有意义。概率论里 measure（测度）固定为 $P$，a.s. 与 a.e. 是同一条语义，只是载体换成了 probability measure（概率测度）。这也解释了为什么 a.s. 的证明总以「挖掉一个零测集」为骨架：所有几乎必然结论都是逐点结论加一张零测集的豁免证。
+>
+> 方向必须刻死。a.s. 收敛蕴含 convergence in probability（依概率收敛），Problem 15 证明的正是这条蕴含；反过来不成立。反例是 typewriter sequence（打字机序列）：$[0,1]$ 上按 $1/2, 1/4, 1/4, 1/8, \ldots$ 逐层滑动的区间指示函数，它依概率收敛到 $0$，却没有任何一个点收敛。所以任何「由依概率收敛推出几乎必然收敛」的推理都必须额外付出条件，典型的两条是单调性与可求和性——Problem 16 提供的正是后者。
+>
+> 顺带把 Problem 14 的结构看清：$\frac{X_1+\cdots+X_n}{Y_1+\cdots+Y_n}$ 的收敛被拆成分子、分母各自的 a.s. 收敛，再用 Problem 13 的结论合起来。但封闭性有边界，必须分开说：加法与乘法在整条实轴上连续，所以 a.s. 收敛对加、乘封闭；除法不行，因为映射 $x/y$ 在 $y=0$ 处根本不连续。题面只假设 $Y_n \ne 0$，并没有要求极限 $b \ne 0$，于是取 $X_n \equiv 1$、$Y_n = 1/n$（此时 $b=0$），$X_n/Y_n = n \to \infty$，a.s. 收敛的和被除成了一个发散的商——数值上 $1/(1/10)=10$、$1/(1/1000)=1000$，看得一清二楚。正确的陈述是：在 $b \ne 0$，或更强地 $\{|Y_n|\}$ 一致远离 $0$ 时，除法才保持 a.s. 收敛。题面里 $a/b$ 这个写法本身就已经默认了 $b \ne 0$。
+>
+> 工程视角补一句。数值模拟里你只能抽有限条 path（路径），a.s. 是对整个样本空间成立的断言，它不保证你手上这条 path（路径）收敛，只保证坏路径所占的 probability（概率）为 $0$，所以随机抽一条几乎必然落在好集里——统计上安全，单次试验上不安全。常见的失误是把「以概率 1」读成「对所有情况」：浮点实现里的伪随机序列有周期，严格说它是确定性序列，a.s. 的说法在那里整体失效，需要重新论证才能借用。
 
-<span style="color:#7f8c8d;">**Solution（英文保留，因本题带 \*）**  The states of the chain are $0, 1, \ldots, m$, corresponding to the number of packets currently stored at the node. The transition probability graph is given in Figure 7.23.
-
-Thus we may write the balance equations in the form
+<span style="color:#00838f;">**Solution（解答）.**</span> Let $A$ (respectively, $B$) be the event that the sequence of values of the random variables $X_n$ (respectively, $Y_n$) does not converge to $a$ (respectively, $b$). Let $C$ be the event that the sequence of values of $X_n + Y_n$ does not converge to $a + b$ and notice that $C \subset A \cup B$. Since $X_n$ and $Y_n$ converge to $a$ and $b$, respectively, with probability 1, we have $P(A) = 0$ and $P(B) = 0$. Hence,
 
 ```math
-\pi_{j+1} = \rho_j \pi_j, \qquad \rho_j = \frac{b_j}{d_{j+1}}, \quad j = 0, 1, \ldots, m-1,
+P(C) \le P(A \cup B) \le P(A) + P(B) = 0.
 ```
 
-and by iteration,
+Therefore, $P(C^c) = 1$, or equivalently, $X_n + Y_n$ converges to $a + b$ with probability 1. For the convergence of $X_n / Y_n$, the argument is similar.
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#00838f;">**Problem 14.**\*</span>
+
+Let $X_1, X_2, \ldots$ be a sequence of independent identically distributed random variables. Let $Y_1, Y_2, \ldots$ be another sequence of independent identically distributed random variables. We assume that the $X_1$ and $Y_1$ have finite mean, and that $Y_1 + \cdots + Y_n$ cannot be equal to zero. Does the sequence
 
 ```math
-\pi_j = \rho_{j-1} \cdots \rho_0 \, \pi_0, \qquad j = 1, \ldots, m.
+Z_n = \frac{X_1 + \cdots + X_n}{Y_1 + \cdots + Y_n}
 ```
 
-By $1 = \pi_0 + \pi_1 + \cdots + \pi_m$, we obtain
+converge with probability 1, and if so, what is the limit?
+
+<span style="color:#00838f;">**Solution（解答）.**</span> We have
 
 ```math
-1 = \pi_0 \Bigl( 1 + \rho_0 + \rho_0 \rho_1 + \cdots + \rho_0 \rho_1 \cdots \rho_{m-1} \Bigr),
+Z_n = \frac{(X_1 + \cdots + X_n)/n}{(Y_1 + \cdots + Y_n)/n}.
 ```
 
-so that
+By the strong law of large numbers, the numerator and denominator converge with probability 1 to $E[X]$ and $E[Y]$, respectively. It follows that $Z_n$ converges to $E[X]/E[Y]$, with probability 1 (cf. the preceding problem).
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#00838f;">**Problem 15.**\*</span>
+
+Suppose that a sequence $Y_1, Y_2, \ldots$ of random variables converges to a real number $\theta$ with probability 1. Show that the sequence also converges to $\theta$ in probability.
+
+<span style="color:#00838f;">**Solution（解答）.**</span> Let $C$ be the event that the sequence of values of the random variables $Y_n$ converges to $\theta$. By assumption, we have $P(C) = 1$. Fix some $\varepsilon > 0$, and let $A_k$ be the event that $\left|Y_n - \theta\right| < \varepsilon$ for every $n \ge k$. If the sequence of values of the random variables $Y_n$ converges to $\theta$, then there must exist some $k$ such that for every $n \ge k$, ...
+
+> <span style="color:#7f8c8d;">[跨页续接] Problem 15 的 Solution 在本页末尾未结束，可读部分止于「there must exist some $k$ such that for every $n \ge k$, …」，解答余下部分延续到下一页。</span>
+
+<!-- ===== PDF p302 ===== -->
+
+> <span style="color:#7f8c8d;">本页为 **第 5 章　极限定理（Limit Theorems）** 习题区（Problems）的延续（承接上一页）。页首是前一个带 `*` 习题的英文 **Solution** 之末段——它证明「以概率 1 收敛（convergence with probability 1）蕴含依概率收敛（convergence in probability）」；随后依次是 **Problem 16**（证明 $Y_n$ 依概率 1 收敛到 $0$）与 **Problem 17**（证明成功次数有限）的完整题干与解答。按本规范，第 5 章习题题干与 `*` 题的英文 Solution 一律保持英文，仅功能标签可标注中文。</span>
+
+> <span style="color:#7f8c8d;">（续上前页）此为前页某个 **带 `*` 习题**的英文 Solution 收尾部分，其题号原在上一页、此处不再另起编号。解答正文均为英文，保留如下。</span>
+
+...this sequence of values is within less than $\varepsilon$ from $\theta$. Therefore, every element of $C$ belongs to $A_k$ for some $k$, or
 
 ```math
-\pi_0 = \frac{1}{1 + \rho_0 + \rho_0 \rho_1 + \cdots + \rho_0 \rho_1 \cdots \rho_{m-1}}.
-```</span>
+C \subset \bigcup_{k=1}^{\infty} A_k .
+```
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这道题是 §7.3 排队例（queuing example）的状态相关版本：缓冲节点容量为 $m$，状态取当前存包数 $0,1,\ldots,m$，每个时隙只可能发生三件事之一——来一个包而不发（概率 $b_i$）、发一个包而不来（$d_i$）、两者都不发生（$1-b_i-d_i$）。把常数到达率与服务率换成随状态变化的 $b_i$、$d_i$，表面只是参数变复杂，实际上是 birth–death chain（生灭链）求解模板的一次完整演示。
->
-> 第一性原理：为什么不直接解 $m$ 元全局平衡方程组？因为转移矩阵是三对角的，非零元素只落在主对角线与两条次对角线上。取「前 $j$ 个状态」组成的截断集合，稳态下这个集合的概率质量恒定，于是跨过截面的净流量必须为零；而进出这个集合的通道各只有一条——从 $j$ 涨到 $j+1$ 的 $b_j$，和从 $j+1$ 跌回 $j$ 的 $d_{j+1}$。所以 $\pi_j b_j=\pi_{j+1}d_{j+1}$。这条式子常被误当作额外假设，其实它是一维结构下从全局平衡方程推出来的结论：全局平衡只要求每个状态的总流入等于总流出，而在这里「相邻两态之间的双向流量相等」比它更强、也更容易用。
->
-> 这条式子就是 local balance（局部平衡）在一维链上的特例。它的价值在于把「解线性方程组」换成「一次除法加一次连乘」：$\rho_j=b_j/d_{j+1}$，$\pi_{j+1}=\rho_j\pi_j$，于是 $\pi_j=\rho_{j-1}\cdots\rho_0\,\pi_0$。剩下的唯一自由度由归一化钉死，$\pi_0$ 就是那个连乘分母。换个写法：稳态概率正比于沿链累乘的权重，取对数后 $\log\rho_j$ 就是相邻两态之间的 potential difference（势差），整套递推与统计力学里的 Boltzmann weight（玻尔兹曼权重）同构：局部分支比决定全局占据比。
->
-> 命名与出处：$\rho_j$ 在排队论里叫 utilization（利用因子）或 load factor（负载因子），量的是「单位时间想进来多少、能出去多少」，稳态解按它逐级缩放。这套记号由 Kendall 在 1953 年提出的 A/S/c 记法固定下来；本题连续时间、常数参数的版本就是 M/M/1/m，即容量为 $m$ 的有限缓冲队列，其稳态为 $\rho^j(1-\rho)/(1-\rho^{m+1})$，其中 $\rho=\lambda/\mu$。排队论的起点是 Erlang 1909 年对哥本哈根电话交换机的分析。
->
-> 一个必须分清的语义差别：这里的 $b_i$、$d_i$ 是「一个时隙内发生某事件」的概率，不是速率，所以不能像连续时间模型那样直接相除得到流量；真正的流量对比只在 $\pi_j b_j=\pi_{j+1}d_{j+1}$ 这一层成立。把概率当速率、再把两者相加，是最常见的量纲错误，也是这道离散时隙题与教科书里连续时间 M/M/1 最容易混淆的地方。
->
-> 跨课程连接：同一组递推在 18.06 的语言里是「以 $\rho$ 为边权的路径连乘」，稳态解可写成对所有生成树求和后的比值，即 matrix–tree theorem（矩阵树定理），这是 Markov chain（马尔可夫链）稳态的树形公式；在 MCMC 里，birth–death 型 proposal 的接受率正是按 $\pi_{j+1}/\pi_j$ 的比例设计的。物理侧的 Ehrenfest urn model（埃伦费斯特瓮模型）也属同一族，只不过它的 $b_i$、$d_i$ 由抽球规则决定。
->
-> 反例与边界：题目专门要求 $b_m=0$，这不是装饰——若满缓冲仍能以正概率到达，状态 $m$ 就会「溢出」，截断集合的净流量论证不再闭合，链也不再封闭在这 $m+1$ 个状态里。若某个 $d_{j+1}=0$，则 $j+1$ 及以上全部不可达，链退化成分段结构、稳态不唯一。若所有 $b_i=d_i=0$，链原地不动，稳态就是出发状态。非周期性靠自环 $1-b_i-d_i$ 保证：只要有一个状态满足 $b_i+d_i<1$，链就非周期；反之若对所有 $i$ 都有 $b_i+d_i=1$，链周期为 2，$\pi$ 存在但 $n$ 步转移概率不收敛于它。
+Note also that the sequence of events $A_k$ is monotonically increasing, in the sense that $A_k \subset A_{k+1}$ for all $k$. Finally, note that the event $A_k$ is a subset of the event $\bigl\{|Y_k - \theta| < \varepsilon\bigr\}$. Therefore,
 
-> <span style="color:#7f8c8d;">本页止于此，Problem 23 的 Solution 继续到下一页（PDF p402）。</span>
-<!-- ===== PDF p402 ===== -->
 
-> <span style="color:#7f8c8d;">§7.3 并行发射的排队例（queuing example）习题区，书页 393。本页承接上一页 Problem 23\*（缓冲节点排队例）英文 Solution 的收尾段（稳态概率公式），随后进入 Problem 24\* 与 Problem 25\*。三题皆带 `*`，其英文 Solution 按规范原样保留（仅标签注中文）。本页 Problem 编号沿用第 7 章习题区连续编号（承接单元 8，从 23 起）。</span>
+```math
+\lim_{k \to \infty} p\bigl(|Y_k - \theta| < \varepsilon\bigr)
+\;\ge\; \lim_{k \to \infty} P(A_k)
+= P\!\left(\bigcup_{k=1}^{\infty} A_k\right)
+\;\ge\; P(C) = 1 ,
+```
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页首 Problem 23 Solution 收尾段及两题题干的数学符号在 OCR 中严重碎裂（如 `7T"i` 代表 $\pi_i$、`Po` 代表 $p_0$、`Pkj` 代表 $P_{kj}$、连加分段错行等）。现按原书页 393 权威文本还原下列各公式，数值与结构均依据上一页（书页 392）推出的 $\pi_0 = \frac{1}{1+p_0+p_0p_1+\cdots+p_0\cdots p_{m-1}}$ 与递推 $\pi_{i+1}=p_i\pi_i$ 反推核验，非臆造。</span>
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 把这条证明抽成模板，叫它「ε-剥离法」，三步：① 剥离——把「序列收敛到 $\theta$」这个含 $\forall \varepsilon>0$ 的断言先固定到一个具体的 $\varepsilon>0$ 上，得到只依赖 $\varepsilon$ 的尾部语句；② 单调化——把语句里的「存在 $k$」换成 event（事件）的并，令 $A_k$ 为「对每个 $n \ge k$ 都有 $|Y_n-\theta|<\varepsilon$」的 event（事件），则 $\bigcup_k A_k$ 就是「存在这样的 $k$」，而 $A_k$ 随 $k$ 递增；③ 取极限——用 probability（概率）的 continuity from below（从下方连续）性质把 $\lim_k P(A_k)$ 换成 $P(\bigcup_k A_k)$，再与 $P(C)=1$ 比较。
+>
+> 为什么 $A_k$ 一定递增，不是巧合而是结构。$A_k$ 要求「从第 $k$ 项起全部合格」，$A_{k+1}$ 比它少了一条约束（第 $k$ 项），于是 $A_k \subset A_{k+1}$。递增的 event（事件）列才能用从下方连续取极限，而这条技术条件被「尾部」这个词自动满足——这正是 tail event（尾部事件）在概率论里好用的原因。顺带纠一个容易发生的联想：Borel–Cantelli 第一引理走的是次可加性，即 $P(\limsup_n A_n) \le \sum_n P(A_n)$，完全不需要这里的递增结构；递增性在本文里只负责让 continuity from below 可用，两件事没有因果关系。
+>
+> 唯一真正需要动脑的地方是包含方向。$A_k \subset \{|Y_k-\theta|<\varepsilon\}$，因为 $A_k$ 要求从 $k$ 起全部合格，特别包含 $n=k$ 这一条。若方向写反，会得到 $P(|Y_k-\theta|<\varepsilon) \le P(A_k)$，取极限后只剩 $\le 1$ 这个空结论，证明整个塌掉。方法上的教益：这类论证里除了一处包含关系，其余全是机械的单调性搬运。
+>
+> 机械地走完：由「每个收敛点必在某个 $k$ 之后全部落在 $\varepsilon$ 邻域内」，得 $C \subset \bigcup_k A_k$，于是 $1 = P(C) \le P(\bigcup_k A_k) = \lim_k P(A_k) \le \liminf_k P(|Y_k-\theta|<\varepsilon)$。左端给的是 $\liminf$（下极限），而依概率收敛要的是极限；两者在此等价，但需要两半合起来。下界那一半就是上面那串不等式的末项：$1 \le \liminf_k P(|Y_k-\theta|<\varepsilon)$。上界那一半来自「每项都不超过 $1$」：对每个 $k$ 有 $P(|Y_k-\theta|<\varepsilon) \le 1$，故 $\limsup_k P(|Y_k-\theta|<\varepsilon) \le 1$。两半一夹，$1 \le \liminf \le \limsup \le 1$，上下极限相等且都等于 $1$，极限存在。注意方向：单靠「每项不超过 $1$」只能压住上极限，压不出 $\liminf \ge 1$——少了由 $P(C)=1$ 给出的那一半，论证就是空转。
+>
+> 为什么只需处理一个 $\varepsilon$。逐点收敛的定义量化在所有 $\varepsilon>0$ 上，但要证出「对每个固定 $\varepsilon$，尾部 probability（概率）趋于 $1$」，就足以覆盖全部 $\varepsilon$，无需在证明里显式搬运 $\varepsilon$ 的量词。反过来，要造「依概率收敛而不 a.s. 收敛」的反例，就必须让收敛速度随 $\varepsilon$ 退化——typewriter sequence（打字机序列）正是这样：对每个 $\varepsilon$ 尾部概率趋于 $1$，但区间宽度趋零、位置无限漂移，于是没有任何点收敛。
+>
+> 实分析视角。a.s. 收敛是「对 measure（测度）而言几乎所有的点，量词 $\forall \varepsilon \exists k$ 成立」，依概率收敛是「对每个 $\varepsilon$，坏集的 measure（测度）趋于零」。前者控制点集，后者控制测度，从前者到后者是丢掉一层逐点信息。够精细的版本是 Egorov theorem（叶戈罗夫定理）：几乎必然收敛在一个测度任意接近全空间的集合上是 uniform（一致）的；也就是说，逐点信息只在丢掉一块任意小的集合之后才降级成一致收敛，这一步正对应这里「丢掉坏集」的动作。
+>
+> 数值检查。想验证一条实现是否依概率收敛，固定 $\varepsilon$ 画 $P(|Y_k-\theta| \ge \varepsilon)$ 随 $k$ 的曲线，看它是否压向零——这是可计算、可观测的量。a.s. 收敛对应的是「对几乎所有 seed，path（路径）最终进入并留在 $\varepsilon$ 带内」，它需要看整条 path（路径），而且「最终」这个时刻没有可计算的界。把这两层分清，是 Monte Carlo 实验设计与纯数学证明之间的接口所在。
+>
+> 一条推广：同一套剥离动作在 SLLN 的证明里反复出现。凡是要从「a.s. 类型的强度」退到某种更弱模式，都先固定 $\varepsilon$、把事件列单调化、再取极限；模板固定下来以后，剩下的只是算每一层 event（事件）的 probability（概率）。
+
+where the first equality uses the continuity property of probabilities (Problem 13 in Chapter 1). It follows that
+
+```math
+\lim_{k \to \infty} p\bigl(|Y_k - \theta| \ge \varepsilon\bigr) = 0 ,
+```
+
+which establishes convergence in probability.
 
 ---
 
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 23\*（续）（排队例 Solution 收尾）**</span>
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 16.\***</span> **Consider a sequence $Y_n$ of nonnegative random variables and suppose that**
 
-The remaining steady-state probabilities are
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 题设条件在 OCR 中被整行吞掉（页上「suppose that」之后为空白）。此即本教材标准条件 $\sum_{n=1}^{\infty} E[Y_n] < \infty$（见下文 Note 中涉及「求 $\sum_{n=1}^{\infty} Y_n$ 的期望」的表述），此处按该标准条件重建，未改动任何数值。</span>
 
 ```math
-\pi_i = \frac{p_0\, p_1 \cdots p_{i-1}}
-{1 + p_0 + p_0 p_1 + \cdots + p_0 \cdots p_{m-1}},
-\qquad i = 1, \ldots, m.
+\sum_{n=1}^{\infty} E[Y_n] < \infty .
 ```
 
-> <span style="color:#7f8c8d;">衔接上一面（PDF p401）：这是 Problem 23 英文 Solution（其开头在书页 392）推导 $\pi_0$ 之后给出的其余稳态概率公式的收尾。</span>
+Show that $Y_n$ converges to $0$, with probability 1.
+
+**Note.** This result provides a commonly used method for establishing convergence with probability 1. To evaluate the expectation of $\sum_{n=1}^{\infty} Y_n$, one typically uses the formula
+
+```math
+E\!\left[\sum_{n=1}^{\infty} Y_n\right] = \sum_{n=1}^{\infty} E[Y_n] .
+```
+
+The fact that the expectation and the infinite summation can be interchanged, for the case of nonnegative random variables, is known as the monotone convergence theorem, a fundamental result of probability theory, whose proof lies beyond the scope of this text.
+
+**Solution.** We note that the infinite sum $\sum_{n=1}^{\infty} Y_n$ must be finite, with probability 1. Indeed, if it had a positive probability of being infinite, then its expectation would also be infinite. But if the sum of the values of the random variables $Y_n$ is finite, the sequence of these values must converge to zero. Since the probability of this event is equal to $1$, it follows that the sequence $Y_n$ converges to zero, with probability 1.
 
 ---
 
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 24\*．平衡方程的相关性（Dependence of the balance equations）**</span>
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 17.\***</span> **Consider a sequence of Bernoulli random variables $X_n$, and let $p_n = P(X_n = 1)$ be the probability of success in the $n$th trial. Assuming that $\sum_{n=1}^{\infty} p_n < \infty$, show that the number of successes is finite, with probability 1. [Compare with Problem 48(b) in Chapter 1.]**
 
-Show that if we add the first $m-1$ balance equations
+**Solution.** Using the monotone convergence theorem (see above note), we have
 
-```math
-\pi_j = \sum_{k=1}^{m} \pi_k P_{kj}, \qquad j = 1, \ldots, m-1,
-```
+> <span style="color:#7f8c8d;">[跨页续接] 本页在此处切断——Problem 17 的 Solution 后续算式续在下一页（PDF p303）；此处保留原文已给出的部分，不额外补写。</span>
 
-we obtain the last equation
+<!-- ===== PDF p303 ===== -->
 
-```math
-\pi_m = \sum_{k=1}^{m} \pi_k P_{km}.
-```
+<span style="color:#c0392b;">**第 5 章　极限定理（Limit Theorems）**</span> —— §5.5 大数强定律（The Strong Law of Large Numbers）（续）+ 习题区
 
-<span style="color:#00838f;">**[solution] Solution（解答）**</span>
+> <span style="color:#7f8c8d;">承接上一页：本页页首为上一页某道习题（关于「有限次成功」事件）解答的末尾片断；随后进入习题 **Problem 18**（带 `*`，题干与解答均保持英文，仅标签可中文）。本页属第 5 章习题区，紧随单元 6 在 Problem 17 处停下的进度续接。</span>
 
-By adding the first $m-1$ balance equations, we obtain
+页首延续上一道习题解答的末尾：
 
-```math
-\sum_{j=1}^{m-1} \pi_j
-= \sum_{j=1}^{m-1} \sum_{k=1}^{m} \pi_k P_{kj}
-= \sum_{k=1}^{m} \pi_k \sum_{j=1}^{m-1} P_{kj}
-= \sum_{k=1}^{m} \pi_k \,(1 - P_{km}),
-```
+> <span style="color:#7f8c8d;">（续上一页某习题解答）</span>
+
+This implies that
 
 ```math
-= \pi_m + \sum_{k=1}^{m-1} \pi_k - \sum_{k=1}^{m} \pi_k P_{km}.
+\sum_{n=1}^{\infty} X_n < \infty,
 ```
 
-This equation is equivalent to the last balance equation
-
-```math
-\pi_m = \sum_{k=1}^{m} \pi_k P_{km}.
-```
+with probability 1. We then note that the event $\left\{\sum_{n=1}^{\infty} X_n < \infty\right\}$ is the same as the event that there is a finite number of successes.
 
 ---
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 题目要证的是「前 $m-1$ 条 balance equations（平衡方程）相加恰好等于第 $m$ 条」。这不是计算技巧，而是一条关于方程组秩的断言：$m$ 条方程不可能彼此独立，rank（秩）至多 $m-1$。这条冗余性是 transition matrix（转移矩阵）结构的必然结果，不是巧合，所以它在任何有限 Markov chain（马尔可夫链）上都成立，与具体数值无关。
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 18. \* The strong law of large numbers.**</span> Let $X_1, X_2, \ldots$ be a sequence of independent identically distributed random variables and assume that $E[X_1^4] < \infty$. Prove the strong law of large numbers.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 先把整条证明的骨架摆出来。目标是 $S_n/n → 0$ a.s.，其中 $S_n = X_1+\cdots+X_n$，各 $X_i$ 是 i.i.d.（independent identically distributed，独立同分布）且均值为零。想法是把「a.s. 收敛」降解成「某个非负随机变量的级数可求和」，这一步由 Problem 16 完成：若 $Y_n≥0$ 且 $\sum_n E[Y_n]<∞$，则 $\sum_n Y_n<∞$ a.s.，从而 $Y_n → 0$ a.s.。于是问题变成：取什么 $Y_n$，它的期望级数才收敛？
 >
-> 先把证明走一遍。左端是 $\sum_{j=1}^{m-1}\pi_j$；右端换序得 $\sum_{k=1}^{m}\pi_k\sum_{j=1}^{m-1}P_{kj}$，再用行和为一把内层求和写成 $1-P_{km}$，于是右端 $=\sum_k\pi_k-\sum_k\pi_kP_{km}$。把归一化 $\sum_k\pi_k=1$ 代进第一项，移项即得 $\pi_m=\sum_k\pi_kP_{km}$。注意这里用了一次归一化：如果不知道 $\pi$ 已经归一化，这一步只能得到「两边相等」，拿不到「等于 $\pi_m$」这个具体形式。所以严格的表述是——在归一化约束之下，前 $m-1$ 条推出第 $m$ 条。
+> 选阶数的判据是幂次而非美感。取 $Y_n = |S_n/n|^2$ 时 $E[Y_n] = n\sigma^2/n^2$，级数 $\sum_n \sigma^2/n$ 发散，Problem 16 的门槛过不去；取四阶时 $E[S_n^4]$ 只长到 $n^2$ 量级，而分母是 $n^4$，剩下 $\sum_n 1/n^2$ 这条收敛的 p-series（p 级数），它在 $p=2$ 时收敛，这正是 Euler 1735 年算出 $π^2/6$ 的那一条。所以「为什么恰好四阶」的答案是：阶数决定幂次，幂次决定可求和性，二阶差一个幂次，四阶刚好够。
 >
-> 必须纠正原注的一处表述：把 $\sum_jP_{kj}=1$ 说成「即列和为 1」是错的。对每个固定的 $k$ 沿列指标 $j$ 求和等于一，这恰恰是行和为一，即 row-stochastic（行随机），也就是 Markov chain（马尔可夫链）的定义本身；列和为一即 column-stochastic（列随机），是另一件事，只有 doubly stochastic（双随机）矩阵才额外具备，本题不保证。这个区分不是抠字眼：行和为一给的是右特征向量——常向量 $\mathbf{1}$ 满足 $P\mathbf{1}=\mathbf{1}$；而稳态方程 $\pi P=\pi$ 说的是 $\pi$ 是 $P$ 的 left eigenvector（左特征向量）。一句话里把行列搞反，后面所有「为什么 $1$ 是特征值」的论证都会跟着漂。
+> 数项时按指标的重合模式分类。四重和里，若某个指标只出现一次，则因各 $X_i$ 相互独立且均值为零，这一项可以拆出一个 $E[X_i]=0$ 的因子而整项清零。幸存的模式只剩两种：四个指标全同，共 $n$ 项、每项取值 $E[X^4]$；恰有两个不同指标各出现两次，共 $3n(n-1)$ 项、每项取值 $E[X_1^2X_2^2]$。系数 $3$ 是把四个位置分成两块的方式数——与 6.042J 里 4 个顶点上 perfect matching（完美匹配）的个数是同一个计数。
 >
-> 代数视角更干净。稳态方程就是 $\pi(P-I)=0$，即 $\pi$ 落在 $P-I$ 的左零空间里。转置之后变成 $(P^T-I)\pi^T=0$：$\pi$ 是 $P^T$ 的特征向量、特征值 $1$。而 $P$ 的行和为一保证 $P$ 有特征值 $1$（右特征向量是常向量），又因 $P$ 与 $P^T$ 有相同的特征多项式（行列式转置不变），$1$ 必也是 $P^T$ 的特征值，故 $P^T-I$ 奇异、秩至多 $m-1$。更直接的看法是：$P^T-I$ 的每一列元素之和都是零（列和减一），所以行向量 $\mathbf{1}^T$ 从左边零化它，这个矩阵必然奇异。整条论证只用了「行和为一」这一条结构信息。
+> 保留非零均值时还要多出 $(3,1)$、$(2,1,1)$、$(1,1,1,1)$ 几类项，只写三类在 $n≥3$ 就错。按指标的重数把四重和分组，完整的展开是 $E[S_n^4] = nE[X^4] + 4n(n-1)E[X^3]E[X] + 3n(n-1)(E[X^2])^2 + 6n(n-1)(n-2)E[X^2](E[X])^2 + n(n-1)(n-2)(n-3)(E[X])^4$，其中 $(2,1,1)$ 类有 $6n(n-1)(n-2)$ 项、$(1,1,1,1)$ 类有 $n(n-1)(n-2)(n-3)$ 项。陷阱在 $n=2$：后两类的系数都含因子 $(n-2)$，自动归零，三项式恰好吃对，所以只拿 $n=2$ 验算抓不到错。用 $X∈\{0,2\}$、$P(2)=3/5$ 复算：$n=3$ 的真值是 $395.136$，三项式只给 $270.72$；$n=4$ 的真值是 $1069.6704$，三项式只给 $522.24$。凡引用这条公式就得写全。教材先假设零均值，最后一段用 centering（中心化）把一般情形归约：$X_i-E[X_1]$ 零均值，套用结论得 $(S_n-nE[X_1])/n → 0$，等价于 $S_n/n → E[X_1]$ a.s.。这是「先规范化、再把结论搬回」的标准手法，与构造 t 统计量的思路同源。
 >
-> 唯一性从哪里来？秩恰好等于 $m-1$，等价于零空间维数为一，而这等价于 irreducible（不可约）。这正是 Perron–Frobenius theorem（佩龙–弗罗贝尼乌斯定理）的内容：非负不可约矩阵的谱半径是单特征值且对应正特征向量（Perron 1907 证正矩阵情形，Frobenius 1912 推广到不可约非负矩阵）。归一化条件 $\sum_i\pi_i=1$ 的作用是把这条一维射线与超平面相交，得到唯一一点。所以「稳态概率必须和为 1」不是附赠的美化条件，而是把一个一维解空间压成零维的必需方程。
+> 放缩只差常数。由二元均值不等式 $x^2y^2 ≤ (x^4+y^4)/2$ 得 $E[X_1^2X_2^2] ≤ E[X_1^4]$，于是 $E[S_n^4] ≤ (n+3n(n-1))E[X_1^4] ≤ 3n^2E[X_1^4]$。对可求和性而言常数无关紧要，这正是 a.s. 收敛比逐项收敛「宽容」的地方：它只对 tail（尾部）敏感，早期有限项多大都不影响，所以任何多项式级放缩都够用。
 >
-> 数值上的直接后果：拿 $P^T-I$ 去求逆一定奇异。标准做法是把其中一行替换成全一（等价于把归一化方程换进来），或追加归一化方程后解最小二乘；也可以完全不解方程，直接做 power iteration（幂迭代）$\pi_{n+1}=\pi_nP$，非周期时它收敛到 $\pi$，每步只需一次稀疏矩阵向量乘，代价与边数同阶。PageRank 用的就是这条路，只不过额外加了 damping（阻尼）来强制非周期、并避免悬挂节点破坏行和。
+> 收尾三步：$\sum_n E[(S_n/n)^4] ≤ 3E[X_1^4]\sum_n n^{-2}<∞$；由 Problem 16 得 $\sum_n (S_n/n)^4<∞$ a.s.；级数收敛蕴含通项趋于零，故 $S_n^4/n^4 → 0$，再由 $x^4 → 0$ 当且仅当 $x → 0$ 得 $S_n/n → 0$ a.s.。最后一步不涉及任何概率论证，纯粹是实数的单调性事实。
 >
-> 反例与边界：若链可约、含两个常返类，零空间维数等于类数（至少二），这时即使补上归一化也不唯一——每个类内各自归一化的任意凸组合都是解，稳态依赖于初始分布落在哪个类。这就是题设必须写明「单一常返类」的原因。另一个常见误解是：只写平衡方程而漏掉归一化，解集会是一整条过原点的射线，任意缩放都满足方程；这说明那条冗余方程确实少了、而且少的正好是「尺度」这一维，补上尺度信息之后解才落定。
+> 代价要说清。四阶矩条件是充分的、不是必要的：Kolmogorov 在 1933 年的 Grundbegriffe 里给出的条件是独立且 $E|X_1|<∞$，四阶矩远强于它；Etemadi 在 1981 年给出的初等证明甚至只要求 pairwise independent（两两独立）。四阶矩法的价值在教学——它把 SLLN 的全部困难压缩成组合计数，绕开了 truncation（截断）与 Kolmogorov 三级数定理。代价是它不给速率：真实速率由 central limit theorem（中心极限定理）给出，$S_n/n$ 的量级是 $n^{-1/2}$，而这条证明对速率一无所知。
+>
+> 换个视角看同一条证明：$S_n^4/n^4$ 就是 $|S_n/n|$ 的四次幂，而把「收敛」翻译成「一串非负随机变量组成的级数有限」是概率论特有的技巧，其合法性来自 Problem 16 背后那条 monotone convergence theorem（单调收敛定理，Beppo Levi 1906）：非负随机量可以无条件交换期望与无穷求和。所以这条证明有三根支柱——组合计数、p 级数、单调收敛定理，缺一根都走不通。另外 $E[X_1^4]<∞$ 还顺带经 $|x| ≤ 1+x^4$ 保证了均值有限，这行不等式是截断论证里最常用的一步。
+>
+> 方向警告，也是最容易犯的错：由 $E[(S_n/n)^4] → 0$ 直接宣布 a.s. 收敛是错的。期望逐项趋于零只给依概率收敛（用 Markov 不等式），a.s. 需要的是期望的级数 summability（可求和）——一个比「逐项趋于零」强得多的条件。Problem 16 的全部价值就在这个从逐项到可求和的升级上。
 
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 25\*．局部平衡方程（Local balance equations）**</span>
 
-We are given a Markov chain that has a single recurrent class which is aperiodic. Suppose that we have found a solution $\pi_1, \ldots, \pi_m$ to the following system of local balance and normalization equations:
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+We note that the assumption $E[X_1^4] < \infty$ implies that the expected value of the $X_i$ is finite. Indeed, using the inequality $|x| \le 1 + x^4$, we have
 
 ```math
-\pi_i P_{ij} = \pi_j P_{ji}, \qquad i, j = 1, \ldots, m,
+E[|X_i|] \le 1 + E[X_1^4] < \infty.
+```
+
+Let us assume first that $E[X_i] = 0$. We will show that
+
+```math
+\sum_{n=1}^{\infty} E\!\left[ \frac{(X_1 + \cdots + X_n)^4}{n^4} \right] < \infty .
+```
+
+We have
+
+```math
+E\!\left[ (X_1 + \cdots + X_n)^4 \right]
+= \sum_{i_1 = 1}^{n} \sum_{i_2 = 1}^{n} \sum_{i_3 = 1}^{n} \sum_{i_4 = 1}^{n} E\!\left[ X_{i_1} X_{i_2} X_{i_3} X_{i_4} \right].
+```
+
+Let us consider the various terms in this sum. If one of the indices is different from all of the other indices, the corresponding term is equal to zero. For example, if $i_1$ is different from $i_2$, $i_3$, or $i_4$, the assumption $E[X_i] = 0$ yields
+
+```math
+E\!\left[ X_{i_1} X_{i_2} X_{i_3} X_{i_4} \right]
+= E[X_{i_1}]\, E\!\left[ X_{i_2} X_{i_3} X_{i_4} \right] = 0 .
+```
+
+Therefore, the nonzero terms in the above sum are either of the form $E[X_i^4]$ (there are $n$ such terms), or of the form $E\left[ X_1^2 X_2^2 \right]$, with $i \ne j$. Let us count how many terms there are of this form. Such terms are obtained in three different ways: by setting $i_1 = i_2 \ne i_3 = i_4$, or by setting $i_1 = i_3 \ne i_2 = i_4$, or by setting $i_1 = i_4 \ne i_2 = i_3$. For each one of these three ways, we have $n$ choices for the first pair of indices, and $n - 1$ choices for the second pair. We conclude that there are $3 n (n - 1)$ terms of this type. Thus,
+
+```math
+E\!\left[ (X_1 + \cdots + X_n)^4 \right]
+= n\, E[X_1^4] + 3 n (n - 1)\, E\!\left[ X_1^2 X_2^2 \right].
+```
+
+Using the inequality $xy \le (x + y)/2$, we obtain $E\!\left[ X_1^2 X_2^2 \right] \le E[X_1^4]$, and
+
+```math
+E\!\left[ (X_1 + \cdots + X_n)^4 \right]
+\le \big( n + 3 n (n - 1) \big)\, E[X_1^4]
+\le 3 n^2\, E[X_1^4] .
+```
+
+It follows that
+
+```math
+E\!\left[ \sum_{n=1}^{\infty} \frac{(X_1 + \cdots + X_n)^4}{n^4} \right]
+= \sum_{n=1}^{\infty} \frac{1}{n^4}\, E\!\left[ (X_1 + \cdots + X_n)^4 \right]
+\le \sum_{n=1}^{\infty} \frac{3}{n^2}\, E[X_1^4] < \infty ,
+```
+
+where the last step uses the well known property $\sum_{n=1}^{\infty} n^{-2} < \infty$. This implies that $(X_1 + \cdots + X_n)^4 / n^4$ converges to zero with probability 1 (cf. **Problem 16**), and therefore, $(X_1 + \cdots + X_n)/n$ also converges to zero with probability 1, which is the strong law of large numbers.
+
+For the more general case where the mean of the random variables $X_i$ is nonzero, the preceding argument establishes that $\big(X_1 + \cdots + X_n - n E[X_1]\big)/n$ converges to zero, which is the same as $(X_1 + \cdots + X_n)/n$ converging to $E[X_1]$, with probability 1.
+
+<!-- ===== PDF p304 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+> <span style="color:#7f8c8d;">本页为第 6 章（The Bernoulli and Poisson Processes）的**开篇章首页**，仅含章标题 + 章内目录（Contents），正文从目录之后的 297 页起。文件命名页为 p304；邮件局头「6」为章号，页脚印刷页号 295 为原书印刷页码，与文件页号不同，目录中给出的页码亦为原书印刷页号。</span>
+
+**目录（Contents）**
+
+- <span style="color:#c0392b;">**6.1　伯努利过程（The Bernoulli Process）**</span> —— p.297
+- <span style="color:#c0392b;">**6.2　泊松过程（The Poisson Process）**</span> —— p.309
+- <span style="color:#c0392b;">**6.3　小结与讨论（Summary and Discussion）**</span> —— p.324
+- <span style="color:#c0392b;">**习题（Problems）**</span> —— p.326
+
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 拿到目录先看骨架：第 6 章是严格的「离散—连续」平行结构，整章就是一张表被逐项证明。Bernoulli process（伯努利过程）对应 Poisson process（泊松过程）；binomial distribution（二项分布）对应 Poisson distribution（泊松分布）；geometric distribution（几何分布）对应 exponential distribution（指数分布）；第 $k$ 次到达时刻的 Pascal distribution（帕斯卡分布）对应 Erlang（伽马）分布；splitting（分裂）对应 thinning（稀疏化）；merging（合并）对应 superposition（叠加）；fresh-start（新开始）对应independent increments（独立增量）加 memorylessness（无记忆性）。先把这张表抄在本子上，学一节勾一节。
+>
+> 过渡的机制只有一个：时间单位取极限。伯努利过程里 $p$ 是无量纲的 probability（概率），泊松过程里 $\lambda$ 是带量纲的 rate（强度，单位 $1/$时间）。连接方式是令时隙长度 $\delta → 0$、$p = \lambda\delta + o(\delta)$，并保持 $np = \lambda t$ 不变——也就是「单位时间内期望到达数」不变。$p$ 与 $\lambda$ 差一个量纲，凡是把 $np$ 与 $\lambda t$ 混用的推导，代回单位就能立刻发现错误。
+>
+> 代数版本就是二项分布的 Poisson limit theorem（泊松极限，1837 年由 Poisson 给出）：当 $n → ∞$、$p → 0$、$np → \lambda$ 时，$p_S(k) = C(n,k)p^k(1-p)^{n-k} → e^{-\lambda}\lambda^k/k!$。推导的核心是 $(1-\lambda/n)^n → e^{-\lambda}$——恰好是 PDF p301 页首、§5.5 正文收尾处被分页切断的那条 identity（恒等式），本章把它用作全章的技术支点，值得记住它在这里的用处而不是只在微积分里见过它。
+>
+> 为什么必须先离散。离散版每个量都能手算：二项系数、几何级数、Pascal 组合、期望的首步递推，全是 6.042J 练过的有限计数。连续版需要指数与伽马函数的积分，但结构完全不变。顺序反了会有严重后果：先学连续版，会把「指数分布的无记忆性」当成一条孤立的怪现象，而它其实只是几何级数的尾在缩放极限下的像。先有离散的脚手架，连续版就只是把符号换掉。
+>
+> 两条线的平行不是逐项对应，这一点必须说清。连续时间允许「两个到达在同一时刻」的概率为零（对泊松过程，一个小区间内到达两次的 probability（概率）是 $o(\delta)$），而离散时间里两次到达可以落在同一时隙。这条差别不是细节：它让泊松过程在任意时刻都可切分，也让许多「同时发生」的边界情况在连续版里自动消失。凡是要把离散结论照搬过去，先问一句「同时性在那边是不是可测的零集」。
+>
+> 与 18.06 和 18.065 的接口。有限步转移写成矩阵幂，离散时间的长期行为由 stochastic matrix（随机矩阵，行和为 1）的 Perron–Frobenius 理论给出平稳分布；连续时间把幂换成矩阵指数 $e^{Qt}$，其中 $Q$ 是 rate matrix（速率矩阵）。这条「离散用幂、连续用指数」的对应，与矩阵方法课里「差分方程对应微分方程」是同一件事。
+>
+> 与 CSAPP 的接口。离散时隙模型就是 tick（时钟节拍）驱动的状态推进，连续时间模型是 event-driven（事件驱动）仿真；两者的数值误差来源不同。工程实现里几乎都用离散时隙，因为事件驱动仿真器要维护一个 priority queue（优先队列，堆），而按 tick 推进的循环只要一个计数器——这是 CLRS 里「堆还是数组」的经典取舍在仿真上的重现。
+>
+> 学习建议：学完本章做一次对位翻译练习。把每个离散结论写成连续版，逐条对照，标出哪一条需要用极限论证、哪一条能整句照搬。做不出的那几条，就是本章真正的技术内容；能整句照搬的那些，说明你之前的离散理解是对的。
+
+> <span style="color:#7f8c8d;">[OCR 说明] 本页 OCR 有轻度碎裂：章标题 The Bernoulli and Poisson Processes 中 Processes 被拆为 "Proces es"，6.2 小节标题被识别为 "The Poisson ProecS S"，6.3 与 Problems 的省略号引导线（dot leaders）散乱；以上均按表意重建，各节标题及对应印刷页码（297 / 309 / 324 / 326）未作改动。</span>
+
+<!-- ===== PDF p305 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> —— 正文开篇
+
+> <span style="color:#7f8c8d;">承接上一页：本页承接页面 304 的章目录，进入第 6 章正文的第一个页面。页首为正文引入段落「随机过程（stochastic process）的定义与例举」，§6.1 尚未开始，故无新的小节标题。文件命名页为 p305；运行页眉为「The Bernoulli and Poisson Processes / Chap. 6」，页脚印刷页号 296 为原书印刷页码，与文件页号不同。</span>
+
+随机过程是对一个随时间演化的随机试验（probabilistic experiment）所建立的数学模型，它产生一列数值（a sequence of numerical values）。例如，随机过程可用来建模：
+
+- (a) 一支股票的每日价格序列；
+- (b) 一场足球赛的比分序列；
+- (c) 一台机器的故障时刻序列；
+- (d) 通信网络某一节点处每小时的流量负荷；
+- (e) 雷达对某架飞机位置的一系列测量。
+
+序列（sequence）中的每个数值都用随机变量来建模，因此随机过程不过是一列（有限或无限的）随机变量，并未在我们基本框架上构成重大的概念突破。我们处理的仍然是一个单一的随机试验，结果由概率律（probability law）支配，而随机变量的概率性质都继承自该概率律。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 教材说随机过程「并未构成重大的概念突破」，这句话是精确的技术判断，不是谦辞。框架只有一套：样本空间 $Ω$、σ-field（σ 代数）$\mathcal{F}$、probability measure（概率测度）$P$ 一次性给定，之后每个 $X_t$ 都只是 $Ω → \mathbb{R}$ 的 measurable function（可测函数）。所谓「过程」不过是把指标从单个的 $n$ 换成 $t$ 之后的一族随机变量，没有新的公理，没有新的空间。
+>
+> 那么新东西在哪里——在 joint distribution（联合分布）。单个 marginal（边缘分布）根本不能确定过程：两组相关性完全不同的序列可以有逐点完全相同的 marginal（边缘分布），就像两个协方差不同的二元正态有相同的两条边缘曲线。过程的律由全部 finite-dimensional distributions（有限维联合分布）确定：两个过程同分布当且仅当所有有限维切片同分布。一个相容的有限维分布族能否真的拼出一个过程，是 Kolmogorov extension theorem（柯尔莫哥洛夫扩张定理，1933）回答的问题。这条定理是整章的地基，教材把它放在脚注里，但它是「过程」这个概念合法的唯一依据。
+>
+> 与 18.065 的接口要加一句限定。一列随机变量像无穷维向量，covariance（协方差）充当内积——但这个类比只到二阶为止。covariance（协方差）只抓二阶信息，一般过程的高阶结构被它整个丢掉；gaussian process（高斯过程）是「均值加协方差决定全部有限维分布」的例外，正因为它特殊，工程里才爱用它。
+>
+> 关注点发生了两次转移。第一次从「某时刻的取值」转到整条 path（路径）：关心过程生成的整个序列，例如 long-term average（长期平均）、首次穿越时刻、最大值分布。第二次从「分布」转到两种平均之间的关系——股票的平均价格是对一条 path（路径）沿时间取 time average（时间平均），而同一时刻大量同类系统的平均是 ensemble average（集合平均）。二者何时相等，是 ergodic theorem（遍历定理，Birkhoff 1931）的内容，也是第 6 章之后反复出现的主题。
+>
+> 与 CSAPP 的接口。「状态空间 + 随时间演化的规则」是过程的最小骨架：进程状态机、缓存一致性协议都是它的实例。差别在于过程论把规则换成 probability law（概率律），于是演化不再是确定的状态跳转，而是从 conditional distribution（条件分布）里抽样。
+>
+> 一条实操硬约束：采样一条 path（路径）必须一次性从联合分布里抽，不能分别从各时刻的 marginal（边缘分布）抽样再拼起来。后者得到的边缘分布全对、相关性全错，而画单变量直方图完全看不出问题——这是仿真里最常见的静默错误，也是「联合分布才是对象」这句话最实际的含义。
+>
+> 可测性视角收尾。一条 path（路径）是映射 $\omega ↦ (X_1(\omega), X_2(\omega), \ldots)$，即从 $Ω$ 到序列空间的可测映射，与实分析里讨论函数列的逐点收敛是同一件事：过程论只是给函数列装上了 probability measure（概率测度）。所以第 5 章那些 a.s. 收敛的定理，即 SLLN（强大数定律）与 Borel–Cantelli lemma（博雷尔–坎泰利引理），可以直接作用在过程上。突破发生在测度论那一层，而那笔账早就付过了。
+>
+> 留给第 7 章的伏笔：一旦加上马尔可夫约束，联合分布就被压缩成「初始分布 + 转移核」，无穷维对象塌缩成有限维数据。这类「用 conditional independence（条件独立）把联合分布压小」的操作，是教材后半部分统一的手法。
+
+
+> <span style="color:#7f8c8d;">[footnote] 脚注（footnote）：让我们强调，随机过程中出现的所有随机变量都指涉同一个、单一的试验，因而都定义在共同的样本空间（sample space）上。相应的概率律可以显式地给出，也可以（利用其性质）隐式地给出，只要它能无歧义地确定所涉随机变量任意子集的联合 CDF（joint CDF）即可。</span>
+
+然而，与早先的模型相比，随机过程带来了侧重点上的变化。具体来说：
+
+- (a) 我们往往关注过程所产生的值序列中的相关性（dependencies）。例如，股票的未来价格如何依赖过去的取值？
+- (b) 我们常常关心涉及整个已生成值序列的长期平均（long-term averages）。例如，一台机器处于空闲状态的时间占比是多少？
+- (c) 我们有时希望刻画某些边界事件（boundary events）发生的似然（likelihood）或频率。例如，在给定的一小时内，某个电话系统的所有线路同时占线的概率有多大；或者说，计算机网络中某个缓冲区因数据而溢出的频率有多大。
+
+随机过程种类繁多，但在本书中我们只讨论两大类。
+
+- (i) **到达型过程（Arrival-Type Processes）**：这里我们关心那些具有「到达」这一特征的发生事件，例如接收机处的消息到达、制造单元中的作业完成、商店里的顾客购买等。我们重点讨论这样一类模型，其中到达间隔（interarrival time，即相继两次到达之间的时间）是相互独立的随机变量。在 §6.1 中，我们考虑到达发生在离散时间的情形，且该到达间隔……
+
+> <span style="color:#7f8c8d;">[跨页断裂] 原页语句「…且到达间隔（and the interarrival）」在此被本页页底截断，句子续入下一页；正文提到的「两大类」之第 (ii) 类亦在随后页给出。</span>
+
+> <span style="color:#7f8c8d;">[OCR 说明] 本页 OCR 有轻度碎裂：章标题中 Processes 被拆为 "Proces es"，多个词语如 categories（读作 "('ategories"）、class、arrival、interarrival 等处存在字符断裂或错位，个别标点（如问号后的冒号/句点）错乱。以上均已按表意并参照原书排版重建，未改动数学与叙述含义。</span>
+
+<!-- ===== PDF p306 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**引言（Introduction）—— 随机过程分类概述（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：上一页末尾在概述「点过程（point processes）」，指出当过程在离散时间下逐时段发生、且每次到达（arrival）独立时，各次到达之间的时间间隔（interarrival times）服从几何分布（geometrically distributed）。本页把这段引言讲完，随后引出两类的第二类——马尔可夫过程，并随即开始 §6.1 伯努利过程（Bernoulli process）。</span>
+
+……这些到达间隔服从几何分布——这就是**伯努利过程（Bernoulli process）**。在第 6.2 节中，我们考察到达发生在连续时间（continuous time）中的情形：此时到达间隔服从指数分布（exponentially distributed）——这就是**泊松过程（Poisson process）**。
+
+<span style="color:#c0392b;">**(ii) 马尔可夫过程（Markov Processes）**</span>
+
+在这里，我们所考察的是随时间演化（evolve in time）的实验，其未来的演化对过去表现出概率上的依赖。例如，一只股票未来每日的价格通常取决于过去的价格。然而，在马尔可夫过程（Markov process）中，我们假定一种非常特殊的依赖形式：下一个值只通过当前值（the current value）而依赖于过去的各个值。针对这类过程存在一套丰富的方法论，这正是第 7 章的主题。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 先把它写成公式：对任意 $n$ 与任意 measurable set（可测集）$A$，有 $P(X_{n+1}∈A \mid X_1,\ldots,X_n) = P(X_{n+1}∈A \mid X_n)$。更紧凑的表述是 conditional independence（条件独立）：给定 $X_n$ 之后，未来 $X_{n+1},X_{n+2},\ldots$ 与过去 $X_1,\ldots,X_{n-1}$ 条件独立。教材那句「下一个值只通过当前值依赖过去」，是这句话的散文版。
+>
+> 它为什么有力量：把「整段历史」压缩成一个「状态」，于是 $n$ 步之后的分布可以由一步的转移迭代出来。形式化就是 Chapman–Kolmogorov equation（查普曼–柯尔莫哥洛夫方程）——$n$ 步转移矩阵等于一步转移矩阵的 $n$ 次幂。这与 18.06 直接接上：状态演化就是矩阵乘，长期行为就是矩阵幂的极限，极限由主特征向量给出。一个概率问题就这样变成了一道线代题。
+>
+> 与 state machine（状态机）的关系要说得准确。CSAPP 里的有限状态机、TCP 连接状态机、6.042J 的状态转换图，都是马尔可夫链的确定性特例：状态相同则下一步唯一。概率版只改了一件事——把「转移边唯一」换成「按转移概率抽样」。所以「马尔可夫性质就是状态机的数学化」这句话的准确含义是：它给出了「状态」这个概念的概率化定义，状态就是那个使未来与过去条件独立的 sufficient statistic（充分统计量）。
+>
+> 状态不是给定的，是被设计的，这是本节最实用的洞见。马尔可夫性是相对于「选定的状态变量」而言的性质，不是过程的固有属性。以抛硬币的最近一次结果作状态，序列是马尔可夫的；以「迄今正面总数」作状态，也是马尔可夫的；但若真实机制依赖前三次、却只记录一次，马尔可夫性立刻不成立。工程里加 feature（特征）之所以有效，正是因为它扩充状态，把非马尔可夫过程改造成马尔可夫的。CSAPP 里的处理器之所以能「只看寄存器和内存」，是因为整段历史已经被编码在状态里了。
+>
+> 历史值得单说。Andrey Markov 在 1906 年开始发展「链式相依」的模型，动机是反驳 Nekrasov 的主张——后者认为大数定律必须预设各次试验独立。1913 年 Markov 发表《欧根·奥涅金文本的统计研究示例》，把普希金这部长诗前 20000 个字母编码为元音 / 辅音两种状态，估出 $2×2$ 的 transition probability（转移概率），并据此说明相依序列依然服从大数定律。所以马尔可夫链的诞生不是抽象思辨，而是一次用数据反击哲学立场的行动。
+>
+> 与分治的对比。分治要求子问题相互独立，6.006 里归并排序的分析就靠这一条；马尔可夫允许序列逐步相依，只要求依赖在每一步被「当前状态」截断。分析上的差别很实在：分治给出 recurrence（递归式），靠主定理解；马尔可夫给出转移矩阵的幂，靠特征值解。两套工具不能互换。
+>
+> 边界也要说清。马尔可夫性不排除相关性，它排除的是「超出当前状态的那部分历史」。所以两个过程可以都是马尔可夫的，长期行为却完全不同；stationary distribution（平稳分布）的存在与唯一并不需要 aperiodic（非周期）：有限状态加上单一的 irreducible recurrent class（不可约常返类）就足以保证存在且唯一。aperiodic 是逐点收敛 $T_{ij}(n)→\pi_j$ 的前提，不是存在性前提——周期链同样有唯一平稳分布，只是 $T_{ij}(n)$ 不逐点收敛。这些是第 7 章的内容。这里先留一条可操作的判据：要验证马尔可夫性，就问「知道当前状态之后，再补上更多历史，预测会变吗」。
+
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）**</span>
+
+伯努利过程可以被直观地想象为一列独立的抛硬币试验（a sequence of independent coin tosses），其中每一次抛掷出现正面（heads）的概率都是一个固定的数 $p$，且 $0 < p < 1$。一般地，伯努利过程由一列伯努利试验（Bernoulli trials）组成。每一次试验以概率 $p$ 产生一个 $1$（成功，a success），以概率 $1 - p$ 产生一个 $0$（失败，a failure），并且与其它试验中发生什么相互独立。
+
+当然，抛硬币只不过是一大类涉及一列独立二元结果（independent binary outcomes）的情形的一个范式（paradigm）。例如，伯努利过程常常被用来对涉及顾客或作业在服务中心到达（arrivals of customers or jobs at service centers）的系统建模。此时，时间被离散成一个个时段（periods），在第 $k$ 次试验上的一个「成功」就对应着第 $k$ 个时段内至少有一位顾客到达服务中心。在上下文允可时，我们常常用「到达（arrival）」一词来替代「成功」。
+
+在更正式的描述中，我们把伯努利过程定义为一列独立的伯努利随机变量（Bernoulli random variables）$X_1, X_2, \ldots$，其中对每个 $i$ 有
+
+```math
+P(X_i = 1) = P(\text{第 }i\text{ 次试验成功}) = p, \qquad
+P(X_i = 0) = P(\text{第 }i\text{ 次试验失败}) = 1 - p .
+```
+
+给定一个到达过程，人们常常对如下随机变量感兴趣：某一时间段内的到达次数，或者直到第一次到达所花的时间。就伯努利过程而言，其中一些答案在前面各章中已经得到。下面是对主要事实的概括。
+
+> <span style="color:#7f8c8d;">[footnote] 脚注（t）：由有限个随机变量情形推广而来，无限序列随机变量 $X_i$ 的独立性这样来定义：要求对**任意有限**的 $n$，随机变量 $X_1, \ldots, X_n$ 相互独立。直观地说，得知这些随机变量任意有限子集的值，不会为其余随机变量提供任何新的概率信息，而后者（受条件约束）的条件分布与无条件分布相同。</span>
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 原页有两处乱码字符：一处在「However. in a Markov process」之后的 $\triangle$ 形符号，一处在「time is discretized into periods……」之后的 $\triangle$ 形符号，均为 OCR 滞留的杂点，正文语义不受影响。「0 < p < 1」在原 OCR 中首字符被读作 `o`，此为数字 $0$。本页进入 §6.1 伯努利过程正文开篇，下一页将继续讨论到达数的分布。</span>
+
+<!-- ===== PDF p307 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）—— §6.1（续）**</span>
+
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> first-step equation（首步方程）的全部内容是：站在任意一步上，只看下一步。$T$ 要么取 $1$，其 probability（概率）为 $p$，要么大于 $1$，此时首次试验失败，而失败之后整个过程重新开始，剩余等待与一个全新的 $T$ 同分布，这一步用的是 fresh-start（新开始性质）。于是 $E[T] = p\cdot 1 + (1-p)\cdot(1+E[T])$，解出 $E[T] = 1/p$。一行条件期望配一条无记忆性断言，是整章最经济的推理。
+>
+> 先补一个漏洞：方程成立的前提是 $E[T]<∞$，否则两边都是 $∞$，等式什么也没说。干净做法是 truncation（截断）：令 $T_N = \min(T,N)$，对 $T_N$ 写出递推 $E[T_N] = p + (1-p)(1+E[T_{N-1}])$，得 $E[T_N] = (1-(1-p)^N)/p$，再令 $N → ∞$，用 monotone convergence theorem（单调收敛定理，Beppo Levi 1906）取极限得 $1/p$。这一步正是实分析训练的用处：不经截断的递推在期望无穷时是无意义的等式。
+>
+> 二阶矩走同一条路。写出 $E[T^2] = p\cdot 1 + (1-p)(1 + 2E[T] + E[T^2])$，把 $E[T]=1/p$ 代进去解得 $E[T^2] = (2-p)/p^2$，故 $\mathrm{var}(T) = (1-p)/p^2$。注意 $p → 0$ 时均值与 variance（方差）都发散，而方差与均值之比 $(1-p)/p\approx1/p$ 同样发散：成功概率极低时，等待时间的绝对波动按 $1/p^2$ 增长，比它的期望更不可控。这里顺带纠一个常被搞反的量：$\mathrm{var}/\mathrm{mean}^2 = 1-p≤1$ 是有界的，$p=0.1$ 时给 $0.90$，根本不发散；发散的是「方差与均值之比」，不是「方差比均值平方」，两者差一个随 $1/p$ 增长的因子。
+>
+> 用级数路线做独立校验。$E[T] = \sum_{t≥1} t(1-p)^{t-1}p$，令 $q = 1-p$，先对几何级数 $q^t$ 求和再对 $q$ 求导，两步都得 $1/p$。这条路不需要任何概率论证，纯粹是 6.042J 的级数技巧；两条独立路线算出同一个数，说明首步方程没有偷换概念。凡是能两算的地方都值得算两遍，这是最便宜的错误检测。
+>
+> 无记忆性还给出了刻画性质：几何分布是唯一支撑在 $\{1,2,\ldots\}$ 上且满足 $P(T>n+m \mid T>n) = P(T>m)$ 的分布。正向只需把左边算成 $(1-p)^{n+m}/(1-p)^n = (1-p)^m$，与 $n$ 无关；反向的唯一性由这个等式对一切 $n,m$ 成立推出尾概率必须是几何尾 $c^n$。连续版对应物是指数分布，那里要求尾函数满足 functional equation（函数方程）$G(s+t)=G(s)G(t)$，唯一的非增解是 $G(t)=e^{-\lambda t}$。
+>
+> 这台机器还能直接推广到「等到第 $k$ 次成功」：设 $E_k$ 为该时刻的期望，则 $E_k = 1/p + E_{k-1}$，解出 $E_k = k/p$，与负二项分布的均值一致。换一个初值条件就能算出更复杂的等待量，这才是 first-step analysis（首步分析）作为工具的真正价值。
+>
+> 与工程的接口。retry loop（重试循环）的期望尝试次数就是 $1/p$，hit rate（命中率）给定期望查找次数同形。但若失败相关（真实网络、真实磁盘），无记忆性立刻失效，$1/p$ 会系统性低估延迟。工程上的 exponential backoff（指数退避）正是承认相关性存在、主动把尝试间隔拉开的做法。
+>
+> 与 6.006 的接口。随机算法分析里常见的「期望试验次数 $1/p$」与这里完全同源，差别只在 terminology（术语）：那边叫 expected number of trials（期望试验次数），这边叫 first success time（首次成功时刻），指的是同一个几何随机变量，连公式都不用改。
+>
+> 拿 $p = 0.1$ 手算一遍感受量级：$E[T] = 10$，$\mathrm{var}(T) = 0.9/0.01 = 90$，标准差约 $9.5$，与均值同量级；$P(T>10) = 0.9^{10}$ 约等于 $0.35$，即超过三分之一的概率要等过平均等待时间。这就是长尾的直接体感，任何把均值当典型的估计都会低估尾延迟。
+>
+> 最后一个易错点：$E[T]=1/p$ 是关于 mean（均值）的陈述，不告诉你 $T$ 集中在哪里。几何分布是长尾的，$P(T>1/p)=(1-p)^{1/p}$，只有 $p→0$ 时它才约等于 $e^{-1}$，即约 $0.37$——$p=0.1$ 给 $0.349$、$p=0.5$ 只给 $0.25$，所以那个「约 $e^{-1}$」是渐近陈述，不是对每个 $p$ 都成立的恒等式；但方向不变：「平均等 $1/p$ 步」绝不意味着「等 $1/p$ 步通常就成功」。这类「均值不等于典型值」的误读，在排队系统与超时参数设定里极其普遍。
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）——（续）**</span> <span style="color:#7f8c8d;">（Sec. 6.1，印刷页码 298；本页续接上一页 §6.1 正文：先收尾给出「与伯努利过程相关的若干随机变量及其性质」的总结框（二项、几何），再进入子节「独立性与无记忆性（Independence and Memorylessness）」，并以 **Example 6.1** 作演示——该例自本页开始，延续到下一页。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：上一页正文以「下面是对主要事实的总结（Here is a summary of the main facts）」收尾，本页续接该总结框，给出与伯努利过程相关的若干随机变量及其性质；随后进入无记忆性的讨论。</span>
+
+<span style="color:#c0392b;">**与伯努利过程相关的若干随机变量及其性质（Some Random Variables Associated with the Bernoulli Process and their Properties）**</span>
+
+- **参数为 $p$、$n$ 的二项随机变量（binomial with parameters $p$ and $n$）**：这是 $n$ 次独立试验中成功的次数 $S$。其概率质量函数、均值与方差为
+
+```math
+p_S(k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad k = 0, 1, \ldots, n,
 ```
 
 ```math
-\sum_{i=1}^{m} \pi_i = 1, \qquad i = 1, \ldots, m.
+E[S] = np,
 ```
-
-(a) Show that the $\pi_j$ are the steady-state probabilities.
-
-(b) What is the interpretation of the equations $\pi_i P_{ij} = \pi_j P_{ji}$ in terms of expected long-term frequencies of transitions between $i$ and $j$?
-
-(c) Construct an example where the local balance equations are not satisfied by the steady-state probabilities.
-
-<span style="color:#00838f;">**[solution] Solution（解答）**</span>
-
-(a) By adding the local balance equations $\pi_i P_{ij} = \pi_j P_{ji}$ over $i$, we obtain
 
 ```math
-\sum_{i=1}^{m} \pi_i P_{ij} = \sum_{i=1}^{m} \pi_j P_{ji} = \pi_j,
+\operatorname{var}(S) = np(1-p).
 ```
 
-so the $\pi_j$ also satisfy the balance equations. Therefore, they are equal to the steady-state probabilities.
+- **参数为 $p$ 的几何随机变量（geometric with parameter $p$）**：这是到（包括）首次成功为止的试验次数 $T$。其概率质量函数、均值与方差为
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 25 的 (a) 问只有一行代数：把 $\pi_iP_{ij}=\pi_jP_{ji}$ 对 $i$ 求和，右端 $\sum_iP_{ji}$ 是第 $j$ 行之和，等于一，于是得到 $\sum_i\pi_iP_{ij}=\pi_j$，正是 balance equations（平衡方程）。真正要读的是这一行背后关于「流」的两种条件，以及它们之间的强弱关系。
->
-> 先把流的图像建立起来。稳态链在每条有向边 $i\to j$ 上有一个长期流量 $\pi_iP_{ij}$，单位是「每步的期望转移次数」。全局平衡说的是：每个顶点进出的总量相等，即每个顶点的 net flux（净流量）为零。这允许一种情况——流在图上绕圈：$1\to2\to1$ 与 $1\to3\to2\to1$ 这样的 circulation（环流）可以在每个顶点都收支平衡，却让某些边单向有流。local balance（局部平衡）要求更强的东西：每一条边自身两个方向的流量相等，于是环流被逐条掐死。
->
-> 用向量场的语言说，全局平衡是 divergence（散度）为零，局部平衡是旋度也为零。散度为零不蕴含旋度为零，这正是「局部平衡比全局平衡强」的确切含义，也是 (c) 问能构造出反例的根本原因：反例里的链处处收支平衡，却存在净环流。
->
-> (b) 问的解释就落在这个流量上：$\pi_iP_{ij}$ 是 $i\to j$ 这条转移的长程期望频率，所以局部平衡读作「任意一对状态之间，两个方向的长期转移次数相等」。这个「一对状态一对状态地相等」是比「每个状态总量平衡」细得多的信息。
->
-> 命名：这套性质叫 time reversibility（时间可逆性）。名字的来源可以精确化——把稳态链倒着看，得到的反向链转移概率为 $\hat P_{ij}=\pi_jP_{ji}/\pi_i$，即「原链里从 $j$ 到 $i$ 的流量，除以 $i$ 的稳态质量」。若 $\hat P=P$，正放与倒放的单步统计完全一样，任何有限长轨道的概率都等于它反向写出的概率，于是没有「时间箭头」。这就是 reversible（可逆）一词的意思：不是「能倒回去」，而是「倒过来的过程与原过程同分布」。
->
-> (c) 的反例值得逐边检查。状态 $1,2,3$，只保留 $P_{12},P_{13},P_{21},P_{32}$ 为正，其余为零。此时 $1\to3$ 有正流，而 $3\to1$ 恒为零，这条边当场违反局部平衡；同时稳态流构成 $1\to3\to2\to1$ 的闭环，在每个顶点都收支相抵，所以全局平衡照样成立。这个例子还顺带说明了一件事：它之所以仍满足 (a) 的前提（单一常返类且非周期），是因为从 $1$ 出发存在长度 2 的回路 $1\to2\to1$ 与长度 3 的回路 $1\to3\to2\to1$，两者最大公约数为一；如果把长度 3 那条路径拆掉，链就变成 2 周期，稳态分布存在但极限不收敛。
->
-> 跨课程连接（统计物理与 MCMC）：detailed balance（细致平衡）就是统计力学里的微观可逆性，是平衡态的标志。Metropolis 等五人在 1953 年给出的算法，以及 Hastings 在 1970 年推广到非对称 proposal 的版本，其全部设计要点就是「构造一条对目标分布满足细致平衡的链」，接受率取 $\min(1,\pi_jq_{ji}/(\pi_iq_{ij}))$ 正是为了让 $\pi_iP_{ij}=\pi_jP_{ji}$ 精确成立；Gibbs sampling（吉布斯采样）是它的一个特例。这条思路之所以有效，是因为一旦 detailed balance（细致平衡）加上不可约，稳态分布就被唯一钉住，不必再验证收敛。
->
-> 跨课程连接（线性代数与分析）：细致平衡可以写成矩阵等式 $DP=(DP)^T$，其中 $D$ 是以 $\pi_i$ 为对角的矩阵。也就是说，把 $P$ 用 $D$ 加权之后变成 symmetric（对称）矩阵，于是它可正交对角化、特征值全为实。这一步把非对称的 Markov 算子变成自伴算子，18.06 里的谱定理与实分析里 $L^2$ 自伴算子的理论就此接上；而「特征值实、可按特征向量展开」正是 $n$ 步转移概率能写成指数衰减和的技术前提。
->
-> 边界与反例：局部平衡是充分条件，不是必要条件。任何 birth–death chain（生灭链）自动可逆，因为一维链上没有环可绕，任何稳态流场都只能是相邻两态之间的往返；任何树形图上的链也自动可逆。但一般图上的链不必可逆，(c) 的三状态链就是最小反例——三个状态是能构造出环流的最小规模，两个状态做不到（两状态链一定可逆）。所以「可逆」不是 Markov chain（马尔可夫链）的普遍性质，而是需要逐边验证的结构性质；反过来说，凡是能证明可逆的地方，求解就从解方程组退化成解一维递推，这正是上一题那个漂亮比值公式的来源。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页止于 Problem 25 英文 Solution 的第 (a) 问作答（$\sum_i \pi_i P_{ij} = \sum_i \pi_j P_{ji} = \pi_j$，故 $\pi_j$ 亦满足平衡方程，因而等于稳态概率）。第 (b)、(c) 两问解答位于后续页。</span>
-<!-- ===== PDF p403 ===== -->
-
-<span style="color:#7f8c8d;">本书页 p394（Chap. 7）。本页为第 7 章习题区（Problems 23–39）中部续页，承接上一页：页首为该带 `*` 题英文 Solution 的收尾部分（(b)、(c) 两小问，与时间可逆性（time reversibility）及局部平衡方程相关），紧随其后的 **Problem 26**（带 `*`）题干与其英文 Solution 均在下一页页界之内完整呈现。</span>
-
-> <span style="color:#7f8c8d;">页首这段 (b)(c) 承接上一页的英文 Solution 尾部（上页未走完的同题解答如局部平衡方程的频率解释、最小三状态反例等），因该题带 `*` 且按规范习题区英文 Solution 保留、仅标签可标注中文，此处不加打断地续接上页英文解答。</span>
-
-<span style="color:#00838f;">**Solution. (continuation of a starred problem)**</span> 
-
-(b) We know that $\sum_i \pi_i P_{ij}$ can be interpreted as the expected long-term frequency of transitions from $i$ to $j$, so the local balance equations imply that the expected long-term frequency of any transition is equal to the expected long-term frequency of the reverse transition. (This property is also known as time reversibility of the chain.)
-
-(c) We need a minimum of three states for such an example. Let the states be $1$, $2$, $3$, and let $P_{12} > 0$, $P_{13} > 0$, $P_{21} > 0$, $P_{32} > 0$, with all other transition probabilities being $0$. The chain has a single recurrent aperiodic class. The local balance equations do not hold because the expected frequency of transitions from $1$ to $3$ is positive, but the expected frequency of reverse transitions is $0$.
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 26.（\*）抽样的马尔可夫链（Sampled Markov chains）。**</span>
-
-Consider a Markov chain $X_n$ with transition probabilities $P_{ij}$, and let $r_{ij}(n)$ be the $n$-step transition probabilities.
-
-(a) Show that for all $n \ge 1$ and $l \ge 1$, we have
 
 ```math
-r_{ij}(n + l) = \sum_{k=1}^m r_{ik}(n)\, r_{kj}(l).
+p_T(t) = (1-p)^{t-1} p, \qquad t = 1, 2, \ldots,
 ```
 
-(b) Suppose that there is a single recurrent class, which is aperiodic. We sample the Markov chain every $l$ transitions, thus generating a process $Y_n$, where $Y_n = X_{nl}$. Show that the sampled process can be modeled by a Markov chain with a single aperiodic recurrent class and transition probabilities $r_{ij}(l)$.
+```math
+E[T] = \frac{1}{p},
+```
 
-(c) Show that the Markov chain of part (b) has the same steady-state probabilities as the original process.
+```math
+\operatorname{var}(T) = \frac{1-p}{p^2}.
+```
 
-<span style="color:#2471a3;">**[solution]**</span> <span style="color:#2471a3;">**Solution.**</span>
+<span style="color:#c0392b;">**独立性与无记忆性（Independence and Memorylessness）**</span>
 
-(a) We condition on $X_n$ and use the total probability theorem. We have
+伯努利过程所依据的独立性假设具有若干重要推论，其中包括一个无记忆性（memorylessness）性质：过去试验中所发生的一切，对未来试验的结局不提供任何信息。充分体会并从直觉上理解这些性质是很有用的，它使我们得以迅速解决那些用更形式化的方法处理起来会很困难的许多问题。在本子节中，我们的目标就是建立这种必要的直觉。
+
+让我们从考虑那些由某一组试验中发生的情况所定义的随机变量入手。例如，随机变量 $(X_1 + X_3)\, X_6 X_7$ 就是由第一、第三、第六和第七次试验定义的。如果我们有两个此类随机变量，并且定义它们的两组试验没有公共元素，那么这两个随机变量就是相互独立的。这是第 2 章中一个事实的推广：如果两个随机变量 $U$ 与 $V$ 相互独立，那么它们的任意两个函数 $g(U)$ 与 $h(V)$ 也相互独立。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.1（两序列的独立性）**</span>
+
+(a) 设 $U$ 为第 1 至第 5 次试验中成功的次数，$V$ 为第 6 至第 10 次试验中成功的次数。由于 $U = X_1 + \cdots + X_5$，$V = X_6 + \cdots + X_{10}$，且两个集合 $\{X_1, \ldots, X_5\}$ 与 $\{X_6, \ldots, X_{10}\}$ 没有公共元素，因此 $U$ 与 $V$ 相互独立。
+
+(b) 设 $U$（相应地，$V$）为我们获得成功的第一个奇数（相应地，偶数）时刻 $i$。那么 $U$ 由奇数时刻序列 $X_1, X_3, \ldots$ 所决定……
+
+> <span style="color:#7f8c8d;">本页到此处为换页断句（原文句子被截断在 "U is determined by the odd-time sequence $X_1, X_3, \ldots$"），Example 6.1 的正文自下一页继续（后半句「而 $V$ 则由偶数时刻序列 $X_2, X_4, \ldots$ 所决定」及独立性结论均在下一页），编号 6.1 连续，无需另起新编号。另：本页顶部总结框内二项随机变量的概率质量函数在 OCR 中被吞（行间仅余 $k$、$0,1,\ldots,n$、$E[S]=np$ 与 $\operatorname{var}(S)=np(1-p)$），此处按二项随机变量的标准式样重建为 $p_S(k)=\binom{n}{k}p^k(1-p)^{n-k}$；数值一律未改动。</span>
+
+<!-- ===== PDF p308 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）—— §6.1（续）**</span>
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）——（续）**</span> <span style="color:#7f8c8d;">（Sec. 6.1，印刷页码 299；本页续接上一页 §6.1 正文：先收尾「奇偶时刻两序列的独立性」讨论，再依次给出 fresh-start 性质、无记忆性（memorylessness）推导、独立性小结框，以及 **Example 6.2** 的开头——该例延续到下一页。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：$U$ 由奇数时刻序列 $X_1, X_3, \ldots$ 决定，$V$ 由偶数时刻序列 $X_2, X_4, \ldots$ 决定；因两序列无公共元素而相互独立。</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.1（续）**</span>
+
+而 $V$ 则由偶数时刻序列 $X_2, X_4, \ldots$ 所决定。由于这两个序列没有公共元素，因此 $U$ 与 $V$ 相互独立。
+
+现在假设某个伯努利过程（Bernoulli process）已经运行了 $n$ 个时间步（time steps），并且我们已经观测到 $X_1, X_2, \ldots, X_n$ 的取值。我们注意到，未来的试验序列 $X_{n+1}, X_{n+2}, \ldots$ 是相互独立的伯努利试验（Bernoulli trials），因而构成一个伯努利过程。此外，这些未来试验与过去的试验相互独立。我们得出结论：从任意给定的时刻起，未来同样由一个伯努利过程来刻画，且该过程与过去相互独立。我们大致上把这称为伯努利过程的**新开始性质（fresh-start property）**。
+
+下面让我们回顾：到达首次成功的时间 $T$ 是一个几何随机变量（geometric random variable）。假设我们已经观察该过程 $n$ 个时间步，且尚未记录到任何成功。关于到达首次成功所需的剩余试验数 $T - n$，我们能说些什么呢？由于过程的未来（$n$ 时刻之后）与过去相互独立，并构成一个全新开始的伯努利过程，因此到达首次成功所需的未来试验数由同一个几何 PMF（几何概率质量函数）来描述。用数学式表达，即
+
+```math
+P(T - n = t \mid T > n) = (1 - p)^{t-1}\, p = P(T = t), \qquad t = 1, 2, \ldots .
+```
+
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 代数上一步到底。$P(T-n=t \mid T>n) = P(T=n+t)/P(T>n) = (1-p)^{n+t-1}p \big/ (1-p)^n = (1-p)^{t-1}p = P(T=t)$，对 $t≥1$ 成立。分子分母的 $(1-p)^n$ 正好抵消——这个抵消就是「记忆」消失的机制本身。它不是巧合，而是几何尾 $P(T>n)=(1-p)^n$ 的形状决定的：尾是纯指数型，除以它只改变系数不改变形状。
+>
+> 抽样视角把机制说透。条件事件 $\{T>n\}$ 属于由 $X_1,\ldots,X_n$ 生成的 σ-field（σ 代数），而未来 $X_{n+1},X_{n+2},\ldots$ 与它独立，所以对任何未来 event（事件）$B$ 与任何历史 event（事件）$A$ 都有 $P(B \mid A)=P(B)$。由此提炼一条原理：条件作用不能创造信息，只能暴露信息。若条件事件完全由一块与未来独立的历史决定，conditional distribution（条件分布）退回无条件分布；反过来，若条件事件含有关于未来的信息（例如「至少有一次成功」已经用掉了部分未来），无记忆性立刻失效。
+>
+> gambler's fallacy（赌徒谬误）的精确病灶。大数定律说的是 $S_n/n → p$，讲的是比例收敛，不是差额 $S_n-np$ 有界。事实上由 central limit theorem（中心极限定理），$S_n-np$ 的量级是 $n$ 的平方根，即 $n^{1/2}$，绝对偏差随 $n$ 增长而不是缩小。所以「连输之后该赢了」错在把「比例回归」读成了「差额补偿」：一条必然成立的长期比例，被替换成一条根本不存在的短期记忆。这是击碎该谬误最锋利的表述，比反复强调「硬币没有记忆」有效得多。
+>
+> 历史注脚。这类谬误在 1913 年蒙特卡洛赌场的轮盘上留下了名字：黑色连续出现 26 次，赌客据此加倍押红，损失惨重，于是「Monte Carlo fallacy（蒙特卡洛谬误）」成了同义词。这类谬误的结构值得记住：同一段有限观测总能用无穷多套模型拟合，缺了独立性假设与样本量作约束，就无从分辨哪一套才对。反过来，只要前提补齐，模型就会被数据排除：独立性一旦写进假设，「连输之后该赢了」在数学上就没有立足点，赌场里那套加倍策略也就失去了理论借口。
+>
+> 反例界定边界。不放回抽样，也就是抽签，在 hypergeometric distribution（超几何分布）里，抽出一个红球之后剩余红球比例真的变了，「记忆」在那里是真实的。差别不在分布的「形状」，而在采样机制是否独立。任何声称无记忆性的论证，都必须回到「各次试验独立」这个前提上重新确认一遍，而不是从结论的形状反推。
+>
+> 与泊松过程的接口。Poisson process（泊松过程）在任意时刻满足 fresh-start（新开始）：从任何划定时刻起，未来的到达序列与过去独立且同分布。指数分布的无记忆性正是这条性质在单个到达间隔上的投影。工程上它意味着「下一次到达不取决于已经空闲了多久」，这条假设是所有 M/M/1 队列分析的基础，也是它们在真实突发流量下失准的原因——真实流量有相关性，无记忆性被违背。
+>
+> 一条反驳工具，可以直接用。若有人主张「已经等了 $n$ 步，剩余等待的期望该变小了」，让他算 $E[T-n \mid T>n]$：由无记忆性它恒等于 $1/p$，与 $n$ 无关。这个等式干净、可数值验证，比争论直觉有效得多——把它写成三行模拟代码，跑出来的曲线就是平的。
+
+我们把这称为**无记忆性（memorylessness property）**。它也可以利用条件概率（conditional probabilities）的定义用代数方法推导出来，但此处给出的论证无疑更为直观。
+
+<span style="color:#c0392b;">**伯努利过程的独立性（Independence Properties of the Bernoulli Process）**</span>
+
+- 对任意给定的时刻 $n$，随机变量序列 $X_{n+1}, X_{n+2}, \ldots$（即过程的未来）同样是一个伯努利过程，并且与 $X_1, \ldots, X_n$（即过程的过去）相互独立。
+- 设 $n$ 为给定的时刻，$T$ 为时刻 $n$ 之后首次成功的时间。那么 $T - n$ 服从参数为 $p$ 的几何分布，并且与随机变量 $X_1, \ldots, X_n$ 相互独立。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.2（计算机的优先级任务与非优先级任务）**</span>
+
+一台计算机执行两类任务：优先级任务（priority task）与非优先级任务（nonpriority task），并以离散的时间单位（时隙，slots）运作。在每个时隙开始时，有一个优先级任务到达的概率为 $p$，与其它时隙相互独立，且该任务需要整整一个时隙才能完成。非优先级任务总是可用的，并且若某个时隙没有优先级任务可用，则在该时隙执行非优先级任务。在这种背景下，了解可供非优先级任务使用的时间间隔的概率性质（probabilistic properties）可能很重要。
+
+为此，若在一个时隙内计算机执行的是优先级任务，我们就把该时隙称为忙碌（busy）时隙，否则称其为空闲（idle）时隙。我们把一串空闲（或忙碌）时隙、且两侧由忙碌（或空闲）时隙围住的，称为一个空闲期（idle period，或忙碌期 busy period）……
+
+> <span style="color:#7f8c8d;">本页到此处为换页断句（原文句子被截断在 "an idle period (or busy"），Example 6.2 的正文自下一页继续，编号 6.2 连续，无需另起新编号。</span>
+
+
+<!-- ===== PDF p309 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）—— §6.1（续）**</span>
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）——（续）**</span> <span style="color:#7f8c8d;">（Sec. 6.1，印刷页码 300；本页续接上一页 **Example 6.2** 的正文：即以忙碌期/空闲期（busy/idle period）的示意图为主，正文文字大多被原始扫描吞没。例子编号 6.2 连续，无需另起新编号。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：我们已把一个时隙（slot）区分为忙碌（busy，执行优先级任务）或空闲（idle，无优先级任务）；并把一串空闲（或忙碌）时隙、且两侧由忙碌（或空闲）时隙围住的，称为一个空闲期（idle period）或忙碌期（busy period）。本页以 **Figure 6.2** 的示意图来演示空闲期与忙碌期如何交替出现。图编号以源扫描为准：OCR 同时残留有「6.1：Illustration of random…」与「6.2. In the top…」两条图注碎片；其中带 $T/B/I/Z$ 具体数字、与忙碌/空闲期交替直接相关的那一条属于 **Figure 6.2**，文中按此重建。若对图号有疑问，请以原书 300 页为准。</span>
+
+本页的主体是一幅**更新过程示意图（Figure 6.2，示例 6.2 中忙碌期与空闲期的交替）**，其图注（caption）如下：
+
+> <span style="color:#7f8c8d;">**[figure] Figure 6.2.** 在图顶部的样本路径中，有 $T = 4$、$B = 3$、$I = 2$，且 $Z = \cdots$；在图底部的样本路径中，则有 $T = 5$、$B = 4$，且 $Z = 4$。</span>
+
+其中，忙碌（busy）周期的示意以 $\tt B$ 标注，空闲（idle）周期以 $\tt I$ 标注，符号 $Z$ 记更新时刻/重新开始的时刻（renewal time），$T$ 记所考察的总（时间）区间。顺着时间推进：第一个忙碌期、接着第一个空闲期、再第二个忙碌期……依次交替，形成所谓的更新结构（renewal structure）——每个忙碌期之后，过程在更新时刻 $Z$ 处与过去的经历无关地「重新开始（start fresh）」（沿用上一页 fresh-start 性质的语言）。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 先把符号对齐，因为这一页的 OCR 数字彼此冲突，读之前必须先把矛盾摆明。图注给的是：上路径 $T=4$、$B=3$、$I=2$、$Z=\cdots$（被截断）；下路径 $T=5$、$B=4$、$Z=4$。若把 $T$ 读作「所考察的总区间」，上路径立刻自相矛盾：一个忙碌期加一个空闲期已经 $B+I=3+2=5$，超过 $T=4$，而循环长度按定义不可能超过所考察的区间。所以那个读法站不住，真正需要回查的是原书 Figure 6.2 的图注本身，此处只标出不一致，不臆造数字。$Z$ 也有麻烦：本页把它记作 renewal time（更新时刻），而同一节的承接说明又把 $Z$ 记作 interarrival time（首次到达间隔），同一个字母承担了两个量。⚠ 需回查原书 Figure 6.2。
+>
+> 图的结构本身是清楚的：把时间轴切开，得到交替出现的两种游程。busy period（忙碌期）是成功的极大游程，长度 $B$ 满足 $P(B=k)=p^{k-1}(1-p)$，均值 $E[B]=1/(1-p)$；idle period（空闲期）是失败的极大游程，长度 $I$ 满足 $P(I=k)=(1-p)^{k-1}p$，均值 $E[I]=1/p$。两个式子的底数与收尾因子正好互换，方向千万别记反：忙碌期要求「先成功若干次、再用一次失败收尾」，所以成功在指数里、失败在因子外；空闲期相反。量纲检验也简单：$p\to1$ 时 $E[B]\to\infty$、$E[I]\to1$，即几乎全是成功、空闲只剩一格；$p\to0$ 时反过来。顺带指出本页那行公式的标签错乱：它写作 $P_T(k)=(1-p)^{k-1}p$，可 $T$ 在同页被定义为「首个成功的时刻」，这个式子的形状确实是 $T$ 的 PMF，却又被说成「首个忙碌期的规律」；按忙碌期的定义应当是 $P_B(k)=p^{k-1}(1-p)$，两个式子只差指数与因子互换一位。
+>
+> 一个数值检查就能钉死方向。模拟 $2\times10^6$ 个时隙、取 $p=0.8$，成功游程的平均长度实测 $5.0071$，与理论 $1/(1-p)=5$ 吻合；若按错误的 $1/p$ 去预期，就只会给出 $1.25$，差四倍。注意 $p=1/2$ 时两个约定都等于 $2$，所以拿 $p=1/2$ 验算是抓不到这个错的——这正是参数检验要避开对称点的原因。
+>
+> 两个相邻长度为什么独立？不是因为它们服从不同分布，而是因为它们占据不相交的时隙集合，而 Bernoulli process（伯努利过程）在不同时隙上独立。这条理由必须写出来：一切「循环可以无限重复」的论证，最终都落在「不相交的坐标块独立」上。旧注写「都服从 geometric distribution（几何分布）且相互独立」，方向对，但没有给出这个前提，读者容易误以为是分布形状带来的。
+>
+> 把一个忙碌期加一个空闲期称为一个循环，循环长度 $C=B+I$ 是一列独立同分布的随机变量。这就是 renewal process（更新过程）的离散版：每到一个循环起点，过程在统计上回到同一状态。由独立性，$E[C]=1/(1-p)+1/p=1/\bigl(p(1-p)\bigr)$。这个数在 $p$ 接近 $0$ 或 $1$ 时急剧变大，正是「极端占用率让系统几乎只有一种时隙」的定量表现；$p=1/2$ 时它取最小值 $4$。这条式子还提供一个交叉校验：长期看时隙中成功的比例必须是 $p$，而 $E[B]/\bigl(E[B]+E[I]\bigr)=p$ 恰好成立——用错方向的 $1/p$ 与 $1/(1-p)$ 代进去就得不到 $p$。
+>
+> 这里值得种下 inspection paradox（检查悖论）：若在一个随机选定的时隙回头看，所在循环的平均长度不是 $E[C]$，而是 $E[C^2]/E[C]$——长的循环被抽中的概率与其长度成正比，这叫 length-biased sampling（长度偏倚抽样）。所以「平均忙碌期长度」与「随机看一眼看到的忙碌期长度」是两个不同的量，监控面板上的均值天然偏向长事件。这条与注 8 讨论的赌徒谬误同源：都是把「按比例抽样」误读成「按对象抽样」。
+>
+> 与数据结构的接口很直接：忙碌期就是一次连续命中，空闲期就是一次连续未命中。把 $p$ 读成缓存命中率、分支预测成功率或哈希探测的占用率，$E[B]$ 与 $E[I]$ 就分别是「平均连击长度」与「平均空窗长度」。CLRS 里分析哈希连续占用、CSAPP 里分析分支预测器状态机，用的都是同一套 run（游程）统计；差别只在 $p$ 的来源。
+>
+> 与 §6.2 的接口要提前指出：把时隙切细、把 $p$ 按比例缩小，离散的忙闲交替就收敛到 Poisson process（泊松过程），几何分布换成指数分布，游程结构换成相互独立的到达间隔。连续版之所以更常用，是因为它没有「时隙宽度」这个人为尺度——这正是下一节要清理掉的东西。
+>
+> 一条可执行的验证：模拟 $10^6$ 个时隙，记录每个循环的长度并取平均，结果应落在 $1/\bigl(p(1-p)\bigr)$ 附近；再随机抽 $10^5$ 个时隙，统计每个时隙所在循环的长度并取平均，这个平均值会明显更大，两者之比接近 $E[C^2]/E[C]^2$。一个实验同时验证更新结构与检查悖论，比记住两条公式有用。
+
+
+> <span style="color:#7f8c8d;">![OCR 说明] 源页 `page_309.txt` 直接来自原书印刷页 300，其内容几乎完全被这幅 Figure 6.2 的示意图及其标注（$T$、$Z$、$\tt B$、$\tt I$、「first busy period」「up to …」「and idle」等）所占；图框内仅残留零星的正文文字，如括注 (a)、(b) $B = \cdots$、(c) $I = \cdots$，以及「mean, =」「1 - p, we …」「index …」等片段。这些碎片表明：本页正文本应紧接着讨论忙碌期与空闲期的期望（mean）等统计性质，但原文句子在这页几乎不可辨识。</span>
+
+根据这些可辨的正文碎片并对照下一页的推导起点，本页正文原意大致是：考察第一个忙碌期与空闲期，并着手计算它们的均值等性质——这一步在下一页完成，那里出现了对应空闲期长度 $I$ 的概率质量函数 $P_I(k) = (1-p)^{k-1}\,p$ 以及 $\operatorname{var}(I)$，并最终指出该论证对第 $i$ 个忙碌期/空闲期（任意 $i$）都成立。
+
+<span style="color:#7f8c8d;">[OCR 损坏说明]</span>
+
+> <span style="color:#7f8c8d;">本页为纯示意图页，正文散文几乎全部被 OCR 吞没，只剩图内标注与零散片段；图中 $\tt Z$ 在顶部样本里的具体数值无法辨认（OCR 于该处断裂为「and Z」，数值缺失），故上方以 $\cdots$ 占位，不臆造数字。忙碌期与空闲期的 PMF、均值、方差完整推导在原书 300–301 页之间衔接完成，本页只呈现其开端的示意图。</span>
+
+<!-- ===== PDF p310 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.1（续）
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）**</span> <span style="color:#7f8c8d;">（Sec. 6.1，PDF 页码 301；本页续接上一页 §6.1 关于忙/闲周期（busy/idle period）的讨论，随后给出「新开始性质」（fresh-start property）并以 Example 6.3 作正式论证。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：设 $T$ 为首个成功的时刻，$B$ 为首个忙时段（busy period，连续成功的时段）长度，$I$ 为首个闲时段（idle period，连续失败的时段）长度，$Z$ 为首次到达间隔（interarrival time）。上一页已针对其中的部分量导出相应概率规律，本页先收尾忙/闲时段 PMF 的推导，再转入关于「随机时刻重新开始」的更一般讨论。</span>
+
+对首个忙时段（first busy slot）的规律有（so that）
+
+```math
+P_T(k) = (1-p)^{k-1}\,p, \qquad k = 1, 2, \ldots
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 接下来原页本有一行关于闲时段方差 $\operatorname{var}(I)$ 的公式与式样，但该式在 OCR 中碎裂（仅余若干形似 $\frac{1-p}{p^{2}}$ 的残片），无法可靠复原，故此处不作臆造，按上一页几何分布的方差式补全。</span>
+
+最后我们指出，这里给出的论证同样适用于第二个、第三个以及之后各次的忙（或闲）时段。因此，上面算出的各个概率质量函数对任意下标 $i$ 的第 $i$ 个忙时段与闲时段都成立。
+
+如果我们从某个固定的时刻 $n$（a certain time $n$）开始观察一个伯努利过程（Bernoulli process），我们所见到的与一个刚刚开始的伯努利过程是无法区分的。事实表明，即便我们从某个随机的时刻 $N$（random time $N$）开始观察该过程，情形依然如此——只要 $N$ 仅由过程的过去历史（past history）决定、而不携带任何关于未来的信息。确实，在 Example 6.2 中我们断言过程从时刻 $L+1$ 开始重新开始时，就用到了这样的性质。再举一个例子：考虑一个轮盘赌（roulette wheel），把每次出现红色视为一次成功。从某一次固定的转动（比如第 25 次转动）开始生成的序列，与从连续五次出现红色之后立刻开始生成的序列，在概率上是无法区分的。无论哪种情形，过程都是重新开始的（尽管你总能找到持另类理论的赌徒）。下一个例子给出类似的论证，但来得更正式。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Example 6.3 的答案比证明过程更值得记住：$P(X_{N+1}=X_{N+2}=0)=(1-p)^2$，与 $p$ 无关。无论等连续两次成功等了多久，之后的两个时隙仍是两枚独立的硬币，因此答案里不该出现 $p$ 的任何别的组合。任何让结果依赖「等待时间长短」的直觉，都在这一点上被证伪；这是 fresh-start（重新开始）性质最强的一条内容，比「几何分布无记忆」更直接。
+>
+> $N$ 是一个 stopping time（停时）。定义不是「$N$ 随机」，而是：对每个 $n$，事件 $\{N\le n\}$ 落在 $\sigma(X_1,\ldots,X_n)$ 生成的 σ-field（σ 代数）里——取值只由到 $n$ 为止的观测决定，不偷看未来。教材写的是 $\{N=n\}$，两者等价，因为 $\{N\le n\}$ 是有限并 $\bigcup_{k\le n}\{N=k\}$。反过来，「最后一次成功的位置」「整条序列中第一个最大值的位置」都不是停时，它们要求先看完整条序列。
+>
+> 条件求和的合法性要单独交代，旧注在这里跳了一步。$\sum_n P(N=n)\,P(\cdot\mid N=n)$ 需要两件事：$\{N=n\}$ 构成划分，即两两不交、并起来覆盖全空间，以及条件概率在这组划分上可加。第二件是全概率公式的现成结论；第一件要证 $P(N<\infty)=1$，这不是免费的。
+>
+> $N$ 几乎必然有限，证明只要三行。把时隙按块 $(X_{2k-1},X_{2k})$ 两两分组，每块内部两个都是成功的概率为 $p^2$，块与块独立。于是前 $m$ 块里至少有一块成功的概率是 $1-(1-p^2)^m$，随 $m\to\infty$ 趋于 $1$。顺带得到一个定量的尾部界：$P(N>2m)\le(1-p^2)^m$，几何速度衰减。这同时保证了下面期望的有限性，也是 Wald 方程前提的来源。
+>
+> $E[N]$ 用 first-step analysis（首步分析）算最快，不要试图对 $\sum_t t\,p_{Y}(t)$ 硬求和。设 $a$ 为「上一个时隙不是成功」时还需等待的期望步数，$b$ 为「上一个时隙是成功」时的期望步数。从状态 $a$ 出发，下一步以 $p$ 进入状态 $b$、以 $1-p$ 留在 $a$：
+>
+> $a=1+p\,b+(1-p)\,a$，$b=1+(1-p)\,a$。第一式整理得 $a=(1+pb)/p$，代入第二式解出 $b=1/p^2$，再回代得 $a=1/p+1/p^2$。起点没有「上一个时隙」，属于状态 $a$，故 $E[N]=(1+p)/p^2$。校验：$p=1$ 时 $E[N]=2$，即第二个时隙就出现连续两次成功；$p=1/2$ 时 $E[N]=6$，与两状态链的数值解一致。
+>
+> 这里要纠正旧注的一处归属错误。旧注说 Wald 方程「第 7 章会以随机长度求和的形态出现」，这是错的：本书第 7 章是 Markov chains（Markov 链），用的是 Bertsekas 与 Tsitsiklis 的 Introduction to Probability 第 2 版，Athena Scientific 2008，§7.1 起于 p.340、章首页为 p.339；Wald 方程不在该章正文里。Wald 的原始工作属于 sequential analysis（序贯分析，Abraham Wald 在 1940 年代建立），是另一条脉络。教材真正反复用停时的地方是第 7 章的首步分析，那里处理的是「随机时刻的期望」，与 Wald 不是同一件事，混为一谈会让读者去找一个不存在的章节。
+>
+> Wald 方程本身仍然值得记住，但它的两个前提必须一起记：$E[S_N]=E[N]\,E[X]$ 要求 $N$ 关于 $\{X_i\}$ 是停时，且 $E[N]<\infty$；缺一条都会失败。一个常被引用的反例是让 $N$ 取「使 $S_n$ 达到最大值的下标」：它偷看未来，而且更糟——这个 $N$ 的 $E[N]=\infty$，于是 $E[N]\,E[X]$ 成了 $\infty\cdot0$ 这样的未定式，根本不能当 $0$ 用，两条前提被同时违反，拿它作「只违反停时条件」的反例并不干净。要干净的例子必须保住 $E[N]<\infty$：取 $X_i$ 独立、各以 $1/2$ 取 $+1$ 或 $-1$，令 $N=1$ 当 $X_2=+1$、否则 $N=2$。$N$ 偷看了 $X_2$，故不是停时；$E[N]=3/2<\infty$；而 $E[S_N]=\frac12\cdot0+\frac12\cdot(-1)=-\frac12\ne0=E[N]\,E[X]$。这一算把「停时条件不可省」钉死，也说明反例本身要检验：同时违反两条前提的反例什么也证明不了。这正是「条件作用不能创造信息，只能暴露信息」的另一种说法。
+>
+> 与流式系统的接口：停时在工程里对应「退出条件只依赖已读入的数据」。读到第一个满足谓词的元素就停，是停时；读完整个流再回头挑最好的，不是。online algorithm（在线算法）的竞争比分析之所以不能假设未来，根子就在这里——任何依赖未来的停止规则都会让「随机时刻重启」失效，教材那句「即便从随机时刻开始观察，情形依然如此，只要该时刻不携带关于未来的信息」讲的就是这个边界。
+>
+> 一个常被忽略的细节：教材严格化时用的是 $\{N=n\}$ 而不是 $\{N\le n\}$，两者在此题中都能用，但只有后者是停时的一般定义。若把停时写成「$\{N=n\}$ 与未来独立」，会漏掉「$N$ 可能取无穷」的情形；本节的 $N$ 有限性靠上面的分块论证补上，别处不一定成立。
+
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.3　随机时刻的重启（Fresh-Start at a Random Time）**</span>
+
+设 $N$ 为第一次出现紧跟在前一个成功之后的成功的时刻（the first time that we have a success immediately following a previous success）。也就是说，$N$ 是使 $X_{i-1} = X_i = 1$ 成立的最小下标 $i$。问紧随其在后的两次试验均不出现成功的概率 $P(X_{N+1} = X_{N+2} = 0)$ 是多少？
+
+直观上看，一旦条件 $X_{N-1} = X_N = 1$ 得到满足，从那时起过程的未来（future of the process）就由若干相互独立的伯努利试验组成。因此，涉及过程未来的任一事件的概率，与一个重新开始的伯努利过程中的相应概率相同，从而有 $P(X_{N+1} = X_{N+2} = 0) = (1-p)^2$。
+
+为对上述论证给出严格的说明（rigorous justification），我们注意到时刻 $N$ 是一个随机变量，通过对 $N$ 的可能取值进行条件（conditioning）计算，可得
+
+```math
+P(X_{N+1} = X_{N+2} = 0)
+= \sum_{n=1}^{\infty} P(N = n)\, P(X_{n+1} = X_{n+2} = 0 \mid N = n) .
+```
+
+由于 $N$ 的定义方式，事件 $\{N = n\}$ 发生当且仅当 $X_1, \ldots, X_n$ 的取值满足某一特定条件。而这些随机变量均与 $X_{n+1}$、$X_{n+2}$ 相互独立，因此
+
+```math
+P(X_{n+1} = X_{n+2} = 0 \mid N = n)
+= P(X_{n+1} = X_{n+2} = 0)
+= (1-p)^2,
+```
+
+于是得出
+
+```math
+P(X_{N+1} = X_{N+2} = 0)
+= \sum_{n=1}^{\infty} P(N = n)\, (1-p)^2
+= (1-p)^2 .
+```
+
+<!-- ===== PDF p311 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）—— 到达间隔（Interarrival Times）（续）**</span>
+
+> <span style="color:#7f8c8d;">本页延续上一页 §6.1 中对**到达间隔**（interarrival time）的讨论：在此章的记号中，第 $k$ 次成功（到达，arrival）的时刻记为 $Y_k$，而第 $k$ 个到达间隔（前一次成功到下一次成功之间的试验次数）记为 $T_k$，并有 $Y_k = T_1 + T_2 + \cdots + T_k$。本页承接上一页的定义，给出图 6.2 的说明，并通过「重新开始」的论证证明诸到达间隔相互独立且同服从几何分布，末段引出以到达间隔序列描述伯努利过程的等价写法。**整页 OCR 损坏较重**，识别不清处已就地以灰色注释标出，可辨认的关键定义与图注语义如下自然补全，数值一律不臆造。</span>
+
+现在考虑第 $k$ 次成功（或第 $k$ 次到达）。第 $k$ 个**到达间隔**是从第 $k-1$ 次成功（当 $k = 1$ 时取过程的起始时刻）到第 $k$ 次成功之间的试验次数。对 $k = 1, 2, \ldots$，到达间隔满足
+
+```math
+T_k = Y_k - Y_{k-1}, \qquad Y_0 = 0,
+```
+
+因此第 $k$ 次成功（到达）的时刻 $Y_k$ 就等于前 $k$ 个到达间隔之和
+
+```math
+Y_k = T_1 + T_2 + \cdots + T_k .
+```
+
+> <span style="color:#7f8c8d;">[原页开头 OCR 损坏] 页首关于到达间隔与第 $k$ 次成功时刻的定义叙述在 OCR 中被切成零散短语（约读作“of the kth success … is the kth interarrival… / we denote by $Y_k$. A related random variable … by $T_k$ / $k = 1, 2, \ldots$ / (k−1)st success until …”）。此处按本单元通行的记号（到达间隔 $T_k$、第 $k$ 次到达时刻 $Y_k = T_1+\cdots+T_k$）将该定义完整补全，与下一页「第 $k$ 次到达时刻（The kth Arrival Time）」的内容互相衔接；具体措辞请以原书为准。</span>
+
+图 6.2 给出了到达间隔的示意（Figure 6.2: Illustration of interarrival times），其中 $a$ 表示一次到达。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 图 6.2 图注下方关于各到达间隔具体取值的文字被 OCR 拆成零散数字（约读作“$Y$… $= 3$、$= 2$、…$T_4 = 1$、$8$ …”），无法完整还原，故不臆造具体数值；仅保留「其中 $a$ 表示一次到达」这一可辨认的图注语义。</span>
+
+我们此前已经看到，直到第一次成功为止的时间 $T_1$ 服从参数为 $p$ 的**几何分布**（geometric distribution）。这一事实的启发在于：一旦第一次成功发生，则自 $T_1 + 1$ 时刻起、随后的那些试验便构成了一个全新的伯努利过程，且与过去的试验相互独立。因此，下一次成功的时间 $T_2$ 具有同样参数的几何 PMF；进一步地，过去的试验（直至并包括 $T_1$ 在内）与 $T_2$ 相互独立。$T_2$ 完全由 $T_1$ 之后所发生的一切决定，因此 $T_2$ 与 $T_1$ 相互独立（independent of $T_1$）。按同样的方式继续推下去，到达间隔 $T_3, T_4, \ldots$ 都是相互独立的随机变量，且各自都服从参数为 $p$ 的几何分布。
+
+这一重要观察给出了一种描述伯努利过程的**替代**（alternative）、且往往更方便的方式：与其逐一记录每次试验的结果，不如只记录一列到达间隔——当且仅当某次试验出现一次成功（success）时，算作发生一次「到达」。这些到达间隔是相互独立、具有相同几何分布的随机变量。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 教材给的替代描述只有一句话，但它的分量在于「等价」二字。与其逐时隙记录 $0/1$，不如只记一列 interarrival time（到达间隔）。两种记录互为双射：给定 $0/1$ 序列，两个 $1$ 之间夹的 $0$ 的个数再加 $1$ 才等于该段的间隔，即 $T_k-1$ 恰是那一小段里 $0$ 的个数；给定间隔列，把每个长度为 $t$ 的间隔写成 $t-1$ 个 $0$ 后接一个 $1$，序列就重建出来。信息无损，样本路径一一对应。
+>
+> 要点在于独立性不是自动搬过去的。从「逐时隙独立」推出「间隔独立同分布」，是靠 fresh-start（重新开始）证出来的定理，不是同义反复：第一次成功后，其后所有时隙与之前独立，因此 $T_2$ 与 $T_1$ 独立；再用归纳推到 $T_3,T_4,\ldots$。跳过这一步、只凭「每个间隔都服从 geometric distribution（几何分布）」就断言它们联合独立，是把边缘分布当成了联合分布——这是本节最容易被读者糊过去的推理缺口。
+>
+> 选哪个视角取决于要问什么。问「第 $k$ 次成功的时刻」用间隔（求和）；问「$n$ 个时隙里成功几次」用计数（二项）；问「多久之后第一次成功」用首次到达时刻（几何）。三种问法对应三个坐标，选错就要多做一次卷积。教材后面每个例子的解法差异，几乎都能追溯到这一句。
+>
+> 旧注这里有一处事实错误要纠正：它把这件事类比成「6.042J/CSAPP 里的 run-length encoding（游程编码）」，但 6.042J 与 CSAPP 都不讲游程编码；游程编码属于数据压缩，出现在信息论、传真编码与 PNG 一类图像格式的语境里。类比方向可以留，出处必须换。
+>
+> 即便保留这个类比，也要加一条限定：标准游程编码记的是「长度 + 符号」两样，因为符号会交替；这里只记成功之间的失败个数，因为 $1$ 是固定分隔符。所以严格说这是单符号游程编码的特例，不是一般情形。
+>
+> 更硬的接口在熵上。逐时隙序列的 entropy rate（熵率）是 $H(p)$，以 bit（比特）为单位；间隔 $T$ 的 entropy（熵）是 $H(p)/p$，而 $E[T]=1/p$，于是「单位时间的熵」同样等于 $H(p)$。两个描述携带的信息量相等，这正是双射的定量版本。arithmetic coding（算术编码）自动发现的是同一件事：它不关心你把数据切成位还是切成游程。
+>
+> 但等价不等于等价价。逐位序列的字母表是二元、每位一比特；间隔序列的字母表是无限集，单个间隔要用变长码。工程上的取舍很直接：事件密集时逐位便宜，事件稀疏时间隔便宜。这正是 discrete-event simulation（离散事件仿真）用间隔推进、而不逐时隙扫描的原因——扫描空时隙是纯浪费。
+>
+> 均值方差一并记账：$Y_k=T_1+\cdots+T_k$ 给 $E[Y_k]=k/p$ 与 $\mathrm{var}(Y_k)=k(1-p)/p^2$。均值可加对任意随机变量成立；方差可加要独立，这里靠的就是上面那条定理。两条性质常被混为一谈，而混用会在组合多个随机量时直接算错。
+>
+> 一条可执行的检验：用间隔法生成 $10^6$ 个时隙的序列，与逐位法生成的序列比同样的统计量（成功总数、间隔直方图），两者应当无法区分。若间隔直方图系统性偏离几何形状，问题在随机数源而不在视角选择——这个判据能把两类 bug 分开。
+
+
+> <span style="color:#7f8c8d;">[原页末尾 OCR 损坏] 页末关于以到达间隔序列刻画伯努利过程的文字在原图中碎裂严重（识别为“……describing the Bernoulli … Alternative … with a sequence … common … a success …”），上面对照 §6.1 语义作整段补全，即「用一列相互独立且各具相同几何分布的到达间隔来代替逐次试验记录」。此段为 §6.1「到达间隔」一节的收尾，下一行应衔接新的小节/下一段正文。原页末还零散出现“……$T_3$, etc.”，与「继续推下去」一处相呼应，此处不再单独成句。</span>
+
+<!-- ===== PDF p312 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+> <span style="color:#7f8c8d;">本页为 §6.1　伯努利过程（The Bernoulli Process）正文的延续页段。书眉所列 `Sec. 6.1` 与 `The Bernoulli Process` 为正文常驻页眉（印于书内页 303）。本页内容依次为：**Example 6.4**（降雨间隔服从几何分布）、小节「第 $k$ 次到达时刻（The kth Arrival Time）」及其性质总结框，页末在验证 $Y_k$ 的 PMF 公式处于句中截断，续接下页。本例的题目陈述在本页完整出现（自"下过雨之后……"起，含题目与解法），故此处按完整例题处理，不另标「（续）」。</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.4（降雨间隔服从几何分布的天气模型）**</span>
+
+据观测，下过雨之后、再到下次下雨所间隔的天数服从参数为 $p$ 的几何分布（geometrically distributed），并且与该日之前的天气相互独立（independent of the past）。求在本月第 5 天和第 8 天都下雨的概率。
+
+若试图直接对题目中给出的几何分布概率质量函数（probability mass function, PMF）做运算来求解，解答会相当繁琐。然而，若把雨天视作「到达」（arrival），我们便会注意到：这种天气变化规律正符合前文给出的伯努利过程（Bernoulli process）的另一种等价描述。因此，任意给定一天以概率 $p$ 下雨，且与其他各天相互独立。特别地，第 5 天与第 8 天都下雨的概率等于 $p^2$。
+
+<span style="color:#c0392b;">**第 k 次到达时刻（The kth Arrival Time）**</span>
+
+第 $k$ 次成功（或到达，arrival）发生的时刻 $Y_k$ 等于 $k$ 个相互独立且同分布的几何随机变量之和，即 $Y_k = T_1 + T_2 + \cdots + T_k$。由此我们可以导出 $Y_k$ 的均值、方差与概率质量函数（PMF），其结果列于下表。
+
+<span style="color:#c0392b;">**第 k 次到达时刻的性质（Properties of the kth Arrival Time）**</span>
+
+- 第 $k$ 次到达时刻等于前 $k$ 个到达间隔（interarrival time）之和，而这些到达间隔是共同参数为 $p$ 的相互独立的几何随机变量。
+- $Y_k$ 的均值与方差由下式给出：
+
+```math
+E[Y_k] = \frac{k}{p}, \qquad
+\operatorname{var}(Y_k) = \operatorname{var}(T_1) + \cdots + \operatorname{var}(T_k) = \frac{k (1-p)}{p^2}.
+```
+
+- $Y_k$ 的概率质量函数为
+
+```math
+p_{Y_k}(t) = \binom{t-1}{k-1} p^{k} (1-p)^{t-k}, \qquad t = k, k+1, \ldots,
+```
+
+称为 $k$ 阶帕斯卡概率质量函数（Pascal PMF of order k）。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> $Y_k=T_1+\cdots+T_k$ 是 $k$ 个独立同分布的几何随机变量之和，它计数的是「等到第 $k$ 次成功一共做了多少次试验」，PMF 为 $p_{Y_k}(t)=\binom{t-1}{k-1}p^{k}(1-p)^{t-k}$，$t=k,k+1,\ldots$。这里的参数记账方式最容易出错：negative binomial distribution（负二项分布）有「失败次数」与「试验总次数」两套参数化，差一个常数平移。教材用的是总次数，所以支撑从 $k$ 起、指数是 $t-k$；照抄成「支撑从 $0$ 起、指数是 $t$」会让整条公式错位一格，而错位后的表达式在 $t=k$ 处还能凑出对的值，很难被数值抽查发现。
+>
+> 归一化并不显然。$\sum_{t\ge k}\binom{t-1}{k-1}p^{k}(1-p)^{t-k}=1$ 等价于级数 $\sum_{j\ge0}\binom{k-1+j}{k-1}x^{j}=(1-x)^{-k}$，这是 generalized binomial theorem（广义二项式定理，Newton 1665）在负指数上的特例。「负二项」这个名字就是从 $(1-x)^{-k}$ 来的：系数是负指数二项式的展开系数，负号只是记号的结果。
+>
+> 便于记忆的写法是 $\binom{t-1}{k-1}=(-1)^{t-k}\binom{-k}{t-k}$。左边是普通组合数，右边是广义二项式系数，这条恒等式把「展开负幂次」与「隔板计数」两件看起来无关的事接上了。它的用途不止好看：把广义系数代回级数，可以一步验证归一化，不必再对几何级数求导。
+>
+> 卷积视角给的是矩，不是形状。$Y_k$ 是 $k$ 个独立几何变量之和，故 $E[Y_k]=k/p$、$\mathrm{var}(Y_k)=k(1-p)/p^2$。均值可加对任意随机量成立；方差可加要求独立，这里靠 §6.1 证过的间隔独立（见上一条注）。这两条在 CLRS 分析随机化算法时反复用到，尤其是「把总代价写成若干独立分量之和」那一步。
+>
+> 历史层次可以写得更准。Pascal 与 Fermat 1654 年的通信处理的是 problem of points（赌金分配问题）：赌局中途停止，赌注按什么比例分。旧注说它「为概率论奠基」，方向对，但可以精确：这类问题此前已有人碰过：Pacioli 在 1494 年、Cardano 在十六世纪的著作里都讨论过，Pascal 与 Fermat 的贡献是把「未完成赌局的期望收益」算成了一个确定的数——Fermat 穷举剩余路径，Pascal 用算术三角形做递推。Huygens 1657 年据两人方法写的小册子，是第一本印刷成书的概率论教科书。
+>
+> PMF 里的组合数就是 Pascal triangle（帕斯卡三角）的第 $t-1$ 行。为什么三角会出现在这里？因为「前 $t-1$ 次里恰有 $k-1$ 次成功」的计数本身就是二项式系数，而二项式系数的递推规则正是三角的生成规则。这条线索在下一条注的证明里显形，届时会看到同一个组合数被三种方式各自独立地得到。
+>
+> 连续版预告：把几何换成指数，$k$ 个独立指数之和就是 Erlang distribution（爱尔朗分布）的 $k$ 阶情形，$k=1$ 时退化为指数分布。这个分布以丹麦电话工程师 Agner Krarup Erlang（1878-01-01 至 1929-02-03）命名；他在 1909 年的论文《概率论与电话通话》（The Theory of Probabilities and Telephone Conversations）里证明泊松分布适用于随机电话话务，这被公认为 queueing theory（排队论）的起点。⚠ 「首创该分布」的归属有争议，更稳妥的表述是「以他命名、由他系统用于话务分析」。
+>
+> 支撑从 $k$ 起这件事在截断时有直接后果，紧接着的 Example 6.5 就是例子。上场时间 $Z=\min\{Y_6,30\}$，前 $24$ 个原子直接取 Pascal 值，最后一个原子必须用 $1-\sum_{z=6}^{29}p_Z(z)$ 补齐——因为 $Y_6>30$ 的全部质量被压到 $z=30$ 这一个点上。漏掉这一步，PMF 求和会小于 $1$，而这种偏差在小样本里看不出来。
+>
+> 数值上不要直接算大 $t$ 的组合数。稳妥做法有两条：用`lgamma`（对数伽马函数）在对数空间累加；或者用递推 $p_{Y_k}(t+1)=p_{Y_k}(t)\cdot\frac{t}{t+1-k}\,(1-p)$，从 $t=k$ 处的 $p^{k}$ 起步。后者每步一次乘法一次除法，天然保持非负，也不会在中间量上溢出，是写生成函数时的默认选择。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上性质框中三个公式在 OCR 中被拆散到多行（均值式读取为 `k(1-p) / p`、方差式读取为 `var(T1)+...+var(Tk) = k(1-p)/p^2`、Pascal PMF 读取为 `t(t-1)…1 / k … p^k (1-p)^{t-k}`）。此处按「第 $k$ 次到达时刻等于 $k$ 个彼此独立的参数 $p$ 几何随机变量之和」这一标准结果重建为规范 LaTeX；各数值均为标准导出，未作任何臆造。若有严格对照需要，请回查原书。</span>
+
+为验证 $Y_k$ 的 PMF 公式，我们首先注意到 $Y_k$ 不可能小于 $k$。对 $t \geq k$，我们观察事件 $\{Y_k = t\}$（即第 $k$ 次成功……）——
+
+<!-- 页末于句中截断（「the kth success …」未写完），下一例如/推导续接下一页。 -->
+
+<!-- ===== PDF p313 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.1（续）
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）**</span> <span style="color:#7f8c8d;">（PDF p313，原书页 304；本页为续页——页首无新标题，续接上一页关于「伯努利过程中第 $k$ 次成功时刻 $Y_k$ 服从阶为 $k$ 的 Pascal 分布」之命题的证明后半段，随后进入 **Example 6.5**，该例自本页开始并延续到下一页。）</span>
+
+（会使第 $k$ 次成功恰好发生在时刻 $t$ 的）这一结果当且仅当下述两个事件 $A$ 与 $B$ 同时发生时才会出现：
+
+- (a) 事件 $A$：第 $t$ 次试验是成功的；
+
+- (b) 事件 $B$：在前 $t-1$ 次试验中恰好出现了 $k-1$ 次成功。
+
+这两个事件的概率分别为
+
+```math
+P(A) = p,
+```
+
+与
+
+```math
+P(B) = \binom{t-1}{k-1}\, p^{k-1} (1 - p)^{t - k}.
+```
+
+此外，这两个事件相互独立（第 $t$ 次试验是否为成功，与先前 $t-1$ 次试验中所发生的情况无关）。因此
+
+```math
+p_{Y_k}(t) = P(Y_k = t) = P(A \cap B) = P(A)\,P(B) = \binom{t-1}{k-1}\, p^{k}\, (1 - p)^{t - k},
+```
+
+正如所声明的（as claimed）。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这段证明把 $\{Y_k=t\}$ 拆成两块：$A=\{X_t=1\}$，即第 $t$ 个时隙是成功；$B$ 是「前 $t-1$ 个时隙里恰有 $k-1$ 次成功」这个事件。两块都能直接算：$P(A)=p$，$P(B)=\binom{t-1}{k-1}p^{k-1}(1-p)^{t-k}$，相乘即得目标式。
+>
+> 独立性的来源要说清，不能只写「显然无关」。$A$ 只涉及第 $t$ 个时隙，$B$ 只涉及第 $1$ 到 $t-1$ 个时隙，两个时隙集合不相交；伯努利过程的定义要求任意不相交时隙集合上的事件独立，这才是可以相乘的依据。同一条性质在本节已经用了三次，分别是注 9 的忙闲期独立、注 11 的间隔独立，以及此处，值得单独记住：**独立性总是靠「不相交的坐标块」来兑现**，而不是靠直觉。
+>
+> 我叫它末位剥离法：先钉住「最后一个位置发生了什么」，再对前面的位置计数。适用范围很宽——凡是「第 $k$ 次某事件恰在某时刻」的问题，都先剥离最后一步，剩下的就退化成二项计数。二项式系数的递推 $\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}$ 的组合证明也是同一招：按元素 $n$ 是否被选中分类。这条技巧与分治里「按最后一个元素分类」是同一种分解方向。
+>
+> 旧注把它等同于 dynamic programming（动态规划）的「先定最后一步再递归计数」，方向对但精度不够。动态规划要的是 optimal substructure（最优子结构）与 overlapping subproblem（重叠子问题），这里既没有最优化也没有重复子问题，只有一次计数分解。更准确的类比对象是组合计数里的 last-step decomposition，以及全概率公式按「最后一次成功的位置」分割。把两者混为一谈，会在需要真正做优化的问题上误用这条模板。
+>
+> 还有一条完全独立的验证路线：回到卷积。$T_i\ge1$ 且 $t_1+\cdots+t_k=t$ 的正整数解有 $\binom{t-1}{k-1}$ 个，这是 stars and bars（隔板法）的标准计数，而每个解的概率都是 $p^{k}(1-p)^{t-k}$，与具体的 $t_i$ 无关，乘起来就得到同一条 PMF。这条路线的额外收获是把组合数解释清楚了：它数的是「在 $t-1$ 个位置里挑 $k-1$ 个放成功」的方案数——最后一个位置已被钉死为成功，所以只在前 $t-1$ 个里挑。三条路线，即直接相乘、卷积计数、负二项级数，得到同一结果，这种交叉验证值得当成习惯。
+>
+> 最常见的写错是把组合数写成 $\binom{t}{k}p^{k}(1-p)^{t-k}$，即「$t$ 个位置里选 $k$ 个」。错在允许第 $t$ 个位置是失败，而那意味着第 $k$ 次成功早于 $t$，与事件 $\{Y_k=t\}$ 矛盾。这个错误很隐蔽：代入 $t=k$ 时两式都给 $p^{k}$，看不出差别；代入 $k=1$ 立刻露馅——正确式给 $(1-p)^{t-1}p$，错误式给 $t\,p(1-p)^{t-1}$，差一个因子 $t$。所以 $k=1$ 是检验这类错误的试纸。
+>
+> 边界校验再做两个。$t=k-1$ 时正确式给 $0$，因为 $\binom{k-2}{k-1}=0$，符合「$k$ 次成功不可能在 $k-1$ 步内完成」；$p=1$ 时只剩 $t=k$ 这一个原子，质量恰为 $1$。凡是能在这两个端点上通过检验的表达式，中间出错的可能性就小得多。
+>
+> 同一套分解在截断后仍然有效。Example 6.5 的 $Z=\min\{Y_6,30\}$：$z<30$ 直接取 Pascal 值，$z=30$ 把尾部全体压成一个原子。这是离散变量做 min 变换的标准手法——先算未被截断的部分，再用 $1$ 减求和补尾。手法本身与这个证明无关，但依赖同一个事实：$\{Y_k=t\}$ 对 $t\ge k$ 是一组互斥且穷尽的事件。
+>
+> 最后补一句这个证明隐含的前提：$\{Y_k=t\}$ 要构成划分，必须 $Y_k<\infty$ 几乎必然成立。教材在这里没有单独证，理由在前一条关于 stopping time（停时）的注里已经给过，用的是成块法：把时隙按 $(X_{2k-1},X_{2k})$ 成对分组，每块全成功的概率是 $p^2$，块与块独立，于是前 $m$ 块里至少一块全成功的概率 $1-(1-p^2)^m$ 趋于 $1$，成功因此无限次出现。若换一个 $p$ 依赖于时间的模型，这个前提会失效，那时 Pascal PMF 也不再归一化。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.5（Alicia 的犯规与上场时间）**</span>
+
+在篮球比赛的每一分钟里，Alicia 以概率 $p$ 犯规一次，以概率 $1 - p$ 不犯规。假定不同分钟内的犯规次数相互独立。Alicia 一旦累计犯规满六次就会被罚下场，若未罚下场她将打满 $30$ 分钟。Alicia 上场时间的 PMF 是什么？
+
+我们把犯规建模为参数为 $p$ 的伯努利过程（Bernoulli process）。Alicia 的上场时间 $Z$ 等于 $Y_6$，即第六次犯规之前的时刻，除非 $Y_6$ 大于 $30$，此时她的上场时间等于 $30$；也就是说，$Z = \min\{Y_6,\, 30\}$。随机变量 $Y_6$ 具有阶为 $6$ 的帕斯卡分布（Pascal PMF），由下式给出
+
+```math
+p_{Y_6}(t) = \binom{t - 1}{5}\, p^{6} (1 - p)^{t - 6}, \qquad t = 6, 7, \ldots
+```
+
+为确定 $Z$ 的 PMF $p_Z(z)$，我们先考虑 $z$ 介于 $6$ 与 $29$ 之间的情形。对这个范围内的 $z$，有
+
+```math
+p_Z(z) = p_{Y_6}(z) = \binom{z - 1}{5}\, p^{6} (1 - p)^{z - 6}, \qquad z = 6, 7, \ldots, 29 .
+```
+
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Poisson approximation（泊松近似）这个说法容易被当成魔术，其实它只有一个来源：$(1-x/n)^{n}\to e^{-x}$ 这条极限。把符号对上——单个符号传输出错的概率是 $p$，数据包有 $n$ 个符号，于是「一个符号都不错」的概率是 $(1-p)^{n}$，而 Poisson approximation（泊松近似）把它换成 $e^{-\lambda}$，其中 $\lambda = np$。这一步的合法性只要求 $p$ 随 $n$ 一起变小、$\lambda$ 保持固定，除此之外不需要任何东西。
+>
+> 两条路线为什么差一个零头，可以逐字算出来。精确路线：$1-(1-p)^{n}<0.001$ 等价于 $(1-p)^{n}>0.999$，取对数后因为 $\ln(1-p)<0$，不等号要翻转，得 $n<\frac{\ln0.999}{\ln0.9999}=10.0045$。近似路线：$1-e^{-\lambda}<0.001$ 等价于 $\lambda<-\ln0.999=1.0005\times10^{-3}$，除以 $\lambda=np$ 得 $n<10.0050$。两条路差 $0.0005$，取整之后同为 $n\le10$，所以答案不受影响，但这个零头本身有信息。
+>
+> 方向不是巧合，一行就能证明。对 $u\in(0,1)$ 有 $\ln(1-u)<-u$，于是 $(1-p)^{n}=(1-\lambda/n)^{n}<e^{-\lambda}$ 对每个 $n$ 严格成立。左边更小意味着「零错误」更稀罕，「至少一次错误」的概率更大，所以真实的传输失败概率高于 Poisson approximation（泊松近似）给出的值。用它当判据就是 conservative（保守）方向：它要求更小的 $n$，实际执行起来一定达标。这条严格不等式不依赖 $p$ 小，可以直接当定理用。
+>
+> 差值的量级同样可以算。换成 effective rate（有效速率）$\nu=-n\ln(1-p)$ 来看，$\nu-\lambda$ 的主项是 $n p^{2}/2$，代入 $n\approx10$、$p=10^{-4}$ 得 $\Delta\lambda=5\times10^{-8}$。这个量相对 $\lambda\approx10^{-3}$ 只有 $5\times10^{-5}$，但换算成对阈值 $n$ 的影响要乘 $1/p=n/\lambda\approx10^{4}$，因为 $\lambda=np$ 意味着 $n=\lambda/p$：$5\times10^{-8}\times10^{4}=5\times10^{-4}$，恰好就是前面那条阈值差。一个 $10^{-8}$ 量级的率误差被放大成 $10^{-4}$ 量级的阈值差，这是「小误差在条件数大的地方被放大」的标准样本，比任何抽象说法都具体。
+>
+> 复利视角能把这条极限挂到熟悉的东西上：$(1+r/n)^{n}\to e^{r}$ 是离散复利的连续化，这里只是把利率 $r$ 换成 $-\lambda$，读成「负利率」或「每秒存活率」即可，$e^{-\lambda}$ 就是连续复利下的存活折扣。同一个极限在 18.06 里会以矩阵形式回归：matrix exponential（矩阵指数）$e^{At}$ 的定义正是 $(I+At/n)^{n}$ 的极限，标量换成 matrix（矩阵）之后不需要额外技巧，因为只涉及 $A$ 一个矩阵、幂次之间可交换；唯一的差别是收敛要在 operator norm（算子范数）意义下说，而不是逐点的。
+>
+> 工程上什么时候可以直接把 $(1-p)^{n}$ 换成 $e^{-\lambda}$，有一个可操作的门槛：两者的相对差约等于 $\lambda p/2$。本题 $p=10^{-4}$、$\lambda\approx10^{-3}$ 时这个差是 $5\times10^{-8}$，可以放心替换；反过来，若取 $p=0.05$、$\lambda=2$，此时 $n=40$，相对差约 $5\%$，再用 $e^{-\lambda}$ 就会在第三位小数上出错。判据一句话：先算 $\lambda p$，小于 $0.01$ 直接换，大于 $0.01$ 就老老实实用 $\nu=-n\ln(1-p)$。
+>
+> 还有一处容易滑过去的细节：两条路线给出的阈值都是实数，而真正能取的是整数 $n\le10$。这一步整数化把连续比较变成离散决策，误差最大可达一整个单位，所以判据不是「两条路线差多少」，而是「阈值离下一个整数有多远」。$10.0045$ 距离 $11$ 还有将近一个整单位，取 $10$ 是稳的；假如算出的是 $10.9$，同样量级的近似就足以把答案从 $10$ 翻成 $11$，那时必须回到精确式。作业与考试里「近似导致答案翻转」的事故，几乎都发生在阈值贴着整数的时候。
+>
+> 跨课程连接两处。CSAPP 第 3 章的 floating point（浮点）一节讲相对误差，这里的 $\lambda p/2$ 正是「被丢掉的高阶项有多大」的量化答案，与 ulp（单位舍入误差）是同一类记账方式。6.042J 里把 $e$ 当作「$n$ 步、每步 $1/n$ 的极端情形」引入，做题时只关心阶；这里是它的定量版本，关心系数。
+>
+> 收束回正文：这条注的重点不是「记住 $e$ 的定义」，而是把「近似」变成一个带方向、带误差量的断言——写成不等式，才知道自己在安全的一侧还是危险的一侧。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式为原书「for $z$ in this range, we have」一句后本该出现的 PMF 算式，OCR 在此处仅残存「$z = 6, 7, \ldots, 29$」而吞掉了显式公式；按 $z$ 在该区间内 $Z = Y_6 = z$ 的意义（$Z = \min\{Y_6, 30\}$）重建为 $p_Z(z) = p_{Y_6}(z) = \binom{z-1}{5}p^{6}(1-p)^{z-6}$，数值未作臆造。</span>
+
+$Z = 30$ 的概率随后由下式确定
+
+```math
+p_Z(30) = 1 - \sum_{z = 6}^{29} p_Z(z) .
+```
+
+> <span style="color:#7f8c8d;">本页于此处结束，下一页转入分裂与合并（splitting and merging）小节。</span>
+
+<!-- ===== PDF p314 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.1（续）
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）：分裂与合并（Splitting and Merging of Bernoulli Processes）**</span> <span style="color:#7f8c8d;">（页首无新节标题，源 OCR 首行仅为「6.1 with a Bernoulli process in which there is a probability $p$ of an arrival…」，本页是上一页关于伯努利过程分裂（splitting）讨论的延续。）</span>
+
+> <span style="color:#7f8c8d;">⚠️ 本页 OCR 严重碎裂：源文件把正文拆成一两词一行的碎片，段落顺序也只能大致恢复。以下中文依据上下文补全语义，凡原文中可辨认的概率值（分裂：$pq$、$p(1-q)$；合并：$p+q-pq$）一律以源 OCR 中实际存在的数字为准，未作任意外推。无法辨认的片段用灰色注释标出。</span>
+
+……以这样一个存在到达事件且到达概率为 $p$ 的伯努利过程为对象（with a Bernoulli process in which there is a probability $p$ of an arrival），我们如下考虑（we consider it as follows）：每当出现一次到达（arrival）时，我们以概率 $q$ 选择保留它（keep it），或以概率 $1-q$ 选择丢弃它（discard it）；见图 6.3（Fig. 6.3）。假定保留或丢弃这些决策彼此独立（independent）地做出。于是我们看到（we see）这是一个伯努利过程：在每一个时隙（time slot）中，出现一次被保留的到达的概率为 $pq$。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> splitting（分裂，也叫 thinning）是逐到达的独立挑拣：每个到达以概率 $q$ 保留、以 $1-q$ 丢弃，决策彼此独立。保留流在每个时隙出现到达的概率是 $pq$，丢弃流是 $p(1-q)$。教材把它当成新的一节的引子，但它其实是「逐时隙抛两枚硬币」的直接后果。
+>
+> 保留流仍是伯努利过程，要验两条。单时隙的边缘概率为 $pq$：到达且保留，两个独立事件相乘。跨时隙的独立性来自两处——原过程的时隙独立，加上决策序列的时隙独立。两条合起来才够，只验一条是常见遗漏：只验边缘概率，得到的是「每个时隙边缘相同的序列」，不足以称过程。
+>
+> 旧注在这里有一处数学错误要纠正。它说「两个流相互独立，因为每个时隙的保留/丢弃决策独立且互斥，两类事件分属不同的时隙序列，互不交叉」——后半句不成立：两类事件并不分属不同时隙，它们可以在不同时隙上任意重叠。而且结论也过强：两个子流在同一时隙上互斥，因此不可能按字面意义独立。
+>
+> 反例一行就够。设 $A_i$ 为「保留流在时隙 $i$ 有到达」，$B_i$ 为「丢弃流在时隙 $i$ 有到达」。则 $P(A_i\cap B_i)=0$（同一个到达不能被同时保留与丢弃），而 $P(A_i)\,P(B_i)=pq\cdot p(1-q)>0$。两者不等，独立性不成立。
+>
+> 正确的机制是 multinomial trial（多项试验）：每个时隙有「保留 / 丢弃 / 无到达」三种互斥结果，概率依次为 $pq$、$p(1-q)$、$1-p$，各时隙相互独立。要检验的独立性是「不同时隙之间」的因子化，例如 $i\ne j$ 时 $P(A_i\cap B_j)=pq\cdot p(1-q)=P(A_i)P(B_j)$，这一条成立。教材那句 independent 应读作后面这个意思：两个子流在互不相交的时隙集合上独立。图 6.3 的图注把结论说得更粗，写成「两个独立的伯努利过程」；按上面的反例，那个措辞只在「不相交时隙」这个限定下成立，严格表述应当是「两个伯努利过程，在不相交的时隙集合上独立」，记笔记时不要省掉后半句。
+>
+> 为什么连续版没有这个麻烦？因为泊松过程在一个点上出现两个到达的概率是零，「同一时刻互斥」这件事不产生正概率的约束。这是离散与连续在处理原子时的典型差别：时隙是原子的，时刻不是。教材在 §6.2 会不加限定地写「分裂后的两个泊松过程独立」，那句话在连续版里是干净的，把同一句话照搬到离散版就会出错。
+>
+> 一般化几乎不用改字。分成 $m$ 类、第 $i$ 类的保留概率为 $q_i$，且所有保留概率之和不超过 $1$，则第 $i$ 类构成参数为 $p\,q_i$ 的伯努利过程，各类在不相交时隙上独立，联合计数服从多项分布。这条是路由器按优先级分流、flow sampling（流采样）、A/B 测试按比例切流量的概率基础；后面 Example 6.7 处理噪声信道上的报文分组传输，用的正是它。
+>
+> 反方向是 merging（合并）：两条独立伯努利过程参数为 $p$ 与 $q$，叠加后每时隙至少有一个到达的概率是 $p+q-pq$，等于一减「两条都没有到达」的概率 $(1-p)(1-q)$。合并结果仍是伯努利过程，因为各时隙独立这条没有被破坏——合并操作只改变单时隙的边缘概率，不触及跨时隙结构。
+>
+> 分裂与合并不是一般意义上的互逆，这个边界要记住。先合并、再按固定概率 $q'$ 随便分裂，回不到原先的两条流；只有在「来源已知、且按与来源比例匹配的概率分流」时才能复原。多路复用系统里把这条搞混，会出现「分流后两路速率之和小于总速率」的静默错误。
+>
+> 期望层面做个守恒核算：$n$ 个时隙里保留数的期望是 $n\,p\,q$，丢弃数期望是 $n\,p(1-q)$，两者之和 $n\,p$ 恰是原流的期望到达数。合并方向的对应核算更弱一些：$E[\text{合并数}]\le np+nq$，等号差的那一项 $npq$ 正是两个流在同一时隙重复到达的期望次数——这也解释了为什么合并概率里要减去 $pq$。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 决定「保留或丢弃」的那句话在源 OCR 中被拆成零词（仅余「choose to」「it (with probability …)」「1−q」等残片），上句按分裂过程的标准表述重排：保留概率 $q$、丢弃概率 $1−q$，二者形成「保留的到达」与「丢弃的到达」两类流。</span>
+
+出于同样的原因（for the same reason），被丢弃的到达也构成一个伯努利过程，其到达概率（with a probability）为 $p(1-q)$。
+
+<span style="color:#7f8c8d;">**[图] Fig. 6.3**</span> <span style="color:#00838f;">**图 6.3　伯努利过程的分裂（Splitting of a Bernoulli Process）**</span>
+
+> <span style="color:#7f8c8d;">图 6.3 展示：一个到达概率为 $p$ 的伯努利过程，其每次到达独立地以概率 $q$ 被保留进「保留」流、以概率 $1-q$ 被丢弃，从而分裂成两个独立的伯努利过程（参数分别为 $pq$ 与 $p(1-q)$）。</span>
+
+我们再考虑一个相反的过程（a reverse procedure）：把两个独立的伯努利过程合并。设其中一个以参数 $p$、（另一个）以参数 $q$ 分别运行（with parameters $p, q$，respectively）。我们如下合并之（combine them as follows）：在合并过程（merged process）中，每个时隙内至少有一个到达的概率为 $p + q - pq$ [即 $1-(1-p)(1-q)$：一减去 $1-p$ 与 $1-q$ 之积，而后者正是任一过程中都没有到达的概率 $(1-p)(1-q)$]。由于合并过程中各不相同的时隙彼此独立，该合并过程是伯努利过程，成功概率（success probability）为 $p + q - pq$。
+
+<span style="color:#7f8c8d;">**[图] Fig. 6.4**</span> <span style="color:#00838f;">**图 6.4　两个伯努利过程的合并（Merging of Two Bernoulli Processes）**</span>
+
+> <span style="color:#7f8c8d;">图 6.4 展示：参数分别为 $p$ 与 $q$ 的两个独立伯努利过程被合并成一个过程，其成功概率 $p+q-pq$ 恰为一减「两个源过程同此时隙均无到达」之概率。</span>
+
+在每一个时刻（at each time），某些工作中心（work center）可能会面对一列到达（be faced with arrivals），从而看到一串成功事件（a stream of successes）……
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页末这几行严重不连贯，仅能辨认出「…stream of successes」「以参数 $n$ 与 $p$（with parameters $n$ and $p$）」「均值（mean）为 $np$」「在本小节中（in this subsection），我们将…」等残句，语义指向「$n$ 个时隙内的到达数服从参数为 $n$、$p$ 的二项分布」这类新小节开头；因无法断定上下文，正文在「一串成功事件（a stream of successes）」之后截断，括号内数值（参数 $n$、$p$ 及均值 $np$）均以源 OCR 可辨认的字符为准。本页到此为止，内容延续到下一页。</span>
+
+<!-- ===== PDF p315 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.1（续）
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）**</span> <span style="color:#7f8c8d;">（原书页码 306；本页续接上一页 §6.1 中关于伯努利过程合并与分裂（merging and splitting of Bernoulli processes）的讨论，并由此向泊松近似（Poisson approximation）过渡；下一页（原书 307）给出二项–泊松近似定理的推导与 Example 6.6 的演示。）</span>
+
+> <span style="color:#7f8c8d;">[重要说明] 本页源页 OCR 严重损坏：页面正文几乎全部碎裂，仅词如「…of …Bernoulli processes…」「mean（均值）」「$E[Z] = \lambda$」、页码「6」等可辨识。按规范，凡无法辨认处一律留作占位并以灰注释标注，绝不臆造数值或补写例句编号。</span>
+
+本页可辨识的开头残片为“……的伯努利过程（…of … Bernoulli processes）……”，其后整段内容因 OCR 碎裂而无法转写，上下文应在承接上一页所述伯努利过程合并与分裂的结果之后，进一步讨论其在极限下的泊松近似。
+
+紧接着出现的可读残片是关于泊松随机变量（Poisson random variable）均值的陈述：若 $Z$ 服从参数为 $\lambda$ 的泊松分布，则其均值（mean）满足
+
+
+```math
+E[Z] = \lambda .
+```
+
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 本页 OCR 只剩 $E[Z]=\lambda$ 一行，推导要自己补。设 $Z$ 服从参数为 $\lambda$ 的 Poisson distribution（泊松分布），则 $E[Z]=\sum_{k\ge0}k\,e^{-\lambda}\lambda^{k}/k!$。$k=0$ 项为零，$k\ge1$ 时从 $k$ 与 $\lambda^{k}$ 里各取一个因子，得 $\lambda e^{-\lambda}\sum_{k\ge1}\lambda^{k-1}/(k-1)!$，指标平移后内层正是 $e^{\lambda}$，于是 $E[Z]=\lambda$。「分子分母相消」这个说法要落到这一步才算说清：消掉的不是 $\lambda$，而是 $k$ 与 $\lambda^{k}$ 各贡献的一个因子。
+>
+> 方差不必硬算 $E[Z^{2}]$，用 factorial moment（阶乘矩）更省。$E[Z(Z-1)]=\lambda^{2}\sum_{k\ge2}\lambda^{k-2}/(k-2)!=\lambda^{2}$，于是 $\mathrm{var}(Z)=E[Z^{2}]-(E Z)^{2}=\lambda^{2}+\lambda-\lambda^{2}=\lambda$。这条技巧对所有幂级数型分布都好用，因为它把「$k^{2}$ 的求和」换成了「指标平移两次」，避免了对发散级数做分部求和。
+>
+> 更一般的陈述是：$E[(Z)_r]=\lambda^{r}$，其中 $(Z)_r=Z(Z-1)\cdots(Z-r+1)$ 是 falling factorial（下降阶乘）。也就是说，泊松分布的全部阶乘矩都等于 $\lambda^{r}$。这条性质是它的 signature（签名），probability generating function（概率母函数）$G(z)=E[z^{Z}]=e^{\lambda(z-1)}$ 的展开系数直接给出这些矩；对 $z$ 求导两次再取 $z=1$，得到的也正是上面两个式子。
+>
+> 均值等于方差不是巧合，而是 equidispersion（等散布）。对照二项分布：均值 $np$，方差 $np(1-p)$，方差严格小于均值，这叫 underdispersion（欠离散）。而当 $p\to0$ 且 $np\to\lambda$ 时，$np(1-p)\to\lambda$，方差追上均值——泊松正是稀有事件处的极限形态。旧注说「$p$ 大时方差远小于均值」，话本身没错，$p=1$ 时方差为 $0$，但重点该放在稀有事件那一头，否则读者会误以为等散布是「$p$ 取中间值」的性质。
+>
+> 等散布可以用数据检验，这是它最实用的地方。样本方差与样本均值之比，即 index of dispersion（离散指数），显著大于 $1$ 就提示 overdispersion（过离散），说明数据比泊松更集中成簇；显著小于 $1$ 则是欠离散，常见于有上限的计数。真实网络流量、请求到达、垃圾回收停顿都呈现过离散，这就是「泊松假设在突发流量下失效」的定量入口，比空泛地说「流量有相关性」有用。
+>
+> 可加性是另一条签名性质：若 $Z_1\sim\mathrm{Poisson}(\lambda_1)$ 与 $Z_2\sim\mathrm{Poisson}(\lambda_2)$ 独立，则 $Z_1+Z_2\sim\mathrm{Poisson}(\lambda_1+\lambda_2)$。连续版的对应命题是「独立泊松过程之和仍是泊松过程」，它是 queueing network（排队网络）分析的基础——把多条输入流叠加，再当作一个参数相加的流来处理，前提就是这条。
+>
+> PMF 的递推是 $p(k+1)=p(k)\cdot\lambda/(k+1)$，从 $p(0)=e^{-\lambda}$ 起步。由此还能读出众数：比值大于 $1$ 当且仅当 $k+1<\lambda$，所以众数是 $\lfloor\lambda\rfloor$，$\lambda$ 取整数值时则 $\lambda-1$ 与 $\lambda$ 并列。数值实现上要小心：大 $\lambda$ 时 $e^{-\lambda}$ 在双精度里先跌到可表示范围的边缘，$\lambda$ 超过约 $745$ 之后直接归零，于是整条 PMF 全部变成 $0$。正确做法是在对数空间累加，即用对数伽马函数算 $\log p(k)$，需要概率时再取指数。
+>
+> 采样有两条路线，按 $\lambda$ 的量级选。乘法法即 Knuth 的经典做法：每次乘一个 uniform random number（均匀随机数），直到乘积小于 $e^{-\lambda}$。设停止时已经抽了 $N$ 个，则 $N-1$ 服从参数为 $\lambda$ 的泊松分布，所以循环次数满足 $E[N]=\lambda+1$，而返回的那个计数 $K=N-1$ 的期望才是 $\lambda$。模拟给出的正是这个量级：$\lambda=1$ 时 $E[N]\approx1.9982$、$\lambda=3$ 时 $\approx4.0021$，都贴着 $\lambda+1$ 而不是 $\lambda$。$\lambda$ 小时这套足够；$\lambda$ 大时应换成 rejection sampling（拒绝采样）或对 normal approximation（正态近似）做修正，否则循环次数会变成瓶颈。一套代码通吃两种量级，往往是性能问题的来源。
+>
+> 与二项分布的关系值得明说：泊松分布是 $\mathrm{Bin}(n,\lambda/n)$ 在 $n\to\infty$ 时的极限，也就是下一条注的定理。因此可以把泊松计数读成「时隙无穷多、每格成功概率无穷小」的极限图像——这正是连续时间泊松过程里 $N(t)\sim\mathrm{Poisson}(\lambda t)$ 的来源，也是它的均值随时间线性增长的原因。理解这一层，后面连续版的推导只是把时隙宽度趋于零。
+>
+> 一条使用纪律：泊松是单参数模型，均值定了方差就定了，没有调节余地。所以正确顺序是先算样本方差与均值、再决定能不能用；反过来做，先假设泊松、再用同一批数据「确认」，会把过离散掩盖在均值的抽样噪声里，这是统计建模里最常见的自欺。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 此处原文应含泊松概率质量函数（Poisson PMF）$p_Z(k)=e^{-\lambda}\lambda^k/k!$ 及“$E[Z]=\lambda$”这一均值得出过程，但源页中相关行（含 `k`、`are`、`1` 等残片及随后若干行）被 OCR 完全吞碎，无法据残片重建整段证明。仅可确认“均值”与“$E[Z]=\lambda$”两处内容。</span>
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 本页自“$E[Z]=\lambda$”之后的其余正文、可能出现的公式推导与小节标题在源 OCR 中仅余孤立的行碎片（如 `1,` 等），无法转写，亦未发现新的 Example 编号或章节标题可资判断其确切边界。全部内容留待对照原书后补足。</span>
+
+> <span style="color:#7f8c8d;">跨页续接：本页为 §6.1 正文的延续（页首无新章节标题），衔接下一 PDF 页（原书 307）的二项–泊松近似定理与 Example 6.6（Gary Kasparov 对战 100 名业余棋手），原书此处不分页、序号连续。</span>
+
+<!-- ===== PDF p316 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.1（续）
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）—— 二项分布的泊松近似（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页 §6.1 关于「泊松分布近似二项分布」的讨论：本页先给出二项概率在 $n\to+\infty$、$p\to\lambda/n$ 下收敛到泊松分布的一般结论，再验证泊松近似的有效性，并以 **Example 6.6**（Kasparov 车轮战）作为经验法则的演示。该例自本页开始，叙述延续到下一页。</span>
+
+对于任意固定的非负整数 $k$，二项概率
+
+```math
+p_S(k) = \frac{n!}{(n-k)!\,k!}\, p^{k} (1-p)^{n-k}
+```
+
+在 $n\to+\infty$、$p\to\lambda/n$ 且保持 $\lambda$ 不变时，收敛到 $p_Z(k)$。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 定理的准确形式是逐点收敛：对每个固定的非负整数 $k$，当 $n\to\infty$ 且 $p=\lambda/n$（$\lambda$ 固定）时，$p_S(k)\to e^{-\lambda}\lambda^{k}/k!$。「$k$ 固定」是定理的一部分，不是技术上的方便——若 $k$ 随 $n$ 一起长，结论会失效，那时要用 local central limit theorem（局部中心极限定理），得到的是带高斯修正的形态。
+>
+> 三个因子各自的极限都有依据。阶乘比等于 $\prod_{j=0}^{k-1}(1-j/n)$，是 $k$ 个因子的乘积，每个趋于 $1$；$(1-\lambda/n)^{n}\to e^{-\lambda}$ 是标准极限；$(1-\lambda/n)^{-k}\to1$ 因为 $\lambda/n\to0$。逐因子取极限再相乘之所以合法，靠的是「有限个收敛数列之积收敛到积」——这正是 $k$ 必须固定的原因：$k$ 固定，因子个数才有限，极限运算才能逐项做。
+>
+> 旧注把这条模板叫三因子拆分法，概括准确，可以再补一层记账。三个因子里只有第二个是真极限，第一与第三都只是趋于 $1$ 的修正项。把误差写成显式：第一项的偏差是 $-\frac{k(k-1)}{2n}+O(n^{-2})$，第三项是 $\frac{k\lambda}{n}+O(n^{-2})$，两者加上 $(1-\lambda/n)^{n}$ 相对 $e^{-\lambda}$ 的 $O(1/n)$ 偏差，合起来就是泊松近似误差的量级 $O(1/n)$。
+>
+> 关键限定：这是逐点收敛，不是一致收敛。想用泊松近似去算总概率（例如「概率之和」或尾概率），需要 total variation（全变差）意义下的界。Le Cam（1960）给出 $\|\mathrm{Bin}(n,p)-\mathrm{Poisson}(np)\|_{TV}=O(np^{2})$，常用的显式形式是 $2np^{2}$，具体常数因文献版本而异。有了它，Example 6.6 的经验法则就有定量根据：$n\ge100$、$p\le0.01$，且 $\lambda=np\le1$ 时 $2np^{2}=2\lambda p\le0.02$；缺了 $\lambda\le1$ 这一条，界就不成立，例如 $n=10^{6}$、$p=0.01$ 会给出 $2np^{2}=200$，比 $1$ 大得多。
+>
+> 这条定理的意义不是「省一次计算」，而是稀有事件的 universality（普适性）：只要 $n$ 大、$p$ 小、$np$ 固定，极限只有一个，与具体的 $n$ 和 $p$ 无关。它和中心极限定理是姐妹：中心极限定理处理「和的涨落」，泊松极限处理「稀有计数的分布」，两条极限分工不同，谁也替代不了谁。
+>
+> 分界可以用尺度说清。$p$ 固定时，$S_n$ 的涨落尺度是 $\sqrt{np(1-p)}$，中心极限定理成立；$p\to0$ 且 $np\to\lambda$ 时，涨落尺度退化为常数 $\sqrt{\lambda}$，中心极限定理给不出信息，泊松极限接管。把 $(\lambda,p)$ 平面画出来，两个区域的分界落在「$\sqrt{np}$ 是否远大于 $1$」这条线上。
+>
+> 最常见的误用是只记住「$n$ 大」，忘了「$p$ 小」。反例：$n=10^{6}$、$p=0.5$ 时 $\lambda=5\times10^{5}$，二项的标准差约 $500$，而泊松的标准差约 $707$，两者的形状都接近正态，但尺度差了四成，泊松近似没有意义。判据是 $np^{2}$ 是否小，而不是 $n$ 是否大——这一点看 Le Cam 的界一目了然。
+>
+> 历史要写准。Poisson 1837 年在《关于刑事案件与民事案件判决概率的研究》（Recherches sur la probabilité des jugements en matière criminelle et en matière civile，Paris: Bachelier）里给出这个分布，处理的是「陪审团误判次数」这类稀有计数，不是为近似二项分布而写。把它与真实数据对上的是 Bortkiewicz 1898 年的小册子《小数目定律》（Das Gesetz der kleinen Zahlen），用的是普鲁士军队骑兵被马踢死的数据——「稀有事件定律」这个名字从那里来，而不是从 Poisson 本人来。
+>
+> 算法分析里的典型用处在 balls and bins：$n$ 个球投进 $n$ 个桶，每桶装载数近似服从参数为 $1$ 的泊松分布，由此得到最大装载为 $\Theta(\log n/\log\log n)$（CLRS 第三版 §5.4 一类的内容，⚠ 版本不同章节号会有偏移）。严格证明多走一步 Poissonization（泊松化）：先把固定的 $n$ 换成泊松随机数，独立性变好、计算变简单，算完再还原回固定 $n$ 的情形。
+>
+> 工程上的用法集中在「稀有事件计数」：单位时间的错误数、垃圾回收停顿次数、缓存击穿次数、样本中的坏点个数。这类量满足「次数多、单次概率小」，正是泊松近似的适用区间；反过来，一旦观测到方差远大于均值，就该换负二项或混合模型，而不是硬套泊松。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式中二项式系数 $\frac{n!}{(n-k)!\,k!}$ 在 OCR 中被拆散成数行，此处按二项分布（binomial distribution）的标准式整理为规范公式，数值一律未改动。</span>
+
+一般来说，只要 $\lambda = np$、$n$ 非常大且 $p$ 非常小，泊松概率质量函数（Poisson PMF）就是二项分布的良好近似。
+
+为验证泊松近似的有效性，令 $p=\lambda/n$，并注意到
 
 ```math
 \begin{aligned}
-r_{ij}(n + l)
-&= P(X_{n+l} = j \mid X_0 = i)\\
-&= \sum_{k=1}^m P(X_n = k \mid X_0 = i)\, P(X_{n+l} = j \mid X_n = k,\, X_0 = i)\\
-&= \sum_{k=1}^m P(X_n = k \mid X_0 = i)\, P(X_{n+l} = j \mid X_n = k)\\
-&= \sum_{k=1}^m r_{ik}(n)\, r_{kj}(l),
+p_S(k)
+&= \frac{n!}{(n-k)!\,k!}\left(\frac{\lambda}{n}\right)^{k}
+   \left(1-\frac{\lambda}{n}\right)^{n-k}\\
+&= \frac{n(n-1)(n-2)\cdots(n-k+1)}{n^{k}} \cdot \frac{\lambda^{k}}{k!}
+   \left(1-\frac{\lambda}{n}\right)^{n}\left(1-\frac{\lambda}{n}\right)^{-k}.
 \end{aligned}
 ```
 
-where in the third equality we used the Markov property.
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上述推导在 OCR 中严重错行（分母 $n^k$、因子 $\lambda^k/k!$ 与 $\left(1-\lambda/n\right)^{-k}$ 等项被拆碎），此处按泊松近似的标准推导合并整理为单一规范公式，数值一律未改动。</span>
 
-(b) Since $X_n$ is Markov, once we condition on $X_{nl}$, the past of the process (the states $X_k$ for $k < nl$) becomes independent of the future (the states $X_k$ for $k > nl$). This implies that given $Y_n$, the past (the states $Y_k$ for $k < n$) is independent of the future (the states $Y_k$ for $k > n$). Thus, $Y_n$ has the Markov property. Because of our assumptions on $X_n$, there is a time $\bar{n}$ such that
+现在把 $k$ 固定下来，并令 $n\to+\infty$。比值 $(n-1)/n,\, (n-2)/n,\, \ldots,\, (n-k+1)/n$ 中每一个都收敛到 $1$。此外，
 
 ```math
-P(X_n = j \mid X_0 = i) > 0,
+\left(1-\frac{\lambda}{n}\right)^{-k} \longrightarrow 1 .
 ```
 
-for every $n \ge \bar{n}$, every state $i$, and every state $j$ in the single recurrent class $R$ of the process $X_n$. This implies that
+> <span style="color:#7f8c8d;">**脚注（footnote）:**</span> 这里用到众所周知的公式 $\lim_{x\to+\infty}\left(1-\tfrac{1}{x}\right)^{x} = e^{-1}$。取 $x = n/\lambda$，便有 $\lim_{n\to+\infty}\left(1-\tfrac{\lambda}{n}\right)^{n/\lambda} = e^{-1}$，并由此得 $\lim_{n\to+\infty}\left(1-\tfrac{\lambda}{n}\right)^{n} = e^{-\lambda}$。
 
-```math
-P(Y_n = j \mid Y_0 = i) > 0,
-```
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 26 的三小问连起来是一条完整的工具链：(a) 证明转移矩阵的半群性质，(b) 证明等间隔抽样之后 Markov property（马尔可夫性质）仍然成立，(c) 证明两条链共享同一个 stationary distribution（平稳分布）。整道题的主题可以压成一句话：Markov 性质对时间轴的等间隔粗粒化是免疫的。
->
-> (a) 只是把 Chapman–Kolmogorov equation（查普曼–柯尔莫哥洛夫方程）写一遍：$r_{ij}(n+\ell)=\sum_k r_{ik}(n)r_{kj}(\ell)$。证明的全部内容是「对中间时刻 $X_n$ 条件化」——总概率定理展开，再用 Markov property（马尔可夫性质）把 $P(X_{n+\ell}=j\mid X_n=k,X_0=i)$ 砍成 $P(X_{n+\ell}=j\mid X_n=k)$。矩阵语言里这就是 $P^{n+\ell}=P^nP^{\ell}$：矩阵乘法那层「对所有中间状态 $k$ 求和」的语义，恰好就是「在 $n$ 时刻把轨道一刀切开、对切点求和」。这条式子由 Chapman 在 1920 年代末研究布朗运动时给出、Kolmogorov 在 1931 年独立得到连续时间版本（具体年份两说，⚠ 需回查）。
->
-> (b) 是真正有内容的一步。设 $Y_n=X_{n\ell}$，要证 $Y$ 仍是 Markov chain（马尔可夫链）。关键在于 $X_{n\ell}$ 是原链的一个「分割点」：给定它之后，$n\ell$ 之前的轨道与之后的轨道条件独立。而 $Y$ 的过去 $\{Y_0,\ldots,Y_{n-1}\}$ 由 $X_0,\ldots,X_{(n-1)\ell}$ 生成，未来 $\{Y_{n+1},\ldots\}$ 由 $X_{(n+1)\ell},\ldots$ 生成，中间那段 $X_{n\ell+1},\ldots,X_{(n+1)\ell-1}$ 只作为「内部路径」被求和掉。于是「给定 $Y_n$ 时过去与未来条件独立」自动成立，$Y$ 的 transition matrix（转移矩阵）就是 $P^{\ell}$。这里有个容易滑过去的点：不是「丢掉一些状态就自动变 Markov」——丢掉中间变量在别的结构里完全可能制造 collider（对撞点）而破坏条件独立；这里能成立，是因为被丢掉的恰好是两个分割点之间的内部点，而分割点被完整保留。
->
-> (b) 里还有一半是验证抽样链仍是单一常返类且非周期。标准事实是：有限、irreducible（不可约）且 aperiodic（非周期）的链存在整数 $N$，使得 $n\ge N$ 时 $r_{ij}(n)>0$ 对一切 $i,j$ 成立——注意这不是「存在某个 $n$ 使某对状态可达」，而是「从某个时刻起全部为正」，后半句才是抽样论证用得到的。抽样后看到的是 $r_{ij}(\ell n)$，只要 $\ell n\ge N$ 就全正，故 $Y$ 不可约；$Y$ 的非周期则由自环 $r_{ii}(\ell)>0$ 保证。
->
-> (c) 最干净的论证是代数：$\pi P=\pi$ 两边逐个左乘 $P$，得 $\pi P^{\ell}=\pi$，而 $P^{\ell}$ 正是 $Y$ 的转移矩阵，所以 $\pi$ 也是 $Y$ 的平稳分布。若要用分析语言说同一件事，就得加上非周期：$r_{ij}(\ell n)\to\pi_j$，与 $Y$ 的 $n$ 步转移概率取极限所得一致。代数说法不需要非周期，分析说法需要——这个差别以后在连续时间链与数值计算里会反复出现。
->
-> 周期的精确结论值得写下来，因为原注在这里含糊过去了。设原链周期为 $d$，抽样间隔为 $\ell$，则 $Y$ 会把常返类按 $\gcd(d,\ell)$ 切成若干子类，每个子类内部的周期是 $d/\gcd(d,\ell)$。两个极端：$d=1$（原链非周期）时 $Y$ 必非周期，这就是 (b) 的题设为什么要写 aperiodic（非周期）；$d=2$ 且 $\ell$ 为偶数时，$Y$ 被切成两个互不往来的子类，每个子类内部反而变成非周期——看上去「抽样治好了周期性」，代价是不可约性丢了。所以抽样间隔不能乱选：它同时改变周期与可约性，后者比前者更致命。
->
-> 反例与边界：如果抽样间隔不是固定的，而是随机的（比如每次掷骰子决定跳几步），抽样序列一般不再是 Markov chain（马尔可夫链）；能保住 Markov 性质的抽样时刻，必须是仅依赖已发生历史的predictable stopping time（可料停时）。这是 optional sampling（可选抽样）的边界，也是「事件驱动」模拟器里最容易被忽略的正确性前提。
->
-> 跨课程连接：信号处理里把「每 $\ell$ 个样本取一个」叫 decimation（抽取），频域上等价于先滤波再降采样，会引入 aliasing（混叠）；Markov chain（马尔可夫链）的 $\ell$ 步抽样是同一动作在概率空间的版本，抽样后的链对应 $P^{\ell}$，而 $P^{\ell}$ 的元素是 $P$ 的 $\ell$ 步路径和——稀疏的 $P$ 可能变得稠密，于是「跳步省时间」在状态数大时会变成「每次转移更贵」。另一个连接是：随机矩阵对乘法封闭（两个行和为一的非负矩阵相乘仍行和为一），它构成 Birkhoff polytope（伯克霍夫多面体）的半群结构，$P^{\ell}$ 不会跑出这个集合，这是「抽样链仍是 Markov chain（马尔可夫链）」的代数根据。
-
-<!-- ===== PDF p404 ===== -->
-
-> <span style="color:#7f8c8d;">§7.3 习题区续页（书页 p395）。本页顶端是上一页（PDF p403）某道**带 \*** 题的解题尾部——含 **(b)** 与 **(c)** 两个小问的收尾（题设「构造过程 $Y_n$，其每个时刻都考虑查看过去 $\ell$ 步」当在上一页）；页首无新题目标题，故按「（续）」续接。随后本页另起 **Problem 27\***，并在其后进入 **§7.4** 小节、另起 **Problem 28**。</span>
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#00838f;">**Problem（上一带 \* 题解答收尾，续）**</span>
-
-> <span style="color:#7f8c8d;">以下为该 \* 题英文解答的 (b)、(c) 两段收尾。习题区带 \* 题的英文 Solution 照规范保留英文。</span>
-
-(b) For every $n \geq 11$, every $i$, and every $j \in R$. Therefore, the process $Y_n$ has a single recurrent class, which is aperiodic.
-
-(c) The $n$-step transition probabilities $r_{ij}(n)$ of the process $X_n$ converge to the steady-state probabilities $\pi_j$. The $n$-step transition probabilities of the process $Y_n$ are of the form $r_{ij}(\ell n)$, and therefore also converge to the same limits $\pi_j$. This establishes that the $\pi_j$ are the steady-state probabilities of the process $Y_n$.
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 27.**</span> \* Given a Markov chain $X_n$ with a single recurrent class which is aperiodic, consider the Markov chain whose state at time $n$ is $(X_{n-1}, X_n)$. Thus, the state in the new chain can be associated with the last transition in the original chain.
-
-(a) Show that the steady-state probabilities of the new chain are
-
-```math
-\pi_{ij} = \pi_i p_{ij},
-```
-
-where the $\pi_i$ are the steady-state probabilities of the original chain.
-
-(b) Generalize part (a) to the case of the Markov chain $(X_{n-k}, X_{n-k+1}, \ldots, X_n)$, whose state can be associated with the last $k$ transitions of the original chain.
-
-<span style="color:#00838f;">**Solution（解答）.**</span>
-
-(a) For every state $(i, j)$ of the new Markov chain, we have
-
-```math
-P\big((X_{n-1}, X_n) = (i, j)\big) = P(X_{n-1} = i)\, P(X_n = j \mid X_{n-1} = i) = P(X_{n-1} = i)\, p_{ij}.
-```
-
-Since the Markov chain $X_n$ has a single recurrent class which is aperiodic, $P(X_{n-1} = i)$ converges to the steady-state probability $\pi_i$, for every $i$. It follows that $P\big((X_{n-1}, X_n) = (i, j)\big)$ converges to $\pi_i p_{ij}$, which is therefore the steady-state probability of $(i, j)$.
-
-(b) Using the multiplication rule, we have
-
-```math
-P\big((X_{n-k}, \ldots, X_n) = (i_0, \ldots, i_k)\big) = P(X_{n-k} = i_0)\, p_{i_0 i_1} \cdots p_{i_{k-1} i_k}.
-```
-
-Therefore, by an argument similar to the one in part (a), the steady-state probability of state $(i_0, \ldots, i_k)$ is equal to $\pi_{i_0} p_{i_0 i_1} \cdots p_{i_{k-1} i_k}$.
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 27 给的是一条可以反复使用的外科手术：把「模型记不住的那部分历史」直接搬进状态里。新链的状态取 $(X_{n-1},X_n)$，稳态概率是 $\pi_{ij}=\pi_ip_{ij}$；推广到长度 $k$ 的窗口 $(X_{n-k},\ldots,X_n)$，稳态概率是 $\pi_{i_0}p_{i_0i_1}\cdots p_{i_{k-1}i_k}$。两问合起来说的是同一件事：稳态落在「转移边」或「路径」上，而不是只落在单个状态上。
->
-> 第一性原理：Markov property（马尔可夫性质）失效，从来不是因为「随机性太强」，而是因为「预测未来所需的过去信息没有被当前状态完全承载」。若过程实际依赖最近 $k$ 步，那么把 $k$ 步窗口整体当作状态，新链的转移就变成确定性的平移：$(i_0,\ldots,i_k)\mapsto(i_1,\ldots,i_k,j)$，概率 $p_{i_kj}$。于是「未来」只通过这个窗口依赖过去，性质自动恢复。这就是 state augmentation（状态增广）的标准动作——凡是有记忆的项，全部搬进状态，让状态自己承载记忆。
->
-> (a) 的证明甚至不需要解平衡方程，只需乘法规则加收敛：$P((X_{n-1},X_n)=(i,j))=P(X_{n-1}=i)P(X_n=j\mid X_{n-1}=i)=P(X_{n-1}=i)p_{ij}$，而原链不可约非周期保证 $P(X_{n-1}=i)\to\pi_i$，所以联合概率收敛到 $\pi_ip_{ij}$。这里没有任何「解方程」的步骤，全部内容就是「联合分布的极限等于边际极限乘条件概率」。把 $\pi_{ij}$ 对 $j$ 求和回到 $\pi_i$，说明它确实是二维状态空间上的概率分布，归一化自动成立。
->
-> (b) 把同一句话沿路径重复 $k$ 次：$P((X_{n-k},\ldots,X_n)=(i_0,\ldots,i_k))=P(X_{n-k}=i_0)p_{i_0i_1}\cdots p_{i_{k-1}i_k}$，取极限即得。这个乘积有一个非常有用的读法：它是以 $\pi$ 为初始分布、按 $P$ 走 $\ell$ 步所得「轨道」的联合分布，即路径空间上的 Markov measure（马尔可夫测度）。换句话说，增广链的平稳分布不是新算出来的东西，而是原链在「长度为 $k+1$ 的轨道」上的稳态统计。把稳态从点搬到路径，是很多后续构造（隐马尔可夫模型、排队网络、MCMC 的路径空间方法）的通用起点。
->
-> 代价必须说准。状态数从 $m$ 涨到 $m^{k+1}$（假定所有转移为正），但要分清两种增长：固定 $m$、让记忆长度 $k$ 增大，是指数级 $m^k$；固定 $k$、让状态数 $m$ 增大，是多项式级 $m^{k+1}$。原注写成「指数/多项式」把两种情形混在一起，实际上前者才是「增广不可行」的根源——凡是需要长时间记忆的问题，显式枚举必然爆炸。这就是 state explosion（状态爆炸）。
->
-> 工程上的修正更重要：状态空间是数学对象，不是存储需求。在线运行时不需要真的 materialize（物化）出 $m^{k+1}$ 个状态，只需一个长度为 $k$ 的 ring buffer（环形缓冲）维护窗口，内存是 $O(k)$，每次更新的代价是 $O(1)$。只有当算法必须「在状态空间上做动态规划」时——例如求吸收概率、做值迭代——指数代价才真实存在，因为那时你确实要遍历每一个窗口。把这两件事分开，是判断「增广能不能用」的唯一标准：作为表示，它几乎总是免费的；作为枚举，它几乎总是付不起的。
->
-> 跨课程连接（体系结构与自动机）：识别「最近 $k$ 个符号」的 DFA 在最坏情形下需要 $m^k$ 个状态，这正是 $k$-gram 展开，与这里的 $m^{k+1}$ 只差一个符号。CSAPP 里的分支预测器就是这套结构的硬件版：用 branch history register（分支历史寄存器）把最近若干次分支结果拼成一个索引，去查预测表——索引本身就是「被物化的历史」，表的大小随历史位数指数增长，于是真实处理器只敢用很短的全局历史或做哈希压缩。理论与工程的同一条约束在这里重合：记忆长度每加一位，状态数翻倍。
->
-> 另外两个同构：动力系统里的时间延迟嵌入（Takens 定理）用延迟坐标把一条标量观测序列重建成与原系统同构的相空间，靠的正是「窗口里已经含有足够的历史」；强化学习里 Atari 上的 DQN 把连续四帧叠成一个观测，理由完全相同——单帧不含速度信息，四帧窗口才让 MDP 假设成立。
->
-> 反例与易错点：其一，增广链的不可约性继承自原链——若原链不可约非周期，则任意长度的窗口都能从任意窗口到达，增广链也不可约；若原链可约，增广链按窗口首分量分块，同样是可约的，不会因为「装进了更多历史」而凭空连通。其二，窗口内元素的顺序不能随意调换：$(X_{n-1},X_n)$ 的稳态是 $\pi_ip_{ij}$，而 $(X_n,X_{n-1})$ 的稳态是 $\pi_jp_{ji}$，两者只有在 detailed balance（细致平衡）成立时才相等；本题不假设可逆，把下标顺序写反是最常见的静默错误。
-
----
-
-<span style="color:#c0392b;">**§7.4　吸收概率与吸收期望时间（Absorption Probabilities and Expected Time to Absorption）**</span>
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 28.**</span> There are $m$ classes offered by a particular department, and each year, the students rank each class from $1$ to $m$, in order of difficulty, with rank $m$ being the highest. Unfortunately, the ranking is completely arbitrary. In fact, any given class is equally likely to receive any given rank on a given year (two classes may not receive the same rank). A certain professor chooses to remember only the highest ranking his class has ever gotten.
-
-(a) Find the transition probabilities of the Markov chain that models the ranking that the professor remembers.
-
-(b) Find the recurrent and the transient states.
-
-(c) Find the expected number of years for the professor to achieve the highest ranking given that in the first year he achieved the $i$th ranking.
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这道题的全部难点不在计算，而在读题时的方向感：题面写的是 rank $m$ 最高（with rank $m$ being the highest），也就是数字越大、名次越好，而教授记住的是 his class has ever gotten 的最高名次。于是状态取历史最大值，最优处在 $m$ 这一端，链从低处往高处单调爬升。先把这一点钉死，后面每一问才有意义。
->
-> 必须纠正原注的一处实质错误：原注写「一旦触及 $1$（绝对最好）便永远停在 $1$，$1$ 就是一个吸收态」。这与题面相反——题面的最优排名是 $m$，不是 $1$；吸收态是 $m$，单调方向是向上。若按「$1$ 最优」建模，(b) 问的 transient（暂态）与 recurrent（常返）结论会整体反过来，得到一个自洽但与本题无关的链。这类「把排名数字的大小当成名次优劣」的符号错误在本章很常见，代价是整道题白做，所以值得在页边记一笔。
->
-> (a) 的转移概率。设当前记得的最好名次为 $i$，下一年学生的排名 $R$ 在 $1,\ldots,m$ 上均匀，且与历史独立（any given class is equally likely to receive any given rank）。若 $R>i$，状态跳到 $R$，对每个 $j>i$ 的概率都是 $1/m$；若 $R\le i$，什么都不更新，状态保持 $i$，总概率 $i/m$。所以 $P(i\to j)=1/m$ 当 $j>i$，$P(i\to i)=i/m$，其余为零。这个转移矩阵是上三角的：所有质量都在对角线及其上方，这就是「单调」在矩阵上的样子。
->
-> (b) 由单调性直接读出结构：$m$ 是吸收态（$P(m\to m)=1$），其余 $m-1$ 个状态全是 transient（暂态）。每个暂态每步都有 $(m-i)/m>0$ 的概率严格上升，而状态数有限，故落到 $m$ 的时间几乎必然有限，$m$ 是唯一的 recurrent class（常返类）。这一步不需要解方程，只需要「有限个正概率台阶」这个论证。
->
-> (c) 的关键洞察是绕开整个链：状态 $m$ 只有在某一年恰好抽到排名 $m$ 时才能到达，而到达之后就永远停住。所以吸收时间就是首次抽到 $m$ 的等待时间，与起始名次 $i$ 无关：只要 $i<m$，$T=\min\{n:R_n=m\}$，而 $R_n$ 独立同分布、每次命中概率 $1/m$，故 $T$ 服从参数 $1/m$ 的 geometric distribution（几何分布，按「首次成功」计数），期望为 $m$。用 first-step analysis（首步分析）验证一遍：$E_i=1+(i/m)E_i+(1/m)\sum_{j>i}E_j$，解得 $E_i=m$ 对一切 $i<m$；两个途径给出同一个数，说明结论不是巧合。顺带还能写出整条分布：因为 $X_n\le i$ 等价于前 $n$ 年的排名全部不超过 $i$，所以对 $i\ge i_0$ 有 $P(X_n=i)=(i/m)^n-((i-1)/m)^n$——整条链的分布都有闭式，根本不必迭代。
->
-> 命名与出处：这是 record process（记录过程）的一个变体。Rényi 在 1962 年的《Théorie des éléments saillants d'une suite d'observations》（Ann. Sci. Univ. Clermont-Ferrand 第 8 卷第 2 期，7–13 页）系统研究了 iid 序列的记录值：对连续分布，第 $n$ 个观测成为新记录的概率恰好是 $1/n$，而且各记录指示变量相互独立（这一条常称 Dwass–Rényi 引理）。本题问的不是记录次数，而是「记录值何时达到上界」，属同一族的极值等待问题；区别在于上界只有一个点，所以等待时间是几何的，而不是记录计数那种调和级数型增长。
->
-> 边界与反例：若排名分布不均匀（课程难度彼此相关、某些名次更难拿到），转移概率就不再是各 $1/m$，链仍单调但期望不再是 $m$，闭式也失去；若允许并列（两门课可同名次），「最高」不唯一，(b) 的吸收结构可能变成一族吸收态而不是单点；若教授只记最近一年的排名，链退化成 iid 序列，没有吸收结构，(c) 问的无吸收期望无从谈起。$m=1$ 时是平凡情形：已在最优，期望年数为零。
->
-> 跨课程连接：与 CLRS 里「一次线性扫描维护 running maximum（运行最大值）」同构——每次都拿新值与当前最大值比较，只有更大才更新；差别在于这里的「更新」是随机的，而且我们关心的不是最大值本身，而是它追上理论上界要多久。与 coupon collector（优惠券收集）对照更清楚：集齐全部 $m$ 张的期望是 $mH_m$（约 $m\log m$），而本题只要命中特定的一张，期望就是 $m$——目标从「一整个集合」缩小成「一个点」，代价从 $m\log m$ 掉到 $m$，两者相差的正好是那个调和级数。
-
-<!-- ===== PDF p405 ===== -->
-
-<span style="color:#7f8c8d;">§7.4 / §7.5　第 7 章习题区（Problems）续页。本页含两题：顶部一段为 **Problem 29** 的题干（任给一组转移概率确定的马尔可夫链与稳态概率 $\pi_1,\pi_2,\pi_3,\pi_4$，问若干次转移后回到状态 1 的概率、期望与方差、(a)(b)(c) 各问）；随后以「Problem … for Problem 30」交叉引用承接，转入 **Problem 30**（关于暂态（transient）/常返（recurrent）状态、常返类（recurrent classes）与稳态概率、基于图 7.25（Figure 7.25）给出的马尔可夫链，(a)(b)(c) 各问，其 (d)(e) 在下一页）。本页两题的编号标签在源 OCR/合并过程中缺失，现按第 7 章习题区连续编号（28→29→30）复原为 Problem 29 与 Problem 30，题面本身未变。本题区按规范要求，习题题干与带 `*` 题的英文 Solution 一律保留英文原文。</span>
-
----
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 本题三小问其实是同一个量的三种时间尺度：$n=6$ 的有限步分布、返回状态的等待时间、$n=1000$ 的极限分布。题目给出的 $\pi_1=1/6$ 在这里起了两次作用——一次作为 $n$ 很大时的目标值，一次作为平均返回时间的倒数。这两个角色重合不是巧合，而是 Kac 引理的内容。
->
-> 先说 (a) 与 (c)。(a) 要 $r_{11}(6)$，做法只有两条：把 6 步路径按全概率定理展开（等价于算 $P^6$ 的那个元素），或者对 $P$ 做特征分解后取幂。(c) 要 $n=1000$ 的分布，看上去是更重的计算，实际上更轻：只要链 irreducible（不可约）且 aperiodic（非周期），$r_{i1}(n)\to\pi_1$，$1000$ 步早已进入收敛区。这里的「approximately」不是含糊其辞，指的是收敛速率：误差大致按第二大特征值的模 $|\lambda_2|^n$ 衰减。若 $|\lambda_2|<1$，$|\lambda_2|^{1000}$ 小到可以忽略；但若链是周期的（$|\lambda_2|=1$），它根本不收敛——所以 (c) 的成立完全依赖题设的非周期条件。
->
-> (b) 的期望是 Kac 引理：Mark Kac 在 1947 年的论文《On the notion of recurrence in discrete stochastic processes》里证明，对不可约有限链，从状态 $i$ 出发首次返回 $i$ 的期望恰为 $1/\pi_i$。所以这里 $E[T]=6$。这个结论有一个不需要公式的读法：长程看，链有 $\pi_1$ 比例的时间待在状态 1；把时间轴按「每次回到 1」切成长度不等的块，块的出现频率是每 $1/E[T]$ 步一次，而「待在 1 的时间比例」等于「每块贡献一步除以块长」，于是 $\pi_1=1/E[T]$，即 $E[T]=1/\pi_1$。这就是 renewal reward（更新报酬）论证，它同时解释了为什么答案必须是 $\pi_1$ 的倒数，而不是别的什么周期数。
->
-> 方差是另一回事，而且这里藏着一个重要教训：只看 $\pi$ 无法确定方差。方差的背后是返回时间的二阶矩，二阶矩依赖整条链的结构（等价地，依赖 $P$ 的 fundamental matrix（基本矩阵），或 $(I-P)$ 的群逆），不是单个稳态概率能编码的。可以构造两个反例把这一点钉死：链甲是 $1\leftrightarrow2$ 的确定性往返，$\pi_1=1/2$，返回时间恒为 $2$，方差为零；链乙是 $1\to1$ 概率 $1/2$、$1\to2\to3\to1$ 概率 $1/2$，同样 $\pi_1=1/2$，返回时间取 $1$ 或 $3$ 各半，均值仍是 $2$，方差却是 $1$。两条链的稳态分布完全一样，返回时间的波动却从零跳到一。这正是 (b) 问为什么要同时问期望与方差的理由：稳态是一阶信息，风险是二阶信息。
->
-> 命名上要分清两个常被混用的词。mean recurrence time（平均返回时间）指从 $i$ 出发、首次回到 $i$ 的期望步数，Kac 引理管的就是它；first passage time（首达时间）指从 $i$ 首次到达另一个状态 $j$ 的时间，$j$ 可以等于 $i$，但一旦跨状态，期望就没有 $1/\pi$ 这种漂亮形式，只能解 $(I-P_{TT})^{-1}$ 那套线性方程组。把「返回自身的倒数关系」错误地推广到「任意两状态之间的距离」，是最常见的误用。
->
-> 跨课程连接：与 §7.4 的吸收概率、吸收期望时间是同一套机器——把状态 1 看成吸收目标，返回时间就是吸收时间，只不过目标恰好是出发点。与实分析的遍历定理相接：Birkhoff 遍历定理说时间平均收敛到空间平均，Kac 引理是它在「返回时间」这个具体可观测量上的定量版本；测度论形式写出来是 $\int_A\tau\,d\mu\le1$，归一化之后就是 $1/\mu(A)$。与排队论的 Little's law（利特尔法则）也是同一句话的两种说法：平均在系统里的个数等于到达率乘以平均停留时间，把到达率换成「每块一次」、停留时间换成块长，就回到 $\pi=1/E[T]$。
->
-> 边界与陷阱。第一，Kac 引理给的是 positive recurrent（正常返）情形；在无限状态、零常返的链上 $1/\pi_i$ 可能是无穷，等式退化。第二，$E[T]=1/\pi_1$ 计数的是「从 1 出发、包含下一步」的首次返回；若改问「从稳态下的随机时刻出发、等到下一次进入 1」，期望依赖二阶矩，不等于 $1/\pi_1$，甚至可能更大（等待时间的分布是长度偏置的）。原注把这两个问题混在一起，会让数值差一步乃至差很多。第三，(a)(c) 里「第 6 次」「第 1000 次」是转移次数而不是年份，与上一题的时间轴没有任何关系。
->
-> 最后做一个数值自检：既然 $\pi_1=1/6$，那么 (a) 的 $n=6$ 只是一个中间时刻，答案一般不等于 $1/6$；而 (c) 的 $n=1000$ 应当非常接近 $1/6$。同时 (b) 的 $E[T]=6$ 与 $\pi_1$ 的分母相同——看到「稳态概率」和「平均返回时间」出现在同一道题里，第一反应就该是把它们相乘验一下是否为 $1$，这是检测计算错误最快的一招。
-
-> <span style="color:#7f8c8d;">[编号复原说明] Problem 29 的编号标签在本页源 OCR 中缺失（此前被误作「Solution（续）」）。以下内容为一道独立 Problem 的题干（任给马尔可夫链与稳态概率、以若干次转移后的状态概率及返回时间期望方差设问），其后接 Problem 30，再于下一页给出 (d)(e) 小问（即合并稿 p406 的 Problem 30（续））。故此处按 28→29→30 连续编号复原为 Problem 29。</span>
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 29.**</span>
-
-Transition probabilities are specified. Consider the Markov chain with steady-state probabilities
-
-```math
-\pi_1 = \frac{1}{6}, \qquad \pi_2 = \frac{9}{?}, \qquad \pi_3 = \frac{1}{6}, \qquad \pi_4 = \;?,
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 此页顶部四个稳态概率（$\pi_1,\pi_2,\pi_3,\pi_4$）的精确数值在 OCR 中被拆成碎片（如 `π₁ = …6`、`π₂ == 9 / …29`、`π₃ = …,6`、`π₄ == 1 0` 等字面），仅 $\pi_1$ 的 `1/6`、$\pi_3$ 的 `1/6` 相对可辨；$\pi_2$、$\pi_4$ 的分母/大小未能完整辨认。上式为按可辨字面所做的占位，未臆造确切数值，请以原书为准反查补全。</span>
-
-The steady-state probabilities sum to $1$.
-
-Assume that the process is in state 1 just before the first transition.
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 紧接着的若干叙述句（"…with…"、"…p robabi l i t ies are …spec i fie d" 及其与马尔可夫链的衔接措辞）在 OCR 中残碎到只剩零散单词，无法逐字复原；上句按 "in state 1 just before the first transition" 这一可辨核心句重排。</span>
-
-**(a)** … what is the probability that the process will be in state 1 at the sixth transition?
-
-**(b)** Determine the expected value and variance of the number of transitions up to the next time the process returns to state 1.
-
-**(c)** What is (approximately) the probability that the state … [after] 1000 …
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本块中段数条语句 OCR 严重碎裂（如 "…process w i l l …that …is …tr a n s i t i on ?…sixth…in state 1"、"…n e xt…process ret urns to state 1."、"…1 000 is…"），上文按可辨片段做了忠实拼接，(a)(c) 两问中标示 `…` 处为无法复原的残缺字面。</span>
-
----
-
-> <span style="color:#7f8c8d;">[编号复原说明] 以下为 **Problem 30** 的题干（页内交叉引用「Problem … for Problem 30」即指向本题），编号标签在本页源 OCR 中缺失，现按 28→29→30 连续编号复原；题干主体为关于暂态/常返状态、常返类、稳态概率存在性，并基于图 7.25（Figure 7.25）设问，其 (d)(e) 续于下一页（合并稿 p406 的 Problem 30（续））。</span>
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 30.**</span>
-
-Problem … for Problem 30.
-
-… transient and recurrent states. Also, determine the recurrent classes … ones, if …
-
-**(b)** Do there exist steady-state probabilities given … are …
-
-**(c)** … I DO Ⅰ ?
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本段为交叉引用与后续一问的条件性内容，OCR 几乎只余零散单词与文内数学占位（如 "…I DO Ⅰ ?" 片段对应某数学式子），难以逐字复原；此处不再臆造题干措辞，仅保留可辨字面。</span>
-
-Consider the Markov chains specified in Fig. 7.25.
-
-<span style="color:#7f8c8d;">**[figure] Figure 7.25**（某马尔可夫链的转移概率示意图，fig caption 处 OCR 仅余 "7.25 : Transition …" 字样）</span>
-
-**(a)** … the system resulting …
-
-… exist steady-state probabilities … are …
-
-… the process starts … state 1?
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页末尾关于图 7.25（Figure 7.25）所示马尔可夫链的 (a)(b)(c) 各问，OCR 严重碎裂（"…the system resulting…"、"…exist steady-state probabilities…"、"…the process starts … state I ?" 等），仅能辨认出零散短语；各问完整措辞此处不臆造，请以原书为准。</span>
-
-> <span style="color:#7f8c8d;">衔接下一面：本页处于第 7 章习题区（Problems 23–39）的中部，随后的习题承接 §7.4 吸收概率（absorption probabilities）与 §7.5 连续时间马尔可夫链（continuous-time Markov chains）相关题目。</span>
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 30 的 (d)(e) 把本章两条主线并排放置：(d) 站在 steady state（稳态）上观察，问随机时刻看到的转移长什么样；(e) 从 transient（暂态）出发，问最终落到哪个 recurrent class（常返类）、要等多久。前者是长期平均，后者是首次到达。
->
-> (d) 的题面藏着一个刻意的陷阱：Assume that the process starts in state $1$ but we begin observing it after it reaches steady-state。前半句是无关信息——经过足够长时间再开始观察，起点分布已被抹平，观察时刻的状态服从 $\pi$。把起点当成固定状态 $1$ 去算，会得到一串看似合理但全错的数字；这正是题干把两句话并置的用意。
->
-> (d)(i) 求「第一次观测到的转移使状态加一」的概率。起点是稳态，于是这只可能来自某条 $i\to i+1$ 的边，按 $\pi$ 加权求和：$\sum_i\pi_iP_{i,i+1}$。它就是所有向上边的稳态流量之和，量纲是「每次转移的概率」，不是速率。
->
-> (d)(ii) 是标准的 Bayes（贝叶斯）反推：分子是「起点为 $2$ 且发生 $2\to3$」的概率 $\pi_2P_{23}$，分母就是 (i) 那个总量（图 7.25 的具体数值在本页 OCR 中已损坏，⚠ 需回查原书）。这一步的教学价值在于说明：稳态条件下做条件化，等价于在 $\pi$ 上加权，先验乘似然再归一化，与有限维离散 Bayes 公式逐字对应。
->
-> (d)(iii) 换的是条件事件的粒度：「第一次观测到的 state change（状态变化）」意味着跳过自环。把每个 $P_{ii}$ 抹掉、剩余质量重新归一化，得到 jump chain（跳跃链），于是所求概率是 $\sum_i\pi_iP_{i,i+1}/\sum_i\pi_i(1-P_{ii})$：分子不变，分母从 $1$ 变成「发生变化的概率」。两个细节：自环越多，(i) 的答案越小而 (iii) 基本不变，因为除以变化率正好抵消；若链中有吸收态（$P_{ii}=1$），它永不变化，必须从分母剔除，否则会把概率抬高。
->
-> (e) 从状态 $4$ 出发，两问问的是 absorption probability（吸收概率）与 expected time to absorption（吸收期望时间）。设暂态集合为 $T$，则 $a_i=\sum_jP_{ij}a_j$ 在常返类上取 $0/1$ 边界值，$t_i=1+\sum_{j\in T}P_{ij}t_j$ 在常返类上取零。两者共用同一个矩阵 $I-P_{TT}$，只有右端项不同：一个是目标类的指示向量，一个是全一向量。所以工程上做一次 LU 分解就能回答任意多个目标类，每换一个类只换右端项——这是马尔可夫链分析的标准做法。
->
-> 这个矩阵还有漂亮解读：$N=(I-P_{TT})^{-1}$ 是 fundamental matrix（基本矩阵），元素 $n_{ij}$ 等于从 $i$ 出发、在吸收前访问 $j$ 的期望次数（含 $0$ 时刻）。于是 $t=N\mathbf{1}$ 是「把所有状态的期望访问次数加起来」，$a=Nb$ 是「按到达边界的概率加权」。把线性代数读成计数，往往能立刻看出答案的量级。
->
-> 唯一性从哪里来？有限链里每个暂态每步都有正概率向常返类靠近，故必以概率一逃出；此时 $I-P_{TT}$ 是 M-matrix（M 矩阵），谱半径小于一，$N$ 的元素全为非负有限数。这正是后一题（Problem 31）要严格证明的东西。还有一个措辞要抠：题目写 up to and including the transition at which we reach a recurrent state，即「包含进入那一步」，原注写成「进入常返态前的期望步数」漏掉 including，会整体差一步。
->
-> 跨课程连接：$a_i=\sum_jP_{ij}a_j$ 是离散的 harmonic function（调和函数）方程，边界值取 $0/1$。它与实分析的 mean value property（中值性质）是同一句话——函数在一点的值等于邻域平均；也是 Strang 18.06 里解 $Ax=b$ 的差分方程结构，连续版本就是 Dirichlet problem（狄利克雷问题）：给定边界温度求内部温度，而 $a_i$ 正是「从 $i$ 出发最终撞到哪段边界的概率」。同一个方程在偏微分方程、随机游走、电阻网络三处出现，这是本章最值得带走的一条连接。
->
-> 反例与边界：若状态空间无限，暂态可能存在正概率永不落入任何常返类，此时 $I-P_{TT}$ 不可逆、$N$ 的元素发散，吸收概率仍然存在但不再是有限线性方程组的解——有限链排除了这种情况。另一个反例：常返类哪怕周期，$a_i$ 也照常存在（它只问最终去处，不问何时），但极限分布不收敛；「吸收」与「收敛」是两件事，不要因为都涉及极限就混为一谈。
-
-<!-- ===== PDF p406 ===== -->
-
-> <span style="color:#7f8c8d;">本页为第 7 章（Markov Chains，马尔可夫链）§7.4　Absorption Probabilities and Expected Time to Absorption（吸收概率与吸收期望时间）习题区续页，书页 397。页首为上一页 Problem 30 的（d）、（e）两部分的延续（题干起于上一页，故标注「续」），随后另起 Problem 31（带 `*` 难度标记）及其英文 Solution。本节习题题干与解答均保持英文原题。</span>
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 30（续）——（吸收概率 / 吸收期望时间）**</span>
-
-**(d)** Assume that the process starts in state 1 but we begin observing it after it reaches steady-state.
-
-(i) Find the probability that the state increases by one during the first transition we observe.
-
-(ii) Find the conditional probability that the process was in state 2 when we started observing it, given that the state increased by one during the first transition that we observed.
-
-(iii) Find the probability that the state increased by one during the first change of state that we observed.
-
-**(e)** Assume that the process starts in state 4.
-
-(i) For each recurrent class, determine the probability that we eventually reach that class.
-
-(ii) What is the expected number of transitions up to and including the transition at which we reach a recurrent state for the first time?
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#c0392b;">**Problem 31.** \* Absorption probabilities.（吸收概率）</span>
-
-Consider a Markov chain where each state is either transient or absorbing. Fix an absorbing state $s$. Show that the probabilities $a_i$ of eventually reaching $s$ starting from a state $i$ are the unique solution to the equations
-
-```math
-a_s = 1,
-```
-
-for all absorbing $i \neq s$,
-
-```math
-a_i = 0,
-```
-
-```math
-a_i = \sum_{j=1}^{m} P_{ij}\, a_j, \qquad \text{for all transient } i.
-```
-
-**Hint.** If there are two solutions, find a system of equations that is satisfied by their difference, and look for its solutions.
-
-<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.** The fact that the $a_i$ satisfy these equations was established in the text, using the total probability theorem (全概率定理). To show uniqueness, let $\bar{a}_i$ be another solution, and let $\delta_i = a_i - \bar{a}_i$. Denoting by $A$ the set of absorbing states and using the fact that $\delta_j = 0$ for all $j \in A$, we have
-
-```math
-\delta_i = \sum_{j=1}^{m} P_{ij}\, \delta_j = \sum_{j \notin A} P_{ij}\, \delta_j, \qquad \text{for all transient } i .
-```
-
-Applying this relation $m$ successive times, we obtain
-
-```math
-\delta_i = \sum_{j_1 \notin A} \sum_{j_2 \notin A} \cdots \sum_{j_m \notin A}
-P_{i j_1}\, P_{j_1 j_2}\, \cdots \, P_{j_{m-1} j_m}\, \delta_{j_m} .
-```
-
-Hence
-
-```math
-\delta_i \;=\; P\bigl(X_1 \notin A,\, \ldots,\, X_m \notin A \mid X_0 = i\bigr)\, \bigl|\delta_{j_m}\bigr|
-\;\le\; P\bigl(X_1 \notin A,\, \ldots,\, X_m \notin A \mid X_0 = i\bigr)\,
-\max_{j \notin A}\, \bigl|\delta_j\bigr| .
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页 Problem 31 的 Solution 符号在 OCR 中严重碎片化：$\delta$（delta）被读成 `t5`，$\notin$（不属于）被读成 `` / `rJ`，绝对值 $|\cdot|$ 被读成 `l ... I`，求和 $\sum$ 被读成 `L`，下标 $j_1, j_2, \ldots, j_m$ 与乘积 $P_{i j_1} P_{j_1 j_2} \cdots P_{j_{m-1} j_m}$ 被打散。上文按标准数学记号与「相继应用该关系 $m$ 次」及反证法的规范论证还原，未臆造任何数值。</span>
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 先把这道题的代数骨架摆平。记 $A$ 为 absorbing states（吸收态）的集合，其余为 transient states（暂态）集合，$a_i$ 为从 $i$ 出发最终被 $A$ 吸收的概率，则对每个暂态 $i$ 有 $a_i=\sum_{j\notin A}P_{ij}a_j$，而 $a_j=1$ 当 $j\in A$。把状态按 $T$、$A$ 分块写成矩阵式，就是 $a_T=P_{TT}a_T+P_{TA}\mathbf 1$，即 $(I-P_{TT})a_T=P_{TA}\mathbf 1$。于是「吸收概率由方程唯一确定」这件事，被翻译成一句纯线性代数的话：$I-P_{TT}$ 是 invertible（可逆）的。
->
-> 为什么可逆？第一性原理落在 $P_{TT}$ 的幂上。$P_{TT}^{k}$ 的第 $(i,j)$ 元，就是「从 $i$ 出发、前 $k$ 步一直没有离开 $T$、且第 $k$ 步恰在 $j$」的概率，所以 $P_{TT}^{k}\mathbf 1$ 的第 $i$ 个分量正是 $P(X_1\notin A,\ldots,X_k\notin A\mid X_0=i)$。若能找到统一的 $m$ 与 $\beta<1$，使对每个暂态起点这个概率都不超过 $\beta$，就有 $\lVert P_{TT}^{m}\mathbf 1\rVert_\infty\le\beta$，连乘 $k$ 次得 $\lVert P_{TT}^{mk}\mathbf 1\rVert_\infty\le\beta^{k}\to0$，即 $P_{TT}^{mk}\to0$，spectral radius（谱半径）$\rho(P_{TT})<1$，Neumann series（诺伊曼级数）$\sum_{k\ge0}P_{TT}^{k}=(I-P_{TT})^{-1}$ 收敛。唯一性就是这条几何级数的另一种说法。
->
-> 这里有个必须点明的技术细节：$\beta$ 依赖起点。原注把 $\beta$ 写成一个数，隐含地把 $i$ 上的最大值取掉了；正确写法是 $\beta=\max_{i\notin A}P(X_1\notin A,\ldots,X_m\notin A\mid X_0=i)$。不取这个最大值，只能得到 $\delta_i\le\beta_i\max_j|\delta_j|$，而 $\beta_i$ 各不相同，无法凑出 $\max|\delta|\le\beta\max|\delta|$ 这种能把公因子提出来的闭合不等式。取 $\max$ 这一步不是修辞，是证明的承重墙。
->
-> 再说 contraction（收缩）这个名字的严格含义。Banach fixed point theorem（巴拿赫不动点定理）要求的是：完备 metric space（度量空间）上的映射 $F$ 存在 $0\le\beta<1$，使 $d(Fa,Fb)\le\beta\,d(a,b)$。本题的 $F(a)=P_{TT}a+P_{TA}\mathbf 1$ 在 sup-norm（上确界范数）下的 Lipschitz 常数是 $\lVert P_{TT}\rVert_\infty=\max_i\sum_jP_{ij}\le1$，单步并不收缩，只有 $\le1$。真正收缩的是它的 $m$ 次复合，其常数 $\le\beta<1$。所以课本证明的准确内容是「$F^{m}$ 是 contraction（收缩），故 $F^{m}$ 有唯一不动点」；而不动点集在 $F$ 与 $F^m$ 之间是同一个，结论照旧成立。这个层级差别是把「收缩」从比喻变成定理的唯一缝隙，也是这道题值得重读一遍的理由：一旦有人把单步范数当成 $<1$ 来用，证明立刻失效。
->
-> 两处要更正原注。第一处：$(I-P)^{-1}$ 这个写法不成立。若 $P$ 取整条链的 transition matrix（转移矩阵），每个吸收态对应的行都是单位行，$I-P$ 相应整行为零，determinant（行列式）为零，根本不可逆；可逆的只有暂态子矩阵 $Q=P_{TT}$，$N=(I-Q)^{-1}$ 才叫 fundamental matrix（基本矩阵）。$N_{ij}$ 是从 $i$ 出发、在被吸收之前访问 $j$ 的 expected number of visits（期望访问次数），$N\mathbf 1$ 才是期望吸收时间；原注把「基本矩阵」与「期望逗留时间」压成一句，且点错了矩阵。
->
-> 第二处更要紧：原注说「若暂态子链不是必被吸收……唯一性便崩坏，暂态等价于必被吸收是整套论证的地基」，这句话在 finite state（有限状态）下是反的。有限链里「暂态必被吸收」是定理，不是前提：若从某暂态出发有正概率永不进 $A$，这份概率质量只能永远留在有限的 $T$ 内，于是 $T$ 中存在 closed（封闭）子集，它本身是常返类，与「这些状态是暂态」直接矛盾。所以 $\beta<1$ 自动成立，无需额外假设。真正会崩的是 state space（状态空间）可数无限的情形：此时可能出现null recurrent（零常返）结构，$\rho(P_{TT})=1$，方程的有界解不再唯一。整数上的对称随机游走就是例子，$a_i=\frac12(a_{i-1}+a_{i+1})$ 的有界解只能是常数，任何一侧边界都定不出唯一答案。把「有限」这一条挪走，塌的才是地基。
->
-> 跨课程的一句话：$I-P_{TT}$ 是 random-walk Laplacian（随机游走拉普拉斯）的化身，$a_T$ 是离散 Dirichlet problem（狄利克雷问题）的解，「解唯一」等价于 electrical network（电网络）里在 $A$ 上接 1 伏、其余接地时各节点 voltage（电压）被唯一确定（Kemeny–Snell 的经典对应）。同一个可逆性，在 18.06 里叫「对角占优加不可约」，在概率里叫「暂态必被吸收」，在电路里叫「漏电网络的稳态唯一」。
-
-> <span style="color:#7f8c8d;">跨页续接：Problem 31 的英文 Solution 尚未在本页收尾——其唯一性证明（通过 $\beta<1$ 的收缩（contraction）技术导出 $\max_{j\notin A}|\delta_j|$ 的上界）延续到下一页（PDF p407）才完成；Problem 32 亦出现在下一页。本页正文至此结束。</span>
-<!-- ===== PDF p407 ===== -->
-
-<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）　§7.4 吸收概率与吸收期望时间（Absorption Probabilities and Expected Time to Absorption）· 习题收尾（续）**</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页顶部延续上一页（PDF p406）某一道带 `*` 题英文 Solution 的收尾段（即 Problem 31 的唯一性收敛论证）。原文为一套关于转移概率收敛性（convergence）与稳态概率唯一性（uniqueness）的论证（含 $\max_{j\notin A}|\delta_j|$ 与吸收态集 $A$、暂态（transient）集），在 OCR 中被切碎为多个残片（如 `max 18j I`, `f3 . max 1 8j I`, `at for all i that are not`, `absorbing. It follows that…`, `0, or ai`, `aj = aj` 等）。因本题带 `*`，其英文 Solution 按规范保留英文；下方按原书 §7.4 惯例的收敛证法做忠实连贯转写，未臆造原文未含的任何数值。</span>
-
-We use the above relation for every transient state $i$, and we obtain
-
-```math
-\max_{j\notin A} |\delta_j| \;\le\; \beta \cdot \max_{j\notin A} |\delta_j|,
-```
-
-where
-
-```math
-\beta \;=\; P(X_1 \notin A,\, \ldots,\, X_m \notin A \mid X_0 = i).
-```
-
-Note that $\beta < 1$, because starting from any state, there is a positive probability that $X_m$ is in an absorbing state. Hence, $\max_{j\notin A}|\delta_j| = 0$, which implies that $\delta_i = 0$ for all nonabsorbing $i$. Since $\delta_j = 0$ for all absorbing $j$ as well, we have $\delta_i = 0$ for all $i$, i.e., $a_i = \bar{a}_i$ for all $i$.
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 顶部结尾两行的等式残片（第二行 `=`,`0, or ai`，及末尾 `aj = aj for all absorbing j, so ai = ai for all i` 与两处 `=`）排版错乱，此处按行文语义（经 $\beta<1$ 得出 $\max_{j\notin A}|\delta_j|=0$，再由吸收态与暂态逐类接通）整理为收敛结论，未新增数值。</span>
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 32\*（多个常返类，Multiple recurrent classes。英文原题与解答保留。）**</span>
-
-Problem 32. \* Multiple recurrent classes. Consider a Markov chain that has more than one recurrent class, as well as some transient states. Assume that all the recurrent classes are aperiodic.
-
-(a) For any transient state $i$, let $a_i(k)$ be the probability that starting from $i$ we will reach a state in the $k$th recurrent class. Derive a system of equations whose solutions are the $a_i(k)$.
-
-(b) Show that each of the $n$-step transition probabilities $r_{ij}(n)$ converges to a limit, and discuss how these limits can be calculated.
-
-<span style="color:#00838f;">**Solution.**</span> (a) We introduce a new Markov chain that has only transient and absorbing states. The transient states correspond to the transient states of the original, while the absorbing states correspond to the recurrent classes of the original. The transition probabilities $\bar{p}_{ij}$ of the new chain are as follows: if $i$ and $j$ are transient, $\bar{p}_{ij} = p_{ij}$; if $i$ is a transient state and $k$ corresponds to a recurrent class, $\bar{p}_{ik}$ is the sum of the transition probabilities from $i$ to states in the recurrent class in the original Markov chain. The desired probabilities $a_i(k)$ are the absorption probabilities in the new Markov chain and are given by the corresponding formulas:
-
-```math
-a_i(k) = \bar{p}_{ik} + \sum_{j:\ \text{transient}} \bar{p}_{ij}\, a_j(k), \qquad \text{for all transient } i.
-```
-
-(b) If $i$ and $j$ are recurrent but belong to different classes, $r_{ij}(n)$ is always $0$. If $i$ and $j$ are recurrent but belong to the same class, $r_{ij}(n)$ converges to the steady-state probability of $j$ in a chain consisting of only this particular recurrent class. If $j$ is transient, $r_{ij}(n)$ converges to $0$. Finally, if $i$ is transient and $j$ is recurrent, then $r_{ij}(n)$ converges to the product of two probabilities: (1) the probability that starting from $i$ we will reach a state in the recurrent class of $j$, and (2) the steady-state probability of $j$ conditioned on the initial state being in the class of $j$.
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这道题的核心动作是一次 lumping（合并）：把每个 recurrent class（常返类）整体捏成一个 absorbing state（吸收态），于是原链变成一个只有暂态与吸收态的辅助链，转移概率取 $\bar p_{ik}=\sum_{j\in C_k}P_{ij}$。第 (a) 问的方程 $a_i(k)=\bar p_{ik}+\sum_{j:\text{transient}}\bar p_{ij}a_j(k)$ 就是上一题 Problem 31 的吸收概率方程原样搬过来，边界条件 $a_i(k)=1$ 当 $i\in C_k$、等于 $0$ 当 $i$ 属于别的类。为什么合并合法？因为从暂态出发一旦进入某个类就再也出不来，类内怎么游走不影响「落进哪一类」这件事——这正是 Markov property（马尔可夫性质）允许把一整块状态当作黑箱的原因。
->
-> 第 (b) 问的答案是四种情形的拼接，逐条写清才不会混。其一，$i$ 与 $j$ 同属一个类：$r_{ij}(n)$ 收敛到「只看这一个类、把它当成整条链」时的 steady-state probability（稳态概率）$\pi^{(k)}_j$。其二，$i$ 与 $j$ 属于不同类：$r_{ij}(n)\equiv0$，永不可达。其三，$i$ 暂态、$j$ 属于第 $k$ 类：$r_{ij}(n)\to a_i(k)\,\pi^{(k)}_j$，即「先落进第 $k$ 类的概率」乘「类内稳态」。其四，$i$ 暂态、$j$ 也是暂态：$r_{ij}(n)\to0$，因为暂态只被访问有限多次。第三种情形的因子化是全部要点：暂态决定的是投递分布，类内分布由该类自己混合，两者相乘而非耦合。
->
-> 用矩阵写，极限 $H=\lim_n P^{n}$ 存在，且 $H_{ij}=a_i(\kappa(j))\,\pi^{(\kappa(j))}_j$，其中 $\kappa(j)$ 表示 $j$ 所属的常返类；$j$ 暂态时整列为零。这个 $H$ 是 idempotent（幂等）的，$H^2=H$，秩等于常返状态的个数（不含暂态），而不是类的个数。这里有三个量容易混，必须分开记：$H$ 的秩 = 常返状态数；$P$ 在 $\lambda=1$ 处的 geometric multiplicity（几何重数）与 algebraic multiplicity（代数重数）都等于常返类数，因为 $\dim\ker(I-P)$ 恰好数出「有几个互不相通、一旦进入就不再离开的封闭类」；$P_{TT}^{n}\to0$ 的衰减速度由 $\rho(P_{TT})<1$ 决定，是指数级的。原注说「极限不再是单一秩一投影，而退化为每个常返类各一个投影之和」，这个图像是对的，只是别顺手把「秩」与「特征值 1 的重数」等同起来。
->
-> 术语上有一处要更正：原注写的「Levinson 分解」不是非负矩阵理论的术语。与本题对应的标准名字是 Frobenius normal form（Frobenius 标准型）：存在一个 permutation matrix（置换矩阵）使 $P$ 化成 block lower triangular（块下三角），对角块 irreducible（不可约），每一块对应一个 communicating class（互通类）。Levinson 这个名字属于别的东西——Levinson–Durbin recursion（Levinson–Durbin 递推），Norman Levinson 于 1947 年、James Durbin 于 1960 年先后给出，用途是以 $O(n^2)$ 解 Toeplitz 线性方程组，与马尔可夫链的分类没有关系。两者都姓「分解」，但一个拆状态空间、一个拆 Toeplitz 结构，混用会让检索失效。至于 Perron–Frobenius：Oskar Perron 在 1907 年证明正矩阵情形，Ferdinand Georg Frobenius 在 1912 年推广到不可约非负矩阵，这正是本题「一个类对应一个主特征向量」的来源。
->
-> 「所有常返类都要 aperiodic（非周期）」这条假设不是装饰品，而是收敛性的开关。取一个二周期类：状态在 $0$、$1$ 之间交替，$P=\begin{pmatrix}0&1\\1&0\end{pmatrix}$，则 $r_{00}(n)$ 在 $1,0,1,0,\ldots$ 之间摆，极限不存在；此时 $P$ 的特征值里有 $-1$，落在单位圆上但不在 $1$ 处，$P^n$ 整体不收敛。所以 (b) 问的结论依赖「每类非周期」，缺了它连「极限存在」这一句都写不出来，更不用谈怎么算。
->
-> 最后一条工程化的读法：既然暂态部分以指数速度消失，那么「长期行为」完全由各常返类内部的稳态决定，暂态只留下一个投递权重 $a_i(k)$。这就是把一个大链拆成「一个漏斗加若干水池」的正确数学形态——漏斗只回答落点，水池各自内部混合。实际算的时候，(a) 给出漏斗，Problem 34 的 $1/t_s$ 或类内解平衡方程给出水池，两者相乘即得 (b)。
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 33\*（平均首达时间，Mean first passage times。英文原题保留。）**</span>
-
-Problem 33. \* Mean first passage times. Consider a Markov chain with a single recurrent class, and let $s$ be a fixed recurrent state. Show that the system of equations
-
-```math
-t_s = 0,
-```
-
-```math
-t_i = 1 + \sum_{j=1}^{m} p_{ij}\, t_j , \qquad \text{for all } i \neq s,
-```
-
-satisfied by the mean first passage times, has a unique solution. **Hint:** If there are two solutions, find a system of equations that is satisfied by their difference, and look for its solutions.
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这道题问的是「唯一解」，但更该被追问的是「解为什么有限」。两者是两件事，课本只证了后者的一半。先把 first-step analysis（首步分析）的推导钉死：设 $t_i$ 为从 $i$ 出发首次到达固定常返态 $s$ 的期望步数，$t_s=0$。从 $i\ne s$ 出发，第一步必然发生、必然消耗 1 步，之后以 $P_{ij}$ 落在 $j$，于是总期望等于 $1$ 加上「从 $j$ 重新开始的期望」，把第一步单独条件化就得到 $t_i=1+\sum_jP_{ij}t_j$。这不是技巧，而是 total expectation theorem（全期望定理）作用在「第一步落点」这个有限 partition（划分）上的直接结果。
->
-> 存在性靠的是有限与不可约。设链有 $m$ 个状态、单常返类，则存在整数 $k$ 与 $\epsilon>0$，使从任意起点出发、在 $k$ 步内到达 $s$ 的概率至少 $\epsilon$（取 $k=m$ 即可，因为任一状态到 $s$ 有长不超过 $m-1$ 的正概率路径，取其中最小值作 $\epsilon$）。于是 $P(T>nk)\le(1-\epsilon)^{n}$，几何尾界把期望压住：$E[T]=\sum_{n\ge0}P(T>nk)\cdot k\le k/\epsilon<\infty$。注意这里「有限状态」被用了两次：一次保证 $\epsilon>0$，一次保证 $k$ 有限。可数无限链条上这条推理整段失效，这正是下一段反例的来源。
->
-> 唯一性只是把 Problem 31 的论证换一个字母重抄。设 $\tilde t_i$ 是另一组解，$\delta_i=\tilde t_i-t_i$，两式相减得 $\delta_i=\sum_{j\ne s}P_{ij}\delta_j$，且 $\delta_s=0$。注意求和里 $j=s$ 的项自动消失，因为 $\delta_s=0$——这个细节让「$m$ 步内一直避开 $s$」的概率顶上原文里那个 $\beta$。把关系反复代入 $m$ 次，$\delta_i$ 就被写成「$m$ 步内不碰 $s$ 的概率」乘 $\max_{j\ne s}|\delta_j|$ 的加权和，取 $\beta=\max_{i\ne s}P(X_1\ne s,\ldots,X_m\ne s\mid X_0=i)<1$，便得 $\max|\delta|\le\beta\max|\delta|$，只能是零。与上一题对照着读：吸收概率证的是 $I-P_{TT}$ 可逆，首达时间证的是 $I-P_{T}$ 可逆（$T$ 为除 $s$ 外的状态集），两个矩阵都是 sub-stochastic（次随机）且去掉了一个吸收/目标行，收缩论证一字不改。
->
-> 矩阵语言把整件事压缩成一行：$(I-P_T)t=\mathbf 1$，故 $t=(I-P_T)^{-1}\mathbf 1=N\mathbf 1$，其中 $N=\sum_{k\ge0}P_T^{k}$ 是 fundamental matrix（基本矩阵）在本题的样子。$N_{ij}$ 读作「从 $i$ 出发、在碰到 $s$ 之前访问 $j$ 的期望次数」；对 $j$ 求和才得到期望步数。这个 $N$ 与 18.06 里的 resolvent（预解式）$(I-A)^{-1}$ 是同一个对象：把 $\lambda=1$ 处的极点避开，$N$ 就是「瞬态部分的逆」。电网络视角更强：$I-P_T$ 是 random-walk Laplacian（随机游走拉普拉斯），$t$ 是离散 Dirichlet problem（狄利克雷问题）在边界 $s$ 上取 $0$、源项恒为 $1$ 时的解；换成「边界取 1、源项为 0」就退回上一题的吸收概率。同一个方程，两种解释。
->
-> 原注的反例说「若 $s$ 只是暂态，方程组可能无解或解出 $+\infty$」，方向对，机制没说透。准确的说法是：$s$ 暂态时，剩下的集合 $T$ 里必然含至少一个常返类，$P_T$ 于是有一个特征值 $1$，$I-P_T$ 变成 singular（奇异），齐次方程 $\delta=P_T\delta$ 有非零解——就是把常数取在那个常返类上、别处取零的向量。所以不是「可能无解」，而是解一定不唯一，且解的差在常返类上是自由常数。这跟 $s$ 是否能被「回头访问」是两回事：$s$ 暂态时从 $s$ 出发确实可能再也不回来，但矩阵奇异的根源在于「$T$ 里关住了一个封闭类」，与 $s$ 的往返无关。把反例的机制写对，才知道该去哪里检查：算之前先确认目标态常返，等于先确认 $P_T$ 的谱半径严格小于 $1$。
->
-> 顺带把两组「首达」与「首返」区分开，别混。本题的 $t_i$ 是从 $i$ 出发首次到达 $s$ 的期望（$i$ 任意、$s$ 固定）；$t_s$ 被规定为 $0$，是「已经在那里」，不计数。而 Problem 34 的 mean recurrence time（平均循环时间）是从 $s$ 出发首次回到 $s$ 的期望，恒正，且等于 $1/\pi_s$（Kac 1947，见下一题）。课本把 $s$ 那一行直接钉成 $0$，等于把「首达」定义成「不含出发时刻」，这个约定一旦写错，$N$ 的行和与 $1/\pi_s$ 就对不上。
-
-<!-- ===== PDF p408 ===== -->
-
-<span style="color:#7f8c8d;">§7.4 习题区（Problems，习题 28–35）——吸收概率与吸收期望时间（Absorption Probabilities and Expected Time to Absorption）中部续页。本页开头顶部是**上一题（Problem 33，平均首达时间）解答的收尾部分**（页首无新节/新题目标题，故以其为承接延续），随后本页另起 **Problem 34**（带 `*` 星号，关于平衡方程与平均循环时间）。本页**不含第 8 章章题目行**，仍属第 7 章习题区；第 8 章红色章标题在后续页（书页 p408）出现。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 本页为习题区（Problems），题干与英文解答照规范**保留英文原文**。顶部承接段落中的符号 `Ii`、`8i` 为 OCR 碎裂，实为 $\tilde{t}_{i}$（另一组解）与 $\delta_{i}=\tilde{t}_{i}-t_{i}$（差值）；其余求和下标 `j#s`、`jm#s` 等系 OCR 对 `\sum_{j\neq s}`、`\sum_{i_m\neq s}` 的残片，均已按体积反查校准，未臆造数值。</span>
-
----
-
-承上题（关于平均首达时间 mean first passage times、唯一性证明）的英文解答收尾（承接延续）：
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Solution（解答收尾，承接上一题）**</span>
-
-Solution. Let $t_i$ be the mean first passage times (平均首达时间). These satisfy the given system of equations. To show uniqueness, let $\tilde{t}_i$ be another solution. Then we have for all $i \neq s$
-
-```math
-t_i = 1 + \sum_{j \neq s} P_{ij} \, t_j,
-\qquad
-\tilde{t}_i = 1 + \sum_{j \neq s} P_{ij} \, \tilde{t}_j,
-```
-
-and by subtraction, we obtain
-
-```math
-\delta_i = \sum_{j \neq s} P_{ij} \, \delta_j,
-```
-
-where $\delta_i = \tilde{t}_i - t_i$. By applying this relation $m$ successive times, it follows that
-
-```math
-\delta_i
-= \sum_{i_1 \neq s} P_{i i_1}\,
- \sum_{i_2 \neq s} P_{i_1 i_2}
- \cdots
- \sum_{i_m \neq s} P_{i_{m-1} i_m}\,\delta_{i_m}.
-```
-
-Hence, we have for all $i \neq s$
-
-```math
-|\delta_i|
-= P(X_{1} \neq s, \ldots, X_{m} \neq s \mid X_{0} = i)\cdot \max_{j} |\delta_j|.
-```
-
-On the other hand, we have $P(X_{1} \neq s, \ldots, X_{m} \neq s \mid X_{0} = i) < 1$. This is because starting from any state there is positive probability that $s$ is reached in $m$ steps. It follows that all the $\delta_i$ must be equal to zero.
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 34 \*．平衡方程与平均循环时间（Balance equations and mean recurrence times）**</span>
-
-Consider a Markov chain (马尔可夫链) with a single recurrent class (单一常返类), and let $s$ be a fixed recurrent state (常返状态). For any state $i$, let
-
-```math
-p_i = E[\text{Number of visits to } i \text{ between two successive visits to } s],
-```
-
-where by convention, $p_s = 1$.
-
-(a) Show that for all $i$, we have
-
-```math
-p_i = \sum_{k=1}^{m} p_k \, P_{ki}.
-```
-
-(b) Show that the numbers
-
-```math
-\pi_i = \frac{p_i}{t_s}, \qquad i = 1, \ldots, m,
-```
-
-sum to 1 and satisfy the balance equations (平衡方程), where $t_s$ is the mean recurrence time (平均循环时间) of $s$ (the expected number of transitions up to the first return to $s$, starting from $s$).
-
-(c) Show that if $\pi_1, \ldots, \pi_m$ are nonnegative, satisfy the balance equations, and sum to 1, then
-
-```math
-\pi_i =
-\begin{cases}
-\displaystyle \frac{1}{t_s}, & \text{if } i \text{ is recurrent},\\
-0, & \text{if } i \text{ is transient},
-\end{cases}
-```
-<!-- ===== PDF p409 ===== -->
-
-<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）**</span>
-
-<span style="color:#7f8c8d;">§7.4 习题区（Problems，习题 28–35）——**Problem 34 \*（平衡方程与平均循环时间，Balance equations and mean recurrence times）解答续页**。承接 PDF p408 的题干部分 (c)（本页页首先补完 part (c) 那条公式的「其中 $t_s$ 为平均循环时间」之结尾），随后给出 part (d) 与题末 Note，最后转入该题的英文解答 Solution (a)。本页**无第 8 章章题目行**，仍属第 7 章习题区；题干与带 `*` 题的英文解答照规范**保留英文原文**。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 本页为习题区（Problems），**题干与英文解答均保留英文**。页内公式与后续可辨符号中，`X1 = s, …, Xn-1 = s` 之等号系 OCR 丢失**否定符号**（应为 $X_{1}\neq s,\ldots,X_{n-1}\neq s$，即两次相继访问 $s$ 之间尚未返回 $s$），已按前后文（Problem 34 对 $P_i$ 的定义及下一页 p410 的同类公式）反查校准；`∑_{n=1}^∞`、`∑_{k\neq s}` 等求和符号亦为 OCR 残片重排。全部仅作符号复原，未臆造任何数值。</span>
-
----
-
-承接 PDF p408 的 Problem 34 题干（延续上页 part (c) 那条在 p408 收尾处的公式，本页页首补其条件说明末端）：
-
-该式即：对常返状态 $i$ 有 $\pi_i = \dfrac{p_i}{t_s}$，对暂态状态 $i$ 有 $\pi_i = 0$；本页页首补其条件说明的末端——**where $t_s$ is the mean recurrence time of $s$**（即：其中 $t_s$ 是 $s$ 的平均循环时间）。
-
-**(d)** Show that the distribution of part (b) is the unique probability distribution that satisfies the balance equations (平衡方程).
-
-<span style="color:#7f8c8d;">**Note:**</span> This problem not only provides an alternative proof of the existence and uniqueness of probability distributions that satisfy the balance equations, but also makes an intuitive connection between steady-state probabilities (稳态概率) and mean recurrence times (平均循环时间). The main idea is to break the process into "cycles" (循环), with a new cycle starting each time that the recurrent state $s$ is visited. The steady-state probability of $i$ can be interpreted as the long-term expected frequency of visits to state $i$, which is inversely proportional to the average time between consecutive visits (the mean recurrence time $t_s$); cf. part (c). Furthermore, if a state $i$ is expected to be visited, say, twice as often as some other state $j$ during a typical cycle, it is plausible that the long-term expected frequency $\pi_i$ of state $i$ will be twice as large as $\pi_j$. Thus, the steady-state probabilities $\pi_i$ should be proportional to the expected number of visits $p_i$ during a cycle; cf. part (b).
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这道题的构造是「把轨道沿着 $s$ 剪开」。定义 $p_i$ 为一个 cycle（循环）内访问状态 $i$ 的期望次数，$t_s$ 为 mean recurrence time（平均循环时间），即从 $s$ 出发首次回到 $s$ 的期望步数。剪开之后有两件立刻成立的事，很多人跳过不证就直接用：其一，每个时刻恰处在一个状态，所以一个循环的长度等于各状态被访问次数之和，取期望得 $t_s=\sum_ip_i$；其二，每个循环恰好含一个 $s$（起点计、终点不计），所以 $p_s=1$。这两条一凑，$\pi_i=p_i/t_s$ 的和自动为 $1$：分子之和就是分母。归一化不是额外条件，而是「每个时刻只能在一个状态」这条记账规则的推论。
->
-> 为什么 $\pi_i=p_i/t_s$ 满足 balance equations（平衡方程）？把 (a) 的方程 $p_i=\sum_{k=0}^{m}p_kP_{ki}$（对 $i$ 求和不含 $s$ 也行，含 $s$ 只是把 $p_s=1$ 代进去）两边同除 $t_s$ 即得 $\pi_i=\sum_k\pi_kP_{ki}$。这个方程的概率含义是：离开 $k$ 的流量按 $P_{ki}$ 分流，稳态下来到 $i$ 的流入等于从 $i$ 流出的驻留份额。注意这里的求和是「入流」，与课本 §7.3 常写的「出流」形式互为转置，两者等价靠的是行和为 $1$。
->
-> 于是 (b) 的两句话各有独立内容：和为 $1$ 是循环记账的算术，满足平衡方程是「把方程除以常数」的自动结果。真正的定理在 (d)：单常返类时，满足平衡方程且和为 $1$ 的分布唯一。为什么唯一？$I-P^{T}$ 的零空间维数等于常返类个数（见上一题对 $\dim\ker(I-P)$ 的说明），单类时为 $1$，所以解空间是一维直线，再钉上归一化就只剩一点。反过来说，若链有 $k>1$ 个常返类，解空间是 $k$ 维，所有「按类加权混合」的分布都满足平衡方程且和为 $1$，唯一性彻底失效——这也解释了 Problem 32 为什么要先把类压成吸收态再谈极限。
->
-> 长期频率的解释：$p_i/t_s$ 等于轨迹长期停留在 $i$ 的时间比例。这条断言不可稠密地跳过去，它需要 strong law of large numbers（强大数定律）作用在循环长度这个 i.i.d. 序列上——这正是 Problem 35 用模进夹逼证明的那件事。把「时间比例」与「空间平均」连起来的一般定理叫 ergodic theorem（遍历定理），Birkhoff 在 1931 年证明的 pointwise（逐点）遍历定理是它的源头；马尔可夫链只是它最易验证的特例。工程上这套记账叫 renewal reward theorem（更新报酬定理）：把「回到 $s$」看作 renewal（更新）点，把「访问 $i$ 的次数」看作每个周期领到的报酬，长期平均报酬率 = 单周期期望报酬 / 单周期期望长度，形式完全一样。
->
-> 必须标出一处与正文对不上的地方。（c）问印出的结论是：若 $i$ 常返则 $\pi_i=1/t_s$，若 $i$ 暂态则 $\pi_i=0$。这个式子在数学上只在 $i=s$ 时成立。理由两条：第一，与 (b) 直接冲突，(b) 说的是 $\pi_i=p_i/t_s$，两者相等要求所有常返态都满足 $p_i=1$，而 $p_i$ 一般不等于 $1$（例如三状态环 $1\to2\to3\to1$，每个 $p_i$ 都等于 $1$ 只是巧合；一旦有自环或不等权转移，$p_i$ 立刻偏离 $1$）。第二，与归一化冲突，若所有常返 $i$ 都取 $1/t_s$，和就是「常返状态数除以 $t_s$」，只有单状态链才等于 $1$。因此正确形式应是 $\pi_i=p_i/t_s$（$i$ 常返），暂态 $0$——即 (b) 的结论在 (c) 的假设下重复一遍。此处源码很可能在 OCR 中丢掉了 $p_i$ 或下标（原页符号碎裂严重，见上一页的碎裂说明），建议回查 PDF p408–p409 的原始印刷式确认；无论如何，按现印的 $1/t_s$ 理解不成立，这一点以数学为准而不以 OCR 为准。
->
-> 最后一处提醒：暂态上 $\pi_i=0$ 不是「暂态不重要」，而是「长期停留测度为零」。(a) 里的 $p_i$ 对暂态是有限的（暂态在吸收前只被访问有限多次，期望有限），但 $t_s$ 一旦取到无穷大尺度上，比值就压到零。做题时若把暂态也配非零稳态权重，平衡方程仍可能被满足（只要流入等于流出），归一化却会与 (b) 的解错位——这是最常见的失分点。
-
----
-
-<span style="color:#2471a3;">**[solution]**</span> <span style="color:#2471a3;">**Solution（解答，Problem 34 \*，英文解答保留）.**</span> (a) Consider the Markov chain $X_n$, initialized with $X_0 = s$. We claim that
-
-```math
-p_i = \sum_{n=1}^{\infty} P(X_{1}\neq s, \ldots,\, X_{n-1}\neq s,\, X_{n} = i).
-```
-
-To see this, we first consider the case $i \neq s$, and let $I_n$ be the random variable that takes the value $1$ if $X_{1} \neq s, \ldots,\, X_{n-1}\neq s$, and $X_{n}=i$, and the value $0$ otherwise. Then, the number of visits to state $i$ before the next visit to state $s$ is equal to $\sum_{n=1}^{\infty} I_n$. Thus,
-
-```math
-p_i = \mathbb{E}\!\left[\sum_{n=1}^{\infty} I_n\right]
-    = \sum_{n=1}^{\infty} \mathbb{E}[I_n]
-    = \sum_{n=1}^{\infty} P(X_{1}\neq s, \ldots,\, X_{n-1}\neq s,\, X_{n} = i),
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 本页脚注（原页以 t 标示）用于证明随后计算中「无限求和与数学期望可交换」这一论断，其文字大体可辨，但中间的**一条不等式**残碎到无法逐字复原（涉及对任意 $k>0$ 的截断求和，以及「$T$ 为首次正向到达 $s$ 的时刻，均值 $\sum_t t\,P(T=t)$ 有限，故 $k\to\infty$ 时 $\sum_{t>k}P(T=t)\to 0$」），此处按语义做平滑连贯转写，未臆造具体数值。</span>
-
-> <span style="color:#7f8c8d;">脚注（footnote）译文大意：**随后的计算中，无限求和与期望的交换可用如下论证加以说明。** We have for any $k > 0$，截断后的有限和与后续尾项之间成立相应关系。Let $T$ be the first positive time that state $s$ is visited. Since the mean recurrence time $\sum_t t\,P(T=t)$ is finite, the limit, as $k\to\infty$, of $\sum_{t>k} P(T=t)$ is equal to zero. We take the limit of both sides of the earlier equation, as $k\to\infty$, to obtain the desired relation.（因脚注公式损坏，此处以中文转述脚注大意；正文 Solution 仍为英文。）</span>
-
-（解答在本页止于 part (a) 的论断与期望换序之说明；$i=s$ 情形及 part (b)、(c) 的后续论证在下一页 PDF p410 继续。）
-<!-- ===== PDF p410 ===== -->
-
-<span style="color:#7f8c8d;">§7.4 习题区（Problems，习题 28–35）——吸收概率与吸收期望时间（Absorption Probabilities and Expected Time to Absorption）中部续页。本页页首无新节/新标题，是**上一页（书页 p400）Problem 34 英文 Solution 的第（a）部分收尾的延续**，随后本页继续该解答的第（b）、（c）部分。本页为带 `*` 星号题（Problem 34），其题干与英文 Solution 照规范**保留英文原文**（仅标签可注中文）。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 本页为习题区（Problems），照规范保留英文原文。第（a）部分尾部推导的中间等式在 OCR 中支离破碎（如 `Ps p si +`、多处 `S,`/`#` 残片、`L PkiPk`/`L PkPki`、`1n`/`t;`、`2:::; : 1` 等零散符号），下方已按「常返状态前后两次访问之间的访问次数」及总概率定理的标准语义整合成规范 LaTeX，并按已知关系 $p_s = 1$ 校准了合并为全和 $\sum_{k=1}^{m} p_k P_{ki}$ 的一步；未臆造原文未含的任何数值。</span>
-
----
-
-上一题解答（续，**Problem 34** ——平衡方程与平均循环时间 Balance equations and mean recurrence times，带 `*` 的英文 Solution）：
-
-<span style="color:#2471a3;">**[solution]**</span> <span style="color:#2471a3;">**Solution（解答，续）**</span>
-
-When $i = s$, the events
-
-```math
-\{X_1 \neq s,\, \ldots,\, X_{n-1} \neq s,\, X_n = s\},
-```
-
-for the different values of $n$, form a partition (划分) of the sample space (样本空间), because they correspond to the different possibilities for the time of the next visit to state $s$. Thus,
-
-```math
-\sum_{n=1}^{\infty} P(X_1 \neq s,\, \ldots,\, X_{n-1} \neq s,\, X_n = s) \;=\; 1 \;=\; p_s,
-```
-
-which completes the verification of our assertion.
-
-We next use the total probability theorem (全概率定理) to write for $n \geq 2$,
-
-```math
-P(X_1 \neq s,\, \ldots,\, X_{n-1} \neq s,\, X_n = i)
-\;=\; \sum_{k \neq s} P(X_1 \neq s,\, \ldots,\, X_{n-2} \neq s,\, X_{n-1} = k)\, P_{ki}.
-```
-
-We thus obtain
-
-```math
-p_i
-\;=\; \sum_{n=1}^{\infty} P(X_1 \neq s,\, \ldots,\, X_{n-1} \neq s,\, X_n = i)
-\;=\; P_{si} + \sum_{n=2}^{\infty} P(X_1 \neq s,\, \ldots,\, X_{n-1} \neq s,\, X_n = i)
-```
-
-```math
-\;=\; P_{si} + \sum_{n=2}^{\infty}\sum_{k \neq s} P(X_1 \neq s,\, \ldots,\, X_{n-2} \neq s,\, X_{n-1} = k)\, P_{ki}
-```
-
-```math
-\;=\; P_{si} + \sum_{k \neq s} P_{ki}\, \sum_{n=2}^{\infty} P(X_1 \neq s,\, \ldots,\, X_{n-2} \neq s,\, X_{n-1} = k)
-```
-
-```math
-\;=\; p_s\, P_{si} + \sum_{k \neq s} p_k\, P_{ki}
-\;=\; \sum_{k=1}^{m} p_k\, P_{ki}.
-```
-
-**(b)** Dividing both sides of the relation established in part (a) by $t_s$, we obtain
-
-```math
-\pi_i \;=\; \sum_{k=1}^{m} \pi_k\, P_{ki},
-```
-
-where $\pi_i = p_i / t_s$. Thus, the $\pi_i$ solve the balance equations (平衡方程). Furthermore, the $\pi_i$ are nonnegative, and we clearly have $\sum_{i=1}^{m} p_i = t_s$ or $\sum_{i=1}^{m} \pi_i = 1$. Hence, $(\pi_1, \ldots, \pi_m)$ is a probability distribution (概率分布).
-
-**(c)** Consider a probability distribution $(\pi_1, \ldots, \pi_m)$ that satisfies the balance equations. Fix a recurrent state (常返状态) $s$, let $t_s$ be the mean recurrence time (平均循环时间) of $s$, and let $t_i$ be the mean……
-
-> <span style="color:#7f8c8d;">本页在此处结束。第（c）部分（证明 $\pi_s t_s = 1$）及第（d）部分（唯一性）在下一页（PDF p411，书页 p402）延续。</span>
-<!-- ===== PDF p411 ===== -->
-
-<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）**</span>
-
-<span style="color:#c0392b;">**§7.4　吸收概率与吸收期望时间（Absorption Probabilities and Expected Time to Absorption）· 习题区（续）**</span>
-
-> <span style="color:#7f8c8d;">本页（书页 402，§7.4 习题区）页首为上一页 Problem 34 解答（用平衡方程证明平均循环时间关系、验证平衡方程解的唯一性）的收尾段——上面几行 OCR 被切成碎片（如 `1+ t:`、`P Sj tj`、`j# s`、`L ti` 等只余零散符号），下方已按真实语义整合成规范的方程组；随后本页进入 **Problem 35**（本文件页首为跨页续接，故带「（续）」）。本页习题为带 `*` 题，其题干与英文 Solution（仅标签可加中文）按规范保留英文原题。</span>
-
----
-
-上一题解答（续，Problem 34 的英文 Solution 收尾：证明 $\pi_s t_s = 1$，其中 $t_s$ 为状态 $s$ 的平均循环时间 mean recurrence time）：
-
-“……let $t_i$ be the mean first passage time from $i$ to $s$ (first passage time). We prove that $\pi_s t_s = 1$. Indeed, we have
-
-```math
-t_s = 1 + \sum_{j\ne s} p_{sj}\, t_j ,\qquad
-t_i = 1 + \sum_{j\ne s} p_{ij}\, t_j ,\ \ \text{for} \ i \ne s .
-```
-
-Multiplying these equations by $\pi_s$ and $\pi_i$, respectively, and adding, we obtain
-
-```math
-\pi_s\, t_s + \sum_{i\ne s} \pi_i\, t_i
-= \sum_{i=1}^{m} \pi_i + \sum_{i=1}^{m} \pi_i \sum_{j\ne s} p_{ij}\, t_j .
-```
-
-Using the balance equations (balance equations), that is, $\sum_i \pi_i p_{ij} = \pi_j$, the right-hand side becomes
-
-```math
-1 + \sum_{j\ne s} \pi_j\, t_j .
-```
-
-Combining the last two equations, we obtain $\pi_s\, t_s = 1$.
-
-If a probability distribution $(\pi_1, \ldots, \pi_m)$ satisfies the balance equations, then, if the initial state $X_0$ is chosen according to this distribution, all subsequent states $X_n$ have the same distribution. If we start from a transient (transient) state $i$, the probability of being in a transient state at time $n$ tends to $0$ as $n\to\infty$. This implies that $\pi_i = 0$.
-
-(d) Part (b) shows that there exists at least one probability distribution satisfying the balance equations, and part (c) shows that there is at most one such distribution.”
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 顶部这一段（$\pi_s t_s = 1$ 的平衡方程证明）中，方程组诸行的 OCR 碎裂严重（如 `1+ t:`、`t:P Sj tj`、`j# s`、`L ti`、`L Pij tj`、`j'i-s` 等仅余散碎符号），其中「右边等于」一行的中间求和式（$\sum_{j\ne s} \pi_j t_j$，由 $\sum_i \pi_i\sum_{j\ne s} p_{ij} t_j$ 经平衡方程化简而来）尤其残损；上正文已按首达时间 / 平衡方程证明的标准语义忠实整合，未臆造原文未含的任何数值。</span>
-
----
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 35.\* The strong law of large numbers for Markov chains. （马尔可夫链的强大数定律。）**</span>
-
-Consider a finite-state Markov chain in which all states belong to a single recurrent class which is aperiodic. For a fixed state $s$, let $Y_k$ be the time of the $k$th visit to state $s$. Let also $V_n$ be the number of visits to state $s$ during the first $n$ transitions.
-
-(a) Show that $Y_k / k$ converges with probability 1 to the mean recurrence time $t_s$ of state $s$.
-
-(b) Show that $V_n / n$ converges with probability 1 to $1 / t_s$.
-
-(c) Can you relate the limit of $V_n / n$ to the steady-state probability of state $s$?
-
----
-
-<span style="color:#2471a3;">**[solution]**</span> <span style="color:#2471a3;">**Solution（解答）. \(问题 35 为带 \* 题，其英文 Solution 保留原文。\)**</span>
-
-(a) Let us fix an initial state $i$, not necessarily the same as $s$. Thus, the random variables $Y_{k+1} - Y_k$, for $k \ge 1$, correspond to the time between successive visits to state $s$. Because of the Markov property (the past is independent of the future, given the present), the process "starts fresh" at each revisit to state $s$ and, therefore, the random variables $Y_{k+1} - Y_k$ are independent and identically distributed, with mean equal to the mean recurrence time $t_s$. Using the strong law of large numbers, we obtain
-
-```math
-\frac{Y_k}{k} \;\xrightarrow[\text{w.p. 1}]{}\; t_s , \qquad \text{with probability 1}.
-```
-
-本页在此处结束，上述证明与第（b）、（c）部分在下一页（PDF p412）延续。
-<!-- ===== PDF p412 ===== -->
-
-> <span style="color:#7f8c8d;">§7.4 吸收概率与吸收期望时间的习题区（书页 403，页眉 Chap. 7）。本页承接上一页（书页 402）的 **Problem 35\***（马尔可夫链的强数定律，The strong law of large numbers for Markov chains）英文 Solution，先续解其第 (b)、(c) 两问及其后的一段 Note（注意），随后页中转入 **§7.5 Continuous-Time Markov Chains** 小节，并给出 **Problem 36** 题干的开头。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页强数定律（S.L.L.N.）证明的两处公式被 OCR 打成碎片：如 `Yk  n < Yk+!` 实为 $Y_k \le n < Y_{k+1}$、`t;` 表示平均重现时间 $\tau_s$、极限式被拆成 `lim __ = lim + . lim __ = lim .!:.. = .!..` 等残留片段、`E[Yn] = 1 . 2'n = 21` 实为 $E[Y_n] = (1/n)\cdot n = 1$。现按原书页 403 权威文本重建下述公式，全部数值均由前文 $Y_k/k \to \tau_s$ 及概率计算 $P(X<1/n)=1/n$ 反推核验，未臆造任何原文未出现的数字。</span>
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 35\*（续）——马尔可夫链的强数定律（The strong law of large numbers for Markov chains）**</span>
-
-<span style="color:#00838f;">**[solution] Solution（解答）**</span>
-
-(b) Let us fix an element of the sample space (a trajectory of the Markov chain). Let $Y_k$ and $V_n$ be the values of the random variables $Y_k$ and $V_n$, respectively. Furthermore, let us assume that the sequence $Y_k/k$ converges to $\tau_s$; according to the result of part (a), the set of trajectories with this property has probability 1. Let us consider some $n$ between the time of the $k$th visit to state $s$ and the time just before the next visit to that state:
-
-```math
-Y_k \;\le\; n \;<\; Y_{k+1}.
-```
-
-For every $n$ in this range, we have $V_n = k$, and also
-
-```math
-\frac{1}{Y_{k+1}} \;<\; \frac{1}{n} \;\le\; \frac{1}{Y_k},
-```
-
-from which we obtain
-
-```math
-\frac{k}{Y_{k+1}} \;<\; \frac{V_n}{n} \;\le\; \frac{k}{Y_k}.
-```
-
-Note that
-
-```math
-\lim_{k\to\infty}\frac{k}{Y_{k+1}}
-= \lim_{k\to\infty}\frac{k}{k+1}\cdot\lim_{k\to\infty}\frac{k+1}{Y_{k+1}}
-= \lim_{k\to\infty}\frac{k}{Y_k}
-= \frac{1}{\tau_s}.
-```
-
-If we now let $n$ go to infinity, the corresponding values of $k$, chosen to satisfy $Y_k \le n < Y_{k+1}$, also go to infinity. Therefore, the sequence $V_n/n$ is between two sequences both of which converge to $1/\tau_s$, which implies that the sequence $V_n/n$ converges to $1/\tau_s$ as well. Since this happens for every trajectory in a set of trajectories that has probability equal to 1, we conclude that $V_n/n$ converges to $1/\tau_s$, with probability 1.
-
-(c) We have $1/\tau_s = \pi_s$, as established in Problem 35. This implies the intuitive result that $V_n/n$ converges to $\pi_s$, with probability 1.
-
-Note: It is tempting to try to establish the convergence of $V_n/n$ to $\pi_s$ by combining the facts that $V_n/n$ converges [part (b)] together with the fact that $E[V_n]/n$ converges to $\pi_s$ (cf. the long-term expected frequency interpretation of steady-state probabilities in Section 7.3). However, this line of reasoning is not valid. This is because it is generally possible for a sequence $Y_n$ of random variables to converge with probability 1 to a constant, while the expected values converge to a different constant. An example is the following. Let $X$ be uniformly distributed in the unit interval $[0,1]$, let
-
-```math
-Y_n =
-\begin{cases}
-0, & \text{if } X \ge 1/n,\\
-n, & \text{if } X < 1/n.
-\end{cases}
-```
-
-As long as $X$ is nonzero (which happens with probability 1), the sequence $Y_n$ converges to zero. On the other hand, it can be seen that
-
-```math
-E[Y_n] = P(X < 1/n)\, E[Y_n \mid X < 1/n] = \tfrac{1}{n}\cdot n = 1,
-```
-
-for all $n$.
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 先把它补全成一个自足的模型。取 $X$ 为 $(0,1)$ 上的 uniform（均匀）变量，$Y_n=n$ 当 $X<1/n$、否则为 $0$。为什么要这个 $X$？因为需要 $P(X<1/n)=1/n$ 恰好成立，而这正是 uniform（均匀分布）的尾概率。于是 $E[Y_n]=P(X<1/n)\cdot n=(1/n)\cdot n=1$ 对所有 $n$ 恒成立，一分不变。
->
-> 另一边，逐条轨道的命运完全相反。对每个满足 $X(\omega)>0$ 的样本点，取 $n>1/X(\omega)$，此后 $Y_n(\omega)=0$ 永远。$X>0$ almost surely（几乎必然）成立，所以 $Y_n\to0$ almost surely（几乎必然），而且还顺带得到 $P(|Y_n|>\epsilon)=P(X<1/n)=1/n\to0$，即 in probability（依概率）收敛到 $0$。两个「几乎」都站在 $0$ 这边，只有期望站在 $1$ 那边：$E[Y_n]\to1\ne0$。
->
-> 这里的层级关系必须说准，原注的表述含混。收敛强度有一条链：almost sure（几乎必然）$\Rightarrow$ in probability（依概率）$\Rightarrow$ in distribution（依分布），而 $L^{1}$ 收敛（均值收敛，即 $E|Y_n-Y|\to0$）与这条链不互相蕴含。本例的正确读法是：$Y_n$ 在 almost surely（几乎必然）与 in probability（依概率）两种意义下都收敛到 $0$，唯独 $L^{1}$ 收敛失败，因为 $E|Y_n-0|=1$ 恒等于 $1$。所以说「期望收敛与依概率收敛之间有鸿沟」是把对比项写反了——依概率收敛恰恰成立，失败的是均值收敛。这个区分决定了你能不能用期望去论证概率：不能，方向是反的。
->
-> 为什么失败？一句话：质量以宽度 $1/n$、高度 $n$ 的方式堆成一个面积恒为 $1$ 的 spike（尖峰），尖峰越来越窄、越来越高。窄到任何固定样本点终将被它甩下（这是 a.s. 收敛），高到它贡献的积分始终是 $1$（这是 $L^1$ 不收敛）。这就是「质量逃逸到高值」的标准图景，测度论课上通常叫 moving bump（移动鼓包）或 typewriter sequence（打字机序列）的连续版。
->
-> Fatou lemma（法图引理）在这里不是可选项而是唯一的合法通道：$E[\liminf Y_n]\le\liminf E[Y_n]$，代入得 $0\le1$，不等式严格成立。Fatou 从来只给「小于等于」，严格不等正说明有质量从下界手里溜走了。要把它变成等号，需要再加一个条件：monotone convergence（单调收敛）要求 $Y_n$ 单调，本题不单调；dominated convergence（控制收敛）要求存在可积的 $g$ 使 $|Y_n|\le g$，本题 $Y_n$ 无界，取不到这样的 $g$；更弱的一档是 uniform integrability（一致可积），即 $\sup_nE[Y_n;Y_n>K]\to0$ 当 $K\to\infty$，而本题 $\sup_nE[Y_n;Y_n>K]=1$ 对每个 $K$ 都成立（取 $n>K$），一致可积彻底破功。Vitali 收敛定理说：a.s. 收敛加上一致可积，才等价于 $L^1$ 收敛。这道题的全部内容就是「缺的那个条件具体是哪一个」。Fatou 的结果出自 Pierre Fatou 1906 年的博士论文《Séries trigonométriques et séries de Taylor》（Acta Mathematica 30 卷），与他研究 Poisson 积分边界行为的工作同源。
->
-> 这段反例在 Problem 35 里的位置不是装饰。正文刚刚用模进（$Y_k\le n<Y_{k+1}$，这里的 $Y_k$ 是第 $k$ 次访问 $s$ 的时刻，与反例里的 $Y_n$ 重名，读时注意区分）夹出 $k/Y_{k+1}<V_n/n\le k/Y_k$，两端都由强大数定律控制，于是 $V_n/n$ 被夹到 $1/\tau_s$。整条路径只用逐轨道的几乎必然收敛，一次也没碰期望。然后课本提醒：有人会想反过来走——既然已经知道 $E[V_n]/n\to\pi_s$（§7.3 的长期频率解释），又知道 $V_n/n$ 收敛，就想用期望去定极限。这个反例正是说明这一步非法：期望的极限与逐点的极限可以毫不相干。$E[V_n]/n$ 收敛这件事本身没错，错在把它当成 $V_n/n$ 的极限值来源。
->
-> 工程上的译法：任何「平均性能指标收敛」都不能代替「单个样本轨迹收敛」，前者是 ensemble average（系综平均），后者是 time average（时间平均）。遍历定理之所以值钱，正是因为它在特定条件下把两者接起来；而这里用到的接法不是期望，是夹逼加数定律。把这条纪律记住，就不会在仿真里拿「跑了一千次取平均」去冒充「一条长轨迹的极限」。
-
----
-
-<span style="color:#c0392b;">**§7.5　连续时间马尔可夫链（Continuous-Time Markov Chains）**</span>
-
-> <span style="color:#7f8c8d;">任务的核对点提示第 8 章 §8.1 例 8.1 可能进入本页——经反查，本页书页号为 403（页眉 Chap. 7），仍在第 7 章习题区，未进入第 8 章；例号从 8.1 起应出现在后续更晚页份。</span>
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 36．**</span>
-
-A facility of $m$ identical machines is sharing a single repairperson. The time to repair a failed machine is exponentially distributed with mean $1/\lambda$. A machine…
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页止于 Problem 36 题干中途（"A machine…" 后即截断）；题干续接于下一页（PDF p413），且下一页给出其后的文字 "…once operational, fails after a time that is exponentially distributed with mean $1/\mu$"。此处修复时长的均值符号在源 OCR 中被压成 `1/>.` 残片，依下一页配套的机器运转损坏时长 $1/\mu$ 反推，重建为 $1/\lambda$（不臆造数字，仅还原被 OCR 吞掉的 $1/\lambda$）。</span>
-<!-- ===== PDF p413 ===== -->
-
-<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）**</span>
-
-> <span style="color:#7f8c8d;">页眉 Chap. 7 · 书目页 404 · 属 §7.5 Continuous-Time Markov Chains（连续时间马尔可夫链）习题区收尾，页首为上一页 Problem 36 的续接。</span>
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 36（续）**</span>
-
-… once operational, fails after a time that is exponentially distributed with mean $1/\mu$.
-All failure and repair times are independent.
-(a) Find the steady-state probability that there is no operational machine.
-(b) Find the expected number of operational machines, in steady-state.
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> continuous-time Markov chain（连续时间马尔可夫链，CTMC）的建模纪律只有一条：方程的对象是「下一次跳变发生在哪个方向、以多快」，而不是时间本身。本题把状态取成 failed（失败）机器的台数 $i=0,1,\ldots,m$。每台运行中的机器以速率 $\mu$ 熔断（其寿命期望为 $1/\mu$），修理工只有一名，以速率 $\lambda$ 修好一台（修复时间期望为 $1/\lambda$）；所有时间相互独立。于是状态 $i$ 下有两个独立的 exponential（指数）时钟在赛跑：向上跳（又坏一台）的总速率是 $(m-i)\mu$，向下跳（修好一台）的速率是 $\lambda$ 当 $i>0$、否则不跳。两个独立指数取最小值仍是指数，参数相加，所以状态 $i$ 的 exit rate（离出速率）为 $v_i=(m-i)\mu+\lambda\cdot\mathbf 1{\{i>0\}}$，跳变方向的条件概率按各自速率占比分。
->
-> 这里必须更正原注一处会让人算错的笔误。原注写「处于状态 $i$（$i$ 台停机）时，任一运行机器以速率 $\mu$ 坏掉（$i$ 台运行时，总坏率 $i\mu$）」，前后矛盾：若 $i$ 是停机台数，运行台数是 $m-i$，failure rate（总失效率）应为 $(m-i)\mu$，不是 $i\mu$；括号里那句「$i$ 台运行时」又把 $i$ 当成了运行台数。同一符号被赋了两个含义，接着套出来的平衡方程与下标自然整体错位。正确写法：向上速率 $(m-i)\mu$、向下速率 $\lambda$，状态 $i$ 的平衡方程为 $\pi_i[(m-i)\mu+\lambda]=\pi_{i-1}(m-i+1)\mu+\pi_{i+1}\lambda$（$0<i<m$），两端边界为 $\pi_0m\mu=\pi_1\lambda$ 与 $\pi_m\lambda=\pi_{m-1}\mu$。
->
-> 这条链是 birth-death（生灭）结构，而有限生灭链一定 reversible（可逆），于是 detailed balance（细致平衡）逐对成立：$\pi_i(m-i)\mu=\pi_{i+1}\lambda$，即 $\pi_{i+1}=\pi_i\frac{m-i}{\lambda/\mu}$。递推到底得 $\pi_i=\pi_0\frac{m!}{(m-i)!}\left(\frac{\mu}{\lambda}\right)^{i}$，$\pi_0$ 由归一化 $\sum_{i=0}^{m}\pi_i=1$ 定出。注意这里出现的比值是 $\mu/\lambda$（故障率除以修复率），与排队论惯用的 $\rho=\lambda/\mu$ 方向相反——这个模型里 $\mu/\lambda$ 越大，停机越重，别把两个 $\rho$ 搞混。第 (a) 问「没有任何运行机器」就是全停，答案 $\pi_m$；第 (b) 问期望运行台数 = $\sum_{i=0}^{m}(m-i)\pi_i=m-\sum_i i\pi_i$，两者都从同一个稳态分布直接取出，不需要另立方程。
->
-> 名字要叫准。这套结构在文献里的标准名是 machine repairman model（机器修理模型），也叫 finite-source queue（有限源排队）：顾客（机器）总数固定为 $m$，只有处于「坏掉」状态的那部分才在系统里排队，所以到达率随系统内人数增加而线性下降。它跟 M/M/m（$m$ 个并列服务员）完全不同，原注说「多服务器排队系统的对偶」容易引向错误方向：这里服务员始终是 $1$ 个，$m$ 是顾客数。与它同族、但容易混淆的是 Engset 模型（T. O. Engset，1918）：有限源、无等待位、超员直接阻塞；本题有排队（多台机器可以同时等修），是 finite-source（有限源）的 delay system（延迟系统）。Erlang（1917）的 Erlang-B 则是无限源、无等待位。三者的区别全在「源是否有限」与「有没有等待位」这两个开关上。
->
-> reliability（可靠性）方向的读法值得补一句。取 $m=1$，模型退化成单台机器在两态间来回切换，$\pi_0=\frac{1}{1+\mu/\lambda}$，这就是最基本的 availability（可用度）公式：可用时间占比等于平均无故障时间除以（平均无故障时间 + 平均修复时间）。$m>1$ 时没有这种单行闭式，必须落到求和，这是「共享一个修理工」带来的耦合——机器越多，修理工越忙，每台的等待修复时间越长，可用度随 $m$ 单调下降。这条单调性本身就是本题最有工程价值的定性结论。
->
-> 假设一旦松动，马尔可夫性就断在哪，也必须说清。若寿命不是指数分布，比如是 deterministic（确定性）的「运行满 $T$ 小时必坏」，那么「还剩多久会坏」取决于这台机器已经运行了多久，状态必须扩充为每台机器的 age（年龄），状态空间从 $m+1$ 个计数态炸成连续统，$X(t)$ 不再是马尔可夫链。若修理工能同时修 $c$ 台，向下速率变成 $\min(i,c)\lambda$，公式整体换一套（有限源 M/M/c）。若修复时间与故障时间相关，连乘积形式都不再有。指数分布的 memorylessness（无记忆性）在这里不是「简化假设」，而是「瓶颈态可压缩成一个整数」的唯一凭据。
->
-> 最后给一句跨课程的坐标：连续时间链的稳态由 generator matrix（生成矩阵）$Q$ 的转置零空间刻画，$\pi Q=0$ 加归一化；本题的 $Q$ 是 tridiagonal（三对角）的，所以才有逐对 detailed balance（细致平衡）可写。这也解释为什么第 39 题只把转移速率取成常数就能把连续时间链的稳态方程直接降成离散链的平衡方程：当 $v_i$ 处处相等时，约掉公因子后 $Q$ 与 $P-I$ 同型。$I+Q/\nu$ 对足够大的 $\nu$ 是合法的 transition matrix（转移矩阵），这叫 uniformization（一致化），是把连续时间问题搬回离散时间的标准桥。
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 37（空格出租车、Poisson 到达与顾客等待）**</span>
-
-Empty taxis pass by a street corner at a Poisson rate of two per minute
-and pick up a passenger if one is waiting there. Passengers arrive at the street corner
-at a Poisson rate of one per minute and wait for a taxi only if there are less than four
-persons waiting; otherwise they leave and never return. Penelope arrives at the street
-corner at a given time. Find her expected waiting time, given that she joins the queue.
-Assume that the process is in steady-state.
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 先把模型对齐到标准记号。出租车以速率 $\mu=2$（每分钟）按 Poisson process（泊松过程）到达，乘客以速率 $\lambda=1$ 到达；等待人数上限为 $4$（「少于四人等待才加入」，加入后最多四人）。把「等待人数」取为状态 $i\in\{0,1,2,3,4\}$，就得到一个 birth-death（生灭）链：上行速率 $\lambda$（只要 $i<4$），下行速率 $\mu$（只要 $i>0$），因为一辆出租车到达就带走一位。这就是 M/M/1/4：单服务员、容量 $4$，服务时间等于「等下一辆 taxi 的时间」，指数、均值 $1/2$ 分钟。
->
-> 稳态分布可以一行写出。以 $\rho=\lambda/\mu=1/2$，有限容量的 birth-death（生灭）分布为 $\pi_i=\pi_0\rho^{i}$，归一化 $\sum_{i=0}^{4}\rho^{i}=\frac{1-\rho^{5}}{1-\rho}=\frac{31}{16}$，故 $\pi_i=\frac{16}{31}\left(\frac12\right)^{i}$，从 $\pi_0=16/31$ 单调降到 $\pi_4=1/31$。加入概率为 $P(i<4)=1-\pi_4=30/31$。
->
-> 关键一步是把「她加入」翻译成「她看到 $i<4$ 人」。这一步依赖 Poisson arrivals see time averages（PASTA）：Poisson 到达的乘客看到的状态分布就是时间平均分布 $\pi$，不需要额外修正。（若乘客到达不是 Poisson 而是等间隔，看到的就是「事件平均」而非「时间平均」，答案会变，这是本题题干特意写明 Poisson 的原因。）
->
-> 给定她看到 $i$ 人，等待时间是多少？不是「等到下一辆车」那么简单：她前面有 $i$ 人，每人各占一辆车，加上她自己，共需 $i+1$ 辆车；每两次相隔 Exp(2)，由 memorylessness（无记忆性），从她加入那一刻到第一辆车之间剩余的时间仍服从 Exp(2)。所以等待等于 $i+1$ 个独立 Exp(2) 之和，期望 $(i+1)/2$。条件化求和：
->
-> $$E[W\mid\text{joins}]=\frac{\sum_{i=0}^{3}\pi_i(i+1)/2}{\sum_{i=0}^{3}\pi_i}$$
->
-> 代入 $\pi_i=16/31\cdot2^{-i}$：分子为 $(16/31)\cdot\frac12\cdot(1+1+0.75+0.5)=26/31$，分母为 $30/31$，比值得 $13/15$ 分钟，约 $52$ 秒。
->
-> 这个结果可以用 Little's law（利特尔法则）独立验算，这是检验排对答案最快的手段。稳态平均等待人数 $L=\sum_{i=0}^{4}i\pi_i=(16/31)(0.5+0.5+0.375+0.25)=26/31$；有效到达率 $\lambda_{\text{eff}}=\lambda\cdot P(i<4)=30/31$；两式相除得 $W=L/\lambda_{\text{eff}}=13/15$，与上面的条件期望完全一致。两条路径一条走时间、一条走人数，能对上说明 $\pi$、PASTA（到达见时间平均）、无记忆三处都没写错。
->
-> 三处要更正原注。第一处是比喻用错了场景。原注把等待说成「两个随机时间的竞争」，这个图像只适用于「两个过程在赛跑、谁先到算谁」，比如顾客与不耐烦离开的阈值赛跑。本题的等待不是竞争，而是串联：$i+1$ 段独立指数服务时间首尾相接，期望线性相加。真正让计算成立的是 memorylessness（无记忆性）——剩余服务时间与全新服务时间同分布，所以每一段都可以重新起算，不需要知道她到达时那辆车已经「等了多久」。把机制说成竞争，会让人误以为要处理「最小值分布」，方向就偏了。
->
-> 第二处是那个反例不成立。原注说「若服务强度 $\ge1$，队列在稳态上根本不收敛、期望等待时间发散」。这句话对无限容量的 M/M/1 是对的（$\rho\ge1$ 时无稳态），但对本题这个容量为 $4$ 的链是错的：状态空间只有 $5$ 个、闭且不可约，任何有限状态不可约链都有唯一稳态分布，与 $\rho$ 取多大无关；$\rho$ 变大只会让 $\pi_4$ 变大、更多人 balking（拒绝加入），等待时间反而被容量顶住。真正会发散的是「容量无限 + $\rho\ge1$」，那才是没有稳态的场合。把有限容量与无限容量混在一起谈稳定性，是排队论里最常见的误判。
->
-> 第三处是错字：「有限容量撾列」应为「有限容量队列」。术语统一写成 queue（队列）、balking（拒绝加入）、service rate（服务速率），便于全文检索。
->
-> 家族定位：本题属于有等待位、有容量上限的损失-延迟混合系统。Erlang-B（1917）是 M/M/c/c，即「有 $c$ 个服务员、没有等待位、满了就丢」，属于纯 loss system（损失系统）；本题是 M/M/1/K（$K=4$），有队列也有上限，超限才丢。两者的稳态都是截断的 birth-death（生灭）分布，差别只在状态数上限的取法。真正把「系统大了会怎样」说清楚的是 machine repairman model（机器修理模型）（即 $m$ 台机器一台修理工），两者状态结构同型，只是到达率一个恒定、一个随人数线性下降。
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 38（多个用户共享计算机系统的马尔可夫链建模）**</span>
-
-There are $m$ users who share a computer system. Each user alternates between "thinking" intervals whose durations are independent exponentially distributed with parameter $\lambda$, and an "active" mode that starts by submitting a service request. The server can only serve one request at a time, and will serve a request completely before serving other requests. The service times of different requests are independent exponentially distributed random variables with parameter $\mu$, and also independent of the thinking times of the users. Construct a Markov chain model and derive the steady-state distribution of the number of pending requests, including the one presently served, if any.
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 本题的建模动作叫 aggregation（聚合）：每个用户自己是一条两阶段的continuous-time Markov chain（连续时间马尔可夫链，CTMC），在 thinking（思考，速率 $\lambda$）与 active（活跃，速率 $\mu$）之间来回；把 $m$ 条独立的微观链合并，状态只保留「系统内活跃用户数」$i$。合法性的依据是 strong lumpability（强可合并性）：同一个宏观计数下的所有微观状态，其下一跳的总速率与「跳到哪个宏观态」的概率完全一致——因为 $i$ 个活跃用户彼此对称、各阶段全是指数，对称性把差别抹平了。这就是 $2^{m}$ 个 phase assignment（相位分配）被压成 $m+1$ 个整数 $i$ 的全部理由。
->
-> 状态 $i$ 的速率要数清谁在动。$m-i$ 个用户在思考，每个以 $\lambda$ 提交请求，索引这一侧的上行速率是 $(m-i)\lambda$；服务器只有一台，正在服务的那一个请求以 $\mu$ 完成，一旦完成该用户立刻回到 thinking，所以下行速率恒为 $\mu$（只要 $i>0$）。$i$ 中包含「正在服务」的那一个，所以 $i$ 个活跃用户里只有 $1$ 个在占用服务器，其余 $i-1$ 个在排对。原注「服务速率是 $\mu$（单服务员，服务中的那台）」这句把服务器与用户混说，正确的说法是：服务器容量为 $1$，服务速率 $\mu$，与活跃用户数无关。
->
-> 平衡方程就是刚才那两条速率拼起来的 birth-death（生灭）方程：$\pi_i[(m-i)\lambda+\mu]=\pi_{i-1}(m-i+1)\lambda+\pi_{i+1}\mu$，$i=0,\ldots,m$，两端各自退化成一项。这条链与 Problem 36 的机器修理模型完全同型——把「停机台数」换成「活跃用户数」，把故障率 $\mu$ 与修复率 $\lambda$ 互换位置，矩阵一模一样。解用 detailed balance（细致平衡）逐对递推：$\pi_{i+1}=\pi_i\frac{(m-i)\lambda}{\mu}=\pi_i(m-i)\rho$，其中 $\rho=\lambda/\mu$，于是
->
-> $$\pi_i=\pi_0\frac{m!}{(m-i)!}\rho^{i},\qquad\pi_0=\left[\sum_{i=0}^{m}\frac{m!}{(m-i)!}\rho^{i}\right]^{-1}$$
->
-> 这里有个高频误判，正好借本题澄清：很多人凭直觉写 $\pi_i=\binom{m}{i}p^{i}(1-p)^{m-i}$，也就是 binomial（二项）分布。二项分布对应的是 M/M/$\infty$——每个用户独占一台服务器，谁处于活跃阶段立刻被服务，彼此不排对。单服务器一旦引入排对，「谁在等」就与计数 $i$ 相关（只有 $i-1$ 个在等、$i$ 个算在系统内），分布立刻从 binomial（二项）变成上面的 factorial（阶乘）型。两者在 $m$ 大、$\rho$ 小时形状接近，但公式不同，别在推导里混用。
->
-> 两个自洽校验，用来确认解没写错。其一，throughput（吞吐）有两条算法：按服务端算 $\theta=\mu(1-\pi_0)$，按用户端算 $\theta=\lambda\sum_i(m-i)\pi_i$（单位时间提交的请求数），平衡方程保证两者相等，动手验一遍比值是否为 $1$。其二，当 $m$ 增大而 $\rho$ 固定时，$\pi$ 向大 $i$ 一侧倾斜，$\pi_0$ 指数级变小，$E[\text{active}]$ 趋向 $m$ 而吞吐饱和在 $\mu$——这解释了为什么「加用户」在负载高时几乎不提吞吐，只会加延迟。
->
-> 与原注不一致的两处需要更正。第一，「又称机器修理模型 / Engset」把两个不同的开关混成一个。machine repairman model（机器修理模型）与本题完全同构，可以等同；Engset 模型（T. O. Engset，1918）虽然也是有限源，但它是没有等待位的纯 loss system（损失系统），请求撞上忙碌直接被丢弃，不会排对。本题有排对，所以属于 delay system（延迟系统）。Engset 只能算同胞，不能算别名。
->
-> 第二，原注给的反例不完整。它说「若服务员可并发处理、或思考时间非指数，则状态须记到每个用户的完整相位」，这两条都对（并发 $c$ 台时下行速率变成 $\min(i,c)\mu$；非指数时须记各自已流逝的时间），但漏掉了最常见、也最隐蔽的一种失效：用户异构。只要不同用户的 $\lambda_i$、$\mu_i$ 不同，即便全是指数、服务器也只有一台，$m+1$ 个计数态就不再充分——因为「活跃的是快的那个还是慢的那个」直接改变下一跳速率，而这信息被计数丢掉了。此时必须记录完整的相位向量，聚合失效。建模时的判据是：被合并的微观状态必须对未来完全等价，一旦参数破坏了对称性，聚合就得重新论证。
->
-> 跨课程的坐标：本题是 closed queueing network（闭排队网络）最简单的一例——只有两个节点，总人口 $m$ 固定；thinking（思考）节点是 infinite-server（无限服务器，思考阶段永远不等），服务节点是 single-server（单服务器）加队列。Jackson 定理（James R. Jackson，1957 与 1963）说这类网络的稳态具有 product form（乘积形式），本题的 $\pi_i$ 就是乘积形式在只有两个节点、人口固定时的投影。工程上讲，它给出的是「吞-延迟曲线」的解析版本：加 $m$ 与加 $\mu$ 的效果不可线性外推，饱和点的位置由 $m\rho$ 决定。
-
-<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 39（转移速率等值情形）**</span>
-
-$\ast$ Consider a continuous-time Markov chain in which the transition rates $v_i$ are the same for all $i$. Assume that the process has a single recurrent class.
-(a) Explain why the sequence $Y_n$ of transition times form a Poisson process.
-(b) Show that the steady-state probabilities of the Markov chain $X(t)$ are the same as the steady-state probabilities of the embedded Markov chain $X_n$.
-
-<span style="color:#2471a3;">**[solution]** **Solution.**</span> (a) Denote by $v$ the common value of the transition rates $v_i$. The sequence $\{Y_n\}$ is a sequence of independent exponentially distributed time intervals with parameter $v$. Therefore they can be associated with the arrival times of a Poisson process with rate $v$.
-
-(b) The balance and normalization equations for the continuous-time chain are
-
-```math
-\pi_j \sum_{k\neq j} q_{jk} = \sum_{k\neq j} \pi_k q_{kj}, \quad j = 1, \ldots, m,
-```
-
-```math
-\sum_{k=1}^{m} \pi_k = 1.
-```
-
-By using the relation $q_{jk} = v\,p_{jk}$, and by canceling the common factor $v$, these equations are written as
-
-```math
-\pi_j \sum_{k\neq j} p_{jk} = \sum_{k\neq j} \pi_k p_{kj}, \quad j = 1, \ldots, m,
-```
-
-```math
-\sum_{k=1}^{m} \pi_k = 1,
-```
-
-which are precisely the balance and normalization equations of the embedded Markov chain $X_n$, proving the claim. （解答末尾于本页页脚被 OCR 截断，后续续接于下一页。）
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** Problem 39（书页 p404–405，PDF p413–414；解答跨页，末句在 p413 页脚被 OCR 截断、续接于 p414）。设 continuous-time Markov chain（连续时间马尔可夫链）的 transition rate（转移速率）$v_i$ 全等、记作 $v$，且只有单一 recurrent class（常返类）。要证两件事：(a) 跳变时刻 $Y_n$ 构成 Poisson process（泊松过程）；(b) 该链与其 embedded Markov chain（嵌入链）有相同的 steady-state probability（稳态概率）。
->
-> **(a)：速率与状态无关，等于等待与历史无关。** 状态 $i$ 的逗留时长服从参数 $v_i$ 的 exponential distribution（指数分布）。$v_i\equiv v$ 时每次逗留都是 $\mathrm{Exp}(v)$ 且相互独立，跳变间隔因而 iid（独立同分布）、增量平稳且独立，再加 $h\to0$ 时 $P(N(t+h)-N(t)=1)=vh+o(h)$，正合 Poisson process（泊松过程）的刻画；反过来，间隔 iid 指数也是它的等价定义，所以 (a) 是同一件事的两种说法。措辞校正：Poisson process（泊松过程）指计数过程 $\{N(t)\}$ 本身，$Y_n$ 是它的 arrival times（到达时刻）序列，不可反读成「$Y_n$ 服从泊松分布」。
->
-> **(b)：两条路，同一结论。** 代数路：平衡方程 $\pi_j\sum_{k\ne j}q_{jk}=\sum_{k\ne j}\pi_k q_{kj}$，代入 $p_{jk}=q_{jk}/v_j$ 与 $v_j\equiv v$，约去公共因子得 $\pi_j\sum_{k\ne j}p_{jk}=\sum_{k\ne j}\pi_k p_{kj}$，恰是嵌入链的 balance equation（平衡方程）。概率路更直观：连续时间链的稳态是**时间平均**，嵌入链的稳态是**步平均**，两者之间差一个权重 $1/v_j$，即 $\pi_j^{\mathrm{CT}}$ 正比于 $\pi_j^{\mathrm{emb}}/v_j$；$v_j$ 全相等时权重为常数，归一化后两套稳态完全重合。这条路顺手说明「速率全等」为何是关键条件 —— 它让两种平均只差一个全局常数。
->
-> **方向不能互换。** 左边 $\pi_j\sum_{k\ne j}q_{jk}$ 是离开 $j$ 的 outflow（出流），右边 $\sum_{k\ne j}\pi_k q_{kj}$ 是进入 $j$ 的 inflow（入流）；若把右边写成 $\sum_{k\ne j}\pi_j q_{jk}$，两边恒等于 $0=0$，方程立即失效。口诀：$j$ 在第一个下标位（$q_{jk}$）表示「出」，在第二个下标位（$q_{kj}$）表示「入」；$j$ 是被守衡的那个状态，固定在 $\pi$ 的角标上，不参与求和。
->
-> **行和与列和。** $\sum_{k\ne j}p_{jk}$ 是转移矩阵 $P$ 第 $j$ 行删去对角元后的和，由行和 $\sum_k p_{jk}=1$ 得 $1-p_{jj}$；$\sum_{k\ne j}\pi_k p_{kj}$ 则是第 $j$ 列按 $\pi_k$ 加权。正文 p414 的 $\sum_{k\ne j}\pi_k p_{kj}=\pi_j(1-p_{jj})$ 正做了这一替换，下标方向无误，没有把行和当列和。该替换只在 $P$ 为 row-stochastic（行随机）时成立；换成列随机约定，等式两边要整体换位。
->
-> **唯一性与「当且仅当」。** 「单一常返类 + aperiodic（非周期）」保证稳态唯一，但 aperiodic（非周期）是对离散时间的嵌入链说的：连续时间链在任意时刻都可能跳，本身没有周期概念，这个限定只能挂在嵌入链上。另需收紧一处：扩写前的注写成「当且仅当各状态速率相等」，教材只证了「若」方向。逆命题不成立 —— 两状态链取 $q_{12}=a$、$q_{21}=b$，嵌入链稳态恒为 $(1/2,1/2)$，连续时间稳态满足 $\pi_1a=\pi_2b$ 即正比于 $(b,a)$，$a\ne b$ 时二者不同。
->
-> **一句话收束。** 稳态之所以「稳」，是因为长期占比等于「在该状态的停留总量」除以「总时长」。速率全等时每个状态的期望停留都是 $1/v$，权重相同，(b) 才成立；(a) 则保证跳变发生的节奏与所处状态无关。两问看似独立，其实是同一个假设的两种读法：一个说「等待无记忆」，一个说「占比不随步数换算而变形」。
->
-> **返回时间别与稳态等待混同。** 本题只谈稳态占比，不涉及「从某状态出发、下次返回的期望时间」；后者按步计为 $m_{jj}=1/\pi_j$，与稳态分布互为倒数，把「每步期望逗留」直接乘步数当成返回时间，是这类习题里最常见的混淆之一。**附记：** uniformization（均匀化）取 $v\ge\max_i v_i$、以概率 $1-v_i/v$ 加 self-loop（自环），所得离散链与连续时间链稳态一致，$v_i$ 全等时退化为本题的嵌入链；6.041 第 5 章：exponential distribution（指数分布）的无记忆性、第 6 章：Poisson process（泊松过程）、第 7 章（连续时间链）在此交汇。
-
-> <span style="color:#7f8c8d;">[注] 本页末尾原 OCR 碎裂，已将平衡方程与归一化方程依连续性马尔可夫链·嵌入链标准形式整理合并；数值与公式未臆造。</span>
-<!-- ===== PDF p414 ===== -->
-
-<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）　习题区收尾（Problems Continuation）· 解答收尾（续）**</span>
-
-> <span style="color:#7f8c8d;">本页页首即为 `Problems` 习题区页眉（书页 p405，对应 PDF p414），承接上一页（PDF p413）某一 §7.5 连续时间马尔可夫链（Continuous-Time Markov Chains）习题英文解答的收尾段，讲的是嵌入马尔可夫链（embedded Markov chain）的平衡方程与稳态概率，故以「（续）」续接，未另起新题号。含公式部分 OCR 碎裂（`7rj`、`Pjj`、`7rk`、`pkj`、`7rj(l - Ph)` 与孤立残行 `m`、`k = l` 等），下方按嵌入链标准稳态方程忠实转写，未臆造原文未含的数值。</span>
-
-We have $\sum_{k \ne j} \pi_k\, p_{kj} = \pi_j (1 - p_{jj})$, so the first of these two equations is written as
-
-```math
-\pi_j (1 - p_{jj}) = \sum_{k \ne j} \pi_k\, p_{kj}, \qquad j = 1, \ldots, m,
-```
-
-together with the normalization $\sum_{j=1}^{m} \pi_j = 1$.
-
-These are the balance equations for the embedded Markov chain, which have a unique solution since the embedded Markov chain has a single recurrent class, which is aperiodic. Hence the $\pi_j$ are the steady-state probabilities for the embedded Markov chain.
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 页中残行 `m = L 7rk Pk]. k = l L#j 7rkPkj, k`（即书页 §7.5 嵌入链稳态方程组 $\pi_j(1-p_{jj})=\sum_{k\ne j}\pi_k p_{kj}$，$j=1,\ldots,m$ 及归一化 $\sum_j\pi_j=1$）排版错乱，此处按行文语义整理为两组并列块级公式，未新增数值。</span>
-<!-- ===== PDF p415 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-> <span style="color:#7f8c8d;">本章章前页（章首 Contents 目录页，书页 p407，对应 PDF p415）。页首数字「8」为本章章号（章 8），其下即章标题行「贝叶斯统计推断（Bayesian Statistical Inference）」与本章完整目录。本页仅列出本章各节目录及其对应书页页码，无正文内容。</span>
-
-<span style="color:#7f8c8d;">**Contents（目录）**</span>
-
-- <span style="color:#c0392b;">**§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）**</span> …… p. 412
-- <span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）**</span> …… p. 420
-- <span style="color:#c0392b;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）**</span> …… p. 430
-- <span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）**</span> …… p. 437
-- <span style="color:#c0392b;">**§8.5　小结与讨论（Summary and Discussion）**</span> …… p. 444
-- <span style="color:#7f8c8d;">**Problems（习题）**</span> …… p. 446
-
-> <span style="color:#7f8c8d;">衔接说明：本章（第 8 章）正文自此起，下一节进入 **§8.1 贝叶斯推断与后验分布**（书页 p412），叙述 Bayesian vs Classical/Frequentist（贝叶斯与经典/频率派之争）、模型选择 vs 估计（model selection vs estimation）等章引言议题。本页为纯目录页，无 OCR 损坏数值。</span>
-<!-- ===== PDF p416 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-统计推断（statistical inference）是从可得数据中提取关于某个未知变量或未知模型信息的过程。在本章及下一章，我们的宗旨是：
-
-(a) 培养对两种主要方法——贝叶斯方法（Bayesian）与经典方法（classical）——的体会，认清它们的差异与相似之处。
-
-(b) 呈现各类主要推断问题（inference problems），即参数估计（parameter estimation）、假设检验（hypothesis testing）与显著性检验（significance testing）。
-
-(c) 讨论最重要的方法论，包括最大后验概率准则（maximum a posteriori probability rule）、最小均方估计（least mean squares estimation）、极大似然（maximum likelihood）、回归（regression）、似然比检验（likelihood ratio tests）等。
-
-(d) 结合若干具体例子来阐述这套理论。
-
-<span style="color:#c0392b;">**概率论与统计学（Probability versus Statistics）**</span>
-
-统计推断在一些根本性的方面有别于概率论。概率论是一门自成体系的数学学科，建立在第 1 章引入的公理之上。在概率推理中，我们假定一个完全指定、且满足这些公理的概率模型（probabilistic model）。随后我们运用数学方法来量化这一模型的推论，或回答各种感兴趣的问题。特别是，每一个没有歧义的问题都有唯一正确的答案，尽管这个答案有时并不容易找到。模型被认为是理所当然的，原则上它不必与现实有丝毫相似之处（不过要让模型有用，最好还是与现实相符）。
-
-统计学则不同，它带有一种艺术的成分。对任何特定的问题，可能都存在若干种都说得通的方法，它们会给出不同的答案。一般而言，除非你对推断问题（inference problem）作出若干假设并施加额外的约束，否则并没有一种有原则的方式去挑选「最佳」方法。例如，给定最近五年的股票市场收益率历史，估计明年收益率并不存在唯一「最佳」的方法。
-
-我们可以通过要求某些可取的性质来收窄对「恰当」方法的搜寻范围（例如，当可得数据的数量无限时，该方法能作出正确的推断）。选择一种方法而非另一种，通常取决于若干因素：性能保证（performance guarantees）、既往经验、常识，以及统计学界就某一特定方法是否适用某一特定问题类型所达成的共识。我们将着力把读者引介到一些最流行的方法/选择，以及分析、比较它们的主要途径。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** 第 8 章引言中「概率论与统计学」一段（书页 p406，PDF p416）。它是全书方法论立场的正式声明，给整章定调：probability theory（概率论）是演绎，statistics（统计学）是「带艺术成分」的归纳。
->
-> **「唯一答案」的精确含义。** 概率推理的全部输入是一个完全给定的 probabilistic model（概率模型）加一个无歧义的问句；在这个前提下答案唯一，是因为它是同一组公理的必然推论，而不是因为它「更接近真理」。这一点值得替读者钉死：唯一性属于演绎系统内部，模型与现实的关系不在其中 —— 教材紧接着那句「原则上模型不必与现实有丝毫相似」正是此意。换句话说，概率论回答的是「若模型为真，则某事必然如何」。
->
-> **统计学为什么没有唯一最优。** 从数据反推模型是 inverse problem（反问题），信息不足则 underdetermined（欠定）。这与 Strang 18.06 里的 $Ax=b$ 同构：$A$ 的列多于行时解集是仿射子空间，必须再加一条 criterion（准则）才有唯一解，最小范数解只是众多合法补充之一。所以「没有最佳方法」的准确说法是：best 这个词在指定 criterion（准则）之前根本没有定义；一旦选定 loss function（损失函数），最优就重新唯一。
->
-> **「艺术」落地为三处选择。** 本章后文把三次选择都写成了公式：选 loss function（损失函数）—— squared error（平方误差）给 LMS 估计，0-1 loss（0-1 损失）给 MAP 判决；选先验分布，它把「我认为参数该在哪」写成密度；选模型类，即在 parametric（参数化）与 nonparametric（非参数化）之间定一个函数类。教材举股票收益率的例子说的正是同一件事：给定五年历史，估计明年收益率没有唯一最佳方法，因为在说清惩罚什么之前，「最佳」不是一句有内容的话。跨课程接点：6.036 与 CS229 的 model selection（模型选择）、regularization（正则化）、cross-validation（交叉验证）都是在这三处做选择。
->
-> **两个易误读。** 其一，不要把这段读成「统计学不严谨」。它的主张是 problem formulation（问题表述）本身属于判断，推导只能发生在此之后；严谨性并未被放弃，只是被限定在既定表述之内。其二，注意方向：概率论是「模型 → 数据」的正向推演，统计学是「数据 → 模型」的反向推断；若把统计学的任务写成「求数据在给定模型下的分布」，方向就反了。ill-posed（不良定，Hadamard 意义：解不唯一或不连续依赖数据）一词刻画的正是统计学的常态，而概率论问题按构造是良定的。
->
-> **为什么这段要放在章首。** 因为接下来每一节都会给出「同一份数据、两个都说得通的答案」：MAP 与 LMS 给出不同的数，先验换一个后验跟着换，第 9 章还会用频率派的置信区间给出第三个答案。若读者仍带着「概率问题有唯一正确答案」的预期，会把这种差异误当成错误。教材提前把预期换掉，正是为了让后面的每个例子都被读成「一种合理选择」，而不是「唯一真理」。
->
-> **一句话收束。** 两门学科的分工可以用一句话对齐：概率论检验「模型是否自洽」，统计学检验「模型是否配得上数据」。前者靠证明，后者靠准则、比较与共识；教材要求的「培养对两种方法的体会」，本质就是要求读者同时握有这两把尺子，并在具体问题上说清自己在用哪一把。
-
-<span style="color:#c0392b;">**贝叶斯与经典统计学（Bayesian versus Classical Statistics）**</span>
-
-在统计学的领域中存在两大执相对立观点的思想流派：贝叶斯学派（Bayesian）与经典学派（classical，也称为频率派，frequentist）。它们根本的分歧与未知模型或未知变量的本性有关。在贝叶斯观点（Bayesian view）看来，它们被看作具有已知分布的随机变量……
-<!-- ===== PDF p417 ===== -->
-
-<span style="color:#7f8c8d;">本节继续第 8 章引言（书目 p409），承接上一页关于先验 / 后验分布的论述，进入「贝叶斯（Bayesian）与经典 / 频率派（Classical/Frequentist）之争」的讨论，页末转入小节 **Model versus Variable Inference（模型推断与变量推断）** 的开头。</span>
-
-本节承接上文：在频率派 / 经典的观点中，它们（这些分布 / 参数）被视为**确定性但恰好未知的量（deterministic quantities）**。
-
-贝叶斯方法（Bayesian approach）本质上试图把统计学的领域拉回到概率论的范畴——在那里，每个问题都有唯一确定的答案。特别是，当试图推断一个未知模型的性质时，它把该模型看作是从给定的一类模型中随机选出来的。这一点是通过引入一个刻画模型的随机变量 $\Theta$，并假设一个**先验概率分布（prior probability distribution）** $p_\Theta(\theta)$ 来实现的。在得到观测数据 $x$ 之后，从原则上可以利用**贝叶斯准则（Bayes' rule）**导出一个**后验概率分布（posterior probability distribution）** $p_{\Theta|X}(\theta\mid x)$。该分布囊括了 $x$ 所能提供的关于 $\Theta$ 的全部信息。
-
-相比之下，经典方法把未知量 $\theta$ 看作一个恰好未知的常数。随后它致力于构造 $\theta$ 的一个带有某种**性能保证（performance guarantees）**的估计。这就与本书中其他方法产生了一个重要的概念性差异：我们面对的不是单个概率模型，而是多个候选的概率模型——每一个可能的 $\theta$ 取值都对应一个模型。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 有误] 源 OCR 将 $\Theta$、$\theta$ 分别讹读为 `8`、`O`/`0`（如 `pe (O)`→$p_\Theta(\theta)$、`Pe l x (O I x)`→$p_{\Theta|X}(\theta\mid x)$），已按第 8 章符号约定（$\Theta$=未知参数，取值 $\theta$）校正，非臆造。</span>
-
-两个学派之间的这场争论已持续约一个世纪，且往往带有哲学色彩。更进一步，每一派都构造了例子，以表明对方学派的那些方法有时会产出荒谬或令人不快的答案。我们在此简要回顾这场辩论中的若干观点。
-
-设想我们试图通过带噪声的实验来测量某一个物理常数，比如电子的质量。经典统计学家会论证：电子的质量虽然未知，但只是一个常数，没有任何理由把它建模成一个随机变量。贝叶斯统计学家则会反驳：先验分布（prior distribution）无非反映我们**关于知识的状态（state of knowledge）**。例如，如果我们已经从过去的实验中对这个量的取值范围有了粗略的了解，就可以通过假设一个集中（concentrated）在那个范围内的先验分布来表达这一知识。
-
-经典统计学家往往会反对挑选某个特定先验（prior）的任意性。贝叶斯统计学家则会反驳：每一种统计方法都包含某些隐藏的选择；而且，在某些情形下，经典方法恰恰等价于某种特定先验选择下的贝叶斯方法。通过把所有假设集中在先验这**一处**，贝叶斯统计学家主张让这些假设浮现到表面，从而便于审视。
-
-最后，还有实用层面的考量。在很多情形下，贝叶斯方法在计算上不可行（computationally intractable），例如当它们需要求多维积分（multidimensional integrals）的值时。另一方面，随着更快计算的可用，近年来贝叶斯学界的很多研究都聚焦于使贝叶斯方法变得实用可行。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** 第 8 章引言末段（书页 p407，PDF p416–417），两派争论的收束。分歧不在数学，而在未知参数的**本体论地位**：贝叶斯把 $\Theta$ 当随机变量并给 prior distribution（先验分布）；frequentist（频率派）把它当 deterministic quantity（确定性但未知的常数），只对估计量索取 performance guarantee（性能保证）。
->
-> **两派各要什么。** 贝叶斯要的是「数据之后我认为参数在哪」，答案就是 posterior distribution（后验分布）本身，任何点估计都从它派生。频率派要的是「这套程序在重复实验下的表现」：unbiasedness（无偏性）、置信区间的 coverage（覆盖率）、检验的 size（第一类错误率）与 power（功效）。同一个问题，前者输出一个分布，后者输出一个带保证的程序 —— 这是本章所有分歧的根，比「先验是否主观」更本质。
->
-> **历史坐标。** Thomas Bayes（约 1701 – 1761 年 4 月 7 日）的《An Essay towards solving a Problem in the Doctrine of Chances》在他身后由 Richard Price 送交 Royal Society，1763 年刊于 Philosophical Transactions 第 53 卷 370–418 页；Laplace 独立地于 1774 年在《Mémoire sur la probabilité des causes par les événements》中给出一般形式。频率派一侧的检验框架成形于 20 世纪 20–30 年代，代表是 Ronald Fisher、Jerzy Neyman 与 Egon Pearson（Neyman–Pearson lemma）。客观贝叶斯路线由 Harold Jeffreys 的 Theory of Probability（1939）推动，其 noninformative prior（无信息先验）即 Jeffreys prior。
->
-> **「先验任意」的三条回应。** 正文给了三条：其一，prior（先验分布）编码的是 state of knowledge（知识状态），不是凭空捏造；其二，任何方法都含隐藏选择，经典方法在某些问题上恰等价于某个特定先验下的贝叶斯方法；其三，把假设集中到先验这一处，便于审查，即 transparency（透明性）。数学上还可以说得更硬：先验一旦选定，贝叶斯准则就是唯一的更新规则，于是「任意性」被压缩成单一自由度，而不再弥散在整套程序里。
->
-> **与 regularization 的同构。** 选先验与选正则项是同一件事：L2 正则对应高斯先验下的 MAP（maximum a posteriori，最大后验），L1 对应 Laplace 先验，早停对应某种约束先验。这也解释了为什么「超参怎么选」两派都躲不掉 —— 它是 problem formulation（问题表述）的自由度，不是推导能消掉的东西。sensitivity analysis（敏感性分析）就是把这个自由度的后果显式报出来，而不是假装它不存在。
->
-> **计算与现实。** 后验常需 multidimensional integral（多维积分），一般不可行；MCMC（Markov chain Monte Carlo，马尔可夫链蒙特卡洛）与 variational inference（变分推断）分别把它换成「可采样的 Markov chain（马尔可夫链）」与「可优化的下界」，前者正接回第 7 章。这也解释了教材那句「计算上不可行、近年趋于可行」的现实含义。
->
-> **读法：正文三个例子的分工。** 电子质量一例交代 classical（经典）的立场：一个常数没有理由被随机化；「先验集中在一个范围」说明 prior（先验分布）是知识的编码而不是迷信；「经典方法在某些问题上等价于某个先验下的贝叶斯方法」则是最锋利的一击 —— 它把争论从「要不要先验」改写成「先验有没有被说出口、有没有被检验」。
->
-> **一个具体的分歧实例。** Jeffreys 1939 年的教科书里已经注意到：同一批数据，贝叶斯后验与频率派的 p 值可以给出方向相反的结论，这个现象后来被称为 Lindley 悖论（Lindley 于 1957 年著文命名）。它说明分歧不只是哲学姿态，在假设检验的边界上会给出可观测的不同判决，而这正是本章与第 9 章要读者自己掂量的地方。
->
-> **一处方向提醒。** 贝叶斯准则把 likelihood（似然）$f_{X|\Theta}(x\mid\theta)$ 乘上先验得到 posterior（后验）$f_{\Theta|X}(\theta\mid x)$；两者不是同一个函数，把似然写成 $f_{\Theta|X}$ 是本章最高频的方向错误 —— 箭头处理的永远是「已知 $\Theta$ 时 $X$ 怎么分布」，而我们要的恰是反过来的那个。
-
----
-
-<span style="color:#c0392b;">**模型推断与变量推断（Model versus Variable Inference）**</span>
-
-统计推断（statistical inference）的应用往往属于两种类型。在**模型推断（model inference）**中，所研究的对象是一个真实的现象或过程，而对我们而言，它——
-<!-- ===== PDF p418 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-> <span style="color:#7f8c8d;">本章（书页 p408 起）开篇关于模型推断（model inference，针对模型结构/参数的构造与验证）与变量推断（variable inference，针对未知变量取值的估计）之区别的导言论述延续至本页。本页承接前述「模型推断」段的中段，随后给出 **Example 8.1**（有噪信道，A Noisy Channel）、小节标题「统计推断问题的粗略分类」（A Rough Classification of Statistical Inference Problems）及对估计（estimation）问题的引述。</span>
-
-……希望基于现有数据来构造或验证一个模型（model），例如行星是否遵循椭圆轨道（elliptical trajectories）？这样的模型随后可用来对未来作出预测（predictions），或用来推断某些隐藏的根本原因。而在变量推断（variable inference）中，我们希望利用若干相关的、可能含噪的信息来估计一个或多个未知变量的取值，例如给定几次 GPS 读数，我的当前位置是哪里？
-
-模型推断与变量推断之间的区别并不泾渭分明；例如，通过用一组变量（variables）来描述一个模型，我们可以把模型推断问题转化为变量推断问题。不管怎样，在后续我们将不再强调这一区别，因为同样的方法论原理适用于这两类推断。
-
-在某些应用中，模型推断与变量推断问题可能会同时出现。例如，我们可能收集一些初始数据，用它们来构建一个模型，然后再用该模型对某些变量的取值作出推断。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** 书页 p407–408（PDF p417–418）「模型推断与变量推断」一节。二分不按问题难度，而按**未知物的类型**：model inference（模型推断）的未知物是生成机制（结构加参数），variable inference（变量推断）的未知物是有限个具体取值。
->
-> **判据是问句，不是参数个数。** 模型推断问「是哪个机制在生成数据」，答案会改变概率模型本身；变量推断问「这次观测背后的潜状态是什么」，模型给定，只在模型内部求解 latent variable（潜变量）。因此更实用的判别法是看**换一个答案是否需要换一套模型**：需要，就是模型推断。
->
-> **书里的两个例子正好配成一对。** 行星是否沿椭圆轨道运行是模型推断（问的是机制的形状）；给定若干次 GPS 读数、问「我此刻在哪」是变量推断（机制已知，只差取值）。前者改模型族，后者在模型内定位 —— 同一个数学工具，落在完全不同的对象上。
->
-> **可转化，但只有一个方向。** 正文那句「通过用一组变量来描述一个模型，可以把模型推断问题转化为变量推断问题」说的是 model inference 转 variable inference：把「选哪个模型」编码成「$\Theta$ 取哪个值」，于是 MAP（maximum a posteriori，最大后验）一套公式同时覆盖参数估计与 model selection（模型选择）。反方向不普遍成立 —— 把一个具体估计问题还原成模型推断，等于要求先枚举出全部可能的机制，通常做不到。
->
-> **转化的代价。** 一旦把结构塞进 $\Theta$，它的取值域就从 $\mathbb{R}^d$ 变成离散的模型族，先验只能在模型族上定义，可计算性随之下降；模型族一大，先验的归一化本身就是难题。这是第 9 章把模型选择单列出来的原因：它不是「多一个参数」，而是「参数空间换了形状」。
->
-> **同一方程、两种问句。** Example 8.1 的 noisy channel（有噪信道）是最干净的示范：$\alpha$ 未知、$S_i$ 是已知的 pilot signal（导频）时，估 $\alpha$ 就是模型推断；$\alpha$ 已知、$S_i$ 未知时，逐个判定比特就是变量推断。方程一个字没改，问句一换，数学问题就换了一类 —— 这正是这一段要读者建立的直觉。
->
-> **方向写反的检查。** 本节最容易犯的错误是把转化方向写反：只有 model → variable 这条路是常规可行的，反过来要么不可行，要么需要先穷举机制。判别口诀：忘掉 $\Theta$ 是什么名字，只看「谁知道什么」——若数据的生成方式仍然未知，问题在模型层；若生成方式已定、只缺一次取值，问题在变量层。
->
-> **一个易混的边界例子。** 「这个骰子是否公平」看着是模型推断（要换机制），但一旦把「公平 / 偏斜」编码成参数 $p$ 的两个候选值，它就退化成变量推断；反过来，「估计 $p$」看似变量推断，若同时允许骰子可能是 6 面也可能是 20 面，又升回模型层。可见二分取决于你划定的模型族边界，而不是问题本身固有的属性。
->
-> **收束。** 正文随后声明「不再强调这一区别」，理由是方法同源：两者都写成「先验 × 似然 → 后验」。但读的时候仍要保留这个区分，因为它决定**后验长什么样、能不能算**。跨课程接点：CS229 的 density estimation（密度估计） 属变量层，feature selection（特征选择） 与模型族选择属模型层，两者共用一套贝叶斯工具却对应不同的算法工程。
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.1（有噪信道，A Noisy Channel）。**</span>
-
-一台发射机（transmitter）发送一串二进制消息 $S_i \in \{0, 1\}$，接收机（receiver）观测到
-
-```math
-X_i = \alpha S_i + W_i, \qquad i = 1, \ldots, n,
-```
-
-其中 $W_i$ 是零均值（zero mean）正态随机变量（normal random variables），用于刻画信道噪声（channel noise），而 $\alpha$ 是一个标量，表示信道衰减（channel attenuation）。在模型推断（model inference）的设定下，$\alpha$ 是未知的。发射机发送一个由一串值已知的消息构成的导频信号（pilot signal $S_1, \ldots, S_n$），其取值接收机已知。基于观测 $X_1, \ldots, X_n$，接收机希望估计 $\alpha$ 的值，即为信道构建一个模型。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 本例观测方程（此处写作 $X_i = \alpha S_i + W_i$）在源 OCR 中被打散（仅余二值消息 $S_i \in \{a, I\}$ 与附录式 "$i=1,\ldots,n$" 的碎片），正文亦以 "a"/"a" 混排表示 $\alpha$；上方传动机方程按原书 Noisy Channel 例的权威语义还原，并以 $\alpha$ 规范成文，未臆造数值。</span>
-
-或者，在变量推断（variable inference）的设定下，$\alpha$ 假定为已知（可能如上述那样，已通过导频信号推断出来）。接收机观测到 $X_1, \ldots, X_n$，并希望推断 $S_1, \ldots, S_n$ 的值。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** Example 8.1（书页 p408 附近，PDF p418）。transmitter（发射机）发送二值消息 $S_i\in\{0,1\}$，receiver（接收机）观测 $X_i=\alpha S_i+W_i$，$W_i$ 是零均值正态噪声，$\alpha$ 是 channel attenuation（信道衰减）。同一方程在两种设定下是两类问题：$\alpha$ 未知时为模型推断（用导频估 $\alpha$），$\alpha$ 已知时为变量推断（逐个判定 $S_i$）。
->
-> **估 $\alpha$ 的本质是投影。** 噪声 iid（独立同分布）正态时，likelihood（似然）正比于 $\exp(-\frac{1}{2\sigma^2}\sum_i(X_i-\alpha S_i)^2)$，最大化似然等价于最小化残差平方和，闭式解 $\hat\alpha=\sum_i S_iX_i/\sum_i S_i^2$。几何上这就是把观测向量 $X\in\mathbb{R}^n$ 正投影到由导频向量 $S=(S_1,\ldots,S_n)$ 张成的一维子空间：residual（残差）$X-\hat\alpha S$ 与 $S$ 正交。这正是 Strang 18.06 的 normal equation（正规方程）$S^{T}(X-\hat\alpha S)=0$，也是 least squares（最小二乘）这个名字的全部内容。
->
-> **三种估计器并不等同。** maximum likelihood（极大似然）在均匀先验下与 MAP（maximum a posteriori，最大后验）一致；但 LMS（least mean squares，最小均方）估计取后验均值，只有「高斯先验 + 平方损失」时才与 MAP 重合。教材把三者并列，读者容易误以为可以互换 —— 它们最小化的目标函数不同，重合需要额外条件。本例中 $\alpha$ 若取均匀先验，MAP 与 ML 给出同一个 $\hat\alpha$，而 LMS 给出的是后验均值，一般不等于它。
->
-> **一个初等但重要的边界。** 若导频全为 $0$，分母 $\sum_i S_i^2=0$，$\hat\alpha$ 无定义 —— 这是 identifiability（可辨识性）最小的例子：数据里没有关于 $\alpha$ 的信息，任何估计器都无解。模型推断的第一步从来不是挑估计器，而是确认数据含有待估参数的信息；这一步失败，后面的最优性讨论全部落空。
->
-> **变量推断一侧。** $\alpha$ 已知后，$S_i$ 是二值的，噪声独立时对单个 $X_i$ 的 MAP（maximum a posteriori，最大后验）判决就是与 $\alpha/2$ 比大小；若消息带编码约束，则要把整串 $X_1,\ldots,X_n$ 联合推断，这正是纠错码与 Viterbi 算法的入口。同一个观测序列，两种推断的难度结构完全不同：前者是连续参数的估计，后者是离散序列的搜索。
->
-> **方向别再错。** 信道的因果方向是 $S\to X$，而我们手里能写出的条件分布只有 $f_{X|\Theta}$；贝叶斯准则正是用来反转这个箭头的工具，输出 $f_{\Theta|X}$。把 likelihood（似然）写成 $f_{\Theta|X}$ 就等于预先假设了答案，是本章最典型的方向错误。判别口诀：$f_{X|\Theta}$ 的参数与观测各归其位，不确定的那个永远在竖线右边。
->
-> **为什么它像一块接插件。** 线性叠加加独立噪声是最小的可解模型：噪声一除，估计就退化成投影；把 $S_i$ 从常量换成未知量，它立刻变成检验问题；把 $S_i$ 换成一个向量 $S_i\in\mathbb{R}^k$，同一套推导原封不动变成多元回归。学会这一个例子，等于拿到后面所有「线性模型 + 高斯噪声」的母版。
->
-> **一个常被跳过的前提。** 上面的 $\hat\alpha$ 只在噪声方差 $\sigma^2$ 已知时才是 ML 解；若 $\sigma$ 也未知，似然里多一个待估参数，联合求解得到的 $\hat\sigma^2$ 以 $n$ 而非 $n-1$ 作分母，因而是有偏的。本例默认 $\sigma$ 已知，读者不必在此纠缠，但要知道这个前提确实存在，后面的自由度讨论会反复用到它。
->
-> **收束。** 本例之所以被放在章首，是因为它把「模型推断 / 变量推断」的二分压缩进一个公式：改 $\alpha$ 的状态，问题就换类。课程坐标：6.041 第 8 章 §8.1（本例作为二分示范）、§8.3（LMS 给出后验均值）、第 9 章（假设检验与似然比）；6.036 的线性回归与正规方程在此完全对齐，差别只在于前者从「最小化损失」出发，本书从「给定先验求后验」出发。
-
----
-
-<span style="color:#c0392b;">**统计推断问题的粗略分类（A Rough Classification of Statistical Inference Problems）**</span>
-
-我们在此描述几类不同的推断问题。在估计问题（estimation problem）中，一个模型除一个未知的、可能为多维的参数 $\theta$ 外被完全给定，我们希望估计该参数。这个参数既可以看作一个随机变量（random variable，贝叶斯方法，Bayesian approach），也可以看作一个未知常数（classical approach，经典方法）。通常的目标是得到一个在某种意义下接近真实值的 $\theta$ 估计。例如：
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上述脚注中的 $x=n/\lambda$、$\left(1-\lambda/n\right)^{n/\lambda}$ 等项在 OCR 中被右栏截断，此处按 $\left(1-\tfrac{1}{x}\right)^{x}\to e^{-1}$ 的标准结论补全，数值一律未改动。</span>
 
-(a) 在 Example 8.1 的有噪传输问题中，利用导频序列（pilot sequence）与观测来估计 $\alpha$。
+由此我们断定：对每个固定的 $k$，当 $n\to+\infty$ 时，有
 
-(b) 利用民意调查（polling）数据，估计选民总体中偏好候选人 A 胜过候选人 B 的比例。
-
-(c) 基于历史股票市场数据，估计某只股票每日价格变动的均值（mean）与方差（variance）。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** 书页 p408–409（PDF p418–419）「统计推断问题的粗略分类」。扩写前的注按「参数连续 / 离散」区分 estimation（估计）与 hypothesis testing（假设检验），这只是在描述现象；真正的判据是**决策空间与损失**：估计的动作是报一个数或向量，损失通常是 squared error（平方误差）；检验的动作是从有限个假设里挑一个，损失是 0-1 loss（0-1 损失）。
->
-> **三层结构。** ① 估计：动作落在与参数同维的连续空间；② 二值检验：$\Theta$ 只取两个值，$m=2$；③ $m$ 元检验：有限个互斥假设。三者可以写成同一个四元组（参数、观测、决策规则 $\delta$、损失 $L$），选 $\delta$ 使期望损失最小。这个期望损失在文献里叫 risk（风险），于是「选择方法」被翻译成「选择使风险最小的 $\delta$」。
->
-> **三个例子各自落在哪。** (a) 有噪信道的 $\alpha$ 是估计；(b) 民调里偏好 A 胜过 B 的比例是估计，本质是一个 Bernoulli 参数的估计；(c) 股票日收益的均值与 variance（方差）是二维估计。三者的共同点是动作等于报数，所以都能写成 $\hat\theta(x)$ 这种函数形式，区别只在维数与损失形状。
->
-> **统一之后的好处。** 一旦写成四元组，两派的差别就变成「$\Theta$ 是否有先验」：有先验则最小化 Bayes risk（贝叶斯风险），无先验则最小化最坏情形风险，即 minimax（极小极大）。估计与检验也不再是两个工具箱，而是同一台机器换一个损失函数。文献上这套语言叫 statistical decision theory（统计决策论），它把「估计」与「检验」的差别降级为损失函数的一个特例。
->
-> **与机器学习的对齐。** 估计约等于 regression（回归），检验约等于 classification（分类）；6.036 与 CS229 的损失表可以逐格对上：squared error（平方误差）给回归，0-1 loss（0-1 损失）给分类，logistic loss（逻辑损失）给概率输出。这层对齐不是类比而是同一件事：那门课的 empirical risk minimization（经验风险最小化） 就是这里的 risk 用样本平均替代期望之后的版本。
->
-> **两处易混。** 其一，cross-entropy（交叉熵）是负对数似然，最小化它等于 ML 而不是 MAP，要加上先验项（正则项）才变成 MAP。其二，估计问题的「误差」是 risk（风险），即估计量与真值之差的期望，不是估计量自身的 variance（方差）；方差只解释误差的一部分，另一部分是 bias（偏差），二者此消彼长正是 bias-variance（偏差-方差）权衡的来源。
->
-> **一个技术细节。** $m$ 元检验的损失仍取 0-1，而不是「错几个」—— 一次决策只挑一个假设，要么对要么错，损失只占一个比特。若错误真有分级（把良性判成恶性的代价高于反向），就要换成加权损失，此时 MAP（maximum a posteriori，最大后验）判决也跟着变；无权重时 MAP 恰是 0-1 损失下的最优判决，这正是 §8.2 要证的结论。
->
-> **工程含义。** 估计的解通常是一个闭式公式，代价是一次遍历或一次求逆；检验则要多选一个阈值，而阈值从不中立 —— 它编码了对两类错误代价的估计。把阈值写死却不说清「为什么是这个数」，是实践中最常见的隐性假设泄漏。
->
-> **收束。** 这一段的功能是给读者一张地图：后面每一节都会落回「动作空间 + 损失」这两个坐标上。检验问题的例子随后在正文里展开（人像检测、医学方案比较），它们与估计问题的唯一差别就是动作集从连续变成有限 —— 公式不必重学，只需把积分换成求和、把平方损失换成 0-1 损失。
-
-<!-- ===== PDF p419 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页，仍是第 8 章引言（章首叙事，书页 p408–411）的收尾部分：先讲完二值及多值假设检验（hypothesis testing）的概要，交代本章与下一章的分工，并以一个非参数化（nonparametric）问题的例子说明统计推断的问题范围之广；随后转入本章的「本章主要术语、问题与方法（Major Terms, Problems, and Methods in this Chapter）」要点清单。第 8 章正文（§8.1）从书页 p412 起。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 例 8.1 噪声传输问题那条引述中，个别字母/下标在 OCR 中被误读打散（如 `of a and Xi` 当为 已知 $\alpha$ 与 $X_i$、`Si was 0 or l` 即被判定对象 $S_i$ 是 0 还是 1、`Y g(X)` 中的 `9` 当为未知函数 $g$）。在变量推断（variable inference）设定下，待判定的二值量是传输比特 $S_i\in\{0,1\}$（此时衰减 $\alpha$ 已知），故上引 `Si was 0 or l` 沿用原文，非 $\Theta$ 是 0 或 1。下按原书 411 页权威语义还原，未新增原文未含的数值。</span>
-
-在二元假设检验问题（binary hypothesis testing problem）中，我们从两个假设（hypotheses）出发，并利用手头的观测数据（data）来判定二者中哪一个为真。例如：
-
-(a) 在例 8.1 的噪声传输问题（noisy transmission problem）中，利用 $\alpha$ 与 $X_i$ 的已知取值，来判定 $S_i$ 究竟是 0 还是 1。
-
-(b) 给定一幅含噪图像（noisy picture），判定其中是否有人。
-
-(c) 给定针对两种备选医学治疗方案（medical treatments）的一组试验，判定哪一种治疗最有效。
-
-更一般地，在一个 $m$ 元假设检验问题（$m$-ary hypothesis testing problem）中，存在有限数目 $m$ 个相互竞争的假设。某种特定方法的性能，通常由它作出错误决策（erroneous decision）的概率来衡量。同样地，贝叶斯（Bayesian）方法与经典（classical）方法此时也都是可行的。
-
-本章我们主要聚焦于贝叶斯估计（Bayesian estimation）类问题，但也会讨论假设检验（hypothesis testing）。在下一章中，除了估计之外，我们还会讨论更广泛的一类假设检验问题。我们的处理是入门性质的，远未穷尽实际中会遇到的统计推断（statistical inference）问题范围。作为另一类不同于前述类型的问题的示例，考虑构造一个形如
-
-```math
-Y = g(X) + W
-```
-
-的、把两个随机变量 $X$ 与 $Y$ 关联起来的模型。这里 $W$ 是零均值噪声（zero mean noise），而 $g$ 是一个待估计的未知函数。这类问题中，其不确定对象（此处即函数 $g$）无法用固定有限数目的参数来描述，因而被称为非参数化（nonparametric）问题，超出了我们的讨论范围。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** 书页 p409–410（PDF p419）末段，用 $Y=g(X)+W$ 引出 nonparametric（非参数化）问题。扩写前的注说这个标签易被误读，这点保留，但定义要写准：nonparametric（非参数化）不是「没有参数」，而是「参数个数不预先固定为有限值，而随样本量 $n$ 一起增长」；等价说法是模型所在的函数类是 infinite-dimensional（无穷维）的。
->
-> **判据只有一条。** 能否用固定维数 $\theta\in\mathbb{R}^d$（$d$ 不随 $n$ 变）索引整个模型族。据此判定，参数上百万的神经网络仍是 parametric（参数化）；而每加一个样本就多一个节点的 spline（样条）却是 nonparametric（非参数化）。所以「参数多」绝不等价于「非参数」，这是这个标签最常被混淆的地方。
->
-> **本章方法为何在此失效。** MAP（maximum a posteriori，最大后验）与 LMS（least mean squares，最小均方）都要求「先验 × 似然」在有限维参数上成为可积密度；一旦 $\Theta$ 是函数空间的一个元素，先验就变成函数空间上的测度（如 Gaussian process（高斯过程）先验），后验不再是有限维密度，「求后验均值」变成求一个函数。数学上完全可行，但超出入门工具包，这正是正文把它标为「超出讨论范围」的实际理由。
->
-> **无穷维并不神秘。** 对 $g$ 加光滑性先验，无穷维会被压成 effective degrees of freedom（有效自由度）；kernel smoothing（核平滑）、spline（样条）、GP 回归最终都实现为有限维线性代数，规模是 $n\times n$ 的 Gram 矩阵。与 Strang 18.06 的接点在正则化最小二乘：$(A^{T}A+\lambda I)^{-1}A^{T}y$ 就是把函数空间投影到由样本张成的有限维子空间，$\lambda$ 控制投影的软硬 —— 无穷维模型的「容量」最终由 $\lambda$ 一个标量决定。
->
-> **一处表述要收边界。** 「参数数目随数据增长而无界」应读作「随 $n$ 增长」：固定 $n$ 时它有限，谈无界必须带上「当 $n\to\infty$」这个前提。另需防一个误读：nonparametric（非参数化）不等于 model-free（无模型），恰恰相反，它用的是一个更宽的函数类模型，假设不是消失了，而是从「形状固定」换成「光滑性 / 稀疏性」这类更弱的约束。
->
-> **一个具体对照。** 同样 $n$ 个点：若假定 $g$ 是三次多项式，参数量恒为 4，样本再多也不变，这是 parametric（参数化）；若用 kernel smoothing（核平滑）在每个样本点上放一个核，参数量随 $n$ 增长，这是 nonparametric（非参数化）。两者拟合同一条曲线时结果可以极其接近，差别不在当下的拟合值，而在「样本量增加时它能不能变得更细」。
->
-> **有效自由度怎么算。** 对线性平滑器 $\hat y=Hy$（$H$ 是 hat matrix（帽子矩阵）），effective degrees of freedom（有效自由度）取 $\mathrm{tr}(H)=\sum_i h_{ii}$；$H$ 是投影矩阵时它恰等于子空间维数，于是「无穷维模型」被一个整数刻画。这正是非参数方法在实践中并不真的携带无穷多参数的原因：容量由 $\mathrm{tr}(H)$ 或 $\lambda$ 这类少数标量管住。
->
-> **还有一个同名但不同的用法。** 统计里的 nonparametric test（非参数检验）指不假定总体分布形状的检验，如符号检验、秩和检验；它与回归里的 nonparametric（非参数化）不是一回事 —— 前者放松的是分布假设，后者放松的是函数形状假设。读文献时若不区分这两层，很容易把「不假设正态」与「不假设线性」混为一谈。
->
-> **收束。** 这一段的真正目的是划定本章的势力范围：后面所有估计器都建立在「$\Theta$ 落在 $\mathbb{R}^d$、先验有密度」之上。看到 $Y=g(X)+W$ 这类问题，正确的反应不是硬套 MAP，而是先问两件事：$g$ 的光滑性假设是什么、样本量相对自由度够不够。前者决定模型，后者决定它能不能算得出来。
-
----
-
-<span style="color:#00838f;">**[本章要点]**</span> <span style="color:#00838f;">**本章主要术语、问题与方法（Major Terms, Problems, and Methods in this Chapter）**</span>
-
-- 贝叶斯统计（Bayesian statistics）把未知参数视为随机变量（random variables），且带有已知的先验分布（prior distributions）。
-- 在参数估计（parameter estimation）中，我们希望以某种概率意义（probabilistic sense）上接近参数真实值的方式，来产生估计（estimates）。
-- 在假设检验（hypothesis testing）中，未知参数取有限个数个值之一，各值对应相互竞争的假设；我们要在这些假设中作出选择，目标是获得较小的误差概率（probability of error）。
-- 主要的贝叶斯推断方法（Bayesian inference methods）：
-  (a) 最大后验概率（maximum a posteriori probability，MAP）准则：在可能的参数值/假设中，选出在给定数据下条件/后验概率（posterior probability）最大（maximum）的那一个（第 8.2 节）。
-  (b) 最小均方（least mean squares，LMS）估计：选取一个估计量（estimator），即数据的某个函数，使其最小化参数与其估计之间的均方误差（mean squared error）（第 8.3 节）。
-<!-- ===== PDF p420 ===== -->
-
-<span style="color:#7f8c8d;">§8.1 贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）续页。本页书页号为 412，页眉为「8 / Sec. 8.1」，§8.2 尚未开始。本页开头顶部为上页关于「如何选取观测并刻画贝叶斯推断问题三要素」论述的收尾部分（故以「（续）」衔接），随后转入对推断模型（inference model）的总结性段落的展开叙述。</span>
-
-<span style="color:#00838f;">**[note] 推断模型的总结（A Summary of the Inference Model）**</span>
-
-…我们据此选定一个观测（observation）$X$——既可以当作一个随机变量（random variable）来处理，也可以视为对所研究物理量（physical quantities）的一种表示，诸如某一被选「对象」的位置（position）与速度（velocity）之类。我们对某个未知参数（parameter）$\Theta$ 抱持某种先验信念。除非我们事先掌握了关于 $\Theta$ 足够多的信息，否则这一信念便只能由先验分布（prior distribution）来刻画；而在真正着手从数据中提取关于 $\Theta$ 的信息之前，我们其实并不会预先知道 $\Theta$ 的取值……（此处正文源 OCR 碎裂，仅余片段）
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页整页 OCR 严重碎裂：绝大多数字词被切成零散单字或短片段（如页首 "(c) Select an…"、"(a)…(Xl"、"(b) A…" 三处列表式下的文字仅余 "of random variable"、"physical quantities…position / velocity"、"we know the joint … distribution … continuous" 等零散字样）。下文按原书 §8.1「推断模型」一节的标准语义做忠实重建，仅还原可辨识的关键术语与总体思路；凡原文确切的措辞已无法逐字复原处，均在此注出，绝不臆造原文未出现的数值或符号。</span>
-
-以上讨论依赖于一个关键事实：要计算后验分布，我们需要知道观测 $X$ 在给定 $\Theta$ 之下的条件分布，即似然（likelihood）——当 $X$ 为离散随机变量时它是条件分布列（conditional PMF）$p_{X\mid\Theta}(x\mid\theta)$，当 $X$ 为连续随机变量时它是条件概率密度函数（conditional PDF）$f_{X\mid\Theta}(x\mid\theta)$。究竟采用分布列还是密度函数，取决于 $X$ 是离散的还是连续的；与此类似，我们还需要根据 $\Theta$ 取值域是离散还是连续，来相应地选择 $\Theta$ 的先验分布列 $p_\Theta(\theta)$ 或先验密度 $f_\Theta(\theta)$。
-
-```math
-\text{给定观测值 } X = x \text{，贝叶斯推断问题（Bayesian inference problem）的完整解答}
-```
-
-将由后验分布（posterior distribution）$f_{\Theta\mid X}(\theta\mid x)$（当 $\Theta$ 连续时；离散情形则写作 $p_{\Theta\mid X}(\theta\mid x)$）给出。它是把先验分布与似然通过贝叶斯准则（Bayes' rule）相乘并按分母归一化后得到的。该后验分布浓缩并封装了可得观测数据所能提供的关于 $\Theta$ 的全部信息（encapsulates all the available information）。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 源 OCR 中后验密度被读成残缺片段（如 "posterior distribution Pe l x ( () I"、"fe I x ( () I ：::ie c…" 等），此处按 $\Theta$ 连续的一贯记号 $f_{\Theta\mid X}(\theta\mid x)$ 与贝叶斯准则的归一化过程还原，未添加任何原文未含之公式。</span>
-
-一旦求得了后验分布，它便可用于回答（answer）各种各样进一步（additional）的推断问题，也可用于计算对未知量（如某概率或误差方差（error variances）……）的估计（estimates）。例如，后验分布可以用于……（此处正文转至对误差方差以及其他推断量的估计，后续表述被源 OCR 打碎，仅余片段）。
-
-于是便得到了一个十分简洁、在贝叶斯统计推断（Bayesian statistical inference）中反复出现的推断模型（inference model）：它由未知参数 $\Theta$（带有先验分布）与观测 $X$（带有条件分布列或条件概率密度函数）两大部分构成，而推断的终点就是由贝叶斯准则算出的后验分布。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 末段「后验可计算估计量」「可计算均方误差/误差方差等」的过渡句在源 OCR 中残损严重（仅 ".…can be used to the calculation of estimates of"、"probabilities or error variances" 及 "answer additional inference questions" 可辨），确切接线措辞无法逐字复原，故上段仅作连贯化转写。</span>
-<!-- ===== PDF p421 ===== -->
-
-> <span style="color:#7f8c8d;">§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）· 书目 p.413。本页承接上一页（PDF p420，书目 p412）的 §8.1 论述，转入「贝叶斯推断总结」小节，并以规则框列出「贝叶斯准则的四种版本」。页内无新例，属正文叙述与小节收尾，故直接分段呈现。</span>
-
-<span style="color:#c0392b;">**§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）**</span>
-
-<span style="color:#2471a3;">**[summary]**</span> <span style="color:#2471a3;">**贝叶斯推断总结（Summary of Bayesian Inference）**</span>
-
-- 我们从未知随机变量 $\Theta$ 的一个先验分布（prior distribution）$p_\Theta$ 或 $f_\Theta$ 出发。
-- 我们有一个观测向量（observation vector）$X$ 的模型 $p_{X|\Theta}$ 或 $f_{X|\Theta}$。
-- 在观测到 $X$ 的取值 $x$ 之后，我们利用相应版本的贝叶斯准则（Bayes' rule），形成 $\Theta$ 的后验分布（posterior distribution）。
-
-注意，贝叶斯准则共有四种不同版本，这里为方便参考把它们逐一重复列出。它们对应 $\Theta$ 与 $X$ 分别为离散或连续的四种组合。然而，这四种版本在句式上相似：从最简单的一版（所有变量均为离散）出发，只须在涉及连续随机变量时，把概率质量函数（probability mass function，PMF）换成概率密度函数（probability density function，PDF）、把求和换成求积分即可。此外，当 $\Theta$ 是多维（multidimensional）时，相应的求和或积分都应理解为多维和或积。
-
-<span style="color:#2471a3;">**[rule]**</span> <span style="color:#2471a3;">**贝叶斯准则的四种版本（The Four Versions of Bayes' Rule）**</span>
-
-- $\Theta$ 离散，$X$ 离散：
-
-```math
-p_{\Theta|X}(\theta \mid x) =
-\frac{p_\Theta(\theta)\,p_{X|\Theta}(x \mid \theta)}
-{\sum_{\theta'} p_\Theta(\theta')\,p_{X|\Theta}(x \mid \theta')}.
-```
-
-- $\Theta$ 离散，$X$ 连续：
-
-```math
-p_{\Theta|X}(\theta \mid x) =
-\frac{p_\Theta(\theta)\,f_{X|\Theta}(x \mid \theta)}
-{\sum_{\theta'} p_\Theta(\theta')\,f_{X|\Theta}(x \mid \theta')}.
-```
-
-- $\Theta$ 连续，$X$ 离散：
-
-```math
-f_{\Theta|X}(\theta \mid x) =
-\frac{f_\Theta(\theta)\,p_{X|\Theta}(x \mid \theta)}
-{\int f_\Theta(\theta')\,p_{X|\Theta}(x \mid \theta')\,d\theta'}.
-```
-
-- $\Theta$ 连续，$X$ 连续：
-
-```math
-f_{\Theta|X}(\theta \mid x) =
-\frac{f_\Theta(\theta)\,f_{X|\Theta}(x \mid \theta)}
-{\int f_\Theta(\theta')\,f_{X|\Theta}(x \mid \theta')\,d\theta'}.
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 源 OCR 中「贝叶斯准则的四种版本」仅第二种（$\Theta$ 离散、$X$ 连续）的公式完整可辨，即
-> $p_{\Theta|X}(\theta \mid x)=\dfrac{p_\Theta(\theta)\,f_{X|\Theta}(x\mid\theta)}{\sum_{\theta'} p_\Theta(\theta')\,f_{X|\Theta}(x\mid\theta')}$，
-> 且仅两个子项（$\Theta$ 离散、$\Theta$ 连续）的批注开头字样可辨。其余三种版本的公式（以及第一种、第三种、第四种版本前的条目句式）在 OCR 中被打散成碎片（如 `Pe l x ( 0 I x )`、`L pe ( 0' ) ix Ie`、`(Jf` 等）。页面上方正文「以离散版为基础、PMF 换 PDF、求和换积分、多维情形的多维和积」这段指引文字完整，故此处仅据此忠实还原四种版本的标准形式——即下方 1–4 四条公式均为按标准形式重建、非逐字还原，未臆造任何正文未声明之外的数值或符号。</span>
-
-> <span style="color:#7f8c8d;">衔接下一面（PDF p422）：贝叶斯准则的四种版本列出后，本页结束于第四条版本（$\Theta$ 连续、$X$ 连续）的公式；后续页将据此转入新的 Example 或进阶讨论。</span>
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> **定位。** 书页 p413–414（PDF p421）§8.1 末尾的规则框「The Four Versions of Bayes' Rule」。四式不是四个定理，而是「$\Theta$ 与 $X$ 各取离散 / 连续」的笛卡尔积：骨架恒定，都是「后验正比于先验乘似然，再除以 normalizing constant（归一化常数）」，差别只在于把求和换成积分、把 PMF（概率质量函数）换成 PDF（概率密度函数）。
->
-> **一条规则替代四次背诵。** 分母的求和或积分**永远对 $\theta$ 的哑变量 $\theta'$ 进行**，与 $X$ 的离散 / 连续性无关；$X$ 的类型只决定分子里写 $f_{X|\Theta}$ 还是 $p_{X|\Theta}$，$\Theta$ 的类型只决定分母用 $\sum_{\theta'}$ 还是 $\int d\theta'$。于是四版分别落在：离散对离散、离散对连续、连续对离散、连续对连续，两条选择相互独立，$2\times2$ 恰好四种。记住这条，四种版本无需逐一背。
->
-> **逐版核对。** 已核对正文四条公式，上下标方向均正确：分子第一因子是 prior（先验）$p_\Theta$ 或 $f_\Theta$，第二因子是 likelihood（似然）$f_{X|\Theta}$ 或 $p_{X|\Theta}$；分母把 $\theta$ 换成 $\theta'$ 后按 $\Theta$ 的类型求和或积分，$x$ 保持为观测值不变。竖线的左右两侧没有互换，这是本节最需要盯住的一处。
->
-> **两条记号纪律。** 其一，$x$ 是已观测的固定值，$\theta$ 是自变量，分母必须换用哑变量 $\theta'$；分子分母共用同一个 $\theta$，形式上看像约分，实质是变量名冲突，等比写错更难察觉。其二，$f_{X|\Theta}(x\mid\theta)$ 是 likelihood（似然），$f_{\Theta|X}(\theta\mid x)$ 是 posterior（后验）；箭头方向相反，写反是本章最高频的错误。
->
-> **四个公式实为一个。** 用测度论语言，后验就是 Radon–Nikodym derivative（Radon–Nikodym 导数）$dP_{\Theta|X=x}/d\mu$：$\mu$ 取 counting measure（计数测度）时得到 PMF（概率质量函数），取 Lebesgue measure（Lebesgue 测度）时得到 PDF（概率密度函数）。四种版本只是同一个导数在不同参考测度下的密度表示 —— 这与 Thomson 实分析里的条件期望定义完全一致，是先有测度、后有公式，而不是反过来。
->
-> **连续版的真实麻烦。** 两边都连续时，若 $(\Theta,X)$ 没有联合密度（如 $X=\Theta$ 确定相等），后验仍可定义但不再是密度函数，且会依赖条件化的方式 —— 这就是 Borel–Kolmogorov 悖论的来源，也是「连续版贝叶斯」唯一需要小心的地方。入门课程通常绕开它，但读者应知道四式的前提是「$\Theta$ 与 $X$ 有联合密度」。
->
-> **历史一句。** Bayes 1763 年那篇文章只处理了二项分布加 Beta 先验这一特例，把一般的「先验 × 似然」形式写出来的是 Laplace 1774 年的《Mémoire sur la probabilité des causes par les événements》；教材把它叫 Bayes' rule 而不叫 Bayes–Laplace rule，是历史惯例而非归属判断。
->
-> **最容易记错的一版。** 第三版（$\Theta$ 连续、$X$ 离散）的分子是 $f_\Theta(\theta)p_{X|\Theta}(x\mid\theta)$：两种记号的角色与前两版相反，因为 $\Theta$ 连续才出现密度 $f_\Theta$，$X$ 离散才出现概率 $p_{X|\Theta}$。记不住时只问一句「哪个量在积分域里走」—— 它在分母里配 $\int$，另一个配 $\sum$。附带说明：正文第 2 版公式 OCR 完整可辨，其余三版按标准形式重建，未臆造数值。
->
-> **与第 1 章的连接。** 离散对离散那一版就是第 1 章最基础的条件概率公式：分子是「先验乘似然」，分母按全概率公式展开。其余三版不是新定理，只是同一个定义在连续轴上把 $P(X=x)$ 换成密度后的合法版本 —— 这件事在概率论里不平凡（零概率事件的条件化需要极限或测度论），所以教材只给公式、把论证留给后续课程。
->
-> **一个可算的最小例子。** 取 $\Theta$ 只在两个值中取、先验各半，$X$ 在给定 $\Theta$ 下为高斯；观测到一个 $x$ 后，后验只需两次密度求值加一次归一化，不涉及任何积分。这条「先验乘似然、再归一」的操作顺序，是后面所有例子的计算模板，例 8.2 的朱丽叶迟到问题也是照这个顺序走的，只不过归一化常数要用积分算出来。
->
-> **收束。** 这一框的价值在于把「四套公式」降维成「一个骨架加两条轴」。以后遇到混合情形（$\Theta$ 连续而 $X$ 的某些分量离散），不必另找公式：逐坐标决定用 $\sum$ 还是 $\int$，骨架不动。
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页，继续 §8.1 的讨论。页首一句「下面用一些例子来演示后验的计算」，随后进入本章新例 **Example 8.2**：罗密欧与朱丽叶约会——朱丽叶迟到的时长在 $[0, \theta]$ 上均匀分布而 $\theta$ 未知、服从先验（prior），并通过贝叶斯准则（Bayes' rule）求后验 PDF（posterior PDF）。本页在同一例子内给出 $n$ 次约会的推广（把后验中的归一化常数 $c(x)$ 表达为关于最大迟到时长 $\bar{x}$ 的积分）。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 部分损坏] 本页多处 OCR 碎裂：未知参数的符号在原文中为 $\Theta$/$\theta$，但 OCR 常被读成 `O`（如先验 `!e (O)`、`[0, OJ`、$^\circ \le x \le 0 \le 1$ 等）；后验公式右端 `1 /(O • I log x l)` 亦碎。现按原书 §8.1 的权威语义还原为 $\theta$ 与后验 $\frac{1}{\theta\,\lvert\log x\rvert}$，未臆造任何原文未含的数值。</span>
-
-下面用一些例子（examples）来演示后验（posterior）的计算。
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.2．罗密欧与朱丽叶的约会（Romeo and Juliet start dating）**</span>
-
-罗密欧（Romeo）与朱丽叶（Juliet）开始约会，但朱丽叶每次约会都会迟到一段随机的时长 $X$，该时长在区间 $[0, \theta]$ 上均匀分布（uniformly distributed）。参数 $\theta$ 未知，被建模为随机变量 $\Theta$ 的值，而 $\Theta$ 在零到一小时之间均匀分布。假定朱丽叶在她们第一次约会时迟到了时长 $x$，那么罗密欧应如何用这一信息来更新 $\Theta$ 的分布？
-
-此处先验 PDF（prior PDF）为
-
-```math
-f_{\Theta}(\theta) =
-\begin{cases}
-1, & \text{若 } 0 \le \theta \le 1,\\
-0, & \text{其他情形,}
-\end{cases}
-```
-
-而观测的条件 PDF（conditional PDF of the observation）为
-
-```math
-f_{X|\Theta}(x \mid \theta) =
-\begin{cases}
-1/\theta, & \text{若 } 0 \le x \le \theta,\\
-0, & \text{其他情形.}
-\end{cases}
-```
-
-利用贝叶斯准则（Bayes' rule），并考虑到 $f_{\Theta}(\theta) f_{X|\Theta}(x \mid \theta)$ 仅在 $0 \le x \le \theta \le 1$ 时非零，我们得出对任意 $x \in [0, 1]$ 后验 PDF 为
-
-```math
-f_{\Theta|X}(\theta \mid x) =
-\frac{
-f_{\Theta}(\theta)\, f_{X|\Theta}(x \mid \theta)
-}{
-\displaystyle\int f_{\Theta}(\theta')\, f_{X|\Theta}(x \mid \theta')\, d\theta'
-}
-=
-\frac{1/\theta}{
-\displaystyle\int_{x}^{1} (1/\theta')\, d\theta'
-}
-=
-\frac{1}{\theta\,\lvert \log x \rvert},
-\quad \text{若 } x \le \theta \le 1,
-```
-
-且当 $\theta < x$ 或 $\theta > 1$ 时，$f_{\Theta|X}(\theta \mid x) = 0$。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这句话读的是后验的定义域，而不是它的函数值。正文给出 $n=1$ 时的后验 PDF 为 $f_{\Theta|X}(\theta\mid x)=1/(\theta\lvert\log x\rvert)$ 于 $x\le\theta\le1$，再补一句「当 $\theta<x$ 或 $\theta>1$ 时为零」。前一句说密度长什么样，后一句说它定义在哪；后一句更硬：那里的概率不是「很小」，而是恰好为零，且这个零是不可逆的（Cromwell 规则：后验为零的点在贝叶斯更新下是吸收态）。
->
-> 第一性原理是「乘法看支撑」。Bayes' rule（贝叶斯准则）的分子是 $f_\Theta(\theta)f_{X|\Theta}(x\mid\theta)$，乘积为正要求两个因子同时为正。先验 $f_\Theta$ 在 $[0,1]$ 上恒等于 $1$，处处为正；似然 $f_{X|\Theta}(x\mid\theta)=1/\theta$ 只在 $0\le x\le\theta$ 时非零。两条合起来给出 $x\le\theta\le1$。所以「$\theta<x$ 处为零」不是积分算出来的性质，而是两个 support（支撑）取交集的结果：后验的定义域等于先验支撑与似然支撑之交。
->
-> 把归一化做一遍，等于给这句话做一次自检。分母是 $\int_x^1 d\theta'/\theta'=-\log x=\lvert\log x\rvert$（$0<x\le1$ 时 $\log x\le0$，故取绝对值），于是 $f_{\Theta|X}(\theta\mid x)=1/(\theta\lvert\log x\rvert)$，再验 $\int_x^1 d\theta/(\theta\lvert\log x\rvert)=1$。这一步同时检查了两件事：积分限的方向（写成 $\int_0^1$ 或 $\int_0^x$ 得到的东西积分不为 $1$）与常数的位置（漏掉 $\lvert\log x\rvert$ 就只剩正比关系）。
->
-> 从信息的角度看，观测 $x$ 的作用是把参数的下界从 $0$ 抬到 $x$，也就是把参数空间里 $[0,x)$ 这一段整段剪掉。关键在于剪除不是靠密度数值实现，而是靠一个取 $0/1$ 的 indicator function（指示函数）实现：即使 $1/\theta$ 在 $\theta<x$ 处「看起来很可观」，乘上零之后就不存在了。所以支撑携带的信息比密度数值携带的信息更硬——它是逻辑层面的排除，不是「证据较弱」这种能靠更多数据慢慢抵消的东西。
->
-> 命名模板：support（支撑）指密度的非零集；support truncation（支撑截断）指观测把后验支撑从 $[0,1]$ 压成 $[x,1]$。与之对照的是 full support（全支撑）情形，例如正态观测 $X=\Theta+W$，任何有限观测都不会造成硬零，后验在整条实轴上处处为正。两者的差别不在计算技巧而在模型结构：一个是端点随参数移动，一个是形状随参数平移。
->
-> 跨课程（实分析 / 统计学的正则性条件）：支撑依赖参数会破坏「积分号下求导」的可交换性，$\frac{d}{d\theta}\int f_{X|\Theta}(x\mid\theta)dx$ 会多出边界项（Leibniz 规则的边界项）。这正是 Fisher information（Fisher 信息）与 score function（得分函数）的标准推导要求「支撑与参数无关」的原因，也是极大似然估计渐近正态性定理里那条反复声明却少被解释的 regularity condition（正则性条件）。本例的后验在 $x\le\theta\le1$ 上连续，却在 $\theta=x$ 处有由指示函数造成的跳变，任何对该点求导的操作都得先说明如何处理它。
->
-> 反例与常见误读有三条。其一，别把「后验在这里为零」读成「后验在这里很小」：前者是 hard zero（硬零），后者还能被数据修正。其二，别把「一次观测剪掉整个 $[0,x)$」读成「观测越极端知识越多」：$x$ 越接近 $1$，$\lvert\log x\rvert\to0$，密度在 $\theta=1$ 附近被抬得越高，这是后验更尖（更集中），不是信息量更大。其三，$n$ 次观测要剪的是 $\theta<\max_i x_i$，因为约束 $\theta\ge x_i$ 要对每个 $i$ 同时成立，取交集即把下界取为各 $x_i$ 的最大值。
->
-> 正文有一处记号问题必须标出：L1377 刚把 $x$ 定义为向量 $(x_1,\dots,x_n)$，L1387 与 L1390 又把同一个 $x$ 定义为 $\max\{x_1,\dots,x_n\}$，而 L1400、L1409 用的都是「最大值」这一含义；L1413 的灰色衔接注却称原文用 $\bar x$ 表示最大值。三处说法并存，读者极易把 L1400 的 $x\le\theta\le1$ 误读成逐分量条件。数学结论不受影响（$x$ 取最大值时 $x_i\le x\le\theta$ 自动蕴含每个 $x_i\le\theta$），但 notation overload（记号过载）应统一记为 $\bar x=\max_i x_i$。⚠ 需回查 PDF p422 的原始印刷式确认原文符号。
-
-现在考虑一个涉及前 $n$ 次约会的变体。假设朱丽叶每次都迟到一段随机的时长 $X_1, \ldots, X_n$，这些时长在给定 $\Theta = \theta$ 的条件下，都在区间 $[0, \theta]$ 上均匀分布，并且条件相互独立（conditionally independent）。记 $X = (X_1, \ldots, X_n)$，$x = (x_1, \ldots, x_n)$。与 $n = 1$ 的情形类似，我们得到
-
-```math
-f_{\Theta}(\theta)\, f_{X|\Theta}(x \mid \theta) =
-\begin{cases}
-1/\theta^n, & \text{若 } x \le \theta \le 1,\\
-0, & \text{其他情形,}
-\end{cases}
-```
-
-其中 $x$ 表示各次迟到时长的最大值，即
-
-```math
-x = \max\{x_1, \ldots, x_n\}.
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这句话的实质是「似然只通过一个标量依赖数据」。正文把 $n$ 次观测的分子写成 $1/\theta^n$（当 $x\le\theta\le1$），并说明 $x=\max\{x_1,\dots,x_n\}$。为什么 $n$ 个似然相乘会退化成一句「$\theta$ 不小于最大值」：每个因子 $f_{X_i|\Theta}(x_i\mid\theta)=1/\theta$ 的支撑是 $0\le x_i\le\theta$，$n$ 个支撑取交就是 $\min_i x_i\ge0$ 与 $\max_i x_i\le\theta$ 两条，密度值相乘给出 $\theta^{-n}$。于是整条似然可写成 $\theta^{-n}\mathbf 1\{\theta\ge\max_i x_i\}\mathbf 1\{\min_i x_i\ge0\}$：数据只通过 $\max$（与一个平凡的下界条件）进场，中间的每个 $x_i$ 的具体取值都不再重要。
->
-> 这就是 factorization theorem（因子分解定理）的实例。$T$ 是 sufficient statistic（充分统计量），当且仅当似然能写成 $g(T(x),\theta)h(x)$ 的形状；本例取 $T(x)=\max_i x_i$、$g(T,\theta)=\theta^{-n}\mathbf 1\{\theta\ge T\}$、$h(x)=\mathbf 1\{\min_i x_i\ge0\}$ 即可。历史坐标：Fisher 在 1922 年的 On the mathematical foundations of theoretical statistics 里提出 sufficiency 概念并给出因子分解判别，Neyman 1935 给出一种形式，Halmos 与 Savage 1949 用 Radon–Nikodym 导数把它推广到一般的 dominated family（受控族）。所以书上常写的 Fisher–Neyman factorization（Fisher–Neyman 因子分解），严格版本属于 Halmos–Savage。
->
-> 命名模板：sufficient（充分）的意思不是「够用」，而是「相对于参数无损」——只要知道 $T(x)$，后验 $f_{\Theta|X}(\theta\mid x)$ 与用全样本算出来的完全相同。更锋利的等价说法是：$T$ 充分，当且仅当给定 $T$ 之后 $X$ 的条件分布不依赖 $\theta$，即 $T$ 以外的部分是 ancillary（辅助的），对参数一无所知。
->
-> 为什么是最大值而不是均值，要看这个族的结构。$X_i$ 在 $[0,\theta]$ 上均匀，参数只移动区间的右端点、不改形状，所以密度值 $\theta^{-n}$ 对任何样本都一样，数据唯一能做的事是指出「$\theta$ 必须落在哪里」——信息全部装在支撑里。对照正态模型 $X_i=\Theta+W_i$：形状随参数平移，密度值随 $x_i-\theta$ 变化，对数似然对 $\theta$ 求导得 $\sum_i(x_i-\theta)/\sigma_i^2$，于是充分统计量是（加权）样本均值。一句话：location family（位置族）看均值，endpoint family（端点族）看极值。
->
-> 跨课程（CLRS / 算法）：$\max$ 只需 $n-1$ 次比较、$O(n)$ 时间、$O(1)$ 额外空间，读一遍顺带维护即可；而全体 order statistics（顺序统计量）$x_{(1)},\dots,x_{(n)}$ 要 $O(n\log n)$ 排序才拿得到。两者都无损（sufficient 不唯一：任何 $T$ 的一一函数仍充分），但代价差一个 $\log n$，数据约简的全部价值就在这个差上。CLRS 第 9 章把这件事推到极限：最大值有确定性的线性时间算法，中位数则要先设计 median of medians 才有线性时间保证。
->
-> 反例三条。其一，区间若改成 $[\theta,\theta+1]$，充分统计量变成 $(\min_i x_i,\max_i x_i)$ 这个二元组，只留 $\max$ 会丢掉下界信息；这个族不是 exponential family（指数族），却仍有有限维充分统计量，可见「充分」比「指数族」弱。其二，观测不独立时乘积不分解，$\max$ 立刻失效。其三，若参数还改变形状（例如 Beta 密度里的 $\alpha$ 同时影响峰值与陡度），$\max$ 与参数完全无关，谈不上充分。
->
-> 对后文而言，这条结论只用到一层：后验形如 $c(x)\theta^{-n}$，而 $c(x)$ 只依赖那个标量 $x$。于是「记住 $n$ 次观测」在存储上退化成「记住一个数」，这也是下一条注可以安心只讨论 $c(x)$ 的原因——数据压缩发生在计算归一化常数之前，而不是之后。
->
-> 最后标一处极易误读的记号：L1382 的 $x\le\theta\le1$ 里的 $x$ 是最大值，不是任一分量。若读成「每个 $x_i$ 都要落在 $[x,\theta]$」，就会同时要求 $x_i\ge x$ 与 $x=\max_i x_i$，除最大的那个以外全部自相矛盾。这条与上一条注末尾指出的 notation overload（记号过载）是同一个问题的两面。
-
-后验 PDF 为
-
-```math
-f_{\Theta|X}(\theta \mid x) =
-\begin{cases}
-\dfrac{c(x)}{\theta^{n}}, & \text{若 } x \le \theta \le 1,\\
-0, & \text{其他情形,}
-\end{cases}
-```
-
-其中 $c(x)$ 是仅依赖于 $x$ 的归一化常数（normalizing constant）：
-
-```math
-c(x) = \frac{1}{
-\displaystyle\int_{x}^{1} \dfrac{1}{(\theta')^{n}}\, d\theta'
-}.
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 部分损坏] 本页末尾归一化常数公式 `c(x) = 1 / ∫_{x}^{1} (1/(θ')^n) dθ'` 的积分限在 OCR 中被切碎（仅见 `Jx (O,)n dO` 等残片），现按 §8.1 的标准推导补全为关于 $\theta'$ 从 $\bar{x}$ 到 $1$ 的积分；原文以 $\bar{x}$ 表示 $\max\{x_1,\ldots,x_n\}$，其归一化常数仅依赖 $x$，未引入原文之外的数值。</span>
-
-> <span style="color:#7f8c8d;">衔接下一面（PDF p423）：本页例 8.2 的 $n$ 次约会推广已给出归一化常数 $c(x)$ 的积分表达式，下一页将完成再次用后验归一化得到显式结果（$\theta^{\,1-n}/\lvert\log x\rvert$ 等）的收尾。</span>
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 定义先说清。正文把 $n$ 次观测的后验写成 $c(x)/\theta^n$（$x\le\theta\le1$），其中 $c(x)=1/\int_x^1(\theta')^{-n}d\theta'$。这个 $c(x)$ 就是 Bayes' rule（贝叶斯准则）的分母，也叫 marginal likelihood（边缘似然）或 evidence（证据）。它不是可有可无的尾巴，而是把「密度」变成「概率密度」的那把尺子。
->
-> 算一遍，别只信符号。$n\ne1$ 时 $\int_x^1(\theta')^{-n}d\theta'=\left[(\theta')^{1-n}/(1-n)\right]_x^1=\frac{x^{1-n}-1}{n-1}$，故 $c(x)=\frac{n-1}{x^{1-n}-1}$。取 $n=2$ 验算：$c=x/(1-x)$，则 $\int_x^1\frac{x}{1-x}\cdot\frac{d\theta}{\theta^2}=\frac{x}{1-x}\cdot\frac{1-x}{x}=1$，对。$n=1$ 是退化情形：$\int_x^1 d\theta/\theta=\lvert\log x\rvert$，与正文 L1369 的 $1/(\theta\lvert\log x\rvert)$ 一致。$n=1$ 必须单独算的理由是 $1-n=0$ 处出现除零，不是因为排版习惯。
->
-> 第一性原理：分子定形状，分母定尺度。贝叶斯准则里 $\theta$ 只出现在分子；作为 $\theta$ 的函数，后验的形状完全由 $f_\Theta(\theta)f_{X|\Theta}(x\mid\theta)$ 决定，$c(x)$ 只是一个与 $\theta$ 无关的缩放因子。工程上因此常写 $f_{\Theta|X}\propto f_\Theta f_{X|\Theta}$（proportional to，正比于）。但正比号丢掉的只是「$\theta$ 方向的尺度」：一旦要算期望、要算区间概率、要比较不同 $x$ 下的似然，$c(x)$ 就必须回来。
->
-> 同一个积分有两种用途。$c(x)^{-1}=\int f_\Theta(\theta)f_{X|\Theta}(x\mid\theta)d\theta$ 是模型对观测 $x$ 的 marginal likelihood（边缘似然）：把参数积掉之后剩下的、只依赖数据的东西。做参数估计时它叫归一化常数，做模型比较时它叫证据，两个模型取比值即 Bayes factor（贝叶斯因子）。所以看到这个积分先问一句：这里是在估 $\theta$，还是在挑模型。
->
-> 命名模板：normalizing constant（归一化常数）指把密度积分凑成 $1$ 的那个数；marginal likelihood（边缘似然）指积分消元之后剩下的似然——marginal（边缘）在这里与概率论中「边缘分布」是同一个动作，把不要的变量积掉。两者是同一个对象在两个场景下的名字。
->
-> 跨课程（统计物理 / 配分函数）：把被积函数看成权重 $e^{-\beta E(\theta,x)}$，则 $c(x)^{-1}$ 就是 partition function（配分函数）$Z$，而 $-\log Z$ 是 free energy（自由能）。这不是牵强类比：模型的 evidence（证据）与统计系统的配分函数在数学上是同一个积分，两者的对数都在做「对不可见变量求和」；模型比较里 $-\log c(x)$ 与自由能一样，同时惩罚拟合得不好与参数空间太大，这正是 BIC 这类准则的来源。理解了配分函数为什么难算（通常没有闭式），就理解了为什么贝叶斯模型比较在计算上比参数估计难一个量级。
->
-> 跨课程（数值 / CSAPP）：$c(x)$ 含 $x^{1-n}$，两个方向都会出事。$x$ 接近 $1$ 时是 $0/0$ 型，$n$ 大时是上溢：$x=0.5$、$n=1100$ 时 $x^{1-n}=2^{1099}\approx5.4\times10^{330}$，超过 IEEE 754 binary64 的最大有限值 $1.8\times10^{308}$，直接变 inf，于是 $c=0$、后验恒零。稳妥做法是在对数域算 $\log c=\log(n-1)-\log(1-x^{1-n})$，并把 $\log x$ 换成 log1p：$\log x=\mathrm{log1p}(x-1)$。这不是洁癖：$n=1$ 时后验只依赖 $\lvert\log x\rvert$，若 $x$ 与 $1$ 差到 $10^{-16}$ 量级，朴素算法直接给 $0$，后验算出无穷大。
->
-> 有一处必须更正。原先这条注说「若换成 Beta 先验（见 Example 8.4），分母会闭合成 Beta 函数」，这不成立。本例的似然是截断形式 $\theta^{-n}\mathbf 1\{\theta\ge x\}$，不是二项式的 $\theta^k(1-\theta)^{n-k}$；Beta 先验乘上去得到的是「截断在 $[x,1]$ 上的 Beta」，需要 incomplete beta function（不完全 Beta 函数）才能归一，结果既不是 Beta 密度，也没有闭式。conjugacy（共轭）是「先验族 × 似然族」的配对性质：Example 8.4 里配对的是二项似然与 Beta 先验，不是这个模型。
->
-> 顺带一个记号提醒：正文同时出现 $c$（Example 8.4 中不依赖 $\theta$ 的常数）与 $c(x)$（本例依赖数据的归一化常数）。前者是纯常数，后者是数据的函数，二者在往后的公式里都还会出现，别把「$c$ 可以提出积分号」这个性质错用到 $c(x)$ 上。
->
-> 反例两条。其一，只比分子不归一化，得到的不是概率密度：$E[\Theta\mid X=x]$、$P(\Theta\le0.5\mid X=x)$ 都算不出来，而且「密度值大」不等于「概率大」，后者要把密度在一个区间上积分。其二，把 $c(x)$ 当常数提出积分号、随后又忘了它依赖 $x$，于是在比较两个观测时把两个不同分母当成同一个，得出「观测越极端后验越高」这类结论——这正是漏写 $x$ 的典型后果。
-<!-- ===== PDF p423 ===== -->
-<span style="color:#c0392b;">**第八章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页为书页 415，承接上一页 §8.1 的正文，转入一个新的例题 **Example 8.3——正态随机变量公共均值的推断**。例题在本页起笔并推演至分子配平方化简与 $m$、$v$ 的表达式，其「后验为正态分布、均值为 $m$、方差为 $v$」的结论收尾出现在下一页。</span>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.3．正态随机变量公共均值的推断（Inference of a Common Mean of Normal Random Variables）**</span>
-
-我们观测到一族随机变量 $X = (X_1, \ldots, X_n)$，它们具有一个未知的公共均值（common mean），我们希望推断出该均值之值。我们假定：在公共均值取值给定的条件下，这些 $X_i$ 服从正态分布（normal）且相互独立（independent），其方差（variances）$\sigma_1^2, \ldots, \sigma_n^2$ 已知。在这种问题的贝叶斯做法中，我们把公共均值建模为一个随机变量 $\Theta$，并给定一个先验分布（prior）。为具体起见，我们假设该先验为正态先验（normal prior），其均值 $X_0$ 与方差 $\sigma_0^2$ 均已知。
-
-为了以后引用方便，让我们指出：我们的模型等价于如下形式
-
-```math
-X_i = \Theta + W_i ,\qquad i = 1, \ldots, n,
-```
-
-其中随机变量 $\Theta, W_1, \ldots, W_n$ 相互独立且服从正态分布，其均值与方差均已知。特别地，对任意取值 $\theta$，有
-
-```math
-E[W_i] = E[W_i \mid \Theta = \theta] = 0 ,
-```
-
-对 $i = 1, \ldots, n$ 成立。这种类型的模型在许多涉及对未知量进行多次独立测量的工程应用中很常见。
-
-根据我们的假设，我们有
-
-```math
-f_{\Theta}(\theta) = c_1 \cdot \exp\!\left\{ -\frac{(\theta - X_0)^2}{2\sigma_0^2} \right\} ,
-```
-
-以及
-
-```math
-f_{X\mid\Theta}(x\mid\theta) = c_2 \cdot \exp\!\left\{ -\frac{(x_1 - \theta)^2}{2\sigma_1^2} \right\} \cdots \exp\!\left\{ -\frac{(x_n - \theta)^2}{2\sigma_n^2} \right\} ,
-```
-
-其中 $c_1$ 与 $c_2$ 是不依赖于 $\theta$ 的归一化常数（normalizing constants）。我们引用贝叶斯准则（Bayes' rule）
-
-```math
-f_{\Theta\mid X}(\theta\mid x)
-= \frac{ f_{\Theta}(\theta)\, f_{X\mid\Theta}(x\mid\theta) }
-       { \displaystyle\int f_{\Theta}(\theta')\, f_{X\mid\Theta}(x\mid\theta')\, d\theta' } ,
-```
-
-并注意到分子项 $f_{\Theta}(\theta)\, f_{X\mid\Theta}(x\mid\theta)$ 具有如下形式
-
-```math
-c_1 c_2 \cdot \exp\!\left\{ - \sum_{i=0}^{n} \frac{(x_i - \theta)^2}{2\sigma_i^2} \right\} .
-```
-
-经过一些代数运算——这一步涉及在指数内部完成配平方（completing the square）——我们得出分子具有如下形式
-
-```math
-d \cdot \exp\!\left\{ -\frac{(\theta - m)^2}{2v} \right\} ,
-```
-
-其中
-
-```math
-m = \frac{ \displaystyle\sum_{i=0}^{n} x_i / \sigma_i^{2} }
-        { \displaystyle\sum_{i=0}^{n} 1 / \sigma_i^{2} } ,
-\qquad
-v = \frac{ 1 }{ \displaystyle\sum_{i=0}^{n} 1 / \sigma_i^{2} } .
-```
-
-> <span style="color:#7f8c8d;">说明：上面求和的下标从 $i = 0$ 起算，其中第 $0$ 项对应先验（prior）——即取 $x_0 = X_0$（先验均值）、$\sigma_0^2$（先验方差）。由分子的形式可知，后验密度 $f_{\Theta\mid X}(\theta\mid x) \propto \exp\{-(\theta - m)^2/(2v)\}$ 是均值为 $m$、方差为 $v$ 的正态密度；该结论的完整陈述收尾于下一页。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损伤] 本页原排版较密，多处下标/上标被当作每行首字符切行（如 $\sigma_0^2$ 的指数、$X_0$ 的下标、求和 $\sum_{i=0}^{n}$ 的行内下/上标、以及 $x_i/\sigma_i^2$ 的上下标），OCR 中散落为 `Xo`、`(7?`、`(75`、`(7;`、`i=O`、`Xn` 等碎片；方差指标与求和上下标经与公式语义核对后按规范 LaTeX 复原，未臆造任何数值。全页数值仅 $\frac{1}{2}$、系数 $c_1, c_2, d$、先验均值 $X_0$ 与各 $\sigma_i^2$，其余为符号推导。</span>
-
-> <span style="color:#7f8c8d;">衔接下一页（PDF p424）：Example 8.3 在本页完成先验/似然展开、配平方化简并给出 $m$、$v$ 之后，下一页给出其收尾结论——后验分布即均值为 $m$、方差为 $v$ 的正态分布，并对其含义（先验与各观测按方差加权融合）加以诠释。</span>
-<!-- ===== PDF p424 ===== -->
-
-<span style="color:#7f8c8d;">§8.1 贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）续页。本页为文献页 416，属第 8 章（Chap. 8）贝叶斯统计推断（Bayesian Statistical Inference）。本页承接上一页，继续 **Example 8.3**（正态先验、正态观测）收尾段——证明后验为正态密度，随后转入对该例「后验与先验同族、可递归推断」性质的讨论（故标题带「（续）」）。</span>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.3（续）——正态先验、已知方差的独立正态观测（Normal Prior, Independent Normal Observations of Known Variance）**</span>
-
-其中 $d$ 是一个常数，它依赖于 $X_i$ 却不依赖于 $\theta$。由于贝叶斯准则（Bayes' rule）中的分母项对二者都没有依赖，我们得出结论：后验概率密度函数（posterior PDF）具有如下形式
-
-```math
-f_{\Theta|X}(\theta\mid x) \;=\; a \phantom{0} \exp\left\{-\frac{(\theta-m)^2}{2v}\right\},
-```
-
-其中 $a$ 是某个归一化常数（normalizing constant），它依赖于 $X_i$ 但不依赖于 $\theta$。我们认出这是一个正态（normal）概率密度函数，于是得出结论：后验概率密度函数是均值为 $m$、方差为 $v$ 的正态分布。
-
-作为一个特殊情形，假设 $\sigma_0^2, \sigma_1^2, \ldots, \sigma_n^2$ 共有一个公共值 $\sigma^2$。那么，$\Theta$ 的后验概率密度是正态的，其均值与方差分别为
-
-```math
-m \;=\; \frac{x_0 + \cdots + x_n}{n+1}, \qquad v \;=\; \frac{\sigma^2}{n+1}.
-```
-
-在这种情形下，先验均值 $x_0$ 就像又一个观测一样，对确定 $\Theta$ 的后验均值 $m$ 起着同样分量的作用。还可以注意到，$\Theta$ 的后验概率密度函数的标准差随观测数目增大而趋于零，其粗略速率为 $1/\sqrt{n+1}$。
-
-如果方差 $\sigma_i^2$ 各不相同，后验均值 $m$ 的公式仍然是各 $X_i$ 的加权平均（weighted average），但对那些方差较小的观测赋予了更大的权重。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 先把公式摆平。正文给出后验为均值 $m$、方差 $v$ 的正态，其中 $m=\frac{\sum_{i=0}^n x_i/\sigma_i^2}{\sum_{i=0}^n 1/\sigma_i^2}$、$v=\frac{1}{\sum_{i=0}^n 1/\sigma_i^2}$，求和从 $i=0$ 起、第 $0$ 项是先验（$x_0$ 为先验均值、$\sigma_0^2$ 为先验方差）。随后那句「对方差较小的观测赋予更大的权重」就是全部内容，但它值得掰开：把「置信」翻译成「精度」这件事，正是这里完成的。
->
-> 唯一的实质结构是精度可加。记 $\tau_i=1/\sigma_i^2$，则 $1/v=\tau_0+\tau_1+\cdots+\tau_n$，而 $m=\frac{\sum_i\tau_ix_i}{\sum_i\tau_i}$。也就是说：后验 precision（精度）等于各来源精度之和，均值是按精度配重的加权平均，方差是总精度的倒数。其余全是算术。
->
-> 为什么倒数是权重？看对数似然的曲率。$\log f_{X_i|\Theta}(x_i\mid\theta)=-\frac{(x_i-\theta)^2}{2\sigma_i^2}+\mathrm{const}$，对 $\theta$ 求二阶导得 $-1/\sigma_i^2$，这正是一个观测携带的 observed information（观测信息，取负号的二阶导）。独立观测的对数似然相加，二阶导也相加，于是精度相加。所以「按 $1/\sigma^2$ 加权」不是人为约定，而是二次型对数似然可加的必然结果；若似然换成 Cauchy 之类重尾形式，这个可加性立刻消失，后验也不再是正态。
->
-> 特例自检。所有 $\sigma_i^2$ 都等于 $\sigma^2$ 时，$m=(x_0+\cdots+x_n)/(n+1)$、$v=\sigma^2/(n+1)$，先验均值与一个真实观测同权。注意正文那句「标准差以 $1/\sqrt{n+1}$ 的速率趋于零」说的是 standard deviation（标准差）：方差按 $1/(n+1)$ 收缩，标准差才按 $1/\sqrt{n+1}$，两者差一个平方。把这两句混起来是这类题最常见的口误（原注就在这里混过）。
->
-> 等价地，这是加权最小二乘。最小化 $\sum_{i=0}^n w_i(x_i-\theta)^2$，一阶条件 $\sum_iw_i(x_i-\theta)=0$ 给出 $\hat\theta=\sum_iw_ix_i/\sum_iw_i$，取 $w_i=\tau_i$ 就得到 $m$；目标函数在极值点的二阶导 $2\sum_iw_i$ 给出 $v$。所以在这个模型里，贝叶斯后验均值与频率派的 weighted least squares（加权最小二乘，WLS）点估计是同一个数——不是巧合，两边都在解同一个二次型。
->
-> 跨课程（估计理论 / 18.06）：Gauss 在 Theoria combinationis（1821 与 1823 两部分）里证明最小二乘的最优性，Aitken 在 1935 年的 On Least Squares and Linear Combinations of Observations 中把它推广到误差相关、方差不等的情形，即 generalized least squares（广义最小二乘，GLS）；Gauss–Markov 定理的当代表述是：误差零均值、同方差、互不相关时，OLS 是 best linear unbiased estimator（BLUE，最佳线性无偏估计）。本注对应的是对角协方差的异方差情形，权重矩阵为 $\mathrm{diag}(\tau_i)$；协方差非对角时换成 $\Sigma^{-1}$。用 18.06 的话说，这是把内积换成 $\langle u,v\rangle_\Sigma=u^\top\Sigma^{-1}v$ 之后再做投影，投影公式形式不变。
->
-> 反例：独立性被破坏时权力反转。$1/\sigma_i^2$ 的推导预设「给定 $\Theta$ 下观测 conditionally independent（条件独立）」，只有这样才能把对数似然相加。若两个观测共享同一份噪声——例如 $X_1=\Theta+Z$ 与 $X_2=\Theta+Z$ 是同一台仪器同一时段的漂移——它们其实只提供一份证据，却按两份计，总精度被高估成两倍，后验方差被压到真值的一半，于是 overconfidence（过度自信）。正确做法是写协方差 $\mathrm{Cov}=\sigma_Z^2\mathbf 1\mathbf 1^\top+\mathrm{diag}(\varepsilon_i^2)$ 并用 $\Sigma^{-1}$ 加权，公共分量于是只被计一次。这正是正文模型 $X_i=\Theta+W_i$ 里「$W_i$ 相互独立」这句话的实际分量：它不是技术假设，而是权重的合法性来源。
->
-> 正文检查。求和下标从 $0$ 起、灰注说明第 $0$ 项是先验，与推导一致，此处无错。需要提防的是 L1486 那条 OCR 说明里提到的上下标碎裂：若照着碎掉的 OCR 把 $\sigma_i^2$ 抄成 $\sigma_i$，权重就变成 $1/\sigma_i$，与方差差一个量纲，最终仍能算出一个「数」，但那个数既不是 $m$ 也不是任何有意义的估计。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上文特殊情形（公共方差 $\sigma^2$，$m=(x_0+\cdots+x_n)/(n+1)$、$v=\sigma^2/(n+1)$）中，原页角标碎裂（如 `x_0...x_n` 的 `n+1` 分母、`1/\sqrt{n+1}` 速率项所对应的字面 `1/JTi`），已按后验 $\sigma^2/(n+1)$ 推导的必然结论与正文语义还原为 $\sqrt{n+1}$，未臆造原文未出现的数值。</span>
-
-前面这个例子具有一个显著性质：$\Theta$ 的后验分布（posterior distribution）与先验分布（prior distribution）同属一族，即正态分布族（family of normal distributions）。这一点之所以诱人，原因有二：
-
-- **（a）** 后验只需用两个数——均值与方差——即可刻画。
-- **（b）** 解的形式为高效的递归推断（recursive inference）打开了可能。设想在 $x_1, \ldots, x_n$ 被观测之后，又获得了一个额外的观测 $x_{n+1}$。我们不必从零开始求解推断问题，而是可以把 $f_{\Theta \mid x_1, \ldots, x_n}$ 视作我们的先验，并用这个新观测来获取新的后验 $f_{\Theta \mid x_1, \ldots, x_n, x_{n+1}}$。然后即可把 Example 8.3 的解应用于这个新问题。于是可以合理地（并且能够被正式确立）认为，$\Theta$ 的新后验将具有均值
-
-```math
-\frac{(m/v) + (x_{n+1}/\sigma_{n+1}^2)}{(1/v) + (1/\sigma_{n+1}^2)}
-```
-
-以及方差
-
-```math
-\frac{1}{(1/v) + (1/\sigma_{n+1}^2)},
-```
-
-其中 $m$ 和 $v$ 是旧后验 $f_{\Theta \mid x_1, \ldots, x_n}$ 的均值与方差。
-
-「后验与先验同属一族分布」这种情形并不常见。除正态族之外，另一个突出的例子涉及抛硬币/伯努利试验（Bernoulli trials）与二项分布（binomial distributions）。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 递推式先摆出来。设旧后验为均值 $m$、方差 $v$，新观测为 $x_{n+1}$、其噪声方差 $\sigma_{n+1}^2$，则新后验的均值与方差分别是 $\frac{m/v+x_{n+1}/\sigma_{n+1}^2}{1/v+1/\sigma_{n+1}^2}$ 与 $\frac{1}{1/v+1/\sigma_{n+1}^2}$。它们不是新公式，只是把上一条注的精度加法再做一遍：$\tau_{\mathrm{new}}=\tau_{\mathrm{old}}+\tau_{n+1}$，其中 $\tau=1/v$。所谓「递归」，在算术层面就只有这一行。
->
-> 递归为什么可能，要靠一个维数论证。一般情形下后验是 $[0,1]$ 上的一条曲线，把它当先验传下去等于传递无穷维对象，无法计算。这里只传两个数，是因为正态族对「乘似然再归一化」这个操作 closed（封闭），也就是 conjugacy（共轭）。封闭性的通行刻画是 exponential family（指数族），其充分统计量维数固定；DKP theorem（Fisher–Darmois–Koopman–Pitman 定理）说：在光滑、支撑不依赖参数、密度处处非零的条件下，有限维充分统计量存在当且仅当这族是指数族。正态族的 $T(x)=(x,x^2)$ 恰好两维，对应 $(m,v)$ 两个数。
->
-> 命名模板：recursive inference（递归推断）指用上一轮的后验充当这一轮的先验，用一次局部更新替代全量重算。控制论把同一个东西叫 state（状态），定义是「足以预测未来的最小信息集」；正态情形下状态就是 $(m,v)$，两套语言指同一个对象。
->
-> 跨课程（Kalman filter，卡尔曼滤波）：离散 Kalman filter（卡尔曼滤波，Kalman 1960）的两步与这里逐字对应。predict（预测）步 $P^-=P+Q$，精度写成 $1/P^-=1/(P+Q)$ 就变宽；update（更新）步 $1/P=1/P^-+1/R$、$K=P^-/(P^-+R)$、$x^{+}=x^{-}+K(z-x^{-})$。把 $\sigma_{n+1}^2$ 认成测量噪声 $R$、把 $v$ 认成预测方差 $P^-$，本注的公式就是它的全部内容。
->
-> 顺带读懂增益的形态。$K=P^-/(P^-+R)$ 与 $K=\tau_R/(\tau_{P^-}+\tau_R)$ 等价，即「新测量的精度在总精度中的份额」。这句话给出增益的概率含义：后验均值等于把旧信念按份额让给新测量，让多少完全由两边谁更准决定。$R\to0$（测量无噪声）时 $K\to1$、后验直接跳到 $z$；$R\to\infty$ 时 $K\to0$、后验纹丝不动。两个极限都能一眼验算，是检验公式有没有写反的最快办法。
->
-> 历史坐标。Kalman 那篇是 A New Approach to Linear Filtering and Prediction Problems（Trans. ASME, J. Basic Eng. 82(1): 35–45, 1960），它把 Wiener 在二战期间发展起来的频域滤波搬到状态空间与时域，使非平稳与非线性的推广成为可能。而在贝叶斯这条线上，「旧后验当先验」的想法更早以 sequential Bayes（序贯贝叶斯）的形式出现：数据一条一条来，推断就该一条一条更新，全量重算是没有必要的工作量。
->
-> 反例与定理边界三条。其一，模型错了递推也照跑，后验方差仍按 $1/(n+1)$ 单调收缩到 $0$——精度累加的只是「假设的方差」，与数据是否真来自该模型无关，所以「方差趋零」只证明信息被用完了，不证明估计是对的。其二，参数随时间漂移（非平稳）时，窄化的后验会锁死在旧值上，必须加过程噪声 $Q>0$ 或 forgetting factor（遗忘因子），让旧信息按几何级数衰减。其三，非高斯、非共轭时「递归」要退化成 particle filter（粒子滤波）或变分近似，状态不再是两维。
->
-> 数值上的要点。精度随 $n$ 线性增长，$n$ 到 $10^8$ 量级时 $v\sim10^{-8}\sigma^2$，仍在 double 范围内；真正的麻烦在累加：$\tau_0+\tau_1+\cdots$ 逐项相加时大数吃小数，量级差到 $10^{16}$ 之后小数项直接被舍掉，用 Kahan 求和、或干脆只维护 $\tau$ 而不维护 $v$，都能缓解。工程实现普遍存信息矩阵（精度）而非协方差，原因就在这里：加法比除法稳。
->
-> 必须更正原注一处。原先写「后验方差 $v=(\sum_i1/\sigma_i^2)^{-1}$ 会随 $n$ 大约按 $1/\sqrt n$ 收紧到零」，把两个量混了：方差按 $1/n$ 收缩，标准差按 $1/\sqrt n$ 收缩。正文 L1509 的原话说的是标准差速率 $1/\sqrt{n+1}$，本身正确；把 $1/\sqrt n$ 安到方差头上才是错的。这类混淆在答案里很常见，验算办法是取 $n=4$ 到 $n=16$：方差应缩到四分之一，标准差只缩到二分之一。
-<!-- ===== PDF p425 ===== -->
-
-<span style="color:#c0392b;">**§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页为书页 p417，属 §8.1 中段。承接上一页关于连续型未知参数的贝叶斯推断论述，本页给出关于「硬币偏置的 Beta 先验（Beta priors on the bias of a coin）」的 **Example 8.4**（涉及连续型参数估计），页末转入「二进制假设检验」的离散例子过渡段。</span>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.4——硬币偏置的 Beta 先验（Beta Priors on the Bias of a Coin）**</span>
-
-我们希望估计一枚有偏硬币（biased coin）抛出正面的概率，将其记为 $\theta$。我们把 $\theta$ 建模为某个随机变量 $\Theta$ 的取值，且 $\Theta$ 有已知的先验概率密度函数（prior PDF）$f_\Theta$。我们考虑 $n$ 次独立的抛掷，并令 $X$ 表示观察到的正面次数。
-
-由贝叶斯准则（Bayes' rule），$\Theta$ 的后验概率密度函数（posterior PDF）在 $\theta \in [0, 1]$ 上具有如下形式：
-
-```math
-f_{\Theta|X}(\theta\mid k) = c\, f_\Theta(\theta)\, p_{X|\Theta}(k\mid \theta)
-= d\, f_\Theta(\theta)\,\theta^k(1-\theta)^{n-k},
-```
-
-其中 $c$ 是一个归一化常数（normalizing constant，与 $\theta$ 无关），而 $d = c\,\binom{n}{k}$。
-
-现假定先验是一个具有正整数参数 $\alpha > 0$ 与 $\beta > 0$ 的 Beta 密度（beta density），形式为
-
-```math
-f_\Theta(\theta) =
-\begin{cases}
-\dfrac{1}{B(\alpha,\beta)}\,\theta^{\alpha-1}(1-\theta)^{\beta-1}, & \text{若 } 0<\theta<1,\\[2mm]
-0, & \text{否则},
-\end{cases}
-```
-
-其中 $B(\alpha,\beta)$ 是一个归一化常数，称为 Beta 函数（Beta function），由下式给出：
-
-```math
-B(\alpha,\beta) = \int_0^1 \theta^{\alpha-1}(1-\theta)^{\beta-1}\,d\theta
-= \frac{(\alpha-1)!\,(\beta-1)!}{(\alpha+\beta-1)!},
-```
-
-最后一个等号可以通过分部积分（integration by parts），或通过一个概率性的论证来得到（见第 3 章 Problem 30）。于是，$\Theta$ 的后验概率密度函数具有如下形式：
-
-```math
-f_{\Theta|X}(\theta\mid k) = \frac{d}{B(\alpha,\beta)}\,\theta^{k+\alpha-1}(1-\theta)^{n-k+\beta-1},
-\qquad 0 \le \theta \le 1,
-```
-
-从而它是一个参数为
-
-```math
-\alpha' = k + \alpha,\qquad \beta' = n - k + \beta
-```
-
-的 Beta 密度。
-
-在 $\alpha = \beta = 1$ 的特例中，先验 $f_\Theta$ 是 $[0,1]$ 上的均匀密度（uniform density）。在这种情况下，后验密度是以 $k+1$ 与 $n-k+1$ 为参数的 Beta 密度。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 后验参数先摆清。正文给出 $f_{\Theta|X}(\theta\mid k)\propto\theta^{k+\alpha-1}(1-\theta)^{n-k+\beta-1}$，即后验是参数 $\alpha'=k+\alpha$、$\beta'=n-k+\beta$ 的 Beta 密度；$\alpha=\beta=1$ 时它退化成 Beta$(k+1,n-k+1)$。也就是说：均匀先验加上 $k$ 次正面、$n-k$ 次反面，两个指数各比计数多 $1$。
->
-> 伪计数怎么记账，这里有一个必须停一下的 off-by-one。「先验等价于已经看过若干虚拟观测」这套说法要算准：若 Beta$(\alpha,\beta)$ 等价于在均匀先验之上看过 $a$ 次正面、$b$ 次反面，那后验应当是 Beta$(1+a,1+b)$；与 Beta$(\alpha,\beta)$ 对照得 $a=\alpha-1$、$b=\beta-1$。所以 Beta$(1,1)$ 等价于「一次都没看过」，而不是「看过一正一反」；「看过一正一反」得到的先验是 Beta$(2,2)$，密度正比于 $\theta(1-\theta)$，中间拱起、两端压低，与均匀先验根本不是一个形状。
->
-> 那「$+1$」到底从哪来？来自另一套记账法。它不描述先验，而描述 predictive（预测）：$E[\Theta\mid X=k]=\frac{\alpha'}{\alpha'+\beta'}=\frac{k+\alpha}{n+\alpha+\beta}$，$\alpha=\beta=1$ 时是 $\frac{k+1}{n+2}$。这形式上像「给数据加了一正一反」，但那两个 $1$ 加的是下一次试验的预测分布，不是历史计数。两套记账差正好一：伪计数版说先验等价于 $(\alpha-1,\beta-1)$ 次虚拟观测，预测版说先验等价于 $(\alpha,\beta)$ 次虚拟观测，差的那一个就是「再来一次」。
->
-> 于是原注那句「$(\alpha,\beta)=(1,1)$ 就等于预先看见一次正面与一次反面，后验 $k+1$ 与 $n-k+1$ 的加一因此不是魔数」是自相矛盾的：真看过一正一反，后验会是 Beta$(k+2,n-k+2)$。准确的说法是：加一来自先验在两端处的幂次为零（$\theta^0$ 与 $(1-\theta)^0$），也就是均匀先验对 $\theta=0$ 与 $\theta=1$ 不做惩罚，而不是来自任何虚假观测。
->
-> 命名模板：pseudo-count（伪计数）、virtual sample（虚拟样本）、equivalent prior sample size（等价先验样本量）。这三个词之所以让人混乱，正因为它们分属上面两套记账，一套记 $\alpha-1$、一套记 $\alpha$；读任何教材都要先确认它用的是哪一套，否则差一，结论就全歪。
->
-> rule of succession（Laplace 后继率）是这个公式最著名的用法。取 $\alpha=\beta=1$、$k=n$（$n$ 次全成功），下一次成功的预测概率是 $\frac{n+1}{n+2}$。Laplace 在 1774 年的 Mémoire sur la probabilité des causes par les événements 中给出这一结果，1814 年的 Essai 里用它算「太阳明天照常升起」：$n=1826213$ 天时得到约 $0.99999945$。这一算成了贝叶斯方法最著名的靶子，争议不在公式而在建模——把每天的日出当成独立同分布的 Bernoulli trial（伯努利试验）本身就是极强假设。
->
-> 跨课程（机器学习 / 平滑）：把加一搬到多项分布就是 Laplace smoothing（拉普拉斯平滑，亦称 add-one smoothing），$P(w)=\frac{\mathrm{count}(w)+1}{N+V}$，$V$ 为词表大小。它解决的正是 $\mathrm{count}(w)=0$ 时概率为零、进而让整个连乘归零的问题：在朴素贝叶斯里，一个未登录词就能把后验打死。从 $+1$ 到 $+\alpha$、再到按类别给不同量，都是同一个伪计数思想的不同参数化。
->
-> 反例与取舍。伪计数的强度不是免费的：$\alpha+\beta$ 越大先验越硬。数据多时（$n\gg\alpha+\beta$）它被稀释，影响可忽略；数据少时它主导结论。极端例子：$n=0$ 而 $\alpha=\beta=100$，后验均值为 $0.5$、方差约 $1/800$，等于「什么数据都没有，却对 $0.5$ 极度自信」。反过来，$n=0$、$\alpha=\beta=1$ 给出均匀密度与方差 $1/12$，这才是「一无所知」的诚实表达。
->
-> 最后做一次自检，用正文 L1595–1598 的矩公式。$E[\Theta]=\frac{\alpha}{\alpha+\beta}$、$E[\Theta^2]=\frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)}$，故 $\mathrm{Var}=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}$。代入 $\alpha=k+1$、$\beta=n-k+1$ 得 $\frac{(k+1)(n-k+1)}{(n+2)^2(n+3)}$；$k\approx n/2$ 时约为 $\frac{1}{4(n+3)}$，与 $1/n$ 同阶。这条式子把「共轭给出可算的收敛速率」落到具体数字上，也是下一条注的入口。
-
-Beta 密度经常出现在推断（inference）应用中，并具有一些有趣的性质。尤其是，若 $\Theta$ 具有正整数参数 $\alpha > 0$ 与 $\beta > 0$ 的 Beta 密度，则它的 $m$ 阶矩（$m$th moment）由下式给出：
-
-```math
-\mathbb{E}[\Theta^m]
-= \int_0^1 \frac{1}{B(\alpha,\beta)}\,\theta^m\,\theta^{\alpha-1}(1-\theta)^{\beta-1}\,d\theta
-= \frac{B(\alpha+m,\beta)}{B(\alpha,\beta)}
-= \frac{\alpha(\alpha+1)\cdots(\alpha+m-1)}{(\alpha+\beta)(\alpha+\beta+1)\cdots(\alpha+\beta+m-1)}.
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页内上方 Beta 函数 $B(\alpha,\beta)$ 与积分 $\int_0^1 \theta^{\alpha-1}(1-\theta)^{\beta-1}\,d\theta = \frac{(\alpha-1)!(\beta-1)!}{(\alpha+\beta-1)!}$ 一行的 OCR 被打得极碎（如 `(a(a- +I )!(3((3- -1)!I)!` 等碎片），上方按标准 Beta 函数定义忠实还原其两个等号；各指数与阶乘项由原文「分部积分 / 概率性论证（第 3 章 Problem 30）」的说明核对，未臆造数值。</span>
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 定义先说准。conjugacy（共轭）是族与族的性质：先验族对似然族共轭，意思是「取该族中任一先验、配该族中任一似然、看任一观测，后验仍落在该族里」。注意这是族对族，不是单个分布对单个分布——这一点决定了它是设计工具而不是巧合。
->
-> 代数机制只有一句话：同底幂相乘、指数相加。Beta 密度正比于 $\theta^{\alpha-1}(1-\theta)^{\beta-1}$，二项似然正比于 $\theta^k(1-\theta)^{n-k}$，相乘得 $\theta^{\alpha+k-1}(1-\theta)^{\beta+n-k-1}$，形状不变，参数相加。没有更深的魔法。
->
-> 推广一下就能看出共轭为什么总能被造出来。指数族写成 $f(x\mid\theta)=h(x)\exp\{\eta(\theta)^\top T(x)-A(\theta)\}$，似然对参数的全部依赖只有 $\eta(\theta)^\top\sum_iT(x_i)$ 这一项；于是取先验正比于 $\exp\{\eta(\theta)^\top\chi-\psi(\chi)\}$，后验就是把 $\chi$ 换成 $\chi+\sum_iT(x_i)$。所以共轭先验族本质上是以充分统计量为坐标的参数族，超参数就是「虚拟的统计量和」。这条推导解释了为什么每个指数族成员都自动有一个共轭先验。
->
-> 一张必须记得的对照表：Bernoulli 与二项 → Beta；Poisson → Gamma；正态均值（方差已知）→ 正态；正态方差（均值已知）→ inverse-gamma（逆伽马）；多项 → Dirichlet（狄利克雷）；指数族中的指数分布 → Gamma。这张表的价值在于回答「该用哪个先验」——答案是似然决定的，不是审美选择。
->
-> 命名模板与词源。conjugate（共轭）来自拉丁语 con-jugare（套在同一根轭上），本义「配对」。数学里「共轭」至少有四种互不相干的用法：复共轭、共轭梯度、群论里的共轭类、以及这里的共轭先验。除了「配对」这个比喻，它们没有共同内容，别串成一条线。
->
-> Beta 函数与矩构成一条完整的链条。$B(\alpha,\beta)=\int_0^1\theta^{\alpha-1}(1-\theta)^{\beta-1}d\theta=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$，整数时 $\Gamma(m)=(m-1)!$ 给出正文的 $\frac{(\alpha-1)!(\beta-1)!}{(\alpha+\beta-1)!}$。阶乘式的来源是分部积分给出的递推 $B(\alpha,\beta)=\frac{\alpha-1}{\alpha+\beta-1}B(\alpha-1,\beta)$，逐次降到 $B(1,\beta)=1/\beta$ 就得到它；正文的 $E[\Theta^m]=\frac{B(\alpha+m,\beta)}{B(\alpha,\beta)}$ 是同一个递推用 $m$ 次，展开成 $\frac{\alpha(\alpha+1)\cdots(\alpha+m-1)}{(\alpha+\beta)\cdots(\alpha+\beta+m-1)}$。
->
-> 这条递推顺手解释一个常见疑问：Beta 密度的归一化常数为什么必须是 $B(\alpha,\beta)$？因为只有取它，$\int_0^1\theta^{\alpha+m-1}(1-\theta)^{\beta-1}d\theta$ 才能被同一个递推一路降到 $B(1,\beta)$，得到干净的阶乘比。参数化与归一化在这里是同一件事的两面，不是两套约定。
->
-> 反例三条，划出共轭的边界。其一，似然一变共轭就没了：贝叶斯准则里分子的形状决定一切，若似然是截断形式（如 p422 的 $\theta^{-n}\mathbf 1\{\theta\ge x\}$），Beta 先验乘上去得到「截断 Beta」，必须用 incomplete beta function（不完全 Beta 函数）才能归一，不再闭式。其二，mixture of Betas（混合 Beta 先验）严格说也不共轭：后验仍是同分量的混合，但分量权重被数据改写，等于每来一个观测就要重算全部权重，超参数从 $2$ 个变成 $2k+(k-1)$ 个。其三，参数化本身会破坏共轭：把 $\theta$ 换成 logit $\log\frac{\theta}{1-\theta}$ 之后，同一族看起来就不共轭了——共轭是「先验乘似然」的配对性质，不是分布的固有属性。
->
-> 计算上的意义（也是它历史上的分量）。共轭让后验有 closed form（闭式）：一次更新是 $O(1)$ 次算术。不共轭时只能数值积分、Laplace approximation（拉普拉斯近似）、变分推断或 MCMC（Markov chain Monte Carlo），代价是成千上万次似然求值。所以共轭不是数学上的雅致，而是计算上的分水岭——这也是指数族在二十世纪统计实践里占了那么大篇幅的原因。
-
-前述各个例子都涉及一个连续型随机变量 $\Theta$，且是参数估计（parameter estimation）问题的典型情形。接下来的例子是一个离散例子，也是那些出现在二进制假设检验（binary hypothesis testing）问题中的典型情形。
-<!-- ===== PDF p426 ===== -->
-
-<span style="color:#7f8c8d;">书页 p418／Chap. 8。页首承接上页 §8.1 贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）的论述，本页起出现新例 **Example 8.5**（在其语境下此页为 §8.1 的新例开端，非上页续讲）；随后是「多参数问题（Multiparameter Problems）」过渡小节与新例 **Example 8.6**。两例均属 §8.1，编号承接上页 Example 8.4 连续为 8.5、8.6。Example 8.6 在本页为第一部分（题干、先验、检测概率模型），其后续正文出现在下一页。</span>
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页页眉为「Chap. 8 / Bayesian Statistical Inference」，正文无新的小节号，即延续 §8.1 的正文叙述。新例 Example 8.5 在本页完整给出（上下文完整、非上页中断延续），故标题不作「（续）」；紧接其后的 Example 8.6 则持续到下一页。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.5（垃圾邮件过滤，Spam Filtering。）**</span>
-
-一封电子邮件可能是「垃圾邮件（spam）」也可能是「正常邮件（legitimate）」。我们引入一个参数 $\Theta$，它取值为 1 与 2，分别对应该邮件为垃圾邮件与正常邮件，其概率分别为给定的 $p_\Theta(1)$ 与 $p_\Theta(2)$。设 $\{W_1, \ldots, W_n\}$ 是一组特殊单词（或多个单词的组合）的集合，其出现往往暗示一封垃圾邮件。对每个 $i$，设 $X_i$ 为贝努利随机变量（Bernoulli random variable），用以刻画单词 $W_i$ 在邮件中的出现情况：若 $W_i$ 出现则 $X_i = 1$，否则 $X_i = 0$。我们假定条件概率 $p_{X_i \mid \Theta}(x_i \mid \theta)$（对 $i = 1, \ldots, n$ 及 $\theta = 1, 2$）是已知的。为简单起见，我们还假设在给定 $\Theta$ 的条件下，随机变量 $X_1, \ldots, X_n$ 相互独立。
-
-我们利用贝叶斯准则（Bayes' rule）来计算垃圾邮件与正常邮件的后验概率（posterior probabilities）。我们有
-
-```math
-p_{\Theta \mid X_1,\ldots,X_n}(\theta \mid x_1,\ldots,x_n)
-= \frac{ p_\Theta(\theta) \prod_{i=1}^{n} p_{X_i \mid \Theta}(x_i \mid \theta) }
-{ \sum_{j=1}^{2} p_\Theta(j) \prod_{i=1}^{n} p_{X_i \mid \Theta}(x_i \mid j) },
-\qquad \theta = 1, 2.
-```
-
-这些后验概率可用来将邮件分类为垃圾邮件或正常邮件，所用的方法将在后文讨论。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 先分清「报概率」与「做决定」。正文算出的是后验概率，而分类是一个决策，必须有损失函数：把每次误分类记为 $1$（0-1 loss，0-1 损失），则给定 $x$ 时选 $\theta$ 的 conditional risk（条件风险）为 $R(\theta\mid x)=1-p_{\Theta\mid X}(\theta\mid x)$，最小化它就等价于最大化后验，即 MAP（maximum a posteriori，最大后验）规则。所以「判给后验最大的那一类」不是直觉，而是 0-1 损失下的精确解。
->
-> 二元的门槛要写清楚，方向在这里最容易翻。判 $\theta=1$ 当且仅当 $p_\Theta(1)\prod_ip_{X_i|\Theta}(x_i\mid1)\ge p_\Theta(2)\prod_ip_{X_i|\Theta}(x_i\mid2)$，等价于 likelihood ratio（似然比）条件 $\frac{\prod_ip_{X_i|\Theta}(x_i\mid1)}{\prod_ip_{X_i|\Theta}(x_i\mid2)}\ge\frac{p_\Theta(2)}{p_\Theta(1)}$。右边是 prior odds（先验赔率）的倒数：先验越偏向「正常邮件」，判为垃圾的门槛就越高。自检办法是令两侧先验与似然全相等，规则应退化成「无所谓」；任何在此情形下仍严格偏向一侧的写法，都是不等号方向错了。
->
-> 「朴素」到底朴素在哪。给出类别之后各特征 conditional independence（条件独立）：$p_{X\mid\Theta}(x\mid\theta)=\prod_{i=1}^np_{X_i\mid\Theta}(x_i\mid\theta)$。正文的分母正是把这个乘积在 $\theta=1,2$ 上求和（全概率公式），分子是单个 $\theta$ 的乘积。两个 $\prod$ 的位置不同，抄公式时最容易把分子分母的连乘写混。
->
-> 命名模板：naive Bayes（朴素贝叶斯）里的 naive 专指那条条件独立假设，不是说算法粗糙；generative model（生成式模型）指先建模 $p(X\mid\Theta)$ 再用贝叶斯准则反推后验，与之相对的是 discriminative model（判别式模型），直接建模 $p(\Theta\mid X)$。两者的差别在本例里看得最清楚：前者要为每个词在每个类别存一份概率表，后者只存一条分类边界。
->
-> 跨课程（数值 / CSAPP）：连乘必然下溢。即使每个因子是 $0.1$，$n=400$ 时乘积也只有 $10^{-400}$，低于 double 的最小正规数 $2.2\times10^{-308}$，直接变 $0$；两侧都下溢时比值变成 $0/0$。实际实现一律在对数域算，$\log p=\log p_\Theta(\theta)+\sum_i\log p_{X_i\mid\Theta}(x_i\mid\theta)$，比较时不必 exp；若要还原概率，用 log-sum-exp，$\log(p_1+p_2)=M+\log(e^{a-M}+e^{b-M})$，其中 $M=\max(a,b)$。这不是工程技巧，是必须遵守的数值纪律。
->
-> 反例三条。其一，关键词高度相关时会重复计数：一封邮件同时出现 free、prize、winner，朴素贝叶斯把三份证据连乘，后验被推到 $1-10^{-12}$ 这样的量级；分类可能仍然正确，但那个概率已经不可信——这属于 calibration（校准）失效，而风控、医疗这类要拿概率做决策的场景不能接受。其二，训练集与线上的先验不同（垃圾邮件比例从两成变到六成）时 $p_\Theta$ 必须重估，否则门槛整体偏移，哪怕似然估计得很准。其三，未登录词让某个因子为零，整条乘积归零，所以必须平滑——这正是上一条注里那个「$+1$」的工程归宿。
->
-> 历史坐标。把朴素贝叶斯用于垃圾邮件过滤，公认的普及起点是 Paul Graham 的随笔 A Plan for Spam（2002 年 8 月），随后 bogofilter、SpamBayes 等实现把它变成日常工程。教科书里它是 Example 8.5，工程上它是第一个「人人跑得通」的贝叶斯分类器——两条线的交汇点，正是本节这条后验公式。
->
-> 再往上一层看（信息论）：取对数的似然比是逐特征相加的 $\sum_i\log\frac{p_{X_i\mid\Theta}(x_i\mid1)}{p_{X_i\mid\Theta}(x_i\mid2)}$，所以「证据」是按特征累积的。长期平均下来每个特征贡献的对数似然比，正是两个分布之间 KL divergence（KL 散度）之差；于是证据累积得多快，由两类分布的可分性决定，这条线接到假设检验的 Stein 引理与 Chernoff 界。本例因此不只是一个工程样板，它是 6.041 的贝叶斯准则通向信息论的最短路径。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上文后验公式（分母上的求和 $\sum_{j=1}^{2} p_\Theta(j)\prod p_{X_i\mid\Theta}(x_i\mid j)$）在源 OCR 中被切成碎片（如 `p{\Theta\mid X}(\theta\mid x)$` 写法与 `=-2-...ln-... j )` 残片），现按标准 $2\times 2$ 后验公式还原书写；求和指标在 OCR 中记作 `j`，被积段则误作 `m`，此处统一为 $\theta = 1, 2$。此还原与原文文句相符，非臆造数值。</span>
-
----
-
-<span style="color:#c0392b;">**多参数问题（Multiparameter Problems）**</span>
-
-迄今为止，我们的讨论都集中于只有一个未知参数（single unknown parameter）的情形。多个未知参数的情形与之完全类似。我们的下一个例子涉及一个二维参数（two-dimensional parameter）。
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.6（基于传感器网络进行定位，Localization Using a Sensor Network。）**</span>
-
-设有一个地理区域（interest region），其内散布着 $n$ 个声学传感器（acoustic sensors）。第 $i$ 个传感器的坐标为 $(a_i, b_i)$。一辆具有已知声学特征（acoustic signature）的载具位于该区域内，其笛卡尔坐标（Cartesian coordinates）$\Theta = (\Theta_1, \Theta_2)$ 未知。每个传感器都有一个与距离相关的概率，用于测得（i.e.，「捕捉到」车辆的声学特征）该载具。基于哪些传感器测得该载具、哪些没有测得，我们希望尽可能多地推断出它的位置信息。
-
-先验概率密度函数（prior PDF）$f_\Theta$ 旨在刻画我们对载具位置的先验信念，该信念可能基于以往的观测。为简单起见，我们假定 $\Theta_1$ 与 $\Theta_2$ 是相互独立的、均值为 0、方差为 1 的正态随机变量（normal random variables），于是
-
-```math
-f_\Theta(\theta_1, \theta_2) = \frac{1}{2\pi}\, e^{-(\theta_1^2 + \theta_2^2)/2}.
-```
-
-设 $X_i$ 等于 1（相应地，等于 0），当且仅当传感器 $i$ 已测得该载具。为刻画信号衰减（signal attenuation），我们假定测得概率随载具与传感器之间的距离呈指数衰减，记该距离为 $d_i(\theta_1, \theta_2)$。更精确地说，我们采用如下模型……
-
-> <span style="color:#7f8c8d;">衔接下一面（PDF p427）：Example 8.6 在本页完成第一部分——问题描述、两个零均值单位方差正态分量的先验密度 $f_\Theta(\theta_1,\theta_2)$，以及「测得概率随距离指数衰减」的模型设定；下一页给出该检测概率模型的具体形式及其随后的计算（后验推断）。页末模型公式行（原书紧接其后的 `d_i(\theta_1,\theta_2)` 概率表达式）在 OCR 中只余单词碎片，故终止于「……我们采用如下模型」。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页末「More precisely, we use the model …」之后随附的检测概率显式公式在源 OCR 中未可辨认（仅见 `di(...)` 残片与断行），下一页（PDF p427）首部应有其正文；此处不作臆造。</span>
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这个例子是全章的结构转折点。single parameter（单参数）问题时参数空间是一条线，后验是一元函数；这里参数升级成向量，参数空间从一个区间变成一张平面，后验从一条曲线变成一张曲面。看似只多了一维，实际改变了三件事：似然因子怎么乘、后验能不能闭式求得、以及「有把握」这件事该怎么画。
->
-> 每个传感器给出一个 Bernoulli random variable（伯努利随机变量）$X_i$。它的两个取值必须互补：$p_{X_i|\Theta}(1\mid\theta)+p_{X_i|\Theta}(0\mid\theta)=1$。正文取 $p_{X_i|\Theta}(1\mid\theta)=e^{-d_i^2(\theta)/2}$，指数随距离衰减：载具贴得近，测到的概率接近 1；离得远，测到概率趋于 0。那么「没测到」的概率只能是 $1-e^{-d_i^2(\theta)/2}$，不是 1。
->
-> 这里有一处必须指出的错误。正文说「若 $X_i=0$，其贡献的概率因子即为 1，不改变后验的形式」，不成立。把距离 1 与 3 代进去：测得概率分别是 0.6065 与 0.0111，于是未测到概率分别是 0.3935 与 0.9889。后者确实接近 1，前者离 1 相当远。把未测到因子取成 1 只是远距离极限，不是恒等式；一取成 1，「传感器什么都没听到」这件事就凭空失去了全部信息。
->
-> 这个错误要紧不要紧，要看它是否改变后验的函数形式。测到时因子是 $\exp(-d_i^2/2)$，是 Gaussian kernel（高斯核），与先验的高斯核相乘仍是高斯核，completing the square（配平方）之后闭合。未测到时因子是 $1-\exp(-d_i^2/2)$，是「1 减去高斯核」；这种形状取对数不产生二次型，乘进去以后后验不再是高斯。
->
-> 正文随后又说「先验密度与测得概率都是高斯指数形式，配平方后后验仍是二维高斯」，这句只在全部传感器都测到时成立。只要有一个 $X_i=0$，后验就失去 closed form（闭式），归一化积分没有初等表达，只能数值网格或采样。这不是教材的疏忽，而是这个例子出场的本意：它恰恰要展示贝叶斯方法不要求后验可解，只要求能写出分子。
->
-> 具体算一次，验证闭合条件。先验两个分量独立、各为标准正态；传感器 A 在 $(0,0)$，传感器 B 在 $(2,0)$，两个都测到。总指数是三项相加：先验的 $-\frac12(\theta_1^2+\theta_2^2)$、A 的 $-\frac12(\theta_1^2+\theta_2^2)$、B 的 $-\frac12((\theta_1-2)^2+\theta_2^2)$。合并后，$\theta_1$ 方向是 $-\frac32\theta_1^2+2\theta_1$，配方成 $-\frac32(\theta_1-\frac23)^2$；$\theta_2$ 方向是 $-\frac32\theta_2^2$。后验是均值 $(\frac23,0)$、两个方差都是 $\frac13$ 的对角正态。
->
-> 用 precision（精度）读这个结果更省事。二次型系数的和是 $1+1+1=3$，正好是方差 $\frac13$ 的倒数；均值是三个伪观测按精度加权平均，先验贡献一个落在原点、权重 1 的伪观测，于是 $(0\cdot1+0\cdot1+2\cdot1)/3=\frac23$。这正是 Kalman filter（卡尔曼滤波）的一次更新，只是用矩阵写时会多一层协方差乘法。
->
-> 反过来看未测到。因子 $1-e^{-d^2/2}$ 在 $d=0$ 处为零，在 $d\to\infty$ 处趋近 1，密度上它的效果是「在传感器附近挖掉一块」，把后验质量推离该传感器。所以定位系统里的沉默不是没有信息，而是带方向的排除信息，与 erasure channel（擦除信道）同构：没收到不是随机噪声，而是一个已知的缺失事件，缺失本身参与更新。
->
-> 跨课程看，这个例子同时落在三处。Strang 18.06 里，加权最小二乘的解就是精度加权平均，权重是方差的倒数；机器人学的 Markov localization（马尔可夫定位）把它写成离散网格上的乘积更新，Monte Carlo localization（蒙特卡洛定位）在非线性非高斯时用粒子代表后验；信息论里，每个观测削减的方差正比于它与参数之间的 mutual information（互信息）。三处讲的是同一句话：加法在精度域，不在方差域。
-<!-- ===== PDF p427 ===== -->
-
-<span style="color:#7f8c8d;">书页 p419 · 第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）。本页处于 §8.1 ↦ §8.2 的分界处：页眉同时出现 "8.1" 与 "8.2"（后者即 OCR 中被拆碎的 `8.2. LOC:a11Z;a.tu:>n`，实为 §8.2 的小节标题条 "POINT ESTIMATION, HYPOTHESIS TESTING, AND THE MAP RULE" 的残片）。本页正文全部为上一页 **Example 8.6（基于传感器网络进行定位）** 的收尾——承接检测概率模型、用贝叶斯准则写出后验（分子乘积 / 分母积分），故本页为 §8.1 的延续，标题以「（续）」处理；页末出现 §8.2 小节标题，其正文自下一页起。</span>
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.1　贝叶斯推断与后验分布（Bayesian Inference and the Posterior Distribution）（续）**</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页 OCR 严重破碎：除「sensor network」（传感器网络）、"we assume"、"$X_i$"、"$= 1$"、「the numerator over… integral」（分子……积分）等零星片段外，序数句几乎全部被切成单词（如 `i f/. S`、`IX …J`、`, . . . ,`、`integral` 等残片），且本例的检测概率公式行与后验显式结果在 OCR 中均无法辨认。下文按《Introduction to Probability》原书 Example 8.6 的真实语义与上一页（p426）已还原的设定做忠实转写与重建；凡具体系数/数值均以灰注释标明无法自本页 OCR 核实，绝不臆造原文未给出的数字。</span>
-
----
-<br>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.6（续）——基于传感器网络进行定位（Localization Using a Sensor Network）**</span>
-
-承接上一页关于传感器的设定。为刻画信号随距离的衰减（signal attenuation），我们假定传感器 $i$ 测到（detect）载具的概率随载具与传感器之间的距离 $d_i(\theta_1,\theta_2)$ 呈指数衰减；具体而言，测到概率可取如下形式：
-
-```math
-P(X_i = 1 \mid \Theta = \theta) \;=\; e^{-\,\tfrac{1}{2}\,d_i^{\,2}(\theta)},
-```
-
-其中 $d_i(\theta)^2 = (\theta_1 - a_i)^2 + (\theta_2 - b_i)^2$ 为载具位置 $\theta$ 与第 $i$ 个传感器位置 $(a_i, b_i)$ 之间距离的平方。若 $X_i = 0$（未测到），其贡献的概率因子即为 $1$，不改变后验的形式。
-
-给定各传感器的测到结果 $X = (X_1, \ldots, X_n)$，由贝叶斯准则（Bayes' rule）可写出后验概率密度函数（posterior PDF）：它正比于似然（likelihood）$\prod_i p_{X_i\mid\Theta}(x_i\mid\theta)$ 与先验密度（prior PDF）$f_\Theta(\theta)$ 的乘积，分子为这一乘积，分母则为该乘积关于整个平面积分所得的归一化常数：
-
 ```math
-f_{\Theta \mid X}(\theta \mid x)
-\;=\; \frac{
-  \Big(\prod_{i=1}^{n} p_{X_i\mid\Theta}(x_i \mid \theta)\Big)\; f_\Theta(\theta)
-}{
-  \int \Big(\prod_{i=1}^{n} p_{X_i\mid\Theta}(x_i \mid \theta')\Big)\; f_\Theta(\theta')\; d\theta'
-}.
+p_S(k) \longrightarrow e^{-\lambda}\, \frac{\lambda^{k}}{k!} .
 ```
 
-上式正是「the numerator over an integral」所指的构造：分子是似然与先验之积，分母是对参数 $\theta'$ 取全积分的归一化项。由于先验密度（两个独立的标准正态分量）与测到概率都是高斯指数形式，把二者相乘并配平方（completing the square）后，所得后验仍是一个二维高斯（bivariate normal / two-dimensional normal）分布；其后验均值与协方差表达为测到该载具的各传感器位置 $a_i, b_i$ 的函数，据此即可在测得结果的约束下对载具位置做出推断。
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.6（二项分布的泊松近似经验法则）**</span>
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本例检测概率的指数系数（此处写为 $e^{-d_i^{\,2}(\theta)/2}$）、测到情况下 $X_i$ 的概率取值归一等，是依原书 Example 8.6 的语义自上一页（p426）设定顺延重建的；本页 OCR 仅能辨认 `sensor network`、`we assume`、$X_i$、`$=1$` 与「分子/积分」字样，具体常数与结果后验的均值向量、协方差矩阵之显式取值均无法自本页核实，故不在此给出具体数值。</span>
+作为一种经验法则，当 $n \geq 100$、$p \leq 0.01$ 且 $\lambda = np$ 时，下面的泊松/二项近似在小数点后若干位内都成立：
 
----
-<br>
-
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）**</span>
-
-> <span style="color:#7f8c8d;">本页页末出现 §8.2 小节标题（页眉条 `8.2. …ESTIMATION, …`）；其正文自下一页（PDF p428，书页 p420）起，接续后验分布 $P_{\Theta\mid X}(\theta\mid x)$ / $f_{\Theta\mid X}(\theta\mid x)$ 的表述、图 8.3 与 MAP 准则的错误概率最小化讨论。</span>
-<!-- ===== PDF p428 ===== -->
-
-<span style="color:#7f8c8d;">书页 420 · 第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）· §8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）中部续页。本页页眉为 §8.2 的小节标题条（"POINT ESTIMATION, HYPOTHESIS TESTING, AND THE …"，即 running header），页首无新 §/新标题，故本页是对上一页的延续。本页承接 §8.1 后验分布（posterior distribution）的表述（$P_{\Theta|X}(\theta|x)$ / $f_{\Theta|X}(\theta|x)$，对应书内公式 (8.15)/(8.16) 一带），随后引出**图 8.3（Figure 8.3）**并讨论 MAP 准则（MAP rule）：它等价于对不同观测值 $x$ 逐点的错误概率做最小化，从而最小化总体的错误概率（overall probability of error）。</span>
-
-<span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页 OCR 严重破碎：几乎每个叙述句都被切成单词或半字（页首 "…discuss its…"、"posterior distribution … x(θ|x) …", 中段 "…Equivalently, the…"、"…incorrect decision…of error…over x)…" 等），仅图 8.3 图注、后验表达式记号与指标随机变量 $I$、$g_{MAP}$、$E[I \mid X]$ 等数处可辨。下文按第 8 章 §8.2 关于「MAP 规则等价地最小化总体错误概率」的标准语义忠实重建，未从原文恢复处保留灰注释，绝不臆造未在原文出现的具体数值或公式编号。</span>
-
----
-
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）（续）**</span>
-
-我们讨论它的……对 $X$ 观测值……后验分布（posterior distribution）$P_{\Theta|X}(\theta\mid x)$ [或 $f_{\Theta|X}(\theta\mid x)$]……（离散情形），……（……）……∫ 参见图 8.3。
-
-<span style="color:#00838f;">**[图] Figure 8.3**（用于推断连续参数（a continuous parameter）时 MAP 准则（MAP rule）的图示（Illustration））</span>
-
-> <span style="color:#7f8c8d;">图注（Figure 8.3）：用于推断连续参数时 MAP 准则的图示。图注原文 "8.3. Illustration of the MAP rule for inference of a continuous parameter…" 中的 "8.3" 前的编号字样在 OCR 中被拆成 "8 . 3 ."，此处以 "Figure 8.3" 还原。</span>
-
-等价地，MAP 准则实现对总体错误概率（overall probability of error）的最小化〔对每一个观测值（observation value）$x$ 分别最小化条件错误概率，并随之对 $x$ 上的总体错误概率取平均作出最小化〕。†
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上句中的 "overall probability of error" 两处、括号内的连读片段及 "over x)]" 均为碎片还原，具体措辞如原书略有出入，但不改变「对应每个观测值最小化逐点错误概率、再对 $x$ 平均即得总体错误概率最小化」的数学含义。</span>
-
-† <span style="color:#7f8c8d;">脚注（footnote）</span> 要更精确（more precisely）地陈述这一点，让我们考虑一个一般性的判定准则（decision rule，译作判定准则），它针对观测值（observation value）$x$……的取值 $\theta$……〔由此，事件 $\{I = 1\}$〕与事件 $\{g(X) = \theta\}$ 相同，其中 $I$ 按判定准则 $g$ 的定义取……〔$I$ 为一次正确判定（correct decision）的示性指标（indicator）〕；从而……为一次正确判定的概率（probability）……；且类似地对……矩阵成立。由于 MAP 准则（the MAP rule）的取法，对任何可能的……都有
-
 ```math
-E[\, I_{MAP} \mid X \,] \;\geq\; E[\, I \mid X \,],
+e^{-\lambda}\, \frac{\lambda^{k}}{k!}
+\;\approx\;
+\frac{n!}{(n-k)!\,k!}\, p^{k} (1-p)^{n-k},
+\qquad k = 0, 1, \ldots, n .
 ```
-
-其中 $I_{MAP}$ 对应 $g_{MAP}$。于是按全期望定律（law of total expectation）……两边对 $X$ 取期望……即得总体错误概率被最小化。
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 脚注段被 OCR 拆得几乎只余单词（"I } is the same as the event {g(X )、"、"the definition of the…E[I∣X]…any possible…g(x). Denote…rule,…to 1…a correct decision; thus, …and similarly for…I X ) ≤ (gMAP(X) = e I X)…law…(−)…by…gMAP. By…E[IMAP∣X],"）；上段按第 8 章 §8.2 关于 MAP 规则最小化错误概率的标准论证（以指标变量 $I=\mathbf 1_{\{g(X)=\Theta\}}$ 及条件期望 $E[I\mid X]$，因 $g_{MAP}$ 逐点最大化后验、故 $E[I_{MAP}\mid X]\ge E[I\mid X]$，再由全期望定律得全局最优）作忠实重建。其中等式 $I = \mathbf 1_{\{g(X)=\Theta\}}$ 的示性定义系按常规记号补出，属重建而非原文逐字还原；OCR 中 "$I X) \leq (g_{MAP}(X) = \theta \mid X)$" 的精确形式无法复原，未臆造。</span>
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式中各项在 OCR 中错位（系数、二项式 $\frac{n!}{(n-k)!\,k!}$、$(1-p)^{n-k}$ 等被拆散），此处按「$n$ 很大时二项概率近似为泊松概率」的标准式重建，数值一律未改动。为检验这条经验法则，考虑下面的例子。</span>
 
-> <span style="color:#7f8c8d;">衔接：本页集中于「MAP 准则逐点最小化条件错误概率、进而最小化总体错误概率」的论证与图 8.3；后续页将继续 §8.2 中对该论断的收尾与点估计/假设检验的更细节讨论。</span>
-<!-- ===== PDF p429 ===== -->
+国际象棋世界冠军加里·卡斯帕罗夫（Gary Kasparov）在一场大型车轮战（simultaneous exhibition）中对阵 100 名业余棋手。根据过往经验估计，Kasparov …
 
-> <span style="color:#7f8c8d;">书页 p421，处于 **§8.2 点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）**（此处为续页，页眉为 `Sec. 8.2`）。本页无新章节起始横幅；页首承接上页关于「最大后验（MAP）准则」辞店的论述：先讲后验分布计算捷径与分母可省略，随后立起 MAP 准则的定义框及其等价的四种最大化形式，末再以有限的离散 $\Theta$ 情形说明 MAP 准则使选择到错误假设的概率最小，并辅以正确决策概率的表述。本页中部还以「（续）」的方式续讲 **Example 8.3**（$\Theta$ 与 $X$ 均为正态的情形）。</span>
+> <span style="color:#7f8c8d;">本页在此处截止；Example 6.6 的叙述在分页处中断，延续到下一页继续。</span>
 
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）（续）**</span>
+<!-- ===== PDF p317 ===== -->
 
-由贝叶斯准则（Bayes' rule）给出的后验分布形式，带来一个重要的计算捷径（computational shortcut）：分母对所有 $\theta$ 都相同，且只依赖于观测（observation）值 $x$。因此，要最大化后验分布（posterior distribution），我们只需选取一个能最大化下列分子的 $\theta$ 值——若 $\Theta$ 与 $X$ 均为离散型，则最大化
-
-```math
-p_\Theta(\theta)\,p_{X\mid\Theta}(x\mid\theta);
-```
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.1（续）
 
-若 $\Theta$ 和/或 $X$ 为连续型，则用相应的类似表达式。分母的计算没有必要。
+<span style="color:#c0392b;">**伯努利过程（The Bernoulli Process）**</span> <span style="color:#7f8c8d;">（源 OCR 页眉为 Chap. 6，原书页码 308；页首无新节/新标题，本页续接上一页正文中关于「泊松近似（Poisson approximation）二项」的数值演示。）</span>
 
-<span style="color:#2471a3;">**[definition]**</span> <span style="color:#00838f;">**[定义] 最大后验概率（MAP）准则（The Maximum a Posteriori Probability (MAP) Rule）**</span>
+> <span style="color:#7f8c8d;">承接上一页：本页先讲完卡斯帕罗夫（Kasparov）对弈数量逼近二项的算例（含 $n=100$ 与 $n=5$ 两组对照表），随后在页末开始 **Example 6.7**（噪声信道上报文分组的传输），该例延续到下一页继续。</span>
 
-给定观测值 $x$，MAP 准则选取一个能（关于参数 $\Theta$）最大化后验分布的 $\theta$ 值：若 $\Theta$ 为离散型，则最大化概率质量函数 $p_{\Theta\mid X}(\theta\mid x)$；若 $\Theta$ 为连续型，则最大化概率密度函数 $f_{\Theta\mid X}(\theta\mid x)$。
+在平均意义上，他在此类表演赛中赢得其 $99\%$ 的对局（用精确的概率语言来说，我们假定他对每一局都以概率 $0.99$ 获胜，且各局之间相互独立）。试问：他赢得 $100$ 局、$98$ 局、$95$ 局与 $90$ 局的概率分别是多少？
 
-等价地，它选取一个能（关于参数）最大化下列式子之一的 $\theta$ 值：
+我们把卡斯帕罗夫**未**赢的局数 $X$ 建模为参数 $n = 100$、$p = 0.01$ 的二项随机变量（binomial random variable）。于是，他赢得 $100$ 局、$98$ 局、$95$ 局与 $90$ 局的概率分别为
 
 ```math
 \begin{aligned}
-&p_\Theta(\theta)\,p_{X\mid\Theta}(x\mid\theta), \qquad &&\text{（$\Theta$ 与 $X$ 均为离散型）},\\
-&p_\Theta(\theta)\,f_{X\mid\Theta}(x\mid\theta), \qquad &&\text{（$\Theta$ 为离散型、$X$ 为连续型）},\\
-&f_\Theta(\theta)\,p_{X\mid\Theta}(x\mid\theta), \qquad &&\text{（$\Theta$ 为连续型、$X$ 为离散型）},\\
-&f_\Theta(\theta)\,f_{X\mid\Theta}(x\mid\theta), \qquad &&\text{（$\Theta$ 与 $X$ 均为连续型）}.
+p_X(0)   &= (1 - 0.01)^{100} = 0.366,\\
+p_X(2)   &= \frac{100!}{98!\,2!}\; 0.01^{2}(1 - 0.01)^{98} = 0.185,\\
+p_X(5)   &= \frac{100!}{95!\,5!}\; 0.01^{5}(1 - 0.01)^{95} = 0.00290,\\
+p_X(10)  &= \frac{100!}{90!\,10!}\; 0.01^{10}(1 - 0.01)^{90} = 7.006 \times 10^{-8}.
 \end{aligned}
 ```
 
-如果 $\Theta$ 只取有限多个数值，那么 MAP 准则在所有决策准则（decision rules）之中使得选择到一个错误假设（incorrect hypothesis）的概率最小。无论对于无条件误差概率（unconditional probability of error），还是给定任意观测值 $x$ 的条件误差概率，这一点都成立。
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上述二项概率公式中的组合系数（如 $100!/(98!\,2!)$）在 OCR 中被拆散（读作 `100! / 98. 2.` 等），此处按二项概率质量函数的标准式重建，数值一律未改动。</span>
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 那句「分母的计算没有必要」是全书最容易被读过就忘、也最容易被误用的一句。它讲的是一个纯代数事实：在固定的观测 $x$ 下，后验密度的分母 $\int p_{X|\Theta}(x\mid\theta')f_\Theta(\theta')\,d\theta'$ 不含 $\theta$，是一个只依赖 $x$ 的常数。既然是常数，乘它除它都不改变函数在 $\theta$ 轴上的形状，自然也不改变最大值点的位置。
+现在让我们检验相应的泊松近似（Poisson approximation），此时取 $\lambda = 100 \cdot 0.01 = 1$。它们为
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这张对照表真正要回答的问题不是「泊松近似准不准」，而是「准不准该用哪个数来衡量」。rule of thumb（经验法则）背下来快、忘得也快；能自己算出误差的人，遇到新场景（$n=10^{6}$、$p=10^{-6}$，或者 $n=20$、$p=0.05$）才知道还能不能用。
 >
-> 严格说法是 argmax（最大值点）对正常数因子不变。设分母为 $c(x)>0$，则后验等于分子除以 $c(x)$，两边同乘 $c(x)$ 后是同一个优化问题，最优解集合一模一样。这个论证不需要任何光滑性，也不要求 $\theta$ 是连续的，只要分母不为零就成立。
+> 先做一件可以手算的事：写出逐点比值。把 binomial distribution（二项分布）的 probability mass function（概率质量函数）与 Poisson distribution（泊松分布）在同一点相除，组合系数被 $n^{k}$ 换掉、指数项被 $e^{\lambda}$ 抵掉，取对数后只剩三项：$\log\frac{p_X(k)}{p_Z(k)} \approx kp - \frac{\lambda p}{2} - \frac{k(k-1)}{2n}$。三项各有名字。$-\lambda p/2$ 是 collision（碰撞）项，管「同一格里挤进多次成功」被合并掉的部分；$+kp$ 是 thinning（稀疏化）项的补偿，因为每格只有一次机会，成功过的格子不能再中；$-\frac{k(k-1)}{2n}$ 是 sampling without replacement（无放回抽样）折扣，形状与 birthday problem（生日问题）里那个因子完全相同。
 >
-> 这也解释了为什么 MAP rule（最大后验准则）在四种离散与连续的组合下写出来的都是「先验乘似然」。概率质量函数与概率密度函数在各自情形下扮演相同的角色，而分子恰好是这两者的乘积：$p_\Theta(\theta)p_{X|\Theta}(x\mid\theta)$ 或它的连续版本。所以教科书把四行公式并列，实际上是一行。
+> 代真数验一遍。$n=100$、$p=0.01$、$\lambda=1$、$k=10$ 时三项分别是 $0.1$、$-0.005$、$-0.45$，合计 $-0.355$；实测对数是 $-0.3695$，比值 $0.691$。也就是说在 $k=10$ 这一点，binomial distribution（二项分布）只有 Poisson distribution（泊松分布）的七成，并不「吻合得相当好」。主导的是第三项，它按 $k^{2}$ 增长，所以误差集中在尾部而不在中心。
 >
-> 代价在于正比符号。写「后验正比于先验乘似然」时丢掉的是 $1/c(x)$，而 $c(x)$ 是 $x$ 的函数。任何需要对 $x$ 求和或积分的量都不能用这个等价式代换：marginal likelihood（边缘似然）就是 $c(x)$ 本身，区间概率 $\int_a^b f_{\Theta|X}(\theta\mid x)\,d\theta$ 也带着 $c(x)$。省略分母只对「给定一个 $x$ 求最大值点」这一种用法安全。
+> 这里必须指出现行表格的一处数值问题：表中 $p_Z(10)$ 写作 $1.001\times10^{-8}$，而 $e^{-1}/10! = 1.0138\times10^{-7}$，相差整整十倍。若照表里的 $1.001\times10^{-8}$ 去比，$p_X(10)=7.006\times10^{-8}$ 反倒比泊松值大七倍，结论会整个翻转成「泊松严重低估尾部」。以 $1.0138\times10^{-7}$ 为准，正确结论是「泊松高估尾部约 $45\%$」。⚠ 需回查原书印刷值。
 >
-> 第二个坑是 support（支撑）依赖参数。若似然在 $\theta$ 的不同取值上有不同的支撑，比如 $[0,\theta]$ 上的均匀分布，密度含 $1/\theta$ 且定义域随 $\theta$ 滑动。此时直接对密度求导会漏掉边界项，正确做法是逐个 $\theta$ 核对支撑，或者改用分布函数。Juliet 例就是这种形状：后验要求 $\theta\ge x$，把 $\theta<x$ 整段剪掉；剪掉的不是数值很小，而是恰好为零。
+> $n=5$、$p=0.1$ 那一组把三项同时放大：比值在 $k=3$ 掉到 $0.641$、$k=5$ 掉到 $0.063$。用 total variation distance（全变差距离）量一下，两组分别是 $0.0028$ 与 $0.0248$，差约九倍。这个量正好落在 Le Cam's inequality（Le Cam 不等式）的射程内：独立 Bernoulli random variable（伯努利随机变量）之和与同均值的 Poisson distribution（泊松分布）之间，$\sum_k |p_X(k)-p_Z(k)| \le 2\sum_i p_i^{2}$，等概率时右边等于 $2\lambda p$。代入得 $0.02$ 与 $0.1$，方向正确但界很松：后者是实测全变差 $0.0248$ 的约 $4$ 倍（$0.1/0.0248=4.03$），若按 $L_1$ 距离比则是 $2$ 倍。界松也仍然有用，因为它指认了唯一该记的小参数——$\lambda p$，而不是 $n$ 或 $p$ 单独。
 >
-> 工程上还有一个更常见的坑：underflow（下溢）。$n$ 个似然因子相乘，每个都小于 1，$n=1000$ 时乘积落到 $10^{-300}$ 以下，IEEE 754 双精度在约 $10^{-308}$ 处归零。CSAPP 里讲过的 denormal（非规格化数）也救不了这个量级。正确做法是在对数域相加：$\sum_i\log p_{X_i|\Theta}(x_i\mid\theta)$。加法不会下溢，只会在负无穷处饱和，而那正好对应「这个假设不可能」。
+> 于是经验法则的三条里，起决定作用的是那个小参数 $\lambda p$，三条缺一不可。$n\ge100$ 与 $p\le0.01$ 只给出 $p$ 的上限，还要再加 $\lambda=np\le1$ 这一条，三条合起来才保证 $\lambda p = np^{2}\le0.01$——缺了 $\lambda$ 那条就什么都得不到，例如 $n=10^{6}$、$p=0.01$ 给出 $np^{2}=100$。而 $\lambda$ 适中的那一条，教材例题几乎都取 $\lambda\approx1$，保证的是你关心的 $k$ 落在 $\lambda\pm3\sqrt{\lambda}$ 以内，因为 $-\frac{k(k-1)}{2n}$ 只在 $k$ 远大于 $\sqrt{n}$ 时才咬人。换成一句更好记的判据：先算 $\lambda p$，$\lambda p<0.01$ 时中心几个点的相对误差在千分之几，$\lambda p>0.1$ 时不要拿这张表说话。
 >
-> 代一个具体数字。垃圾邮件先验是 0.3 与 0.7，某封邮件在两类下的似然比是 1000。后验 odds（几率）等于先验比乘似然比，即 $0.3/0.7\times1000\approx428.6$，对应后验概率 $428.6/429.6=0.9977$。整个过程没有算分母，只用了先验比与似然比。如果错把分子 $0.3\times0.001$ 当成概率报出去，报出的数比真值小三个数量级。
+> 想要一个比 Le Cam's inequality（Le Cam 不等式）更紧、又能手算的一阶估计，换成 effective rate（有效速率）的写法：把 probability mass function（概率质量函数）整体写成 $(1-p+pz)^{n}$ 取对数，它等价于参数 $\nu = -n\ln(1-p)$ 的 Poisson distribution（泊松分布）近似，而 $\nu - \lambda = \frac{np^{2}}{2} + \frac{np^{3}}{3} + \cdots$。两组数字立刻有了可比性：$\nu = 1.00503$ 对 $\lambda = 1$，相对差 $0.5\%$；$\nu = 0.52680$ 对 $\lambda = 0.5$，相对差 $5.4\%$。差十倍，正好对上 total variation distance（全变差距离）差九倍的那个事实。这条式子的用处不止估算：它一次性解释了经验法则里那个凭空出现的 $p\le0.01$——相对误差的一阶项就是 $\lambda p/2$，要让它在百分之一以内，只能要求 $\lambda p\le0.02$。
 >
-> 跨课程看，这是 6.042J 的 partition（划分）与全概率在连续情形的一次应用：分母是把 $\theta$ 的所有取值按先验与似然加权求和，它的唯一职责是保证后验是归一化的概率测度。6.006 里比较大小、取最大值点也是同一类操作：只关心相对次序，不关心绝对刻度。优化里这叫 monotone transformation（单调变换）不改最优解，取对数是最常用的一例。
+> 跨课程连接两处。CLRS 里的 asymptotic notation（渐近记号）教你把量纲先找对再谈系数，这里读 $\lambda p$ 与读 $-\frac{k(k-1)}{2n}$ 是同一套动作。CSAPP 第 3 章的 floating point（浮点）一节提醒过，相对误差在小量上被放大：$k=10$ 处三成偏差就是「同一个绝对误差落到小概率上变成大相对误差」的实例，所以「吻合得相当好」这句只在 $k\le5$ 一带成立。
 >
-> 反例要记牢：省略分母之后，手里的是相对后验，不是概率。任何需要跨 $x$ 比较的量，比如平均错误率、期望损失、ROC 曲线下的面积，都必须把分母补回来。很多人算出最大值点之后顺手把分子当概率报出去，这种错误在论文里也偶有出现，量级可以差几个数量级。
+> 收束回正文：这张表不是用来背的，是用来自查的。以后看到任何「某近似很好」的断言，先问三件事——误差用什么模量、误差的主项是谁、它在哪一段失效。
 
-> <span style="color:#7f8c8d;">[交叉引用] 该性质（MAP 准则最小化错误概率）的表述衔接下方关于「正确决策概率」的讨论，并与「$\Theta$ 离散时相关」的说明相互印证。§8.2，p.421。</span>
-
-让我们通过重温前面一节中的若干例子来说明 MAP 准则。
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.3（续）——正态先验、正态观测**</span>
-
-在本例中，$\Theta$ 是一个正态随机变量（normal random variable），均值为 $\theta_0$，方差为 $\sigma_0^2$。我们观测一组随机变量 $X = (X_1, \ldots, X_n)$——在给定 $\Theta$ 取值为 $\theta$ 的条件下，这些随机变量是相互独立（independent）的正态随机变量，均值均为 $\theta$，方差分别为 $\sigma_1^2, \ldots, \sigma_n^2$。我们已经知道，后验概率密度函数（posterior PDF）是正态的。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上方「后验 PDF 是正态的」之后，本应紧接该后验正态密度的具体表达式（其均值与方差的代数形式），但源 OCR 在此处断裂，只剩 `We found that the posterior PDF is normal`（"…后验概率密度函数是正态的"）一句，正态后验的均值/方差公式无法逐字复原。此处留空占位，未臆造任何数值。</span>
-
-对任一其他决策准则 $g$，记 $I_{\{g(X)=\Theta\}}$ 为「$g(X)=\Theta$（即决策正确）」的示性变量（indicator），则有
 
 ```math
-E\big[I_{\{g(X)=\Theta\}}\big] \;\le\; E\big[I_{\{g_{MAP}(X)=\Theta\}}\big],
+\begin{aligned}
+p_Z(0)  &= e^{-1}\,\frac{1^{0}}{0!} = 0.368,\\
+p_Z(2)  &= e^{-1}\,\frac{1^{2}}{2!} = 0.184,\\
+p_Z(5)  &= e^{-1}\,\frac{1^{5}}{5!} = 0.00306,\\
+p_Z(10) &= e^{-1}\,\frac{1^{10}}{10!} = 1.001 \times 10^{-8}.
+\end{aligned}
 ```
 
-也就是说
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上述泊松概率公式中的 $1^{k}/k!$ 因子在 OCR 中显示为乱码（如 `e - l ` 与 `O.` 分母），此处按泊松概率质量函数 $e^{-1}\,1^{k}/k!$ 的标准式重建，数值保持不变。</span>
+
+把二项概率质量函数（probability mass function）的值 $p_X(k)$ 与对应的泊松近似 $p_Z(k)$ 作比较，我们看到二者吻合得相当好。
+
+现在假设卡斯帕罗夫仅同时与 $5$ 位对手对弈，但这些对手更强，他每局的胜率只有 $0.9$。下面是 $n = 5$、$p = 0.1$ 时的二项概率 $p_X(k)$，以及 $\lambda = np = 0.5$ 时对应的泊松近似 $p_Z(k)$：
+
+| $k$ | 0 | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|---|
+| $p_X(k)$ | 0.590 | 0.328 | 0.0729 | 0.0081 | 0.00045 | 0.00001 |
+| $p_Z(k)$ | 0.605 | 0.303 | 0.0758 | 0.0126 | 0.0016 | 0.00016 |
+
+我们看到，这一近似虽称不上差，但其精度远不如 $n = 100$、$p = 0.01$ 的情形。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.7（噪声信道上的报文分组传输）**</span>
+
+一个由 $n$ 个符号组成的字符串所构成的分组（packet）在一噪声信道（noisy channel）上传输。每个符号以概率 $p = 0.0001$ 被……
+
+> <span style="color:#7f8c8d;">本例 **Example 6.7** 于本页页末开始陈述，译文在此处随源 OCR 截断，例题的解法延续到下一页继续。</span>
+
+<!-- ===== PDF p318 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.1（续）→ §6.2
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）—— 泊松近似的应用（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：页首续完 **Example 6.7**（含 $n$ 个符号的数据包经噪声信道传输）的尚未结束的解答（其题干已在上一页给出），随后正文进入新的一节 **§6.2 The Poisson Process**（泊松过程）。</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.7（续）—— 数据包经噪声信道传输（packet transmitted over a noisy channel）**</span>
+
+> <span style="color:#7f8c8d;">续上一页：一个由 $n$ 个符号（symbol）构成的数据包经噪声信道（noisy channel）传输，每个符号以概率 $p = 0.0001$ 传错，且各符号的错误相互独立（independent）。问 $n$ 应取多小，才能让「至少一个符号出错」的传输错误概率小于 $0.001$？本页续其解答。</span>
+
+把每个符号的传输看成一次独立的伯努利试验（independent Bernoulli trial）。于是，数据包中错误符号数 $S$ 大于 $0$ 的概率为
 
 ```math
-p\big(g(X)=\Theta\big) \;\le\; p\big(g_{MAP}(X)=\Theta\big).
+1 - P(S=0) = 1 - (1-p)^{n} .
 ```
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 源 OCR 中上述两条不等式被读取为碎片（如 `E[I] $\le$ E[I_{MAP}] , or` 与 `p(g(X)=$\Theta$) $\le$ p(g_{MAP}(X)=$\Theta$)` 的行首、行尾残缺，方向记号 `$\le$` 亦一度被读作 `$\ge$`）。现按「MAP 准则最大化正确决策概率」的语义将方向与示性变量下标复原；方向与概率语义均已核对正文措辞，未臆造原文未含的数值。</span>
-
-因此，MAP 准则在所有决策准则 $g$ 之中使得正确决策（correct decision）的总体概率达到最大。注意，这一论证当 $\Theta$ 为离散型时最有意义：若在给定 $X=x$ 的条件下 $\Theta$ 是一个连续型随机变量（continuous random variable），那么任何准则下正确决策的概率都为 $0$。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这句话初读像一个悖论：MAP 是「最优准则」，而它在一个连续参数上的正确概率竟然是零。解开这个悖论要分清两件事，即「准则选出的点」与「真值恰好等于这个点」。在连续型里后者的概率恒为零，与准则好坏完全无关。
->
-> 实分析的语言更清楚。连续随机变量的分布没有原子，任意单点集的 Lebesgue measure（勒贝格测度）为零，于是它在密度下的积分也为零。这不是「很小」，而是恰好为零；而且这件事对任何准则、任何取点都成立。所以「正确概率」这个打分方式在连续参数上恒等于零分，无法区分好坏。
->
-> 这就把 MAP 的两种读法分开了。离散参数上，MAP 最小化的是 0-1 loss（0-1 损失）的期望，也就是「选错假设」的概率，那种情形下正确概率是一个有意义的实数。连续参数上，0-1 损失退化成「只在单点为零、别处为一」的怪函数，任何准则的损失都是 1，它不再是可用的判据。硬套离散结论就会得到「所有准则得分都是零，谁也不比谁好」的荒谬推论。
->
-> 正确的连续版本是把目标换成邻域。对任意小 $\epsilon>0$，真值落在估计点 $\epsilon$ 邻域内的概率约等于 $2\epsilon\,f_{\Theta|X}(\hat\theta\mid x)$，这是区间长度乘密度的近似，因为区间足够窄时密度近似常数。要让这个概率最大，就要让密度最大。于是「最大密度」成为「逐点正确概率最大」的极限形式，这也正是 posterior mode（后验众数）的严格意义。
->
-> 代一个数看量级。后验是标准正态，取 $\epsilon=0.01$，则邻域概率约 $2\times0.01\times0.3989=0.0080$。把估计点从 0 挪到 1，密度从 0.3989 掉到 0.2420，邻域概率掉到 0.0048，只剩六成。所以「密度最大」在有限精度下确实在挑更好的点，只是这个「更好」不以命中的形式表现。
->
-> 顺带指出下一页的一处漏项。正文把 Example 8.3 的后验均值写成「各观测按方差倒数加权」，却漏了先验那一项。正确的后验均值必须同时含先验均值与先验精度：分子是先验精度乘先验均值、加上各观测的精度加权和，分母是全部精度之和。少了这一项，就等于假定先验方差无穷大、先验完全无信息。
->
-> 用数值确认这个差异。先验均值 0、先验方差 4；两次观测分别是 1 与 3，观测方差都是 1。正确均值是 $(0/4+1+3)/(1/4+1+1)=4/2.25=1.778$，后验方差是 $1/2.25=0.444$。正文公式给出 $(1+3)/2=2$。差异 0.222，而且方向固定：先验在 0，正文总是把估计拉得离先验更远。样本量越大差异越小，这正是「先验被数据淹没」的速度。
->
-> 跨课程看，这是「精度相加」的三处同构。Strang 18.06 的加权最小二乘用同一个加权平均，权重是方差的倒数；Kalman filter（卡尔曼滤波）的协方差更新就是把精度矩阵相加；实分析上，它是「零测集不改变积分」的直接推论，正因为测度在单点上没有质量，才必须用密度而不是用点概率来打分。
-<!-- ===== PDF p430 ===== -->
-
-> <span style="color:#7f8c8d;">第 8 章 §8.2 点估计、假设检验与最大后验（MAP）准则（Point Estimation, Hypothesis Testing, and the MAP Rule）中部续页。本页页首为上一页某个例子（正态后验 / MAP 估计）的收尾，随后为垃圾邮件分类例子在 §8.2 中沿用 MAP 准则的续讲，页末进入 §8.2 的「Point Estimation（点估计）」正文。§8.2 的节标题在上一页已出现，故本节小节标题记为（续）。</span>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.3（续）——正态后验与最大后验（MAP）估计（收尾）**</span>
-
-该例收尾处给出后验分布（posterior distribution）：它以均值 $m$、方差 $v$ 的正态分布（normal）为后验，具体由下式给出——
+为使该概率小于 $0.001$，必须有 $1 - (1-0.0001)^{n} < 0.001$，即
 
 ```math
-m = \mathrm{E}[\Theta \mid X = x] = \frac{\sum_{i=1}^{n} x_i / \sigma_i^2}{\sum_{i=1}^{n} 1 / \sigma_i^2},
+n < \frac{\ln 0.999}{\ln 0.9999} = 10.0045 .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式中分子 $\ln 0.999$、分母 $\ln 0.9999$ 及结果 $10.0045$ 在 OCR 中被拆散在数行，此处按条件 $1-(1-p)^{n}<0.001$ 及对数的算法重建为规范式，数值一律未改动。</span>
+
+我们也可以对 $P(S=0)$ 使用泊松近似（Poisson approximation），即当 $\lambda = np = 0.0001\, n$ 时取值为 $e^{-\lambda}$，从而得到条件 $1 - e^{-0.0001\, n} < 0.001$，由此推出
+
+
+```math
+n < -\,\frac{\ln 0.999}{0.0001} = 10.005 .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式中分母 $0.0001$、负号及结果 $10.005$ 在 OCR 中被拆散，此处按条件 $1-e^{-\lambda}<0.001$ 的标准算法重建，数值一律未改动。</span>
+
+由于 $n$ 必须是整数（n must be an integer），两种方法都归结到同一结论：$n$ 至多只能取 $10$。
+
+---
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）**</span>
+
+泊松过程（Poisson process）是伯努利过程（Bernoulli process）在连续时间（continuous time）下对应的版本，适用于那种没有自然而然的方法把时间划分成离散区间的情形。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这一句是全书最重要的模型替换之一，它回答的问题不是「泊松过程怎么定义」，而是「为什么非要有第二个模型」。要看懂这句话，先看清 Bernoulli process（伯努利过程）缺什么。
+>
+> 缺的不是精度，是自洽性。把一小时切成六十个分钟格、每格只记「有没有事故」，这个 Bernoulli process（伯努利过程）能回答「一百分钟里有几格出过事故」，却答不了两件事。第一，同一分钟里的第二起事故被吞掉，而现实里连撞三车的事故恰恰是最要紧的那类。第二，更致命：$P(k,\tau)$ 对 $\tau$ 没有稳定含义——换成一秒、一毫秒，格子数变了，每格的成功概率也得跟着变，你永远说不清哪一个才是「真实发生率」。
+>
+> 用数字把第二点钉死。设真实强度是每小时两起，取分钟格则每格概率 $1/30$，六十格的 expectation（期望）是 $2$；取秒格则每格 $2/3600$，三千六百格的 expectation（期望）仍是 $2$。但 variance（方差）不一样：分钟格给出 $1.9333$，秒格给出 $1.9989$——后者的算法是 $3600\cdot(2/3600)\cdot(1-2/3600)=1.998889$，网格越细越逼近 $2$。同一个物理过程，均值对网格免疫、方差却把网格暴露出来——这说明模型里藏着一个你从没打算引入的参数 $\delta$，而它不该出现在答案里。
+>
+> 「那就再切细一点」不是解法，因为它只是把同一个问题换个尺度重复一遍：任何尺度上都能问「要不要更细」，而没有任何尺度是自然给定的。再切细还会把边界效应放大——总会存在两次事故落在同一格内，只是概率变小，于是模型的误差永远取决于你随手选的 $\delta$，这在工程上不可接受。
+>
+> 极限这一步做的不是「更细的格子」，而是把格子这个参数整个消掉：让 $P(k,\tau)$ 成为 $\tau$ 的连续函数，只依赖长度不依赖划分。数学上的代价是下一页那条 $o(\tau)$ 条件，收益是把「同时刻两次到达」的概率压到 $0$，于是「数了几次」与「什么时候发生」可以分开处理——这是后面所有计算的支点。
+>
+> 这一步在分析学里有标准名字：partition（划分）先细到 mesh（网格直径）趋于零，再谈极限。你在实分析里已经用过同样的动作——Riemann integral（黎曼积分）就是「任取划分、取 mesh（网格直径）趋于零、证明极限与划分无关」；CSAPP 里用固定频率 sampling（采样）近似连续信号，则正好展示了不做这一步的代价：采样率不够时高频被折叠成低频，而模型本身不会报警。6.042J 那边是把递归结构翻成闭式，动作相同：消掉一个不该出现在答案里的参数。
+>
+> 值得单独记一句：连续模型往往不是「更复杂」而是「更少参数」。带两个参数的是有限 $n$ 次试验的 binomial model（二项模型），Bernoulli process（伯努利过程）本身只由 $p$ 参数化，$n$ 只是你观察了多久；Poisson process（泊松过程）只剩一个 $\lambda$，因为 $n$ 被取极限吃掉了。参数越少，可被数据否证的空间越大，这也是为什么「到达像不像泊松」在实践中能真的被检验，而不是变成一句无法反驳的描述。
+>
+> 收束回正文：这句「适用于没有自然离散化的场合」不是修辞。它说的是一件具体的事——离散化本身要付出一个额外参数，而那个参数无法由数据确定。
+
+
+为看出伯努利过程为何需要一个连续时间版本，不妨考虑一个城市内交通事故（traffic accidents）的可能模型。我们先把时间离散成以一分钟为单位的若干区间，并在每一分钟内只要有至少一次交通事故就记下一个「成功（success）」。假定交通强度（traffic intensity）随时间恒定，那么每个区间内发生事故的概率都应相同。再附加一条合理得相当可信的假设——不同时间段相互独立，则这些「成功」的序列就构成一个伯努利过程。
+
+注意，在现实生活里，同一分钟区间内确实可能发生两起或更多起事故，但伯努利过程模型并不记录事故的确切次数；尤其它并不能让我们算出给定时间段内事故次数的期望（expected number）。
+
+绕过这一困难的一种办法，是把时间区间的长度取得非常小，使得两起或更多起事故的概率小到可以忽略不计。但该取多小呢？一秒？一毫秒？与其做这种随意的选择，不如考虑一种极限情形，让时间区间的长度趋于 $0$，也就是采用连续时间模型。
+
+我们考察一个在连续时间中演化（evolves in continuous time）的到达过程（arrival process），意思是任意实数 $t$ 都可能成为一个到达时刻。我们定义
+
+```math
+P(k,\, \tau) = P\big(\text{在长度为 } \tau \text{ 的区间内恰好发生 } k \text{ 次到达}\big) .
+```
+
+<!-- ===== PDF p319 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）——泊松过程的定义（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：本页为 §6.2 泊松过程正文的延续，页首接上一页已引入的到达过程（arrival process）与到达间隔（interarrival time）等铺垫，正文从“……并假定这一概率对所有长度相同的区间都相同”一句续起，随即给出**泊松过程的定义（Definition of the Poisson Process）**这一定义框。</span>
+
+……并假定这一概率对所有长度相同的区间来说都相同。我们还引入一个正的参数 $\lambda$，称为该过程的到达率或强度（arrival rate or intensity），其原因很快就将变得清楚。
+
+<span style="color:#00838f;">**[定义] Definition of the Poisson Process（泊松过程的定义）**</span>
+
+一个到达过程若具有如下性质，就称为速率为 $\lambda$ 的泊松过程（Poisson process with rate $\lambda$）：
+
+- (a) （时间齐次性 Time-homogeneity）任意区间内发生 $k$ 次到达的概率 $P(k, \tau)$ 对所有长度相同的区间都相同。
+
+- (b) （独立性 Independence）特定区间内到达的次数，与这一区间之外到达的历史（history）无关。
+- (c) （小区间概率 Small interval probabilities）概率 $P(k, \tau)$ 满足
+
+```math
+\begin{aligned}
+P(0, \tau) &= 1 - \lambda\tau + o(\tau),\\
+P(1, \tau) &= \lambda\tau + o(\tau),\\
+P(k, \tau) &= o_k(\tau), \qquad \text{对 } k = 2, 3, \ldots \text{成立}.
+\end{aligned}
+```
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> $o(\tau)$ 不是「很小」的修辞，而是一条可检验的极限断言：$o(\tau)/\tau\to0$。定义里非要写它而不是写 $\approx$，是因为后面要把这个误差乘上 $n=T/\delta$ 个格子——只有 little-o notation（小 o 记号）才保证乘完仍然趋零。
+>
+> 先把累积机制算清楚。把 $[0,T]$ 切成 $n=T/\delta$ 段，每一段「至多一次到达」失败的概率是 $\sum_{k\ge2}P(k,\delta)$，而每个 $P(k,\delta)=o_k(\delta)$。于是「至少一段出问题」的概率不超过 $n$ 倍的单段失败概率，量级是 $\frac{T}{\delta}\cdot o(\delta)$。这个式子必须趋于 $0$，也就是要求 $\frac{o(\delta)}{\delta}\to0$——定义里那条极限条件正好是为它准备的。若换成「误差 $=O(\tau)$」，即误差至多是 $\delta$ 的某个常数倍，则 $\frac{T}{\delta}\cdot O(\delta)=T\cdot O(1)$，无论 $\delta$ 多小都消不掉。这就是 $o$ 与 $O$ 在这里不能混用的原因：$o$ 的除法能吃掉一个 $\delta$，$O$ 不能。
+>
+> 下标 $k$ 也有实质含义。$o_k(\tau)$ 里的 $k$ 表示「对每个固定的 $k$ 各有一条函数」，它允许不同的 $k$ 有不同的收敛速度；而把 $k\ge2$ 的无穷多项加起来时，需要额外的控制才能保证和仍是 $o(\tau)$。对泊松过程这条成立，但这不是记号自动给的，是可以被破坏的——若在极短区间内可能出现任意多次到达，求和就会失控，这也是上一页 (c) 那条禁止 bulk arrival（批量到达）的假设真正在防的东西。
+>
+> 还要看清定义故意写弱了。正文说 $o(\tau)$ 可以看作 Taylor expansion（泰勒展开）里的 $O(\tau^{2})$ 项，那是更强的条件：$O(\tau^{2})$ 蕴含 $o(\tau)$，反之不成立。举一个具体的：若某过程的 $P(2,\tau)=3\tau^{1.5}$，则 $P(2,\tau)/\tau=3\tau^{0.5}\to0$，满足 $o(\tau)$；但它不是 $O(\tau^{2})$，因为 $\tau^{1.5}/\tau^{2}=1/\tau^{0.5}\to\infty$。这样的过程依然被定义接纳，且切段后误差 $\frac{T}{\delta}\cdot3\delta^{1.5}=3T\delta^{0.5}\to0$ 照样收敛。定义只取它需要的那一档，定理因此覆盖更多模型——公理写弱一点、结论反而更强，这是数学里反复出现的取舍。
+>
+> 紧接着要防一个误解：$o(\tau)$ 保证「取极限后消失」，不保证「取到你手上的 $\delta$ 已经够小」。仍旧用上面那个 $3\tau^{1.5}$ 的例子，$T=1$、$\delta=10^{-3}$ 时累计失败概率是 $3\delta^{0.5}=0.0949$，接近一成；要把它压到百分之一，需要 $3\delta^{0.5}\le0.01$，即 $\delta\le1.1\times10^{-5}$。也就是说差两个数量级的网格，才换来一个能接受的误差。极限记号给的是定性保证，工程上必须自己把 $\delta$ 解出来——这正是「近似只有带上误差界才有意义」那句话的具体形态。
+>
+> 与算法分析里的记号对照着记，才不会串味。CLRS 里的 $O(g(n))$ 面对的是 $n\to\infty$，说的是「增长不超过 $g$ 的常数倍」，用的场合是复杂度上界；这里的 $o(\tau)$ 面对 $\tau\to0$，说的是「与 $\tau$ 相比趋于零」，用的场合是误差预算。两者是同族符号，但极限点相反，一个看大、一个看小；关心的问题也不同，一个问「要多少资源」，一个问「误差能不能被消掉」。CSAPP 里讲浮点误差时用 ulp（单位舍入误差）做单位，思路与这里一致：误差必须写成一个可比较的量，才谈得上「可忽略」。
+>
+> 操作层面的判据只有一条：看到 $o(\tau)$，立刻问「下一步除以 $\tau$ 还是乘以 $n$」。如果接下来的推导既不除也不乘，这个记号就是空转；一旦除了，它就会变成一个干净的 $0$。这条习惯养成之后，连续概率里所有「先局部线性化、再整体取极限」的证明都能一眼看出骨架。
+>
+> 收束回正文：三条式子里真正携带信息的是误差项的形状，不是主项 $\lambda\tau$。主项告诉你平均每分钟来几个人，误差项告诉你这个「平均」能被信任到什么尺度。
+
+
+这里，$o(\tau)$ 与 $o_k(\tau)$ 是满足下列条件的 $\tau$ 的函数：
+
+```math
+\lim_{\tau \to 0}\frac{o(\tau)}{\tau} = 0, \qquad
+\lim_{\tau \to 0}\frac{o_k(\tau)}{\tau} = 0.
+```
+
+第一条性质说明到达在任何时刻都“同样可能”。在任意长度为 $\tau$ 的时间区间内发生的到达在统计上是相同的，即它们遵循相同的概率律（probability law）。这与伯努利过程（Bernoulli process）中成功概率 $p$ 对所有试验都相同的假设相对应。
+
+为了理解第二条性质，考虑一个长度为 $t' - t$ 的特定区间 $[t, t']$。在该区间内发生 $k$ 次到达的无条件概率（unconditional probability）为 $P(k, t' - t)$。假设现在我们得到了这一区间之外到达的完整或部分信息。性质 (b) 表明这些信息无关紧要：在 $[t, t']$ 内发生 $k$ 次到达的条件概率仍等于无条件概率 $P(k, t' - t)$。这一性质与伯努利过程中试验的独立性类似。
+
+第三条性质至关重要。$o(\tau)$ 与 $o_k(\tau)$ 这几项，意在指出当区间长度 $\tau$ 非常小时它们与 $\tau$ 相比可以忽略不计。可以将它们看作是 $P(k, \tau)$ 的泰勒级数展开（Taylor series expansion）中的 $O(\tau^2)$ 项。因此，对很小的 $\tau$ 而言，发生单次到达的概率大致为 $\lambda\tau$，再加上一个可忽略的项。类似地，对很小的 $\tau$ 而言，不发生到达的概率大致为 $1 - \lambda\tau$。最后，随着 $\tau$ 变小，发生两次或更多次到达的概率与 $P(1, \tau)$ 相比可以忽略不计。
+
+<!-- ===== PDF p320 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）—— 对泊松过程的伯努利近似（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：我们已给出泊松过程的定义及其三条性质 (a)–(c)。由于性质 (c)（小间隔概率）表明在很小时段内几乎不可能发生多次到达，本页据此把泊松过程（Poisson process）看成伯努利过程（Bernoulli process）的极限，从而导出区间到达数 $P(k, T)$ 的显式泊松公式。</span>
+
+由于在长度很小的一段区间内，至多只会发生一次到达，因此其中要么恰有一次到达（概率约为 $\lambda\delta$），要么一次也没有（概率约为 $1 - \lambda\delta$）。由此，所研究的到达过程可以用伯努利过程来近似，并且随着 $\delta$ 越取越小，这种近似越来越精确。
+
+<span style="color:#c0392b;">**Figure 6.5：在长度为 $T$ 的区间上对泊松过程的伯努利近似（Bernoulli approximation）。**</span>
+
+区间 $[0, T]$ 内发生 $k$ 次到达的概率 $P(k, T)$，等于在 $n = T/\delta$ 个相互独立的小时段（period）中恰好成功 $k$ 次的（二项分布）概率，其中每个时段地成功概率为 $p = \lambda\delta$。我们在保持区间长度 $T$ 固定的同时，令时段个数 $n$ 趋于无穷（即令 $\delta \to 0$），而乘积 $n\,\delta$ 保持恒定并等于 $T$。我们于是注意到 $n\,p = \lambda T$，并且沿用上一节所述结果——二项分布的 PMF 收敛于参数为 $\lambda T$ 的泊松分布 PMF。我们于是得到
+
+```math
+P(k, T) = e^{-\lambda T}\,\frac{(\lambda T)^{k}}{k!}, \qquad k = 0, 1, \ldots
+```
+
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这三条不是「泊松过程恰好具有的性质」，而是它的定义，也就是判据：任何一个 arrival process（到达过程）只要满足 (a)(b)(c)，就必然是速率为 $\lambda$ 的泊松过程，下一页的推导只以这三条为输入。所以读这一段要换个姿势——不是在记结论，是在读一张「检验清单」。
+>
+> (a) time homogeneity（时间齐次性）翻译成离散语言，就是「每次试验成功的概率相同」。它只说 $P(k,\tau)$ 与区间的起点无关，不涉及任何时刻的联合分布，因此它比「平稳」要弱：平稳性还要约束不同时刻取值的联合规律，这里只约束单个区间的边际。
+>
+> (b) independent increments（独立增量）在正文里写成「区间外的历史无关」，严格说法是：任意有限个互不相交区间上的到达次数联合 independent（独立）。这里最容易出错的地方是把「互不相交」读成「不嵌套」——两个区间可以相隔很远，也可以不相邻，只要不重叠就行；而嵌套的两个区间显然不独立，因为大的区间包含小的区间。判断一个真实数据流是否满足这条，看的是有没有聚簇：暴雨天事故扎堆，就是不同时段不再独立的信号。
+>
+> (c) small interval probability（小区间概率）才是定义的核心，前两条只提供框架。把三条式子合起来看：$P(0,\tau)+P(1,\tau)=1-o(\tau)$，意思是「足够短的区间里至多一次到达」；而 $k\ge2$ 那一行 $o_k(\tau)$ 是真正的内容，它禁止 bulk arrival（批量到达）——不允许一个瞬间涌进两辆车。若把这一条放开，得到的是 compound Poisson process（复合泊松过程），每一次到达自带一个随机的大小，排队论里的「一批顾客同时到」正是这种模型。换句话说，(c) 用一个 $o(\tau)$ 把模型钉在了「一个一个来」这一侧。
+>
+> 要确认这三条只在 $\tau$ 小的时候有内容，代数字即可。取 $\lambda=0.2$ 每小时：$\tau$ 等于一分钟时 $\lambda\tau=0.0033$，$P(2,\tau)$ 约 $5.6\times10^{-6}$，确实是更高阶的小量；$\tau$ 等于一小时时 $\lambda\tau=0.2$，而 $P(k\ge2,\tau)=1-e^{-0.2}(1+0.2)=0.0175$，它显然不是 $o(1)$。所以 (c) 只在局部提供等式，大区间上的一切结论必须由 (a)(b) 加上 (c) 推出——这就是下一页「切段取极限」的全部工作。
+>
+> 三条之间不能互相替代，这一点值得看清。(c) 只约束 $\tau\to0$ 的局部行为，管不到长区间；(a) 管的是区间长度相同的两组之间是否同分布，管不到独立性；(b) 管的是不同区间之间是否互不影响，管不到单个区间的分布形状。三条各自只负责一个维度，合起来才唯一确定 $P(k,\tau)$。
+>
+> 从方法论上说，这是一种非常省力的定义方式：公理越弱越容易检验，代价是必须另证一个唯一性定理。实分析里你见过同样的结构——测度的定义只要求可数可加与规范性，所有具体性质都靠定理推出来；CSAPP 里接口与实现分离也是同一件事，只要接口约定成立，实现细节可以完全不同。6.042J 讲的「等价刻画」在这里表现为：同一个对象可以有极限面孔，即伯努利过程的极限；可以有公理面孔，即这三条；还可以有公式面孔，即下一页的泊松概率质量函数。三副面孔可以互相验算。
+>
+> 收束回正文：拿到一条到达数据时，检验清单就是这三条——看强度是否随时间漂移（(a)）、看有没有聚簇（(b)）、看有没有同一时刻的批量到达（(c)）。三条都过，才配用泊松公式。
+
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这是本节的心脏公式，也是全书最值得背下来的一段推导模板。三步固定：把 $[0,T]$ 等分成 $n=T/\delta$ 段；每段至多一次到达，于是整段计数服从参数 $(n,\lambda\delta)$ 的 binomial distribution（二项分布）；再保持 $n\delta=T$ 不变、让 $\delta\to0$，二项概率质量函数逐点收敛到泊松概率质量函数。
+>
+> 第二步的合法性来自性质 (c)，第三步的关键则是「保持 $n\delta$ 固定」。这一条不能省：若固定每段概率 $p$ 不变而让 $n\to\infty$，$np$ 会发散，极限退化成正态而不再是泊松；若让 $p$ 缩得比 $\delta$ 快，$\lambda T\to0$，极限退化成一个质量全在 $0$ 的退化分布。只有当「段长与每段概率同步缩小」时，$\lambda$ 才保住「单位时间强度」的物理含义，$np=\lambda T$ 才是一个与网格无关的不变量。
+>
+> 收敛有多快可以算，而且算出来的答案很整齐。取 $\lambda=2$、$T=1$，$P(0,T)=(1-\lambda\delta)^{1/\delta}$ 在 $\delta=0.1,0.01,0.001,0.0001$ 时分别是 $0.107374$、$0.132620$、$0.135065$、$0.135308$，极限 $e^{-2}=0.135335$；对应误差 $2.8\times10^{-2}$、$2.7\times10^{-3}$、$2.7\times10^{-4}$、$2.7\times10^{-5}$。每把网格缩小十倍，误差就缩小十倍，这是一阶收敛，误差量级是 $\frac{(\lambda T)^{2}}{2n}=\frac{\lambda^{2}T\delta}{2}$。本题取 $\delta=10^{-3}$ 时它等于 $2\times10^{-3}$，比实测的 $2.7\times10^{-4}$ 大七倍左右——阶对、常数松，这正是误差界的常态。于是「要几位有效数字就切多细」变成一个可解的不等式：本题想要千分之一的精度，$\delta\le10^{-3}$ 就够。
+>
+> 这条推导与上一节的近似用的是同一个不等式。Le Cam's inequality（Le Cam 不等式）给 total variation distance（全变差距离）一个上界 $\sum_i p_i^{2}=n(\lambda\delta)^{2}=\frac{(\lambda T)^{2}}{n}$，与刚才算出的 $O(\delta)$ 完全同阶。区别在于：上一节里 $n$ 由数据给定，误差只能接受；这里 $n$ 是我们自己选的，可以任意大，所以极限是干净的。同一个界，一处当限制读，一处当工具读。
+>
+> 名字的来历只占一句：这个分布由 Siméon-Denis Poisson 在 1837 年的《Recherches sur la probabilité des jugements en matière criminelle et en matière civile》中首次写出显式形式，而处理的是「罕见事件」的极限——陪审团误判、事故这类每次概率极小、次数极多的事件；更早在 1712 年 de Moivre 近似二项分布时已经隐式得到它。记住这条脉络的用处不是背年份，而是理解「稀有事件的极限」才是这个公式的本体。
+>
+> 模板可复用的理由也在这里：凡是能找到一个 $\delta$ 使得「每 $\delta$ 内至多一次事件」且事件概率正比于 $\delta$ 的系统，都能套这四步。排队论里第 $k$ 个到达的时刻、随机算法「重复试验直到成功」的运行步数、哈希表里的碰撞数、网络分组的丢失数，骨架完全一样。判据只有两条：事件能否被拆成大量独立小概率尝试；这些尝试的概率是否与观察窗口成正比。
+>
+> 模板失效的情形也要记住：只要有批量到达（一次操作触发多个事件），第二步就崩，因为「至多一次」不成立，此时需要 compound Poisson process（复合泊松过程）或者干脆不做连续化。跨课程对照一句：CSAPP 里把连续时间采成离散 tick（时钟节拍）是同一个动作的工程版本，差别在于机器上取不到 $\delta\to0$，只能算出现在 $\delta$ 下的误差。
+>
+> 收束回正文：这个公式不是「记下来的结论」，而是一台机器。给定 $\lambda$ 与 $T$，它产出概率；给定精度要求，它反推网格。
+
+
+这与泊松过程定义中的性质 (c) 相吻合。注意，对 $e^{-\lambda T}$ 作泰勒展开（Taylor expansion）可得
+
+```math
+P(0, T) = e^{-\lambda T} = 1 - \lambda T + O(T^{2}),
+```
+
+以及（对 $P(1, \cdot)$ 展开）
+
+```math
+\lambda T\, e^{-\lambda T} = \lambda T - \lambda^{2} T^{2} + O(T^{3}) = \lambda T + O(T^{2}),
+```
+
+换言之，当区间长度非常小时，恰有一次到达的概率约为 $\lambda T$，而零次到达的概率约为 $1 - \lambda T$，这正与性质 (c) 一致。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 本页原文 OCR 严重碎裂（前半页"要么恰有一次到达、要么零次"一段、Figure 6.5 的图注分行、以及末尾泰勒展开的写法均难以辨认）；上文按 §6.2 泊松过程的伯努利近似这一标准推导流程重建，未臆造数值，仅据上下文补全变量符号（$\delta$ 表示小时段长、$T$ 表示固定区间长）。末段"与性质 (c) 一致"的核对式按 $P(0,\cdot)$ 与 $P(1,\cdot)$ 在小区间上的展开呈现。</span>
+
+<!-- ===== PDF p321 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）—— 泊松过程相关的随机变量（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：我们用伯努利近似导出了 $[0,T]$ 内恰有 $k$ 次到达的概率 $P(k,T)$。本页沿用泊松 PMF（probability mass function）的均值与方差公式，先给出区间到达数 $N_T$ 的均值与方差，再推导首次到达时间 $T$ 的概率规律（指数分布），最后以表格总结泊松过程相关的随机变量及其性质，并开启 Example 6.8。</span>
+
+利用前面导出的泊松 PMF 的均值和方差公式，我们得到
+
+```math
+E[N_T] = \lambda T, \qquad \operatorname{var}(N_T) = \lambda T,
+```
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 均值与方差相等不是巧合，也不是「泊松分布的性格」，它是单参数的直接后果，两行就能算出来。算完也就明白为什么这个等式可以当判据用。
+>
+> 工具是 probability generating function（概率生成函数）。定义 $G(z)=E[z^{N}]$，它把整个分布打包成一个函数；两个基本事实是 $G'(1)=E[N]$、$G''(1)=E[N(N-1)]$，因为逐项求导后 $z$ 取 $1$ 就把 $k$ 与 $k(k-1)$ 的权重原样留下。对 Poisson distribution（泊松分布）有 $G(z)=e^{\lambda T(z-1)}$，于是 $G'(1)=\lambda T$、$G''(1)=(\lambda T)^{2}$，代入 $\operatorname{var}=G''(1)+G'(1)-G'(1)^{2}$ 得 $\operatorname{var}=(\lambda T)^{2}+\lambda T-(\lambda T)^{2}=\lambda T$。等式两边恰好是同一个量，因为它俩都是 $\lambda T$ 的函数。
+>
+> 同样的算法跑一遍 binomial distribution（二项分布）做对照：$G(z)=(1-p+pz)^{n}$，$G'(1)=np$，$G''(1)=n(n-1)p^{2}$，得 $\operatorname{var}=np(1-p)$。两式在 $p\to0$ 时合流，$1-p\to1$，方差贴着均值走。这也解释了为什么泊松分布的方差不可能独立于均值设定——取极限时顺手把那个自由度丢掉了。
+>
+> 顺带修正一条常见但不成立的论证。有人说「可加性要求均值与方差都随参数线性增长，二者必然同形」，这句话是错的：正态分布同样可以让均值与方差都随参数线性变化，位置尺度族里它们是两个互不相干的参数。真正的机制是单参数——$G(z)$ 里只有一个 $\lambda T$，$G'(1)$ 与 $G''(1)$ 都由它决定，方差无处独立。把「同形」归因于可加性，会在遇到非泊松的单参数族时立刻露馅。
+>
+> 这条等式最好用的形态是 index of dispersion（离散指数）$F=\operatorname{var}/\operatorname{mean}$。泊松恒有 $F=1$；二项分布 $F=1-p<1$，属于 underdispersion（欠离散），意思是到达比泊松更规律，因为上限压住了波动；负二项一类 $F>1$，属于 overdispersion（过离散），意思是强度本身在漂移，短时间密集、长时间稀疏。这三档是工程上最快的模型筛选器，但它只给必要条件：$F=1$ 并不能反推出泊松，只是「不像泊松」这件事可以被一个数直接否掉。
+>
+> 代一组数看看它怎么工作。某服务每小时平均到达 $\lambda=2$ 次，观察 $T=3$ 小时，模型预测均值与方差都是 $6$，标准差 $2.45$。若实测样本均值恰好是 $6$、样本方差却是 $11$，则 $F=1.83$，基本可以断定强度随时间漂移，高峰与低谷被混在了一起，此时应当换 compound Poisson process（复合泊松过程）或时变强度的模型，而不是硬套泊松公式。反过来，若样本方差只有 $3.2$，$F=0.53$，说明到达过于均匀，可能来自定时轮询而非随机事件。
+>
+> 可加性在这里与等式相互印证。两个独立泊松过程合并后仍是泊松，参数相加，于是均值与方差同时相加、$F$ 保持 $1$——这条性质让「泊松性」在合并下稳定，也是为什么把多个独立来源的稀有事件合起来建模时仍然成立。注意方向：合并保持泊松，但「合并后 $F=1$」不能倒推每一段都是泊松，因为过离散与欠离散可以在混合时互相抵消。
+>
+> 跨课程连接：CLRS 里用 expectation（期望）的线性把随机算法的代价拆开算，这里则要第二阶矩，因为可靠性问题关心的是波动而不只是平均；CSAPP 里做性能诊断看延迟分布的均值与尾部，道理相同——只看均值会漏掉抖动的来源，而抖动往往才是故障的原因。
+>
+> 收束回正文：两个公式并列写在一起，是要你记住「一个参数锁两件事」这个结构。见到均值与方差不成比例的数据，第一步就是怀疑模型里的独立性或强度恒定被破坏了。
+
+
+其中 $N_T$ 表示长度为 $T$ 的时间区间内的到达次数。这两个公式毫不令人意外，因为我们面对的正是二项分布 PMF 的极限，该二项分布写为 $n = T/\delta$、$p = \lambda\delta$，其均值为 $np = \lambda T$，方差为 $np(1-p) \simeq np = \lambda T$。
+
+现在我们来推导首次到达时间 $T$ 的概率规律，假定过程从时刻零开始。注意，当且仅当在区间 $[0,t]$ 内没有到达时才有 $T > t$。于是有
+
+```math
+F_T(t) = P(T \le t) = 1 - P(T > t) = 1 - P(0, t) = 1 - e^{-\lambda t}, \qquad t > 0 .
+```
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这一段的关键不在算，而在选路。要的是「首次到达时间」的分布，但直接算 cumulative distribution function（累积分布函数）$F_T(t)=P(T\le t)$ 需要处理「$t$ 之前发生过至少一次」这一堆互斥事件的并；反过来算它的补，事件变成「到时刻 $t$ 为止一次都没来」，而后者在泊松模型里是现成的一个值 $P(0,t)=e^{-\lambda t}$。绕行绕到更简单的一侧，这就是全部思想。
+>
+> 先修一个记号冲突，否则抄笔记必出事故。这一页的 $T$ 出现了两次、含义不同：$N_T$ 里的 $T$ 是固定的观察区间长度，从上一页起就当成常数用；而这里「首次到达时间 $T$」是 random variable（随机变量）。两者在同一段文字里撞名，是正文的一处记号冲突，不是数学错误。自己推导时把首次到达时间写成 $T_1$ 或 $\tau$，映射回正文再换名字，可以避免把期望 $E[N_T]=\lambda T$ 与 $E[T]=1/\lambda$ 混成一句话。
+>
+> 三步走完就是结论：survival function（生存函数）$P(T>t)=P(0,t)=e^{-\lambda t}$，取补得 $F_T(t)=1-e^{-\lambda t}$，再对 $t$ 求导得 probability density function（概率密度函数）$f_T(t)=\lambda e^{-\lambda t}$，$t>0$。求导合法，因为指数函数在 $(0,\infty)$ 上光滑；$t<0$ 时 $F_T=0$，因为「首次到达发生在负时刻」这件事按定义不发生。这条分布就叫 exponential distribution（指数分布）。
+>
+> 代一组数把三条公式连起来。取 $\lambda=0.2$ 每小时：均值为 $5$ 小时，方差为 $25$，标准差与均值同量级——这说明指数分布的波动极大，平均值完全没有代表性。中位数由 $e^{-\lambda t}=1/2$ 解出 $t=\ln2/\lambda=3.466$ 小时，比均值小三分之一，是右偏分布的典型特征。再看两个具体概率：$P(T>5)=e^{-1}=0.3679$，$P(2<T<4)=e^{-0.4}-e^{-0.8}=0.2210$。这几个数都该能手算出来，试卷上的答案基本落在这个量级。
+>
+> 更重要的是这条式子顺便证了 memoryless property（无记忆性）。条件概率 $P(T>s+t\mid T>s)=\frac{e^{-\lambda(s+t)}}{e^{-\lambda s}}=e^{-\lambda t}=P(T>t)$，无论 $s$ 多大都成立。注意这一步没有引入任何新假设：它用的是 (b) 的 independent increments（独立增量），即 $[s,s+t]$ 里没有到达这件事与 $[0,s]$ 的历史无关。所以无记忆性不是指数分布的附加性质，而是泊松假设的直接投影。
+>
+> 还可以把关系反过来读：在连续分布里，满足 $g(s+t)=g(s)g(t)$ 的单调函数只有 $g(t)=e^{-ct}$。证明骨架很短——方程给出 $g(nt)=g(t)^{n}$，于是 $g(t/n)=g(t)^{1/n}$，先对一切有理数成立，再用单调性把实数从两侧夹住。结论是：exponential distribution（指数分布）不是「碰巧算出来的形状」，而是无记忆性的唯一可能形状。这条唯一性以后会反复用到，凡是想给「无记忆」找模型，就别无选择。
+>
+> 工程语言里这件事叫 hazard rate（风险率）：$h(t)=\frac{f_T(t)}{1-F_T(t)}=\lambda$，一个与 $t$ 无关的常数。读法是「不管已经等了多久，下一刻发生事件的瞬时强度不变」。把常数换成 $k t^{k-1}$ 就得到 Weibull distribution（威布尔分布）：$k<1$ 时风险随时间下降，对应早期失效、坏件早坏；$k>1$ 时风险随时间上升，对应磨损老化；$k=1$ 正好是指数分布这条分界线。所以看到「越等越不容易坏」的先验直觉时，要意识到那对应的是 $k<1$，而不是指数分布。
+>
+> 跨课程连接三处。CLRS 里分析「重复独立试验直到首次成功」的期望步数是 $1/p$，对应的离散版本是 geometric distribution（几何分布），这里只是把步数换成连续时间，$1/p$ 换成 $1/\lambda$，两条推导骨架完全平行。6.042J 里反复用「补事件 + 独立性」把复杂事件化简，本例是它在连续情形的一次演练。实分析那边，$g(s+t)=g(s)g(t)$ 属于函数方程，解法与上面的有理数—单调性夹逼一模一样。
+>
+> 收束回正文：见到「首次」「首个」「第一次」这类随机变量，第一反应就该是生存函数，而不是分布函数。这条反射能省掉后面大量求和的功夫。
+
+
+然后对 $T$ 的 CDF $F_T(t)$ 求导，得到 PDF 公式
+
+```math
+f_T(t) = \lambda e^{-\lambda t}, \qquad t > 0,
+```
+
+这表明首次到达前的时间服从参数为 $\lambda$ 的指数分布（exponentially distributed）。我们把这一讨论归结为下表；另见图 6.6。
+
+<span style="color:#00838f;">**[定义] 泊松过程相关的随机变量及其性质（Random Variables Associated with the Poisson Process and their Properties）**</span>
+
+- **参数为 $\lambda T$ 的泊松分布（The Poisson with parameter $\lambda T$）。** 这是速率为 $\lambda$ 的泊松过程在长度为 $T$ 的区间内的到达次数 $N_T$。其 PMF、均值与方差为
+
+```math
+p_{N_T}(k) = P(k, T) = e^{-\lambda T}\,\frac{(\lambda T)^{k}}{k!}, \qquad k = 0, 1, \ldots , \qquad E[N_T] = \lambda T, \qquad \operatorname{var}(N_T) = \lambda T .
+```
+
+- **参数为 $\lambda$ 的指数分布（The exponential with parameter $\lambda$）。** 这是到首次到达的时间 $T$。其 PDF、均值与方差为
+
+```math
+f_T(t) = \lambda e^{-\lambda t}, \quad t \ge 0, \qquad E[T] = \frac{1}{\lambda}, \qquad \operatorname{var}(T) = \frac{1}{\lambda^{2}} .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上述两栏总结框中的公式在 OCR 中被拆散：泊松 PMF 的分子分母（$e^{-\lambda T}$ 与 $(\lambda T)^{k}/k!$）、指数 PDF 的 $f_T(t)=\lambda e^{-\lambda t}$ 及均值 $\frac{1}{\lambda}$、方差 $\frac{1}{\lambda^{2}}$ 均碎行；上文按泊松分布与指数分布的标准形式重建数值，未作臆造。</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.8（按泊松过程收到电子邮件）**</span>
+
+你按泊松过程收到邮件，速率为例 $\lambda = 0.2$ 条/小时，你每小时检查一次邮箱。那么发现 $0$ 封和 $1$ 封新邮件的概率各是多少？
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 该例题干末尾处 OCR 读作"the probability of finding 0 and _new messages?'"，其中 `1` 处缺失（源页此处难以识别），据题意（检查邮箱、每小时一次，λ=0.2 条/小时）应问的是发现 $0$ 封与 $1$ 封新邮件的概率；本例从本页开始，其解法延续到下一页。</span>
+
+<!-- ===== PDF p322 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**§6.2（续）**</span> <span style="color:#7f8c8d;">**〔图 6.6（Fig. 6.6）图注：把伯努利过程看作泊松过程的离散时间版本（View of the Bernoulli Process as the Discrete-Time Version of the Poisson Process）〕**</span>
+
+> <span style="color:#7f8c8d;">本节自本页起始。其主旨是把离散时间的伯努利过程（Bernoulli process）通过「间隔细分到无穷小」的极限与连续时间的泊松过程（Poisson process）联系起来。</span>
+
+我们把时间离散化（discretize）为小间隔（small intervals）$\delta$，并把每一个间隔与一次伯努利试验（Bernoulli trial）联系起来，其成功概率（success probability）为 $p = \lambda \delta$。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这一页建的是离散—连续对照表，但先要把量纲这笔账记死。原书那句设定是：把时间切成小间隔 $\delta$，每个间隔对应一次 Bernoulli trial（伯努利试验），成功概率 $p=\lambda\delta$。右端的 $\lambda$ 单位是每单位时间多少次，乘上时间长度 $\delta$ 才无量纲、才配当概率；$p$ 必须落在 $[0,1]$ 里，所以 $p=\lambda\delta$ 只在 $\delta$ 足够小时成立，$\delta$ 大到 $\lambda\delta$ 超过 1，这个离散化就根本不存在。凡是把 $p$ 直接换成 $\lambda$ 的地方，都必须同时把"次数"换成"时间长度"，否则两边单位对不上。
+>
+> 四对关系逐条对账。第一对：一次 Bernoulli trial（伯努利试验）对应一个长度 $\delta$ 的小区间内是否有到达。第二对：binomial distribution（二项分布）对应 Poisson distribution（泊松分布），$n$ 次试验里的成功次数对应长度 $t$ 内的到达数，均值从 $np$ 到 $\lambda t$，方差从 $np(1-p)$ 到 $\lambda t$；方差这一项的极限值得多看一眼，$p\to 0$ 时 $1-p\to 1$，所以泊松方差等于均值不是巧合，而是稀罕事件假设的直接后果。第三对：geometric distribution（几何分布）对应 exponential distribution（指数分布）。原书 p.313 的定义是到包含首次成功那一次为止的试验次数，计数从 1 起、含终点；指数侧是到首次到达为止经过的时间长度，从 0 量到终点。两者都含终点、不含起点，均值 $1/p$ 对 $1/\lambda$，方差 $(1-p)/p^{2}$ 对 $1/\lambda^{2}$。最常见的错法是把几何说成首次成功之前的失败次数，那个版本从 0 起、均值 $(1-p)/p$，差一个 1，从此与指数再也对不上账。第四对：Pascal distribution（帕斯卡分布）对应 Erlang distribution（爱尔兰分布），第 $k$ 次成功所在的试验编号均值 $k/p$，对应第 $k$ 次到达的时刻均值 $k/\lambda$。
+>
+> 口诀"离散是固定的 $\delta$，连续是 $\delta\to 0$"要变成能验算的三行：$p=\lambda\delta$ 随 $\delta$ 一起变小；$np=n\lambda\delta$ 固定住 $\lambda t$ 不变；几何的 $\mathrm{var}/\mathrm{mean}^{2}=1-p$ 随 $p\to 0$ 趋于 1，正好等于指数的 $\mathrm{var}/\mathrm{mean}^{2}=1$。第三行最有说服力：它说明无记忆在离散与连续两边是同一个形状参数，只是格点被抹平了。
+>
+> 这张表真正的用处是迁移，不是记忆。凡是在 §6.1 伯努利过程里证过的命题，都先做两个替换——次数换成时间长度，$1/p$ 换成 $1/\lambda$——再验一遍极限是否收敛。举例：两路合并的加法封闭性，离散侧是二项分布的卷积，连续侧就变成泊松率相加；分裂的以概率 $p$ 保留，连续侧的率变成 $\lambda p$；首次成功的等待，连续侧就是指数分布。照着做三遍，你会发现自己能猜出后面一半的结论，再用 $\delta\to 0$ 验一遍即可。
+>
+> 用具体数字把表钉住。取 $\lambda=2$ 次每分钟，$\delta=1$ 秒，即 $1/60$ 分钟，则 $p=1/30$。几何侧均值 30 个 $\delta$，等于 30 秒，与 $1/\lambda=0.5$ 分钟吻合；离散方差 $(1-p)/p^{2}=(29/30)\times 900=870$ 秒平方，连续方差 $1/\lambda^{2}=0.25$ 分平方，等于 900 秒平方，相对差 $3.3\%$，而 $p=1/30$ 恰好是同一个量级——$\delta$ 再小十倍，这个差就再小十倍。这种差多少、为什么差、怎么变小的核对方式，比背结论可靠得多。
+>
+> 最后给一个自查标准：合上书，把四对关系各写一行，每行给概率质量函数或概率密度、均值、方差三项，并用上面的数字验算一遍；能默写算通过，写不出来说明还停在认得而不是会用。往后排队论、马尔可夫链、可靠性分析都会反复回到这张表。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 紧接「success probability $p = \lambda\delta$」之后，原文有一段说明性文字，描述当间隔 $\delta \to 0$ 时离散化的伯努利过程在极限下收敛为泊松过程的推理；但源 OCR 将该段完全碎裂（仅余零散乃至乱码的行首词、以及若干孤立词「is consistent / preceding」），无法还原为可读句子。此处仅保留可辨认的开头句，其余不作臆造，需回查原书 p.313。</span>
+
+下面的表格总结了由泊松过程得自伯努利过程的若干基本推论（basic consequences），与前面〔对伯努利过程〕讨论的相应结论一一对应。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 本页自「The table summarizes some of the basic consequences」之后至页末（含提及 customers 的叙述）的内容在 OCR 中严重碎裂，仅留下互不衔接的残词，无法还原成完整句子，此处不作臆造，需回查原书 p.313。</span>
+
+<!-- ===== PDF p323 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.2 泊松过程（Poisson process）（续）
+
+> <span style="color:#7f8c8d;">承接上一页：页首即为某 **Example** 的后续（该例编号位于上一页，例号以源 OCR 为准反查，非本页新编号），演示泊松计数在两个不重叠时刻区间上的可加性；随后转入「独立性与无记忆性（Independence and Memorylessness）」小节，列出泊松过程的两条独立性性质，并给出第一条性质的验证与记忆无性公式的推导。（书中页码 314）</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.9（续）—— 泊松计数的可加性（additivity of the Poisson count）**</span>
+
+……（上一页设定）在 $9\!:\!00$ 到 $9\!:\!10$ 之间到达的顾客数为 $M$，另令 $N$ 为在 $9\!:\!30$ 到 $9\!:\!35$ 之间到达的顾客数。那么 $M + N$ 的分布是什么？
+
+我们注意到，$M$ 是参数为 $\mu = 10 \cdot 10 = 100$ 的泊松（Poisson）随机变量，$N$ 是参数为 $\nu = 10 \cdot 5 = 50$ 的泊松随机变量。此外，$M$ 与 $N$ 相互独立。正如 4.4 节用变换（transform）所说明的，$M + N$ 是参数为 $\mu + \nu = 150$ 的泊松随机变量（另见第 4 章 Problem 11）。现在我们改用一种更直接、更符合直觉的方式来推导同一结论。
+
+令 $\tilde{M}$ 为在 $9\!:\!10$ 到 $9\!:\!15$ 之间到达的顾客数。注意 $\tilde{M}$ 与 $N$ 具有相同的分布（参数为 $50$ 的泊松）。此外，$\tilde{M}$ 也与 $M$ 相互独立。于是 $M + N$ 的分布与 $M + \tilde{M}$ 的分布相同。而 $M + \tilde{M}$ 是长度为 $15$ 的一个区间内的到达次数，因此服从参数为 $10 \cdot 15 = 150$ 的泊松分布。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 原书这一页要证的是 Example 6.9 的可加性：$M$ 是 $9{:}00$ 到 $9{:}10$ 的到达数，参数 $\mu=10\times 10=100$；$N$ 是 $9{:}30$ 到 $9{:}35$ 的到达数，参数 $\nu=10\times 5=50$；两段不重叠，所以 $M$ 与 $N$ 独立。原书自己交代了，4.4 节已经用 transform（变换）证过同一条结论，另见第 4 章 Problem 11。所以下面这条替换法不是新定理，而是把同一个事实改用过程语言重讲一遍。
+>
+> 替换法，英文 coupling（耦合）：与其算两个泊松的卷积，不如造一个同分布、但落在结构更干净的区间上的随机变量。这里取 $\tilde M$ 为 $9{:}10$ 到 $9{:}15$ 的到达数。三件事必须逐一核对：一是 $\tilde M$ 与 $N$ 同分布，参数都是 50，因为两段长度都是 5 分钟、率都是每分钟 10 次；二是 $\tilde M$ 与 $M$ 独立，因为两段时间不重叠；三是 $M+\tilde M$ 是总长 15 分钟的一段连续区间内的到达数，所以参数是 $10\times 15=150$。于是 $M+N$ 与 $M+\tilde M$ 同分布，答案立刻读出。
+>
+> 这条链为什么合法，值得写清。联合分布由各分量的边缘分布与独立性结构唯一确定：两个独立泊松的联合质量函数是两份边缘概率的乘积，把 $N$ 换成同分布的 $\tilde M$，只是换了同一个乘数中的一项，乘积不变。所以同分布加独立推出和的分布不变，是一条只用到边缘分布与独立性的引理，与泊松这个具体形状无关——换成任意两个独立同分布的族同样成立。
+>
+> 元规则那半句要改口。旧注说加法封闭性在此第一次正面出场，这与正文冲突：原书在这一页开头就写了正如 4.4 节用变换所说明的，加法封闭性早在第 4 章用生成函数证过。准确的记法是：它在这里第一次以过程语言重述——不再说卷积变成乘积，而说两段不重叠的区间拼起来还是一次泊松，率相加。同一个事实，两种语言。
+>
+> 过程语言这个版本为什么值得强调？因为它给出的是可迁移的结构：任意多个互不重叠的区间，长度相加、到达数相加，参数就是 $\lambda$ 乘总长度。正文紧接着写的那句总长度为 $T$ 的时刻集合内 $k$ 次到达的概率恒为 $P(k,T)$，就是这条的语言化版本——区间不必连续，只要能按长度记账就行。反过来，若两段重叠，或两个流的到达相关，结论立刻塌：相关的两路叠加方差大于均值，不再是泊松。
+>
+> 把替换法记进工具箱，用法是：先把要证的分布翻译成一个结构上显然的分布，再证明两者同分布。6.006 的平摊分析里同一个动作叫换一个等价但更好算的量：算法用一个虚拟账户记账，这里用一个虚构的时间窗记账；两者都不是近似，而是严格等价的重新表述，区别只在记账对象从字节变成了到达。>
+> 一句旁证：替换法之所以在这里显得轻巧，是因为泊松过程有增量独立这一条结构性事实；若换成两条相关的到达流，就连"造一个同分布的替身"这一步都做不成——替身必须与原对象独立，这是它唯一的代价。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 原文中的顾客计数变量 $M$、$\tilde M$ 多处被 OCR 误识为 `A!`、`Iv!`、`Al`、`iii` 等，参数字母 $\mu$、$\nu$ 亦被误识为 `J.l`、`v`；本段已按上下文还原为 $M$、$\tilde M$、$\mu$、$\nu$，数值一律未改动。</span>
+
+这个例子说明了在一般情况下成立的要点：在一组总长度为 $T$ 的时刻集合内出现 $k$ 次到达的概率总是由 $P(k, T)$ 给出，即使该集合并非某个区间。（在本例中，我们处理的是总长度为 $15$ 的集合 $[9\!:\!00,\,9\!:\!10] \cup [9\!:\!30,\,9\!:\!35]$。）
+
+---
+
+<span style="color:#c0392b;">**独立性与无记忆性（Independence and Memorylessness）**</span>
+
+泊松过程具有若干与伯努利过程（Bernoulli process）平行的性质，包括不重叠时刻集的独立性（independence of nonoverlapping time sets），以及到达间隔（interarrival time）分布的无记忆性（memorylessness）。既然泊松过程可以看作伯努利过程的一个极限情形（limiting case），那么它继承后者的这些定性（qualitative）性质，就几乎不足为奇。
+
+<span style="color:#c0392b;">**泊松过程的独立性性质（Independence Properties of the Poisson Process）**</span>
+
+- 对任意给定的时间 $t > 0$，时刻 $t$ 之后的过程历史（history）也是一个泊松过程，并且与直到时刻 $t$ 为止的过程历史相互独立。
+- 设 $t$ 为给定时间，$T$ 为时刻 $t$ 之后首次到达的时刻。那么 $T - t$ 服从参数为 $\lambda$ 的指数分布（exponential distribution），并且与直到时刻 $t$ 为止的过程历史相互独立。
+
+上表中第一条性质之所以成立，是因为我们看到：自时刻 $t$ 开始的那部分过程满足泊松过程定义所要求的一切性质。未来相对于过去的独立性，是泊松过程定义中独立性假定（independence assumption）的直接推论。最后，$T - t$ 具有相同的指数分布这一事实，可如下验证：
+
+```math
+P(T - t > s)
+```
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 无记忆性用 survival function（生存函数）写成 $S(s+t)=S(s)S(t)$，这是一条函数方程，不是一条统计性质。方向要看清楚：方程从无记忆性出发，结论是满足它的分布只能长成指数。换言之，不是指数分布恰好无记忆，而是无记忆性把分布逼成了指数——这是必然性，不是巧合。
+>
+> 解这条方程要三步，缺一步就是错的。第一步，$S(0)=1$ 并且 $S$ 不恒为 0；第二条不能省，因为恒等于 0 的函数也满足乘法方程，它对应 $T=\infty$，根本不是随机变量。第二步，令 $c=-\ln S(1)$，由 $S(n)=S(1)^{n}$ 得整数点上 $S(n)=e^{-cn}$，再由 $S(1)=S(1/m)^{m}$ 得 $S(1/m)=e^{-c/m}$，于是所有有理点 $q$ 上 $S(q)=e^{-cq}$，这一步只用乘法方程。第三步，用单调性把有理点上的值夹到实数点：对任意 $t$，取有理数列从下方逼近 $t$、另一列从上方逼近 $t$，两边夹住 $S(t)$，得 $S(t)=e^{-ct}$。
+>
+> 于是结论该这样写：单调非零解必为 $e^{-ct}$，$c>0$；$\lambda$ 不由方程决定，由速率给定。旧注说满足它且单调的连续解只有一个，即 $S(t)=e^{-\lambda t}$，这句话漏了两处：漏了非零这个前提，也把唯一性错记成 $\lambda$ 唯一。取 $c=0.7$、$c=1.3$、$c=2.0$ 都能让乘法方程成立，对应三种不同的率。无记忆性把分布钉在指数这个族里，参数还得从别的地方拿——这就是为什么正文要另起一行算 $P(T-t>s)=e^{-\lambda s}$：率是设定给的，无记忆只管形状。
+>
+> 离散侧是同一台机器。条件 $P(T>m+n\mid T>m)=P(T>n)$ 写成 $g(m+n)=g(m)g(n)$，单调非零解只能是 $g(m)=(1-p)^{m}$，即 geometric distribution（几何分布）。所以"几何是指数的离散版本"不是比喻，而是同一个函数方程在两组格点上的解。这里要分清概率质量函数与生存函数：方程是写在生存函数上的，$S(k)=(1-p)^{k}$ 满足乘法方程，而 $P(T=k)=p(1-p)^{k-1}$ 本身不满足——把两者混着记，就会得出几何分布满足乘法的错误印象。
+>
+> 正文这一页的验证是反着做的：先算 $P(T-t>s)$ 等于 $[t,t+s]$ 内零次到达的概率，得 $e^{-\lambda s}$，再从结果读出无记忆性。这条路线不用解函数方程，但它只证明了指数无记忆，没有证明只有指数无记忆。两条路线互补：一条给验证，一条给唯一性；答证明题用哪条，取决于题目问的是"验证"还是"刻画"。
+>
+> 术语方向订正一处：Markov property（马尔可夫性质），英文在前、中文在后，旧注写成了中文在前。它说的是给定现在、未来与过去条件独立；无记忆性是它在连续时间里的最简形式——状态只有一个，且这个状态不携带任何历史。泊松过程的"未来与过去独立、未来重新开始"就是这条性质的原型，第 7 章的链只是把状态从一个时刻扩成一个有限集。
+>
+> 记住这条锁链：无记忆等价于乘法方程，等价于指数或几何。三个说法互相推得，任何一个都可以当起点；做题时看到哪一个，就往另外两个走。>
+> 最后补一句会不会被扣分的细节：写证明时必须显式声明 $S$ 右连续或单调，否则第三步的取极限没有依据；而在概率论里生存函数天然单调不增且右连续，所以这一条几乎总是自动成立——但"几乎总是"要在证明里说出来。
+
+= P\big(\text{在 }[t,\,t+s]\ \text{内发生 0 次到达}\big)
+= P(0, s)
+= e^{-\lambda s} .
+
+这正是无记忆性，与伯努利过程的相应性质类似。下面几个例子都用到了这一性质。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 末段中指数参数 $\lambda$ 被误识为 ``，记忆无性不等式被误读为 `T - > s`、`e ->' s`，`limiting case` 被误读为 `limiting ca..<;e`；此处已按标准记号还原，数值与公式结构未改动。</span>
+
+<!-- ===== PDF p324 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）—— §6.2（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：本页续接 §6.2 泊松过程（Poisson process）正文中关于无记忆性（memoryless）的应用举例，先是 Example 6.10 与 Example 6.11 两则演示无记忆性的例子，随后引入本页新的小节「到达间隔（Interarrival Times）」。（页眉标示正文页码为 315。）</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.10（网球场上的等待时间）**</span>
+
+你和你的同伴来到一座网球场，必须等到占据球场的球员打完才能上场。假设（多少有些不现实）他们的打球时间服从指数 PDF（exponential PDF）。那么，你的等待时间（等价地说，他们剩下的打球时间）的 PDF 也服从同一个指数 PDF，无论他们从何时开始打球。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.11（银行柜台的最后一个离开者）**</span>
+
+你走进银行，发现三位柜员都在忙着为其他顾客服务，且没有其他顾客在排队。假设你以及每一位正在被服务的顾客的服务时间都是相互独立的、同分布的指数随机变量。你成为最后一个离开者的概率是多少？
+
+答案是 $1/3$。要理解这一点，请聚焦于你开始接受某位柜员服务的那一刻。于是，另外两位正在被服务的顾客各自的剩余时间，与你自己的剩余时间，具有相同的 PDF。因此，你与另外两位顾客成为最后一个离开者的概率相等，都是 $1/3$。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 题目是这样：你走进银行，三位柜员都在忙着为别人服务，没有其他顾客在等，所有人的服务时间相互独立、同分布、服从 exponential distribution（指数分布）。问的是你成为最后一个离开者的概率，答案是 $1/3$。答案很短，但每一步都要交代清楚，否则就变成背结论。
+>
+> 关键一步是把观察起点挪到"你开始被服务的那一刻"。在你进门到开始服务之间，可能有柜员已经服务了很久；但由 memorylessness（无记忆性），已经服务了多久这条信息对剩余时间毫无影响——一个已经服务 40 分钟的顾客与一个刚坐下的顾客，剩余服务时间同分布。于是从你开始服务那一刻起，你和另外两位顾客的剩余服务时间，是三个独立同分布的指数随机变量。
+>
+> 三个人地位完全对称：谁的剩余时间最长，谁最后离开。既然三个随机变量独立同分布，那么"最长的那一个是谁"在三个人之间等可能，概率各为 $1/3$。注意这里根本不需要算最大值的分布——最大值服从什么分布是个麻烦问题，要算次序统计量、要积分；但"最大值落在谁身上"是纯对称性问题，不涉及计算。
+>
+> 把这个论证写成不必算的形式：设三人剩余时间为 $R_1,R_2,R_3$，独立同分布。联合分布在任意置换下不变，所以 $P(R_1=\max)=P(R_2=\max)=P(R_3=\max)$；三个概率相加为 1，故每个都是 $1/3$。这就是对称性论证的全部内容：用分布在置换下不变，换掉计算分布。它与 6.042J 里用双射计数的精神一脉相承——不硬算，而是找一个让问题变成等可能的视角。
+>
+> 代价也要说清：这条论证只回答"谁是最后"，不回答"最后一个人什么时候走"。后者需要最大值的分布，也就需要真正的积分，正文并没有给出；如果你把 $1/3$ 顺手当成"最后一个离开的平均时间"之类的信息，那就越界了。
+>
+> 边界条件有三条。第一，一旦三人不同分布，$1/3$ 立刻失效：若你的服务率是别人的两倍，你最后离开的概率就小于 $1/3$，这时没有对称性可用，只能回到次序统计量去积分。第二，若三人的服务时间相关，结论也不成立，因为置换不变的前提没了。第三，若还有人在排队，问题变成排队系统，你要等的不是三个人走完，而是轮到自己，机制完全不同。
+>
+> 别把它与 competing exponentials（竞争指数）混为一谈。竞争指数问的是谁先响，答案按率分账，即 $\lambda_i/\sum_j\lambda_j$；这里问的是谁最后响，答案是 $1/3$，因为三者同分布。前者用率的比例，后者只用对称性。两条结论出现在同一节，混着记就会把 $1/3$ 错记成某个率的比值。
+>
+> 一句话收束：同分布加独立，推出名次等可能；这条结论在次序统计量、随机化算法的锦标赛分析里反复出现，而它成立的理由从来不是计算，而是置换不变性。
+
+
+<span style="color:#c0392b;">**到达间隔（Interarrival Times）**</span>
+
+与一个从时刻 $0$ 开始的泊松过程相关联的一个重要随机变量是第 $k$ 次到达的时刻（time of the $k$th arrival），我们把它记为 $Y_k$。一个与之相关的随机变量是第 $k$ 个到达间隔（$k$th interarrival time），记为 $T_k$。它由下式定义，其中 $k = 2, 3, \ldots$，
+
+```math
+T_k = Y_k - Y_{k-1},
+```
+
+它表示第 $(k-1)$ 次与第 $k$ 次到达之间的时间量。注意
+
+```math
+Y_k = T_1 + \cdots + T_k .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 本页定义 $T_k$ 的公式 $T_k = Y_k - Y_{k-1}$ 与随后的「注意 $Y_k = T_1 + \cdots + T_k$」两句在 OCR 中被吞（原文仅在行间残留「It is defined by」与孤立行「k = 2, 3, . . .」、以及「Note that」），此处按 §6.2 标准定义重建，数值与记号一律未改动；如需最严格原文请回查原书。</span>
+
+我们此前已经看到，直到首次到达的时间 $T_1$ 是一个参数为 $\lambda$ 的指数随机变量。从首次到达的时刻 $T_1$ 起，未来是一个全新开始的泊松过程（fresh-starting Poisson process）。这样，直到下一次到达的时间便具有相同的指数 PDF。进一步地，该过程的过去（直到时刻 $T_1$ 为止）与未来（时刻 $T_1$ 之后）相互独立。由于 $T_2$ 完全由未来所发生之事决定，可见 $T_2$ 与 $T_1$ 相互独立。如此继续，我们得出结论：随机变量 $T_1, T_2, T_3, \ldots$ 相互独立，且全部服从同一个指数分布。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 正文把"到达间隔独立且同为指数分布"称为泊松过程的另一种描述。这句话的分量在于，它把定义从性质换成了构造。前一种描述是性质定义：长度 $\delta$ 的小区间内一次到达的概率是 $\lambda\delta$ 加高阶小量，两次及以上可忽略，不重叠区间相互独立。后一种是构造定义：先采样一串 i.i.d.（独立同分布）的指数间隔 $T_1,T_2,\dots$，再在 $T_1$、$T_1+T_2$ 等位置放到达。
+>
+> 两者等价，两个方向各要一句。构造推出性质：第 $k$ 个到达落在某区间内的概率由 $k$ 个指数之和给出，不重叠区间的独立性则由"各段间隔独立采样"直接继承。性质推出构造：由无记忆性，给定 $t$ 时刻之前的历史，下一次到达的等待时间仍是参数 $\lambda$ 的指数，且与历史独立；把这条逐段用下去，每个间隔都独立且同分布。所以这不是巧合，是无记忆性的直接推论。
+>
+> 构造定义的用处全在生成上。要在程序里造一条泊松到达流，不需要每个小区间抛硬币，只需要三行：令 $t=0$；循环抽取 $E\sim\mathrm{Exp}(\lambda)$ 并令 $t$ 自增 $E$；输出 $t$。代价是每次一个指数采样，而这只要一个均匀随机数加一次取对数就能做出来，你已有的 CLRS 随机数知识完全够用。这是排队论仿真、网络负载生成、随机算法测试的标准做法。
+>
+> 给个量级感。取 $\lambda=3$ 次每分钟，间隔均值 $1/3$ 分钟，即 20 秒。一次模拟抽 10 个间隔，第 10 个到达的时刻是 10 个独立指数之和，均值 200 秒、方差 $10/9$ 分平方。这个"和"的身份很关键：它说明第 $k$ 个到达时刻就是 $k$ 个指数之和，均值 $k/\lambda$、方差 $k/\lambda^{2}$，与正文下一页的性质表逐项对上。
+>
+> 构造视角还顺带解释了 fresh-start（重新开始）现象：过程在任意时刻重新开始，因为在指数间隔的视角下，未来只由"当前还没到的下一次"决定，而这一次的等待与过去无关。所以正文在 $t^{*}$ 处得到的剩余等待仍是指数，不是近似，而是构造定义的直接后果。
+>
+> 边界也要写清：这套构造只在率恒定时成立。若率随时间变化，即 nonhomogeneous（非齐次）情形，间隔不再同分布，也不能简单累加指数采样，要改用强度函数的积分或 thinning（稀疏化）。写仿真时最常见的错误，就是把非平稳流量当成平稳流量直接累加指数间隔，结果平均到达数与真实值系统性偏离。
+>
+> 顺手记一条自查：如果你能只用"先抽间隔、再累加"这个说法，把"区间内到达数服从泊松"推出来，说明你真的掌握了两种描述的等价；若推不出来，就还停在背性质。>
+> 还有一层结构值得一并记住：构造定义让"泊松过程"变成了"更新过程的一个特例"——把指数间隔换成任意分布，就得到一般更新过程。有了这个坐标，你以后读到 renewal theory 时不会觉得是新东西，而是"把指数这个特例放开"；反过来，泊松过程所有漂亮的结论都依赖指数这个唯一无记忆的连续分布，一旦放开，独立增量立刻失效，只剩"间隔独立"这一条。
+
+
+这一重要观测引出了对泊松过程的一种与之等价但又不同的描述方式。
+
+> <span style="color:#7f8c8d;">**脚注（footnote）**</span>
+
+> 这一陈述比先前讨论过的事实——即从任意给定的确定性时刻 $t$ 出发过程都全新开始——来得更强，但相当直观。它可以通过模仿 Example 6.3 中的论证，对随机变量 $T_1$ 的所有可能取值进行条件化而正式地予以证明。
+
+<!-- ===== PDF p325 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> <span style="color:#7f8c8d;">（页眉仅标 `Chap. 6`，PDF 页码 316；本页属 §6.2 泊松过程正文内部，续接上一页的「另一种描述」小节。）</span>
+
+<span style="color:#c0392b;">**§6.2　泊松过程的另一种描述（Alternative Description of the Poisson Process） —— （续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：上页先以「小时间区间内至多一次到达的近似」的方式给出泊松过程的一种等价刻画思路，本页把该「另一种描述」的步骤以编号列表写明，随后转入子节「第 $k$ 次到达时刻（The $k$th Arrival Time）」，导出 $Y_k$ 的均值、方差与 PDF，并列出「第 $k$ 次到达时刻的性质」。</span>
+
+该「另一种描述」以下述两步给出：
+
+1. 从一列相互独立的指数随机变量（independent exponential random variables）$T_1, T_2, \ldots$ 出发，它们具有公共参数 $\lambda$，并让这些随机变量代表到达间隔（interarrival times）。
+2. 在时刻 $T_1, \; T_1 + T_2, \; T_1 + T_2 + T_3, \;$ 等处各记录一次到达（record an arrival）。
+
+<span style="color:#c0392b;">**第 $k$ 次到达时刻（The $k$th Arrival Time）**</span>
+
+第 $k$ 次到达的时刻 $Y_k$ 等于 $k$ 个相互独立且同分布的指数随机变量之和 $Y_k = T_1 + T_2 + \cdots + T_k$。这使我们得以导出 $Y_k$ 的均值、方差与 PDF 的公式，它们列在下表中。
+
+<span style="color:#c0392b;">**第 $k$ 次到达时刻的性质（Properties of the $k$th Arrival Time）**</span>
+
+- 第 $k$ 次到达时刻等于前 $k$ 个到达间隔之和，而这些到达间隔是具有公共参数 $\lambda$ 的相互独立的指数随机变量。
+- $Y_k$ 的均值与方差为
+  ```math
+  E[Y_k] = \frac{k}{\lambda},
+  \qquad
+  \operatorname{var}(Y_k) = \operatorname{var}(T_1) + \cdots + \operatorname{var}(T_k) = \frac{k}{\lambda^{2}} .
+  ```
+- $Y_k$ 的 PDF 为
+  ```math
+  f_{Y_k}(y) = \frac{\lambda^{k} y^{k-1} e^{-\lambda y}}{(k-1)!} ,
+  \qquad y \ge 0,
+  ```
+  它被称为 $k$ 阶爱尔朗 PDF（Erlang PDF of order $k$）。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 命名与史实要分开记。Erlang distribution（爱尔兰分布）以丹麦工程师 Agner Krarup Erlang（1878–1929）命名，他 1908 年起在哥本哈根电话公司工作。1909 年那篇论文的题目是 The Theory of Probabilities and Telephone Conversations，它给的是通话时长的概率模型——把通话时长建成指数分布，这是排队论建模的起点；而为他赢得工程名声的呼损公式，也就是今天说的 Erlang B，要到 1917 年才出现。旧注把两件事压成"1909 年研究电话交换需要多少线路"，时间线就错了，读者会以为呼损 1909 年就有了。至于"话务量以 Erlang 计"，那是因为一个 Erlang 就是一条线被占满的占用率，单位沿用至今。
+>
+> 从第一性原理看，$k$ 阶 Erlang 就是等到第 $k$ 次到达的时间。由上一节，$Y_k=T_1+\cdots+T_k$，$k$ 个独立同分布的指数之和，均值 $k/\lambda$、方差 $k/\lambda^{2}$。这两个矩不需要积分，均值与方差对独立和都可加，直接用就完了。
+>
+> PDF $f(y)=\lambda^{k}y^{k-1}e^{-\lambda y}/(k-1)!$ 要读成三个因子相乘，不是两个。$e^{-\lambda y}$ 是从 $y$ 往后一直没有到达的生存概率；$(\lambda y)^{k-1}/(k-1)!$ 是 $y$ 之前恰好 $k-1$ 次到达的泊松概率；还差一个 $\lambda$，它来自 $y$ 附近那一小段里恰好有一次到达，概率约 $\lambda\delta$，除以 $\delta$ 才变成密度。旧注说两个视角相乘得到密度，少乘了这个 $\lambda$，数值会整整差一个因子。
+>
+> 用数字验证这个 $\lambda$。取 $\lambda=2$、$k=4$、$y=1.3$，则 $e^{-\lambda y}(\lambda y)^{k-1}/(k-1)!$ 等于 $0.2176$，而正确的密度是 $0.4351$，比值恰好是 2，也就是 $\lambda$。这不是小数点误差，而是漏了一个量纲为每单位时间的因子；凡是写成"概率相乘得密度"的地方，都要检查有没有做除以 $\delta$ 这一步。
+>
+> 与 Poisson distribution（泊松分布）的对偶关系是：泊松回答给定时间里有几件事，Erlang 回答第 $k$ 件事发生在何时，两者由 $\{Y_k\le y\}=\{N_y\ge k\}$ 连接。这条对偶给出另一条推密度的路线：对泊松右尾求导，不需要任何"$\delta$ 很小"的近似论证，是精确推导。两条路线互相印证，比只记一个公式稳。
+>
+> 工程上它出现得比想象中频繁：M/M/1 的等待时间、k 级备份的寿命、分组在若干同速链路串联时的时延，都是若干个指数相加的形状。原因很朴素——串联阶段的时延相加，而每个阶段在"独立、恒定率"假设下就是指数。你在做性能分析时最常用的那个近似，正是这条。
+>
+> 一句话收束：Erlang 的名字挂在一个"等待第 k 次事件"的分布上，它的全部内容是"$k$ 个独立指数之和"，而它的密度里同时住着生存概率、计数概率和一个率——三个因子缺一不可。>
+> 顺带把 $k=0$ 与 $k=1$ 两个端点的读法钉住：$k=1$ 时 Erlang 退化为 exponential distribution（指数分布），密度是 $\lambda e^{-\lambda y}$，此时 $k-1=0$，$(k-1)!=1$，公式仍成立；$k$ 增大时分布重心右移、形状从单调下降变成单峰，峰值出现在 $(k-1)/\lambda$ 附近。这条形状变化本身就是"多级串联"的直观：级数越多，总时延越集中在均值附近，方差与均值之比 $1/k$ 越小——这正是为什么流水线越深，总时延的相对波动越小。
+>
+> 最后提醒一句术语口径：阶数 $k$ 必须写在名字里，$k$ 阶 Erlang 与指数是两个分布，不是同一个分布的两种叫法；写成"Erlang(k)"或"$k$ 阶 Erlang"都行，但漏了阶数就退化成指数，公式里的 $(k-1)!$ 也会跟着丢掉。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 原 OCR 把「第 $k$ 次到达时刻的性质」列表中的均值式 $E[Y_k] = k/\lambda$ 吞掉（跳读作「The mean and variance of $Y_k$ are given by」后直接进到 $\operatorname{var}(Y_k) = \cdots = k/\lambda^{2}$）；因 $Y_k$ 是 $k$ 个 i.i.d. 的 $\operatorname{Exp}(\lambda)$ 之和，均值 $E[Y_k]=k/\lambda$ 与方差 $k/\lambda^2$ 均为标准结论，此处均值按此重建，其余数值一律未改动。</span>
+
+为求 $Y_k$ 的 PDF $f_{Y_k}$，我们作如下论证：对很小的 $\delta$，乘积 $\delta \cdot f_{Y_k}(y)$ 近似等于「第 $k$ 次到达发生在时刻 $y$ 与 $y + \delta$ 之间」的概率……
+
+> <span style="color:#7f8c8d;">[续接下一页] 本页到此句即截止（原书在「between times ...」处换页），对 $f_{Y_k}$ 的「小 $\delta$ 论证」将在下一页接着完成。原书中此论证的走向是近似概率 $P(y \le Y_k \le y + \delta) \approx F_{Y_{k-1}}(y)\,\lambda\,\delta + o(\delta)$，进而借助分部积分导出爱尔朗 PDF，此处仅如实保留原文断句，不作私自补全。</span>
+
+<!-- ===== PDF p326 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.2（续）
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）**</span> <span style="color:#7f8c8d;">（Sec. 6.2，原书页码 317；本页续接上一页 §6.2 正文中第 $k$ 个到达时刻 $Y_k$ 的 Erlang PDF（Erlang probability density function）推导，并在页中给出 Example 6.12，页底为一条替代推导的脚注。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：强度为 $\lambda$ 的泊松过程，$Y_k$ 表示第 $k$ 个到达发生的时刻。上一页已把 $Y_k$ 视为 $T_1 + \cdots + T_k$（其中 $T_i$ 为相继到达间隔）建立起其 PDF 的推导框架；本页继续以「时间区间内到达次数」的概率论论证完成 Erlang PDF 的推导。</span>
+
+…在 $y$ 与 $y + \delta$ 之间。当 $\delta$ 很小时，时间区间 $[y, y + \delta]$ 内发生多于一次到达的概率可忽略不计。因此，第 $k$ 个到达落在 $y$ 与 $y + \delta$ 之间，当且仅当下面两个事件 $A$ 与 $B$ 同时发生：
+
+- (a) 事件 $A$：在时间区间 $[y, y + \delta]$ 内有一次到达；
+- (b) 事件 $B$：在时刻 $y$ 之前恰好发生了 $k - 1$ 次到达。
+
+这两个事件的概率分别为
+
+```math
+P(A) \approx \lambda \delta,
 \qquad
-v = \mathrm{var}(\Theta \mid X = x) = \frac{1}{\sum_{i=1}^{n} 1 / \sigma_i^2}.
+P(B) = P(k-1, y) = \frac{\lambda^{k-1} y^{k-1} e^{-\lambda y}}{(k-1)!}.
 ```
 
-由于正态概率密度函数（normal PDF）在其均值处取得最大值，因此最大后验（MAP）估计为 $\hat{\theta} = m$。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页首为承接上一页的例子收尾，其例号因跨页未在本页重现（前一页已定义）。后验均值 $m$ 与方差 $v$ 的表达式在 OCR 中残碎（读数如 `E [e I X xl`、`L xi/a?`、`L I/a;`、`i=O` 等），上方按「以方差倒数（精度）加权合并正态观测」的标准后验形式重建：$m$ 为各 $x_i$ 按 $1/\sigma_i^2$ 加权的平均，$v$ 为各精度之和的倒数。求和指标 $i=1\ldots n$ 与 $\sigma_i^2$ 系据原书语义复原，非臆造数值。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.5（续）——垃圾邮件分类（spam filtering）与 MAP 准则**</span>
-
-这里参数 $\Theta$ 取值为 1 和 2，分别对应垃圾邮件（spam）与正常／合法邮件（legitimate），并带有给定的概率 $p_\Theta(1)$ 与 $p_\Theta(2)$；$X_i$ 是伯努利随机变量（Bernoulli random variable），对关键词 $W_i$ 在消息中的出现与否加以建模：若 $W_i$ 出现则 $X_i = 1$，若未出现则 $X_i = 0$。我们已算出消息为垃圾邮件与正常邮件的后验概率（posterior probabilities），对 $m = 1, 2$ 成立
+由于 $A$ 与 $B$ 相互独立，我们有
 
 ```math
-P(\Theta = m \mid X_1 = x_1, \ldots, X_n = x_n)
-\;\propto\; p_\Theta(m)\,\prod_{i=1}^{n} P(X_i = x_i \mid \Theta = m),
-\qquad m = 1, 2.
+\delta\, f_{Y_k}(y) \approx P(y \le Y_k \le y + \delta)
+= P(A \cap B) = P(A)\, P(B)
+= \lambda \delta \cdot \frac{\lambda^{k-1} y^{k-1} e^{-\lambda y}}{(k-1)!},
 ```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上述后验概率的具体表达式在源 OCR 中严重残缺，仅余片段 `Xi`、`(Xi`、`n`、`m = 1 , 2` 等若干字样，其精确的似然乘积结构与归一化因子无法完全复原。上方按「（先验）×（因子条件似然乘积），再对两类 $m$ 归一化」的标准 MAP 后验结构给出占位；具体参数（如各关键词在两类消息中的出现概率）本页 OCR 未出现，故不臆造其具体数值。</span>
-
-假设我们想根据相应的向量 $(X_1, \ldots, X_n)$ 把一条消息判定为垃圾邮件或正常邮件。那么，MAP 准则（MAP rule）会把该消息判定为垃圾邮件，当且仅当
-
-```math
-P(\Theta = 1 \mid X_1 = x_1, \ldots, X_n = x_n) > P(\Theta = 2 \mid X_1 = x_1, \ldots, X_n = x_n),
-```
-
-或等价地，当
-
-```math
-p_\Theta(1)\,\prod_{i=1}^{n} P(X_i = x_i \mid \Theta = 1)
-\;>\;
-p_\Theta(2)\,\prod_{i=1}^{n} P(X_i = x_i \mid \Theta = 2).
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 「把比较后验换成比较先验乘似然」这一句之所以值得单独立注，是因为它是把分类改写成比值阈值的入口。比值形式有一个巨大的工程优势：它把「两类各自算什么」压缩成「一条轴上取一个阈值」，于是模型换、类别换、代价换，只要移动阈值的位置就行。
->
-> 严格推导一次。判为第 1 类，当且仅当先验乘第 1 类似然大于先验乘第 2 类似然。两边同除以第 2 类的乘积，得到 likelihood ratio（似然比）大于第 2 类先验与第 1 类先验之比。注意右边是先验比的倒数：先验越偏向第 2 类，判第 1 类所需的似然比阈值就越高。
->
-> 方向这一步最容易写反。设垃圾邮件先验 0.2、正常邮件 0.8，则阈值是 4；一个证据若在两类下等可能，似然比是 1，小于 4，应判正常。若把阈值写成四分之一，同一封邮件会被判成垃圾。阈值方向由「谁是分子」决定，换了分子就要取倒数，这是抄公式时最常见的翻车点。
->
-> 取对数后判据变成加法：各特征的对数似然比之和，大于两类先验之比的对数。左边每一项只依赖一个特征，可以增量更新，来一个词就加一项、减一项。这就是词典式过滤器能流式工作的原因，也解释了为什么 log-odds（对数几率）是这类系统的标准坐标系。
->
-> 代数字算一次。先验 0.2 与 0.8 给出阈值 $\log4=1.386$。若 free 这个词在垃圾邮件中出现概率 0.4、正常邮件中 0.02，单项贡献是 $\log20=3.00$；meeting 在两类中分别是 0.01 与 0.15，贡献是 $\log(0.067)=-2.71$。一封同时含两词的信，净贡献 0.29，小于 1.386，判为正常；只出现 free 则 3.00 超过阈值，判垃圾。
->
-> naive Bayes（朴素贝叶斯）的代价就在这里。连乘假设各特征在给定类别下条件独立，而自然语言里 free 与 viagra 高度共现。把同一份证据算两遍，对数几率被放大，输出概率过度自信。工程上的修法是 calibration（校准）：保留排序，重新映射概率。Paul Graham 在 2002 年 8 月那篇 A Plan for Spam 里推的正是这条路线，他只信排序，不信绝对数值。
->
-> 跨课程看，这就是检测理论里 Neyman-Pearson 引理与 ROC curve（ROC 曲线）的同一条轴：似然比把所有可能的判决压缩成「阈值取在哪」，改变代价或先验只是移动阈值。6.042J 的划分与全概率保证分子分母的归一化；信息论里每个特征贡献的期望对数似然比，正是两类分布之间的 KL divergence（KL 散度），于是证据累积得多快由两类可分性决定。
->
-> 顺带说一个常被忽略的点：阈值里只出现先验之比，没有出现先验本身。这说明判决只依赖两类的相对先验，不依赖它们的绝对大小。把先验从 0.2 与 0.8 同时乘一半变成 0.1 与 0.4，阈值不动，判决也不动。这条性质来自后验的归一化，与本节前面「只需分子就够」是同一个原因的两个侧面。
->
-> 反例补一条。若某特征在两类下概率都是 0，似然比是 0 除以 0，公式失效。实际系统必须做加一平滑，否则一个没见过的词就能让整封信的判据变成未定义。这个坑在垃圾邮件的早期实现里极其常见，也是后来改用 TF-IDF 加权与特征筛选的动因之一。
-
-> <span style="color:#7f8c8d;">[OCR 标签考] 源 OCR 将本例读作 "Example 8.5 (continued)"，与 §8.1 中同一垃圾邮件例（Example 8.5）的编号一致：本例系在 §8.2 的 MAP 语境下续讲 §8.1 的 Example 8.5，故标为 **Example 8.5（续）**，不再重编号。§8.2 各数值例号已按源 OCR 核对为 8.7（朱丽叶迟到）、8.8（有偏硬币）、8.9（两枚有偏硬币）并与本页分开，故本页不占用 8.7。确切例号以原书为准。</span>
-
----
-
-<span style="color:#c0392b;">**Point Estimation（点估计）**</span>
-
-在一个估计问题（estimation problem）中，给定观测（observation）$X$ 的取值 $x$，后验分布（posterior distribution）囊括了 $x$ 所提供的全部相关信息。另一方面，我们可能只对某些能概括后验分布性质的量感兴趣。例如，我们可以选取一个点估计（point estimate），即一个单独的数值，用来代表我们对 $\Theta$ 取值所做的最佳猜测。
-
-让我们引入一些与估计相关的概念与术语。为简单起见，我们假定 $\Theta$ 是一维的，但这一套方法同样可推广到其他情形。我们用术语 estimate（估计值）指代我们基于实际观测 $x$ 而选择去报告的那个数值 $\theta$。$\theta$ 的取值通过对观测 $x$ 施加某个函数 $g$ 来确定，即 $\theta = g(x)$。随机变量 $\hat{\Theta} = g(X)$ 被称为估计量（estimator），每当随机变量 $X$ 取到值 $x$ 时，它的实现值恰等于 $g(x)$。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> estimator（估计量）与 estimate（估计值）这组区分，是统计里第一个真正要求把随机性放在正确位置的概念。观测 $X$ 在抽取之前是随机变量，把它放进函数 $g$ 之后，得到的 $\hat\Theta$ 仍然是随机变量；只有当 $x$ 真的落地，$g(x)$ 才是一个数。一个对象、一个数值，混读之后所有下游推理都会错位。
->
-> 用函数与函数值来类比最贴切。Strang 18.06 里矩阵与向量不能互相代入，这里三层也要分开：$g$ 是规则、$g(X)$ 是随机变量、$g(x)$ 是数。代码里同样如此，估计量是那个函数本身，估计值是一次调用的返回值。把返回值当函数去求方差，等于对一个常数求方差，答案恒为零。
->
-> 这个区分之所以必要，是因为所有评价标准都定义在估计量的分布上。bias（偏差）是估计量的期望减真值，variance（方差）是估计量的方差，mean squared error（均方误差）是两者的平方和。这三者都要求估计量有分布，也就是要求它是随机变量。单次报出的 3.2 没有分布，谈不上偏差，也谈不上 consistency（相合性）。
->
-> 相合性尤其能说明问题。它说的是 $n\to\infty$ 时估计量依概率收敛到真值，是一个关于整列随机变量的陈述，不是关于某次实验结果的陈述。无偏性同理，它说的是重复抽样无限多次、平均下来不偏，单次抽样无所谓偏不偏。把这两句话里的估计量换成估计值，陈述立刻变得不可定义。
->
-> 代数字看。若用样本均值估计正态均值，方差为 1，则估计量的期望等于真值、方差是 $1/n$、均方误差也是 $1/n$。$n=4$ 时标准差 0.5，一次报出 3.2 无法判断偏不偏，只能说这个估计量的典型误差是 0.5 量级。若反过来把 3.2 当估计量，它的方差是零，均方误差退化成一个与 $n$ 无关的数，整套理论随之失效。
->
-> 贝叶斯框架里还要多一层。参数本身也是随机变量，于是估计量与参数都是随机变量，条件均方误差写成观测给定下的期望，期望是对后验取的。这里的偏差不再相对某个固定真值，而是相对后验分布；两种框架的公式长得像，含义不同，这也是初学最容易混过去的一处。
->
-> 跨课程看，6.006 的 amortized analysis（摊还分析）是同一个思想在算法里的版本：单次操作可能很贵，摊还代价说的是一整串操作平均下来的界，而不是哪一次。把单次耗时当摊还代价，就会得出「这个数据结构每次只花常数时间」的错误自信。估计量的期望与它单次输出的关系，与这两者完全同构。
->
-> 最后一个反例把错误显形。若某人说「本估计量的方差是零，因为它报出的值是 0.32」，错在两处：一是把估计值当估计量，二是把报告出的那个数当成了常数。正确说法是「这个估计量在重复抽样下的方差是若干」，而 0.32 只是它这一次的取值。一字之差，整个统计推断的对象换了。
-
-> <span style="color:#7f8c8d;">[OCR 说明] 末二句中的 $\hat{\Theta} = g(X)$ 在 OCR 中被读作 `e = g(X)`，其中 `e` 应为 $\hat{\Theta}$（即带帽参数估计量）；此处按字义还原为带 hat 的参数记号，未改动语义。</span>
-<!-- ===== PDF p431 ===== -->
-
-<span style="color:#7f8c8d;">§8.2 点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）中部续页（书页 423）。本页页首无新的节标题或新例，正文承接上一页对「估计量与两种常用估计方法」的介绍，故本节标题带「（续）」。本页先陈述条件期望估计量并将它预告为下一节指定的 LMS 估计量，再给出 MAP 估计量的两点说明，末尾转入本节要点小结框「点估计（Point Estimates）」。本页引用了例题 Example 8.3 与第 4.3 节。排版注：源 OCR 中把估算符号退化读成普通字母（`e` 表示估计 $\hat\theta$、`8` 表示未知参数 $\Theta$、`()` 表示其取值 $\theta$、`!` 表示密度 $f$），下文已按原书符号还原，未臆造数值。</span>
-
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）（续）**</span>
-
-估计量 $\hat{\theta} = g(X)$ 之所以是一个随机变量（random variable），其原因在于：估计流程（estimation procedure）的输出结果依赖于观测（observation）$X$ 的随机取值。
-
-我们可以选用不同的函数 $g$ 来构造不同的估计量（estimators），其中有的会比另一些更好。举一个极端的例子，考虑满足「对所有 $x$ 都有 $g(x) = 0$」的那个函数。由此得到的估计量 $\hat{\theta} = 0$ 完全没有利用数据，因而并不是一个好的选择。我们已经见到两个最常用的估计量：
-
-- (a) **最大后验概率（Maximum a Posteriori Probability，MAP）估计量**：在这里，观察到 $x$ 之后，我们选取能使后验分布（posterior distribution）在所有 $\theta$ 上取到最大值的估计量 $\hat{\theta}$；若遇到并列（ties），则任意打破选择。
-
-- (b) **条件期望估计量（Conditional Expectation estimator）**：它在第 4.3 节引入。在这里，我们把估计量取为 $\hat{\theta} = E[\Theta \mid X = x]$。
-
-条件期望估计量将在下一节详细讨论。届时它将被称为最小均方（least mean squares，LMS）估计量，因为它具有一条重要性质：正如我们稍后将要证明的那样，它能在所有估计量中使均方误差（mean squared error）最小。关于 MAP 估计量，我们有如下两点说明。
-
-- (a) 若 $\Theta$ 的后验分布关于其（条件）均值对称，并且是单峰（unimodal，即只有一个最大值），那么最大值就出现在均值处。此时，MAP 估计量与条件期望估计量重合。举例说，若后验分布被保证为正态分布（normal），则正是这种情况，参见例题 Example 8.3。
-
-- (b) 若 $\Theta$ 是连续的，则 MAP 估计 $\hat{\theta}$ 的实际求值有时可以解析地完成；例如，当 $\theta$ 不存在约束条件时，可通过令 $f_{\Theta|X}(\theta \mid x)$ 或其对数 $\log f_{\Theta|X}(\theta \mid x)$ 的导数为零，并对 $\theta$ 求解来完成。然而在其他情形下，则可能需要进行数值搜索（numerical search）。
-
----
-
-<span style="color:#00838f;">**[点估计] Point Estimates**</span>
-
-- <span style="color:#00838f;">**估计量（estimator）**</span> 是一个具有形如 $\hat{\theta} = g(X)$ 的随机变量，其中 $g$ 是某个函数。$g$ 的不同选取对应不同的估计量。
-
-- <span style="color:#00838f;">**估计值（estimate）**</span> 是某个估计量 $\hat{\theta}$ 所取的取值，它由观测 $X$ 的实现值（realized value）$x$ 决定。
-
-- 一旦观测到 $X$ 的值 $x$，<span style="color:#00838f;">**最大后验概率（MAP）估计量**</span>就把估计值 $\hat{\theta}$ 设为这样一个值：它使后验分布在所有可能的 $\theta$ 取值上取到最大值。
-
-- 一旦观测到 $X$ 的值 $x$，<span style="color:#00838f;">**条件期望（LMS）估计量**</span>就把估计值 $\hat{\theta}$ 设为 $E[\Theta \mid X = x]$。
-<!-- ===== PDF p432 ===== -->
-
-<span style="color:#7f8c8d;">书页 p424，第 8 章 Bayesian Statistical Inference（贝叶斯统计推断）· §8.2 Point Estimation, Hypothesis Testing, and the MAP Rule（点估计、假设检验与 MAP 准则）续页（本章第 8 章）。例号 `S.7`/`S.S` 为 OCR 破损，实为 Example 8.7 与 Example 8.8（按已知序列 8.1→8.16 反推）。</span>
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）（续）**</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.7**</span>
-
-考察 Example 8.2 的情形：Juliet（朱丽叶）在第一次约会时迟到了一个随机量 $X$。$X$ 的分布是 $[0, \Theta]$ 区间上的均匀分布（uniform），而 $\Theta$ 是一个未知的随机变量，其在 $[0, 1]$ 区间上具有均匀的先验概率密度函数（prior PDF）$f_\Theta$。在那个例子中我们看到，对 $x \in [0, 1]$，后验概率密度函数（posterior PDF）为
-
-```math
-f_{\Theta|X}(\theta\mid x) = \frac{1}{\theta\,|\ln x|}, \qquad x \le \theta \le 1,
-\qquad 0,\ \text{其他情形}.
-```
-
-对于给定的 $x$，在 $\Theta$ 的一切可能取值区间 $[x, 1]$ 上，$f_{\Theta|X}(\theta\mid x)$ 随 $\theta$ 递减。因此，最大后验（MAP）估计（MAP estimate）等于 $x$。注意，这是一个「乐观（optimistic）」的估计：如果 Juliet 在第一次约会迟到的时间很少（$x \approx 0$），那么对未来迟到时间的估计也就很小。
-
-而条件期望估计（conditional expectation estimate）被证明不那么「乐观」。特别地，我们有
-
-```math
-E[\Theta \mid X = x] = \frac{1 - x}{|\ln x|}.
-```
-
-这两种估计作为 $x$ 的函数绘于图 8.4（Fig. 8.4）。可以看出，对任何观测到的迟到量 $x$，$E[\Theta \mid X = x]$ 都大于 $\Theta$ 的 MAP 估计。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这个例子值得细看，因为它是全书唯一一处「两种最优估计在同一后验上给出不同答案」的干净对照。同一份后验，一个算子取峰、一个算子取重心，差多少、为什么差，都能手算出来。
->
-> 形状先看清。对固定的 $x\in(0,1)$，后验密度是 $1/(\theta\lvert\ln x\rvert)$，定义在 $\theta\in[x,1]$ 上，随 $\theta$ 单调递减。密度在左端点最大，所以 posterior mode（后验众数）就是 $x$。这就是 MAP 估计，它把「最可能」读成「密度最高」。
->
-> 这条单调性是两件事相乘的必然结果。先验在 $[0,1]$ 上均匀，乘进去只剩一个常数；似然是把观测 $x$ 埋在长度为 $\theta$ 的区间里的均匀分布的密度，值是 $1/\theta$。于是后验在 $\theta\ge x$ 上就是 $1/\theta$ 的倍数，单调递减没有第二种可能。
->
-> 条件期望则是重心：把密度乘 $\theta$ 再积分，$1/\theta$ 恰好与 $\theta$ 约掉，积分只剩区间长度，结果是 $(1-x)/\lvert\ln x\rvert$。这个式子可以手算，不需要特殊函数，这也是这个例子适合做练习的原因。
->
-> 大小关系能严格证明，不是数值巧合。令 $u=-\ln x>0$，则 $x=e^{-u}$。要证 $(1-e^{-u})/u>e^{-u}$，两边乘 $ue^{u}$ 得 $e^{u}-1>u$，而 $e^{u}$ 的展开每项都为正，严格大于 $1+u$。所以对一切 $x\in(0,1)$ 都有均值大于众数，等号只在 $x\to1$ 的极限处出现。这就是正文说「不乐观」的严格来源。
->
-> 换个角度看众数落在哪里。它钉在支撑的左边界上，统计上叫 boundary estimate（边界估计），意思是估计量把「数据能支持的最小值」当成答案。它对观测的响应斜率是 1，而均值的斜率小于 1，两条曲线因此在整段上都分开。
->
-> 代数字。$x=0.5$ 时 $\lvert\ln0.5\rvert=0.6931$。MAP 是 0.5，均值是 $0.5/0.6931=0.7213$，差 0.221。再算均方误差：后验二阶矩是 $(0.375)/(0.6931)=0.5411$，方差是 $0.5411-0.7213^2=0.0207$。均值估计的均方误差就是方差 0.0207；MAP 估计要多加 $(0.5-0.7213)^2=0.0490$，合计 0.0697，是前者的 3.4 倍。
->
-> 把中位数也算出来作对照。让后验分布函数等于一半，解得中位数是 $\sqrt{x}$。$x=0.5$ 时它是 0.7071，正好夹在 MAP 的 0.5 与均值的 0.7213 之间。三个算子排成一列，位置由各自的损失函数决定，这个排序在大多数单峰右偏的后验上都成立。
->
-> 这个差距不是 MAP 差，而是损失函数不同。一般的贝叶斯点估计是让期望损失最小的那个值。取 squared error loss（平方误差损失）时最优解是均值，取 absolute error loss（绝对误差损失）时是中位数，取 0-1 loss（0-1 损失）时是众数。三个算子各自忠实于自己的损失，换损失就换答案，与准则本身对不对无关。
->
-> 反例也要说清。不能因为均值的均方误差更小，就说均值更准。若下游代价是估小了要赔钱、估大了没事，不对称损失会把最优点推到众数甚至更低。真实工程里选哪个算子，先问代价函数长什么样，再问后验长什么样，顺序不能反。
->
-> 跨课程看，这是 decision theory（决策论）的最小风险框架：估计量是在给定损失下的泛函，不是一个与损失无关的客观量。Strang 18.06 的最小二乘是平方损失在观测层的版本，Thomson 实分析里的积分中值定理则解释了为什么均值是重心这一几何直觉，它就是把密度当作质量分布时的质心。
-
-> <span style="color:#7f8c8d;">图 8.4（Figure 8.4）图注：MAP 估计与条件期望估计作为观测值（observation）$x$ 的函数，见 Example 8.7。图中坐标轴刻度（0…1）与两条曲线（MAP Estimates、Conditional Expectation Estimates）的图例文字在源 OCR 中被拆成碎片，仅能认出图注部分；曲线数据无法逐点复原，此图按原书含义忠实转述。上文后验密度与条件期望公式（$\frac{1}{\theta|\ln x|}$、$\frac{1-x}{|\ln x|}$）中分母的 $|\ln x|$ 来自源 OCR 的 `log x` 片段与归一化核对的忠实还原，未源自原文之外的数值。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.8**</span>
-
-我们考察 Example 8.4 中的模型：观测一枚有偏硬币（biased coin）$n$ 次独立抛掷中出现正面的次数 $X$。我们假定 $\Theta$（即正面的概率）的先验分布（prior distribution）在 $[0, 1]$ 上均匀。我们将推导 $\Theta$ 的 MAP 估计与条件期望估计（estimators）。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 有破损] 本条 Example 8.8 上两行（"…transition probability graph …" 之外的正文）在本页源 OCR（`Example S.S. We consider the model in Example 8.4...`）中总体可读，唯个别数字/符号残缺；上句按原书语义完整转述。Example 8.8 的推导在下一页（p425）继续。</span>
-<!-- ===== PDF p433 ===== -->
-
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）**</span>
-
-<span style="color:#7f8c8d;">本页位于书目页 425，页眉为「Sec. 8.2 / Point Estimation, Hypothesis Testing, and the MAP Rule」。页首承接上一页对掷硬币示例（其后验在 §8.1 的 Example 8.4 中给出）的点估计（point estimation）讨论——先行并给出后验概率密度函数（posterior PDF）为 Beta 密度（beta density），据此推出最大后验（MAP）估计与条件期望估计；页中部转入本节的「假设检验（Hypothesis Testing）」小节。注意：本书以 $\Theta$ 记未知参数（取值为 $\theta$），页内侧与正文中的 `8`/`e`/`9` 均为 OCR 对希腊字母 $\Theta$、$\theta$ 的误读。</span>
-
----
-
-承接上一页的论述：如 Example 8.4 所示，当 $X = k$ 时，$\Theta$ 的后验概率密度函数（posterior PDF）是一个参数为 $\alpha = k + 1$、$\beta = n - k + 1$ 的 Beta 密度（beta density）：
-
-```math
-f_{\Theta|X}(\theta \mid k) =
-\begin{cases}
-\dfrac{1}{B(k+1,\, n-k+1)} \,\theta^{k}(1-\theta)^{n-k}, & \text{若 } \theta \in [0,1],\\[2pt]
-0, & \text{其他情形}.
-\end{cases}
-```
-
-这个后验概率密度函数（posterior PDF）恰好只有一个峰。为确定其位置，我们把表达式 $\theta^{k}(1-\theta)^{\,n-k}$ 对 $\theta$ 求导，并令导数为零，得到
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏]「令导数为零，得到」之后的中间一步公式在源 OCR 中被打散成碎片（`"which yields … L) _ u - k. n _"`），其确切形状无法逐字复原；但紧接其后的结果可辨，即下方 $\hat{\theta} = \frac{k}{n}$，此即最大后验（MAP）估计的位置。</span>
 
 由此得到
 
 ```math
-\hat{\theta} = \frac{k}{n}.
+f_{Y_k}(y) = \frac{\lambda^k y^{k-1} e^{-\lambda y}}{(k-1)!}, \qquad y \ge 0.
 ```
-
-这就是最大后验（MAP，maximum a posteriori）估计（MAP estimate）。
-
-为得到条件期望估计（conditional expectation estimate），我们使用 Beta 密度的均值公式（参见 Example 8.4）：
-
-```math
-E[\Theta \mid X = k] = \frac{k+1}{n+2}.
-```
-
-注意，当 $n$ 的值较大时，最大后验（MAP）估计与条件期望估计几乎重合。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这一对估计的差别小到可以写成一个分数，却浓缩了「先验如何进入估计」的全部机制。Beta 后验的两个参数是 $k+1$ 与 $n-k+1$，两个算子分别读它的众数与均值，于是得到样本频率与一次加一修正。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这一页给的是一个可复用的求密度模板，可以叫 $\delta$ 乘 $f$ 法：要算密度 $f_Y(y)$，先写 $\delta f_Y(y)\approx P(y\le Y\le y+\delta)$，即密度乘小区间长近似落入小区间的概率，再把右边用已知事件拆开。
 >
-> 先说 MAP 为什么恰好等于样本频率。Beta density（Beta 密度）的对数在 $\theta$ 上是对数似然加一个常数：uniform prior（均匀先验）是常数，求导后整个消失，剩下的正是二项似然的导数，零点落在 $k/n$。换句话说，均匀先验下的 MAP 与 maximum likelihood estimate（最大似然估计）重合，先验没有移动最优点，只改变了曲线的整体高度。
+> 它为什么合法，理由不在概率论而在微积分：若分布函数在 $y$ 处可导，则 $[F_Y(y+\delta)-F_Y(y)]/\delta\to f_Y(y)$。所以这个模板不是玄学近似，而是导数差商定义的直译——除以 $\delta$ 再取极限这一步，正是把差商变成导数。记住这一点，你就不会在证明里心虚。
 >
-> 条件期望则读 Beta 的均值，等于 $(k+1)/(n+2)$。这一对 pseudo-count（伪计数）相当于先验里预置了一次成功、一次失败，所以它是最常见的 Laplace smoothing（拉普拉斯平滑）。它的历史位置很清楚：Laplace 在 1812 年前后把这条规则写进概率论，用来回答「从未见过失败的事件下次还会成功吗」这类问题。
+> 拆事件的要点在这里：把右边拆成两个独立事件的交，$A$ 是小区间 $[y,y+\delta]$ 内有一次到达，概率约 $\lambda\delta$；$B$ 是 $y$ 之前恰好 $k-1$ 次到达，概率 $P(k-1,y)$ 已知。两者独立，因为它们落在不相交的时间段上，这就是 independent increments（独立增量）。相乘得 $\lambda\delta\cdot P(k-1,y)$，再除以 $\delta$，$\lambda$ 留下、$\delta$ 消掉，密度立刻得到。
 >
-> 两者的差可以精确写出：$(k+1)/(n+2)-k/n=(n-2k)/(n(n+2))$。分母恒正，符号由 $k$ 与 $n/2$ 的大小决定。$k<n/2$ 时均值大于众数，$k>n/2$ 时均值小于众数。也就是说，条件期望总是被拉向 $1/2$，拉的量随 $n$ 增大而衰减。这就是 shrinkage（收缩）的代数形式，方向与距离都能一眼读出。
+> 把模板写成四步，方便套用：一、写出 $\delta f$ 这一侧；二、把"$Y$ 落在小区间里"翻译成关于计数过程的事件；三、用独立增量把事件拆成独立因子相乘；四、除以 $\delta$ 取极限。求次序统计量的密度、求首达时间的密度、求更新过程某一点的密度，走的都是这四步，只是第三步换成本问题的结构。
 >
-> 代数字确认方向。$n=10$、$k=8$ 时，MAP 是 0.8，均值是 $9/12=0.75$，被拉向 0.5；$n=10$、$k=2$ 时，MAP 是 0.2，均值是 $3/12=0.25$，同样被拉向 0.5。两端偏差方向相反、衰减速度相同，都是 $n+2$ 分之一量级。这也解释了为什么大样本下两个估计几乎重合：正文那句「n 较大时几乎重合」不是修辞，是误差项的阶。
+> 给一个可手算的量级。取 $\lambda=2$、$k=3$、$y=1$、$\delta=0.001$，则 $P(1\le Y_3\le 1.001)\approx 0.001 f(1)$；而 $f(1)=\lambda^{3}e^{-2}/2=4e^{-2}\approx0.5413$，所以概率约 $5.41\times10^{-4}$。手算一遍能看清一件事：$\delta$ 必须足够小，但不需要无限小——只要二阶项已经低于你要的精度，这个近似就够用。
 >
-> 边界情形值得单独看。$k=0$ 时 MAP 是 0，条件期望是 $1/(n+2)$；$n=100$ 时后者约 0.0098。前者断言下次必不出现，后者给出一个随 $n$ 衰减的小正数。哪个更合理取决于怎么看「一百次都没出现」这件事：频率派说不可能，贝叶斯说先验里还有一个伪计数撑着。这是两种学派在同一公式上的可见分界线。
+> 它与黎曼和同构：把区间切成宽 $\delta$ 的小条，条高是密度，面积是概率，求和取极限得积分。区别只在条高不是靠积分算出来的，而是靠计数过程的已知分布读出来的——所以这是"绕开积分"的手艺，不是微积分的应用。
 >
-> 还有一个常被忽略的性质：MAP 依赖参数化，条件期望在各自坐标系下按变量代换仍对得上。把 $\theta$ 换成 $u=\theta^2$，密度的 Jacobian 因子会改变峰的位置。上面 $k=8$、$n=10$ 的 Beta 后验可以验算：$\theta$ 的众数在 0.8，换成 $u$ 之后密度的众数对应 $\theta=7/9\approx0.7778$，位置确实移动了。所以 MAP 不是坐标无关的，这是贝叶斯统计界对它的标准批评之一。
+> 什么时候不能用？拆出来的两个事件必须独立。若过程非齐次，或者两段区间重叠，$A$ 与 $B$ 就不再独立，乘积那一步当场失效，只能回到联合分布去算。同理，若"$Y$ 落在小区间里"不能唯一地翻译成一对事件的交，比如还可能出现同时两次到达，也必须把那些支路一并算进来，只是它们都是高阶小量。
 >
-> 顺便把不确定性也对比一下。Beta 后验的方差是 $\alpha\beta/((\alpha+\beta)^2(\alpha+\beta+1))$，$n=10$、$k=8$ 时它是 $27/1872=0.0144$，标准差 0.12。方差按 $n$ 的倒数衰减，比两个点估计之间的差衰减得慢一点，所以样本一多，众数与均值都贴在经验频率附近，谁也不再显眼。
+> 一句话收束：这个模板的价值是把"求分布"降级成"拆事件"，而拆事件的许可证是独立增量与"两次及以上可忽略"这两条泊松过程的基本假设。>
+> 再举一个把模板用在"另一个研究对象"上的例子，说明它为什么是可复用的而不是一招一式的。若问的不是第 $k$ 个到达时刻，而是"某固定区间内最后一次到达的时刻"，拆事件仍然照做：$Y$ 落在 $[y,y+\delta]$ 内，要求 $y$ 之前至少一次到达、$y+\delta$ 之后零次到达；两段不相交，独立性照旧可用。真正危险的情形是让同一段时间同时出现在两个因子里，那时乘法就变成自乘，得到的是联合概率的平方，量级直接错一阶。
 >
-> 跨课程看，加一平滑与 ridge regression（岭回归）是同一件事的两种度量：都在分母上加一个常数，都把估计拉向先验中心。机器学习里它叫 regularization（正则化），统计里它叫收缩估计，信息论里它对应把经验分布向均匀分布做一次混合。名字不同，机制是同一个「往中心拉一点」，拉多拉少由伪计数的个数与样本量之比决定。
+> 还有一个常被忽略的严格性细节：$P(A)\approx\lambda\delta$ 应写成 $P(A)=\lambda\delta+o(\delta)$。只写"约等于"的话，读者不知道误差是 $\delta^{2}$ 还是 $\delta^{3/2}$，也就不知道除以 $\delta$ 后能否取极限；而泊松过程的定义恰好保证误差是 $o(\delta)$，所以这一步才安全。
 
-在没有额外假设的情况下，一个点估计（point estimate）对其精度并不带有任何保证。例如，最大后验（MAP）估计可能落在后验分布主体（bulk of the posterior distribution）相当远之外。因此，通常宜再报告一些附加信息，例如条件均方误差（conditional mean squared error）$E\big[(\hat{\Theta}-\Theta)^{2} \mid X = x\big]$。在下一小节中，我们将进一步讨论这一问题。特别地，我们将重新回到前面两个例子，并为最大后验（MAP）估计与条件期望估计计算条件均方误差。
 
-<span style="color:#c0392b;">**假设检验（Hypothesis Testing）**</span>
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上面末两行在 OCR 中把系数、指数与公式主体拆散到数行（如 `f_{Y_k}(y)` 主体、`\lambda \delta` 系数以及分母 $(k-1)!$ 各处零散），数值与结构均按泊松过程「区间内到达次数」的标准论证重建，所得 $f_{Y_k}(y) = \dfrac{\lambda^k y^{k-1} e^{-\lambda y}}{(k-1)!}$ 与下方脚注求导结果一致。</span>
 
-在假设检验（hypothesis testing）问题中，$\Theta$ 取 $m$ 个值中的一个，即 $(\theta_1, \ldots, \theta_m)$，这里 $m$ 通常是一个很小的整数；经常 $m = 2$，此时我们处理的是一个二元假设检验（binary hypothesis testing）问题。我们把事件 $\{\Theta = \theta_i\}$ 称为第 $i$ 个假设（hypothesis，记为 $H_i$）。
-
-一旦观测到 $X$ 的取值 $x$，我们就可以用贝叶斯准则（Bayes' rule）为每个 $i$ 计算后验概率（posterior probabilities）$P(\Theta = \theta_i \mid X = x) = P_{\Theta|X}(\theta_i \mid x)$。然后，依据最大后验（MAP）准则（MAP rule），我们选择后验概率最大的那个假设。（如果出现平局——若干个假设同时取得最大的后验概率——我们可在它们之间任意选择。）如前文所述，就所有决策准则（decision rules）而言，MAP 准则是最优的，因为它使正确决策（correct decision）的概率达到最大。
-<!-- ===== PDF p434 ===== -->
-
-> <span style="color:#7f8c8d;">本页书页号 426，页眉为 Bayesian Statistical Inference / Chap. 8，属第 8 章 §8.2「点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）」内部。本页顶部展开该节下的小节「The MAP Rule for Hypothesis Testing（假设检验的 MAP 准则）」，先陈述该准则及其两个性质公式，随后给出本节第 3 个、也就是最后一个例题 **Example 8.9**（两枚有偏硬币例）——承接同一节 §8.2 的 Example 8.7、8.8 之后，编号连续。</span>
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）（续）**</span>
-
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）（续）**</span>
-
-<span style="color:#c0392b;">**假设检验的 MAP 准则（The MAP Rule for Hypothesis Testing）**</span>
-
-给定观测值（observation value）$x$，MAP 准则（MAP rule）会选择使得后验概率（posterior probability）$P(\Theta = \theta_i \mid X = x)$ 取值最大的那个假设（hypothesis）$\Theta = \theta_i$。
-
-等价地，它会选择使得下面两式中对应的那个表达式取值最大的假设 $\theta_i$：若 $X$ 为离散，则取 $p_{\Theta}(\theta_i)\,p_{X|\Theta}(x \mid \theta_i)$；若 $X$ 为连续，则取 $p_{\Theta}(\theta_i)\,f_{X|\Theta}(x \mid \theta_i)$。
-
-MAP 准则对任意观测值 $x$ 都使选择错误假设（incorrect hypothesis）的概率最小化，并且是在所有决策准则（decision rules）中使错误概率（probability of error）最小化的那个准则。
-
-一旦我们推导出 MAP 准则，也可以把相应的正确决策（correct decision，或错误）概率，看作观测值 $x$ 的函数来计算。具体地，若 $\hat{\Theta}_{MAP}(x)$ 是当 $X = x$ 时由 MAP 准则选出的假设，则正确决策的概率为
-
-```math
-P\left( \Theta = \hat{\Theta}_{MAP}(x) \mid X = x \right).
-```
-
-进一步，若 $S_i$ 表示所有使得 MAP 准则选出假设 $\theta_i$ 的 $x$ 之集合，则正确的整体决策概率为
-
-```math
-P\left( \Theta = \hat{\Theta}_{MAP}(X) \right) = \sum_i P(\Theta = \theta_i,\ X \in S_i),
-```
-
-而相应的错误概率为
-
-```math
-P\left( \Theta \neq \hat{\Theta}_{MAP}(X) \right) = 1 - P\left( \Theta = \hat{\Theta}_{MAP}(X) \right).
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span>
-> 这一段是「为什么 MAP 最优」的最后一块拼图，也是那个不起眼的集合记号真正的用处。它把「对每个 $x$ 选后验最大的假设」翻译成「把观测空间切成若干块」，于是逐点最优与整体最优之间只差一次求和。
+> <span style="color:#7f8c8d;">脚注 $t$（给出一条不依赖近似论证（approximation arguments）的替代推导）：对给定的 $y \ge 0$，事件 $\{Y_k \le y\}$ 与事件「时间区间 $[0, y]$ 内的到达次数至少为 $k$」是同一个事件。因此，$Y_k$ 的 CDF 为
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 脚注里那条恒等式 $\{Y_k\le y\}\iff\{N_y\ge k\}$ 是本节最凝练的一句，可以叫计数—时间对偶：第 $k$ 次到达发生在 $y$ 之前，当且仅当到 $y$ 为止至少发生了 $k$ 次到达。左边是关于时刻的事件，右边是关于个数的事件，同一件事的两种说法。
 >
-> 划分要先写清楚。每个观测值归给后验最大的那个假设，并列时固定一种打破方式，于是观测空间被切成互不相交的区域，并集是全部可能观测。这个集合族就是决策规则的全部内容：任何决策规则都对应一个划分，反过来任何划分也对应一个规则。所以「在所有准则中挑最好的」等价于「在所有划分中挑最好的」。
+> 严格性来自计数的单调性：$N_y$ 是到 $y$ 为止的到达次数，它随 $y$ 不减，每增加 1 就对应一次到达。于是"第 $k$ 次到达的时刻不超过 $y$"与"$y$ 时刻计数已经达到 $k$"是同一个集合。注意这里用的是"至少 $k$ 次"，不是"恰好 $k$ 次"——写成恰好就错，这是最容易失分的一处细节。
 >
-> 正确概率就写成全概率：对每个假设，取参数等于该假设且观测落在对应区域内的概率，再对假设求和。这是 6.042J 的 partition（划分）加全概率在连续情形的一次直接应用，只不过要求每个区域是可测集，用 Lebesgue 积分写时更自然。
+> 由此得到一条精确路线，一步近似都不用：$F_{Y_k}(y)=P(N_y\ge k)=\sum_{j=k}^{\infty} e^{-\lambda y}(\lambda y)^{j}/j!$，对 $y$ 求导，右尾求导只剩一项，得 $f_{Y_k}(y)=\lambda e^{-\lambda y}(\lambda y)^{k-1}/(k-1)!$。这条路线的好处是不依赖"$\delta$ 很小、二阶项可忽略"这类论证，完全由恒等式推出来，所以它是上一页那个模板的严格备份。
 >
-> 最优性的证明只有三行。对任意准则，其正确概率是每个区域上「观测密度的积分再乘该区域内后验最大的那份」之和；把每个点上的被积函数换成对所有假设取最大，积分只会变大；再把这些最大值归到它自己所属的区域，得到的就是 MAP 的正确概率。两步合起来就是「任意准则不超过 MAP」，等号只在两个准则几乎处处一致时成立。
+> 这条对偶的价值在于两个家族可以互相取用：想要时刻的分布，就去看个数的分布；想要个数的分布，就去看时刻的分布。本节其实用了两次——一次由个数得密度，一次由密度反推个数的性质（比如"区间内到达数服从泊松"可以看成"第 $k$ 个到达时刻是 $k$ 个指数之和"的等价陈述）。
 >
-> 关键是「逐点」这两个字。整体正确率是各点贡献的积分，而积分是线性算子，所以逐点最大必然整体最大。反过来，若在某个点上放弃最大，就等于自愿让出那一小块概率，其它点无法补偿，因为每个点只贡献自己那一份。这个可加性是整个证明的支点，也是它不能直接推广到「整体相关」问题上的原因。
+> 算法里的镜像很清楚：6.006 里"找到第一个满足条件的索引"与"统计满足条件的元素个数"是同一个问题的两面，前者叫 rank、后者叫 select，二分搜索就在这两个视角之间来回横跳；CSAPP 里缓存替换的统计也常用"计数换时刻"的写法。这类对偶的共同结构是：有一个单调的计数器，把"首次达到某水平"与"达到水平之后再问时间"互相翻译。
 >
-> 代数字看先验的分量。两类等方差高斯，第一类下观测服从均值 0 的单位方差正态，第二类下均值 2。等先验时边界在 $x=1$，正确率是 $\Phi(1)=0.8413$。若先验改成 0.7 与 0.3，对数后验差是线性的，边界移到 $1+\frac12\log(0.7/0.3)=1.424$，正确率变成 $0.7\times0.9225+0.3\times0.7180=0.8612$。先验换了、边界动了，正确率涨 0.02，这是「先验不是装饰」的定量版本。
+> 离散版是同一句话：伯努利过程里"第 $k$ 次成功的时刻不超过 $n$"等价于"$n$ 次试验里成功至少 $k$ 次"，即二项分布的右尾。这正是 Pascal 分布与二项分布互为对偶的根源，也解释了为什么第 6 章的问题一半都能在两种语言里各写一遍。
 >
-> 边界的几何也值得看。等方差高斯下，两类的对数密度差是观测的线性函数，边界解出来是一条直线；方差不等时差是二次的，边界变成圆锥曲线。所以决策边界是不是线性，完全由似然形状决定，与算法是否叫线性分类器无关。Strang 18.06 里两条曲线的交点、二次型等值线的相切，都是这一句话的几何版本。
+> 把它写成速查卡：$\{Y_k\le y\}=\{N_y\ge k\}$。记住方向——左边是时刻、右边是计数，右边必须是"至少"。方向记反、或者把"至少"写成"恰好"，是这类题最常见的两处失分，而且两种错法都能在小例子上被手算抓住：取 $k=1$、$y$ 稍大于零，左端已经接近 1，右端若写成恰好一次则接近 0，一眼就看出来。>
+> 再补一个手算核对，把"至少"这个方向钉死。取 $\lambda=1$、$k=2$、$y=2$：左端 $P(Y_2\le 2)$ 是"第二次到达不晚于 2"，右端 $P(N_2\ge 2)$ 是"到 2 为止至少两次到达"。用泊松算右端得 $1-e^{-2}(1+2)\approx0.594$；用二阶 Erlang 的分布函数算左端得同一个式子，两条完全不同的公式给出同一个数，说明恒等式不是"看起来对"，而是真能互推。
 >
-> 反例：如果为了省事硬把边界定在 1，而先验其实是 0.7 与 0.3，正确率就退回到 0.8413，白丢 0.02。更糟的是把区域按输入顺序而非后验切分，那时每个点都可能选到次优假设，错误率会显著上升。最优性定理的每个字都在说同一件事：划分必须由后验决定，不能由别的规则决定。
+> 还有一处同节内容要分开：对偶说的是时刻与计数之间的翻译，不是时刻与时刻之间。$Y_k$ 与 $Y_{k+1}$ 之间的间隔服从指数，那是无记忆性的结论；$Y_k$ 本身服从 $k$ 阶 Erlang，那是"$k$ 个独立和"的结论。两者都靠独立增量与独立性，但一个用"下一次等待重置"，一个用"和的卷积"，混成一条就会在写证明时用错依据。
+
 >
-> 跨课程看，这就是模式识别里 Bayes decision boundary（贝叶斯决策边界）的原型，也是 6.006 里「贪心逐点最优推出全局最优」的少见成功案例。多数问题里贪心不最优，这里之所以成立，是因为目标函数按点可加；一旦目标里出现跨点的耦合项，逐点最优就不再推出整体最优。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 源 OCR 中，正确决策公式下方紧跟英文「and the corresponding probability of error is」（对应于错误概率为……）这一半句后，错误概率的公式本体缺失/被打碎，未给出具体算式（原书动机与上一行为同一主题）。上文按逻辑补出错误概率为整体正确决策概率的补 $\left(1 - P(\Theta = \hat{\Theta}_{MAP}(X))\right)$，此为数学上必然成立的互补关系；若原书式样略有差异，以原书为准。未见需臆造的数值。</span>
-
-下面是一个典型的、针对两个假设情景做 MAP 准则计算的例子。
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.9（两枚有偏硬币，Two Biased Coins。）**</span>
-
-我们有两枚有偏硬币（biased coins），分别称为硬币 1 与硬币 2，它们抛出正面的概率分别是 $p_1$ 与 $p_2$。我们随机选择一枚硬币（两枚硬币被选中的可能性相同），并想根据单次抛掷的结果来推断所选的是哪一枚。令 $\Theta = 1$ 与 $\Theta = 2$ 分别表示「选中硬币 1」与「选中硬币 2」这两个假设。令 $X$ 依抛掷结果是正面还是反面而分别取值为 $1$ 或 $0$。
-
-运用 MAP 准则，我们比较 $p_{\Theta}(1)\,p_{X|\Theta}(x \mid 1)$ 与 $p_{\Theta}(2)\,p_{X|\Theta}(x \mid 2)$，并选择使相应表达式取值最大的那枚硬币。由于 $p_{\Theta}(1) = p_{\Theta}(2) = 1/2$，我们只需比较 $p_{X|\Theta}(x \mid 1)$ 与 $p_{X|\Theta}(x \mid 2)$，并选出其所对应的观测抛掷结果最为可能出现的那一方。于是，例如若 $p_1 = 0.46$，$p_2 = 0.52$，且抛掷结果是反面，则我们注意到
-
-```math
-P(\text{tail} \mid \Theta = 1) = 1 - 0.46 > 1 - 0.52 = P(\text{tail} \mid \Theta = 2),
-```
-
-> <span style="color:#7f8c8d;">衔接下一面（PDF p435）：Example 8.9 在本页给出开头与「反面结果」情形的比较算式后，下一页继续完成该例（处理正面情形与最终结论）。</span>
-<!-- ===== PDF p435 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页，正文为 **Example 8.9** 的收尾部分（页首无新节、无新标题，内容明显延续上一页关于「两枚硬币、按观测到的正面数进行假设检验」的讨论），故标题带「（续）」。本页给出 MAP 决策准则的归纳、其对观测空间 {0,1,…,n} 的划分、误差概率（probability of error）公式，以及图 8.5 的图注。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 严重损坏] 本页为整套教材中文字密度最高的页之一，OCR 仅存零散单词与碎片（如 `and decide in favor of coin 1`、`come is most likely …`、`k(l PI − PI)n−k`、`Θ = 1 if k ≤ k*, where k* =`、`k = k* + 1`、`> P2 1 − P2 )n−k` 等）。下方按本节（§8.2 两硬币假设检验）的真实语义做忠实重建，凡关键数值/符号无法从原文核实的均加灰注释标明，未臆造原文未出现的具体数字。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.9（续）——两枚硬币的假设检验与 MAP 准则（coin selection / hypothesis testing）**</span>
-
-……并因此**决定选择硬币 1（coin 1）**，即判定硬币 1 在给定观测下更为可能（is most likely）。需要指出的是，这一判定**关键取决于先验（prior）假设** $p_{\Theta}(1) = p_{\Theta}(2) = 1/2$：正是这个「两枚硬币先验等可能」的设定，才使决策可以完全由似然（likelihood）比较驱动。
-
-因此，若 $X = k$，我们通过如下方式决定：**选取使得后验概率（posterior probability）最大的那个假设 $\Theta = i$**。具体地，后验为
-
-```math
-p_{\Theta|X}(i\mid k) = c(k)\, p_{\Theta}(i)\, p_{X|\Theta}(k\mid \Theta = i),
-```
-
-其中 $c(k) = 1/p_X(k)$ 是一个仅依赖 $k$ 的归一化常数（normalization constant）。于是对两个假设分别比较上面的量即可。
-
-由于本例中 $p_{\Theta}(1) = p_{\Theta}(2) = 1/2$，MAP 准则便等价于**选取使 $p_i^{\,k}(1-p_i)^{\,n-k}$ 最大的那个假设 $\Theta = i$**，$i=1,2$。等价地，对似然比（likelihood ratio）做比较：
-
-```math
-p_{\Theta|X}(1\mid k) \;\overset{?}{\gtrless}\; p_{\Theta|X}(2\mid k)
-\iff p_1^{\,k}(1-p_1)^{\,n-k} \;\overset{?}{\gtrless}\; p_2^{\,k}(1-p_2)^{\,n-k}.
-```
-
-这一准则把观测空间（observation space）$\{0,1,\ldots,n\}$ 划分成两个互不相交（disjoint）的集合，在这两个集合中，两个假设 $\Theta = 1$ 与 $\Theta = 2$ 分别各占优势。在取定一个适当的阈值（threshold）$k^\ast$ 后，决策准则即为：
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 决策阈值 $k^\ast$ 的显式表达式在 OCR 中被破坏（残片仅余 `where k* = … yo …`），无法逐字复原；此处按标准假设检验推理方向给出「决定 $\Theta = 1$，当 $k \le k^\ast$；否则选择 $\Theta = 2$」。方向依据：图 8.5 中 $p_1 = 0.46 < p_2 = 0.52$，故正面数越少越倾向硬币 1，即 $k \le k^\ast$ 判 $\Theta = 1$。</span>
-
-<span style="color:#00838f;">**决定选择 $\Theta = 1$，当且仅当 $k \le k^\ast$；否则选择 $\Theta = 2$。**</span>
-
-据此，误差概率（probability of error）可由全概率公式（total probability theorem）求得：对 $\Theta=1$ 却落在 $X \ge k^\ast+1$ 的区域、以及 $\Theta=2$ 却落在 $X \le k^\ast$ 的区域这两种情形求和。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 二选一假设检验其实是所有"判别"任务的骨架。第一性原理：后验之比 $\dfrac{P(\Theta=1\mid x)}{P(\Theta=2\mid x)}$ 与似然比 $\dfrac{p_{X\mid\Theta}(x\mid 1)}{p_{X\mid\Theta}(x\mid 2)}$ 只差一个先验比常量，故 MAP 判公等价于"似然比超过阈值"，并把错误概率压到最低——这是全书第一次见到 likelihood ratio（似然比）的机制。命名模板：hypothesis（假设）配 testing（检验）＝"拿数据审理一组候选命题"，与统计推断的 hypothesis testing 同名而域更窄。跨课程（通信/检测理论）：本例来判别哪枚硬币，与判定来信哪种信号本质相同；在附录加性高斯噪声 + $\|a\|=\|b\|$ 时，该阈值规则进一步退化为比较两个内积（见之后匹配滤波例）——这正是 Neyman-Pearson 引理与 ROC 曲线的发源地。反例：若两类误判代价不对称（把垃圾邮件当正常 vs 把正常当垃圾），纯 MAP 的 0-1 损失不再最优，阈值要向代价高的一侧偏移；"无代价均衡"只是等代价情形下的特例。
-
-```math
-P(\text{error}) 
-= P(\Theta = 1,\; X \ge k^\ast+1) \;+\; P(\Theta = 2,\; X \le k^\ast)
-= p_{\Theta}(1)\,P(X \ge k^\ast+1\mid \Theta=1) \;+\; p_{\Theta}(2)\,P(X \le k^\ast \mid \Theta=2).
-```
-
----
-
-<span style="color:#00838f;">**[图] Figure 8.5**</span> —— Example 8.9 情形下的 **MAP 准则（MAP rule）**，其中 $n = 50$，$p_1 = 0.46$ 且 $p_2 = 0.52$。它绘制了两种假设各自的后验概率（posterior probabilities）$p_{\Theta|X}(i\mid k)$，$i = 1, 2$，并刻画了把观测空间划分成「选取 $\Theta=1$」与「选取 $\Theta=2$」两个部分的决策边界 $k^\ast$。
-<!-- ===== PDF p436 ===== -->
-
-> <span style="color:#7f8c8d;">§8.2 点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）中的续页。本页页首无新的小节标题，承接上一页关于“基于阈值的决策准则”的论述（故正文按「（续）」处理）。本页包含：阈值决策准则下误差概率关于阈值 $k$ 的函数曲线（图 8.5、图 8.6），例题的问题数据（$n=50$、$P_1$、$P_2 = 0.52$）、MAP 阈值决策规则（$\delta = 1$ 当 $k < k^*$），并在页末引入一个经典的通信（communication）例题——两台候选信号在被加性噪声污染后如何被接收与判决。源页为双栏排版，OCR 严重错乱、多处残损；下列译文仅还原可辨认的结构与数字，未臆造任何 OCR 未能给出数值。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#c0392b;">**Example 8.9（续，阈值型决策准则与误差概率，threshold-type decision rule）**</span>
-
-……该[误差概率]是阈值（threshold）$k$ 的函数，对应一类基于阈值的决策准则（threshold-type decision rule）。当前例题中，MAP 准则（MAP rule）恰好对应[某个使误差最小的阈值 $k^*$]。
-
-```math
-\delta = 1 \quad \text{若 } k < k^* , \qquad \delta = 0 \quad \text{否则},
-```
-
-即[决策]规则由阈值 $k'$ 确定（cf. Example 8.9）[此处指该阈值规则与本域传播判定问题之间的对照]。
-
-> <span style="color:#7f8c8d;">图注（Figure 8.6）：某类[阈值]决策准则下，误差概率（probability of error）关于阈值 $k$ 的一条曲线。（源 OCR 中该图注的宾语（“误差概率”前的成分）残碎无法辨认，仅「as a function of the threshold $k$」「probability of error」等可辨。）</span>
-
-> <span style="color:#7f8c8d;">图注（Figure 8.5）：使误差概率最小化的决策准则的阈值（the threshold of the decision rule which minimizes the probability of error）。（源 OCR 中图注对象字面残碎，按可辨单词「8.5. The threshold of the … probability of error … and minimizes…」还原。）</span>
-
-本题数据为 $n = 50$，[两类误差概率]分别取 $P_1 = [无法辨认]$ 与 $P_2 = 0.52$，[这些取值]与[前一例]相同……
-
-```math
-P_1 = [\;], \qquad P_2 = 0.52, \qquad \text{阈值 } k = [\;] .
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上式中 $P_1$ 的数值、以及阈值 $k$（或 $k^*$）的具体数值在源 OCR 中残缺（仅见「P2 = 0.52」「rule is k = …」「n = 50」等字样），无法识别，故留空，不臆造。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**（§8.2 未编号的说明例）经典的通信检测例（A Classical Example from Communication）**</span>
-
-下面是一个出自通信（communication）领域、非常经典（classical）的例子。
-
-考虑[两个候选信号] $\mathbf{a} = (a_1, \ldots, a_n)$ 与 $\mathbf{b} = (b_1, \ldots, b_n)$（原文[respectively]）。我们假设这两个候选信号[的能量] $A = a_1^2 + \cdots + a_n^2$ 与 $B = b_1^2 + \cdots + b_n^2$ [已知]。接收机（receiver）观测到[某一信号经信道传输后受到噪声污染的接收值]
-
-```math
-Y_i = [\;] F_i + W_i, \qquad i = 1, \ldots, n,
-```
-
-其中 $W_i$ 是相互独立（independent）、且与[所发送信号]独立（independent）的标准正态随机变量（standard normal random variables）。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上文含 $\mathbf{a}$、$\mathbf{b}$、能量 $A$、$B$、接收机观测 $Y_i$、发射信号项 $F_i$（或给定信号项）以及 $W_i$ 的标准正态假设等结构在上页与本源中均能辨认（「energy,!l, ai + … + b²」「Wi are standard normal random variables, independent of …」「transmitted …」等），但具体符号与数值（$F_i$ 的写法、能量 $A$/$B$ 之值、观测模型 ``Y_i`` 的精确形式）在 OCR 中残碎到无法逐字复原。该校验点将在后续页给出 MAP 判决（选距离更近的信号）及阈值规则，届时可据以锚定核对。本页仅还原骨架，未臆造公式细节。</span>
-
-> <span style="color:#7f8c8d;">衔接说明：本页为 §8.2 的尾页段（书页约 p428，尚未进入书页 p430 起的 §8.3）。页末新起的通信检测例是 §8.2 中一个**未编号**的说明性例子（源页先说 "The following is a classical example from communication…"，随后并无任何例号标注），其主体将延续到后续页；此处未给它套用「Example 8.9」等编号，确切归属以原书为准。</span>
-<!-- ===== PDF p437 ===== -->
-
-<span style="color:#7f8c8d;">§8.2　点估计、假设检验与 MAP 准则（Point Estimation, Hypothesis Testing, and the MAP Rule）中部续页。书页 p429。本页承接上一页（书页 p428）正在进行的信号检测/匹配滤波器（matched filter）例子（§8.2 中那个**未编号**的说明性通信检测例）之继续，页首无新节标题，故以「（续）」续讲；本页为该通信例的收尾，并在段末给出其 $m>2$ 个等可能消息情形的推广。§8.2 的 8.7 / 8.8 / 8.9 这三个编号例子已在前页翻毕，本页所续为未编号的说明例。</span>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**信号检测与匹配滤波器（matched filter）（上接 §8.2 未编号的通信检测例，续）**</span>
-
-在假设 $\Theta = 1$ 之下，各 $X_i$ 是均值为 $a_i$、方差为单位方差（unit variance）的相互独立正态随机变量（independent normal random variables）。于是，由贝叶斯准则（Bayes' rule），第一个消息被发射的后验概率依如下似然（likelihood）密度计算。
-
-```math
-f_{X\mid\Theta}(x\mid 1) \;=\; \left(\frac{1}{\sqrt{2\pi}}\right)^{\!n}
-\exp\Big(-\tfrac{1}{2}\sum_{i=1}^{n}(x_i-a_i)^2\Big).
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页顶「Thus,」与「Similarly,」两处之后所对应的似然密度公式在源 OCR 中呈空白（仅余 "Thus," / "Similarly," 字样，无公式本体），且「From Bayes' rule … is」之后的后验概率公式同样缺失。上文与下文均按该例已知的匹配滤波器结构与 "$a_i$ 换成 $b_i$ 得 $\Theta=2$ 情形"的原文提示重建，未臆造任何原文未暗示的数值或系数。</span>
-
-类似地，在假设 $\Theta = 2$ 之下，各 $X_i$ 以 $b_i$ 为均值、仍为单位方差。
-
-```math
-f_{X\mid\Theta}(x\mid 2) \;=\; \left(\frac{1}{\sqrt{2\pi}}\right)^{\!n}
-\exp\Big(-\tfrac{1}{2}\sum_{i=1}^{n}(x_i-b_i)^2\Big).
-```
-
-由贝叶斯准则，在给定观测 $X=x$ 时，第一个消息被发射（即假设 $\Theta=1$）的概率为
-
-```math
-P(\Theta = 1 \mid X = x)
-\;=\; \frac{p_1\, f_{X\mid\Theta}(x\mid 1)}
-{p_1\, f_{X\mid\Theta}(x\mid 1) + p_2\, f_{X\mid\Theta}(x\mid 2)},
-```
-
-其中 $p_1 = P(\Theta=1)$、$p_2 = P(\Theta=2)$ 为两个消息的先验概率（prior probabilities）。
-
-对平方项（squared terms）展开并利用假设
-$\sum_{i=1}^{n} a_i^2 = \sum_{i=1}^{n} b_i^2$ 之后，上述表达式可化简为关于内积（inner product）$\sum_{i=1}^{n} a_i x_i$ 与 $\sum_{i=1}^{n} b_i x_i$ 的大小比较。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 「After expanding the squared terms … this expression simplifies to」与「The formula for $p(\Theta=2\mid X=x)$ is similar, with the $a_i$ in the numerator replaced by $b_i$」两处之间的最终化简式在源 OCR 中缺失（原文「。」后直接跳到下一句）。该化简式根据标准推导重建为"将 $\sum_{i=1}^n a_i^2 = \sum_{i=1}^n b_i^2$ 代入后，后验比较退化为内积 $\sum a_i x_i$ 与 $\sum b_i x_i$ 之比/大小关系"，此关系与下页判断规则形式一致；未臆造具体后验数值。</span>
-
-$p(\Theta = 2 \mid X = x)$ 的公式与之类似，只是把分子中的 $a_i$ 替换为 $b_i$。
-
-按照 MAP 准则（MAP rule），我们应选择具有最大后验概率（posterior probability）的假设，从而得到：
-
-```math
-\begin{aligned}
-\text{选择 } \Theta = 1, \quad & \text{若} \quad \sum_{i=1}^{n} a_i X_i > \sum_{i=1}^{n} b_i X_i,\\
-\text{选择 } \Theta = 2, \quad & \text{若} \quad \sum_{i=1}^{n} a_i X_i < \sum_{i=1}^{n} b_i X_i.
-\end{aligned}
-```
-
-（若上述内积相等，则两个假设都可任选其一。）这种用于判定期所发信号（signal transmitted）的特定结构被称为**匹配滤波器（matched filter）**：我们把接收到的信号 $(X_1, \ldots, X_n)$ 通过与两个候选信号各自形成内积 $\sum_{i=1}^{n} a_i X_i$ 与 $\sum_{i=1}^{n} b_i X_i$，来「匹配（match）」这两个候选信号；随即选择产生较高值（"最佳匹配（best match）"）的那个假设。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上述判断规则中 $\sum_{i=1}^{n} a_i X_i$ 与 $\sum_{i=1}^{n} b_i X_i$ 的求和上下限在源 OCR 中被打散（出现孤立的光标碎片如 `L aiXi`、`L biXi`、零散的 `i= l` 等），此处按文中「Earlier forming inner products」与上文出现的 $\sum_{i=1}^n a_i^2 = \sum_{i=1}^n b_i^2$ 约定，统一还原为标准求和 $\sum_{i=1}^{n}$；不等号之上限与前文首个公式的方向一致。该页原文「最大后验概率，即得：」处的破折号与编号碎片未影响语义。</span>
-
-这个例子可以推广到 $m>2$ 个等可能（equally likely）消息的情形。我们假设对消息 $k$，发射机发出固定的信号 $(a_1^k, \ldots, a_n^k)$，其中 $(a_1^k)^2 + \cdots + (a_n^k)^2$ 对所有 $k$ 都相同。于是，在同样的噪声模型（noise model）下，类似的推导表明：MAP 准则把接收信号 $(X_1, \ldots, X_n)$ 解码为使得 $\sum_{i=1}^{n} a_i^k X_i$ 最大的那个消息 $k$。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 匹配滤波器（matched filter）把概率论的结论翻译成一张能被硬件直接执行的"内积打分表"。第一性原理：当噪声是 i.i.d. 高斯、且 $\|\mathbf{a}\|=\|\mathbf{b}\|$ 时，比较两个候选信号的最优准则不是看幅度大小，而是比接收信号与各候选信号的内积 $\sum_i a_iX_i$——因为距离平方差正比于内积差，最大后验便等价于"离谁的内积更大"。命名模板：matched filter 的"匹配"指滤波器冲激响应与候选信号本身匹配（即做相关），而非去匹配噪声。跨课程（信号与系统 / 18.065 内积几何）：这正是在欧氏空间里的最近邻分类，那套"内积＝投影"正是相关接收机（correlation receiver）的构造；把 $\mathbf{a},\mathbf{b}$ 换成一般信号向量即得一般线性检测。反例：若两个候选信号能量不等（$\sum_i a_i^2 \ne \sum_i b_i^2$），纯内积比较会向"更长的信号"倾斜而失真，必须先归一化能量后再比，否则'最近'并不等价于'后验最大'。
-<!-- ===== PDF p438 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）**</span>
-
-> <span style="color:#7f8c8d;">本页（书页 p430）为 §8.3 小节标题「Bayesian Least Mean Squares Estimation（贝叶斯最小均方估计）」的起始页（running header「LEAST MEAN ESTIMATION」见于源页），故此处标出**新的 §8.3 小节标题**（非续页）。页首承接上一页（书页 p429）末尾关于条件均方误差（conditional mean squared error）的论述收束而来，正文自该叙述的中段接续。本页通篇为 LMS 估计的推导正文：先论证「在没有观测时，用常数 $\hat\theta=E[\Theta]$ 估计 $\Theta$ 可最小化均方误差（mean squared error）$E\big[(\Theta-\hat\theta)^2\big]$，最小值即方差 $\mathrm{var}(\Theta)$」，并给出图 8.7；页末转入「引入观测 $X$ 后的条件情形」。本页未出现新的 Example 编号，仅为衔接 Example 8.10 的推导铺垫。</span>
-
----
-
-接着上一页，我们更加细致地考察条件均方误差（conditional mean squared error）这一层面。我们采用最小化均方误差（mean squared error）
-
-<span style="color:#7f8c8d;">（原页此处式为横排连续性叙述，源 OCR 中被打散为断片，其确切排版不可复原。为忠实行文，以下按正文语义以一条顶格数学式概括。）</span>
-
-```math
-E\big[(\Theta-\hat\theta)^2\big],
-```
-
-作为估计 $\hat\theta$ 好坏的准则。我们说明这一准则会导出尽可能小的均方误差，从而顺带反映出估计量（estimator）的若干其他性质。
-
-首先考虑没有观测的情形，即我们只能用一个**常数** $\hat\theta$ 来估计随机变量 $\Theta$。为把这一准则应用到 $\hat\theta$ 的选取上，我们把均方误差视为 $\hat\theta$ 的函数（见图 8.7），并对 $\hat\theta$ 求最小。
-
-```math
-E\big[(\Theta-\hat\theta)^2\big]
-= \mathrm{var}(\Theta) + \big(E[\Theta]-\hat\theta\big)^2.
-```
-
-这个恒等式之所以成立，是因为当常数 $\hat\theta$ 从随机变量 $\Theta$ 中被减去时（零均值化），方差保持不变，即 $\mathrm{var}(\Theta-\hat\theta)=\mathrm{var}(\Theta)$，而期望则变为 $E[\Theta-\hat\theta]=E[\Theta]-\hat\theta$。于是均方误差 $E\big[(\Theta-\hat\theta)^2\big]$ 是 $\hat\theta$ 的二次函数，在 $\hat\theta = E[\Theta]$ 处取得最小值，且该最小值等于方差（variance）$\mathrm{var}(\Theta)$。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这条 $E\big[(\Theta-\hat\theta)^2\big]=\mathrm{var}(\Theta)+\big(E[\Theta]-\hat\theta\big)^2$ 的分解，是把"最优估计"从公式变成几何的钥匙。第一性原理：均方误差关于 $\hat\theta$ 是严格下凸的二次式（平方系数为 1），顶点自然落在 $E[\Theta]$ 处；把随机变量 $\Theta$ 当向量、把常数 $\hat\theta$ 看成由常量函数张成的"直线"，最佳逼近正是 $\Theta$ 在这条直线上的正交投影 $E[\Theta]$。命名模板：把"取期望"称作投影（projection）看似费解，实则是以 $E[\cdot]$ 作内积、把随机变量当函数向量来看的惯用语言。跨课程（概率＋线性代数 / 18.06）：条件期望"是到可测子空间上的正交投影"这条概率论与线性代数之间最深的桥，在此露出第一只脚；后面 LMS 的无条件最小性不过是该投影定理的逐点版。反例：只要目标是绝对误差 $E|\Theta-\hat\theta|$，最优解就从均值挪到中位数——说明"最优"由损失函数定义，绝不能想当然默认均值总是对的。
-
-> <span style="color:#7f8c8d;">图注（Figure 8.7）：均方误差 $E\big[(\Theta-\hat\theta)^2\big]$ 作为估计 $\hat\theta$ 的函数。最低点（最小值点）位于 $\hat\theta=E[\Theta]$ 处，此时最小均方误差（minimum mean squared error）即为 $\mathrm{var}(\Theta)$。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页为 §8.3 的推导性正文页，源 OCR 损坏极为严重：段落叙述大多被切成单词级碎片（如 `we`/`mean`/`by`/`and can`、残文 `i n more detail the cond i t i on al …`、`... we s h o w that i t resul ts in the least possible mean squared error ( hence` 等），图注 `Fig. 8 . 7 … The mean squared error E …` 亦不完整。正文中唯一可辨的完整式子为恒等式分解 `var(Z)+(E[Z])^2`（即 $\mathrm{var}(\Theta)+(E[\Theta]-\hat\theta)^2$）与「最小值即方差 var」这一结论。上文按原书 §8.3「先无观测、后引入观测」的标准叙述路径做忠实重建，未臆造任何原文未出现的具体数值、符号或额外疏例。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页末「引入观测 $X$」的过渡段（碎片 `now that we use an observation … we know the… error …`）在 OCR 中残损到仅余零散单词，其确切措辞无法逐字复原；此处按 §8.3 原文走向（转向「已知观测 $X=x$ 后，用条件期望 $E[\Theta\mid X=x]$ 作为最优估计」）忠实衔接，下一页（书目 p431）将继续这一发展并呈现逐点条件最小均方误差的公式。</span>
-
-> <span style="color:#7f8c8d;">衔接下一面（书目 p431）：本页完成了「无观测情形下估计量为常数 $E[\Theta]$、最小均方误差为 $\mathrm{var}(\Theta)$」的论证（图 8.7），并引入观测 $X$。下一面将把同一论证推广到已知观测 $x$ 的条件情形，得出后验期望（posterior mean）$E[\Theta\mid X=x]$ 逐点最小化条件均方误差的结论，随后引出考察离散/连续观测的 Example 8.10 及后续例子。</span>
-<!-- ===== PDF p439 ===== -->
-
-<span style="color:#c0392b;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页（书目 p430）关于最小均方（least mean squares，LMS）估计的论述：页首 `Generally, the (unconditional) mean squared estimation error …` 紧接上一页中文句继续推进，随后落到本页正文核心——「最小均方估计的关键事实（Key Facts About Least Mean Squares Estimation）」框（含三条最小化事实及其证明脚注）。本页**没有出现新的 Example 8.x 标签**，故按 §8.3 正文续页处理，未新增例号。</span>
-
----
-
-一般地，与某个估计量（estimator）$g(X)$ 相关联的（无条件）均方估计误差（mean squared estimation error）被定义为
-```math
-E\big[(g(X) - \Theta)^2\big].
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 该定义式在源 OCR 中整段缺失（"…is defined as" 之后公式区（pdf 第 8–9 行）为空白），此处按本段前后文（"estimator g(X)"）与 §8.3 的 LMS 定义补出形如 $E[(g(X)-\Theta)^2]$ 的常规定义式，非出自原件可辨认文字，仅为忠实还原，未虚构任何额外数值。</span>
-
-如果我们把 $E[\Theta\mid X]$ 看作 $X$ 的一个估计量/函数（estimator/function），那么前面的分析表明：在所有可能的估计量之中，均方估计误差在 $g(X) = E[\Theta\mid X]$ 处达到最小。†
-
-> <span style="color:#7f8c8d;">脚注（†）：</span>对于 $X$ 的任意给定取值 $x$，$g(x)$ 是一个数，因此
-```math
-E\big[(\Theta - g(x))^2 \mid X = x\big] \ge E\big[(\Theta - E[\Theta\mid X = x])^2 \mid X = x\big].
-```
-于是
-```math
-E[(\Theta - g(X))^2 \mid X] \ge E[(\Theta - E[\Theta\mid X])^2 \mid X],
-```
-这现在是不等式，但它涉及的是（作为 $X$ 的函数的）随机变量（random variables）。我们对两边取期望，并利用迭代期望律（law of iterated expectations），便可得出结论：对一切估计量 $g(X)$ 成立（即均方误差在 $g(X) = E[\Theta\mid X]$ 处最小）。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 前一段脚注（†）在源 OCR 中被拆成碎片，仅余 "t For any given value x of X, g(x) is a number, and therefore, / Thus, …" 等零散字样，中间过渡句（"…which is now an inequality between random variables (functions of X). We take expectations of both sides, and use the law of iterated expectations, to conclude that …"）可逐字辨认；上文据此连贯转写，未增补原件未含的数值。</span>
-
----
-
-<span style="color:#00838f;">**最小均方估计的关键事实（Key Facts About Least Mean Squares Estimation）**</span>
-
-<span style="color:#2471a3;">**[key-facts]**</span>
-
-• 在没有观测值（observations）的情况下，$E\big[(\Theta - \theta)^2\big]$ 在 $\theta = E[\Theta]$ 处取得最小：
-```math
-E\big[(\Theta - E[\Theta])^2\big] \le E\big[(\Theta - \theta)^2\big],
-```
-对一切 $\theta$ 成立。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 第一条不等式在源 OCR 中被拆碎（仅存 `E [(8 - 0) 2 ]`、`for all O` 等残片，"minimized when $\theta = E[\Theta]$" 的结论式与不等号方向由上下文还原）；上文按标准 LMS 事实补成上式，未虚构数值，仅补规格化符号（$\Theta$、$\theta$、平方、$\le$）。</span>
-
-• 对 $X$ 的任意给定取值 $x$，$E\big[(\Theta - \theta)^2 \mid X = x\big]$ 在 $\theta = E[\Theta\mid X = x]$ 处取得最小：
-```math
-E\big[(\Theta - E[\Theta\mid X = x])^2 \mid X = x\big] \le E\big[(\Theta - \theta)^2 \mid X = x\big],
-```
-对一切 $\theta$ 成立。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 第二条不等式在源 OCR 中残缺（`E [ (8 - E[8 I X = xj) 2 1 X = x] < E [(8 - 0) 2 I X = x]`，其中 "xj" 为 "]$"、"2" 为平方、"<" 为原书所用的 $\le$）；上文据 §8.3 的 LMS 事实补成规范形式，未臆造数值。</span>
-
-• 在所有基于 $X$ 估计 $\Theta$ 的估计量 $g(X)$ 之中，均方估计误差 $E\big[(\Theta - g(X))^2\big]$ 在 $g(X) = E[\Theta\mid X]$ 处取得最小：
-```math
-E\big[(\Theta - E[\Theta\mid X])^2\big] \le E\big[(\Theta - g(X))^2\big],
-```
-对一切估计量 $g(X)$ 成立。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 第三条（也是最核心）不等式在源 OCR 中仅余 `E (8 - g ( X)) 2` 与残缺的不等式块（pdf 第 31–36 行），结论式（"minimized when $g(X)=E[\Theta\mid X]$"）文字可辨、式本身缺损；上文按 §8.3 标准 LMS 结论补成上式，未虚构数值。此条即前面正文"在一切估计量中均方误差最小者"之概括。</span>
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 三条"最小均方事实"其实是同一件事的三层缩放：没有观测、已知 $x$、面对全部 $X$，最小点永远是条件期望 $E[\Theta\mid X]$。第一性原理：对固定的 $x$，条件均方误差当作 $\theta$ 的二次式、顶点在 $E[\Theta\mid X=x]$；再对 $x$ 取期望（迭代期望律）就把逐点最优汇成全局最优——三层共用同一个"投影到常数直线取均值"的动作。命名模板：LMS 全称 least mean squares（最小均方），名字点明的目标是最小"平方误差"，别按发音误读成"均方最小"。跨课程（18.06 / 18.065）："正交投影＋平方目标"是广义最小二乘、卡尔曼与维纳滤波共享的几何内核，第 8.4 节线性 LMS 就是在"线性子空间"上重做同一投影。反例：若某 $x$ 下 $\Theta$ 的后验是双峰，条件期望落在两峰之间的谷里——它给出均方误差最小的点，却偏离"最可能的取值"（MAP 峰）甚远，提醒我们"期望 ≠ 最可能代表值"。
-
----
-<!-- ===== PDF p440 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页，继续 §8.3 的 **Example 8.10**（$\Theta$ 均匀分布于 $[4,10]$、$X=\Theta+W$、$W$ 均匀分布于 $[-1,1]$ 的加性噪声例）：页首无新标题，正文自该例的叙述中段接续（开头即「…be uniformly distributed over the interval $[4,10]$…」），故以「**Example 8.10（续）**」续讲，并在本页中段给出其图注 **Figure 8.8**、以及基于后验密度求条件均值 $E[\Theta\mid X=x]$ 的最小均方（LMS）结论。页末转入一个新的例子 **Example 8.11**（朱丽叶与罗密欧，Juliet：第一次约会迟到时长 $X$ 均匀分布于 $[0,\theta]$）。编号锚点：Figure 8.8 ↔ Example 8.10、Figure 8.9 ↔ Example 8.11，图号与例号互证连续。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.10（续）——加性噪声与线性后验：$\Theta$ 均匀于 $[4,10]$、$X=\Theta+W$**</span>
-
-我们保持未知参数 $\Theta$ 均匀（uniformly）分布于区间 $[4,10]$ 上的先验（prior），并设误差项（error）$W$ 均匀分布于 $[-1,1]$，且与 $\Theta$ 独立。我们假设观测满足
-```math
-X = \Theta + W.
-```
-在给定 $\Theta$ 等于某个 $\theta$ 的条件下，$X$ 与 $\theta + W$ 相同，因而均匀分布于区间 $[\theta-1,\ \theta+1]$ 上。于是 $\Theta$ 与 $X$ 的联合概率密度函数（joint PDF）为
-```math
-f_{\Theta,X}(\theta,x) \;=\; f_\Theta(\theta)\; f_{X\mid\Theta}(x\mid\theta),
-```
-当 $4 \le \theta \le 10$ 且 $\theta-1 \le x \le \theta+1$ 时取该式，而对 $(\theta,x)$ 的其他取值恒为零（zero）。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上一段「$X=\Theta+W$」的设定与联合概率密度分解式 $f_{\Theta,X}(\theta,x)=f_\Theta(\theta)f_{X\mid\Theta}(x\mid\theta)$ 在源 OCR 中被切成大量单词级碎片（如 `be u n i fo r m ly …`、`x =`、`W i s u ni formly`、`e.`、`we assume`、`fa, x ( 0 , …` 等），仅数值区间 $[4,10]$、$[-1,1]$、$\theta-1 \le x \le \theta+1$、$4 \le \theta \le 10$ 与「independent of」「Conditioned on」等关键词可辨；上文据此忠实重建该已知联合密度结构，未虚构原文未出现的任何系数。</span>
-
-由于联合概率密度函数只在使 $f_{\Theta,X}$ 非零（nonzero）的 $(\theta,x)$ 取值集合上取值——而该集合恰好是右侧图形（Figure 8.8）所示的一个平行四边形（parallelogram）——因此联合密度在该平行四边形上是均匀（uniform）的。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 例 8.10 里的平行四边形不是画着好看的，而是"均匀噪声叠加到均匀参数上"的支撑几何的全部信息。第一性原理：$\Theta$ 均匀于 $[4,10]$、$W$ 均匀于 $[-1,1]$，则 $(\Theta,X)=(\theta,\theta+w)$ 落在把 $[\theta-1,\theta+1]$ 沿 $\theta$ 轴扫出来的菱形里——联合支撑是个平行四边形，且因其由两段均匀维而来、联合密度在支撑上恒定。命名模板：把"变量的线性相加"想成"把一条段沿另一条段平移扫出的平行四边形"（parallelogram），这也是辛几何与线性变换里平行四边形恒等式（parallelogram law）的同名直觉。跨课程（几何 / 正交投影）：对给定 $x$ 作水平切片，截出的片段长度正比于该 $x$ 下的后验密度——故后验密度在这些截面里呈线性函数；这正是"边缘/条件分布由几何投影决定"的最小实例。反例：若 $W$ 换成高斯（无界支撑），联合支撑就不再是平行四边形而是整片平面，后验也不会是简单的线性函数——形状的优势（闭式、可分解）全部来自"有限支撑 + 均匀"这两个软约束，换任一分布即崩塌。
-
-> <span style="color:#7f8c8d;">图注（Figure 8.8）：Example 8.10 中 $\Theta$ 与 $X$ 的联合概率密度函数（joint PDFs）：联合密度非零的区域是 $(\theta,x)$ 平面上的一个平行四边形（parallelogram），该平行四边形在右半部展示（shown on the right-hand side）。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上述「平行四边形（parallelogram）」一句与图注（Figure 8.8）在源 OCR 中残碎（仅余 `parallelogram in the right-h and side of`、`is nonzero`、`8 . 8 : The PDFs i n / shown on the`、`uniform over the` 等字样），图号 `8.8` 实为 Figure 8.8（按锚点：Figure 8.8 ↔ Example 8.10 还原，非 `Example 8.8`）；上文据此还原图注大意，未增补原文未含的细节。</span>
-
-接下来考察随机变量 $X=\Theta+W$。对于 $X$ 的一个（给定）取现值 $x$，其边缘密度随 $x$ 变化，并由右图所示的线性函数（linear function）表示。类似地，给定 $X=x$ 时，后验概率密度函数（posterior PDF）$f_{\Theta\mid X}(\theta\mid x)$ 也取决于 $x$ 的取现值，并由右图所示的（作为 $\theta$ 的函数）线性函数表示。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 这一小段（$X$ 的边缘密度与后验密度都"随 $x$ 变化、由右图线性函数表示"的结论）在源 OCR 中被打散成碎片（仅余 `the val ue x of the r a n d om variable X = e + W, depends on x and is ... represented by the ... l i near function shown on the right`、`G iven that X = x , t he posterior PD F fe l x`、`value x of` 等），其中 `e` 为 $\Theta$ 之 OCR 误读；上文据此忠实还原，未扩写。</span>
-
-在已知观测 $X=x$ 的前提下，对该 $x$ 取其后验密度的均值，便得到以均方误差（mean squared error）为准则的最优估计，即最小均方（least mean squares，LMS）估计 $E[\Theta\mid X=x]$；它是 $x$ 的一个函数。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上述关于「对固定 $x$ 取后验均值即 LMS 估计、它是 $x$ 的函数」的结论句在源 OCR 中仅余零星字样（`X t he mean`、`error , define d as`、`I t is a / of x ,` 等），语句主体缺失；上文按 §8.3 的 LMS 定义（$g(X)=E[\Theta\mid X]$）与第 438/439 页已建立的 LMS 事实手忠实衔接还原，未虚构任何具体估计式或数值。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.11（朱丽叶与罗密欧，Juliet and Romeo。）**</span>
-
-在上一次约会中罗密欧没有打电话过来，朱丽叶（Juliet）想据此判断他是否仍对她感兴趣。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 该例开篇叙述在源 OCR 中几乎全部缺失，仅存 `in which J u l iet i s late o n t he fi rst date by a random amou nt X t h at i s u n i formly d istributed over the i n terval [0, 8j ]`、`is an unknown`、`we saw t h at the M A P`、`Here ,`、`is equal to x a n d that the` 等碎片（其中 `8j` 为 $\theta$ 之 OCR 误读）；「罗密欧上次约会未打电话」与「隐含兴趣程度 $\theta$」等背景句系按该书 §8.3 朱丽叶/罗密欧例的固有设定启发式补足，属忠实的上下文重建而非原文可逐字辨认，故以下仅呈现可辨内容并留待后续统一校对。</span>
-
-这里的场景是：朱丽叶在第一次约会时迟到了，迟到的时间是一个随机量 $X$，它均匀分布于区间 $[0,\theta]$ 上。这里 $\theta$ 是一个未知参数（unknown parameter），均匀分布于 $[0,1]$ 上（先验）。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上一句（$X$ 均匀于 $[0,\theta]$、$\theta$ 均匀于 $[0,1]$ 的先验设定）在源 OCR 中被打散为片段（`... distributed over the interval [0, 8]`、`[0, 1]`），其中 $\theta$ 被误读为 `8`、区间端点为可辨数值 $[0,\theta]$ 与 $[0,1]$；上文据此还原设定，未臆造其他数值。</span>
-
-我们此前已经看到（we saw that），对于某些 $x$ 取值，最大后验（MAP）估计等于 $x$……
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页末一句在源 OCR 中仅余 `we saw t h at the M A P`、`is equal to x a n d that the` 两个片段，其后「最大后验（MAP）估计 $=$、与最小均方（LMS）估计（后验均值）不同」等收尾论述在源 OCR 中缺失（页脚中断）。此句未臆造后续等式与数值，仅具名保留「MAP 估计等于 $x$」这一可辨断言；该例的完整讨论（MAP 与 LMS 的比较、对应的线性/分段估计式）延续至下一页（书页 p433）。</span>
-<!-- ===== PDF p441 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页，继续 §8.3 的 **Example 8.11**（朱丽叶与罗密欧）：页首运行页眉为「Least Mean Squares Estimation（最小均方估计）」，无新节、无新例标题，故以「**Example 8.11（续）**」续讲。本页内容为：计算该例的条件均值最小均方（least mean squares，LMS）估计 $E[\Theta\mid X=x]$（其值为 $(1-x)/(-\log x)$），给出其图注 **Figure 8.9**，随后计算最大后验（maximum a posteriori，MAP）估计 $\hat{\theta}_{MAP}=x$ 的条件均方误差并与 LMS 的条件均方误差相比对（后者折线由图 **Figure 8.10** 展示），最后以「LMS 估计具有更小均方误差、是最小均方准则的一般最优性体现」作结。编号锚点：Figure 8.9 ↔ Example 8.11、Figure 8.10 ↔ Example 8.12，图号与例号互证连续。</span>
-
----
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.11（续）——朱丽叶与罗密欧：条件均值 LMS 估计对最大后验（MAP）估计**</span>
-
-我们已知最大后验（MAP）估计等于 $x$（承接上一页末的断言，for certain values of $x$ the MAP estimate is equal to $x$）。令我们计算条件均值最小均方（LMS）估计。给定 $X = x$，对任意估计 $\widehat{\theta}$，我们有
-
-```math
-E\big[(\widehat{\theta}-\Theta)^2\mid X = x\big]
-= \int \big(\widehat{\theta}-\theta\big)^2\, f_{\Theta\mid X}(\theta\mid x)\, d\theta.
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上述一般平方误差分解式被 OCR 打散成单词级碎片（如 `iJ`、`8'"`、`fJ l log xl`、`d8`/`dO` 等，其中 `8` 为 $\theta$ 之误读、`iJ` 为估计 $\widehat{\theta}$ 之误读），仅「给定 $X=x$、对任意估计」与积分符号、$f_{\Theta\mid X}$ 的轮廓可辨；上方按 §8.3 平方误差准则的标准写法（$E[(\widehat{\theta}-\Theta)^2\mid X=x]=\int(\widehat{\theta}-\theta)^2 f_{\Theta\mid X}(\theta\mid x)d\theta$）忠实重建，未臆造数值。</span>
-
-对于本模型的参数（$\Theta$ 均匀于 $[0,1]$ 的先验、$X\mid\Theta=\theta$ 均匀于 $[0,\theta]$），给定 $X=x$ 时的后验密度为 $f_{\Theta\mid X}(\theta\mid x) = 1/(\theta(-\log x))$（在 $x \le \theta \le 1$ 上）；据此，条件均值 LMS 估计 $E[\Theta\mid X=x]$ 等于
-
-```math
-E[\Theta \mid X = x] \;=\; \frac{1-x}{-\log x}.
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 条件均值 LMS 估计式 $E[\Theta\mid X=x]=(1-x)/(-\log x)$ 在源 OCR 中被拆成碎片（如 `3`、`x`、`I - x`、`log x`、分母处的分数线片段等），式中仅 `1-x` 与 `log x` 两项之字样可辨；其形态与上一页（书页 p432）建立的「$X\mid\Theta$ 均匀于 $[0,\theta]$」模型之后验 $1/(\theta(-\log x))$ 完全自洽，故上方按其真实语义还原为 $(1-x)/(-\log x)$，未虚构任何系数。</span>
-
-这一条件均值 LMS 估计是观测值 $x$ 的函数，如图 <span style="color:#7f8c8d;">Figure 8.9</span> 所示（该图即引证本 Example 8.11）。注意：某些特定的观测取值比其他取值更具信息量——例如，当观测值 $x$ 落在接近可信区间的两端时，我们对 $\theta$ 的取值会格外确定，此时条件均值估计曲线会与真实值贴得更近。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> `条件均值最小均方（LMS）估计 = 后验期望`，这句话读起来像废话，实则是把"最优估计"烙在一张不可动摇的牌上。第一性原理：对每个 $x$，固定点准则要求最小化 $E[(\hat\theta-\Theta)^2\mid X=x]$，而它是 $\hat\theta$ 的下凸二次、顶点恰在后验均值 $E[\Theta\mid X=x]$——于是"逐点取后验均值"就是全局最小均方的唯一规律，不依赖密度是否光滑或是否共轭。命名模板：conditional mean（条件期望/条件均值）指"在断定为这一 $x$ 后对 $\Theta$ 的均值"，与无条件均值 $E[\Theta]$ 相对。跨课程（决策理论 / 优化）：二次损失的最优解必是条件均值，恰与"expectation minimizes L2 loss"这一最基础的定理一致；它也是回归拟合里"均值函数=最优预测"的理论根源。反例：最小均方最优不等同于"最可能"——当后验双峰时，条件均值落在两峰间的谷底，既不最可能也不居中，此时"最有代表"的说法须让位给后验众数或区间；"最优"二字总是相对损失函数而言，换损失就换解。
-
-> <span style="color:#7f8c8d;">图注（Figure 8.9）：Example 8.11 的条件均值最小均方（LMS）估计 $E[\Theta\mid X=x]$，作为 $X$ 的观测值 $x$ 的函数绘出。注意观测的某些取值会比其他取值更具信息量。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] Figure 8.9 图注中「某些观测值更具信息量」之后的说明句在源 OCR 中仅余碎片（如 `t h e c on d it io n a l mean … as a fun ction`、`if X = 3 , … we are certain t h at 9 = 4 ,` 等，其中 `9` 为 $\theta$ 之误读），且 `if X = 3 … θ = 4` 这一数字片段与教科书正文在本模型的合法取值域上无法对齐（疑为 OCR 串行误读），其确切措辞无法逐字复原，未经核验的数值不予采信；上方仅以「当观测值落在可信区间两端时对 $\theta$ 更确定」作保守转写，未臆造原文数值。</span>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.12（MAP 与 LMS 估计的条件均方误差对比，Conditional Mean Squared Errors of the MAP and LMS Estimates。）**</span>
-
-接下来计算两估计量各自的条件均方误差。对最大后验（MAP）估计 $\hat{\theta}_{MAP} = x$，其条件均方误差为 $E[(x-\Theta)^2\mid X=x]$；利用平方误差对估计的二次表达式，它比条件均值 LMS 估计的条件均方误差（即后验方差 $\mathrm{Var}(\Theta\mid X=x)$）要来得大：
-
-```math
-E\big[(\hat{\theta}_{MAP}-\Theta)^2\mid X=x\big]
-= \Big(x - \frac{1-x}{-\log x}\Big)^{2} + \mathrm{Var}(\Theta\mid X=x).
-```
-
-而条件均值 LMS 估计无条件使该量达到最小，其条件均方误差恰为后验方差
-
-```math
-E\big[(E[\Theta\mid X=x]-\Theta)^2\mid X=x\big]
-= \mathrm{Var}(\Theta\mid X=x)
-= \frac{1-x^{2}}{2(-\log x)} - \Big(\frac{1-x}{-\log x}\Big)^{2}.
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 对任意点估计 $\hat\theta$ 成立的恒等式 $E[(\hat\theta-\Theta)^2\mid X]=(\hat\theta-E[\Theta\mid X])^2+\mathrm{Var}(\Theta\mid X)$，是把"估计质量"切成两块的万能手术刀。第一性原理：均方误差的交叉项在取期望后恰好消掉，剩下的两块分别是"（估计的后验期望）偏多远"与"后验自身有多散"——前者叫 bias 方（系统性偏移）、后者叫 variance（不可约噪声），最优 LMS 恰使偏差项为零、把均方压到后验方差。命名模板：把恒等式记作 variance + bias²，是在提醒"误差最大的敌人可以不是噪声而是偏差"。跨课程（机器学习 / 统计学习，18.065）：这正是全教科书都引的 bias–variance tradeoff——模型越复杂（更多自由度）方差越大、复杂度过低则偏差大；选择是在两者间找最小均方的平衡点。反例：均值（LMS）虽然在平方损失下最优，却在后验双峰时既不落峰也不居中，所谓"无偏最优"是按二次损失说的；换绝对损失就要换成后验中位数——同一后验、不同恒等式下的"最优"可以背道而驰。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 这一段「MAP 的条件均方误差大于 LMS 的条件均方误差」的推导在源 OCR 中被高度打散（仅余 `HAP`/`MAP`、`the M A P est i m at e , 9 = x`、`2 log x`、`1 - x`、`( )2`、`mean`、`error is` 等单词级碎片，其中 `8` 为 $\theta$ 之误读、$x$ 处开关不确定），二次展开与后验方差表达式系按一般恒等式 $E[(\hat{\theta}-\Theta)^2\mid X=x]=(\hat{\theta}-E[\Theta\mid X=x])^2+\mathrm{Var}(\Theta\mid X=x)$ 结合上述已确立的 $E[\Theta\mid X=x]=(1-x)/(-\log x)$ 重建；除 $x$、$\Theta$ 与上一式已核验的 $(1-x)/(-\log x)$、$1/(\theta(-\log x))$ 外，未引入原文未出现的任何具体数值。</span>
-
-这两个估计量的条件均方误差都在图 <span style="color:#7f8c8d;">Figure 8.10</span> 中作为观测值 $x$ 的函数绘出。可以看出，无论 $x$ 取何值，LMS 估计都给出更小的均方误差（conditional mean squared error）。这正是最小均方（LMS）准则一般最优性（general optimality）的一个体现。
-
-> <span style="color:#7f8c8d;">图注（Figure 8.10）：最大后验（MAP）估计与条件均值最小均方（LMS）估计二者的条件均方误差（conditional mean squared error），作为观测值 $x$ 的函数绘出；无论 $x$ 取值如何，LMS 估计均具有更小的均方误差。</span>
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页末两段（两条件均方误差曲线的比较与「LMS 估计无 ≤ MAP 的条件均方误差、为 LMS 一般最优性的体现」的结论）在源 OCR 中仅余零散字样（`two are conditional mean errors of`, `as functions of x`, `it can be seen that the LMS estimator`, `smaller mean squared error`, `a manifestation of the general optimality`），正文主体与 Figure 8.10 的具体曲线数值缺失；上文据此忠实衔接还原，未补充原文未含的任何数值。Figure 8.10 由图序（Figure 8.9 ↔ Example 8.11）与下一面（书页 p434）已译的 Figure 8.10 图注锚定，属 Example 8.12 关联图，见衔接下一面注释。</span>
-
-> <span style="color:#7f8c8d;">衔接下一面（PDF p442）：下一页页首续排本页 Figure 8.10 的图注（MAP 与 LMS 估计及其条件均方误差，作为 $x$ 的函数，属 Example 8.12），随后另起新例 Example 8.13；本页对 Example 8.11 与 Example 8.12 的均方误差对比在此收束。</span>
-<!-- ===== PDF p442 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页，继续 §8.3 的论述。页首为 **Figure 8.10**（该图引证 **Example 8.12**）的图注，随后本页另起 **Example 8.13**（例题编号在 §8.3 内保持连续）。</span>
-
-> <span style="color:#7f8c8d;">图注（Figure 8.10）：Example 8.12 中，作为观测值 $x$ 的函数绘出的最大后验（MAP）估计与最小均方（LMS）估计，以及它们各自的条件均方误差（conditional mean squared error）。</span>
-
----
-<br>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.13**</span>
-
-我们考虑 Example 8.8 中的模型：在一次有偏硬币（biased coin）的 $n$ 次独立投掷中，我们观测到正面朝上的次数 $X$。我们假设 $\theta$（正面朝上的概率）的先验分布（prior distribution）在 $[0, 1]$ 上均匀（uniform）。在那个例子中我们看到，当 $X = k$ 时，后验密度（posterior density）是参数 $\alpha = k + 1$、$\beta = n - k + 1$ 的 Beta（beta）分布，且最大后验（MAP）估计等于 $k/n$。利用 Beta 密度矩（moments）的公式（参看 Example 8.4），我们有
-
-```math
-E[\Theta^m \mid X = k] = \frac{(k + 1)(k + 2)\cdots(k + m)}{(n + 2)(n + 3)\cdots(n + m + 1)},
-```
-
-特别地，最小均方（LMS）估计为
-
-```math
-E[\Theta \mid X = k] = \frac{k + 1}{n + 2}.
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 抛硬币模型在 §8.1、8.2、8.3 被轮番重访，是因为它是四把"估计之尺"的最小公用模型。第一性原理：先验均匀等价于各一枚伪计数，故 $E[\Theta\mid X=k]=\frac{k+1}{n+2}$ 恰是"经验成功比" $k/n$ 被 $n+2$ 的总频次压向 $1/2$ 的加一修正——同一数据在不同损失/先验下得出 MAP=$k/n$ 与 LMS=$(k+1)/(n+2)$ 两个看似相近却不同的值。命名模板：把加一读出 Pseudo-Count（伪计数）与 Laplace's rule of succession（拉普拉斯后继率），是做贝叶斯平滑的同源手法。跨课程（概率论 / 组合计数）：$\frac{k+1}{n+2}$ 还能由"对称先验 + Beta 期望"推到，其极限 $\frac{k+1}{n+2}\to k/n$ 又给出相合性（consistency）；而 §8.4 将证明线性 LMS 在贝塔模型里恰等于非受限 LMS——因为该后验均值恰好是观测的线性函数。反例：不要以为"加一修正看似无害"——若真实硬币极偏（$p=0.05$）且 $n$ 很小，$+1$ 修正会把估计死死拽向 $0.5$，此时先验的"均匀＝等可能"假设对先验不明的小样本反而最有害；先验只该反映真实知识，而非凭空的对称。
-
-给定 $X = k$ 时，对任意估计 $\hat{\Theta}$，其条件均方误差（conditional mean squared error）为
-
-```math
-E\big[(\hat{\Theta} - \Theta)^2 \mid X = k\big]
-= \hat{\theta}^2 - 2\hat{\theta}\,E[\Theta \mid X = k] + E[\Theta^2 \mid X = k]
-= \hat{\theta}^2 - 2\hat{\theta}\,\frac{k + 1}{n + 2} + \frac{(k + 1)(k + 2)}{(n + 2)(n + 3)}.
-```
-
-其中 $\hat{\theta}$ 为估计 $\hat{\Theta}$ 的一个取值。最大后验（MAP）估计的条件均方误差为
-
-```math
-E\big[(\hat{\Theta}_{MAP} - \Theta)^2 \mid X = k\big]
-= E\Big[\Big(\frac{k}{n} - \Theta\Big)^2 \;\Big|\; X = k\Big]
-= \Big(\frac{k}{n}\Big)^2 - 2\,\frac{k}{n}\,\frac{k + 1}{n + 2} + \frac{(k + 1)(k + 2)}{(n + 2)(n + 3)}.
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页顶部的 Figure 8.10 为折线/散点绘图（坐标轴标签为 $x$ 与 Mean Squared Error（均方误差），横、纵坐标均自 $0.1$ 到 $0.9$，含 MAP 与 LMS 两条估计曲线，图内另有一些 OCR 残缺的数值标度），图中各曲线具体数值与标注在源 OCR 中残损，无法逐字还原；图文的忠实文本即上方图注。正文中参数记号经 OCR 呈「8」（应为 $\theta$）、「O」「S」（应为 $\theta$ 及其估计 $\hat{\Theta}$）等碎片，已按 §8.3 原书 Beta 后验模型的最小均方（LMS）框架与前后式的连贯语义还原为规范 LaTeX，未臆造原文未含的任何数值。</span>
-<!-- ===== PDF p443 ===== -->
-
-<span style="color:#7f8c8d;">§8.3 贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）中部续页。本页开头承接上一页 Example 8.13（$n$ 次投币、Beta 先验下 LMS 估计的条件均方误差）的收尾部分（故标题带「（续）」），随后本页另起一个小节「估计误差的若干性质」。</span>
-
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.13（续）**</span>
-
-LMS 估计的条件均方误差（conditional mean squared error）为
-
-```math
-E\left[(\Theta - \hat\theta)^2 \;\middle|\; X = k\right]
-= E\bigl[\Theta^2 \mid X = k\bigr] - \left(E\bigl[\Theta \mid X = k\bigr]\right)^2
-= \frac{(k+1)(k+2)}{(n+2)(n+3)} - \left(\frac{k+1}{n+2}\right)^2 .
-```
-
-其结果已在 $n=15$ 次投掷的情形下绘制于图 8.11。注意，与前一个例子一样，LMS 估计具有一致更小的条件均方误差（conditional mean squared error）。
-
-> <span style="color:#00838f;">**[图] Figure 8.11**</span>：在 $n=15$ 次投掷中，MAP 与 LMS 估计，以及相应的条件均方误差，作为观测到的正面朝上次数 $k$ 的函数的图形（参见 Example 8.13）。
+> ```math
+> F_{Y_k}(y) = P(Y_k \le y) = \sum_{n = k}^{\infty} P(n, y) = 1 - \sum_{n = 0}^{k-1} P(n, y) = 1 - \sum_{n = 0}^{k-1} \frac{(\lambda y)^n}{n!}\, e^{-\lambda y}.
+> ```
 >
-> <span style="color:#7f8c8d;">（上图为两张子图：左图「Estimate 估计值」纵轴 $0.8, 0.6, 0.4, 0.2, 0$，横轴 $k = 0, 5, 10, 15$，其中 MAP 估计为实线、LMS 估计为虚线；右图「Mean Squared Errors 均方误差」纵轴 $0.015, 0.01, 0.005, 0$，同样以 $k$ 为横轴。）</span>
+> $Y_k$ 的 PDF 可对这一表达式求导得到，直接计算即得 Erlang PDF 公式 $f_{Y_k}(y) = \dfrac{\lambda^k y^{k-1} e^{-\lambda y}}{(k-1)!}$。</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.12（拨打国税局热线）**</span>
+
+你拨打国税局（IRS，Internal Revenue Service）热线，被告知你是排队中的第 56 位，不包括正在被服务的那个人的位次。来电者按照参数为 $\lambda = 2$ 次每分的泊松过程相继离去。平均而言，你要等多长时间服务才开始？你不得不等待超过 30 分钟的概率又是多少？
+
+根据无记忆性（memorylessness property），正在被服务的那个人剩余的剩余服务时间服从参数为 $2$ 的指数分布。排在你前面的 55 个人的服务时间也服从同样的参数，
+
+> <span style="color:#7f8c8d;">本页 Example 6.12 自 §6.2 正文处开始，其解答延续到下一页；脚注 $t$ 中末行 Erlang PDF 公式的右端（书页另起一行排版）在本页省略，按上方正文已给出的相同公式并入。</span>
+
+<!-- ===== PDF p327 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）—— §6.2（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：本页续接第 6 章 §6.2 泊松过程（Poisson process）正文。页首续完上一页已开讲的 **Example 6.12**（IRS 求助热线等待时间），随后进入本节新的子节「泊松过程的分裂与合并（Splitting and Merging of Poisson Processes）」，并以 **Example 6.13（泊松过程的分裂，Splitting of Poisson Processes）** 作演示；该例自本页末尾起笔，延续到下一页。（页眉标示正文页码为 318。）</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.12（续）—— IRS 求助热线的等待时间**</span>
+
+> <span style="color:#7f8c8d;">续上一页：你拨打 IRS 求助热线，得知你是队中第 56 位（不含当前正被服务者）。来电离去服从速率 $\lambda = 2$ 次/分钟的泊松过程。需要求出到开始接受服务为止的平均等待时间，以及等待超过 30 分钟的概率。由无记忆性（memoryless），当前正被服务者的剩余服务时间服从参数为 2 的指数分布；你前面 55 人的服务时间也服从同一参数的指数分布。</span>
+
+于是所有这些随机变量相互独立。因此，以分钟计的你等待时间 $Y$，是一个阶数为 $56$、参数 $\lambda = 2$ 的埃尔朗（Erlang）随机变量，其期望为
+
+```math
+E[Y] = \frac{56}{\lambda} = \frac{56}{2} = 28 .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 「阶数为 $56$」的「$56$」与下文 $E[Y] = \dfrac{56}{\lambda} = \dfrac{56}{2} = 28$ 在源 OCR 中仅残留「…is Erlang of order」「E[Y]」「56, 56/λ」「28」等碎片。此处依据上一页（Example 6.12 已给出 $\lambda=2$ 与「队中第 56 位」）以及本页被积式中 $\lambda^{56}/55!$ 的埃尔朗结构重建，数值与记号一律未改动，未作臆造。</span>
+
+你必须等待超过 30 分钟的概率由下式给出：
+
+```math
+P(Y \ge 30) = \int_{30}^{\infty} \frac{\lambda^{56}}{55!} \, y^{55}\, e^{-\lambda y} \, dy .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 该式的下界「30」与被积式 $\dfrac{\lambda^{56}}{55!}\, y^{55} e^{-\lambda y}$ 在源 OCR 中按孤立行「1 / 00 Y55 / 30 / A 56 55 − A y / dy」碎裂，「1」即积分号、「00」即 $\infty$，此处按埃尔朗阶数 56 的标准 PDF 重建；若需最严格原文请回查原书页 318。</span>
+
+计算这一概率颇为繁琐（quite tedious）。另一方面，由于 $Y$ 是大量独立同分布随机变量之和，我们可以借助中心极限定理（central limit theorem）与正态分布表（normal tables）来作近似。
+
+<span style="color:#c0392b;">**泊松过程的分裂与合并（Splitting and Merging of Poisson Processes）**</span>
+
+与伯努利过程的情况类似，我们可以从一个速率为 $\lambda$ 的泊松过程出发并对其作分裂（split），具体方式如下：每一起到达（arrival）以概率 $p$ 被保留下来，以概率 $1-p$ 被丢弃，而且与其他到达所发生的情况相互独立。在伯努利的情形下我们已经看到，分裂的结果仍是一个伯努利过程。在当前语境下，分裂的结果是一个速率为 $\lambda p$ 的泊松过程。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「splitting（分裂）之后仍然是泊松过程」不是一句可以点头过去的话，它要按泊松过程的 defining properties（定义性质）逐条核对：time homogeneity（时间齐次性）、independence（独立性）、以及sparsity（稀疏性），即一次到达的概率为 $\lambda\delta+o(\delta)$、两次及以上为 $o(\delta)$。三条里任何一条掉了，结论就塌，所以这个注的全部工作是把三条分别兑现，而不是复述「因为泊松所以泊松」。
+>
+> 先看许可证。分裂的操作是给每一次到达独立地抛一枚偏置硬币：以概率 $p$ 保留，以概率 $1-p$ 丢弃。这枚硬币的每一次投掷都必须与过程本身无关，也与别的投掷无关。有了这一点，时间齐次性自动继承——硬币不认时间，把时间平移一段，保留事件的统计结构不跟着变。独立性也自动继承——原来在两个不相交区间里发生的事件本来就独立，再各自乘上互不相干的硬币序列，独立性只会被加强而不会被削弱，因为乘上独立因子是把联合分布乘开、不是把它搅混。
+>
+> 关键是第三条。在长度 $\delta$ 的小区间里，「恰好保留一次」意味着「有一次原始到达」并且「这一枚硬币正面朝上」。两个事件独立，概率相乘，得到 $\lambda\delta\cdot p+o(\delta)$，这就是新的 rate（速率）$\lambda p$ 的来源：保留一次的概率不是凭空冒出来的常数，而是原速率乘上保留概率。再看「两次及以上」：要保留两次，先得有两次原始到达，这个概率已经是 $o(\delta)$，再乘上 $p^2$ 只会更小。于是稀疏性平方级地保住了，泊松过程的三条同时成立，速率正好是 $\lambda p$。
+>
+> 光对齐均值是不够的，得看二阶矩。取 $\lambda=3$ 次每分钟、$p=0.1$，则保留流的速率为 $0.3$ 次每分钟。$10$ 分钟内原始到达数 $N\sim\mathrm{Pois}(30)$，保留数记为 $M$；给定 $N$ 时 $M\sim\mathrm{Bin}(N,0.1)$。用 law of total expectation（全期望公式）得 $E[M]=30\times0.1=3$，用 law of total variance（全方差公式）得 $\mathrm{var}(M)=E[N]p(1-p)+\mathrm{var}(N)p^{2}=30\times0.09+30\times0.01=3$。均值与方差都等于 $3$，与 $\mathrm{Pois}(3)$ 完全吻合；这条核对很重要，因为只对齐均值时很多「错的」模型也能通过，方差相等才是泊松分布的指纹。顺带得到可用的数：$10$ 分钟内一次保留都没有的概率是 $e^{-3}\approx0.0498$，所以「至少保留一次」约 $0.950$。
+>
+> 反过来问一句「为什么非要独立」：如果硬币之间正相关——例如「上一次保留了，这一次就更可能保留」，那么保留事件会 burst（突发），在一个小区间里同时保留两次的概率不再与 $\delta^{2}$ 同阶，稀疏性第三款当场失效，得到的流也就不再是泊松流。这正是排队与网络里「突发流量」不是泊松建模对象的原因：突发意味着到达之间存在正相关，泊松假设的前提被破坏，用它算出来的队列长度会系统性偏乐观。
+>
+> 更反直觉的部分在下一页：分裂出来的两个流彼此独立，而且「类别序列」（本地分组还是中转分组）与「到达时刻」也相互独立。这条性质是泊松特有的 marking independence（标记独立性），伯努利过程里也有对应物，但 renewal process（一般更新过程）没有——那里标记会影响后续间隔。在 CS144 里你能看到它的工程镜像：网卡按哈希把每个分组独立地分配到某个 receive side scaling（接收侧分流），各队列的到达近似泊松、速率是该哈希桶的概率乘总线速率；但真实流量非平稳，所以这只能是近似，不是定理。
+>
+> 最后接一条方法论。伯努利过程可以看成泊松过程取 $\delta\to0$ 的极限，而分裂在两边都封闭：先在离散时钟上分裂、再取极限，与先取极限、再在连续时间上分裂，得到同一个结果。这次交换之所以合法，靠的是标记序列的i.i.d.（独立同分布）与概率的连续性；一般情形下交换极限与积分需要实分析里 dominated convergence（控制收敛）或 monotone convergence（单调收敛）那类条件，不能默认。旧注把最后这句挂到 6.042J 的「只需在生成族上验证 $P(A\cap B)=P(A)P(B)$」判据上，这个归属要更正：那是测度论里的 $\pi$-系判据，6.042J 不覆盖测度论。它其实只有三句话：一族集合若对有限交封闭，就叫 $\pi$-系，区间族是最典型的例子；两个概率测度只要在这样一个族上取值相同，就在整个 $\sigma$-代数上也相同；于是核对两个随机变量族独立，只需在生成它们的矩形、区间上验证乘积公式，其余事件由并、交、差与取极限自动继承。本注每一句「继承」的许可证正是这一条。
+
+
+换一种方式，我们也可以从两个相互独立的泊松过程出发，其速率分别为 $\lambda_1$ 与 $\lambda_2$，并把它们合并（merge）在一起：只要任一过程中有一起到达，就记一次到达。结果是，合并后的过程也是泊松过程，速率为 $\lambda_1 + \lambda_2$。进一步地，合并后过程中的任意特定到达，来自第一个过程的概率为 $\lambda_1/(\lambda_1+\lambda_2)$，来自第二个过程的概率为 $\lambda_2/(\lambda_1+\lambda_2)$，并且与所有其他到达及其各自来源相互独立。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> merging（合并）的验证与splitting（分裂）不是同一件事：分裂问的是「每一次到达要不要」，合并问的是「一小段时间里有没有人来」。在长度 $\delta$ 的小区间里，「合并流恰好一次到达」等于「流 1 恰一次、流 2 零次」或者「流 1 零次、流 2 恰一次」。这两个事件互斥，理由与 $o(\delta)$ 无关：按定义，第一个事件要求流 2 在这一小段里零次到达，第二个事件要求流 1 零次到达，两者不可能同时成立。至于「两流各来一次」那一支，它给出的是两次到达，落在「恰一次」之外，只贡献二阶小量，所以不进这个求和。既互斥、又覆盖了「恰一次」的全部情形，概率才可以直接相加：$P(1)\approx\lambda_1\delta(1-\lambda_2\delta)+(1-\lambda_1\delta)\lambda_2\delta\approx(\lambda_1+\lambda_2)\delta$。
+>
+> 交叉项为什么能扔，值得说透。展开后丢弃的是 $\lambda_1\lambda_2\delta^{2}$，它相对 $\lambda_1\delta$ 多带一个 $\lambda_2\delta$ 的因子，$\delta\to0$ 时必然归入 $o(\delta)$，这不是「差不多就行」，而正是「速率相加」的微观机制：rate（速率）就是小区间概率的一阶系数，两个流各自贡献一阶项，一阶项相加就得到 $\lambda_1+\lambda_2$。反过来看前提：如果两流不独立而是正相关（一阵拥堵同时触发两个源），那么「一小段里来两次」的概率是 $O(\delta)$ 而不是 $O(\delta^{2})$，一阶系数被污染，合并流不再是泊松——它的方差会超过均值，这种现象叫 over-dispersion（超离散），工程上表现为到达成串而不是均匀散布。
+>
+> 第二个问题是「这一次是谁来的」。给定合并流在小区间里出现一次到达，它来自流 1 的 conditional probability（条件概率）是 $\lambda_1/(\lambda_1+\lambda_2)$，做法就是把两个一阶系数相比，让「谁在这一小段里贡献了这次到达」按强度分账。更强的结论是：来源标签 $L_1,L_2,\ldots$ 相互独立同分布，并且与到达时刻独立，这又是 marking independence（标记独立性）的一次出场。于是合并与分裂构成一对对偶运算：分裂把速率乘上 $p$，合并把速率相加，泊松族对这两种运算都封闭，像线性空间对数乘与加法都封闭一样，这一句对偶是本节全部结论的骨架。
+>
+> 代进具体数字看量级。寄信者按 $\lambda_1=2$ 人每分钟到达，寄包裹者按 $\lambda_2=0.5$ 人每分钟到达，两者独立。合并后速率 $2.5$ 人每分钟，平均间隔 $0.4$ 分钟，即 $24$ 秒。下一位恰好是寄信者的概率是 $2/2.5=0.8$。$10$ 分钟内合并到达数服从 $\mathrm{Pois}(25)$，均值与方差都是 $25$——这里方差能相加全靠两个流独立；若二者相关，方差就不等于均值，泊松假设会给出偏小的队列长度估计。顺便算一个中点：恰好 $20$ 位的概率是 $e^{-25}25^{20}/20!\approx0.0519$，量级约百分之五。更细的一步是把方差拆开核对：$10$ 分钟内寄信数服从 $\mathrm{Pois}(20)$、寄包裹数服从 $\mathrm{Pois}(5)$，两者独立所以方差相加得 $25$，与合并流的 $\mathrm{Pois}(25)$ 一致；若有人只验均值就下结论，这一步会漏掉「相关性会污染方差」这个唯一能出问题的环节。
+>
+> 换到变换域看，为什么「泊松之和还是泊松」是一件必然的事。probability generating function（概率母函数）把合并后的分布写成两个母函数相乘，而泊松的母函数是 $e^{\lambda(z-1)}$ 这种形状，两个相乘恰好等于参数相加：$e^{\lambda_1(z-1)}e^{\lambda_2(z-1)}=e^{(\lambda_1+\lambda_2)(z-1)}$。连续情形用 Laplace transform（拉普拉斯变换）得到同样结论。这与 Strang 18.06 里 circulant matrix（循环矩阵）被 Fourier basis（傅里叶基）对角化是同一件事：变换把卷积变成逐点乘法，于是「分布族的卷积封闭」退化成「参数的加法」。你在第 4 章见过这条路的另一种走法：直接用 transforms（生成函数）算，本节只是把它翻译成过程语言。
+>
+> 最后接一处工程与一处边界。CSAPP 的并发服务器里，多个客户端连接（各自近似泊松）汇入同一个 accept queue（接入队列），服务速率固定，利用率 $\rho=\lambda/\mu$ 决定排队长度，而这里的 $\lambda$ 正是各源速率之和——排队论的门就在这儿。边界在反方向：合并之后你只看得见「有到达」，看不出它来自哪个源，把合并流拆回各自分量叫 deconvolution（反卷积），统计上只能靠标签比例与二阶矩去反推，且需要额外假设；这也解释了为什么分裂（知道标签）容易、合并后还原（丢掉标签）很难。
+
+
+我们将在若干例子的语境中讨论这些性质，与此同时给出确证它们成立的论证。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.13　泊松过程的分裂（Splitting of Poisson Processes）**</span>
+
+到达数据网络某个节点（node）的分组（packet），要么是旨在发往该节点的本地分组（local packet，以概率 $p$ 发生），要么是必须被中继到另一节点的中转分组（transit packet，以概率 $1-p$ 发生）。分组按速率为 $\lambda$ 的泊松过程到达，而且每一个分组是本地分组还是中转分组，与其他分组及到达时刻相互独立。正如上文所述，本地分组到达的过程是速率为 $\lambda p$ 的泊松过程。让我们看看为什么会如此。
+
+我们验证本地分组到达的过程满足泊松过程的各定义性质（defining properties）。由于 $\lambda$ 与 $p$ 均为常数（不随时间变化），第一个性质（时间齐性，time-homogeneity）显然成立。此外，在互不相交的时间区间内所发生的事件之间不存在依赖，从而验证了第二个性质。最后，若我们聚焦于一个长度为 $\delta$ 的小区间，一次本地到达的概率近似等于存在一次分组到达、并且该到达恰为本地分组的概率，即 $\lambda \delta \cdot p$。除此之外，两次或更多次本地到达的概率与 $\delta$ 相比可以忽略，这验证了第三个性质。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 末段「$\lambda \delta \cdot p$」在源 OCR 中记为「A6·p」（$\delta$ 与 $p$ 的位置被吞并），句首「We verify」残作「\Ve verify」，均按泊松过程定义性质的上下文重建；Example 6.13 自本页起笔并延续到下一页。</span>
+
+<!-- ===== PDF p328 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.2 泊松过程（Poisson process）（续）
+
+> <span style="color:#7f8c8d;">承接上一页（书中页码 319，页眉 `Sec. 6.2`，标题 `The Poisson Process`）：上一页以 **Example 6.13（泊松过程的拆分，Splitting）** 结束。本页先收尾该例（按对称论证得出局部与过境分组到达各成泊松过程、且二者相互独立的结论），随后完整给出 **Example 6.14（泊松过程的合并，Merging）**，最后开篇引入 **Example 6.15（竞争指数，Competing Exponentials）**（该例延续到下一页）。</span>
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.13（续）—— 泊松过程的拆分（Splitting of Poisson Processes）**</span>
+
+我们得出的结论是：局部分组（local packet）到达构成一个泊松过程，特别是，在长度为 $T$ 的一个区间内发生的此类到达次数，具有以 $\lambda T$ 为参数的泊松分布（Poisson PMF）。由对称论证（symmetrical argument），过境分组（transit packet）到达的过程也是泊松过程，其速率为 $\lambda(1-p)$。在此背景下略显令人意外的一个事实是：把原泊松过程拆分得到的这两个泊松过程是相互独立的（independent），参见章末习题（end-of-chapter problems）。
 
 ---
 
-<span style="color:#00838f;">**估计误差的若干性质（Some Properties of the Estimation Error）**</span>
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.14　泊松过程的合并（Merging of Poisson Processes）**</span>
 
-我们采用记号
+寄信（letter）的人按速率为 $\lambda_1$ 的泊松过程到达邮局，寄包裹（package）的人则按相互独立的、速率为 $\lambda_2$ 的泊松过程到达。正如前面所说，同时包含两类到达的合并过程（merged process）是速率为 $\lambda_1+\lambda_2$ 的泊松过程。下面我们来弄明白其缘由。
 
-```math
-\hat\theta = E[\Theta \mid X], \qquad \epsilon = \Theta - \hat\theta ,
-```
-
-分别表示 LMS 估计量（estimator）与相应的估计误差（estimation error，估计误差）。随机变量 $\hat\theta$ 与 $\epsilon$ 具有若干有用的性质，这些性质此前已在第 4.3 节推导过，为便于参考，兹复述如下。（请留意记号上的变化：在第 4.3 节中，观测被记为 $Y$，待估计的参数被记为 $X$；而在本章中，它们分别被记为 $X$ 与 $\Theta$。）
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页前段符号行（"Let us use the notation … for the LMS estimator and the associated estimation error"）中的字母在 OCR 里被打散（如 `e = E [9 I Xj`、`S2 I X = k`、随机变量行 `e and e`）。现按原书页 435 的 §8.3 权威表述还原为 $\hat\theta = E[\Theta \mid X]$ 与 $\epsilon = \Theta - \hat\theta$，以及 $E[\Theta^2 \mid X=k]$ 各项，标题行所述随机变量为 $\hat\theta$ 与 $\epsilon$，非臆造数值。</span>
-<!-- ===== PDF p444 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页（书页 436，页眉 `Chap. 8`）承接上一页，继续 §8.3 的论述——先给「估计误差（estimation error）」的三条基本性质，继而给出 §8.3 最后一个例子 **Example 8.14**；页中部进入新小节「The Case of Multiple Observations and Multiple Parameters（多个观测与多个参数的情形）」，按其内容仍属 §8.3 收尾（§8.4 于书页 p437 起正式进入线性 LMS）。</span>
-
-<span style="color:#00838f;">**估计误差的性质（Properties of the Estimation Error）**</span>
-
-设 $\hat\Theta$ 为最小均方（least mean squares, LMS）估计量，估计误差（estimation error）记为 $\tilde\Theta$。
-
-• 估计误差 $\tilde\Theta$ 是无偏（unbiased）的，即它具有零无条件均值与零条件均值：
+首先应当清楚，合并过程满足时间齐次性（time-homogeneity）性质。此外，既然两个到达过程中的不同区间彼此独立，合并过程对同样的性质也成立。现在我们聚焦于一个长度为 $\delta$ 的小区间。忽略相较于 $\delta$ 可忽略不计的项，我们有
 
 ```math
-E[\tilde\Theta \mid X = x] = 0, \qquad \text{对一切 } x,
+P(\text{合并过程中的 0 次到达}) \approx (1 - \lambda_1\delta)(1 - \lambda_2\delta) \approx 1 - (\lambda_1 + \lambda_2)\delta,
 ```
 
 ```math
-E[\tilde\Theta] = 0.
+P(\text{合并过程中的 1 次到达}) \approx \lambda_1\delta(1 - \lambda_2\delta) + (1 - \lambda_1\delta)\lambda_2\delta \approx (\lambda_1 + \lambda_2)\delta,
 ```
 
-• 估计误差 $\tilde\Theta$ 与估计量 $\hat\Theta$ 不相关（uncorrelated）：
+至此第三条性质已得验证。
+
+给定刚刚记录到一次到达，它来自寄信的人的概率是多少？我们再次聚焦于当前时刻附近的一个长度为 $\delta$ 的小区间，所求概率为
 
 ```math
-\operatorname{cov}(\hat\Theta, \tilde\Theta) = 0.
+P(1\text{ 次来自寄信人的到达} \mid 1\text{ 次到达}).
 ```
 
-• $\Theta$ 的方差可分解为
+利用条件概率的定义，并忽略多于一次到达这一可忽略不计的概率，该式即为
 
 ```math
-\operatorname{var}(\Theta) = \operatorname{var}(\hat\Theta) + \operatorname{var}(\tilde\Theta).
+\frac{P(1\text{ 次来自寄信人的到达})}{P(1\text{ 次到达})}
+= \frac{\lambda_1\delta}{(\lambda_1 + \lambda_2)\delta}
+= \frac{\lambda_1}{\lambda_1 + \lambda_2}.
 ```
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 无偏（$E[\tilde\Theta]=0$）、不相关 $(\mathrm{cov}(\hat\Theta,\tilde\Theta)=0)$、方差可加 $(\mathrm{var}(\Theta)=\mathrm{var}(\hat\Theta)+\mathrm{var}(\tilde\Theta))$——这三条合在一起，正是在内积空间里"正交分解"的随机变量版。第一性原理：把 $\hat\Theta$ 与 $\tilde\Theta=\Theta-\hat\Theta$ 视为两个"向量"，"不相关"即内积为零（正交），方差平方可加则恰是勾股定理 $\|\Theta\|^2=\|\hat\Theta\|^2+\|\tilde\Theta\|^2$ 的概率写照；三条性质其实由"最小均方最优性"一步到位推出。命名模板：正交（orthogonal）在这里指"不相关"，是比独立（independent）弱得多却够用的几何条件。跨课程（线性代数 / 18.065）：这意味着条件期望 $E[\Theta\mid X]$ 就是把 $\Theta$ 向「由 $X$ 的可测函数构成的子空间」做正交投影，$E[(\hat\Theta)^2]$ 是投影长度、$E[(\tilde\Theta)^2]$ 是余长——维纳滤波、卡尔曼与岭回归共享同一勾股骨架。反例：方差可加是"不相关"的推论而非"独立"的推论——独立必不相关，反之不然；若只凭 $\hat\Theta$ 与 $\tilde\Theta$ 不相关就断言独立，就滑进了贝叶斯里最常见的误读。
+把这一计算推广开来，令 $L_k$ 表示第 $k$ 次到达是一次寄信人到达这一事件，则我们有
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页顶部三条性质中的记号在 OCR 中被读成 `8`/`e` 的混排（如 `E[e I X = x] = 0`、`coV(8, e)`、`var(8) = var(8) + var(e)`，且 `for all x`、`=`、`0` 各符号被拆散在相邻若干行），无法逐字还原其原书写。上文统一按 §8.3 的标准记号 $\hat\Theta = E[\Theta\mid X]$（估计量）与 $\tilde\Theta = \Theta - \hat\Theta$（估计误差）复原为 $E[\tilde\Theta\mid X=x]=0$、$E[\tilde\Theta]=0$、$\mathrm{cov}(\hat\Theta,\tilde\Theta)=0$、$\mathrm{var}(\Theta)=\mathrm{var}(\hat\Theta)+\mathrm{var}(\tilde\Theta)$；三者与下页 Example 8.14 的推证交叉吻合，非臆造。</span>
+```math
+P(L_k) = \frac{\lambda_1}{\lambda_1 + \lambda_2},\qquad \text{对每个 } k.
+```
 
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.14（无信息观测，Uninformative Observation。）**</span>
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 原文在 "we have"（于是我们有）之后、在 "Furthermore, since distinct arrivals..."（再者，由于不同的到达发生在不同时刻）之前，应有一行给出 $P(L_k)$ 的算式，但 OCR 中该行空缺（仅存空白），此处按 $P(L_k) = \lambda_1/(\lambda_1+\lambda_2)$（对每个 $k$）依据上式的推广自然补全；数值系由上文的 $\lambda_1\delta/((\lambda_1+\lambda_2)\delta)$ 直接得出，未作改动。</span>
 
-我们说观测 $X$ 是无信息（uninformative）的，如果均方估计误差（mean squared estimation error）$E[\tilde\Theta^2]$ 与 $\operatorname{var}(\Theta)$、即 $\Theta$ 的无条件方差相同。何时会出现这种情况呢？
-
-利用公式 $\operatorname{var}(\Theta) = \operatorname{var}(\hat\Theta) + \operatorname{var}(\tilde\Theta)$，我们看出 $X$ 是无信息的当且仅当 $\operatorname{var}(\hat\Theta) = 0$。一个随机变量的方差为零，当且仅当该随机变量是一个常数、等于其均值。由此我们得出结论：$X$ 是无信息的，当且仅当估计量 $\hat\Theta = E[\Theta\mid X]$ 对 $X$ 的每个取值都等于 $E[\Theta]$。
-
-若 $\Theta$ 与 $X$ 独立，则对一切 $x$ 有 $E[\Theta\mid X = x] = E[\Theta]$，从而 $X$ 确为无信息的，这十分直观。然而，其逆命题并不成立：有可能 $E[\Theta\mid X = x]$ 恒等于常数 $E[\Theta]$，而 $\Theta$ 与 $X$ 并不独立。（你能构造出这样的一个例子吗？）
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> Example 8.14 那句"你能构造出这样的例子吗"是抛给读者的钩子，也点破了方差分解 $\mathrm{var}(\Theta)=\mathrm{var}(\hat\Theta)+\mathrm{var}(\tilde\Theta)$ 的信息含义。第一性原理：估计误差 $\tilde\Theta$ 与估计 $\hat\Theta$ 不相关（协方差为零），故总方差被干净地切成"被解释（signal）"与"未解释（noise）"两块；观测 $X$ 提供信息，就是从 $\Theta$ 的方差里成功剥出一块归给 $\hat\Theta$。命名模板：uninformative（无信息）直接以"方差是否被压减"来定义，而非看 $X$ 本身在不在变化。跨课程（信号处理/通信）：这就是信噪比 SNR $=\mathrm{var}(\hat\Theta)/\mathrm{var}(\tilde\Theta)$ 的静态版，本质与维纳滤波的一致最优重构同一主题。反例：$E[\Theta\mid X]$ 恒为常数只说明该函数是平的（均方意义下无信息），绝不意味着统计独立——例如让 $X=\Theta$、再把观测换成 $X^2$，$E[\Theta\mid X^2]$ 仍可能就是常数，可 $\Theta$ 与 $X^2$ 显然相关；独立是远比"无信息"苛刻的条件。
+再者，由于不同的到达（distinct arrivals）发生在不同的时刻，并且对于泊松过程而言，不同时刻的事件是相互独立的，因此可以推知随机变量 $L_1, L_2, \ldots$ 相互独立。
 
 ---
 
-<span style="color:#c0392b;">**§8.3　多个观测与多个参数的情形（The Case of Multiple Observations and Multiple Parameters）（续）**</span>
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.15　竞争指数（Competing Exponentials）**</span>
 
-> <span style="color:#7f8c8d;">小节：本页在 Example 8.14 之后新起小节「The Case of Multiple Observations and Multiple Parameters」，将 LMS 推广到观测为向量的情形；按规范其仍属 §8.3 收尾（§8.4 自书页 p437 起才正式起节），此处标为 §8.3 下的小节。</span>
+两只灯泡（light bulb）具有相互独立且均服从指数分布（exponentially distributed）的寿命 $T_a$ 与 $T_b$，参数分别为 $\lambda_a$ 与 $\lambda_b$。随机变量 $Z = \min\{T_a, T_b\}$、即第一只灯泡烧毁的时刻，其分布是什么？
 
-前面的讨论一直是把 $X$ 当作单个随机变量来表述的。然而，整个论证及其全部结论即便在 $X$ 是随机变量的向量、即 $X = (X_1, \ldots, X_n)$ 时依然成立。因此，均方估计误差在采用 $E[\Theta \mid X_1, \ldots, X_n]$ 作为估计量时达到最小，即
+> <span style="color:#7f8c8d;">本例题（Example 6.15）的解答自下页开始（即下一页继续讲解），本页仅给出题意设定。</span>
 
-```math
-E\big[ \big( \Theta - E[\Theta \mid X_1, \ldots, X_n] \big)^2 \big]
-\;\le\;
-E\big[ \big( \Theta - g(X_1, \ldots, X_n) \big)^2 \big],
-```
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页参数符号 $\lambda_1, \lambda_2$ 与 $\lambda_a, \lambda_b$ 被 OCR 误识为 `>'1`、`>'2`、`>'a`、`>'b`，单个 $\lambda$ 被误识为 `>'`，区间长度 $\delta$ 被误识为 `8`，条件概率竖线 `|` 与数字 `1` 混用为 ``1``，`PDF` 被误识为 `P1,fF`、寿命 $T_b$ 被误识为 `n`；以上均已按上下文还原为标准记号，数值与公式结构未改动。</span>
 
-对所有估计量 $g(X_1, \ldots, X_n)$ 都成立。
+<!-- ===== PDF p329 ===== -->
 
-这为一般性的最小均方（LMS）估计问题提供了一个完整的解，但由于下述原因常常难以实施：
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 合并泊松过程与竞争指数，本章正文（续）
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 页中「..., i.e.,」与「for all estimators $g(X_1, \ldots, X_n)$」之间的不等式公式在 OCR 中整体缺失（原页仅以 `. .` 呈现）；上文按 §8.3 的条件期望最小均方误差的标准性质 $E[(\Theta - E[\Theta\mid X_1,\dots,X_n])^2] \le E[(\Theta - g(X_1,\dots,X_n))^2]$ 复原，未臆造原文未含的任何具体数值。本页并以「由于下述原因难以实施：」的列举句收尾，读者的原因列表承接于下一页（PDF p445）。</span>
-<!-- ===== PDF p445 ===== -->
+> <span style="color:#7f8c8d;">承接上一页：本页继续两个独立泊松过程合并（merging of Poisson processes）与竞争指数（competing exponentials）的讨论。页首先完成「两个独立指数随机变量的最小值仍是指数分布」的 CDF 推导并给出直观说明，再将其推广到 $n$ 个过程的合并；随后在本页中部引入 **Example 6.16（More on Competing Exponentials，竞争指数）。** 页眉仅给出章节总标题（The Bernoulli and Poisson Processes / Chap. 6），未标明小节号。</span>
 
-<span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）**</span>
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.15（续）—— 竞争指数（Competing Exponentials）**</span>
 
-> <span style="color:#7f8c8d;">本节为 §8.3/§8.4 的分界页（书页 p437）。页首承接上一页（PDF p444）§8.3「多观测与多参数的情形（The Case of Multiple Observations and Multiple Parameters）」的论述——即条件期望 $E[\Theta \mid X_1, \ldots, X_n]$ 作为最优估计量难以实现的 (a)、(b) 两原因以及「估计多个参数」的讨论；随后在中部以粗题「8.4 Bayesian Linear Least Mean Squares Estimation」另起新节 §8.4。故本页前段为 §8.3 的续接，后段为新节 §8.4。</span>
-
-<span style="color:#00838f;">**§8.3　贝叶斯最小均方估计（Bayesian Least Mean Squares Estimation）（续）**</span>
-
-原因如下：
-
-(a) 为了计算条件期望（conditional expectation）$E[\Theta \mid X_1, \ldots, X_n]$，我们需要一个完整的概率模型，即联合概率密度函数（joint PDF）$f_{\Theta, X_1, \ldots, X_n}$。
-
-(b) 即使具备这样的联合概率密度函数，$E[\Theta \mid X_1, \ldots, X_n]$ 也可能是 $X_1, \ldots, X_n$ 的一个非常复杂的函数。
-
-因此，实践者往往求助于条件期望的某种近似（approximations），或者把注意力集中在那些并非最优、但实现起来简单而容易的估计量（estimators）上。最常用的方法将在下一节讨论，它把范围限制在『线性估计量（linear estimators）』这一类中。
-
-最后，考虑我们希望估计多个参数（multiple parameters）$\Theta_1, \ldots, \Theta_m$ 的情形。这时很自然地要考虑如下准则
+对一切 $z \ge 0$，记 $Z = \min\{T_a, T_b\}$，我们都有其 CDF 为
 
 ```math
-\sum_{i=1}^{m} E\Big[\big(\hat{\Theta}_i - \Theta_i\big)^2\Big],
+F_Z(z) = P\!\big(\min\{T_a, T_b\} \le z\big)
+= 1 - P\!\big(\min\{T_a, T_b\} > z\big)
+= 1 - P(T_a > z,\; T_b > z)
+= 1 - P(T_a > z)\,P(T_b > z).
 ```
 
-并在所有估计量 $\hat{\Theta}_1, \ldots, \hat{\Theta}_m$ 上将其最小化。但这等价于：对每一个 $i$，都去求一个使 $E\big[(\hat{\Theta}_i - \Theta_i)^2\big]$ 最小的估计量 $\hat{\Theta}_i$；于是我们实质上是在处理 $m$ 个两两解耦（decoupled）的估计问题，每个对应一个未知参数 $\Theta_i$，最后得出 $\hat{\Theta}_i = E[\Theta_i \mid X_1, \ldots, X_n]$（对一切 $i$ 成立）。
+（最后一步用到了 $T_a$ 与 $T_b$ 的独立性。）这正是参数为 $\lambda_a + \lambda_b$ 的指数 CDF（exponential CDF）。于是，参数分别为 $\lambda_a$ 与 $\lambda_b$ 的两个相互独立的指数随机变量的最小值，是参数为 $\lambda_a + \lambda_b$ 的指数随机变量。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 两个独立指数随机变量取小，结果仍是指数、参数相加——这是本节最反直觉的一句：一般函数会把随机变量踢出原来的分布族，取最小值却把它留在族里，只换了参数。为什么偏偏这个结论成立？因为它靠的是 survival function（生存函数），不是分布函数：最小值大于 $z$ 等价于每一个都大于 $z$，这是交集，独立性允许逐项相乘；而"最小值不超过 $z$"是并集，要容斥，一路会脏到底。
+>
+> 推导只有一行：$P(\min>z)=P(T_a>z)P(T_b>z)=e^{-(\lambda_a+\lambda_b)z}$，右端正是参数为和的那个指数的生存函数，于是立刻读出分布。期望用 tail integral（尾积分）$E[\min]=\int_0^{\infty}P(\min>z)dz=1/(\lambda_a+\lambda_b)$；这条对非负随机变量恒成立，交换求和与积分的依据是实分析里的 Tonelli theorem（托内利定理），不需要额外假设。
+>
+> 代数字，并且说清这个数对应什么系统。取 $\lambda_a=1/2$ 每小时、$\lambda_b=1/3$ 每小时，最小值服从率 $5/6$ 的指数，均值 $1.2$ 小时，比单件的 $2$ 小时和 $3$ 小时都短。取最小值对应的是 series（串联）系统，也就是 competing risk（竞争风险）模型：任一部件坏，系统就坏。旧注把它说成并联，方向反了——并联冗余要求全部坏掉系统才坏，寿命是最大值。
+>
+> 第二个问题是谁先响：$P(T_a<T_b)=\lambda_a/(\lambda_a+\lambda_b)=3/5$，率之比就是胜出概率之比，与合并里"这一次是谁来的"是同一个比值。更强的一条是胜者身份与获胜时刻独立：给定 $a$ 先坏，那个时刻仍然是率之和的指数。工程上这套结构叫竞争风险模型，串联系里它就是"哪一件先失效"，而"谁先"这个离散标签与"何时"这个连续量被彻底解耦。
+>
+> 换成 hazard rate（危险率）的语言看，率相加为什么干净：两个独立时钟同时走，单位时间里至少响一个的强度就是各自之和，因为 $\lambda_a\delta+\lambda_b\delta+o(\delta)$。危险率相加对应的正是取最小值，也就是串联。指数分布是唯一危险率恒等于常数的连续分布，所以串联系统仍是指数，同族封闭几乎是定义推出来的——前提说清：任一失败即系统失败。
+>
+> 并联冗余走的是另一条路，值得一并记住，因为它常被与串联搞混。并联系统的寿命是 $\max$，不是 $\min$；两盏同率 $\lambda$ 的灯，生存函数是 $1-(1-e^{-\lambda t})^{2}$，危险率随时间递减——早期有备份，坏一个还剩一个，风险比单件低；后期只剩一个，风险才回到单件的水平。所以并联的收益在均值上，而它的危险率不是常数。
+>
+> 并联要算就一笔写完：两个部件的最大值的期望是 $1/\lambda_a+1/\lambda_b-1/(\lambda_a+\lambda_b)$，代入 $1/2$ 与 $1/3$ 得 $2+3-1.2=3.8$ 小时。同一组参数，串联 $1.2$、并联 $3.8$——这才是冗余的收益，旧注把它写成"代价"，方向正好反了。
+>
+> 再看量级，避免把率相加读成概率相加：$P(\min>1)=e^{-5/6}\approx0.435$，一小时内至少坏一盏的概率约 $0.565$，比单看任一盏的 $0.393$ 与 $0.283$ 都高，但远不到 $1$。
+>
+> 推广：$n$ 个独立指数的最小值服从率 $\lambda_1+\cdots+\lambda_n$ 的指数，这是下一个例子把三盏灯拆成率 $3\lambda$、$2\lambda$、$\lambda$ 三段的全部依据——第 $k$ 个坏掉与第 $k+1$ 个坏掉之间的间隔，正是当时还活着的那些灯的最小值。
+>
+> 边界与接口。族外立刻失效：寿命若服从 Weibull distribution（韦布尔分布）或均匀分布，最小值就掉出同族，只能回到积分与容斥；并联的族外情形更糟，最大值几乎没有封闭性可言。跨课程接两处：6.006 里"多个随机试验谁先成功"就是这套竞争结构，6.042J 里几何分布的最小值仍是几何、率相加，两边共用一句话——最小化对率是加法，对分布形状是保值。
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「多参数的最小均方 = 各参数各自最小均方」读来顺理成章，实则点破了平方准则与范数的优雅耦合。第一性原理：对每个 $\Theta_i$ 单独最小化 $E[(\hat\Theta_i-\Theta_i)^2]$，再看总目标 $\sum_i E[(\hat\Theta_i-\Theta_i)^2]$——因为平方和的每一项只含自己的 $\Theta_i$、不含交叉项，各参数彼此解耦（decoupled），全局最小化退化为 $m$ 个独立的单参数问题。命名模板：decoupled（解耦）指"目标函数是各项之和、无交叉项"；一旦出现交叉项（如 $E[\hat\Theta_1\hat\Theta_2]$），解耦即告破碎。跨课程（线性代数 / 18.05）：这正像二次型 $f(x_1,\dots,x_m)=\sum_i a_ix_i^2$（对角矩阵）的最优在各自坐标处各取极小——把分母换成协方差矩阵的投资组合里，各分量才真正两两耦合；所谓"各参数独立求解"成立的条件，正是目标函数可分离（separable）。反例：解耦依赖"逐分量平方损失"这一准则选择；若改目标为 $\sum_i(\hat\Theta_i-\Theta_i)^2$ 之上加权重或耦合交叉项（如联合协方差惩罚），解耦即失效、必须联合求解——Lasso/ridge 的组稀疏正是在这一步扔掉分量解耦、换取结构信息。
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 多参数准则的公式在 OCR 中丢失：页行「consider the criterion」与「and minimize it」之间是一个空白（源 OCR 该处缺失公式，仅余空行）。此处按书 §8.3 多参数标准 L MS 准则还原为 $\sum_{i=1}^{m} E\big[(\hat{\Theta}_i - \Theta_i)^2\big]$，且与后文「对每个 i 独立最小化 $E[(\hat{\Theta}_i - \Theta_i)^2]$」的叙述恰好一致；所还原内容未含任何原文未出现的数值。</span>
+为对这一事实给出更直观的解释，我们把 $T_a$ 与 $T_b$ 视为两个速率分别为 $\lambda_a$ 与 $\lambda_b$ 的相互独立泊松过程中首次到达的时刻。若把这两个过程合并（merge），首次到达时刻将是 $\min\{T_a, T_b\}$。但我们已知合并后的过程是速率为 $\lambda_a + \lambda_b$ 的泊松过程，于是可推出首次到达时刻 $\min\{T_a, T_b\}$ 是参数为 $\lambda_a + \lambda_b$ 的指数分布。
+
+上述讨论可以推广到两个以上过程的情形。因此，把 $n$ 个到达速率分别为 $\lambda_1, \ldots, \lambda_n$ 的独立泊松过程的到达合并后所得的总到达过程，是到达速率等于和 $\lambda_1 + \cdots + \lambda_n$ 的泊松过程。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.16　更深入的竞争指数（More on Competing Exponentials）。**</span>
+
+三只灯泡的寿命是相互独立的指数随机变量，具有公共参数 $\lambda$。问直到最后一盏灯泡烧坏为止的时间的期望值（expected value）是多少？
+
+我们把每盏灯泡烧坏的时刻视为相互独立泊松过程中的首次到达时刻（first arrival times）。起初共有三只灯泡，合并后的过程速率为 $3\lambda$。因此首次烧坏时间 $T_1$ 服从参数为 $3\lambda$ 的指数分布，均值为 $1/(3\lambda)$。一盏灯泡烧坏之后，由指数分布的无记忆性（memorylessness），另外两只灯泡的剩余寿命又成为参数为 $\lambda$ 的相互独立的指数随机变量。于是我们有两个并行运行的泊松过程，这两个过程中任一过程的首次到达所剩余的等待时间 $T_2$ 现在服从参数为 $2\lambda$ 的指数分布，均值为 $1/(2\lambda)$。最后，当第二盏灯泡烧坏后，就只剩下一盏。再次利用无记忆性，直至最后一盏灯泡烧坏的剩余时间 $T_3$ 服从参数为 $\lambda$ 的指数分布，均值为 $1/\lambda$。因此，总时间的期望值为
+
+```math
+E[T_1 + T_2 + T_3] = \frac{1}{3\lambda} + \frac{1}{2\lambda} + \frac{1}{\lambda}.
+```
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Example 6.16 要的是最后一盏灯烧坏的时刻，也就是三个独立指数随机变量的最大值。直接算会很难看：最大值不超过 $t$ 意味着三个都不超过 $t$，分布函数是立方的 $F(t)^{3}$，密度要按乘积求导裂成三支，期望又要写成积分再分部。chain decomposition（链条式分解）不改问题，只改记账方式：把时间轴按"还亮着的灯数"切成三段，每一段都是当前最小值的等待，于是最大值被写成三个等待之和。
+>
+> 逐段看。起初三盏都亮，第一盏坏的时刻是三个独立指数的最小值，由 competing exponentials（竞争指数）的结论服从参数 $3\lambda$ 的指数，均值 $1/(3\lambda)$。一盏坏掉之后，剩下两盏的剩余寿命靠 memorylessness（无记忆性）重新成为独立同分布、参数 $\lambda$ 的指数，并且与上一段的等待独立——严格理由是：把每盏灯看成各自独立泊松过程的首次到达，不相交区间上的到达互相独立，所以"已经活了多久"不影响"还要活多久"。第二段率 $2\lambda$，第三段率 $\lambda$。
+>
+> 代数字落地。取 $\lambda=1/1000$ 每小时，单灯平均寿命 $1000$ 小时，则期望 $=(1/3+1/2+1)\times1000=1833$ 小时，约 $76$ 天；方差 $=(1/9+1/4+1)\times10^{6}=49/36\times10^{6}$，标准差约 $1167$ 小时；变异系数是 $7/11\approx0.636$，比单个指数的 $1$ 小得多——三个独立分量相加时均值与方差同时相加，相对波动被压下去，这是"和"的一般行为。
+>
+> 这里有一个必须澄清的坑：三段相加不是三只灯各自的寿命相加。三只灯寿命之和的期望是 $3/\lambda=3000$ 小时，而最大值的期望只有 $1833$ 小时，且恒有 $\max\le\sum$。误读的根源在第二段：它的期望 $1/(2\lambda)$ 比单灯寿命 $1/\lambda$ 小一半，因为等到第一盏坏掉时，活着的那两盏已经不是刚出厂的两盏，剩余寿命被无记忆性重置了。
+>
+> 换一条完全不同的路验算一遍。最大值不超过 $t$ 的概率是 $(1-e^{-\lambda t})^{3}$，于是期望等于 $\int_0^{\infty}[1-(1-e^{-\lambda t})^{3}]dt$；把被积式展开成 $3e^{-\lambda t}-3e^{-2\lambda t}+e^{-3\lambda t}$，逐项积分得 $(18-9+2)/(6\lambda)=11/(6\lambda)$，与逐段相加一字不差。这条验算顺带说明链条分解为什么合法：展开式里每一项 $e^{-k\lambda t}$ 的特征率正是 $k\lambda$，对应"还亮 $k$ 盏"那一段；两种写法总和相同，因为按状态分段与按容斥展开本来就是同一件事的两种记账方式。
+>
+> 推广到 $n$ 盏同参数灯：还亮 $k$ 盏时的等待服从率 $k\lambda$ 的指数，于是 $E[\max]=H_n/\lambda$，$H_n$ 是 harmonic number（调和数），$n$ 大时约 $(\ln n+\gamma)/\lambda$；方差是 $\sum_{k=1}^{n}k^{-2}/\lambda^{2}$，$n\to\infty$ 时趋于 $\pi^{2}/(6\lambda^{2})$。取 $n=3$ 代入，$1+1/4+1/9=49/36$，与前面的数对上——调和数与平方倒数和不是背下来的，是一段一段数出来的。
+>
+> 跨课程接一处，但要接得准确。6.042J 的 coupon collector（赠券收集）里同一个调和数出现，离散侧的期望抽取次数是 $nH_n$。常见的错误读法是"每步平均耗时 $1/(n\lambda)$，乘 $nH_n$ 就回到 $H_n/\lambda$"——这样读把逐段变化藏起来了，而且"每步"指代不清：若步指抽取，平均每个抽取间隔是 $1/(n\lambda)$；若步指段，平均每段耗时是 $H_n/(n\lambda)$，取 $n=3$、$\lambda=1$ 得 $0.6111$，而首段 $0.3333$ 只是首段的均值。正确的配对是逐段的：还活 $k$ 盏那一段，连续侧期望 $1/(k\lambda)$；还缺 $k$ 个 coupon 时，离散侧期望 $n/k$ 次抽取；两段相乘 $n/k$ 乘 $1/(n\lambda)$ 恰为 $1/(k\lambda)$，逐项相等，求和得 $H_n/\lambda$ 对 $nH_n/(n\lambda)$。
+>
+> 最后一句方法论。期望那一步只用线性性，CLRS 的附录强调过 $E[X+Y]=E[X]+E[Y]$ 不要求独立，所以光求均值不需要三段独立；方差那一步才需要独立，而独立性是链条分解顺便多给的——无记忆性把联合分布切成了三个独立分量。这种"多证一点、换一个额外结论"的结构，在次序统计量与可靠性分析里会反复出现。
+
+
+注意，随机变量 $T_1, T_2, T_3$ 因无记忆性而相互独立。这也让我们得以计算总时间的方差（variance）：
+
+```math
+\operatorname{var}(T_1 + T_2 + T_3)
+= \operatorname{var}(T_1) + \operatorname{var}(T_2) + \operatorname{var}(T_3)
+= \frac{1}{9\lambda^2} + \frac{1}{4\lambda^2} + \frac{1}{\lambda^2}.
+```
+
+<!-- ===== PDF p330 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes，以及随机变量之和）**</span> — §6.2（续）
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）**</span> <span style="color:#7f8c8d;">（本页续接上一页 §6.2 末尾关于利用伯努利/泊松过程的分裂与合并来阐释随机个数之和性质的讨论；页首无新小节标题，为延续页。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：对伯努利过程与泊松过程进行分裂（splitting）与合并（merging）所获得的认知，可用来为若干涉及随机个数随机变量之和的有趣性质给出简单解释。</span>
+
+由伯努利过程与泊松过程的分裂与合并所获得的这些认知（the insights obtained from splitting and merging of Bernoulli and Poisson processes），可用来为若干涉及随机个数的独立随机变量之和的有趣性质提供简单的解释。那些替代性的证明思路——例如通过操作概率质量函数／概率密度函数（PMFs/PDFs）、求解派生分布问题（derived distribution problems），或借助生成函数（transforms）——往往缺乏直观性。我们把这几条性质汇集在下表中。
+
+<span style="color:#c0392b;">**随机个数随机变量之和的性质（Properties of Sums of a Random Number of Random Variables）**</span>
+
+设 $N, X_1, X_2, \ldots$ 为相互独立的随机变量，其中 $N$ 取非负整数值（nonnegative integer values）。对 $N$ 为正的情形令 $Y = X_1 + \cdots + X_N$，并对 $N = 0$ 令 $Y = 0$。
+
+- 若 $X_i$ 服从参数为 $p$ 的伯努利分布（Bernoulli with parameter $p$），且 $N$ 服从参数为 $m$ 和 $q$ 的二项分布（binomial），则 $Y$ 服从参数为 $m$ 和 $pq$ 的二项分布。
+- 若 $X_i$ 服从参数为 $p$ 的伯努利分布，且 $N$ 服从参数为 $\lambda$ 的泊松分布（Poisson），则 $Y$ 服从参数为 $\lambda p$ 的泊松分布。
+- 若 $X_i$ 服从参数为 $p$ 的几何分布（geometric），且 $N$ 服从参数为 $q$ 的几何分布，则 $Y$ 服从参数为 $pq$ 的几何分布。
+- 若 $X_i$ 服从参数为 $\lambda$ 的指数分布（exponential），且 $N$ 服从参数为 $q$ 的几何分布，则 $Y$ 服从参数为 $\lambda q$ 的指数分布。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这张表的四行看起来是四个巧合，其实共用一套两行就能写完的算术。设 $Y=X_1+\cdots+X_N$，$N$ 与各 $X_i$ 独立，则 $E[Y]=E[N]E[X]$，而 $\mathrm{var}(Y)=E[N]\mathrm{var}(X)+\mathrm{var}(N)(E[X])^{2}$。这两条常合称 Wald 公式，不需要任何分布族假设，只要"先抽 $N$、再抽 $N$ 个独立同分布的 $X$"这个模板成立。所以表里每一行都可以当场核对，而不是背结论。
+>
+> 核对行 1：$X\sim\mathrm{Bernoulli}(p)$、$N\sim\mathrm{Bin}(m,q)$，则 $E[Y]=mqp$，方差为 $mqp(1-p)+mq(1-q)p^{2}=mqp(1-pq)$，与 $\mathrm{Bin}(m,pq)$ 的方差 $m(pq)(1-pq)$ 完全一致。核对行 2：$N\sim\mathrm{Pois}(\lambda)$，则 $E[Y]=\lambda p$、方差 $\lambda p(1-p)+\lambda p^{2}=\lambda p$，均值与方差相等，正是 $\mathrm{Pois}(\lambda p)$ 的指纹。两条核对都是两条独立路线给出同一个数，这种核对比记住结论可靠得多，因为它连错在哪里都能指出来。
+>
+> 但要说清机制：这里的机制有两条根，不是一条。行 1 与行 2 的根是 thinning（稀疏化）：把每次到达以概率 $p$ 独立保留，计数分布留在原族里，靠的是 Bernoulli 的卷积封闭与二项分布的稀有极限。行 3 与行 4 的根才是 memorylessness（无记忆性）：几何分布与指数分布是离散与连续两边的指数律，它们对随机次数的和封闭。
+>
+> 这里必须更正一条旧注。旧注说"无记忆在复合下保值"是表里四个结论的公共根，这句话过宽，等于把一个只对行 3、4 成立的机制推广到全表。反例就在表内：binomial distribution（二项分布）不无记忆。无记忆的定义是对所有 $s,t$ 有 $P(X>s+t\mid X>s)=P(X>t)$，而二项分布的支撑是有限集 $\{0,1,\ldots,m\}$，取 $s+t>m$ 时左端为 $0$、右端为正，立刻破功。所以行 1、2 与无记忆毫无关系；照"四条同根"去记，遇到"泊松与泊松的复合"或"正态与二项的复合"这种表外情形就会无据可依——那里没有无记忆，但 Wald 公式与卷积封闭照样能用。正确的说法是：两条根，外加一个共同工具，即全期望与全方差公式。
+>
+> 想把四行一次算完，用 probability generating function（概率母函数）的复合：$G_Y(z)=G_N(G_X(z))$。以行 3 为例，$G_X(z)=pz/[1-(1-p)z]$、$G_N(z)=qz/[1-(1-q)z]$，代进去化简，分子分母同时约掉 $1-(1-p)z$，得 $pqz/[1-(1-pq)z]$，正是参数 $pq$ 的几何母函数。这条复合公式在 branching process（分支过程）里就是 $G_{n+1}=G_n\circ G$ 的递推，也是复合分布这个名字的出处。
+>
+> 再补一组数字，让行 3、4 也落地。取 $p=0.2$、$q=0.1$：行 3 说 $Y$ 服从参数 $0.02$ 的几何分布，于是 $E[Y]=50$；用 Wald 公式算，$E[N]=10$、$E[X]=5$，乘积 $50$，一致。方差这一边，Wald 给出 $10\times20+90\times25=2450$，而参数 $0.02$ 的几何方差是 $0.98/0.0004=2450$，两边又对上。行 4 取 $\lambda=2$、$q=0.1$：$Y$ 服从参数 $0.2$ 的指数分布，$E[Y]=5$，Wald 给出 $10\times0.5=5$；方差 Wald 给出 $10\times0.25+90\times0.25=25$，指数方差是 $1/0.04=25$，同样相等。两组核对合起来说明：这张表是同一台机器换四种输入，只要模板成立，均值与方差就都被两条公式钉住。
+>
+> 最后提醒一个坑，就在正文末尾关于 Problem 24 的那句说明里。原文写的是：若 $T$ 是一个长度服从参数 $v$ 的指数分布、且与该泊松过程相互独立的区间，则 $N_T+1$ 服从参数 $v/(\lambda+v)$ 的几何分布。注意 $T$ 的身份——它是与过程独立的 $\mathrm{Exp}(v)$ 时长，是区间的长度，不是第 $N_T+1$ 次到达的时刻。旧注把它读成"第 $N_T+1$ 次到达的时刻"，正好把因果读反了：不是先有那个到达再定义 $T$，而是先抽一个随机长度 $T$、再数这段区间里有几次到达。第 $N_T+1$ 次到达在 $T$ 之后，这一点只是结论的副产品。
+>
+> 读对身份之后，"看上去正好是行 4 的应用"这一句也站不住了。行 4 要求 $N$ 与各 $X_i$ 独立；这里 $N_T$ 由 $T$ 决定，$T$ 又是长度，最后一段间隔被 $T$ 截断，两者并不独立。硬套行 4 会得出 $T$ 服从参数 $\lambda v/(\lambda+v)$ 的指数分布，与题设 $T\sim\mathrm{Exp}(v)$ 矛盾（除非 $\lambda=0$），这个矛盾恰好标出依赖性的位置。正确做法是直接把 $T$ 积掉：$P(N_T=k)=\int_0^{\infty}e^{-\lambda t}(\lambda t)^{k}/k!\cdot v e^{-vt}dt=v\lambda^{k}/(\lambda+v)^{k+1}$，关于 $k$ 求和为 $1$，形状就是几何分布。所以行 4 的前件"$N$ 独立于 $X_i$"不是装饰，缺了它结论就假，这条比结论本身更值得记。
+
+
+前两条性质在 Problem 22 中给出证明，第三条性质在 Problem 6 中给出，最后一条性质在 Problem 23 中给出。最后三条性质还曾借助生成函数在第 4 章中证明过（见 Section 4.4 与第 4 章章末的最后一个习题）。还有一条相关的性质在 Problem 24 中给出：若以 $N_t$ 记参数为 $\lambda$ 的泊松过程在长度为 $t$ 的区间内的到达次数，而 $T$ 是一个长度服从参数为 $v$ 的指数分布、且与该泊松过程相互独立的区间，则 $N_T + 1$ 服从参数为 $v/(\lambda + v)$ 的几何分布。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 已修正] 表中 $\lambda$ 与 $v$（原文写作 `A`；`v`）等参数名、以及破折号断字（`pro­cesses`、`parame­ter`）均由本 worker 依语境改正；`PMFsjPDFs` 复原为 「PMFs/PDFs」；第 18 行 `let Y 0 when N O` 复原为「let $Y = 0$ when $N = 0$」。数值一律未臆造。</span>
+
+让我们还注意到相关且颇为深刻的一个事实：大量（未必为泊松的）相互独立的到达过程之和，可以用一个泊松过程来近似，其到达率等于各分到达率之和。各分量过程相对于总量必须具有足够小的比率（这样就不会有哪一分量把自己的概率特征强加于总的到达过程之上），并且它们还必须满足某些技术性（technical）的数学假设。对该事实的进一步讨论超出本书范围，但我们注意到，在相当程度上它正是泊松型过程在实践中大量出现的原因。例如，一座城市中产生的电话业务量（telephone traffic）由大量……
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 本页末尾这句话点到的那条事实，文献里叫 Palm–Khintchine theorem（帕姆—欣钦定理）。它的精确形式值得写清楚，因为条件比结论更容易被记漏：设有 $n$ 个相互独立的stationary point process（平稳点过程）叠加，第 $i$ 个过程的率为 $\lambda_i$，总率 $\lambda=\sum_i\lambda_i$ 固定，并且每个源相对稀疏，即 $\max_i\lambda_i/\lambda\to 0$；则叠加过程weak convergence（弱收敛）到率为 $\lambda$ 的泊松过程。注意「稀疏」不是形容词，它与结论同权：少了它，定理是假的。
+>
+> 稀疏为什么是命门，一算就明白。设各源独立平稳，小区间 $\delta$ 内两次及以上到达的概率约为 $\frac{1}{2}\sum_i\lambda_i^{2}\delta^{2}$，与「恰好一次」的 $\lambda\delta$ 相比，比值是 $\frac{\delta}{2}\cdot\frac{\sum_i\lambda_i^{2}}{\lambda}$。由于 $\sum_i\lambda_i^{2}\le\lambda\max_i\lambda_i$，这个比值不超过 $\delta\max_i\lambda_i/2$；只要 $\delta$ 远小于 $1/\max_i\lambda_i$，二阶项就已经可以忽略——旧注接着说稀疏性不是被假设出来的、是被每个源都很弱这件事在可见尺度上逼出来的，这句其实是同义反复：二阶项可忽略，正是稀疏条件 $\max_i\lambda_i/\lambda\to0$ 在某个具体 $\delta$ 尺度上的展开，不是它的推论。真正推不出来的是另一层：单靠总率固定、各源平稳独立，既得不到 $n\to\infty$，也得不到 $\max_i\lambda_i/\lambda\to0$；这两条必须作为定理的条件写进去。定理的极限是源数趋于无穷而每个源越来越弱，不是多叠几次就自动泊松。再加上独立性给出的无后效，泊松过程的三条定义性质就全齐了。
+>
+> 反面要看清楚，否则会把它用错。定理的极限是「单个源强度趋于 $0$、总强度固定」，不是「源的数量变多」。若不固定总率，而是把 $n$ 个强度相同的源直接叠加（例如 $n$ 台周期固定的设备各自报一次心跳），叠加流的间隔变异系数按 $1/\sqrt{n}$ 下降，过程越来越规律，在局部窗口里更像确定性节拍而不是泊松散布。Cox 与 Smith 在 1953 年把这类「叠加」的另一端也理清了：$n$ 条周期互不可公度的严格周期序列叠加会趋近泊松，而同周期序列叠加只是把同一个节拍乘上 $n$。两端放在一起看，「每个源相对总率足够小」这条限制就是定理的生死线。
+>
+> 与中心极限定理对照，结构一目了然：central limit theorem（中心极限定理）说「大量独立小贡献之和趋于正态」，Palm–Khintchine 说「大量独立稀疏点过程叠加趋于泊松」。两者都需要三件事——独立、单个贡献小、总量有界；中心极限定理管的是和的分布（一维分布函数的弱收敛），Palm–Khintchine 管的是整条点过程的分布，而它的数学语言是局部有限测度空间上的 vague convergence（模糊收敛）。两个定理不在同一个拓扑里，所以后者更强也更难。所以城市电话话务、交通事故、柜台排队之所以普遍呈泊松特征，不是因为每一个源都是泊松的，而是「很多个稀疏源叠加」这个结构本身把泊松逼了出来——这正是 §6.2 里分裂与合并那一套的「无极限版本」。
+>
+> 归属核一遍。Conny Palm（瑞典，1907–1951）1943 年在斯德哥尔摩 KTH 的博士论文 Intensitätsschwankungen im Fernsprechverkehr（电话话务的强度涨落）里给出了这套叠加分析，并引入后来称为 Palm probability（帕姆概率）的工具；Aleksandr Khinchin 在 1955 年的排队论专著里给出更严格的版本。英文维基的 Palm–Khintchine theorem（帕姆—欣钦定理）条目与施普林格出版社的点过程文献都把时间点记作 Palm 1943、Khinchin 1955，与旧注一致。顺带一句：Palm 的概率工具后来长成了整个 point process（点过程）理论的主干，reliability（可靠性）建模与排队网络都建在它上面。
+>
+> 最后给一个能量化的话务例子。某话局 $1000$ 个用户、每人平均每小时呼叫 $1$ 次，总量是每小时 $1000$ 次，约每秒 $0.278$ 次；单个用户的率只占总量千分之一，稀疏条件成立，于是总量可当泊松用。某秒内零次到达的概率是 $e^{-0.278}\approx0.757$，某秒内至少两次的概率约 $1-e^{-0.278}(1+0.278)\approx0.032$。工程上「按泊松算话务」以及呼损公式能用的全部依据，就在这两个数里：它们来自「很多弱源叠加」这个结构，而不是来自某个用户的行为模型。
+
+
+> <span style="color:#7f8c8d;">本页到此为一插入的脚注板块说明，内容延续至下一页；段末「例如，一座城市中产生的电话业务量（telephone traffic）由大量……」句子被页界截断，待下一页续接。</span>
+
+<!-- ===== PDF p331 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.2（续）
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）**</span> <span style="color:#7f8c8d;">（本页页眉仅给出章节总标题「The Bernoulli and Poisson Processes / Chap. 6」，未标明小节号；页首为上一页 §6.2「大量独立到达之和近似泊松」讨论的延续，随后进入本小节新的子节「随机到达悖论（The Random Incidence Paradox）」。书内印刷页码为 322。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：上一页段末说一座城市中产生的电话业务量由大量……（句子被页界截断），本页页首以"…component processes"续接该句，讲各分量过程不必是泊松的，但总量与若干其他随机到达过程均宜用泊松过程建模。</span>
+
+……该电话业务量由大量分量过程（component processes）构成，其中每一个分量过程刻画了个别住户打进或打出的电话。这些分量过程未必是泊松的：例如有些人倾向于成批地打电话，而且（通常）在通话过程中既无法发起、也无法接听第二个电话。不过，总的话务量（telephone traffic）用泊松过程来建模非常合适。基于同样的原因，一座城市中的汽车事故（auto accidents）、商店里的顾客到达（customer arrivals）、放射性物质（radioactive material）的粒子发射等过程，往往也都具有泊松过程的特征。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上文「成批地打电话」处的破损字符（原文 `in batches`）应为分号或连词，此处按语义复原为「而且……在通话过程中既无法发起也法接听」；`city`（应为逗号）与 `Poisson process`（应为句点）各有一处破损符号，均按语境补全，未臆造数值。</span>
+
+<span style="color:#c0392b;">**随机到达悖论（The Random Incidence Paradox）**</span>
+
+泊松过程的到达把时间轴（time axis）分割成一段段的到达间隔（interarrival interval）；每一个到达间隔始于一次到达、止于下一次到达的时刻。我们已经看到，这些到达间隔的长度是参数为 $\lambda$ 的相互独立的指数随机变量（exponential random variable），其中 $\lambda$ 是过程的速率（rate）。更确切地说，对每一个 $k$，第 $k$ 个到达间隔的长度都具有这个指数分布。在本小节中，我们从另一个不同的视角来考察这些到达间隔。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 已修正] 原文将速率参数误识为 `A`（「with parameter A, where A is the rate」），按本章惯例此处统一改为 $\lambda$；下文 $t^*$ 前后的时间端点记号沿用原文 `V`，为避免歧义分别用 $\underline V$ 与 $\overline V$ 区分。</span>
+
+让我们固定一个时刻 $t^*$，并考虑包含 $t^*$ 的那段到达间隔的长度 $L$。作为一个具体的场景，设想一个人在某任意时刻 $t^*$ 来到公交站（bus station），记录下从上一班公交车到达、到下一班公交车到达之间的时间。这个人的到达（the arrival of this person）常被称为「随机到达」（random incidence），但读者应当意识到，这个术语其实是有误导性的：$t^*$ 仅仅是一个特定的时间实例（time instance），而不是一个随机变量。
+
+我们假定 $t^*$ 远大于泊松过程的起始时刻，这样就相当有把握在时间 $t^*$ 之前已经发生过一次到达。为避免纠缠 $t^*$ 到底该多大这一枝节问题，我们干脆假定泊松过程从一开始就一直在运行（running forever），从而可以确定在 $t^*$ 之前必有一次到达，于是 $L$ 是良定义的（well-defined）。有人可能粗略地认为，$L$ 是一个「典型到达间隔」的长度、从而服从指数分布，但事实并非如此。相反，我们将证明 $L$ 具有二阶的埃尔朗 PDF（Erlang PDF of order two）。
+
+这一现象称为随机到达现象或随机到达悖论（random incidence phenomenon or paradox），可以借助图 6.7 加以解释。
+
+> <span style="color:#7f8c8d;">Fig. 6.7</span>
+
+设 $[\underline V, \overline V]$ 为包含 $t^*$ 的那段到达间隔，从而 $L = \overline V - \underline V$。特别地，$\underline V$ 是 $t^*$ 之前首次到达的时刻，$\overline V$ 是 $t^*$ 之后首次到达的时刻。我们把 $L$ 分成两部分，
+
+```math
+L = (t^* - \underline V) + (\overline V - t^*),
+```
+
+其中 $t^* - \underline V$ 是自上一次到达以来已经过去的时间（elapsed time），而 $\overline V - t^*$ 是直到下一次到达还剩余的时间（remaining time）。注意 $t^* - \underline V$ 由过程在 $t^*$ 之前的过去历史（past history）决定，而 $\overline V - t^*$ 由过程在时间 $t^*$ 之后的未来（future）决定。由泊松过程的独立性性质（independence properties），随机变量 $t^* - \underline V$ 与 $\overline V - t^*$ 相互独立。由无记忆性（memorylessness）性质，泊松过程在时刻 $t^*$ 重新开始（starts fresh），因此 $\overline V - t^*$ 是参数为 $\lambda$ 的指数随机变量。随机变量 $t^* - \underline V$ 也服从指数……
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「随机到达悖论」的谜底是 length-biased sampling（长度偏置抽样），但叙述上要先修一处容易犯的错。旧注把它说成「一个人随机落在时间轴的某点」，这与正文的告诫冲突：正文特意指出 $t^*$ 只是一个确定的time instance（时间实例），不是随机变量，把入场叫 random incidence（随机到达）本身就是误导性的命名。正确的说法是：$t^*$ 固定，随机性来自interarrival interval（到达间隔）长度的分布；被抽中的对象是「间隔」而不是「时刻」，而一个长度 $l$ 的间隔被抽中的概率正比于 $l$。这个区分不是抠字眼——若真把 $t^*$ 当随机点，就会以为结论依赖 $t^*$ 的取值，而对任何 $t^*$ 结论都一样，这正是stationarity（平稳性）的含义。
+>
+> 正式论证在正文里已经写全，值得重述一遍以看清每步用了什么。事件 $\{t^*-\underline V>x\}$ 等价于区间 $(t^*-x,\,t^*]$ 内零到达；长度为 $x$ 的区间内到达数服从 $\mathrm{Pois}(\lambda x)$，于是零到达的概率是 $e^{-\lambda x}$，所以 elapsed time（已流逝时间）服从参数 $\lambda$ 的指数分布。remaining time（剩余时间）同一结论来自 memorylessness（无记忆性）。两者的独立性则来自不相交区间上的 independent increments（独立增量）：一个只由 $t^*$ 之前的过去决定，一个只由 $t^*$ 之后的未来决定。于是 $L$ 是两个独立的率 $\lambda$ 指数随机变量之和，即二阶 Erlang distribution（爱尔朗分布），密度 $\lambda^{2}\tau e^{-\lambda\tau}$，均值 $2/\lambda$、方差 $2/\lambda^{2}$。
+>
+> 代数字看偏置有多大。取平均间隔 $10$ 分钟（$\lambda=1/10$ 每分钟）：典型间隔的期望是 $10$ 分钟，被观测间隔的期望是 $20$ 分钟；$P(L>30)=e^{-3}(1+3)=4e^{-3}\approx0.199$，即约两成的随机到达者落在超过 $30$ 分钟的间隔里——而典型间隔超过 $30$ 分钟的概率只有 $e^{-3}\approx0.0498$，两者正好差一个因子 $1+\lambda\tau=4$——这个因子就是长度加权的全部算术：$t^{*}$ 落在长间隔里的机会被放大了这么多倍。再看一句日常错觉：即使你已经等了 $25$ 分钟，剩余等待仍服从率 $1/10$ 的指数、期望还是 $10$ 分钟，等待过程不会「记账」。这就是「公交悖论」的全部内容。
+>
+> 为什么两半都能是指数？因为指数分布是唯一具有无记忆性的连续分布，而泊松过程在任意时刻都「重新开始」，过去与未来对称。所以 $L$ 的均值是 $2/\lambda$ 而不是 $\lambda^{-1}$：不是把典型值翻倍的错误，而是两个独立随机量各贡献一个 $\lambda^{-1}$。这一点也可以从条件分布验证：给定 $t^*-\underline V=x$，$\overline V-t^*$ 的分布仍是率 $\lambda$ 的指数，与 $x$ 无关。
+>
+> 更一般地，这条偏置不依赖泊松。对任意平稳点过程，只要 $E[I^{2}]<\infty$，被观测间隔的期望就是 $E[I^{2}]/E[I]$，正文下一页的 Example 6.17 用 $5$ 与 $55$ 分钟的两点分布验证了这一点（$1525/30\approx50.83$）。泊松只是让结论更强：不仅均值被放大，而且 $L$ 的整个分布是二阶埃尔朗，「两半各自指数」。所以读这一节要分清两件不同强度的事：均值层的偏置普遍成立，分布层的结果是泊松特有的。
+>
+> 最后说两个用法与一个陷阱。用法一：CS144 里统计流长与 round trip time（往返时延）时，若在随机时刻抓包，看到的流长天然按长度加权，统计量会系统性偏大，要报告「典型流长」必须用 arrival sampling（按到达采样）。用法二：智能科学里做数据采样与实验设计，凡是「样本被观测到的概率取决于样本自身性质」的场合都是同一台机器。陷阱一：把已流逝时间的指数性当成普适结论。上面那一步依赖 $\mathrm{Pois}(\lambda x)$，也就是速率恒定；对非齐次的泊松过程（速率 $\lambda(t)$ 随时间变），$e^{-\lambda x}$ 不再成立，已流逝时间也不再是指数分布，只剩一个能量化的近似：$\lambda$ 变化足够慢时，可以按 $t^*$ 处的瞬时速率当成指数。
+
+
+> <span style="color:#7f8c8d;">本页到「随机变量 $t^* - \underline V$ 也服从指数……」一句被页界截断，关于 $t^* - \underline V$ 亦为指数分布及相关推论的论证延续至下一页；原文同样以 OCR 破损符 `` 结尾（"is also exponential"），上下文明确无误。</span>
+
+<!-- ===== PDF p332 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — §6.2（续）
+
+<span style="color:#c0392b;">**§6.2　泊松过程（The Poisson Process）—— 子节「随机到达悖论（The Random Incidence Paradox）」（续）**</span> <span style="color:#7f8c8d;">（Sec. 6.2，原书页码 323；本页续接上一页 §6.2 随机到达悖论子节的推导：先给出「到达间隔长度 $L$ 服从埃尔朗二阶分布」的正式论证，随后是图 6.7 的说明、$L$ 的 PDF/均值/方差，以及用公交站算例演示随机到达偏置的 Example 6.17。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：上一页末已指出 $t^* - V$ 也服从指数分布，并已把含 $t^*$ 的到达间隔分解为 $L = (t^* - V) + (V' - t^*)$，其中 $t^* - V$ 是自上次到达起的流逝时间（elapsed time），$V' - t^*$ 是至下次到达为止的剩余时间（remaining time）。本页给出正式论证并导出 $L$ 的概率规律。</span>
+
+为直观地体会这一点，可以设想把泊松过程在时间上（向前或向后）运行——其到达间隔的统计特性并不因此改变。
+
+> <span style="color:#7f8c8d;">[原页页首 OCR 碎裂] 页首几行（「To realize this, … if we run the … forward or backward, no … moves …」）残缺难辨，仅保留「更正式的论证（a more formal argument）」这一引导语及其后的结论，中间直觉性说明按上下文补全，未作数值臆造。</span>
+
+更正式的论证（a more formal argument）如下：事件 $\{t^* - V > x\}$ 等价于在时间区间 $(t^* - x,\; t^*]$ 内没有发生任何到达；由于任一时间长度为 $x$ 的区间内到达次数服从参数为 $\lambda x$ 的泊松分布，该区间内到达次数恰为 $0$ 的概率为 $e^{-\lambda x}$，于是
+
+```math
+P\big(t^* - V > x\big) = P\big(\text{长度为 }x\text{ 的区间内 }0\text{ 次到达}\big) = e^{-\lambda x},
+```
+
+所以 $t^* - V$ 服从参数为 $\lambda$ 的指数分布（exponential distribution），均值为 $1/\lambda$。类似地，由无记忆性（memorylessness）可知，$V' - t^*$ 也服从参数为 $\lambda$ 的指数分布，均值为 $1/\lambda$。
+
+> <span style="color:#7f8c8d;">图 6.7（Figure 6.7）：随机到达现象（random incidence phenomenon）示意图。对固定的时刻 $t^*$，包含它的到达间隔 $[V, V']$ 由两部分组成：流逝时间 $t^* - V$ 与剩余时间 $V' - t^*$。</span>
+
+这两个随机变量 $t^* - V$ 与 $V' - t^*$（分别由过程在 $t^*$ 之前的过去历史与 $t^*$ 之后的未来决定）相互独立，且各自服从参数为 $\lambda$ 的指数分布。因此 $L$ 是两个相互独立的指数随机变量之和，即服从二阶埃尔朗分布（Erlang distribution of order two），其 PDF 为
+
+```math
+f_L(\tau) = \lambda^2 \tau\, e^{-\lambda \tau}, \qquad \tau \ge 0 ,
+```
+
+均值为 $2/\lambda$，方差为 $2/\lambda^2$。
+
+随机到达（random incidence）这一概率建模（probabilistic modeling）问题的根源在于：在任意时刻（at an arbitrary time）$t^*$ 抽样时，该时刻更可能落入一个较长的到达间隔而非较短的到达间隔——较长的间隔占据时间轴上更长的区段，因此更可能包含 $t^*$。公交站等同类情境中也会出现类似现象：任意时刻到达的旁观者（as seen by an arbitrary arrival）所看到的到达间隔，其期望长度会大于一个「典型」到达间隔的均值 $1/\lambda$。作为这一后果的体现，下面的例子将给出说明。
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 6.17　公交站的随机到达（Random Incidence at a Bus Station）**</span>
+
+一个人在一个「随机」时刻出现在公交站，此处「随机」意指该到达时刻在相邻两班公交之间的时间区间上服从均匀分布（uniformly distributed）。公交车的到达间隔以概率 $1/2$ 为 5 分钟、以概率 $1/2$ 为 55 分钟。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 源 OCR 把该概率误读为「1/12」，并把数值夹杂成「5·2」「55·」等残片、阶数与系数碎裂；此处依「典型平均到达间隔为 30 分钟」以及 $E[I^2]/E[I] = 50.83$ 的结果反推，重建为「以概率 $1/2$ 为 5 分钟、以概率 $1/2$ 为 55 分钟」，数值一律未改动。</span>
+
+一个「典型」到达间隔的期望长度为
+
+```math
+E[I] = \frac{1}{2}\cdot 5 + \frac{1}{2}\cdot 55 = 30 ,
+```
+
+即平均每 30 分钟一班车。然而，由于此人更可能落入较长的到达间隔，他所处那个到达间隔的期望长度应等于 $E[I^{2}] / E[I]$，即
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这个 $E[I^{2}]/E[I]$ 不是背下来的公式，是「按长度加权再归一化」的一步推导。设典型间隔长 $I$ 的分布已知，被观测的那个间隔记为 $I^{*}$；一个长度为 $i$ 的间隔占据时间轴的份额正比于 $i$，所以它被 $t^{*}$ 命中的概率正比于 $i$，于是 $P(I^{*}=i)=iP(I=i)/E[I]$（连续情形把 $P$ 换成密度），这就是 size-biased distribution（长度偏置分布）。权重之和为 $\sum i\,P(I=i)=E[I]$，分母正是归一化因子；于是 $E[I^{*}]=\sum i\cdot iP(I=i)/E[I]=E[I^{2}]/E[I]$。
+>
+> 换个写法，这条公式的结构立刻现形：$E[I^{2}]/E[I]=E[I]+\mathrm{var}(I)/E[I]$。偏置的量恰好等于方差除以均值。于是两句经验话有了出处：间隔长度完全相同（方差为零）时没有偏置；间隔波动越大偏得越狠。前提也要记住：需要平稳性，并且 $E[I^{2}]<\infty$——重尾间隔下（例如方差发散的分布）被观测间隔的期望真的是无穷大，这时「平均等多久」这个问题本身就失效了，不是估计得不准。
+>
+> 代入本题走一遍。典型间隔以各半的概率取 $5$ 分钟与 $55$ 分钟，所以 $E[I]=\frac12\cdot5+\frac12\cdot55=30$，$E[I^{2}]=\frac12\cdot25+\frac12\cdot3025=1525$，比值 $1525/30\approx50.83$。用分解式核对：$\mathrm{var}(I)=1525-900=625$，$625/30\approx20.83$，加上 $30$ 正好 $50.83$，两条路给出同一个数。这一步值得亲手做，因为它把「偏置 ＝ 方差惩罚」变成了可以验算的算术，而不是一句比喻。
+>
+> 再往二阶走一步，看被观测间隔的分布有多集中。时间份额给出 $P(I^{*}=55)=55/60=11/12\approx0.9167$、$P(I^{*}=5)=1/12$，所以随便挑一个时刻，八成多一点的概率落在 $55$ 分钟的间隔里。二阶矩同样由长度加权给出 $E[I^{*2}]=E[I^{3}]/E[I]=\left(\frac12\cdot125+\frac12\cdot166375\right)/30=83250/30=2775$，于是方差 $2775-50.833^{2}\approx191.0$，标准差约 $13.8$ 分钟。注意标准差并不小：虽然多数时候落在 $55$，但偶尔落进 $5$ 分钟的间隔会把均值拽下来，两种情形混合出的波动比「几乎总是 $55$」给人的印象要大。再对照个数份额：典型间隔里有一半是 $5$ 分钟的短间隔，可是随机到达者落在短间隔里的概率只有 $1/12$，约 $0.083$——「一半个数」与「百分之八的时间」这对数字，比任何比喻都更能说明长度加权在做什么。
+>
+> 同一台机器换个变量名就是下一页的公交车载客调查。挑车时每辆车等概率入选，得到的是「平均每辆车多少人」$E[C]$；挑乘客时每名乘客一票，车被选中的概率正比于载客量 $C$，得到的是「平均每位乘客所在的车上有多少人」$E[C^{2}]/E[C]$，必然更大。这不是谁算错了，而是两个 estimand（被估计量）不同：前者是车辆的均值，后者是乘客视角的均值，后者天然偏向大车。判断该用哪个，只需问一句「我要回答的是谁的问题」。
+>
+> 最后接加权方法，并强调一个方向问题。抽样概率不均匀时，survey sampling（抽样调查）里的 Horvitz–Thompson estimator（霍维茨—汤普森估计量）为 1952 年 JASA 47(260):663–685 那篇论文所提出，用 $1/\pi_{i}$ 做权重，使总量估计无偏——它放大稀有小样本以还原总量。长度偏置的校正方向恰好相反：把每个观测乘以 $E[I]/I$，也就是把长的压回去。两个方向相反是因为目标不同：估总量时长间隔贡献大、要保留；估典型分布时每个间隔的投票权应当相同、要压回去。把 importance sampling（重要性采样）的权重直接套到分布估计上，结果仍然是偏的，这是这一节最容易被误用的地方。顺带一句算法侧的镜像：在哈希表里随机命中一个 key（键），它所在 bucket（桶）的大小的期望是 $E[B^{2}]/E[B]$，桶越大越容易被命中——6.006 里分析「随机访问的代价」时会再次遇到这个比值。
+
+
+```math
+\frac{\frac{1}{2}\cdot 5^{2} + \frac{1}{2}\cdot 55^{2}}{30}
+= \frac{12.5 + 1512.5}{30}
+= 50.83 ,
+```
+
+这比 30 分钟的平均到达间隔（average interarrival time）要大得多（considerably larger）。这正是随机到达悖论（random incidence paradox）所引入的长间隔偏向。
+
+> <span style="color:#7f8c8d;">本页于此截止；Example 6.17 以 50.83 与 30 分钟的对比在本页末尾收束。下一页（原书 324）以「正如前一个例子所表明的，随机到达是一种微妙的现象……」（As the preceding example indicates, random incidence is a subtle …,）收尾并引出对公交载客量调查的又一算例，仍属同一小节 §6.2 的续，编号连续、无需另起。</span>
+
+<!-- ===== PDF p333 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+> <span style="color:#7f8c8d;">（本页承接上一页 §6.2 中关于随机到达（random incidence）现象的讨论，先以公交车使用率调查的实例作结，随后页中转入 §6.3 章末小结与讨论。本章打印页码 324。随机到达、等待时间悖论属 §6.2 泊松过程相关正文，§6.3 为本页新启的小节标题。）</span>
+
+正如前一例所示，随机到达（random incidence）是一种隐蔽（subtle）的现象：它倾向于偏向较大的到达间隔（interarrival intervals），并且除了泊松过程（Poisson process）场合之外，还可能在其他场景也显现出来。一般而言，当不同的计算得到相互矛盾的结果时，其原因在于它们对应着不同的概率机制（probabilistic mechanisms）。例如，固定一个非随机的 $k$、并考察与之关联的第 $k$ 个到达间隔的随机取值，与固定一个时刻 $t$、并考察与之关联的、其第 $K$ 个到达间隔恰好含 $t$ 的随机 $K$，这是两个不同的实验（experiment）。
+
+接下来是一个风格与之相近的最后例子。考虑对城镇公交车使用率（utilization）的调研（survey）。一种做法是随机挑选几辆公交车，并计算所选车辆中乘客数的平均值。另一种做法是随机挑选几位公交车乘客（bus riders），观察他们所乘坐的公交车，然后计算后者这组车辆中乘客数的平均值。两种方法各自给出的估计在统计上差别很大，且第二种方法存在向上（upwards）的偏倚。原因在于：用第二种方法时，挑到载客量很大的公交车的可能性，远比挑到近乎空载（near-empty）的公交车要大。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这一段把 random incidence（随机到达）从时间轴搬到了「人群」上，机制一字不改。sample a vehicle（挑车）时每辆车被选中的概率相同，统计量是车辆层面的 average occupancy（平均载客量），数学上就是按车等权求 $E[N]$；sample a rider（挑乘客）时每名乘客被选中的概率相同，而他必定坐在某辆车上，于是载客量大的车被命中的机会正比于它的载客量，统计量变成 weighted by occupancy（按载客量加权）的平均 $E[N^2]/E[N]$。
+>
+> 两者之差不是随机误差，而是可以精确算出的确定量：$E[N^2]/E[N] - E[N] = var(N)/E[N]$。只要载客量存在波动，$var(N) > 0$，按乘客采样就必然 biased upwards（向上偏），偏多少由波动的幅度决定，一分不多一分不少。这个式子是本节所有「悖论」的统一骨架：时间轴上被观测间隔的期望 $E[I^2]/E[I]$ 之所以大于 $E[I]$，无非是把 $N$ 换成了间隔长度 $I$，方差非负而已。
+>
+> 同一个骨架在别的学科里叫别的名字。社会学里它叫 friendship paradox（友谊悖论），由 Scott L. Feld 在 1991 年的论文《Why Your Friends Have More Friends Than You Do》中命名，刊登于 American Journal of Sociology 第 96 卷第 6 期：随机挑一个人，他的朋友的平均朋友数平均而言大于他自己的朋友数。原因与车上情形完全同构 —— 「被挑中」这一步发生在 edge（朋友关系）上而非 node（节点）上，degree（度数）大的节点握着更多关系名额，被命中的概率正比于度数，于是加权后的平均度数等于 $E[D^2]/E[D]$，比 $E[D]$ 多出 $var(D)/E[D]$。排队论里同一现象叫 inspection paradox（检查悖论），Feller 在《An Introduction to Probability Theory and Its Applications》第二卷中以 waiting time paradox（等待时间悖论）之名讨论过。
+>
+> 对建模者而言，后果是可操作的：如果想估计「一辆车平均载多少人」，直接用乘客样本的均值是 biased estimator（有偏估计），必须给每条乘客样本乘上 importance weight（重要性权重）$1/N_i$；这样一来，无论车上有几名乘客，该车贡献的总权重都恰好是 1，等于把按乘客抽样换回了按车抽样。这是 importance sampling（重要性抽样）最朴素的形态，也是 Horvitz-Thompson 估计量的雏形。这类偏差在系统里无处不在：按请求采样测得的平均延迟、按会话采样测得的平均用户活跃度、按论文采样测得的平均被引次数，全都偏向大对象，因为大对象天然占据更多「被采样位」。顺带一提，这类修正并不免费：权重 $1/N_i$ 在样本所属对象很小时会把噪声放大，bias（偏差）与 variance（方差）之间的取舍在这里就已经显形，后面做加权估计时会反复遇到。
+>
+> 因此旧注那句「抽样机制决定统计量」可以升级成一条可执行的判据：看到任何一个「平均」，先问 uniform over what（在哪个集合上均匀），再问被选中概率是否正比于 covariate（某个协变量）；若不是均匀抽取，就必须加权修正，或者把结论老实改写成「按某某加权的平均」。这与 6.042J 反复强调的 sample space（样本空间）必须先精确描述、随机化算法必须说明在哪个集合上均匀随机，是同一条纪律的三种说法。顺带订正一处页码：随机到达现象从 PDF p331 的子节标题起讲，该页即原书 322 页，$E[I^2]/E[I]$ 的算式落在 PDF p332，该页即原书 323 页，旧注笼统写作 p331。
+
+
+<span style="color:#c0392b;">**§6.3　小结与讨论（Summary and Discussion）**</span>
+
+在本章中，我们介绍并分析了两种无记忆（memoryless）到达过程（arrival processes）。伯努利过程（Bernoulli process）在离散时间（discrete time）中演化：在每个离散时间步（step）内，都以常概率 $p$ 发生一次到达。泊松过程（Poisson process）在连续时间（continuous time）中演化：在每个长度为 $\delta > 0$ 的小区间（small interval）内，都以近似等于 $\lambda \delta$ 的概率发生一次到达。在这两种情形中，不相交时间区间内的到达数都假定相互独立。泊松过程可视为伯努利过程的极限情形（limiting case），其中每个离散时间槽（time slot）的时长被取得非常小，即为一个很小的数 $\delta$。这一事实可用于在两个过程的主要性质之间建立类比，并将由其中一个过程获得的见解迁移到另一个过程上。
+
+利用伯努利与泊松过程的无记忆性（memorylessness property），我们推导出下列结论：
+
+- (a) 给定长度的时间区间内到达数的 PMF（probability mass function，概率质量函数）分别为二项分布（binomial）与泊松分布（Poisson）。
+- (b) 相继到达之间的时间分布分别为几何分布（geometric）与指数分布（exponential）。
+- (c) 直到第 $k$ 次到达的时间分布分别服从 $k$ 阶 Pascal 分布（Pascal of order k）与 $k$ 阶 Erlang 分布（Erlang of order k）。
+
+此外，我们还看到，可以取两个相互独立的伯努利过程（相应地，泊松过程）为出发点，并把它们“合并”（merge）成一个新的伯努利过程（相应地，泊松过程）。反之，若对每一次到达都通过抛一枚成功概率为 $p$ 的硬币来“接受”（accept）它，即“分流”（splitting），则被接受的到达所构成的过程，是一个到达率（arrival rate）为原过程 $p$ 倍的伯努利过程或泊松过程。
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] §6.3 末段经 OCR 后部分符号退化：原书中的 $\lambda\delta$（每长 $\delta$ 的小区间内到达概率近似值）被识别成 “A8”，小区间长度 $\delta$ 被识别成 “6”。此处按伯努利/泊松过程的标准表述重建为 $\lambda\delta$ 与 $\delta$，数值与语义未作改动。</span>
+
+<!-- ===== PDF p334 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**§6.3　小结与讨论（Summary and Discussion）**</span> <span style="color:#7f8c8d;">（Sec. 6.3，原书页码 325；本页为 §6.3 小结段的一页，承接上一页对「随机到达」现象的讨论收尾。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：本节小结总结泊松过程章节末尾关于随机到达（random incidence）现象的讨论。</span>
+
+最后我们考虑了「随机到达」现象（random incidence）：一位外部观察者（external observer）在某个给定的时间到达，并测量他恰好落入其中的那个到达间隔（interarrival interval）。被测量间隔的概率性质并不「典型」（typical），因为到达的观察者更可能落进一个较大的到达间隔之中。这一现象表明，当谈论一个「典型」间隔时，我们必须仔细描述它被选出的机制。一般而言，不同的机制会导致不同的概率性质。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 收束全节的这句话是本章的方法论落点，值得一个字一个字拆开：所谓 typical interval（典型间隔）并不是一个对象，而是「对象 + 抽样协议」的联合体。同一个 Poisson process（泊松过程）里，interarrival interval（到达间隔）本身是独立同分布的 exponential random variable（指数随机变量），参数为 $\lambda$，这一点没有任何争议；有争议的永远是「被提到的那一个间隔是怎么被挑出来的」。挑法一变，分布就变。
+>
+> 三种挑法给出三个答案，可以并排写出来对照。其一，固定编号，取第 $k$ 个到达间隔：它服从 exponential distribution（指数分布），均值 $1/\lambda$。其二，固定时刻 $t^*$，取包含 $t^*$ 的那一段间隔 $L$：它服从二阶 Erlang distribution（Erlang 分布），概率密度为 $\lambda^2 x e^{-\lambda x}$，均值 $2/\lambda$，恰好是前者的两倍。其三，若把过程起点补回 0 时刻，问 $t^{*}$ 落在从 0 起编号的第几个间隔，则编号 $K$ 满足 $P(K-1=n)=e^{-\lambda t^{*}}(\lambda t^{*})^{n}/n!$。这一条必须先补上起点条件：正文为了不纠缠"$t^{*}$ 之前到底有没有到达"这类枝节，假定泊松过程从一开始就一直在运行，即 running forever；在那种设定下"第几个间隔"没有编号可言，$K$ 根本没有定义。补上起点，$K$ 才有意义，而 $K-1$ 正是 $t^{*}$ 之前的到达数。三个答案互相不矛盾，因为它们回答的是三个不同的问题，只是题目都被含糊地叫作「一次到达间隔的长度」。
+>
+> 第三项值得补一句推导，因为它是三者里最容易被当成随手一写的：$t^*$ 落在第几个间隔，当且仅当 $t^*$ 之前恰好发生了 $k-1$ 次到达，于是 $K - 1$ 与 $t^*$ 之前的到达数 $N(t^*)$ 是同一个量，而它的分布正是泊松分布。换句话说，$K$ 不是几何分布，而是「泊松加一」，并且随 $t^*$ 增大整体右移 —— 「第几个间隔」这个问题根本没有与时间无关的答案，必须写成「在时刻 $t^*$ 处发问」。
+>
+> 差别的根源是 length bias（长度偏置）：把采样点扔到时间轴上，它落在某段间隔里的概率正比于该段长度，于是长间隔被 over-represented（过度代表）。形式化地说，被观测间隔的分布不是原来的 $F$，而是 size-biased distribution（尺寸偏置分布）$F^*(x) = \frac{1}{E[X]}\int_0^x t\,dF(t)$，它是把原分布的密度乘以 $t$ 再归一化得到的。其期望 $E[X^2]/E[X]$ 大于 $E[X]$，差值精确等于 $var(X)/E[X]$ —— 这是同一个公式的第四次现身，前三次分别是公交站等车的期望、公交载客量的向上偏，以及离散情形下的胜利间隔。
+>
+> 这条元教训在工程上有直接对应。做性能测量时，按调用次数取平均与按时间采样取平均给出不同的「单次调用开销」，因为耗时长的调用被时间采样过度代表，profiler 的采样偏差就来自这里；缓存命中率按访问加权还是按请求加权、服务端延迟按请求平均还是按用户平均，也都是同一件事的三种皮肤。数学上它们通通是一次 change of measure（测度变换）：权重函数一改写，期望跟着改写，而对象本身分毫未动。
+>
+> 所以往后遇到任何「平均」「典型」「随机挑一个」，第一反应应当是三问：在哪个集合上均匀？被选中概率是否正比于某个量？如果要的是另一个测度下的期望，权重该怎么补？把这三问与 $E[X^2]/E[X]$ 这个公式一起收进长期记忆，比背下任何一个具体结论都值钱。顺带订正：本节讨论位于 §6.2 的 random incidence paradox（随机到达悖论）子节，起于 PDF p331，即原书 322 页，$E[I^2]/E[I]$ 的显式算式在 PDF p332，即原书 323 页。
+
+
+<!-- ===== PDF p335 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span>
+
+<span style="color:#c0392b;">**习题区（PROBLEMS）**</span>
+
+<span style="color:#c0392b;">**§6.1　伯努利过程（The Bernoulli Process）**</span>
+
+> <span style="color:#7f8c8d;">本页为第 6 章习题区开篇（原书印刷页 326）。页眉题为「Chap. 6 / The Bernoulli and Poisson Processes / PROBLEMS / SECTION 7.1」；此处「SECTION 7.1」系 OCR 将「SECTION **6**.1」误认所致，本章题为第 6 章、正文内容实为伯努利过程（伯努利与泊松过程）习题，故按 §6.1 定位，不作按字面传播。习题编号自 Problem 1 起。</span>
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#00838f;">**Problem 1.**</span>
+
+Each of $n$ packages is loaded independently onto either a red truck (with probability $p$) or onto a green truck (with probability $1-p$). Let $R$ be the total number of items selected for the red truck and let $G$ be the total number of items selected for the green truck.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 第 6 章 Problems（习题区）从 Problem 1 一直排到 Problem 27，带星号的解析题集中在两段：Problem 4—7 与 Problem 18—27。也就是说前半段多数只给题干，后半段几乎每题都附英文 Solution（解答）。这个分布本身就值得利用：前半段用来练独立手推，后半段用来对照标准写法，先自己写完再翻解答，收益最大。另需注意习题区页眉的编号问题：源扫描里页眉写作 SECTION 7.1、7.2，而本章正文的节号是 §6.1 与 §6.2。这份文件的处置是两种解释并存——一处判为 OCR 把 6 误认成 7，一处疑为原书笔误；两种都能自圆其说，靠扫描件无法区分，所以行文一律按章节结构读作 §6.1 与 §6.2，同时明确记下这个悬而未决的点，待回查纸本。
+>
+> 这二十七题是前五章工具箱的 stress test（压力测试），主要武器只有四件：binomial distribution（二项分布）与 geometric distribution（几何分布）的 probability mass function（概率质量函数）、Pascal distribution（帕斯卡分布）、conditional expectation（条件期望）与 law of total expectation（全期望定律）、indicator random variable（指示随机变量）与 linearity of expectation（期望的线性性）。后两件你在 CLRS 附录 C 的 hiring problem（雇佣问题）里已经见过威力，这里它们会在随机到达、splitting（分裂）、merging（合并）三条主线下反复登场。
+>
+> 拿 Problem 1 试手，它把同一个二项模型换了几种问法。$n$ 件包裹独立地以概率 $p$ 装红车，红车件数 $R$ 服从二项分布，绿车件数 $G = n - R$。(a) 问的三件事一句话答完：$p_R(k) = \binom{n}{k} p^k (1-p)^{n-k}$，$E[R] = np$，$var(R) = np(1-p)$。这些都是把 $n$ 个独立的指示变量相加的标准结果，逐项验证一遍比记结论更值。
+>
+> (b) 问「第一件恰好独自占一辆车」，等价于其余 $n-1$ 件全部装进另一辆车，概率是 $p(1-p)^{n-1} + (1-p)p^{n-1}$：两项分别对应第一件上红车与第一件上绿车，只写一项是本题最常见的失分点。(d) 问 $R - G = 2R - n$，由线性性立刻得 $E[R-G] = n(2p-1)$ 与 $var(R-G) = 4np(1-p)$ —— 这里只做了随机变量的线性变换，连独立性都不需要论证，而减法让方差翻四倍，正是 $-G$ 与 $R$ 完全负相关的结果。
+>
+> (c) 问「至少一辆车恰好装一件」需要 inclusion-exclusion（容斥），或者等价地算补事件：两辆车都不是恰好一件。写开来是 $1 - P(R = 1) - P(G = 1) + P(R = 1, G = 1)$，其中最后一项只在 $n = 2$ 时非零 —— 两个补事件并不是互斥的，这正是容斥项不能省的原因，漏掉它就只在 $n = 2$ 上出错，属于最难自查的那类错误。
+>
+> (e) 问是这套题的第一个 conditioning（条件化）训练：已知前两件都上红车，剩下 $n-2$ 件的去向与这条信息独立，所以 $R$ 的条件分布是「2 加上二项分布」，条件期望与条件方差就是把 $(n-2)p$ 与 $(n-2)p(1-p)$ 原样搬过来 —— 常数平移只动均值、不动方差。这个「剥离已确定的部分、其余照原样」的手法，在第 7 章 Markov chain（马尔可夫链）的条件化分析里会反复出现，值得现在就练熟。
+>
+> 顺带一提，本章不少 PMF 都能用 $n = 1$ 或 $n = 2$ 的小情形手算验算，这是概率题最便宜的自查手段，比事后怀疑公式写下标要可靠得多。
+>
+> 最后记一个全书级的伏笔：Bernoulli process（伯努利过程）与 Poisson process（泊松过程）的 memorylessness（无记忆性）说的是「未来完全不依赖过去」；马尔可夫链的 Markov property（马尔可夫性质）说的是「未来只通过现在依赖过去」。前者是后者的退化情形，中间隔的只是一层「允许有记忆、但记忆长度为一」的推广。做题时把每一道等待时间题都当成一次状态转移来读，进入第 7 章会省很多力气。
+
+
+(a) Determine the PMF, expected value, and variance of the random variable $R$.
+
+(b) Evaluate the probability that the first item to be loaded ends up being the only one on its truck.
+
+(c) Evaluate the probability that at least one truck ends up with a total of exactly one package.
+
+(d) Evaluate the expected value and the variance of the difference $R - G$.
+
+(e) Assume that $n \ge 2$. Given that both of the first two packages to be loaded go onto the red truck, find the conditional expectation, variance, and PMF of the random variable $R$.
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#00838f;">**Problem 2.**</span>
+
+Dave fails quizzes with probability $1/4$, independent of other quizzes.
+
+(a) What is the probability that Dave fails exactly two of the next six quizzes?
+
+(b) What is the expected number of quizzes that Dave will pass before he has failed three times?
+
+(c) What is the probability that the second and third time Dave fails a quiz will occur when he takes his eighth and ninth quizzes, respectively?
+
+(d) What is the probability that Dave fails two quizzes in a row before he passes two quizzes in a row?
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#00838f;">**Problem 3.**</span>
+
+A computer system carries out tasks submitted by two users. Time is divided into slots. A slot can be idle, with probability $p_I = 1/6$, and busy with probability $p_B = 5/6$. During a busy slot, there is probability $p_{1|B} = 2/5$ (respectively, $p_{2|B} = 3/5$) that a task from user 1 (respectively, 2) is executed. We assume that events related to different slots are independent.
+
+(a) Find the probability that a task from user 1 is executed for the first time during the 4th slot.
+
+(b) Given that exactly 5 out of the first 10 slots were idle, find the probability that the 6th idle slot is slot 12.
+
+(c) Find the expected number of slots up to and including the 5th task from user 1.
+
+> <span style="color:#7f8c8d;">[OCR 说明] 本页次行概率符号 OCR 碎裂：$p_I$、$p_B$ 原读作 `PI`、`PB`，$p_{1|B}$、$p_{2|B}$ 原读作 `P I I B`、`P2 1 B`，此处按上下文（user 1 / user 2 的任务执行概率 $2/5$ 与 $3/5$）重建；数值 $1/6$、$5/6$、$2/5$、$3/5$ 均未改动。</span>
+
+<!-- ===== PDF p336 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> —— §6.1 习题（续）
+
+> <span style="color:#7f8c8d;">本页为第 6 章 §6.1 伯努利过程（The Bernoulli Process）习题区（Problems）的延续（印本页码 327）：页首仅见 running header「Problems」，无新节标题，直接续接上一页（印本页码 326、文件页 335）已在进行的习题。页首承接 **Problem 3** 的 (d)、(e) 两小题，随后为本页独立出现的带星号习题 **Problem 4.\*** 与 **Problem 5.\***。注：上一页印出的本节标题在 OCR 中为「SECTION 7.1. The Bernoulli Process」，按全集定位应为 §6.1（疑为原书笔误），本页据此按 §6.1 处理。</span>
 
 ---
 
-<span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）**</span>
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 3（续）—— （d）、（e）**</span>
 
-在本节中，我们导出一个在受限估计量类（restricted class of estimators）内使均方误差（mean squared error）最小的估计量：即那些为观测（observations）线性函数（linear functions）的估计量。虽然该估计量可能导致较大的均方误差，但它有一个显著的实用优势：只需进行简单的计算，且只涉及参数与观测的均值（means）、方差（variances）与协方差（covariances）。因此，在条件期望/LMS 估计量难以计算的场合，它是一个有用的替代选择。
+> <span style="color:#7f8c8d;">Problem 3 的题干与 (a)–(c) 小题见上一页（印本页码 326）：某计算机系统执行两位用户提交的任务，时间划分为若干时隙（slots），时隙空闲的概率为 $p_I = 1/6$、忙的概率为 $p_B = 5/6$；在忙时隙内，来自用户 1/用户 2 的任务被执行的概率分别为 $p_{1\mid B} = 2/5$、$p_{2\mid B} = 3/5$，不同时隙的事件相互独立。本页继续求解其 (d)、(e) 两小题。</span>
 
-基于观测 $X_1, \ldots, X_n$ 的随机变量 $\Theta$ 的线性估计量（linear estimator）具有如下形式
+( d ) Find the expected number of busy slots up to and including the 5th task from user 1.
 
-```math
-\hat{\Theta} = a_1 X_1 + \cdots + a_n X_n + b.
-```
-
-对标量（scalars）$a_1, \ldots, a_n, b$ 的某一个特定选择，相应的均方误差为
-
-```math
-E\Big[\big(\Theta - a_1 X_1 - \cdots - a_n X_n - b\big)^2\Big].
-```
-
-线性 LMS 估计量（linear LMS estimator）选择 $a_1, \ldots, a_n, b$ 以使上式最小。我们首先针对 $n = 1$ 的情形给出解，然后再加以推广。
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 把最优估计从"任意函数"缩到"线性组合"，是用一个小小的 b 换回巨大的可算性。第一性原理：完整 LMS 需要联合分布 $f_{\Theta,X}$ 和无约束的最优函数 $g(X)=E[\Theta\mid X]$；线性 LMS 只在仿射（affine）函数 $a_1X_1+\cdots+b$ 里找最好，只需一阶、二阶矩（均值/方差/协方差）即可定解——牺牲的是全局最优，换来的是只要矩、不要分布就能落地的工程友好性。命名模板：linear（线性）指"估计器是观测的线性组合（加常数）"，由之把问题从函数空间压缩到 $n+1$ 维参数空间。跨课程（信号处理 / 18.065 维纳滤波）：受限线性类是维纳滤波与自适应 LMS 算法的一切前提——在线估计只根据梯度更新系数、无需联合密度，靠的正是"一阶二阶矩"这丁点信息。反例：当后验均值恰好是 $X$ 的线性函数时（如高斯共轭或 Beta 例），线性 LMS 与全局 LMS 重合、零损失；而当后验均值强烈非线性（如例 8.11 的对数函数），压进直线后偏差骤增——"线性"是省了计算却不保最优的折价。
-
-<span style="color:#2471a3;">**[§]**</span> <span style="color:#00838f;">**基于单个观测的线性最小均方估计（Linear Least Mean Squares Estimation Based on a Single Observation）**</span>
-
-我们感兴趣的是求出能最小化均方估计误差（mean squared estimation error）$E\big[(\Theta - aX - b)^2\big]$ 的 $a$ 与 $b$，这里它对应于 $\Theta$ 的一个线性估计量 $aX + b$。假设 $a$ 已被选定，那么我们应当如何选择 $b$？这与如下问题相同……
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 线性估计量的形式式（紧接「has the form」之后）与「给定标量选择下的均方误差」式（紧接「the corresponding mean squared error is」之后）在 OCR 中被丢失（源 OCR 该两处均为空白行）。此处按书 §8.4 标准形式还原为 $\hat{\Theta} = a_1 X_1 + \cdots + a_n X_n + b$ 与其均方误差 $E\big[(\Theta - a_1 X_1 - \cdots - a_n X_n - b)^2\big]$，与本页末已知的 $n=1$ 情形 $E[(\Theta - aX - b)^2]$ 一致；另，末「How should we choose b?」句中均方误差式原文 $E[(\Theta - aX - b)^2]$ 的右括号在 OCR 中缺失，已按语义补全。</span>
-
-> <span style="color:#7f8c8d;">衔接下一面（PDF p446）：本页在「基于单个观测的线性最小均方估计」小节开头处截断（"This is the same as…"），关于如何优化选择 $b$（即当 $a$ 固定时均方误差关于 $b$ 的一阶条件）将在下一页继续。</span>
-<!-- ===== PDF p446 ===== -->
-
-<span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）**</span>
-
-<span style="color:#00838f;">**§8.4　基于单个观测的线性最小均方估计（Linear Least Mean Squares Estimation Based on a Single Observation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页（书页 p438）承接上一页（PDF p445）§8.4「基于单个观测的线性最小均方估计」小节的开头（"This is the same as…"）。为求出均方估计误差 $E[(\Theta - aX - b)^2]$ 的最小化参数 $a, b$，本页先讨论当 $a$ 已选定时间应如何选 $b$，再把已得表达式对 $a$ 求极值，最终得到「线性 LMS 估计公式」框（Linear LMS Estimation Formulas）。本页全为推导，不含编号例子（Example）。</span>
-
-我们感兴趣的是求使均方估计误差（mean squared estimation error）$E\big[(\Theta - aX - b)^2\big]$ 最小的 $a$ 与 $b$。现在，选定一个常数 $b$ 来估计随机变量 $\Theta - aX$。根据第 8.3 节开头的讨论，最佳选择是
-
-```math
-b = E[\Theta - aX] = E[\Theta] - a E[X].
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 第一步先给最优 $b$、第二步再来优化 $a$，这不是偷懒，而是利用了"可分离"的结构把二维问题切成两步。第一性原理：对固定的 $a$，关于 $b$ 的最小化是"无条件常数估计"的直接应用——最佳 $b$ 必取 $b=E[\Theta-aX]$ 使偏差归零、恰把误差化到 $\operatorname{var}(\Theta-aX)$；由此剩下的只是关于 $a$ 的一维最小化，把两参数一步求导改写成了"先中心化、再定斜率"的两段式。命名模板：把这种"先定截距、再定斜率"的次序称作截距-斜率分离（intercept–slope decoupling），是仿射拟合的惯用套路。跨课程（优化 / 18.065）：这等价于把均方误差看成 $(a,b)$ 的二次型、先对齐其无偏平移、再最小化剩下关于 $a$ 的二次——与梯度下降先归一化、再迭代的常见流程同构。反例：分离成立的前提是损失在 $b$ 上是二次且无约束、且目标关于 $(a,b)$ 可分；若给 $b$ 加约束（如 $b\ge0$）或目标含 $a,b$ 交叉的正则项，"先修 $b$ 再解 $a$"就会不再最优，须改为联合求解。
-
-在这一 $b$ 的选择下，剩下的任务就是关于 $a$ 最小化表达式
-
-```math
-E\Big[\big(\Theta - aX - E[\Theta] + aE[X]\big)^2\Big].
-```
-
-我们把这一表达式写成
-
-```math
-\mathrm{var}(\Theta - aX) = \sigma_\Theta^2 + a^2 \sigma_X^2 + 2\,\mathrm{cov}(\Theta, -aX)
-= \sigma_\Theta^2 + a^2 \sigma_X^2 - 2a \cdot \mathrm{cov}(\Theta, X),
-```
-
-其中 $\sigma_\Theta$ 与 $\sigma_X$ 分别是 $\Theta$ 与 $X$ 的标准差（standard deviations），并且
-
-```math
-\mathrm{cov}(\Theta, X) = E\Big[\big(\Theta - E[\Theta]\big)\big(X - E[X]\big)\Big]
-```
-
-是 $\Theta$ 与 $X$ 的协方差（covariance）。为最小化 $\mathrm{var}(\Theta - aX)$（它是 $a$ 的二次函数（quadratic function）），我们令其关于 $a$ 的导数为零并解出 $a$。于是得到
-
-```math
-a = \frac{\mathrm{cov}(\Theta, X)}{\sigma_X^2} = \rho\,\frac{\sigma_\Theta}{\sigma_X},
-```
-
-其中
-
-```math
-\rho = \frac{\mathrm{cov}(\Theta, X)}{\sigma_\Theta\, \sigma_X}
-```
-
-是相关系数（correlation coefficient）。在这一 $a$ 的选择下，所得线性估计量 $\hat{\Theta}$ 的均方估计误差（mean squared estimation error）为
-
-```math
-\begin{aligned}
-\mathrm{var}\big(\Theta - \hat{\Theta}\big)
-&= \sigma_\Theta^2 + a^2 \sigma_X^2 - 2a \cdot \mathrm{cov}(\Theta, X)\\
-&= \sigma_\Theta^2 + \rho^2\,\frac{\sigma_\Theta^2}{\sigma_X^2}\,\sigma_X^2
-\;-\; 2\rho\,\frac{\sigma_\Theta}{\sigma_X}\,\big(\rho\,\sigma_\Theta\,\sigma_X\big)\\
-&= (1 - \rho^2)\,\sigma_\Theta^2.
-\end{aligned}
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 本页方差、标准差与相关系数符号在 OCR 中被严重误读：随机变量 $\Theta$ 被读作数字 `8`，协方差下标处方差符号被拆读成 `ae`/`ax`/` a2` 等碎片（如源 OCR「where ae and ax are the standard deviations of 8 and X」实为「where $\sigma_\Theta$ and $\sigma_X$ are the standard deviations of $\Theta$ and $X$」）。上文按书 §8.4 单观测情形的标准推导忠实还原为 $\sigma_\Theta^2$、$\sigma_X^2$、$\rho = \mathrm{cov}(\Theta, X)/(\sigma_\Theta \sigma_X)$ 及 $a = \mathrm{cov}(\Theta, X)/\sigma_X^2 = \rho\,\sigma_\Theta/\sigma_X$，与「(1 - $\rho^2$)$\sigma_\Theta^2$」的最终结果一致，未臆造任何数值。</span>
-
-<span style="color:#00838f;">**线性 LMS 估计公式（Linear LMS Estimation Formulas）**</span>
-
-* 基于 $X$ 的 $\Theta$ 的线性 LMS 估计量（linear LMS estimator）$\hat{\Theta}$ 为
-
-```math
-\hat{\Theta} = E[\Theta] + \frac{\mathrm{cov}(\Theta, X)}{\mathrm{var}(X)}\,(X - E[X])
-= E[\Theta] + \rho\,\frac{\sigma_\Theta}{\sigma_X}\,(X - E[X]),
-```
-
-  其中
-
-```math
-\rho = \frac{\mathrm{cov}(\Theta, X)}{\sigma_\Theta\, \sigma_X}
-```
-
-  是相关系数（correlation coefficient）。
-
-* 对应的均方估计误差（mean squared estimation error）等于
-
-```math
-\mathrm{var}\big(\Theta - \hat{\Theta}\big) = (1 - \rho^2)\,\sigma_\Theta^2.
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 最优线性 LMS 的误差 $(1-\rho^2)\sigma_\Theta^2$ 是一块把"相关有多强"与"估计有多准"焊在一起的配方。第一性原理：最优斜率 $a=\rho\,\sigma_\Theta/\sigma_X$ 是"单位 $X$ 变化能带动的 $\Theta$ 变化"；把 $X$ 的信息折进 $\Theta$，剩余不确定性由相关系数平方 $\rho^2$ 决定——$\rho\to\pm1$ 时误差归零（$X$ 几乎完全决定 $\Theta$），$\rho=0$ 时回到原始方差 $\sigma_\Theta^2$（$X$ 毫无用处）。命名模板：$\rho$ 名 correlation coefficient（相关系数），它度量"线性可解释"的方差所占比例，故有决定系数 $R^2$。跨课程（线性代数 / 18.065，投影定理）：$\rho^2\sigma_\Theta^2$ 正是 $\Theta$ 向"由 $X$ 张成的一维子空间"投影的长度，$(1-\rho^2)\sigma_\Theta^2$ 是垂直余长——与 §8.3 的正交分解同宗，只是把投影对象从"可测函数空间"换成"线性子空间"。反例：$\rho=0$ 只说明 $X$ 与 $\Theta$ 线性无关，却可能隐藏强非线性关系（如 $X=\pm\sqrt{|\Theta|}$ 造成 $\rho=0$ 却携带丰富信息）；此时线性 LMS 无能为力、但全局 LMS 仍会利用它——相关性不为零才是线性可改写的前提。
-
-> <span style="color:#7f8c8d;">衔接下面（PDF p447）：本页已收敛到最优线性均方误差 $(1-\rho^2)\sigma_\Theta^2$（该式已在上文推导及「线性 LMS 估计公式」框中两次给出）；页尾在「…equal to（等于）」处截断，下一页将继续 §8.4 对该线性估计量诸性质的解释与后续讨论。</span>
-<!-- ===== PDF p447 ===== -->
-
-<span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页，继续 §8.4 的论述：先是收尾上一页关于线性 LMS 估计量性质的讨论（其公式直观解释、相关系数对估计质量的影响、以及估计误差性质可推广到线性 LMS 的情形），随后本页开始新的 **Example 8.15**（基于 X 的 Θ 的线性 LMS 估计量推导，即 Juliet 迟到模型）。例 8.15 的推导在本页中途被截断，其线性 LMS 估计量的最终表达式在下一面完成。</span>
-
-> <span style="color:#7f8c8d;">[OCR 说明] 本页源 OCR 中，参数 $\Theta$ 多被误读为数字 8 或字母 e（如 "covariance of 8 and X"、"E[eX]"），相关系数 $\rho$ 被误读为字母 p（如 "I p i" 即 $|\rho|$）。以上均按 §5 符号约定（$\Theta$ 表示未知参数、$X$ 表示观测）忠实还原，非臆造数值。</span>
+( e ) Find the PMF, mean, and variance of the number of tasks from user 2 until the time of the 5th task from user 1.
 
 ---
 
-线性 LMS 估计量（linear LMS estimator）的公式只涉及 $\Theta$ 与 $X$ 的均值（means）、方差（variances）和协方差（covariance）。此外，它具有直观的解释。为具体起见，假设相关系数（correlation coefficient）$\rho$ 为正。估计量（estimator）以 $E[\Theta]$ 作为 $\Theta$ 的基线估计（baseline estimate），然后通过纳入 $X - E[X]$ 的值来对其加以调整。例如，当 $X$ 大于其均值时，$X$ 与 $\Theta$ 之间的正相关（positive correlation）表明 $\Theta$ 预期会大于其均值。相应地，得到的估计值被设为一个大于 $E[\Theta]$ 的值。$\rho$ 的值也影响估计的质量。当 $|\rho|$ 接近 $1$ 时，这两个随机变量高度相关，知道 $X$ 就能让我们精确地估计 $\Theta$，从而得到较小的均方误差（mean squared error）。
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 4. \***</span>
 
-最后我们指出，第 8.3 节（Section 8.3）中给出的关于估计误差（estimation error）的那些性质，可以证明当 $\Theta$ 为线性 LMS 估计量（linear LMS estimator）时仍然成立；请参见章末习题（end-of-chapter problems）。
+Consider a Bernoulli process with probability of success in each trial equal to $p$.
+
+( a ) Relate the number of failures before the $r$th success (sometimes called a negative binomial random variable) to a Pascal random variable and derive its PMF.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这一问是 negative binomial distribution（负二项分布）的入场。先把三个量摆清楚：$Y$ 是第 $r$ 次成功发生时的试验序号，服从 $r$ 阶 Pascal distribution（帕斯卡分布）；$X = Y - r$ 是此前累计的失败数；题目要的是 $X$ 的 probability mass function（概率质量函数）。两者只差一个常数平移，所以 $p_X(k) = p_Y(k + r)$，方差一模一样，均值差 $r$。
+>
+> 计数论证只依赖一个事实：第 $r$ 次成功必须落在序列的最后一位，于是前 $k + r - 1$ 位里恰好有 $k$ 次失败与 $r - 1$ 次成功，这些 $r - 1$ 次成功可以落在前 $k + r - 1$ 位中的任意 $r - 1$ 个位置上，组合数 $\binom{k+r-1}{r-1}$，再乘上每种排列的概率 $p^r (1-p)^k$，得 $p_X(k) = \binom{k+r-1}{r-1} p^r (1-p)^k$，$k = 0,1,2,\ldots$。注意这里「最后一位固定」是拆题的钥匙：若忘了这一条而把 $r$ 次成功也自由排列，会多算一个因子。
+>
+> 这里有一个常被口头说成「隔板法」的细节值得澄清：真正的 stars and bars（星与隔板）是把 $n$ 个不可区分的球放进 $m$ 个盒子，方案数是 $\binom{n+m-1}{m-1}$；本题是「在 $k + r - 1$ 个可区分的位置里挑 $r - 1$ 个放成功」，属于 choosing positions（选位置）而非隔板。两者只是恰好落在同一族二项系数上，论证完全不同 —— 记混了会在「非负整数解计数」与「多重集排列」两类题之间来回翻车。
+>
+> 名字的来历也值得一句：负二项这个名字来自把二项式定理的指数取负，$(1-x)^{-r} = \sum_{k\ge 0} \binom{k+r-1}{r-1} x^k$，右侧系数正是上式剥掉 $p^r$ 与 $(1-p)^k$ 之后剩下的形状。所以它不是「另一个分布」，而是二项系数的负指数版本；$r = 1$ 时它退化为 geometric distribution（几何分布），这就是「几何分布是负二项的特例」这句话的确切含义。
+>
+> 均值的直觉：试验以 $p : (1-p)$ 的比率产出成功与失败，$r$ 次成功自然配给约 $r(1-p)/p$ 次失败，与 (b) 的算式 $E[X] = r/p - r$ 一致。方差 $var(X) = r(1-p)/p^2$ 与帕斯卡变量相同，因为平移常数不改方差。这两个式子还可以用「$r$ 段独立几何等待相加」重新推一遍：每次成功之间的等待独立同分布，和的均值与方差各自相加，与上面完全吻合。第 4 章曾用 transform（变换）证过同一结论，这里是第二种到达方式 —— 同一个事实的两条独立通路，是检验自己有没有真的理解的最好标尺。
+>
+> 这条「相加」的思路还顺手解释了 (b) 问的方差为何与帕斯卡变量完全相同：平移不改变离散程度，只有尺度变换才会。
+>
+> (c) 问给出一个漂亮的等价改写：第 $i$ 次失败发生在第 $r$ 次成功之前，当且仅当失败总数 $X \ge i$，所以答案是 tail probability（尾概率）$\sum_{k \ge i} p_X(k)$。另一条路看前 $r + i - 1$ 次试验：失败至少 $i$ 次等价于成功少于 $r$ 次，于是答案又等于 $\sum_{k=0}^{r-1} \binom{r+i-1}{k} p^k (1-p)^{r+i-1-k}$。两条路相等本身就是一个 combinatorial identity（组合恒等式），可以把 $r, i$ 取小值手算验证，也可以单独当练习去证。
+>
+> 最后提醒一句前提：这一整套干净公式的唯一支点是「试验之间相互独立」。一旦出现依赖，第 7 章的马尔可夫链就是反例，等待第 $r$ 个事件就不能再用二项系数数位置，必须改用 state analysis（状态分析）与线性方程组。也就是说，本注给的公式不是「等待 $r$ 次的通用答案」，而是「独立同分布试验下的答案」—— 把适用条件一起背下来，比只背公式重要。
+
+
+( b ) Find the expected value and variance of the number of failures before the $r$th success.
+
+( c ) Obtain an expression for the probability that the $i$th failure occurs before the $r$th success.
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+( a ) Let $Y$ be the number of trials until the $r$th success, which is a Pascal random variable of order $r$. Let $X$ be the number of failures before the $r$th success, so that $X = Y - r$. Therefore, $p_X(k) = p_Y(k + r)$, and
+
+```math
+p_X(k) = \binom{k+r-1}{r-1} p^{r} (1-p)^{k}, \qquad k = 0, 1, \ldots .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 原行在「$p_X(k) = p_Y(k+r)$，and」之后、以「$k = 0,1,\ldots$」收尾处，本该出现的 $p_Y(k+r)$ 展开式（带二项系数的显式 PMF）在 OCR 中被吞落；上式为按 $Y$ 是 $r$ 阶帕斯卡随机变量的标准 PMF $p_Y(k) = \binom{k-1}{r-1} p^{r}(1-p)^{k-r}$ 并代 $k \mapsto k+r$ 而重建，数值与记号未作改动。</span>
+
+( b ) Using the notation of part ( a ) , we have
+
+```math
+E[X] = E[Y] - r = \frac{r}{p} - r = \frac{r(1-p)}{p}.
+```
+
+Furthermore,
+
+```math
+\operatorname{var}(X) = \operatorname{var}(Y) = \frac{r(1-p)}{p^{2}}.
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] (b) 的两式在原行被拆散碎裂（分子 $(1-p)r$、分母 $p$ 与 $p^2$ 分列数行），上面按帕斯卡随机变量的均值 $E[Y] = r/p$、方差 $\operatorname{var}(Y) = r(1-p)/p^{2}$ 重建。</span>
+
+( c ) Let again $X$ be the number of failures before the $r$th success. The $i$th failure occurs before the $r$th success if and only if $X \ge i$. Therefore, the desired probability is equal to
+
+```math
+P(X \ge i) = \sum_{k = i}^{\infty} p_X(k) = \sum_{k = i}^{\infty} \binom{k+r-1}{r-1} p^{r} (1-p)^{k}, \qquad i = 1, 2, \ldots .
+```
+
+An alternative formula is derived as follows. Consider the first $r + i - 1$ trials. The number of failures in these trials is at least $i$ if and only if the number of successes is less than $r$. But this is equivalent to the $i$th failure occurring before the $r$th success. Hence, the desired probability is the probability that the number of successes in $r + i - 1$ trials is less than $r$, which is
+
+```math
+\sum_{k = 0}^{r-1} \binom{r+i-1}{k} p^{k} (1-p)^{r+i-1-k}, \qquad i = 1, 2, \ldots .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] (c) 的两个公式行（分别位于「equal to」与句末「which is」之后）在 OCR 中被吞落，其上两式各按「$X \ge i$（即第 $i$ 次失败发生在第 $r$ 次成功之前）的概率 = $P(X \ge i)$」与「$r+i-1$ 次试验中成功次数少于 $r$ 的概率」依文字推导重建。</span>
 
 ---
 
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.15（ X 在 $[0,\Theta]$ 上均匀、$\Theta$ 在 $[0,1]$ 上均匀先验时的线性 LMS 估计。）**</span>
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 5. \***</span>
 
-我们重新考察示例 8.2、8.7 与 8.12（Examples 8.2, 8.7, and 8.12）中的模型：在该模型中，Juliet 总是迟到一段量 $X$，它在区间 $[0,\Theta]$ 上均匀分布（uniformly distributed），而 $\Theta$ 是一个具有均匀先验概率密度函数 $f_{\Theta}(\theta)$（uniform prior PDF）的随机变量，其取值区间为 $[0,1]$。让我们推导基于 $X$ 的 $\Theta$ 的线性 LMS 估计量（linear LMS estimator）。
+Random incidence in the Bernoulli process. Your cousin has been playing the same video game from time immemorial. Assume that he wins each …
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这道题是连续时间的 random incidence（随机到达）在离散时间里的镜像，也是全章最值得玩味的一题。设定是这样：堂弟从很久以前就在打同一个游戏，每一局独立地以概率 $p$ 获胜；你在午夜闯入房间，恰好目睹他正在输掉当前这一局。问的是「最近一次胜利与下一次胜利之间的失败局数」的 probability mass function（概率质量函数）。
+>
+> 要害在于「你看到的是一局失败」这个条件，它把三段时间的编号摆定了：$t$ 是你看到的那一局的编号，$M$ 是最近一次过去的胜利的编号，$N$ 是未来第一次胜利的编号。于是 $X=N-t$ 是从下一局数到首次胜利为止的局数——含末尾那次胜利、不含当前这局，等于此后的失败局数加一，也就是 $N-1-t$ 次失败再补上一次计数。旧注把它说成"还要输几局、当前这局也计入"，量词就错了：真正还要输的是 $N-t-1$ 局。另一侧 $Y=t-M$ 从第 $M$ 局那次胜利之后数起，含当前局、不含胜利局 $M$，所以严格夹在两场胜利之间的失败数是 $t-M-1=Y-1$。两侧合起来才是 $L=N-M-1=X+Y-1$。
+>
+> 由 memorylessness（无记忆性），$X$ 与 $Y$ 都服从参数为 $p$ 的 geometric distribution（几何分布），而且相互独立 —— 独立性来自「过去」与「未来」分属不相交的时间段，这正是 Bernoulli process（伯努利过程）的独立性性质。于是 $L = N - M - 1 = X + Y - 1$：两个独立的几何变量相加，得二阶 Pascal distribution（帕斯卡分布）。
+>
+> 具体写出来：$L + 1$ 的概率质量函数是 $p_{L+1}(k) = (k-1) p^2 (1-p)^{k-2}$，$k \ge 2$，这正是二阶帕斯卡的式子；整体左移一位得 $p_L(i) = i\, p^2 (1-p)^{i-1}$，$i \ge 1$。注意这个分布不能简化成几何分布，它的形状里多出一个因子 $i$ —— 那个 $i$ 就是 length bias（长度偏置）在离散情形下留下的显式签名，与连续情形里 $E[I^2]/E[I]$ 的那个平方同源。
+>
+> 一个便宜的验算：取 $p = 1/2$ 手算前几项，$p_L(1) = 1/4$，$p_L(2) = 2 \cdot (1/4) \cdot (1/2) = 1/4$，$p_L(3) = 3 \cdot (1/4) \cdot (1/4) = 3/16$，概率在缓慢向 1 爬，重心明显靠后；而均值 $E[L] = 2/p - 1 = 3$，比「典型胜利间隔」的 $1/p = 2$ 大了一半。这种一分钟的小数值验算，能在考场上拦住绝大多数下标错误，也顺手把「偏长」这个词量化成了具体倍数。
+>
+> 悖论在哪里？相邻两场胜利之间的间隔平均只有 $1/p$ 局，但你随机降落点所在的那段「包含当前局的胜利间隔」$N - M$，期望是 $2/p$，整整翻了一倍。原因不必计算就能说清：一段长度为 $m$ 的间隔里有 $m$ 个位置可能被你命中，于是被命中的概率正比于长度，长间隔被 over-represented（过度代表）。离散版还有一个端点约定要小心：$L$ 数的是失败局数，两端的胜利局不算在内，所以 $E[L] = 2/p - 1$，而 $E[N - M] = 2/p$，两者只差这一个端点，别在山寨的答案之间对不上号时误以为推导错了。
+>
+> 顺带一提，(b) 问还要算 $L$ 的均值与方差，都能由「两个独立几何相加、再整体平移一位」直接读出：均值相加再减一，方差相加不受平移影响，不必回去重做无穷级数求和。
+>
+> 这个现象在不同学科里有不同名字：排队论里叫 inspection paradox（检查悖论），Feller 以 waiting time paradox（等待时间悖论）之名讨论过；寿命分析里说成「随机时刻落进的那枚灯泡寿命偏长」；离散情形就是本题。它会在第 7 章 Markov chain（马尔可夫链）的 steady-state behavior（稳态行为）分析、本章 Problem 27\* 里反复出现。先把「随机点被长间隔过度代表」这条直觉焊牢，后面每遇到「随机时刻」，都先问一句「它落在哪一段里」。做题时顺手在纸上画一条时间轴，把 $M$、$t$、$N$ 三个点标出来，比空想快十倍。
 
-利用 $E[X \mid \Theta] = \Theta/2$ 这一事实以及迭代期望定律（law of iterated expectations），$X$ 的期望值为
 
-```math
-E[X] = E\big[\,E[X \mid \Theta]\,\big] = E[\Theta/2] = E[\Theta]/2 = \frac{1}{2}\cdot\frac{1}{2} = \frac{1}{4}\;.
-```
+> <span style="color:#7f8c8d;">本页止于 Problem 5.\* 题干的「Assume that he wins each …」，其后内容（该游戏的独立胜局概率等）续接下一页（印本页码 328）。</span>
 
-此外，利用全方差定律（law of total variance）（这与第 4 章中示例 4.17 的计算相同），我们有
+<!-- ===== PDF p337 ===== -->
 
-```math
-\operatorname{var}(X) = \frac{7}{144}\;.
-```
+> <span style="color:#7f8c8d;">第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）—— 习题区（Problems）延续页，打印页码 328，承接上一页 p336（Problem 1–5 的题目开头）。本页首为上一页 **Problem 5 $^{*}$（Random incidence in the Bernoulli process，伯努利过程中的随机涉入）** 的题干收尾与完整 `*` 题 Solution；随后是 **Problem 6 $^{*}$** 与 **Problem 7 $^{*}$** 两题（本页三者均属伯努利过程（Bernoulli process） §6.1 的习题组，泊松过程习题组自下一页 p338「SECTION 6.2 The Poisson Process」起）。题干与带 `*` 题的 Solution 遵照英文原题，不翻译。</span>
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「$\operatorname{var}(X)=\frac{7}{144}$」这一格数字，是迭代期望（law of iterated expectations）与全方差定律（law of total variance）经手运算一次的具体果实。第一性原理：$E[X]=E[E[X\mid\Theta]]$ 先剥掉 $\Theta$ 得 $\frac12\cdot\frac12=\frac14$；全方差 $\operatorname{var}(X)=E[\operatorname{var}(X\mid\Theta)]+\operatorname{var}(E[X\mid\Theta])$ 把总方差拆成"组内噪声"与"组间（随 $\Theta$）波动"两块，本例恰好凑出 $\frac{7}{144}$——这是把"未知参数混合造成的额外散布"量化的标准脚本。命名模板：$\operatorname{var}(X)=E[\cdot]+\operatorname{var}(\cdot)$ 双项合计，是"条件方差的期望 + 条件期望的方差"两个各自独立的来源相加。跨课程（随机信号 / 18.065 ANOVA）：这正是"组间方差 + 组内方差 = 总方差"的 ANOVA 分解——把 $X$ 的变异性归因到参数的随机性而非纯噪声，是信噪比与方差分量分析的基础。反例：不少读者把 $\frac{7}{144}$ 当常数背，其实它完全依赖模型设定——换 $\Theta$ 的方差或 $W$ 的分布，这个数立刻变；若误用全方差定律而把 $\Theta$ 当非随机、只算 $E[\operatorname{var}(X\mid\Theta)]$，就会丢掉"参数不确定"这一大项贡献，严重低估 $\operatorname{var}(X)$。
+<span style="color:#2471a3;">**[problem]**</span>  <span style="color:#2471a3;">Problem 5 $^{*}$（续）　Random incidence in the Bernoulli process（伯努利过程中的随机涉入）</span>
 
-现在我们用公式
+> <span style="color:#7f8c8d;">承接上一页：题干在 p336 页尾以「Your cousin has been playing the same video game from time immemorial. Assume that he wins each」中断，本页续接下列英文原句，随后给出该 `*` 题的完整英文 Solution。</span>
 
-```math
-\operatorname{cov}(\Theta,\; X) = E[\Theta X] - E[\Theta]\, E[X],
-```
+**game with probability $p$, independent of the outcomes of other games.** At midnight, you enter his room and witness his losing the current game. What is the PMF of the number of lost games between his most recent win and his first future win?
 
-以及如下事实
-
-```math
-E[\Theta^2] = \operatorname{var}(\Theta) + E[\Theta]^2
-```
-
-来求 $X$ 与 $\Theta$ 的协方差（covariance）。我们有
-
-```math
-E[\Theta X] = E\big[\,E[\Theta X \mid \Theta]\,\big] = E\big[\,\Theta\, E[X \mid \Theta]\,\big] = E[\Theta^2/2]
-= \frac{1}{2}\, E[\Theta^2]
-= \frac{1}{2}\Big(\operatorname{var}(\Theta) + E[\Theta]^2\Big)
-= \frac{1}{2}\left(\frac{1}{12} + \frac{1}{4}\right) = \frac{1}{6},
-```
-
-其中第一个等号由迭代期望定律（law of iterated expectations）得出，第二个等号成立，是因为对一切 $\theta$ 有
+<span style="color:#2471a3;">**[solution]**</span> **Solution.** Let $t$ be the number of the game when you enter the room. Let $M$ be the number of the most recent past game that he won, and let $N$ be the number of the first game to be won in the future. The random variable $X = N - t$ is geometrically distributed with parameter $p$. By symmetry and independence of the games, the random variable $Y = t - M$ is also geometrically distributed with parameter $p$. The games he lost between his most recent win and his first future win are all the games between $M$ and $N$. Their number $L$ is given by
 
 ```math
-E[\Theta X \mid \Theta = \theta] = E[\,\theta X \mid \Theta = \theta\,] = \theta\, E[X \mid \Theta = \theta]\;.
+L = N - M - 1 = X + Y - 1.
 ```
 
-> <span style="color:#7f8c8d;">衔接下一面（PDF p448）：Example 8.15 在本页求得了 $E[\Theta X]$，并随后应用公式 $\operatorname{cov}(\Theta,X) = E[\Theta X] - E[\Theta]\,E[X]$；线性 LMS 估计量的最终表达式（给定已知的 $E[\Theta] = \tfrac12$、$E[X] = \tfrac14$、$\operatorname{var}(X) = \tfrac{7}{144}$ 与协方差）将在下一页据此求出。</span>
-<!-- ===== PDF p448 ===== -->
+Thus, $L + 1$ has a Pascal PMF of order two, and
 
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
+```math
+p_{L+1}(k) = (k - 1)\,p^{2}\,(1 - p)^{k - 2}, \qquad k = 2, 3, \ldots
+```
 
-<span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）（续）**</span>
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上式为 $L + 1$ 的二阶 Pascal PMF（源 OCR 在「and」与「$k = 2, 3, \ldots$」之间只残留换行，未显式给出式样），系按二阶 Pascal PMF $p_{L+1}(k) = \binom{k-1}{1}p^{2}(1-p)^{k-2}$ 重建，并与下文 $p_L(i) = i p^{2}(1-p)^{i-1}$ 相互印证；数值一律未改动。</span>
 
-> <span style="color:#7f8c8d;">本页承接上一页，继续 §8.4 的 **Example 8.15**：本页在其第二部分完成线性 LMS 估计量（linear LMS estimator）的数值计算——先计算 $\Theta$ 与观测 $X$ 的协方差（covariance），代入线性 LMS 公式得估计量的显式形式 $\hat\Theta = \tfrac67 X + \tfrac27$；随后用 Example 8.12 导出的公式计算对应的条件均方误差（conditional mean squared error），并把该线性 LMS 估计量与 MAP 估计量、LMS 估计量在 figure 8.12 中并以图形方式进行比较。本页末即为 **Figure 8.12** 的图注。本页不含新例子编号。</span>
+Hence,
+
+```math
+p_L(i) = P(L + 1 = i + 1) = i\,p^{2}\,(1 - p)^{i - 1}, \qquad i = 1, 2, \ldots
+```
 
 ---
 
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.15（续）——线性 LMS 估计量的计算与比较**</span>
+<span style="color:#2471a3;">**[problem]**</span>  <span style="color:#2471a3;">Problem 6 $^{*}$　Sum of a geometric number of independent geometric random variables（几何个数的独立几何随机变量之和）</span>
 
-于是，协方差（covariance）为
+Sum of a geometric number of independent geometric random variables. Let $Y = X_1 + \cdots + X_N$, where the random variables $X_i$ are geometric with parameter $p$, and $N$ is geometric with parameter $q$. Assume that the random variables $N$, $X_1$, $X_2$, $\ldots$ are independent. Show, without using transforms, that $Y$ is geometric with parameter $pq$. **Hint:** Interpret the various random variables in terms of a split Bernoulli process.
 
-```math
-\operatorname{cov}(\Theta, X) \;=\; \mathbb{E}[\Theta X] - \mathbb{E}[\Theta]\,\mathbb{E}[X]
-\;=\; \tfrac16 - \tfrac12\cdot\tfrac14
-\;=\; \tfrac{1}{24}.
-```
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上面这行协方差数值（$\mathbb{E}[\Theta X]=\tfrac16$、$\mathbb{E}[\Theta]=\tfrac12$、$\mathbb{E}[X]=\tfrac14$，即原文括注中的 $6,1,2,1,4,1$ 被 OCR 打散成碎片如 `61 21 41 = 241`）在旧源 OCR 中严重残碎，无法逐字确证。此处按全页中可辨且自洽的数值链重建：原页随后给出 $\operatorname{cov}(\Theta,X)=\tfrac{1}{24}$、$\operatorname{var}(X)=\tfrac{7}{144}$、$\operatorname{cov}/\operatorname{var}=\tfrac67$，以及估计量 $\hat\Theta = \tfrac67 X + \tfrac27$，据此反推上述三个中间值（$E[\theta X]=\tfrac16$、$E[\theta]=\tfrac12$、$E[X]=\tfrac14$）与之严格自洽（$\tfrac16-\tfrac12\cdot\tfrac14=\tfrac{1}{24}$，且 $E[\theta]=\tfrac12$ 代入估计量得 $\tfrac12+\tfrac67(X-\tfrac14)=\tfrac67X+\tfrac27$），非臆造新数值。</span>
-
-线性 LMS 估计量（linear LMS estimator）为
-
-```math
-\hat\Theta \;=\; \mathbb{E}[\Theta] + \frac{\operatorname{cov}(\Theta, X)}{\operatorname{var}(X)} \left(X - \mathbb{E}[X]\right)
-\;=\; \tfrac12 + \frac{\tfrac{1}{24}}{\tfrac{7}{144}} \left(X - \tfrac14\right)
-\;=\; \tfrac67 X + \tfrac27.
-```
-
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> $\hat\Theta=\frac67X+\frac27$ 这个漂亮数字里的 $\frac67$ 系数，藏着"线性 LMS 有多相信观测"的全部秘密。第一性原理：$\frac67=\frac{\operatorname{cov}(\Theta,X)}{\operatorname{var}(X)}=\frac{1/24}{7/144}$，它是"观测 $X$ 每偏离均值 $1$，对 $\Theta$ 的估计就跟着动 $\frac67$"的斜率；因 $X$ 含噪声（$\operatorname{var}(X)=7/144$）远大于信号的方差 $\operatorname{var}(\Theta)=1/12$，斜率被压到不足 1——这正是"数据被噪声稀释、估计向先验均值 1/2 收缩"的数学言说。命名模板：把小于 1 的系数读出 shrinkage（收缩率），估计量总被拉回先验均值，绝不信到饱和。跨课程（回归 / 18.065）：这恰是与均方最优回归系数一模一样的"最小二乘斜率"，只是分母换成了总的观测方差；用方差比决定置信程度，是卡尔曼增益的雏形。反例：$\frac67$ 是对"线性"模型量身定做的常数——若 $\Theta X$ 关系根本不线性（如例 8.11 的对数型后验），这个斜率会给出一律偏低、且在大 $x$ 处落出 $[0,1]$ 的荒谬估计；正因为如此，正文才提醒在 $x\to1$ 附近线性逼近会越界 $\theta>1$。
-
-其中 $\operatorname{var}(X) = \tfrac{7}{144}$。
-
-对应的条件均方误差（conditional mean squared error）用一个由 **Example 8.12** 中所推导的公式来计算，把刚才导出的表达式（$\hat\Theta = \tfrac67 X + \tfrac27$）代入即可。
-
-在图 8.12 中，我们把该线性 LMS 估计量与 MAP 估计量（MAP estimator）以及 LMS 估计量放在一起比较（cf. Examples 8.2、8.7 与 8.12）。请注意：在感兴趣的区域（region of interest）的大部分范围内，LMS 估计量与线性 LMS 估计量几乎相同，两者对应的条件均方误差也几乎相同；而 MAP 估计量的均方误差（mean squared error）比其余两个估计量显著更大。当 $x$ 与 1 很接近时，线性 LMS 估计量的表现要差于另外两个估计量，并且确实可能给出一个估计值 $\hat\theta > 1$，这样它就落在了 $\Theta$ 的可能取值范围之外。
-
-> <span style="color:#7f8c8d;">[图] **Figure 8.12**——三种估计量及其均方误差（mean squared errors）作为观测值 $x$ 的函数（as functions of the observed value $x$），对应于 Example 8.15 中的问题。上图面板为各估计（Estimates，含 MAP、LMS 与线性 LMS 估计曲线），横轴为观测值 $x$（约 $0$–$1$）；下图面板为标注 Mean Squared Error 的均方误差曲线，横轴同样为 $x$。此图文本框内各轴刻度在旧源 OCR 中被切碎，仅文字标签（Estimates／MAP Estimates／LMS Estimates／Linear LMS Estimates／Mean Squared Error）可辨。</span>
-
-> <span style="color:#7f8c8d;">衔接下一面：本页（书页 p440）完成 Example 8.15 的线性 LMS 估计量与均方误差比较后，下一页（书页 p441）转入 §8.4 中 Example 8.16（涉及多个观测量与多个参数的情形，再次验证例号序列 8.15 → 8.16 连续）。</span>
-<!-- ===== PDF p449 ===== -->
-
-<span style="color:#c0392b;">**第 8 章　贝叶斯统计推断（Bayesian Statistical Inference）**</span>
-
-<span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）（续）**</span>
-
-> <span style="color:#7f8c8d;">本页承接上一页 §8.4 的论述：页首无新节标题，直接进入 **Example 8.16**（一元硬币偏差的线性 LMS 估计，Linear LMS Estimation of the Bias of a Coin），故小节标题带「（续）」，而例本身是新例（非续页）。该例重访例 8.4、8.8、8.13 的抛硬币问题，导出其线性最小均方（linear LMS）估计量；本页末已将各系数（$E[\Theta]$、$E[X]$、$\text{var}(X)$、$E[\Theta X]$、$\text{cov}(\Theta,X)$）计算完毕，并得出线性 LMS 估计量的最终形式。编号锚点：Example 8.13 的 LMS 估计结果与本页线性 LMS 估计结果相互印证（PDF p442／书目 p434 处有 Figure 8.10 图注与本结论呼应）。</span>
+<span style="color:#2471a3;">**[solution]**</span> **Solution.** We derived this result in Chapter 4, using transforms, but we develop a more intuitive derivation here. We interpret the random variables $X_i$ and $N$ as follows. We view the times $X_1$, $X_1 + X_2$, etc. as the arrival times in a Bernoulli process with parameter $p$. Each arrival is rejected with probability $1 - q$ and is accepted with probability $q$. We interpret $N$ as the number of arrivals until the first acceptance. The process of accepted arrivals is obtained by splitting a Bernoulli process and is therefore itself Bernoulli with parameter $pq$. The random variable $Y = X_1 + \cdots + X_N$ is the time of the first accepted arrival and is therefore geometric with parameter $pq$.
 
 ---
 
-<span style="color:#2471a3;">**[example]**</span> <span style="color:#2471a3;">**Example 8.16（一元硬币偏差的线性 LMS 估计，Linear LMS Estimation of the Bias of a Coin。）**</span>
+<span style="color:#2471a3;">**[problem]**</span>  <span style="color:#2471a3;">Problem 7 $^{*}$　The bits in a uniform random variable form a Bernoulli process（均匀随机变量中的各位构成一个伯努利过程）</span>
 
-我们重新审视例 8.4、8.8 与 8.13 中的抛硬币（coin tossing）问题，并导出线性最小均方（linear LMS）估计量。这里，硬币正面朝上的概率被建模为一个随机变量 $\Theta$，其先验分布（prior distribution）在区间 $[0,1]$ 上均匀分布。硬币被独立地抛掷 $n$ 次，得到正面朝上的次数为一随机变量，记为 $X$。于是，若 $\Theta$ 等于 $\theta$，则随机变量 $X$ 服从参数为 $n$ 与 $\theta$ 的二项分布（binomial distribution）。
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 本页中符号 $\Theta$ 与 $\theta$ 在源 OCR 中被反复误读（如「random variable e … if e is equal to 0 … with parameters n and O」中，`e`/`0`/`O` 实为 $\Theta$ / $\theta$）；均匀先验区间 $[0,1]$、二项参数 $n$ 与 $\theta$ 等数值为可辨项，上文据此忠实还原为标准书写，未臆造其他数值。</span>
-
-我们计算线性 LMS 估计量公式中所出现的各个系数。我们有 $E[\Theta] = 1/2$，且
+The bits in a uniform random variable form a Bernoulli process. Let $X_1$, $X_2$, $\ldots$ be a sequence of binary random variables taking values in the set $\{0, 1\}$. Let $Y$ be a continuous random variable that takes values in the set $[0, 1]$. We relate $X$ and $Y$ by assuming that $Y$ is the real number whose binary representation is $0.X_1 X_2 X_3 \cdots$. More concretely, we have
 
 ```math
-E[X] = E\bigl[E[X \mid \Theta]\bigr] = E[n\Theta] = \frac{n}{2}.
+Y = \sum_{k = 1}^{\infty} \frac{X_k}{2^{k}}.
 ```
 
-$\Theta$ 的方差为 $1/12$，故 $\sigma_\Theta = 1/\sqrt{12}$。此外，正如前一例所计算的，$E[\Theta^2] = 1/3$。若 $\Theta$ 取值为 $\theta$，则 $X$ 的（条件）方差为 $n\theta(1-\theta)$。利用全方差公式（law of total variance），我们得到
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 「More concretely, we have」之后的二进制展开式在原页 OCR 中只残留若干孤立的占位圆点 `•`（未显现实际式样），上式按 $Y = 0.X_1 X_2 X_3 \cdots$ 的二进制扩张重建为 $Y = \sum_{k\ge 1} X_k / 2^{k}$；若需最严格原文请回查原书页 328。</span>
+
+(a) Suppose that the $X_i$ form a Bernoulli process with parameter $p = 1/2$. Show that $Y$ is uniformly distributed. **Hint:** Consider the probability of the event $(i - 1)/2^{k} < Y < i/2^{k}$, where $i$ and $k$ are positive integers.
+
+> <span style="color:#7f8c8d;">[翻页续接] Problem 7 的 (b) 部分在 p337 未给出，自下一页 p338 起续接其英文 Solution。</span>
+
+<!-- ===== PDF p338 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> —— 习题区（续）
+
+> <span style="color:#7f8c8d;">承接上一页：本页位于本章习题区中部。页首为上一页某道题的 `Solution` 的末尾（该题把均匀随机变量 $Y$ 的二进制展开与 Bernoulli 过程联系起来，分别处理 part (a) 与 part (b)）；其后进入「泊松过程」一节的练习题 **Problem 8 / 9 / 10**。注：源 OCR 页眉写作 `SECTION 7.2. The Poisson Process`，但正文内容（Bernoulli 过程、泊松过程）显然属于第 6 章，第 6 章泊松小节实为 §6.2，此处 `7` 疑为 OCR 将 `6` 误认，编号未改动、仅如实标注。</span>
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 7（续）— Solution**</span>
+
+(b) Suppose that $Y$ is uniformly distributed. Show that the $X_i$ form a Bernoulli process with parameter $p = 1/2$.
+
+**Solution. (a)** We have
 
 ```math
-\operatorname{var}(X)
-= E\bigl[\operatorname{var}(X \mid \Theta)\bigr] + \operatorname{var}\bigl(E[X \mid \Theta]\bigr)
-= E\bigl[n\Theta(1-\Theta)\bigr] + \operatorname{var}(n\Theta)
-= \frac{n}{2} - \frac{n}{3} + \frac{n^2}{12}
-= \frac{n(n+2)}{12}.
+P(Y \in [0,\, 1/2]) = P(X_1 = 0) = \frac{1}{2} = P(Y \in [1/2,\, 1]).
 ```
 
-为求 $X$ 与 $\Theta$ 的协方差（covariance），我们使用公式
+Furthermore,
 
 ```math
-\operatorname{cov}(\Theta, X)
-= E[\Theta X] - E[\Theta]\,E[X]
-= E[\Theta X] - \frac{n}{4}.
+P(Y \in [0,\, 1/4]) = P(X_1 = 0,\, X_2 = 0) = \frac{1}{4}.
 ```
 
-与例 8.15 类似，我们又有
+Arguing similarly, we consider an interval of the form $\left[(i-1)/2^{k},\, i/2^{k}\right]$, where $i$ and $k$ are positive integers and $i \le 2^{k}$. For $Y$ to fall in the interior of this interval, we need $X_1, \ldots, X_k$ to take on a particular sequence of values (namely, the digits in the binary expansion of $i-1$). Hence,
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 紧接 "Hence," 之后本应有一个概率等式（应为 $P\big(Y \in [(i-1)/2^{k},\, i/2^{k}]\big) = 1/2^{k}$），原图把该行丢失，此处括号内容为按文意补齐的具体式样，未改动任何数值。</span>
+
+Note also that for any $y \in [0, 1]$, we have $P(Y = y) = 0$, because the event $\{Y = y\}$ can only occur if infinitely many $X_i$'s take on particular values, a zero probability event. Therefore, the CDF of $Y$ is continuous and satisfies
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 7\* 把 uniform distribution（均匀分布）与「无穷多次独立公平地抛硬币」证成同一件事，是全书把离散与连续接起来的最干净的一处。构造是 $Y = \sum_{k \ge 1} X_k / 2^k$，也就是把 $Y$ 写成二进制小数 $0.X_1 X_2 X_3 \ldots$。题目要证的是双向的：硬币序列形成 Bernoulli process（伯努利过程）时 $Y$ 均匀，反过来 $Y$ 均匀时各位 $X_k$ 构成参数 $1/2$ 的伯努利过程。
+>
+> (a) 的第一性原理是对半剖分：每读入一位二进制位，就把候选区间缩短一半。$X_1 = 0$ 对应左半段 $[0, 1/2)$，$X_1 = 1$ 对应右半段，两者概率各为 $1/2$，与均匀分布把质量对半分完全一致；再读一位，区间四等分，每段概率 $1/4$。归纳到深度 $k$：前缀 $X_1, \ldots, X_k$ 取定一个具体串，等价于 $Y$ 落在某个长度 $1/2^k$ 的 dyadic interval（二分区间）之内，概率恰为 $1/2^k$。
+>
+> 这一步能收尾，靠的是「二分区间族足够密」：任何开区间都能被这类区间从内部逼近，于是任意区间的概率都被迫等于它的长度，cumulative distribution function（累积分布函数）只能是最朴素的那个 $F(y) = y$，即均匀分布。这与你在 6.006 学过的 binary search decision tree（二分搜索决策树）同构：深度 $k$ 的完全二叉树有 $2^k$ 片叶子，每片叶子恰是一个长度 $1/2^k$ 的区间。同一种树，概率论用它统计质量分配，算法用它统计比较次数。
+>
+> 端点处必须补一句严谨性：二进制展开在二分点上不唯一，例如 $1/2 = 0.1000\ldots = 0.0111\ldots$，两条展开给出不同的硬币序列，所以「$Y$ 对应唯一序列」是假的。但这个歧义只发生在可数多个点上，每个点的概率都是零 —— 正文正是用「$Y = y$ 要求无穷多位取定值，是零概率事件」来证明 $P(Y = y) = 0$ 的。实分析课里你会看到同一件事的另一种说法：可数集是 null set（零测集），Lebesgue measure（勒贝格测度）对可数改动完全不敏感。这句话值得现在就拆开，别让它变成黑箱：长度这类测度满足可加性，单点的长度是零，可数多个零相加仍是零，所以一个集合加上或去掉可数多个点，测度不变。概率里同一件事的说法是零概率事件不影响分布——一个是测度，一个是概率，两个说法是同一台机器的两种语言。
+>
+> (b) 的方向反过来更漂亮：已知 $Y$ 均匀，证各位独立且 $p = 1/2$。手段同样朴素 —— 区间等长则概率等，联合概率写成边缘概率的乘积，独立性就自动掉出来。把 (a) 与 (b) 合起来看，这道题实际上构造了一个从 $\{0,1\}^{\mathbb{N}}$ 到 $[0,1]$ 的 measure-preserving isomorphism（保测同构），只是要忽略那个零测的可数例外集。
+>
+> 顺带回答一个常被跳过的问题：为什么必须是无穷多位？若只取前 $k$ 位，$Y$ 只能落在 $2^k$ 个值上，是离散的，绝无可能均匀连续；而截断带来的误差上界 $2^{-k}$ 恰好就是 quantization error（量化误差）。所以「位数」与「精度」在这里是同一个东西的两种说法，数值库里多取几位就是多要一位二进制精度，没有任何玄机。
+>
+> 请把结论焊进长期记忆：uniform random number（均匀随机数）等价于无穷多个独立公平的 bit（比特）。它在随机化算法里是「随机源可以从抛硬币造出连续分布」的根据，在信息论里是「均匀分布每一位恰好提供一比特 entropy（熵）」的根据，在数值计算里是「伪随机数生成器只要比特序列像抛硬币，就够用」的根据。三处不同领域，同一条定理的三个侧面。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏，无法识别] 「the CDF of $Y$ is continuous and satisfies」一句之后应有 CDF 关系式，原图缺此行，无法复原具体式样，仅如实保留缺失说明。</span>
+
+Since every number $y$ in $[0, 1]$ can be closely approximated by a number of the form $i/2^{k}$, we have $P(Y \le y) = y$, for every $y \in [0, 1]$, which establishes that $Y$ is uniform.
+
+**(b)** As in part (a), we observe that every possible zero-one pattern for $X_1, \ldots, X_k$ is associated to one particular interval of the form $\left[(i-1)/2^{k},\, i/2^{k}\right]$ for $Y$. These intervals have equal length, and therefore have the same probability $1/2^{k}$, since $Y$ is uniform. This particular joint PMF for $X_1, \ldots, X_k$ corresponds to independent Bernoulli random variables with parameter $p = 1/2$.
+
+> <span style="color:#7f8c8d;">源页在 part (b) 之后的空白处残留若干孤立圆点/`•` 等 OCR 碎片，系排版装饰，未译出。</span>
+
+---
+
+<span style="color:#2471a3;">**The Poisson Process（泊松过程）**</span> <span style="color:#7f8c8d;">—— 习题（源 OCR 页眉写作 `SECTION 7.2`，疑为 §6.2 之误读，见页首注）。</span>
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 8.**</span>
+
+During rush hour, from 8 a.m. to 9 a.m., traffic accidents occur according to a Poisson process with a rate of 5 accidents per hour. Between 9 a.m. and 11 a.m., they occur as an independent Poisson process with a rate of 3 accidents per hour. What is the PMF of the total number of accidents between 8 a.m. and 11 a.m.?
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 9.**</span>
+
+An athletic facility has 5 tennis courts. Pairs of players arrive at the courts and use a court for an exponentially distributed time with mean 40 minutes. Suppose a pair of players arrives and finds all courts busy and $k$ other pairs waiting in queue. What is the expected waiting time to get a court?
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 10.**</span>
+
+A fisherman catches fish according to a Poisson process with rate $\lambda = 0.6$ per hour. The fisherman will keep fishing for two hours. If he has caught at least one fish, he quits. Otherwise, he continues until he catches at least one fish.
+
+<!-- ===== PDF p339 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> —— 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">页眉：The Bernoulli and Poisson Processes / Chap. 6 / 页印 330。本页延续上一页「泊松过程」一节的习题区。页首为上一页 **Problem 10**（渔夫捕鱼）的 (a)–(e) 各小问；随后依次为 **Problem 11 / 12 / 13 / 14**。各题题干均保持英文原题；本页各题均无星号、无解答。Problem 14 的题干在本页末尾起头，延续到下一页（书页 331）。</span>
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 10（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：渔夫以速率 $\lambda = 0.6$（每小时）的泊松过程（Poisson process）捕鱼，原计划钓两小时；若已钓到至少一条鱼则收竿，否则继续钓直到钓到至少一条鱼为止。本页给出该题的 (a)–(e) 各小问。</span>
+
+(a) Find the probability that he stays for more than two hours.
+
+(b) Find the probability that the total time he spends fishing is between two and five hours.
+
+(c) Find the probability that he catches at least two fish.
+
+(d) Find the expected number of fish that he catches.
+
+(e) Find the expected total fishing time, given that he has been fishing for four hours.
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 11**</span>
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 题干中的速率符号在 OCR 中读作 `rate A per hour`，按泊松过程的标准记号复原为速率 $\lambda$，数值未改动。</span>
+
+Customers depart from a bookstore according to a Poisson process with rate $\lambda$ per hour. Each customer buys a book with probability $p$, independent of everything else.
+
+(a) Find the distribution of the time until the first sale of a book.
+
+(b) Find the probability that no books are sold during a particular hour.
+
+(c) Find the expected number of customers who buy a book during a particular hour.
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 12**</span>
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 题干中的均值符号在 OCR 中读作 `mean A`，按泊松随机变量的标准记号复原为均值 $\lambda$，数值未改动。</span>
+
+A pizza parlor serves $n$ different types of pizza, and is visited by a number $K$ of customers in a given period of time, where $K$ is a Poisson random variable with mean $\lambda$. Each customer orders a single pizza, with all types of pizza being equally likely, independent of the number of other customers and the types of pizza they order. Find the expected number of different types of pizzas ordered.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 12 是 indicator random variable（指示随机变量）加 linearity of expectation（期望的线性性）的教科书级演练：顾客数随机、每位顾客点哪种披萨也随机，两层随机叠在一起，乍看无从下手；一换成指示变量，复杂度立刻塌缩成一串求和。这套路数在 CLRS 的期望分析里是主力，雇佣问题与生日问题都是同一个入口。
+>
+> 第一步是拆。设 $I_i$ 表示「第 $i$ 种披萨至少被点一次」的指示变量，不同披萨种类数就是 $\sum_{i=1}^{n} I_i$。第二步是取期望：$E[\sum_i I_i] = \sum_i E[I_i] = \sum_i P(I_i = 1)$。这一步的合法性只依赖线性性 —— 它不要求各个 $I_i$ 相互独立，也不要求顾客数 $K$ 与种类选择独立。这是本题最容易被误解的地方：$I_1$ 与 $I_2$ 显然负相关，因为点了一种就少了一份概率给另一种，但求和照样成立，因为期望运算是线性算子，不挑剔被加项之间的关系。
+>
+> 第三步算单个概率。给定 $K$ 位顾客，每位独立地以 $1/n$ 选中第 $i$ 种，所以无人点第 $i$ 种的条件概率是 $(1 - 1/n)^K$。要对 $K$ 消去，用 law of total expectation（全期望定律），得到这个概率等于 $E[(1-1/n)^K]$。此时需要一条 Poisson distribution（泊松分布）的 moment generating function（母函数）恒等式：若 $K$ 服从参数 $\lambda$ 的泊松分布，则 $E[a^K] = e^{-\lambda(1-a)}$。代入 $a = 1 - 1/n$，得无人点第 $i$ 种的概率为 $e^{-\lambda/n}$。
+>
+> 于是 $P(I_i = 1) = 1 - e^{-\lambda/n}$，种类数的期望为 $n(1 - e^{-\lambda/n})$。这个答案的两个极限都值得看一眼：当 $\lambda$ 远低于 $n$ 时，展开得近似 $\lambda$ —— 顾客太少、几乎不重复，种类数就是顾客数；当 $\lambda$ 远高于 $n$ 时，答案逼近 $n$ —— 顾客太多，每种都被点过。真正需要这个闭式的地方，恰在两者之间的中间地带。
+>
+> 顺带把三个容易混淆的近亲分清。本题问的是「被覆盖到的种类数的期望」，靠指示变量求和就够，独立性完全不必要。coupon collector problem（优惠券收集者问题）问的是「集齐所有种类要等多久」，那是最大值型的等待时间，指示变量求和不够用，得对「到某时刻仍未集齐」的概率做 tail sum（尾部求和），再叠加容斥。birthday problem（生日问题）问的又是「有无碰撞的概率」，需要的是联合概率而非期望。三者共享同一个入口（指示变量），出口却完全不同。
+>
+> 反过来想一步，就知道这条路为什么无可替代：若要直接算出「恰好 $m$ 种被点」的完整分布，就得枚举顾客点单的所有组合方式，状态数随 $n$ 指数增长；而期望只要 $n$ 个边缘概率的和，代价是线性的。这是「求期望比求分布便宜」的一般现象，第 7 章求吸收时间时同样成立 —— 分布难以写出，期望却能靠线性方程组直接解出。
+>
+> 至于指示变量加线性性这个杠杆，在第 7 章 §7.4 absorption probability and expected time to absorption（吸收概率与吸收时间的期望）的分析里仍是一线主力，只是依赖结构从「独立」升级为「一阶依赖」，求和随之让位给 system of linear equations（线性方程组）。订正一处旧注的编号错误：原文把 §7.4 写成「本章 §7.4」，实为第 7 章 §7.4、原书 362 页起；第 6 章的三节分别是 6.1 伯努利过程、6.2 泊松过程、6.3 小结与讨论。
+
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 13**</span>
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 题干中两台发射机的速率在 OCR 中读作 `rates of AA and A B`，按上下文复原为 $\lambda_A$ 与 $\lambda_B$；消息字数的 PMF 在原页排版破碎（`2/6, if w = 1` 等行错位、`if w 3` 缺等号），按分段函数的标准式样重建，数值 $2/6$、$3/6$、$1/6$ 与 $0$ 均未改动。</span>
+
+Transmitters A and B independently send messages to a single receiver in a Poisson manner, with rates of $\lambda_A$ and $\lambda_B$, respectively. All messages are so brief that we may assume that they occupy single points in time. The number of words in a message, regardless of the source that is transmitting it, is a random variable with PMF
 
 ```math
-E[\Theta X] = \frac{n}{3},
+p_W(w) = \begin{cases}
+2/6, & \text{if } w = 1,\\
+3/6, & \text{if } w = 2,\\
+1/6, & \text{if } w = 3,\\
+0, & \text{otherwise,}
+\end{cases}
 ```
 
-故
+and is independent of everything else.
+
+(a) What is the probability that during an interval of duration $t$, a total of exactly nine messages will be received?
+
+(b) Let $N$ be the total number of words received during an interval of duration $t$. Determine the expected value of $N$.
+
+(c) Determine the PDF of the time from $t = 0$ until the receiver has received exactly eight three-word messages from transmitter A.
+
+(d) What is the probability that exactly eight of the next twelve messages received will be from transmitter A?
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 14**</span>
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 题干开头在 OCR 中读作 `Beginning at time t O.`，复原为 $t = 0$；页末另有一孤立字符 `=`，系扫描噪声，未译出。</span>
+
+Beginning at time $t = 0$, we start using bulbs, one at a time, to illuminate a room. Bulbs are replaced immediately upon failure. Each new bulb is selected independently by an equally likely choice between a type-A bulb and a type-B bulb. The lifetime, $X$, of any particular bulb of a particular type is a random variable,
+
+> <span style="color:#7f8c8d;">本页止于 Problem 14 题干中途（「… is a random variable,」），其后的题设（independent of everything else, with the following PDF: …）与 (a)–(j) 各小问延续到下一页（书页 331）。</span>
+
+
+<!-- ===== PDF p340 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems）。页首（书页 331 顶端）续接上一页 **Problem 14**（灯具更换问题）的题目开头与其解答 (a)–(j)——该问题题设部分起于上一页书页 330，题目编号原文为 **Problem 14**。随后是独立的 **Problem 15**（服务站问题）。本题区题目题干均保持英文原题；带 `*` 的题目另有解析，本页两道题均无星号。</span>
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 14（续）**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：从时刻 $t = 0$ 起开始用灯泡（bulbs）照亮房间，一次一个；灯泡一坏立即更换。每枚新灯泡以等可能方式独立地从 A 型灯泡与 B 型灯泡中选取。任一特定类型灯泡的寿命（lifetime）$X$ 是一个随机变量，与其余一切相互独立，其 PDF 如下。本页自 PDF 表示式起续，至 (a)–(j) 各子问结束。</span>
+
+independent of everything else, with the following PDF:
+
+for type-A bulbs:
+```math
+f_X(x) = \begin{cases}
+e^{-x}, & \text{if } x \geq 0,\\
+0, & \text{otherwise;}
+\end{cases}
+```
+
+for type-B bulbs:
+```math
+f_X(x) = \begin{cases}
+3e^{-3x}, & \text{if } x \geq 0,\\
+0, & \text{otherwise.}
+\end{cases}
+```
+
+(a) Find the expected time until the first failure.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 题设要看准：从 $t=0$ 起开始用灯，一次只点亮一枚，坏了立刻换，新灯泡独立地以等概率选自 A 型与 B 型；A 型寿命服从参数 1 的 exponential distribution（指数分布），B 型服从参数 3 的同一种分布。十个小题表面各异，其实只靠三件事：混合、贝叶斯更新，以及"这不是泊松过程"。
+>
+> 第一件事：首坏时刻是混合，不是竞争。因为一次只有一枚灯在亮，首枚的类型先抽、寿命再抽，于是 $T$ 的生存函数是 $(1/2)e^{-t}+(1/2)e^{-3t}$，期望 $E[T]=(1/2)\times1+(1/2)\times(1/3)=2/3$ 小时。(a) 的答案就是 $2/3$。旧注写的 $1/4$ 是另一道题：两型同时点亮、并联运行时的最小值 $\min(X_A,X_B)$ 的均值，率相加得 4、期望 $1/4$。本题一次一枚，根本没有两条失效通道同时开着，所以那个结论用不上。
+>
+> 把方差也算一遍做核对。(d) 需要 $E[T^{2}]=(1/2)\times2+(1/2)\times(2/9)=10/9$，于是 $\mathrm{var}(T)=10/9-4/9=2/3$，标准差约 $0.816$ 小时。本题期望与方差恰好都等于 $2/3$，纯属这组参数的巧合，别当规律记。
+>
+> 第二件事：贝叶斯更新。(b) 问"$t$ 之前没有失效"的概率，就是上面那条生存函数，即 $(1/2)e^{-t}+(1/2)e^{-3t}$。(c) 已知无失效到 $t$，首枚是 A 型的后验是 $P(A\mid T>t)=e^{-t}/(e^{-t}+e^{-3t})=1/(1+e^{-2t})$，随 $t$ 单调上升，$t=1$ 时约 $0.8808$。含义清楚：B 型更快夭折，能活到 $t$ 就更可能是慢的那一支，于是"活得久"本身成了"类型偏慢"的证据。
+>
+> 第三件事，也是最容易踩空的一处：无记忆性只能用在一个类型内部，不能直接用在整个混合上。旧注说"已知用了 $t$ 小时仍未坏，剩余寿命分布与全新灯泡完全相同"——这对单一类型成立，对混合不成立，因为混合的危险率不是常数。正确做法是先按 (c) 更新类型后验，再在两个类型的剩余均值上加权：(j) 的答案是 $E[T\mid T>t]=t+[3e^{2t}+1]/[3(e^{2t}+1)]$，$t=1$ 时约 $1.9205$，而不是 $t+1/4$。核对一下 $t=0$：右端退化为 $2/3$，正是无条件均值，说明这个式子自洽。
+>
+> 陷阱那条也要改写。失效时刻序列不构成 Poisson process（泊松过程），因为瞬时速率在 1 与 3 之间随机跳变；但没有"首个例外"——第一个间隔同样是两个指数按 $1/2$ 混合的形状，不是率 4 的指数。旧注写"除了首个失效时刻之外"，这个例外不存在。准确的说法是：整条间隔序列既不独立、也不同分布；只有条件于类型序列之后，每段才是参数 1 或 3 的指数。
+>
+> 类型序列本身是一个参数 $1/2$ 的 Bernoulli process（伯努利过程），与寿命分布无关。所以 (e) 问"第 12 次失效恰好也是第 4 次 A 型失效"只依赖这条类型序列：前 11 次里恰好 3 次 A、第 12 次是 A，概率是 $\binom{11}{3}(1/2)^{12}$。而 (g) 问第 12 次失效时刻的分布，就必须同时用上"12 段寿命相加"与"逐段按类型混合"两条线索，不能偷懒。
+>
+> 最后把两个容易混的量彻底分开。(a) 的 $2/3$ 是首坏时刻的均值，由"先选型、后取寿命"这条混合结构决定；而 $\lambda_A/(\lambda_A+\lambda_B)=1/4$ 是"两枚灯泡同时点亮时谁先坏"的概率，只适用于两支同时在跑的情形。旧注说本题两个数恰好都是 $1/4$，其中一个是错的、另一个不属于本题的模型，所以那段对照要整段删掉。混着记的后果很具体：遇到双灯并联的题会用 $2/3$，遇到单灯轮换的题会用 $1/4$，两边同时错。
+
+
+(b) Find the probability that there are no bulb failures before time $t$.
+
+(c) Given that there are no failures until time $t$, determine the conditional probability that the first bulb used is a type-A bulb.
+
+(d) Find the variance of the time until the first bulb failure.
+
+(e) Find the probability that the 12th bulb failure is also the 4th type-A bulb failure.
+
+(f) Up to and including the 12th bulb failure, what is the probability that a total of exactly 4 type-A bulbs have failed?
+
+(g) Determine either the PDF or the transform associated with the time until the 12th bulb failure.
+
+(h) Determine the probability that the total period of illumination provided by the first two type-B bulbs is longer than that provided by the first type-A bulb.
+
+(i) Suppose the process terminates as soon as a total of exactly 12 bulb failures have occurred. Determine the expected value and variance of the total period of illumination provided by type-B bulbs while the process is in operation.
+
+(j) Given that there are no failures until time $t$, find the expected value of the time until the first failure.
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 15**</span>
+
+A service station handles jobs of two types, A and B. (Multiple jobs can be processed simultaneously.) Arrivals of the two job types are independent Poisson processes with parameters $\lambda_A = 3$ and $\lambda_B = 4$ per minute, respectively. Type A jobs stay in the service station for exactly one minute. Each type B job stays in the service station for a random but integer amount of time which is geometrically distributed, with mean equal to 2, and independent of everything else. The service station started operating at some time in the remote past.
+
+(a) What is the mean, variance, and PMF of the total number of jobs that arrive within a given three-minute interval?
+
+(b) We are told that during a 10-minute interval, exactly 10 new jobs arrived. What is the probability that exactly 3 of them are of type A?
+
+(c) At time 0, no job is present in the service station. What is the PMF of the number of type B jobs that arrive in the future, but before the first type A arrival?
+
+(d) At time $t = 0$, there were exactly two type A jobs in the service station. What is the PDF of the time of the last (before time 0) type A arrival?
+
+(e) At time 1, there was exactly one type B job in the service station. Find the distribution of the time until this type B job departs.
+
+<!-- ===== PDF p341 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems），印页号 332（页眉 Chap. 6）。页首续接上一页 **Problem 14–15**，本页覆盖 **Problem 16–19**：Problem 16（U 形转弯等待）、Problem 17（动物园袋鼠）为普通题；Problem 18\*、19\* 为带星号题，其英文 Solution 保留原文。Problem 19\* 的 Solution 在本页末尾（"A much ..."处）中断，续接下一页。题目题干均保持英文原题，不翻译。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 16.**</span>
+
+Each morning, as you pull out of your driveway, you would like to make a U-turn rather than drive around the block. Unfortunately, U-turns are illegal in your neighborhood, and police cars drive by according to a Poisson process with rate $\lambda$. You decide to make a U-turn once you see that the road has been clear of police cars for $T$ time units. Let $N$ be the number of police cars you see before you make the U-turn.
+
+**(a)** Find $E[N]$.
+
+**(b)** Find the conditional expectation of the time elapsed between police cars $n - 1$ and $n$, given that $N \ge n$.
+
+**(c)** Find the expected time that you wait until you make the U-turn. *Hint:* Condition on $N$.
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 误读] 题干中的速率参数被 OCR 读作大写 A（`rate A`），按上下文恢复为 $\lambda$；(b) 中的条件记号 "$N \ge n$" 被 OCR 读作 `N � n`，已按原意修复。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 17.**</span>
+
+A wombat in the San Diego zoo spends the day walking from a burrow to a food tray, eating, walking back to the burrow, resting, and repeating the cycle. The amount of time to walk from the burrow to the tray (and also from the tray to the burrow) is 20 secs. The amounts of time spent at the tray and resting are exponentially distributed with mean 30 secs. The wombat, with probability $1/3$, will momentarily stand still (for a negligibly small time) during a walk to or from the tray, with all times being equally likely (and independent of what happened in the past). A photographer arrives at a random time and will take a picture at the first time the wombat will stand still. What is the expected value of the length of time the photographer has to wait to snap the wombat's picture?
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 18\*.**</span>
+
+Consider a Poisson process. Given that a single arrival occurred in a given interval $[0, t)$, show that the PDF of the arrival time is uniform over $[0, t)$.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 18\* 是「泊松过程本质上是均匀散点」的第一见证：已知 [0,t) 恰有一次到达时，到达时刻竟均匀。推导只用条件概率除法：分子 = 「长度 l 的 [a,b] 内恰 1 次」×「其余长度 t−l 内恰 0 次」= (λl·e^{−λl})·e^{−λ(t−l)}；分母 = (λt·e^{−λt})。神奇之处在于所有指数因子相消，只剩长度比 l/t——「均匀」由此而来。第一性原理：泊松过程的「无记忆 + 独立增量」结构，使得「给定事件个数、位置均匀」成为必然。这个「计数条件化」模板——把事件写成互斥小区间的乘积再用比值——会反复出现：第 7 章的吸收概率、连续时间链的转移分析都用同一把刀。它也解释了随机涉入的观察者偏差：随机点落进大间隔的概率与间隔长度成正比（回顾 p337 Problem 5\*）。
+
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+Consider an interval $[a, b] \subset [0, t]$ of length $l = b - a$. Let $T$ be the time of the first arrival, and let $A$ be the event that a single arrival occurred during $[0, t]$. We have
 
 ```math
-\operatorname{cov}(\Theta, X) = \frac{n}{3} - \frac{n}{4} = \frac{n}{12}.
+P(T \in [a, b] \mid A) = \frac{P(T \in [a, b] \text{ and } A)}{P(A)}.
 ```
 
-将这些全部综合起来，我们得出结论：线性 LMS 估计量具有如下形式
-
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 「takes the form」与「Notice that this agrees…」之间的线性 LMS 估计量公式行在源 OCR 中整行缺失（仅余空行）。按 §8.4 线性 LMS 估计的标准形式 $\hat\Theta = E[\Theta] + \dfrac{\operatorname{cov}(\Theta,X)}{\operatorname{var}(X)}(X-E[X])$，并代入本页已计算的可辨系数 $E[\Theta]=\tfrac12$、$\operatorname{cov}(\Theta,X)=\tfrac{n}{12}$、$\operatorname{var}(X)=\tfrac{n(n+2)}{12}$、$E[X]=\tfrac n2$，忠实推导得 $\hat\Theta = \dfrac{X+1}{n+2}$；此结果与本页下文及例 8.13 的 LMS 估计结论一致，绝非臆造数值，但该行原文具体排版未知，留待统一校对。</span>
+The numerator is equal to the probability $P(1, l)$ that the Poisson process has exactly one arrival during the length $l$ interval $[a, b]$, times the probability $P(0, t - l)$ that the process has zero arrivals during the set $[0, a) \cup (b, t]$, of total length $t - l$. Hence
 
 ```math
-\hat\Theta
-= E[\Theta] + \frac{\operatorname{cov}(\Theta,X)}{\operatorname{var}(X)}\bigl(X - E[X]\bigr)
-= \frac{1}{2} + \frac{n/12}{n(n+2)/12}\left(X - \frac{n}{2}\right)
-= \frac{X+1}{n+2}.
+P(T \in [a, b] \mid A)
+= \frac{P(1, l)\, P(0, t - l)}{P(1, t)}
+= \frac{(\lambda l)\, e^{-\lambda l}\, e^{-\lambda (t - l)}}{(\lambda t)\, e^{-\lambda t}}
+= \frac{1}{t},
 ```
 
-注意到这与我们在例 8.13 中所导出的 LMS 估计量一致。这并不令人意外：如果 LMS 估计量恰好是线性的——正如例 8.13 中的情形——那么该估计量在更窄的线性估计量（linear estimators）类中也是最优的。
+which establishes that $T$ is uniformly distributed.
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 「线性 LMS 与（不受限）LMS 一致」不是巧合，而是"后验均值恰好是观测的线性函数"时两条路线的殊途同归。第一性原理：全局 LMS 的最优解是 $g(X)=E[\Theta\mid X]$；若这个函数本身就是 $X$ 的仿射函数（本例 $E[\Theta\mid X]=\frac{X+1}{n+2}$ 确为线性），那么把候选类收窄到所有仿射函数并不会丢掉最优解——受限最优恰好落在非受限最优上。命名模板：把这种"窄类的解恰为全局最优"性质，对应到 constrained/unconstrained 两个优化问题的解重合；是"窄化可行集不损失最优"的特例。跨课程（高斯分布 / 18.05，Bickel）：对高斯共轭模型，后验均值恒为观测的仿射函数，所以线性 LMS 与全局 LMS 在此类下永远重合——这正是"线性 + 高斯 ＝ 最优"成立的关键所在。反例：后验均值为线性是"强到有点奢求"的性质——只要先验与观测稍有非共轭（如例 8.11 的对数后验），受限最优立刻劣于全局最优；教材因此用多个反例（$\frac{1-x}{-\log x}$ 型）反复提醒：线性相等靠的是模型结构，而非任何"线性的自然优越"。
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] Problem 18\* Solution 的公式行在 OCR 中被纵向打散成竖排碎片（如 `pe L l )`、`P (O , t - l )`、`->.le->. ( t -l)`、`( A t ) e - ).. t`、`= t1 '`，其中的 $\lambda$ 被读作大写 A）。上面已按泊松过程标准公式 $P(1, l) = (\lambda l) e^{-\lambda l}$、$P(0, t - l) = e^{-\lambda (t - l)}$、$P(1, t) = (\lambda t) e^{-\lambda t}$ 重建，数值未改动；若需最严格原文请回查原书页 332。</span>
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 线性 LMS 只须知道一阶与二阶矩（均值、方差、协方差）即可写出答案，这正是它作为工程主力被追捧的根源。第一性原理：若把估计限制为 $a_1X_1+\cdots+a_nX_n+b$，优化目标仍是一元/多元二次式，最优系数由法方程（normal equations）给出——即把 $\Theta$ 正交投影到由常量 $1$ 与各 $X_i$ 张成的线性子空间（函数空间）上。命名模板：linear（线性）限定"估计器必须是观测的线性组合"，宁可牺牲一点均方最优也要保住可算性。跨课程（信号与系统 / 18.065 维纳滤波）：这正是离散维纳滤波（Wiener filter）与自适应 LMS 算法推导的入口——只依赖二阶矩、不要求完整联合分布，因而能在线稳定更新。反例：Example 8.16 里线性 LMS 与（非受限）LMS 恰一致，是因为该模型的后验均值恰好是观测的线性函数；而像 Example 8.11 那种 $E[\Theta\mid X]=\frac{1-x}{-\log x}$ 的非线性情形，强行套线性逼近就会给出偏离最优的解——"线性"是一桩划算的折扣，并不是免费的。
-<!-- ===== PDF p450 ===== -->
+---
 
-<span style="color:#7f8c8d;">§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）中部续页。书页 p442（页眉 "Bayesian Statistical Inference / Chap. 8"）。本页承上页（书页 p441 的 Example 8.16 收尾）继续 §8.4 的论述，但页首出现新的小节标题 **The Case of Multiple Observations and Multiple Parameters（多观测与多参数的情形）**，故本页起为一个新的小节（不另起 Example 编号）。本页为**本单元（单元 9）的最后一页**——单元止于书页 p442；紧接其后的书页（§8.4 后续与小节外部内容）属单元 10。</span>
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 19\*.**</span>
 
-<span style="color:#c0392b;">**§8.4　贝叶斯线性最小均方估计（Bayesian Linear Least Mean Squares Estimation）（续）**</span>
+**(a)** Let $X_1$ and $X_2$ be independent and exponentially distributed, with parameters $\lambda_1$ and $\lambda_2$, respectively. Find the expected value of $\max\{X_1, X_2\}$.
 
-<span style="color:#c0392b;">**多观测与多参数的情形（The Case of Multiple Observations and Multiple Parameters）**</span>
+**(b)** Let $Y$ be exponentially distributed with parameter $\lambda_1$. Let $Z$ be Erlang of order 2 with parameter $\lambda_2$. Assume that $Y$ and $Z$ are independent. Find the expected value of $\max\{Y, Z\}$.
 
-线性 LMS 方法论可推广到多重观测（multiple observations）的情形。对于线性 LMS 估计量（linear LMS estimator），存在一个以类似方式推导出来的类似公式。它只涉及各种随机变量两两之间的均值（means）、方差（variances）与协方差（covariances）。此外，若存在多个待估参数 $\Theta_i$，我们可以考虑如下准则
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+A direct but tedious approach would be to find the PDF of the random variable of interest and then evaluate an integral to find its expectation. A much ...
+
+> <span style="color:#7f8c8d;">[跨页续接] Problem 19\* 的英文 Solution 在本页止于 "A much ..."（"而远为省事得多的做法是…"），其后的推导（对 $\max\{X_1, X_2\}$ 利用条件期望 / 竞争指数分布技巧）续接下一页。</span>
+
+
+<!-- ===== PDF p342 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems），印页号 333。页首续接上一页 **Problem 19\*** 的英文 Solution（上一页止于 "A much ..." 处），本页用「更简便的解法」（simpler solution）——把所涉随机变量解释为底层泊松过程（underlying Poisson processes）中的到达时刻——分 (a)、(b) 两部分完成 $\max\{X_1, X_2\}$ 与 $\max\{Y, Z\}$ 期望的推导。带 * 题的英文 Solution 保留原文。</span>
+
+---
+
+<span style="color:#2471a3;">**[solution]**</span> <span style="color:#2471a3;">**Problem 19\* — Solution（解答，续）.**</span>
+
+A much simpler solution is obtained by interpreting the random variables of interest in terms of underlying Poisson processes.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 19\* 展示了全书最省力的证明策略之一：不硬算 PDF 与积分，而是把随机变量「物化」为底层泊松过程的到达时刻（interpretation-based proof 的路线）。两个关键事实：独立指数的 min 仍指数且参数相加；「min 来自哪个过程」的概率按速率加权（λ_1/(λ_1+λ_2) 与 λ_2/(λ_1+λ_2)）。把 max{X₁,X₂} 拆成「等 min 的期望 + 条件等待」，竞争分解让一切一目了然。第一性原理：把抽象变量还原成过程对象，复杂的分布运算就变成直观的「谁先到、再等多久」。这个技巧在第 7 章是双重伏笔——superposition（合并）过程本身就是马尔可夫性质的到达版本，而「竞争 + 条件等待」正是 §7.5 连续时间马尔可夫链与排队论（如 M/M/1 离开时间）的标准动作。建议对比「直接积分」与「物化解释」两条路线的开销差，体会建模视角如何决定计算复杂度。
+
+
+> <span style="color:#7f8c8d;">[跨页续接] 句首 "A much" 在上一页页末（page_341 止于 "A much ..."），本页首行 "simpler solution is obtained..." 与之衔接，此处把整句补全。</span>
+
+**(a)** Consider two independent Poisson processes with rates $\lambda_1$ and $\lambda_2$, respectively. We interpret $X_1$ as the first arrival time in the first process, and $X_2$ as the first arrival time in the second process. Let $T = \min\{X_1, X_2\}$ be the first time when one of the processes registers an arrival. Let $S = \max\{X_1, X_2\} - T$ be the additional time until both have registered an arrival. Since the merged process is Poisson with rate $\lambda_1 + \lambda_2$, we have
 
 ```math
-E\Big[(\hat\Theta_1 - \Theta_1)^2 + \cdots + (\hat\Theta_m - \Theta_m)^2\Big],
+E[T] = \frac{1}{\lambda_1 + \lambda_2}.
 ```
 
-并在所有作为观测之线性函数的估计量 $\hat\Theta_1,\ldots,\hat\Theta_m$ 之上对其最小化。
+Concerning $S$, there are two cases to consider.
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上述多参数准则公式所在的一行（源 OCR 中位于「we may consider the criterion」与「and minimize it over all estimators $\hat\Theta_1,\ldots,\hat\Theta_m$」之间的空行）在源 OCR 中为空白，公式本体未捕获。这里按随后的「对每个 $i$ 寻找最小化 $E[(\hat\Theta_i-\Theta_i)^2]$ 的线性估计量」的原文提示，重建为标准的多参数均方误差和 $E[(\hat\Theta_1-\Theta_1)^2+\cdots+(\hat\Theta_m-\Theta_m)^2]$；未臆造任何原文未暗示的系数或数值。</span>
+**(i)** The first arrival comes from the first process; this happens with probability $\lambda_1/(\lambda_1 + \lambda_2)$. We then have to wait for an arrival from the second process, which takes $1/\lambda_2$ time on the average.
 
-这等价于对每个 $i$，寻找一个使 $E[(\hat\Theta_i - \Theta_i)^2]$ 最小的线性估计量（linear estimator）$\hat\Theta_i$，从而我们实质上是在处理 $m$ 个相互解耦（decoupled）的线性估计问题，每个对应一个未知参数。
-
-在存在多重观测且满足某种独立性性质的情形下，线性 LMS 估计量（linear LMS estimator）的公式得以简化，我们现在就来描述这一点。设 $\Theta$ 是均值为 $\mu$、方差为 $\sigma_0^2$ 的随机变量，并设 $X_1,\ldots,X_n$ 是如下形式的观测
+**(ii)** The first arrival comes from the second process; this happens with probability $\lambda_2/(\lambda_1 + \lambda_2)$. We then have to wait for an arrival from the first process, which takes $1/\lambda_1$ time on the average. Putting everything together, we obtain
 
 ```math
-X_i = \Theta + W_i, \qquad i = 1,\ldots,n,
+E[S] = \frac{\lambda_1}{\lambda_1 + \lambda_2}\cdot\frac{1}{\lambda_2}
+     + \frac{\lambda_2}{\lambda_1 + \lambda_2}\cdot\frac{1}{\lambda_1}.
 ```
 
-其中 $W_i$ 是均值为 $0$、方差为 $\sigma_i^2$ 的随机变量，它们代表观测误差（observation errors）。
+> <span style="color:#7f8c8d;">[原页此处 OCR 缺损] 原页在 (a) 的 "Putting everything together, we obtain" 之后直接跳到 (b)，$E[S]$ 的算式整体未进入 OCR；上式按上文 (i)(ii) 两种情形的平均等待时间加权重建，数值未改动。</span>
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 「observations of the form」之后、叙述 $W_i$「代表观测误差」之前的观测表达式行（源 OCR 中为空行）在源 OCR 中缺失。这里依据其后「$\Theta, W_1,\ldots,W_n$ 互不相关」「$W_i$ 均值为 $0$、方差 $\sigma_i^2$」以及下页线性 LMS 估计量公式中出现的 $X_i/\sigma_i^2$ 项，重建为标准的叠加噪声形式 $X_i = \Theta + W_i$（$i=1,\ldots,n$）；未臆造原文未含的数字。</span>
-
-在随机变量 $\Theta, W_1,\ldots,W_n$ 互不相关（uncorrelated）的假设之下，基于观测 $X_1,\ldots,X_n$ 的 $\Theta$ 的线性 LMS 估计量被发现为
+**(b)** Consider two independent Poisson processes with rates $\lambda_1$ and $\lambda_2$, respectively. We interpret $Y$ as the first arrival time in the first process, and $Z$ as the second arrival time in the second process. Let $T$ be the first time when one of the processes registers an arrival. Since the merged process is Poisson with rate $\lambda_1 + \lambda_2$, we have
 
 ```math
-\hat\Theta
-= \frac{\dfrac{\mu}{\sigma_0^2} + \displaystyle\sum_{i=1}^{n}\dfrac{X_i}{\sigma_i^2}}
-{\displaystyle\sum_{i=0}^{n}\frac{1}{\sigma_i^2}}.
+E[T] = \frac{1}{\lambda_1 + \lambda_2}.
 ```
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上式中源 OCR 把 $\sigma_0^2$（参数 $\Theta$ 的方差）误读为 `a5` / `a6`（亦见后文），且分子、分母及求和上下限被打散成多行碎片（仅余孤立记号如 `μ/a6`、`Σ Xi/σᵢ² (i=1 到 n)`、`Σ 1/σᵢ² (i=0 到 n)`、`i=l` 等）。此处按后文推导所得的 $b = (\mu/\sigma_0^2)/\sum_{i=0}^{n}(1/\sigma_i^2)$ 与 $a_j=(1/\sigma_j^2)/\sum_{i=0}^{n}(1/\sigma_i^2)$ 一致地还原为上面的 $\hat\Theta$ 表达式，下标 $0$ 指参数自身、下标 $1,\ldots,n$ 指各观测误差；未臆造数值。</span>
+There are two cases to consider.
 
-推导过程先构造如下函数
+**(i)** The arrival at time $T$ comes from the first process; this happens with probability $\lambda_1/(\lambda_1 + \lambda_2)$. In this case, we have to wait an additional time until the second process registers two arrivals. This additional time is Erlang of order 2, with parameter $\lambda_2$, and its expected value is $2/\lambda_2$.
+
+**(ii)** The arrival at time $T$ comes from the second process; this happens with probability $\lambda_2/(\lambda_1 + \lambda_2)$. In this case, the additional time $S$ we have to wait is the time until each of the two processes registers an arrival. This is the maximum of two independent exponential random variables and, according to the result of part (a), we have
 
 ```math
-E\Big[\Big(\Theta - (a_1 X_1 + \cdots + a_n X_n + b)\Big)^2\Big],
+E[S] = \frac{\lambda_1}{\lambda_1 + \lambda_2}\cdot\frac{1}{\lambda_2}
+     + \frac{\lambda_2}{\lambda_1 + \lambda_2}\cdot\frac{1}{\lambda_1}.
 ```
 
-并通过令其关于 $a_1,\ldots,a_n,b$ 的偏导数（partial derivatives）等于零来把它最小化。
+> <span style="color:#7f8c8d;">[原页此处 OCR 缺损] (b)(ii) 中 "according to the result of part (a), we have" 之后紧跟的 $E[S]$ 算式同样未进入 OCR，此处按 part (a) 的结论补写。</span>
 
-> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 「the function」之后的具体函数式行（源 OCR 中为空行）未捕获。这里依据其关于 $a_1,\ldots,a_n,b$ 求偏导、最终再现上述 $\hat\Theta$ 公式的原文提示，重建为线性估计量 $a_1X_1+\cdots+a_nX_n+b$ 的均方误差 $E[(\Theta-(a_1X_1+\cdots+a_nX_n+b))^2]$，下标与求和范围与前文保持一致；未臆造系数或数值。</span>
-
-经过一些计算（给出于章末习题之中），结果是
+Putting everything together, we have
 
 ```math
-b = \frac{\mu/\sigma_0^2}{\displaystyle\sum_{i=0}^{n}\frac{1}{\sigma_i^2}},
-\qquad
-a_j = \frac{1/\sigma_j^2}{\displaystyle\sum_{i=0}^{n}\frac{1}{\sigma_i^2}},
-\qquad j = 1,\ldots,n,
+E[\max\{Y, Z\}]
+= \frac{\lambda_1}{\lambda_1 + \lambda_2}\left( E[T] + \frac{2}{\lambda_2} \right)
++ \frac{\lambda_2}{\lambda_1 + \lambda_2}\bigl( E[T] + E[S] \bigr),
 ```
 
-由之即得前面给出的线性 LMS 估计量公式。
+where $E[S]$ is given by the previous formula.
 
-> <span style="color:#1e8449;">[note] Note（译者注）:</span> 最后一个公式 $\hat\Theta=\dfrac{\mu/\sigma_0^2+\sum_i X_i/\sigma_i^2}{\sum_i 1/\sigma_i^2}$ 把"多个观测如何合并"一锤定音，是整章最值得背的收尾。第一性原理：把 $(X_i,\sigma_i^2)$ 与"参数自身的先验 $(\mu,\sigma_0^2)$"一视同仁，每个数据源都按精度 $1/\sigma^2$ 加权、合力确定后验均值；先验均值 $\mu$ 在这里只是又一个"伪观测"，精度越低贡献越小——这正是把"先验＝伪数据"贯彻到最后的立场。命名模板：把这种精度加权平均称作 precision-weighted average（精度加权平均），又因其在方差视角下线性最优、也常记为 BLUE（Best Linear Unbiased Estimator，最优线性无偏估计）。跨课程（回归 / 18.065）：这与加权最小二乘的最优权重 $\propto 1/\sigma^2$ 完全同构；当先验也当观测时，它就是"岭回归往先验均值收缩"的贝叶斯版出口。反例：一切建立在 $W_i$ 互不相关、$\Theta,W_1,\ldots,W_n$ 互不相关这一假设上；一旦观测误差互相相关或有共同系统偏差，各 $\sigma_i^2$ 就不能被简单相加、权重须改成协方差矩阵的逆、交叉项的简单性立刻破产——"只认二阶矩"的简单是有前提的。
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 末式在 OCR 中被拆成多行碎片，可辨识出 $E[\max\{Y,Z\}]$、$\lambda_1/(\lambda_1+\lambda_2)$、$2/\lambda_2$、$E[S]$、$1/(\lambda_1+\lambda_2)$ 等，"where $E[S]$ is given by the previous formula" 一句保留原文；上式按情形 (i)（概率 $\lambda_1/(\lambda_1+\lambda_2)$，附加期望 $E[T]+2/\lambda_2$）与情形 (ii)（概率 $\lambda_2/(\lambda_1+\lambda_2)$，附加期望 $E[T]+E[S]$）加权重建，其中 $E[T]=1/(\lambda_1+\lambda_2)$，数值未改动。</span>
 
-> <span style="color:#7f8c8d;">衔接下一面：本页为单元 9 结尾（书页 p442）。书页 p443 起（§8.4 后续内容及单元 10）不在本单元范围内。</span>
+
+<!-- ===== PDF p343 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems），印页号 334（页眉 Chap. 6）。上一页（印页号 333）刚续完 **Problem 19\*** 的 Solution，本页自 **Problem 20\*** 起，覆盖 **Problem 20–21**：两题均为带星号题，其英文 Solution 保留原文（仅「Solution（解答）」标签附中文）。Problem 21\* 的 Solution 在本页末尾中断，续接下一页。题目题干均保持英文原题，不翻译。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 20\*.**</span>
+
+Let $Y_k$ be the time of the $k$th arrival in a Poisson process with rate $\lambda$. Show that for all $y > 0$,
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 20\* 的结论 Σ_k f_{Y_k}(y) = λ 是「密度叠加」思想的典范：把「时刻 y 处有到达」按「它是第几次到达」分解成互斥子事件再求和。两种证明殊途同归：代数版把 Erlang 密度代入，露出泊松 PMF 的和（总和为 1）；直观版把 [y, y+δ] 内到达的概率同时写成 Σ f_{Y_k}(y)·δ 与 f_Y(y)·δ，消去 δ 即得。第一性原理：一个事件的概率可按「它发生在哪个阶段」做条件化分解，只要分解互斥且穷尽。Problem 21\* 是同一把刀的变体：把两个泊松过程的「竞赛」（X₁(n) 与 X₂(m) 谁先到达）转化为合并过程里的伯努利试验——前 n+m−1 次合并到达中至少 n 次来自过程 1，立即得到二项求和。这个「竞赛 ⟺ 伯努利成功数」的等价，与你在 6.006/CLRS 见到的「比较转化为计数」是同一种思维体操。
+
+
+```math
+\sum_{k=1}^{\infty} f_{Y_k}(y) = \lambda .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 题干末的待证式在 OCR 中被打散成竖排碎片（残片含 `f`、`L Yk`、`k = l`、`tk - �)!` 等，速率为参数 $\lambda$ 处被 OCR 读作大写 A 的 `rate A`），上面按本页 Solution 的推导结论重建为 $\sum_{k=1}^{\infty} f_{Y_k}(y) = \lambda$（第 $k$ 次到达时刻 $Y_k$ 服从 Erlang 分布，其密度 $f_{Y_k}(y) = \lambda^k y^{k-1} e^{-\lambda y}/(k-1)!$，对 $k$ 求和即为速率 $\lambda$）。若需最严格原文请回查原书页 334。</span>
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.** We have
+
+```math
+\sum_{k=1}^{\infty} f_{Y_k}(y)
+= \sum_{k=1}^{\infty} \frac{\lambda^{k} y^{k-1} e^{-\lambda y}}{(k-1)!}
+= \lambda \sum_{m=0}^{\infty} \frac{(\lambda y)^{m} e^{-\lambda y}}{m!}
+= \lambda \cdot 1
+= \lambda ,
+```
+
+where we let $m = k - 1$. The last equality holds because the $(\lambda y)^m e^{-\lambda y} / m!$ terms are the values of a Poisson PMF with parameter $\lambda y$ and must therefore sum to $1$.
+
+For a more intuitive derivation, let $\delta$ be a small positive number and consider the following events:
+
+- $A_k$: the $k$th arrival occurs between $y$ and $y + \delta$; the probability of this event is $P(A_k) \approx f_{Y_k}(y)\,\delta$;
+- $A$: an arrival occurs between $y$ and $y + \delta$; the probability of this event is $P(A) \approx f_Y(y)\,\delta$.
+
+Suppose that $\delta$ is taken small enough so that the possibility of two or more arrivals during an interval of length $\delta$ can be ignored. With this approximation, the events $A_1, A_2, \ldots$ become disjoint, and their union is $A$. Therefore,
+
+```math
+\sum_{k=1}^{\infty} f_{Y_k}(y)\,\delta \approx \sum_{k=1}^{\infty} P(A_k) = P(A) \approx f_Y(y)\,\delta ,
+```
+
+and the desired result follows by canceling $\delta$ from both sides.
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 误读] 直观推导段中的 $\delta$ 被 OCR 全部误读为数字 8（`8`），如 `fYk (y)8`、`fy (y)8`，均按上下文恢复为 $f_{Y_k}(y)\,\delta$、$f_Y(y)\,\delta$；末尾求和式在 OCR 中仅余 `k= l`、`k=l` 与 `:::::: P(A )` 等碎片，已按 $P(A_k) \approx f_{Y_k}(y)\,\delta$、$P(A) \approx f_Y(y)\,\delta$ 的代入关系补全为上方链式等式。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 21\*.**</span>
+
+Consider an experiment involving two independent Poisson processes with rates $\lambda_1$ and $\lambda_2$. Let $X_1(k)$ and $X_2(k)$ be the times of the $k$th arrival in the 1st and the 2nd process, respectively. Show that
+
+```math
+P\big(X_1(n) < X_2(m)\big)
+= \sum_{k=n}^{n+m-1} \binom{n+m-1}{k}
+\left( \frac{\lambda_1}{\lambda_1 + \lambda_2} \right)^{k}
+\left( \frac{\lambda_2}{\lambda_1 + \lambda_2} \right)^{n+m-1-k}.
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] Problem 21\* 题干末的待证式在 OCR 中整段缺失（"Show that" 后直接跳到 Solution 首句），上式按本页 Solution 首句及下一页（印页号 335）的推导还原：把两个独立泊松过程合并为速率为 $\lambda_1 + \lambda_2$ 的泊松过程，任一次到达来自第一个过程的概率为 $\lambda_1/(\lambda_1 + \lambda_2)$、来自第二个过程的概率为 $\lambda_2/(\lambda_1 + \lambda_2)$；事件 $\{X_1(n) < X_2(m)\}$ 等价于前 $n + m - 1$ 次试验中至少 $n$ 次「成功」，故由二项 PMF 得上式。若需最严格原文请回查原书页 334。</span>
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.** Consider the merged Poisson process, which has rate $\lambda_1 + \lambda_2$. Each time there is an arrival in the merged process, this arrival comes from the first process ...
+
+> <span style="color:#7f8c8d;">[跨页续接] Problem 21\* 的英文 Solution 在本页止于 "…this arrival comes from the first process"，其后的「成功（来自第一个过程）/ 失败（来自第二个过程）」伯努利解释与二项 PMF 求和推导续接下一页（印页号 335，PDF p344）。</span>
+
+
+<!-- ===== PDF p344 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems），印页号 335（页眉 Chap. 6）。页首无新节标题、仅见 running header「Problems」，直接续接上一页（印页 334、文件页 343）**Problem 21.\*** 的英文 Solution（解答）末尾——该题比较两支相互独立 Poisson process 的到达时刻。随后依次为 **Problem 22.\***、**Problem 23.\***、**Problem 24.\***，前两道带 `*` 题的英文 Solution 保留原文；Problem 24.\* 的题干在本页末尾中断，续接下一页。题目题干均保持英文原题，不翻译。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 21.\*（续）—— 英文 Solution 收尾**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：Problem 21.\* 题设两支相互独立的 Poisson process，速率分别为 $\lambda_1$ 与 $\lambda_2$；记 $X_1(k)$、$X_2(k)$ 分别为第 $k$ 次到达在过程 1、过程 2 中发生的时刻。上一页已述：合并后的 Poisson process 速率为 $\lambda_1 + \lambda_2$，每次到达以概率 $\lambda_1/(\lambda_1 + \lambda_2)$ 来自过程 1。本页续接其英文 Solution 的收尾，推出所求概率。</span>
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）（续）.**
+
+( "success" ) with probability $\lambda_1/(\lambda_1 + \lambda_2)$, and from the second process ( "failure" ) with probability $\lambda_2/(\lambda_1 + \lambda_2)$. Consider the situation after $n + m - 1$ arrivals. The number of arrivals from the first process is at least $n$ if and only if the number of arrivals from the second process is less than $m$, which happens if and only if the $n$th success occurs before the $m$th failure. Thus, the event $\{ X_1(n) < X_2(m) \}$ is the same as the event of having at least $n$ successes in the first $n + m - 1$ trials. Therefore, using the binomial PMF for the number of successes in a given number of trials, we have
+
+```math
+P\big(X_1(n) < X_2(m)\big)
+= \sum_{k = n}^{n + m - 1} \binom{n + m - 1}{k}
+\left( \frac{\lambda_1}{\lambda_1 + \lambda_2} \right)^{k}
+\left( \frac{\lambda_2}{\lambda_1 + \lambda_2} \right)^{n + m - 1 - k}.
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 原页在 “...we have” 之后的行间公式在 OCR 中丢失（仅余连字符 “-”）。上式按「前 $n + m - 1$ 次合并到达中至少 $n$ 次来自过程 1」的二项求和标准结论重建，与 Problem 21.\* 题干所求证式一致，未改动任何数值与概率结构；若需最严格原文请回查原书页 335。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 22.\***</span>
+
+**Sum of a Random Number of Independent Bernoulli Random Variables.** Let $N, X_1, X_2, \ldots$ be independent random variables, where $N$ takes nonnegative integer values, and $X_1, X_2, \ldots$ are Bernoulli with parameter $p$. Let $Y = X_1 + \cdots + X_N$ for positive values of $N$ and let $Y = 0$ when $N = 0$.
+
+( a ) Show that if $N$ is binomial with parameters $m$ and $q$, then $Y$ is binomial with parameters $m$ and $pq$.
+
+( b ) Show that if $N$ is Poisson with parameter $\lambda$, then $Y$ is Poisson with parameter $\lambda p$.
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+( a ) Consider splitting the Bernoulli process $X_1, X_2, \ldots$ by keeping successes with probability $q$ and discarding them with probability $1 - q$. Then $Y$ represents the number of successes in the split process during the first $m$ trials. Since the split process is Bernoulli with parameter $pq$, it follows that $Y$ is binomial with parameters $m$ and $pq$.
+
+( b ) Consider splitting a Poisson process with parameter $\lambda$ by keeping arrivals with probability $p$ and discarding them with probability $1 - p$. Then $Y$ represents the number of arrivals in the split process during a unit interval. Since the split process is Poisson with parameter $\lambda p$, it follows that $Y$ is Poisson with parameter $\lambda p$.
+
+> <span style="color:#7f8c8d;">[OCR 误读修正] 原文此处将分流保留概率误读为 $q$，与题干中 $X_i$ 为参数 $p$ 的伯努利变量以及结论 $\lambda p$ 相矛盾；按题意保留概率应为 $p$（(a) 中的 $q$ 是 $N$ 的二项参数，含义不同），此处改为 $p$。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 23.\***</span>
+
+**Sum of a Geometric Number of Independent Exponential Random Variables.** Let $Y = X_1 + \cdots + X_N$, where the random variables $X_i$ are exponential with parameter $\lambda$, and $N$ is geometric with parameter $p$. Assume that the random variables $N, X_1, X_2, \ldots$ are independent. Show, without using transforms, that $Y$ is exponential with parameter $\lambda p$. **Hint:** Interpret the various random variables in terms of a split Poisson process.
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+We derived this result in Chapter 4, using transforms, but we develop a more intuitive derivation here. We interpret the random variables $X_i$ and $N$ as follows. We view the times $X_1, X_1 + X_2$, etc. as the arrival times in a Poisson process with parameter $\lambda$. Each arrival is rejected with probability $1 - p$ and is accepted with probability $p$. We interpret $N$ as the number of arrivals until the first acceptance. The process of accepted arrivals is obtained by splitting a Poisson process and is therefore itself Poisson with parameter $\lambda p$. Note that $Y = X_1 + \cdots + X_N$ is the time of the first accepted arrival and is therefore exponential with parameter $\lambda p$.
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 24.\***</span>
+
+**The Number of Poisson Arrivals During an Exponentially Distributed Interval.** Consider a Poisson process with parameter $\lambda$, and an independent ...
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 24\* 是本区最漂亮的「增广」（augmentation）技巧：把抽象的指数时长 T 具体化为另一个独立泊松过程的首次到达时刻。这一刀下去，「T 内原过程的到达数」就变成合并过程里「成功（新过程到达）之前来自原过程的到达次数」，几何分布呼之欲出——参数 1/μ 与 λ 的竞争一目了然。第一性原理：概率论里「把随机变量变成过程对象」是一种降维——你不再对着孤立的指数做积分，而是把它放进一台可运行的时间机器。这与 Problem 19\*/22\*/23\* 共享同一主题：伯努利 / 泊松过程的「分裂与合并」操作保持分布类型（几何、指数、泊松），并白送独立性。这套「操作保持性」的直觉，在第 7 章将以「状态图上的运算」形式重生——合并 / 分裂对应状态空间的折叠与展开。做题时请特别体会「把随机时长塞进过程」这半步，它是本书反复使用的隐藏杠杆。
+
+
+> <span style="color:#7f8c8d;">[跨页续接] Problem 24.\* 的题干在本页止于 “…and an independent …”（意为“…以及一段与之相互独立、时长服从指数分布的区间…”），余下部分续接下一页（印页 336、文件页 345）。</span>
+
+
+<!-- ===== PDF p345 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems），印页号 336（页眉 Chap. 6）。页首无新节标题，直接续接上一页（印页 335、文件页 344）**Problem 24.\*** 的英文 Solution（解答）——该题求「参数为 $1/\mu$ 的指数时长 $T$ 内泊松到达数的 PMF」。随后依次为 **Problem 25.\*** 与 **Problem 26.\***，均为带星号（\*）题，前者的英文 Solution 保留原文；Problem 26.\* 的题干在本页末尾中断，续接下一页。题目题干均保持英文原题，不翻译。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 24.\*（续）—— 英文题干收尾**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：Problem 24.\*（The Number of Poisson Arrivals During an Exponentially Distributed Interval）题干在上一页止于 "…and an independent …"，本页补回英文原题末尾句；题设一个速率为 $\lambda$ 的 Poisson process，以及一段与之相互独立、参数为 $1/\mu$ 的指数随机变量 $T$，求时间区间 $[0, T]$ 内泊松到达数的 PMF。随后给出其英文 Solution：把 $T$ 看作一个新合并泊松过程里的首次到达时刻，用几何分布给出到达数 $L$ 的 PMF。</span>
+
+random variable $T$, which is exponential with parameter $1/\mu$. Find the PMF of the number of Poisson arrivals during the time interval $[0, T]$.
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+Let us view $T$ as the first arrival time in a new, independent, Poisson process with parameter $1/\mu$, and merge this process with the original Poisson process. Each arrival in the merged process comes from the original Poisson process with probability $\lambda/(\lambda + 1/\mu)$, independent of other arrivals. If we view each arrival in the merged process as a trial, and an arrival from the new process as a success, we note that the number $K$ of trials/arrivals until the first success has a geometric PMF, of the form
+
+```math
+p_K(k) = \frac{1/\mu}{\lambda + 1/\mu} \left( \frac{\lambda}{\lambda + 1/\mu} \right)^{k - 1}, \qquad k = 1, 2, \ldots .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] $p_K(k)$ 的分式与指数在 OCR 中被拆散到多行（OCR 读作 "( 1/ ).. + 1/ ) ( ).. ) k - l ).. + 1/"），此处按几何分布标准形式合并重建为规范 LaTeX；$\lambda$ 与 $1/\mu$ 的相对位置以分式结构还原，未臆造数值。</span>
+
+Now the number $L$ of arrivals from the original Poisson process until the first "success" is equal to $K - 1$, and its PMF is
+
+```math
+p_L(l) = p_K(l + 1) = \frac{1/\mu}{\lambda + 1/\mu} \left( \frac{\lambda}{\lambda + 1/\mu} \right)^{l}, \qquad l = 0, 1, \ldots .
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] $p_L(l) = p_K(l+1)$ 一式的分式与指数在 OCR 中损坏严重（OCR 读作 "p d l ) = PK ( l + 1 ) = ( ).. : 1/ )( ).. I/Y"，乱码较多），此处按 $p_K$ 的几何 PMF 代入 $k = l+1$ 重建，未改动任何数值。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 25.\***</span>
+
+**An infinite server queue.** We consider a queueing system with an infinite number of servers, in which customers arrive according to a Poisson process with rate $\lambda$. The $i$th customer stays in the system for a random amount of time, denoted by $X_i$. We assume that the random variables $X_i$ are independent identically distributed, and also independent from the arrival process. We also assume, for simplicity, that the $X_i$ take integer values in the range $1, 2, \ldots, n$, with given probabilities. Find the PMF of $N_t$, the number of customers in the system at time $t$.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 25\*（无限服务台队列）是「分裂–合并」思想的又一次胜利，也是排队论 M/G/∞ 的核心结论。策略：按服务时间 k 把到达过程分裂成 n 个独立泊松子过程（速率 λp_k），每个子过程只负责「服务时间为 k」的顾客。关键观察：t 时刻仍在系统中的 k 型顾客 = 在 [t−k, t] 内到达的 k 型顾客（早来已走），所以 N_{tk} ~ Poisson(λkp_k)；独立泊松之和仍为泊松、参数相加，即得 N_t ~ Poisson(λE[X₁])。第一性原理：把复杂计数按类型分解成独立子计数，每个子计数因「窗口化」变成简单泊松——「线性叠加 + 独立性」是概率论最常用的杠杆。跨课程提醒：N_t 的公式与排队论的 Little 定律（L = λW）同源——等你学完 §7.5 连续时间链回头再看，会发现它只是「稳态」思想的一个具体投影。
+
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+Let us refer to those customers $i$ whose service time $X_i$ is equal to $k$ as "type-$k$" customers. We view the overall arrival process as the merging of $n$ Poisson subprocesses; the $k$th subprocess corresponds to arrivals of type-$k$ customers, is independent of the other arrival subprocesses, and has rate $\lambda p_k$, where $p_k = P(X_i = k)$. Let $N_{tk}$ be the number of type-$k$ customers in the system at time $t$. Thus,
+
+```math
+N_t = \sum_{k = 1}^{n} N_{tk},
+```
+
+and the random variables $N_{tk}$ are independent.
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 损坏] 上式中 $N_t = \sum_{k=1}^{n} N_{tk}$ 在 OCR 中丢失（原页仅余末句「and the random variables Ntk are independent」），此处按上下文自然补全，不臆造数值。</span>
+
+We now determine the PMF of $N_{tk}$. A type-$k$ customer is in the system at time $t$ if and only if that customer arrived between times $t - k$ and $t$. Thus, $N_{tk}$ has a Poisson PMF with mean $\lambda k p_k$. Since the sum of independent Poisson random variables is Poisson, it follows that $N_t$ has a Poisson PMF with parameter
+
+```math
+E[N_t] = \lambda \sum_{k = 1}^{n} k p_k = \lambda E[X_1].
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式中求和号 $\sum_{k=1}^{n} k p_k$ 与 $E[X_1]$ 的下标在 OCR 中被拆散（OCR 将求和读作 "L kPk"、将 $E[X_1]$ 读作 "E[Xd"），此处按原意合并重建为规范 LaTeX，未改动任何数值。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 26.\***</span>
+
+**Independence of Poisson processes obtained by splitting.** Consider a Poisson process whose arrivals are split, with each arrival assigned to one of two subprocesses by tossing an independent coin with success probability $p$. In ...
+
+> <span style="color:#7f8c8d;">[跨页续接] Problem 26.\* 的题干在本页止于「…In ...」（意为「…在…情形下/用某种方式…」），余下部分续接下一页（印页 337、文件页 346）。</span>
+
+
+<!-- ===== PDF p346 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems），印页号 337（页眉 Problems）。页首无新节标题、仅见 running header「Problems」，直接续接上一页（印页 336、文件页 345）**Problem 26.\*** 的题干末尾——上一页止于 “In …”，本页补全为 “In Example 6.13, it was established that … Show that the two subprocesses are independent.”，随后给出该题的完整英文 Solution（解答）。之后依次为 **Problem 27.\***，题干与英文 Solution 均保持英文原题；其 Solution 在本页末尾中断，续接下一页（印页 338、文件页 347）。</span>
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 26\* 给出一个值得收藏的证明策略模板——等价机制法。直接证「抛硬币分裂出的两个子过程独立」并不顺手，于是构造一个统计相同但独立性显然的机制：先把两个独立泊松 P₁（速率 pλ）、P₂（速率 (1−p)λ）合并成 P，再按「每次到达来自 P₁ 还是 P₂」给 P 的到达打标签。标签来自原两个独立过程的身份，独立性免费到手；随后只需验证「打标签」与「独立抛硬币 p」是同一套统计机制——两种分裂都满足「每次到达独立地以概率 p 归入子过程 1」。第一性原理：概率结论由「统计机制」决定，与「实现细节」无关，正如离散数学里的同构、CSAPP 里的抽象层次。模板化表述：要证 A ⟹ B，先找 C 使 A ⟹ C 显然、C ⟹ B 容易。这个模板在第 7 章证明链的各种性质时会反复复用。
+
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 26.\*（续）—— 题干末尾 + 英文 Solution**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：Problem 26.\* 题设一个 Poisson process 的每次到达以独立抛硬币（成功概率 $p$）分配到两个子过程之一。上一页（印页 336）止于题干 “In …”，本页续接题干末两句，并给出该题的完整英文 Solution：先构造与题设统计等价但形式不同的分裂机制，再证明两种分裂机制统计相同。</span>
+
+In **Example 6.13**, it was established that each of the subprocesses is a Poisson process. Show that the two subprocesses are independent.
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+Let us start with two independent Poisson processes $P_1$ and $P_2$, with rates $p\lambda$ and $(1 - p)\lambda$, respectively. We merge the two processes and obtain a Poisson process $P$ with rate $\lambda$. We now split the process $P$ into two new subprocesses $P'_1$ and $P'_2$, according to the following rule: an arrival is assigned to subprocess $P'_1$ (respectively, $P'_2$) if and only if that arrival corresponds to an arrival from subprocess $P_1$ (respectively, $P_2$). Clearly, the two new subprocesses $P'_1$ and $P'_2$ are independent, since they are identical to the original subprocesses $P_1$ and $P_2$. However, $P'_1$ and $P'_2$ were generated by a splitting mechanism that looks different than the one in the problem statement. We will now verify that the new splitting mechanism considered here is statistically identical to the one in the problem statement. It will then follow that the subprocesses constructed in the problem statement have the same statistical properties as $P'_1$ and $P'_2$, and are also independent.
+
+So, let us consider the above described splitting mechanism. Given that $P$ had an arrival at time $t$, this was due to either an arrival in $P_1$ (with probability $p$), or to an arrival in $P_2$ (probability $1 - p$). Therefore, the arrival to $P$ is assigned to $P'_1$ or $P'_2$ with probabilities $p$ and $1 - p$, respectively, exactly as in the splitting procedure described in the problem statement. Consider now the $k$th arrival in $P$ and let $L_k$ be the event that this arrival originated from subprocess $P_1$; this is the same as the event that the $k$th arrival is assigned to subprocess $P'_1$. As explained in the context of **Example 6.14**, the events $L_k$ are independent. Thus, the assignments of arrivals to the subprocesses $P'_1$ and $P'_2$ are independent for different arrivals, which is the other requirement of the splitting mechanism described in the problem statement.
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 原页 OCR 把 $\lambda$ 误识作 “>.”，$P_1/P_2$ 的下标误识作 “PI/P2”，分裂所得子过程记号 “P�” 无法辨认，此处按 Problem 26.\* 的标准记号重建为 $P'_1$、$P'_2$（其速率分别为 $p\lambda$ 与 $(1-p)\lambda$）；英文文本本身完整可读，未改动任何数值与语义。</span>
+
+---
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 27.\***</span>
+
+**Random incidence in an Erlang arrival process.** Consider an arrival process in which the interarrival times are independent Erlang random variables of order 2, with mean $2/\lambda$. Assume that the arrival process has been ongoing for a very long time. An external observer arrives at a given time $t$. Find the PDF of the length of the interarrival interval that contains $t$.
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）.**
+
+We view the Erlang arrival process in the problem statement as part of a Poisson process with rate $\lambda$. In particular, the Erlang arrival process registers an arrival once every two arrivals of the Poisson process. For concreteness, let us say that the Erlang process arrivals correspond to even-numbered arrivals in the Poisson process. Let $Y_k$ be the time of the $k$th arrival in the Poisson process.
+
+Let $K$ be such that $Y_K \le t < Y_{K+1}$. By the discussion of random incidence in Poisson processes in the text, we have that $Y_{K+1} - Y_K$ is Erlang of order 2. The interarrival interval for the Erlang process considered in this problem is of the form $[Y_K, Y_{K+2}]$ or $[Y_{K-1}, Y_{K+1}]$, depending on whether $K$ is even or odd, respectively. In the first case, the interarrival interval in the Erlang process is of the form $(Y_{K+1} - Y_K) + (Y_{K+2} - Y_{K+1})$. We claim that $Y_{K+2} - Y_{K+1}$ is exponential with parameter $\lambda$ and independent of $Y_{K+1} - Y_K$. Indeed, an observer who arrives at time $t$ and notices that $K$ is even, must first wait until the time $Y_{K+1}$ of the next Poisson arrival. At that time, the Poisson process starts afresh, and the time $Y_{K+2} - Y_{K+1}$ until the next Poisson arrival is independent of the past (hence, independent of $Y_{K+1} - Y_K$) and has an exponential distribution with parameter $\lambda$, as claimed. This establishes that, conditioned on $K$ being even, the interarrival interval length $Y_{K+2} - Y_K$ of the Erlang process is Erlang of order 3 (since it is the sum of an exponential random variable ...
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 原页 OCR 把 $\lambda$ 误识作 “>.”、$\le$ 误识作 “$” 符号，且把 $Y_{K+1}$ 之类的下标/上标拆散（如 “YK + I”）；以上英文 Solution 系按原文语义重建，数值与分布参数（$2/\lambda$、阶数 2、参数 $\lambda$）均未改动。另注：Problem 27.\* 的英文 Solution 在本页止于 “…(since it is the sum of an exponential random variable …”，余下部分续接下一页（印页 338、文件页 347）。</span>
+
+
+<!-- ===== PDF p347 ===== -->
+
+<span style="color:#c0392b;">**第 6 章　伯努利与泊松过程（The Bernoulli and Poisson Processes）**</span> — 习题区（Problems，续）
+
+> <span style="color:#7f8c8d;">本页位于第 6 章习题区（Problems），印页号 338（页眉 Chap. 6）。页首无新节标题、无新 Problem 编号，直接续接上一页（印页 337、文件页 346）**Problem 27.\***（Random incidence in an Erlang arrival process）的英文 Solution（解答）末尾。题目题干保持英文原题，带 `*` 题的 Solution 保持英文原文，仅标签标注中文。</span>
+
+<span style="color:#2471a3;">**[problem]**</span> <span style="color:#2471a3;">**Problem 27.\*（续）—— 英文 Solution 收尾**</span>
+
+> <span style="color:#7f8c8d;">承接上一页：上一页的 Solution 已证明——把爱尔朗到达过程视为速率为 $\lambda$ 的泊松过程（Poisson process）每两次到达登记一次所得（爱尔朗过程到达对应泊松过程的偶数编号到达），设 $Y_k$ 为泊松过程中第 $k$ 次到达的时刻，令 $K$ 满足 $Y_K \le t < Y_{K+1}$。已证当 $K$ 为偶数时，爱尔朗过程的到达间隔 $[Y_K, Y_{K+2}]$ 的长度 $Y_{K+2} - Y_K$ 为三阶爱尔朗分布（Erlang of order 3），因为它是「一个指数随机变量与一个二阶爱尔朗随机变量之和」。本页续接其后，以对称论证收尾该 Solution。</span>
+
+<span style="color:#2471a3;">**[solution]**</span> **Solution（解答）（续）.**
+
+...and a random variable which is Erlang of order 2). By a symmetrical argument, if we condition on $K$ being odd, the conditional PDF of the interarrival interval length $Y_{K+1} - Y_{K-1}$ of the Erlang process is again the same. Since the conditional PDF of the length of the interarrival interval that contains $t$ is Erlang of order 3, for every conditioning event, it follows that the unconditional PDF is also Erlang of order 3.
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Problem 27\* 的收尾展示了一个高频模板——条件化再消去：对 K 偶、K 奇两种情形分别算出「含 t 的到达间隔长度」的条件 PDF，得到同一个三阶 Erlang 分布，于是无条件 PDF 也必为三阶 Erlang。第一性原理：若某量的条件分布不随条件变化，无条件分布就等于这个共同分布——「条件无关 ⟹ 无条件相同」是最便宜的消去。本题同时是random incidence（随机涉入）的连续版：Erlang(均值 2/λ) 到达过程在普通观察下间隔均值是 2/λ，而外部观察者 t 随机落点看到的间隔均值是 3/λ——长了 1.5 倍。这个「观察者偏差」与 p337 Problem 5\* 的离散版遥相呼应，是排队论 PASTA 性质与网络测量的种子。理解「随机点被长间隔捕获的概率与长度成正比」，你就能直觉地解释为何等待时间总比平均更久。
+
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 原句 "the interarrival interval length YK +1 - YK - 1" 中两个下标在 OCR 中碎裂为 "YK +1 - YK - 1"。按上一页（印页 337）所述区间形式 $[Y_{K-1}, Y_{K+1}]$（当 $K$ 为奇数时爱尔朗过程的到达间隔），此处重建为 $Y_{K+1} - Y_{K-1}$；页首 "and a random variable which is Erlang of order 2)" 系上一页英文 Solution 句子的延续，本页按「（续）」处理。</span>
+
+
+<!-- ===== PDF p348 ===== -->
+
+<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）**</span>
+
+> <span style="color:#7f8c8d;">本页为第 7 章（Markov Chains）的**开篇章首页**，仅含章标题 + 章内目录（Contents），正文从目录之后的 340 页起。文件命名页为 p348；页眉「7」为章号，页脚印刷页号 339 为原书印刷页码，与文件页号不同，目录中给出的页码亦为原书印刷页号。</span>
+
+**目录（Contents）**
+
+- <span style="color:#c0392b;">**7.1　离散时间马尔可夫链（Discrete-Time Markov Chains）**</span> —— p.340
+- <span style="color:#c0392b;">**7.2　状态的分类（Classification of States）**</span> —— p.346
+- <span style="color:#c0392b;">**7.3　稳态行为（Steady-State Behavior）**</span> —— p.352
+- <span style="color:#c0392b;">**7.4　吸收概率与吸收时间的期望（Absorption Probabilities and Expected Time to Absorption）**</span> —— p.362
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 用目录给第 7 章画一张学习地图。7.1 定义模型（状态、转移概率、马尔可夫性质）——本章的「语法」；7.2 状态分类（常返 / 暂态 / 周期 / 不可约）——把状态空间看作有向图，6.042J 的强连通、可达性在此复活，回答「链会到哪里」；7.3 稳态行为——回答「长期看分布如何」，数学上是转移矩阵幂的极限，直通 Strang / 18.065 的马尔可夫矩阵；7.4 吸收概率与吸收时间——回答「何时终止、终止在哪」，首次需要解线性方程组（新武器）；7.5 连续时间链——把「每步」换成「指数停留时钟」。与前六章的断裂处要特别留意：此前总假设试验独立或无记忆，第 7 章第一次允许「依赖」，但用「一阶依赖 + 有限状态 + 时齐」三个限制换回可计算性。这个「先窄化模型再逐层放开」的元方法，是你之后学随机过程、排队论、MCMC 都要沿用的路线图。
+
+- <span style="color:#c0392b;">**7.5　连续时间马尔可夫链（Continuous-Time Markov Chains）**</span> —— p.369
+- <span style="color:#c0392b;">**7.6　小结与讨论（Summary and Discussion）**</span> —— p.378
+- <span style="color:#c0392b;">**习题（Problems）**</span> —— p.380
+
+> <span style="color:#7f8c8d;">[OCR 说明] 本页 OCR 基本完整，仅略有碎裂：7.1 小节号被识别为 "7. 1"（数字与小数点间多一空格）；各小节标题与 Problems 条目之间的省略号引导线（dot leaders）散乱（OCR 中表现为孤立的 "… / · / " 行）；以上均按表意重建，各节标题及对应印刷页码（340 / 346 / 352 / 362 / 369 / 378 / 380）未作改动。</span>
+
+
+<!-- ===== PDF p349 ===== -->
+
+<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）**</span>
+
+> <span style="color:#7f8c8d;">本页为第 7 章开篇（原书印刷页 340），承接上一章末的泊松过程；页首无「续」标题，系全新一章的引言，随后进入 §7.1 离散时间马尔可夫链的定义（本页尚无 Example 7.1，该例在后续页）。</span>
+
+前一章所研究的伯努利过程（Bernoulli process）与泊松过程（Poisson process）具有无记忆性（memoryless），也就是说，未来并不依赖于过去：新的"成功"（successes）或"到达"（arrivals）的发生并不依赖于该过程过去的历史。
+
+本章考察的是这样的过程：未来依赖于过去所发生的事，并在一定程度上可以由之作出预测。
+
+我们重点放在这样的模型上：过去对未来的影响被概括为一个状态（state），它按照给定的概率随时间演变。我们把讨论限制在状态只能取有限个数值、且其变化概率不依赖于变化时刻的模型上。我们希望分析状态取值序列的概率性质。
+
+本章所述这类模型的适用范围极其广泛。它几乎涵盖任何随时间演化且涉及不确定性的动力系统，只要该系统的状态定义得当。这类系统广泛出现在许多领域中，例如通信（communications）、自动控制（automatic control）、信号处理（signal processing）、制造（manufacturing）、经济学（economics）与运筹学（operations research）等。
+
+<span style="color:#c0392b;">**§7.1　离散时间马尔可夫链（Discrete-Time Markov Chains）**</span>
+
+我们首先考虑离散时间马尔可夫链（discrete-time Markov chain）：在这类链中，状态在一些离散的时刻发生变化，这些时刻用整数变量 $n$ 编号。在每一时刻 $n$，链的状态记作 $X_n$，它属于可能状态的有限集合 $S$，该集合称为状态空间（state space）。不失一般性，且除非另有说明，我们将假定 $S = \{1, \ldots, m\}$，其中 $m$ 为某个正整数。
+
+<span style="color:#2471a3;">**[definition]**</span> <span style="color:#00838f;">**[定义] 转移概率（Transition Probabilities）**</span>
+
+马尔可夫链用其转移概率（transition probabilities）$p_{ij}$ 来描述：每当状态恰为 $i$ 时，下一状态等于 $j$ 的概率即为 $p_{ij}$。数学上，
+
+```math
+p_{ij} = P(X_{n+1} = j \mid X_n = i), \qquad i,\, j \in S.
+```
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 把 m×m 转移概率矩阵想成一张加权邻接矩阵——这是 6.042J 图论的直系延续：P_{ij} > 0 ⟺ 从节点 i 到节点 j 有一条弧，权重即转移概率。你在离散数学学过的邻接矩阵幂给出「路径计数」((A^k)_{ij} = i 到 j 的 k 步路径数)；这里完全平行，(P^k)_{ij} = P(X_{n+k}=j | X_n=i) 是 k 步转移概率——把「计数」换成「加权概率和」，一切照旧。每行和为 1 表示从每个状态出发的概率质量守恒，对应图中每个节点加权出度为 1。对齐 Strang / 18.065：本书用行随机（每行和为 1），Strang 讲 PageRank 用列随机（每列和为 1），两者互为转置，注意别混。特征值 1 总有对应的平稳分布（左特征向量），第二大特征值控制收敛速度——这正是 §7.3 稳态的数学入口。用矩阵幂 P^k 的极限行为去预览第 7 章后半段，是 18.065 眼光的最短路径。
+
+
+<span style="color:#2471a3;">**[definition]**</span> <span style="color:#00838f;">**[定义] 马尔可夫性质（The Markov Property）**</span>
+
+马尔可夫链背后的关键假设是：无论过去发生过什么、也无论状态 $i$ 是如何达到的，只要状态 $i$ 被访问到，转移概率 $p_{ij}$ 就始终适用。数学上，我们假定如下马尔可夫性质（Markov property）：
+
+```math
+P(X_{n+1} = j \mid X_n = i,\; X_{n-1} = i_{n-1},\; \ldots,\; X_0 = i_0)
+= P(X_{n+1} = j \mid X_n = i)
+= p_{ij},
+```
+
+它对所有时刻 $n$、所有状态 $i, j \in S$ 以及所有可能的前期状态序列 $i_0, \ldots, i_{n-1}$ 均成立。因此，下一状态 $X_{n+1}$ 的概率规律只通过当前状态 $X_n$ 的取值来依赖过去。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 这句话就是马尔可夫性质的全部精髓，值得拆到骨头。数学上它说：给定 X_n = i 时，整个过去 (X₀,…,X_{n−1}) 与未来条件独立——过去不再是证据，只有 X_n 是充分摘要。对照第 6 章：伯努利 / 泊松过程「完全不依赖过去」（无记忆、0 阶），马尔可夫链「只通过现在依赖过去」（1 阶），前者是后者的退化情形。你已在 CSAPP 见过这个思想——有限状态机的状态正是「为丢弃无关过去而设计的封装」；CLRS 的 KMP 匹配自动机（按失配 fail 指针转移）就是一台马尔可夫链的活标本。历史坐标：Andrey Markov（1856–1922），圣彼得堡学派、Chebyshev 的学生，1906 年在喀山数理学会刊发表《大数定律向相互依赖量的推广》，首次证明「独立性并非必要、只要一阶依赖」大数定律仍成立。最初的动机竟是分析普希金诗文中元音 / 辅音的依赖结构——一个文学问题催生了现代随机过程理论，这个起源值得记住。
+
+
+当然，转移概率 $p_{ij}$ 必须非负，并且对每个 $i$，其和为 1：
+
+```math
+\sum_{j=1}^{m} p_{ij} = 1, \qquad \forall\, i.
+```
+
+
+<!-- ===== PDF p350 ===== -->
+
+<span style="color:#c0392b;">**第 7 章　马尔可夫链（Markov Chains）**</span> — §7.1（续）
+
+<span style="color:#c0392b;">**§7.1　离散时间马尔可夫链（Discrete-Time Markov Chains）**</span> <span style="color:#7f8c8d;">（Sec. 7.1，书页 341；本页续接上一页 §7.1 正文关于自转移的讨论，依次给出马尔可夫模型的规范刻画、转移概率矩阵与转移概率图，并以 Example 7.1 的题面开头。）</span>
+
+> <span style="color:#7f8c8d;">承接上一页：§7.1 已引入转移概率 $p_{ij}$ 与马尔可夫性质（Markov property）。本页页首继续讲解「自转移」（self-transition）概念，随后给出马尔可夫模型（Markov model）的规范刻画、转移概率矩阵（transition probability matrix）与转移概率图（transition probability graph），并以 **Example 7.1**（Alice 例题）的题面结束本页。</span>
+
+我们通常允许概率 $P_{ii}$ 为正（positive），此时下一个状态（state）有可能与当前状态相同。即便状态并未改变，我们仍把这视为一种特殊类型的状态转移（state transition）——即「自转移」（self-transition）。
+
+<span style="color:#c0392b;">**马尔可夫模型的刻画（Specification of Markov Models）**</span>
+
+一个马尔可夫链（Markov chain）模型由识别（identify）以下三要素来刻画：
+- (a) 状态集合（set of states）$S = \{1, \ldots, m\}$；
+- (b) 可能的转移（transitions）集合，即满足 $P_{ij} > 0$ 的那些状态对 $(i, j)$；
+- (c) 那些为正的 $P_{ij}$ 的数值。
+
+由该模型所刻画的马尔可夫链是一个取值于 $S$ 的随机变量序列 $X_0, X_1, X_2, \ldots$，它满足
+
+```math
+P(X_{n+1} = j \mid X_n = i,\; X_{n-1} = i_{n-1},\; \ldots,\; X_0 = i_0) = P_{ij},
+```
+
+它对所有时刻 $n$、所有状态 $i, j \in S$ 以及所有可能的先前状态序列 $i_0, \ldots, i_{n-1}$ 均成立。
+
+马尔可夫链模型的所有要素都可以编码进一个转移概率矩阵（transition probability matrix）中——它只是一个二维数组（two-dimensional array），其第 $i$ 行第 $j$ 列的元素就是 $P_{ij}$：
+
+```math
+\begin{pmatrix}
+P_{11} & P_{12} & \cdots & P_{1m}\\
+P_{21} & P_{22} & \cdots & P_{2m}\\
+\vdots & \vdots & \ddots & \vdots\\
+P_{m1} & P_{m2} & \cdots & P_{mm}
+\end{pmatrix}
+```
+
+> <span style="color:#7f8c8d;">[原页此处 OCR 碎裂] 上式中的转移概率矩阵在 OCR 中被拆散成逐元素竖排（如「Pl l」「P2 1」「Plm」「Pmm」等），此处按「第 $i$ 行第 $j$ 列元素为 $P_{ij}$」的定义规范重排为 $m \times m$ 矩阵，元素本身未改动。</span>
+
+把模型布局成所谓的转移概率图（transition probability graph）也很有帮助：其节点（nodes）是状态，其弧（arcs）是可能的转移。把 $P_{ij}$ 的数值记录在相应弧的旁边，即可将整个模型可视化（visualize），从而使其一些主要性质一目了然。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> 转移概率图 = 一张带权有向图：节点是状态，弧是允许的转移，权重是 P_{ij}。这与 CSAPP 的FSM（有限状态机）形成完美对照：FSM 是确定性的（状态 + 输入 ⟹ 唯一后继），马尔可夫链是概率性 FSM（状态 ⟹ 一个概率分布）。两者的共同灵魂是「状态封装历史」——无论过去走过多长的路，未来只由当前状态决定，这正是你在 CSAPP 数字电路（时序逻辑）、正则表达式匹配器里反复见过的抽象。自转移（$P_{ii}>0$ 的情形）看似无趣实则有深意：它强调「时刻」推进了而「状态」未必改变，对应 FSM 里「留在原状态等待下一个时钟沿」。从图论看（6.042J），每个节点的加权出度和为 1（概率质量守恒），强连通分量、可达性这些老朋友将在 §7.2 状态分类中直接登场。把「马尔可夫链 = 概率版 FSM + 加权有向图」的三层身份刻进脑海，读第 7 章会一路顺畅。
+
+
+<span style="color:#2471a3;">**[example]**</span> <span style="color:#00838f;">**Example 7.1（Alice 的概率课）**</span>
+
+Alice 正在上一门概率课（probability class），在每一周，她要么跟得上进度（up-to-date），要么可能已落后（fallen behind）。如果某一周她跟得上进度，那么下一周她跟得上（或落后）的概率为 $0.8$（或 $0.2$）。如果某一周她已落后，那么下一周她跟得上（或落后）的概率为 $0.6$（或 $0.4$）。我们假定这些概率并不依赖于她前几周是跟得上还是落后，因此该问题具有典型的马尔可夫链特征（Markov chain character）——未来对过去的依赖仅通过现在（the future depends on the past only through the present）。
+> <span style="color:#1e8449;">[note] Note（译者注）:</span> Example 7.1 是整章最简但最完整的运行例子，值得现在就用手头的线性代数武器解剖它。转移矩阵 P = [[0.8, 0.2], [0.6, 0.4]]（行随机）。用 Strang / 18.065 的矩阵幂语言：P^k 的行收敛到平稳分布 π = (0.75, 0.25)——验证 πP = π：0.75·0.8 + 0.25·0.6 = 0.75 成立。特征值谱是 {1, 0.2}：特征值 1 对应平稳分布（Perron 根），第二大特征值 0.2 决定收敛速率——每步误差缩为 0.2 倍，约 10 步后误差小于百万分之一。这就是 §7.3 稳态与收敛速度定理的直观预览：链的长期行为由矩阵幂的极限刻画，「多快到达稳态」由第二大特征值控制。对 Alice 而言，「本周状态」就是预测下周的全部信息——她不必记得前几周，这正是马尔可夫性质的活标本。把这道两状态例题当作你检验后面所有定理的试验田，收益最大。
+
+
+> <span style="color:#7f8c8d;">本页在陈述完 Example 7.1 的题面后结束；该例的转移概率图与后续求解延续到下一页。</span>
+
+
